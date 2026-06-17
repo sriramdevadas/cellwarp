@@ -1,0 +1,494 @@
+{
+  "method": "Independent PCA with Procrustes subspace alignment",
+  "description": "PCA computed separately on 35 human and 35 mouse centroids. Subspaces aligned via Procrustes on loading matrices (does not use cell-type pairing). Procrustes superimposition then tested in the aligned subspace.",
+  "config": {
+    "n_cell_types": 35,
+    "n_genes": 16959,
+    "n_pca_components": 33,
+    "n_permutations": 1000000,
+    "random_seed": 42,
+    "pca_variance_threshold": 0.95
+  },
+  "separate_pca": {
+    "human": {
+      "n_components": 33,
+      "cumulative_variance": 0.999602805134713,
+      "variance_per_component": [
+        0.24395370678527487,
+        0.14209591752306705,
+        0.1260076161000232,
+        0.08911928050330635,
+        0.05338504867367269,
+        0.04556618050533111,
+        0.0390032198112579,
+        0.029088332108974227,
+        0.026543489003662612,
+        0.024701972152076982,
+        0.01960473403152768,
+        0.017142166606803982,
+        0.015483677243980868,
+        0.014553995862763514,
+        0.014023831965778806,
+        0.01344151144481455,
+        0.012105974053347327,
+        0.011279896399429919,
+        0.01003018747957601,
+        0.00934294139087469,
+        0.0072694264666876346,
+        0.006639689383679106,
+        0.0052708692707780684,
+        0.004987415202672964,
+        0.004250102239377852,
+        0.003229026659628843,
+        0.0031588230699650085,
+        0.0022854317521890624,
+        0.001949690993388375,
+        0.0014784520298799274,
+        0.0010337580892890634,
+        0.0010021702961309222,
+        0.0005742700355018873
+      ]
+    },
+    "mouse": {
+      "n_components": 33,
+      "cumulative_variance": 0.9996028708922189,
+      "variance_per_component": [
+        0.2473890325579253,
+        0.13568402703938923,
+        0.10513529133838705,
+        0.08322069513113661,
+        0.06812300561187368,
+        0.06076168987980391,
+        0.04395898079686929,
+        0.04130899978878802,
+        0.029923950287382043,
+        0.02177107592787014,
+        0.020613486209519367,
+        0.018718848766968766,
+        0.01667021356108973,
+        0.0156896258779903,
+        0.012191169142692648,
+        0.011128166224255973,
+        0.00997059895298932,
+        0.008087828320493628,
+        0.007311685267271564,
+        0.0068359607651108,
+        0.006383114064627627,
+        0.005721199497066209,
+        0.004046196484966925,
+        0.0037598890425306285,
+        0.003469747014354584,
+        0.0026772250333689965,
+        0.0023826630458718377,
+        0.0017830765664151947,
+        0.001485120846622738,
+        0.001263944827428815,
+        0.000892755539471726,
+        0.0007444586318000313,
+        0.000499148849885952
+      ]
+    },
+    "k_for_95pct_human": 20,
+    "k_for_95pct_mouse": 18
+  },
+  "subspace_alignment": {
+    "method": "Procrustes on loading matrices",
+    "rotation_Q_det": 1.000000000000003,
+    "singular_values": [
+      0.8018945326329573,
+      0.75549085839654,
+      0.6962380344187846,
+      0.6440021917599372,
+      0.6380624858640292,
+      0.5860639247289766,
+      0.5708204419293293,
+      0.5600027429092264,
+      0.5071081865104087,
+      0.47702860230827676,
+      0.4473423357048432,
+      0.43662472324420487,
+      0.4312532834505683,
+      0.40772688884704344,
+      0.3849977613908105,
+      0.3754299607775078,
+      0.31279814959076196,
+      0.30096708507833425,
+      0.27753617717548973,
+      0.26358590746797733,
+      0.2583193731358868,
+      0.23889105996984403,
+      0.1907672329150269,
+      0.1831053870495172,
+      0.1556623049391468,
+      0.12619941985440597,
+      0.10653996103145084,
+      0.09515272839138265,
+      0.07656916337530541,
+      0.0648547724761866,
+      0.04498835623398674,
+      0.021427938831995737,
+      0.0019683106892380764
+    ],
+    "mean_alignment_quality": 0.34664909948725403,
+    "min_alignment_quality": 0.0019683106892380764
+  },
+  "procrustes": {
+    "distance": 52.71591264507326,
+    "distance_squared": 2778.9674460029946,
+    "scaling": 0.9333823621291936,
+    "rotation_det": 0.9999999999999981
+  },
+  "permutation_test": {
+    "observed_distance": 52.71591264507326,
+    "p_value": 9.99999000001e-07,
+    "p_value_str": "p < 10\u207b\u2076 (exact: 1.00e-06)",
+    "n_leq_observed": 0,
+    "n_permutations": 1000000,
+    "null_distribution_summary": {
+      "mean": 111.30648098690779,
+      "median": 111.47293116087236,
+      "std": 2.2098155000653117,
+      "min": 93.74832666748514,
+      "max": 119.33002760218488,
+      "percentile_0_01": 100.43673776504563,
+      "percentile_0_1": 102.7851386986413,
+      "percentile_1": 105.39407457739306,
+      "percentile_2_5": 106.50456186778982,
+      "percentile_5": 107.4178530156803,
+      "percentile_95": 114.63223409941166,
+      "percentile_97_5": 115.15969941980192,
+      "percentile_99": 115.7478134099278,
+      "percentile_99_9": 116.86815270788891
+    },
+    "obs_null_ratio": 0.47290326087322665,
+    "significant_at_001": true,
+    "prior_10k_result": {
+      "n_permutations": 10000,
+      "p_value": 9.999000099990002e-05,
+      "n_leq_observed": 0,
+      "obs_null_ratio": 0.4735069146859746
+    }
+  },
+  "comparison_to_joint_pca": {
+    "joint_pca": {
+      "distance": 61.1529953159736,
+      "null_mean": 116.95879062676244,
+      "obs_null_ratio": 0.5222043226858066,
+      "p_value": 9.999000099990002e-05,
+      "n_components": 33,
+      "null_median": 117.10549426602002
+    },
+    "independent_pca": {
+      "distance": 52.71591264507326,
+      "null_mean": 111.33081906530121,
+      "obs_null_ratio": 0.4735069146859746,
+      "p_value": 9.99999000001e-07,
+      "n_components": 33
+    },
+    "spearman_rho": 0.9151260504201681,
+    "spearman_p": 1.4340654644161655e-14,
+    "n_dramatic_rank_changes": 2,
+    "dramatic_rank_changes": [
+      {
+        "cell_type": "basal cell",
+        "joint_rank": 6,
+        "indep_rank": 17,
+        "delta": 11
+      },
+      {
+        "cell_type": "monocyte",
+        "joint_rank": 22,
+        "indep_rank": 11,
+        "delta": -11
+      }
+    ]
+  },
+  "cca_secondary": {
+    "observed_distance": 6.738061172492659,
+    "null_mean": 8.14876954533754,
+    "obs_null_ratio": 0.8268808112689796,
+    "p_value": 0.04179582041795821,
+    "canonical_correlations": [
+      0.9999999999993794,
+      0.32543687161228213,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.9999999999999999,
+      0.9999999999999999,
+      1.0,
+      0.9999999999999998,
+      1.0,
+      1.0,
+      1.0,
+      0.9999999999999998,
+      0.9999999999999999,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.9999999999999999,
+      1.0,
+      0.9999999999999999,
+      1.0,
+      1.0,
+      1.0,
+      0.9999999999999999,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "residuals": {
+    "hematopoietic stem cell": {
+      "rank": 1,
+      "magnitude": 14.07450165513982,
+      "pct_of_ssr": 7.128244597663418,
+      "joint_rank": 4,
+      "rank_delta": -3
+    },
+    "hematopoietic precursor cell": {
+      "rank": 2,
+      "magnitude": 13.413158346628267,
+      "pct_of_ssr": 6.474088679609875,
+      "joint_rank": 3,
+      "rank_delta": -1
+    },
+    "stromal cell": {
+      "rank": 3,
+      "magnitude": 13.3685429346976,
+      "pct_of_ssr": 6.431091535595504,
+      "joint_rank": 1,
+      "rank_delta": 2
+    },
+    "pancreatic acinar cell": {
+      "rank": 4,
+      "magnitude": 12.616578524209482,
+      "pct_of_ssr": 5.727956759136946,
+      "joint_rank": 5,
+      "rank_delta": -1
+    },
+    "epithelial cell": {
+      "rank": 5,
+      "magnitude": 12.199754380420206,
+      "pct_of_ssr": 5.355730494671711,
+      "joint_rank": 2,
+      "rank_delta": 3
+    },
+    "mesenchymal stem cell of adipose tissue": {
+      "rank": 6,
+      "magnitude": 10.764665132339116,
+      "pct_of_ssr": 4.169822700804414,
+      "joint_rank": 11,
+      "rank_delta": -5
+    },
+    "T cell": {
+      "rank": 7,
+      "magnitude": 10.742241145535823,
+      "pct_of_ssr": 4.1524683923454075,
+      "joint_rank": 7,
+      "rank_delta": 0
+    },
+    "plasma cell": {
+      "rank": 8,
+      "magnitude": 10.166233584370612,
+      "pct_of_ssr": 3.7190901764839737,
+      "joint_rank": 12,
+      "rank_delta": -4
+    },
+    "neutrophil": {
+      "rank": 9,
+      "magnitude": 10.127093263641806,
+      "pct_of_ssr": 3.690508074069347,
+      "joint_rank": 8,
+      "rank_delta": 1
+    },
+    "myeloid leukocyte": {
+      "rank": 10,
+      "magnitude": 10.089704649737545,
+      "pct_of_ssr": 3.6633081134274557,
+      "joint_rank": 10,
+      "rank_delta": 0
+    },
+    "monocyte": {
+      "rank": 11,
+      "magnitude": 9.633350247559513,
+      "pct_of_ssr": 3.33942152239429,
+      "joint_rank": 22,
+      "rank_delta": -11
+    },
+    "macrophage": {
+      "rank": 12,
+      "magnitude": 9.404231741222176,
+      "pct_of_ssr": 3.18246170065122,
+      "joint_rank": 16,
+      "rank_delta": -4
+    },
+    "fibroblast of cardiac tissue": {
+      "rank": 13,
+      "magnitude": 9.287836853585091,
+      "pct_of_ssr": 3.1041714267969316,
+      "joint_rank": 9,
+      "rank_delta": 4
+    },
+    "mesenchymal stem cell": {
+      "rank": 14,
+      "magnitude": 9.25012127906426,
+      "pct_of_ssr": 3.0790120913602532,
+      "joint_rank": 13,
+      "rank_delta": 1
+    },
+    "classical monocyte": {
+      "rank": 15,
+      "magnitude": 9.059497787936664,
+      "pct_of_ssr": 2.953417114967559,
+      "joint_rank": 15,
+      "rank_delta": 0
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "rank": 16,
+      "magnitude": 8.58467433503588,
+      "pct_of_ssr": 2.651943028142414,
+      "joint_rank": 14,
+      "rank_delta": 2
+    },
+    "basal cell": {
+      "rank": 17,
+      "magnitude": 8.45088855908818,
+      "pct_of_ssr": 2.569929976720228,
+      "joint_rank": 6,
+      "rank_delta": 11
+    },
+    "mature NK T cell": {
+      "rank": 18,
+      "magnitude": 8.350148447430985,
+      "pct_of_ssr": 2.509024680890737,
+      "joint_rank": 25,
+      "rank_delta": -7
+    },
+    "intermediate monocyte": {
+      "rank": 19,
+      "magnitude": 8.313717384473733,
+      "pct_of_ssr": 2.487179072511751,
+      "joint_rank": 24,
+      "rank_delta": -5
+    },
+    "large intestine goblet cell": {
+      "rank": 20,
+      "magnitude": 8.0024638887594,
+      "pct_of_ssr": 2.3044324748390457,
+      "joint_rank": 19,
+      "rank_delta": 1
+    },
+    "B cell": {
+      "rank": 21,
+      "magnitude": 7.873528580024791,
+      "pct_of_ssr": 2.2307728861535,
+      "joint_rank": 17,
+      "rank_delta": 4
+    },
+    "enterocyte of epithelium of large intestine": {
+      "rank": 22,
+      "magnitude": 7.245546283521796,
+      "pct_of_ssr": 1.8891168020756992,
+      "joint_rank": 20,
+      "rank_delta": 2
+    },
+    "fibroblast": {
+      "rank": 23,
+      "magnitude": 7.239129357945281,
+      "pct_of_ssr": 1.8857721394484006,
+      "joint_rank": 28,
+      "rank_delta": -5
+    },
+    "myeloid dendritic cell": {
+      "rank": 24,
+      "magnitude": 6.816905515828875,
+      "pct_of_ssr": 1.6722110537342387,
+      "joint_rank": 21,
+      "rank_delta": 3
+    },
+    "luminal epithelial cell of mammary gland": {
+      "rank": 25,
+      "magnitude": 6.65921192082346,
+      "pct_of_ssr": 1.5957402980815445,
+      "joint_rank": 18,
+      "rank_delta": 7
+    },
+    "natural killer cell": {
+      "rank": 26,
+      "magnitude": 6.644245536023533,
+      "pct_of_ssr": 1.588575598698146,
+      "joint_rank": 23,
+      "rank_delta": 3
+    },
+    "granulocyte": {
+      "rank": 27,
+      "magnitude": 6.572958445495339,
+      "pct_of_ssr": 1.5546703430566904,
+      "joint_rank": 27,
+      "rank_delta": 0
+    },
+    "smooth muscle cell": {
+      "rank": 28,
+      "magnitude": 6.058226421767696,
+      "pct_of_ssr": 1.3207102310677687,
+      "joint_rank": 31,
+      "rank_delta": -3
+    },
+    "non-classical monocyte": {
+      "rank": 29,
+      "magnitude": 5.97357961940172,
+      "pct_of_ssr": 1.2840615862793072,
+      "joint_rank": 34,
+      "rank_delta": -5
+    },
+    "bladder urothelial cell": {
+      "rank": 30,
+      "magnitude": 5.941111194972891,
+      "pct_of_ssr": 1.2701409036582927,
+      "joint_rank": 29,
+      "rank_delta": 1
+    },
+    "pancreatic ductal cell": {
+      "rank": 31,
+      "magnitude": 5.6875618452520165,
+      "pct_of_ssr": 1.1640424140301955,
+      "joint_rank": 30,
+      "rank_delta": 1
+    },
+    "adventitial cell": {
+      "rank": 32,
+      "magnitude": 5.479513418996378,
+      "pct_of_ssr": 1.0804396918051922,
+      "joint_rank": 26,
+      "rank_delta": 6
+    },
+    "hepatocyte": {
+      "rank": 33,
+      "magnitude": 5.399770476566897,
+      "pct_of_ssr": 1.0492214020549588,
+      "joint_rank": 32,
+      "rank_delta": 1
+    },
+    "endothelial cell": {
+      "rank": 34,
+      "magnitude": 4.892109358603329,
+      "pct_of_ssr": 0.8612095838314647,
+      "joint_rank": 33,
+      "rank_delta": 1
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "rank": 35,
+      "magnitude": 4.888708019388492,
+      "pct_of_ssr": 0.8600124529421204,
+      "joint_rank": 35,
+      "rank_delta": 0
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "analysis_date": "2026-03-15",
+  "target_species": "Macaca fascicularis (cynomolgus monkey)",
+  "target_types_n": 35,
+  "success_criteria": {
+    "min_types_pass": 15,
+    "min_cells_per_type": 200,
+    "min_median_genes": 2000,
+    "min_orthologs": 12000
+  },
+  "atlas1_nhpca": {
+    "citation": "Han L et al. Nature 604, 723-731 (2022)",
+    "metadata_accessible": "YES",
+    "access_method": "CNGB FTP (no auth): ftp.cngb.org/pub/SciRAID/nhpca/download/",
+    "total_cells": 1144706,
+    "n_tissues": 45,
+    "n_coarse_types": 113,
+    "n_fine_types": 173,
+    "snRNA_seq_fraction": 0.93,
+    "scRNA_seq_fraction": 0.07,
+    "median_nGene_overall": 1324,
+    "median_nGene_snRNA": 1355,
+    "median_nGene_scRNA": 934,
+    "n_types_pass": 27,
+    "n_types_borderline": 0,
+    "n_types_absent": 8,
+    "original_6_present": 6,
+    "passes_type_gate": "YES",
+    "passes_orig6_gate": "YES",
+    "passes_gene_gate": "NO",
+    "verdict": "PARTIAL"
+  },
+  "atlas2_monkey_atlas": {
+    "citation": "Qu J et al. Nat Commun 13, 4400 (2022)",
+    "metadata_accessible": "NO",
+    "access_barrier": "14.3 GB RDS file on Zenodo, 1.1 GB tar on GEO",
+    "total_cells": 174233,
+    "n_tissues": 16,
+    "tissue_list": [
+      "adipose",
+      "aorta",
+      "bladder",
+      "breast",
+      "colon",
+      "heart",
+      "kidney",
+      "liver",
+      "lung",
+      "muscle",
+      "spleen",
+      "stomach",
+      "testis",
+      "tongue",
+      "trachea",
+      "uterus"
+    ],
+    "technology": "10x Genomics Chromium 3' v3 (scRNA-seq, all tissues)",
+    "inferred_likely_pass": 20,
+    "inferred_absent": 4,
+    "inferred_uncertain": 11,
+    "original_6_likely": 6,
+    "verdict": "CANNOT_FULLY_ASSESS"
+  },
+  "ortholog_assessment": {
+    "species": "Macaca fascicularis (Ensembl macFas6)",
+    "total_1to1_orthologs": 19123,
+    "overlap_with_our_space": 15028,
+    "our_space_size": 16959,
+    "overlap_fraction": 0.886,
+    "passes_gate": "YES"
+  },
+  "census_check": {
+    "macaca_fascicularis_in_census": "NO",
+    "available_organisms": [
+      "callithrix_jacchus",
+      "homo_sapiens",
+      "macaca_mulatta",
+      "mus_musculus",
+      "pan_troglodytes"
+    ]
+  },
+  "recommendation": "NHPCA is the stronger candidate: 27/35 types, all original 6, 1.14M cells. Gene detection concern (median 1324 < 2000) due to 93% snRNA-seq. This is 2x better than MCA (~700) but still below gate. Qu et al. has 10x technology but metadata requires 14.3GB download. Ortholog gate passes cleanly (15,028 > 12,000)."
+}

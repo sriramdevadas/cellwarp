@@ -1,0 +1,20 @@
+T3-E Step 2c: BigWig Download Log
+==================================
+Date: 2026-03-15
+
+File 1: phastCons_placental.bw (phastCons20way)
+  Source: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons20way/hg38.phastCons20way.bw
+  Local:  data/ucsc/phastCons_placental.bw
+  Size:   6.6 GB (7,117,778,282 bytes expected)
+  MD5:    f6a6eed2e3a06bd1e45b5c8cfcc38379 — VERIFIED MATCH
+  Method: curl -L -C -
+
+File 2: phastCons100way.bw
+  Source: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons100way/hg38.phastCons100way.bw
+  Local:  data/ucsc/phastCons100way.bw
+  Size:   5.5 GB (5,886,377,734 bytes expected)
+  MD5:    8df8387aba88f4ca9eacdebb2e729745 — VERIFIED MATCH
+  Method: curl -L -C -
+
+Both files verified via pyBigWig.open() — valid bigWig format confirmed.
+Test extraction: chr1:10000-14000 placental=0.072, 100way=0.162

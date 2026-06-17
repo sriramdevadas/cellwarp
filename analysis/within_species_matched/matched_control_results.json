@@ -1,0 +1,301 @@
+{
+  "analysis": "within_species_matched_control_reanalysis",
+  "date": "2026-04-06",
+  "cross_species_reference": {
+    "primary_n_types": 35,
+    "primary_obs_null": 0.522,
+    "macaque_n_types": 20,
+    "mouse_lemur_n_types": 15
+  },
+  "within_species_summary": {
+    "total_pairs": 24,
+    "n_types_range": [
+      6,
+      12
+    ],
+    "n_types_median": 7.0,
+    "pairs_at_n_ge_15": 0,
+    "pairs_at_n_ge_12": 2,
+    "pairs_at_n_ge_10": 4,
+    "pairs_at_n_ge_8": 10
+  },
+  "all_pairs_stats": {
+    "n": 24,
+    "mean_obs_null": 0.4657442934902251,
+    "median_obs_null": 0.45701906258810265,
+    "std_obs_null": 0.15347665772517322,
+    "ci_lower_95": 0.40709202298945596,
+    "ci_upper_95": 0.5282277462764047,
+    "cross_species_within_ci": true,
+    "fraction_lower_than_cross_species": 0.7083333333333334,
+    "cohens_d": 0.3665424263441453,
+    "spearman_n_types_vs_ratio": {
+      "r": -0.18306833891820454,
+      "p": 0.3918644722894694
+    }
+  },
+  "threshold_results": {
+    "n_ge_15": {
+      "threshold": 15,
+      "n_pairs": 0,
+      "note": "No within-species pairs qualify at this threshold"
+    },
+    "n_ge_12": {
+      "threshold": 12,
+      "n_pairs": 2,
+      "mean_obs_null": 0.3485118195521732,
+      "median_obs_null": 0.3485118195521732,
+      "std_obs_null": 0.11297041284678452,
+      "ci_lower_95": 0.268629674554768,
+      "ci_upper_95": 0.4283939645495784,
+      "cross_species_obs_null": 0.522,
+      "fraction_lower_than_cross_species": 1.0,
+      "cross_species_within_ci": false,
+      "pairs": [
+        {
+          "pair_id": "human_blood_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.268629674554768
+        },
+        {
+          "pair_id": "human_lymph node_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.4283939645495784
+        }
+      ]
+    },
+    "n_ge_10": {
+      "threshold": 10,
+      "n_pairs": 4,
+      "mean_obs_null": 0.41535406854487944,
+      "median_obs_null": 0.4273154428154886,
+      "std_obs_null": 0.11090050688772961,
+      "ci_lower_95": 0.3085707470534706,
+      "ci_upper_95": 0.5101760157656792,
+      "cross_species_obs_null": 0.522,
+      "fraction_lower_than_cross_species": 0.75,
+      "cross_species_within_ci": false,
+      "pairs": [
+        {
+          "pair_id": "human_adipose tissue_vs_spleen",
+          "n_types": 11,
+          "obs_to_null_ratio": 0.4262369210813989
+        },
+        {
+          "pair_id": "human_blood_vs_lymph node",
+          "n_types": 10,
+          "obs_to_null_ratio": 0.5381557139937725
+        },
+        {
+          "pair_id": "human_blood_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.268629674554768
+        },
+        {
+          "pair_id": "human_lymph node_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.4283939645495784
+        }
+      ]
+    },
+    "n_ge_8": {
+      "threshold": 8,
+      "n_pairs": 10,
+      "mean_obs_null": 0.44890605283748064,
+      "median_obs_null": 0.4583831491894679,
+      "std_obs_null": 0.11971198403627467,
+      "ci_lower_95": 0.3778730578545189,
+      "ci_upper_95": 0.5183572860187243,
+      "cross_species_obs_null": 0.522,
+      "fraction_lower_than_cross_species": 0.8,
+      "cross_species_within_ci": false,
+      "pairs": [
+        {
+          "pair_id": "human_adipose tissue_vs_blood",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.3775856756217363
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_lymph node",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.4883723338293573
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_spleen",
+          "n_types": 11,
+          "obs_to_null_ratio": 0.4262369210813989
+        },
+        {
+          "pair_id": "human_blood_vs_bone marrow",
+          "n_types": 9,
+          "obs_to_null_ratio": 0.5161996074545938
+        },
+        {
+          "pair_id": "human_blood_vs_lymph node",
+          "n_types": 10,
+          "obs_to_null_ratio": 0.5381557139937725
+        },
+        {
+          "pair_id": "human_blood_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.268629674554768
+        },
+        {
+          "pair_id": "human_bone marrow_vs_spleen",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.5199088081632026
+        },
+        {
+          "pair_id": "human_liver_vs_lymph node",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.6511760919606989
+        },
+        {
+          "pair_id": "human_liver_vs_spleen",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.274401737165699
+        },
+        {
+          "pair_id": "human_lymph node_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.4283939645495784
+        }
+      ]
+    },
+    "n_ge_6": {
+      "threshold": 6,
+      "n_pairs": 24,
+      "mean_obs_null": 0.4657442934902251,
+      "median_obs_null": 0.45701906258810265,
+      "std_obs_null": 0.15347665772517322,
+      "ci_lower_95": 0.40709202298945596,
+      "ci_upper_95": 0.5282277462764047,
+      "cross_species_obs_null": 0.522,
+      "fraction_lower_than_cross_species": 0.7083333333333334,
+      "cross_species_within_ci": true,
+      "pairs": [
+        {
+          "pair_id": "human_adipose tissue_vs_bladder organ",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.4758514618123235
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_blood",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.3775856756217363
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_endocrine gland",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.3524287260962636
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_exocrine gland",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.4231920925606738
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_lymph node",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.4883723338293573
+        },
+        {
+          "pair_id": "human_adipose tissue_vs_spleen",
+          "n_types": 11,
+          "obs_to_null_ratio": 0.4262369210813989
+        },
+        {
+          "pair_id": "human_blood_vs_bone marrow",
+          "n_types": 9,
+          "obs_to_null_ratio": 0.5161996074545938
+        },
+        {
+          "pair_id": "human_blood_vs_endocrine gland",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.7102254853069262
+        },
+        {
+          "pair_id": "human_blood_vs_liver",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.206291131258345
+        },
+        {
+          "pair_id": "human_blood_vs_lung",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.3784887013122866
+        },
+        {
+          "pair_id": "human_blood_vs_lymph node",
+          "n_types": 10,
+          "obs_to_null_ratio": 0.5381557139937725
+        },
+        {
+          "pair_id": "human_blood_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.268629674554768
+        },
+        {
+          "pair_id": "human_bone marrow_vs_liver",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.4619034100675258
+        },
+        {
+          "pair_id": "human_bone marrow_vs_lymph node",
+          "n_types": 7,
+          "obs_to_null_ratio": 0.4521347151086796
+        },
+        {
+          "pair_id": "human_bone marrow_vs_spleen",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.5199088081632026
+        },
+        {
+          "pair_id": "human_endocrine gland_vs_spleen",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.5257410199749495
+        },
+        {
+          "pair_id": "human_exocrine gland_vs_spleen",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.7972906641159946
+        },
+        {
+          "pair_id": "human_liver_vs_lymph node",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.6511760919606989
+        },
+        {
+          "pair_id": "human_liver_vs_spleen",
+          "n_types": 8,
+          "obs_to_null_ratio": 0.274401737165699
+        },
+        {
+          "pair_id": "human_lung_vs_lymph node",
+          "n_types": 7,
+          "obs_to_null_ratio": 0.3078176323089822
+        },
+        {
+          "pair_id": "human_lung_vs_spleen",
+          "n_types": 7,
+          "obs_to_null_ratio": 0.2654010148852944
+        },
+        {
+          "pair_id": "human_lymph node_vs_spleen",
+          "n_types": 12,
+          "obs_to_null_ratio": 0.4283939645495784
+        },
+        {
+          "pair_id": "mouse_adipose tissue_vs_spleen",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.693213032908782
+        },
+        {
+          "pair_id": "mouse_lung_vs_spleen",
+          "n_types": 6,
+          "obs_to_null_ratio": 0.6388234276735713
+        }
+      ]
+    }
+  },
+  "conclusion": "The cross-species obs/null ratio (0.522) falls WITHIN the 95% bootstrap CI of the within-species mean [0.4071, 0.5282]. At the available type counts (n=6-12), within-species and cross-species coherence are NOT clearly distinguishable. However, no within-species pairs reach n>=15, so a direct type-count-matched comparison is not possible. The confound is that within-species pairs have fewer types (max 12) than cross-species (n=15-35), and type count may influence the obs/null ratio."
+}

@@ -1,0 +1,17 @@
+{
+  "our_label": "Endothelial cell",
+  "organism": "human",
+  "organism_scientific": "Homo sapiens",
+  "tried_terms": [
+    "endothelial cell",
+    "endothelial cell of umbilical vein",
+    "lung microvascular endothelial cell",
+    "pulmonary artery endothelial cell",
+    "cardiac endothelial cell",
+    "dermis microvascular blood vessel endothelial cell"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:25:55.499301"
+}

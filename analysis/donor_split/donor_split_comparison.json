@@ -1,0 +1,30 @@
+{
+  "independent_pca": {
+    "ws_median": 0.38178951249446913,
+    "cs_median": 0.5351731788593085,
+    "delta_median": 0.1577130576207306,
+    "delta_ci_95": [
+      0.10423893501815064,
+      0.22607574878645767
+    ],
+    "delta_positive_fraction": 1.0,
+    "median_k_ws": "~21 (varies per split, not recorded per-split)",
+    "median_k_cs": "~29 (varies per split, not recorded per-split)"
+  },
+  "shared_pca": {
+    "ws_median": 0.37512203195461846,
+    "cs_median": 0.5273208201812027,
+    "delta_median": 0.15884167739883645,
+    "delta_ci_95": [
+      0.10032058253798071,
+      0.21801319731288624
+    ],
+    "delta_positive_fraction": 1.0,
+    "median_k": 32.0
+  },
+  "change": {
+    "ws_median_change": -0.006667480539850668,
+    "cs_median_change": -0.007852358678105742,
+    "delta_median_change": 0.001128619778105855
+  }
+}

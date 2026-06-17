@@ -1,0 +1,56 @@
+{
+  "analysis": "HSC independent validation \u2014 progenitor finding retest",
+  "description": "No 10x mouse HSC data exists outside TMS. Used sci-RNA-seq3 (UMI-based 3' capture, Cao et al. embryonic development, 64k cells) as closest protocol match. Caveats: (1) sci-RNA-seq3 not 10x, (2) embryonic not adult HSCs.",
+  "hsc_data": {
+    "source": "CZ CELLxGENE Census \u2014 Cao et al. embryonic development",
+    "assay": "sci-RNA-seq3",
+    "tissue": "embryo",
+    "n_cells_available": 64160,
+    "n_cells_used": 2000,
+    "n_genes_matched": 16959,
+    "n_genes_pipeline": 16959,
+    "n_genes_missing": 0,
+    "10x_non_tms_available": 0,
+    "protocol_note": "sci-RNA-seq3 is UMI-based 3'-end capture like 10x. Both use UMI deduplication and have comparable per-cell depth. Key difference from Smart-seq2: no full-length bias."
+  },
+  "analysis_a_hsc_in_original": {
+    "description": "Replace HSC in original (all-protocol) mouse centroids",
+    "procrustes_distance": 65.20666349971803,
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.5587480829449264,
+    "hsc_residual": 24.85474319293737,
+    "hsc_rank": 1,
+    "progenitor_mean_residual": 15.289915405793945,
+    "differentiated_mean_residual": 9.578639580315166,
+    "ratio": 1.5962512502522683,
+    "mannwhitney_p": 0.0012568077084206114,
+    "significant": true
+  },
+  "analysis_b_hsc_in_10x_only": {
+    "description": "Replace HSC in 10x-only TMS centroids + independent HSC",
+    "procrustes_distance": 65.82632918138472,
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.564489961589564,
+    "hsc_residual": 26.58055653794802,
+    "hsc_rank": 1,
+    "progenitor_mean_residual": 14.953031464518796,
+    "differentiated_mean_residual": 9.707829131235679,
+    "ratio": 1.5403064127289057,
+    "mannwhitney_p": 0.03834803716207891,
+    "significant": true
+  },
+  "analysis_c_excl_hsc": {
+    "description": "10x-only centroids, HSC excluded (4 progenitors)",
+    "progenitor_mean_residual": 12.046150196161486,
+    "differentiated_mean_residual": 9.707829131235679,
+    "mannwhitney_p": 0.11969553217181303,
+    "significant": false
+  },
+  "p_value_progression": {
+    "original_all_protocol": 0.00493173809113088,
+    "tenx_only_tms_23_hsc": 0.11874060474629733,
+    "original_plus_indep_hsc": 0.0012568077084206114,
+    "tenx_only_plus_indep_hsc": 0.03834803716207891,
+    "tenx_only_excl_hsc_4prog": 0.11969553217181303
+  }
+}

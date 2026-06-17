@@ -1,0 +1,35 @@
+raw_label,fine_label,normal_count,tumor_count
+germinal center B cell,B cell,8483,9955
+mature B cell,B cell,3634,3588
+"CD4-positive, CD25-positive, alpha-beta regulatory T cell","CD4-positive, alpha-beta T cell",468,11282
+"CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell",6142,9132
+"activated CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell",2236,3671
+"CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell",2432,15687
+"CD8-positive, alpha-beta memory T cell","CD8-positive, alpha-beta T cell",1844,1150
+"effector CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell",706,4023
+T follicular helper cell,Other,762,799
+T-helper 17 cell,Other,294,2612
+group 3 innate lymphoid cell,Other,498,361
+pericyte,Other,303,1350
+stem cell,Other,20736,97900
+T cell,T cell,1880,594
+gamma-delta T cell,T cell,5178,4999
+mature NK T cell,T cell,1196,6149
+capillary endothelial cell,endothelial cell,1359,496
+endothelial cell of artery,endothelial cell,777,471
+endothelial cell of venule,endothelial cell,610,1453
+enterocyte,enterocyte of epithelium of large intestine,19936,1347
+colonocyte,epithelial cell,1194,4902
+intestinal epithelial cell,epithelial cell,6591,383
+tuft cell of colon,epithelial cell,1452,1597
+fibroblast,fibroblast,6819,2820
+colon goblet cell,large intestine goblet cell,389,4141
+goblet cell,large intestine goblet cell,10268,2395
+macrophage,macrophage,1549,18976
+mast cell,mast cell,1326,2715
+monocyte,monocyte,1219,13401
+conventional dendritic cell,myeloid dendritic cell,200,332
+plasmacytoid dendritic cell,myeloid dendritic cell,502,2542
+IgA plasma cell,plasma cell,17493,3705
+IgG plasma cell,plasma cell,3279,14266
+smooth muscle cell,smooth muscle cell,660,238

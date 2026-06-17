@@ -1,0 +1,15 @@
+{
+  "our_label": "CD8+ T cell",
+  "organism": "mouse",
+  "organism_scientific": "Mus musculus",
+  "tried_terms": [
+    "CD8-positive, alpha-beta T cell",
+    "cytotoxic T cell",
+    "CD8+ T cell",
+    "CD8-positive T cell"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:12:39.713639"
+}

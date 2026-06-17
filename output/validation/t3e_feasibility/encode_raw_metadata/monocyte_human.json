@@ -1,0 +1,16 @@
+{
+  "our_label": "Monocyte",
+  "organism": "human",
+  "organism_scientific": "Homo sapiens",
+  "tried_terms": [
+    "monocyte",
+    "CD14-positive monocyte",
+    "CD14+ monocyte",
+    "classical monocyte",
+    "CD14-positive, CD16-negative classical monocyte"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:20:47.693415"
+}

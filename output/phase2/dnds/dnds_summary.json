@@ -1,0 +1,218 @@
+{
+  "outcome": "C",
+  "interpretation": "NEGATIVE CORRELATION (rho = -0.234, p = 3.03e-201). Genes with more conserved protein sequence show MORE expression divergence. This may reflect compensatory regulatory evolution \u2014 genes constrained at the sequence level may diverge more in expression patterns across species.",
+  "metric": "protein_percent_identity",
+  "metric_note": "dN/dS ratios are no longer available in Ensembl Compara (releases 109-115). Protein percent identity is used instead \u2014 it directly measures amino acid conservation and correlates strongly with dN/dS where both are available.",
+  "genome_wide": {
+    "spearman_rho": -0.23363421812212037,
+    "spearman_p": 3.033019653807865e-201,
+    "spearman_rho_identity": 0.23363421812212037,
+    "spearman_p_identity": 3.033019653807865e-201,
+    "pearson_r": -0.1448183179752356,
+    "pearson_p": 3.244554788687843e-77,
+    "n_genes": 16324
+  },
+  "per_celltype_summary": {
+    "n_significant": 35,
+    "n_total": 35,
+    "median_rho": -0.19437852625395233,
+    "range_rho": [
+      -0.24516030116483414,
+      -0.16927806066589993
+    ]
+  },
+  "extremes": {
+    "cat1_conserved_seq_divergent_expr": {
+      "n_genes": 1131,
+      "threshold_identity": 95.0,
+      "threshold_expr_pctile": 75,
+      "threshold_expr_value": 0.05248194502549096,
+      "top_20_genes": [
+        "TXNIP",
+        "RPL10",
+        "S100A6",
+        "RPS18",
+        "RPL3",
+        "RPS27A",
+        "NAMPT",
+        "RPL13",
+        "RPS15A",
+        "RPS8",
+        "VIM",
+        "RPS23",
+        "RPS2",
+        "ACTA2",
+        "RPL32",
+        "RPL39",
+        "RPL7A",
+        "RPS28",
+        "RPL34",
+        "RPL18A"
+      ],
+      "go": {
+        "n_genes": 1131,
+        "n_terms": 614,
+        "top_terms": [
+          {
+            "term": "Cytoplasmic Translation (GO:0002181)",
+            "p_adj": 8.076965289653761e-44,
+            "overlap": "57/93",
+            "genes": "EIF4A2;RPL5;RPL3;RPL32;RPL34;RPL10A;RPL8;RPS15;RPL7A;RPS14;RPS17;RPS16;RPL18A;RPS18;RACK1;RPL36;RPL38;RPL37;RPS11;RPL39;RPS13;RPS9;RPS7;RPS8;RPS5;RPL22;RPS6;RPL13A;SARS1;RPL37A;ETF1;RPL27;RPL26;RPL28;UBA52;RPL10;RPL12;RPL11;RPS15A;RPL13;RPL15;RPS2;RPS27A;ZC3H15;RPL19;RWDD1;RPL35A;RPL23A;EIF3M;RPS28;EIF3I;RPL27A;RPL22L1;RPS20;FAU;RPS21;RPS23"
+          },
+          {
+            "term": "Macromolecule Biosynthetic Process (GO:0009059)",
+            "p_adj": 6.105517228232804e-25,
+            "overlap": "58/183",
+            "genes": "RPL5;RPL3;RPL32;RPL34;RPL10A;RPL8;EEF1B2;RPS15;RPS14;RPL7A;RPS17;RPS16;RPL18A;RPS18;RPL36;RPL38;RPL37;LARGE1;RPS11;RPL39;RPS13;RPS9;RPS7;RPS8;RPS5;PABPC4;RPL22;RPS6;RPL13A;EEF1G;SARS1;RPL37A;RPL27;RPL26;RPL28;B4GALT5;RPL10;RPL12;RPL11;GSPT1;RPS15A;RPL13;RPL15;RPS2;RPS27A;RPL19;RPL35A;RPL23A;EEF2;EXT1;RPS28;RPL27A;AGO2;RPS20;FAU;RPS21;EIF4G2;RPS23"
+          },
+          {
+            "term": "Peptide Biosynthetic Process (GO:0043043)",
+            "p_adj": 2.830452576685317e-22,
+            "overlap": "51/158",
+            "genes": "RPL5;RPL3;RPL32;RPL34;RPL10A;RPL8;RPS15;RPS14;RPL7A;RPS17;RPS16;RPL18A;RPS18;RPL36;RPL38;RPL37;RPS11;RPL39;RPS13;RPS9;RPS7;RPS8;RPS5;PABPC4;RPL22;RPS6;RPL13A;SARS1;RPL37A;RPL27;RPL26;RPL28;RPL10;RPL12;RPL11;GSPT1;RPS15A;RPL13;RPL15;RPS2;RPS27A;RPL19;RPL35A;RPL23A;RPS28;RPL27A;AGO2;RPS20;FAU;RPS21;RPS23"
+          },
+          {
+            "term": "Gene Expression (GO:0010467)",
+            "p_adj": 3.0717213745288795e-22,
+            "overlap": "70/296",
+            "genes": "RPL5;RPL3;RPL32;RPL34;HNRNPU;RPL8;RPL10A;RPS15;RBM3;RPS14;RPL7A;RPS17;RPS16;XPO1;RPL18A;RPS18;RPL36;RPL38;KPNA4;RPL37;RPS11;RPL39;RPS13;AGFG1;RPS9;RPS7;RPS8;PABPC4;RPS5;RPL22;RPS6;RPL13A;SARS1;XRN2;RPL37A;SRSF3;RBMS1;RPL27;RPL26;RPL28;RPL10;RPL12;RPL11;GSPT1;HSPD1;RPS15A;TSPAN5;RPL13;RPL15;RPS2;RPS27A;RPL19;RBM39;RBPMS;GALNT2;RPL35A;RPL23A;RPS28;TSPAN14;HNRNPK;NOVA1;HNRNPF;RPL27A;AGO2;HNRNPD;RPS20;STUB1;FAU;RPS21;RPS23"
+          },
+          {
+            "term": "Translation (GO:0006412)",
+            "p_adj": 7.623683689198306e-21,
+            "overlap": "60/234",
+            "genes": "RPL5;RPL3;RPL32;RPL34;RPL8;RPL10A;RPS15;EEF1B2;RPS14;RPL7A;RPS17;RPS16;RPL18A;RPS18;RPL36;RACK1;RPL38;RPL37;RPS11;RPL39;RPS13;RPS9;RPS7;RPS8;PABPC4;RPS5;RPL22;RPS6;RPL13A;EEF1G;SARS1;RPL37A;RPL27;ETF1;RPL26;RPL28;UBA52;RPL10;RPL12;RPL11;GSPT1;RPS15A;RPL13;RPL15;RPS2;RPS27A;ZC3H15;RPL19;RWDD1;RPL35A;RPL23A;EEF2;RPS28;RPL27A;AGO2;RPS20;RPL22L1;FAU;RPS21;RPS23"
+          },
+          {
+            "term": "protein-RNA Complex Assembly (GO:0022618)",
+            "p_adj": 4.2924973698392566e-14,
+            "overlap": "40/150",
+            "genes": "RPL5;HSP90AB1;RPL10;CELF1;RPL11;RPS27L;RPS15;RPS14;SNRPD2;SNRPD1;RPL38;TXNL4A;HSP90AA1;RPS5;PTGES3;RPL23A;EIF2S2;LSM4;RPS28;EIF3M;EIF5;AGO3;EIF6;EIF3K;AGO4;EIF3L;EIF3I;AGO2;EIF3G;LUC7L3;STRAP;EIF3H;SNRPE;EIF3E;SNRPF;SRSF5;SRSF6;EIF3D;SNRPB;SRSF9"
+          },
+          {
+            "term": "Protein Modification Process (GO:0036211)",
+            "p_adj": 2.370645162031403e-13,
+            "overlap": "97/711",
+            "genes": "APP;UBE2D2;UBE2D3;PPP2R2A;PPP1CB;PPP1CC;RPS6KA5;AKT3;PIM3;LARGE1;MAP2K1;PRKCH;DAPK1;PRKCB;FBXW11;DAPK2;PRKCE;DYRK1A;ADAM10;PRKCA;CSNK1D;PPP4R3A;FBXO11;RBX1;CSNK2B;ERG;TNIK;UBA52;EPHA3;STK39;STK4;STK3;UGCG;GRK2;GRK5;STK38;ST8SIA4;STK38L;ATG5;CDK17;LYN;CDK19;YES1;UBE2I;NEK7;OGA;DCLK1;PTK2;PTPRD;CDK6;STK24;PTPRA;UST;CPE;CDK14;BMPR1A;FGFR1;UBE2M;GSK3B;BMPR2;PTPRM;ILK;PTPRK;PPP3CA;SERP1;PPP2R5E;BRD2;PPP2R5A;OXSR1;YWHAZ;DDOST;DAD1;LCK;BIRC6;B4GALT5;PPM1L;ROCK1;ROCK2;PPM1H;NEDD8;PAK1;MAPK8;MAPK1;PTK2B;CSK;FYN;PAK3;PAK2;MAP4K3;ARFGEF1;WWP2;HIPK1;HIPK2;PPP1CA;MAPK10;TAOK3;TAOK1"
+          },
+          {
+            "term": "Phosphorylation (GO:0016310)",
+            "p_adj": 4.7546346929417646e-11,
+            "overlap": "66/429",
+            "genes": "APP;GSK3B;BMPR2;ILK;PIK3CB;RPS6KA5;AKT3;PIM3;BRD2;MAP2K1;PRKCH;DAPK1;PRKCB;DAPK2;PRKCE;DYRK1A;ADAM10;PRKCA;CSNK1D;OXSR1;YWHAZ;LCK;CSNK2B;BIRC6;ERG;TNIK;TOP1;EPHA3;ROCK1;ROCK2;MAPKAP1;STK39;STK4;STK3;PAK1;MAPK8;GRK2;GRK5;STK38;PGK1;STK38L;MAPK1;PTK2B;RICTOR;CSK;FYN;PAK3;PAK2;MAP4K3;CDK17;LYN;CDK19;STAT3;NEK7;HIPK1;DCLK1;PTK2;HIPK2;MAPK10;CDK6;TAOK3;STK24;TAOK1;CDK14;BMPR1A;FGFR1"
+          },
+          {
+            "term": "Regulation Of Translation (GO:0006417)",
+            "p_adj": 6.045005510944174e-11,
+            "overlap": "42/202",
+            "genes": "EIF4A2;APP;CYFIP1;RPL5;DDX6;MTPN;DDX3X;RPL10;RPS27L;MSI2;YBX1;BZW2;BZW1;GSPT1;RBM3;RPS6KA3;RACK1;EIF4H;IGF2BP2;PAIP2;EIF4E;YTHDF3;IGFBP5;DAPK1;PRMT1;SAMD4A;RPL13A;EEF2;EIF1;EIF5;EIF6;CSDE1;SERBP1;HNRNPD;EIF3H;ETF1;EIF3E;RPL26;VIM;EIF1B;EIF3D;EIF4G2"
+          },
+          {
+            "term": "Protein Phosphorylation (GO:0006468)",
+            "p_adj": 8.330872886361788e-11,
+            "overlap": "72/500",
+            "genes": "APP;GSK3B;BMPR2;ILK;IGF1R;RPS6KA3;RPS6KA5;AKT3;PIM3;ERC1;BRD2;MAP2K1;PRKCH;CAMK1D;DAPK1;PRKCB;DAPK2;PRKCE;DYRK1A;ADAM10;PRKCA;CSNK1D;OXSR1;YWHAZ;LCK;CSNK2B;BIRC6;ERG;TNIK;TOP1;EPHA3;DDR2;USP15;ROCK1;CAB39;ROCK2;STK39;STK4;STK3;PAK1;MAPK8;GRK2;GRK5;ERBB4;STK38;STK38L;MAPK1;PTK2B;RICTOR;CSK;FYN;PAK3;PAK2;MAP4K3;CDK17;LYN;MAP3K3;CDK19;NEK7;HIPK1;DCLK1;PTK2;HIPK2;MAPK10;CDK6;TAOK3;STK24;TAOK1;CDK14;FGFR2;BMPR1A;FGFR1"
+          }
+        ]
+      }
+    },
+    "cat2_divergent_seq_conserved_expr": {
+      "n_genes": 993,
+      "threshold_identity": 70.0,
+      "threshold_expr_pctile": 25,
+      "threshold_expr_value": 0.008860248425845757,
+      "top_20_genes": [
+        "PASD1",
+        "FLG",
+        "TSBP1",
+        "LYNX1",
+        "OR5G3",
+        "KLF18",
+        "ZNF77",
+        "RHOXF1",
+        "SRY",
+        "ESX1",
+        "CMTM1",
+        "SCAND3",
+        "COX8C",
+        "IL3",
+        "MUC16",
+        "AKAP14",
+        "DNAAF8",
+        "KHDC3L",
+        "DUX4",
+        "IL31"
+      ],
+      "go": {
+        "n_genes": 987,
+        "n_terms": 6,
+        "top_terms": [
+          {
+            "term": "Detection Of Chemical Stimulus Involved In Sensory Perception Of Taste (GO:0050912)",
+            "p_adj": 0.00026311862567325557,
+            "overlap": "13/45",
+            "genes": "TAS2R60;TAS2R7;TAS2R40;RTP3;TAS2R41;TAS2R42;TAS2R16;TAS2R38;TAS2R39;TAS1R2;TAS2R1;TAS2R3;TAS2R4"
+          },
+          {
+            "term": "Detection Of Chemical Stimulus Involved In Sensory Perception Of Bitter Taste (GO:0001580)",
+            "p_adj": 0.00030093937301670743,
+            "overlap": "12/41",
+            "genes": "TAS2R60;TAS2R7;TAS2R40;RTP3;TAS2R41;TAS2R42;TAS2R1;TAS2R16;TAS2R38;TAS2R3;TAS2R39;TAS2R4"
+          },
+          {
+            "term": "Sensory Perception Of Bitter Taste (GO:0050913)",
+            "p_adj": 0.00030093937301670743,
+            "overlap": "12/42",
+            "genes": "TAS2R60;TAS2R7;TAS2R40;RTP3;TAS2R41;TAS2R42;TAS2R1;TAS2R16;TAS2R38;TAS2R3;TAS2R39;TAS2R4"
+          },
+          {
+            "term": "Defense Response To Bacterium (GO:0042742)",
+            "p_adj": 0.03011317330402,
+            "overlap": "24/204",
+            "genes": "WFDC12;CHGA;WFDC11;WFDC9;TRAV27;DEFB119;DEFB118;RNASE10;DEFB128;IL23R;DEFB135;RNASE12;DEFB110;WFDC5;CST11;NLRP10;IFNE;IL12B;IL12A;WFDC10A;EPPIN;LALBA;WFDC13;GALP"
+          },
+          {
+            "term": "Axoneme Assembly (GO:0035082)",
+            "p_adj": 0.0464502064131632,
+            "overlap": "9/41",
+            "genes": "CRNN;RP1L1;LRGUK;RP1;DNAAF3;JHY;PIERCE2;LRRC43;PIERCE1"
+          },
+          {
+            "term": "Regulation Of Acrosome Reaction (GO:0060046)",
+            "p_adj": 0.0472610257049178,
+            "overlap": "5/12",
+            "genes": "FAM170B;SPINK13;CCDC87;IQCF1;ZP2"
+          },
+          {
+            "term": "Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042509)",
+            "p_adj": 0.0652646705102429,
+            "overlap": "11/65",
+            "genes": "IL21;TNFSF18;IL4;IL3;CSF2;IL23R;IL31RA;IL12B;IL12A;IL2;IL22RA2"
+          },
+          {
+            "term": "Positive Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042531)",
+            "p_adj": 0.0652646705102429,
+            "overlap": "10/55",
+            "genes": "IL21;TNFSF18;IL4;IL3;CSF2;IL23R;IL31RA;IL12B;IL12A;IL2"
+          },
+          {
+            "term": "Regulation Of NK T Cell Activation (GO:0051133)",
+            "p_adj": 0.2041763503553151,
+            "overlap": "3/5",
+            "genes": "IL23R;IL12B;IL12A"
+          },
+          {
+            "term": "Positive Regulation Of Adaptive Immune Response Based On Somatic Recombination Of Immune Receptors Built From Immunoglobulin Superfamily Domains (GO:0002824)",
+            "p_adj": 0.2849202514428716,
+            "overlap": "4/14",
+            "genes": "NLRP10;IL23R;CLEC6A;IL12B"
+          }
+        ]
+      }
+    }
+  },
+  "data_summary": {
+    "n_genes_total": 16959,
+    "n_seq_usable": 16324
+  }
+}

@@ -1,0 +1,51 @@
+cell_type,rank,gene,loading,direction
+smooth muscle cell,1,PRKG1,-0.6308631328142286,↓mouse
+smooth muscle cell,2,MGP,-0.6093649266602463,↓mouse
+smooth muscle cell,3,TPM1,-0.5481015702444816,↓mouse
+smooth muscle cell,4,SRGN,0.4951166037174145,↑mouse
+smooth muscle cell,5,TAGLN,-0.4818777488042182,↓mouse
+smooth muscle cell,6,PDE3A,-0.45618473234443374,↓mouse
+smooth muscle cell,7,CALD1,-0.4351151848324059,↓mouse
+smooth muscle cell,8,DCN,-0.43316760337629795,↓mouse
+smooth muscle cell,9,PECAM1,0.4122174728594554,↑mouse
+smooth muscle cell,10,FLT1,0.40181260235234434,↑mouse
+hepatocyte,1,RPL10,0.5559789944127975,↑mouse
+hepatocyte,2,RPS2,0.5415127387623927,↑mouse
+hepatocyte,3,RPL13,0.5368935451506784,↑mouse
+hepatocyte,4,RPS18,0.5338995177642651,↑mouse
+hepatocyte,5,RPS8,0.5240735080464569,↑mouse
+hepatocyte,6,RPS6,0.5131910181633187,↑mouse
+hepatocyte,7,RPL19,0.5078368496873754,↑mouse
+hepatocyte,8,RPS27A,0.5051812037393298,↑mouse
+hepatocyte,9,RPS14,0.5046966429407649,↑mouse
+hepatocyte,10,RPL3,0.5037886349507557,↑mouse
+endothelial cell,1,TAGLN,0.5880492010392946,↑mouse
+endothelial cell,2,ACTA2,0.5528590876375667,↑mouse
+endothelial cell,3,MYL9,0.5203037262908052,↑mouse
+endothelial cell,4,TPM2,0.5088394266730081,↑mouse
+endothelial cell,5,RGS5,0.4122497307943469,↑mouse
+endothelial cell,6,MYH11,0.40813976768290994,↑mouse
+endothelial cell,7,S100A10,-0.3997448151681908,↓mouse
+endothelial cell,8,EMP1,-0.3807164954169105,↓mouse
+endothelial cell,9,TM4SF1,-0.3487054896103833,↓mouse
+endothelial cell,10,LRMDA,-0.3409627760210583,↓mouse
+non-classical monocyte,1,CD74,-0.7247661215131287,↓mouse
+non-classical monocyte,2,LYZ,-0.5529666004421834,↓mouse
+non-classical monocyte,3,SYNE2,0.5037232864676049,↑mouse
+non-classical monocyte,4,HLA-DRA,-0.4278940583751454,↓mouse
+non-classical monocyte,5,AIF1,-0.41626282234440054,↓mouse
+non-classical monocyte,6,GPX1,-0.4098427390608813,↓mouse
+non-classical monocyte,7,EREG,-0.3892933809733249,↓mouse
+non-classical monocyte,8,CBLB,0.3699298318753677,↑mouse
+non-classical monocyte,9,ACTB,-0.3661792875930314,↓mouse
+non-classical monocyte,10,FLT3,-0.3584195479844706,↓mouse
+"CD8-positive, alpha-beta T cell",1,IGKC,-0.5811420406120612,↓mouse
+"CD8-positive, alpha-beta T cell",2,S100A8,0.4612971209375829,↑mouse
+"CD8-positive, alpha-beta T cell",3,JCHAIN,-0.458491806291173,↓mouse
+"CD8-positive, alpha-beta T cell",4,IL7R,-0.3989153206938484,↓mouse
+"CD8-positive, alpha-beta T cell",5,FYN,-0.3974168199909369,↓mouse
+"CD8-positive, alpha-beta T cell",6,SYTL3,-0.39205504110430633,↓mouse
+"CD8-positive, alpha-beta T cell",7,LRMDA,0.371267383540666,↑mouse
+"CD8-positive, alpha-beta T cell",8,CXCR4,-0.3697692936288689,↓mouse
+"CD8-positive, alpha-beta T cell",9,ISG20,-0.35872368867140625,↓mouse
+"CD8-positive, alpha-beta T cell",10,BTG1,-0.3525675160438638,↓mouse

@@ -1,0 +1,113 @@
+{
+  "diagnostic": "HCA-vs-Tabula within-human centroid stability check",
+  "date": "2026-03-15",
+  "purpose": "Distinguish Hypothesis A (MCA sparse) vs B (Tabula batch effect) after T1-A failure (p=0.542)",
+  "comparison_a": {
+    "name": "HCA human vs Tabula Sapiens human",
+    "type": "within-human centroid stability",
+    "n_types": 6,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "endothelial cell",
+      "hepatocyte",
+      "macrophage"
+    ],
+    "n_genes": 16959,
+    "p_value": 0.0029997000299970002,
+    "distance": 14.31705629283679,
+    "obs_null_ratio": 0.7280671588986555,
+    "scaling": 0.3002107858253615,
+    "null_median": 19.664472044713772,
+    "null_mean": 19.051938787335505,
+    "n_permutations": 10000,
+    "pca_components": 6,
+    "pca_variance": 0.9882703423500061,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 4.671819232172102,
+        "pct_ssr": 10.647915481256923
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 4.303844052519881,
+        "pct_ssr": 9.036611007605645
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 3.6020572636477297,
+        "pct_ssr": 6.329854981638898
+      },
+      "endothelial cell": {
+        "magnitude": 6.27312441843831,
+        "pct_ssr": 19.19819229366926
+      },
+      "hepatocyte": {
+        "magnitude": 9.02440951536227,
+        "pct_ssr": 39.731057486852364
+      },
+      "macrophage": {
+        "magnitude": 5.5553810602863445,
+        "pct_ssr": 15.056368748976912
+      }
+    }
+  },
+  "comparison_b": {
+    "name": "Tabula human vs Tabula mouse (same N types)",
+    "type": "cross-species (primary result restricted)",
+    "n_types": 6,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "endothelial cell",
+      "hepatocyte",
+      "macrophage"
+    ],
+    "n_genes": 16959,
+    "p_value": 0.0022997700229977,
+    "distance": 12.427336431363965,
+    "obs_null_ratio": 0.3165590104695723,
+    "scaling": 1.0700846782970308,
+    "null_median": 39.257566584282976,
+    "null_mean": 37.02689501029455,
+    "n_permutations": 10000,
+    "pca_components": 7,
+    "pca_variance": 0.9590449929237366,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 6.076944297954207,
+        "pct_ssr": 23.91191728855655
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 3.7924126501305593,
+        "pct_ssr": 9.312688184799466
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 0.4258115864891161,
+        "pct_ssr": 0.11740290355650135
+      },
+      "endothelial cell": {
+        "magnitude": 2.4883757362094547,
+        "pct_ssr": 4.009366936064272
+      },
+      "hepatocyte": {
+        "magnitude": 1.7252650237222826,
+        "pct_ssr": 1.9273275285350722
+      },
+      "macrophage": {
+        "magnitude": 9.683861644776522,
+        "pct_ssr": 60.72129715848814
+      }
+    }
+  },
+  "interpretation": {
+    "verdict": "A_SUPPORTED",
+    "detail": "HYPOTHESIS A SUPPORTED: HCA-vs-Tabula is significant (obs/null < 0.80, p < 0.05). Human centroids are geometrically stable across independent atlases. MCA failure is technology-specific. Primary result survives \u2014 need 10x mouse replication.",
+    "decision_logic": {
+      "near_null": "obs/null >= 0.95 \u2192 Hypothesis B (Tabula idiosyncratic)",
+      "significant": "obs/null < 0.80 AND p < 0.05 \u2192 Hypothesis A (MCA sparse)",
+      "ambiguous": "otherwise \u2192 ambiguous"
+    }
+  },
+  "random_seed": 42
+}

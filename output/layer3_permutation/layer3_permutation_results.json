@@ -1,0 +1,13 @@
+{
+  "observed_mean_r": 0.9534834020961918,
+  "permutation_mean": 0.9583248243708195,
+  "permutation_std": 0.004313206471852233,
+  "empirical_p": 0.8662133786621338,
+  "n_permutations": 10000,
+  "n_types": 35,
+  "date_run": "2026-05-08",
+  "per_type_r_min": 0.7906996297722981,
+  "per_type_r_max": 0.9985440359566873,
+  "source_file": "output/mechanistic/ellipsoid_alignment/35type_eigenvalue_conservation.csv",
+  "seed": 42
+}

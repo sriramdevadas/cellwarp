@@ -1,0 +1,12 @@
+{
+  "spearman_rho_mean": -0.0380952380952381,
+  "spearman_p_mean": 0.8279993551527559,
+  "spearman_rho_human": 0.061344537815126055,
+  "spearman_p_human": 0.7262869887944373,
+  "spearman_rho_mouse": -0.18711484593837538,
+  "spearman_p_mouse": 0.2817817952747964,
+  "interpretation": "rho=-0.038 (|rho|<0.3): No substantial correlation. Within-type variance does NOT explain Procrustes residual magnitude. Rigidity score measures genuine cross-species program divergence \u2014 stronger claim.",
+  "human_mouse_variance_rho": 0.3725490196078432,
+  "human_mouse_variance_p": 0.027523677734465145,
+  "n_cell_types": 35
+}

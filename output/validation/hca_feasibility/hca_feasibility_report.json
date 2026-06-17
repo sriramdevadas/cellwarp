@@ -1,0 +1,130 @@
+{
+  "total_hca_cells": 6970751,
+  "unique_datasets": 334,
+  "unique_collections": 157,
+  "types_pass": 33,
+  "types_borderline": 0,
+  "types_absent": 2,
+  "types_strong": 32,
+  "types_pass_list": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "adventitial cell",
+    "basal cell",
+    "classical monocyte",
+    "endothelial cell",
+    "enterocyte of epithelium of large intestine",
+    "epithelial cell",
+    "fibroblast",
+    "fibroblast of cardiac tissue",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "hematopoietic stem cell",
+    "hepatocyte",
+    "intermediate monocyte",
+    "luminal epithelial cell of mammary gland",
+    "macrophage",
+    "mature NK T cell",
+    "mesenchymal stem cell",
+    "mesenchymal stem cell of adipose tissue",
+    "monocyte",
+    "myeloid dendritic cell",
+    "myeloid leukocyte",
+    "natural killer cell",
+    "neutrophil",
+    "non-classical monocyte",
+    "pancreatic acinar cell",
+    "pancreatic ductal cell",
+    "plasma cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "types_borderline_list": [],
+  "types_absent_list": [
+    "bladder urothelial cell",
+    "large intestine goblet cell"
+  ],
+  "recommended_collection": {
+    "name": "A spatially resolved single cell genomic atlas of the adult human breast",
+    "total_cells": 519037,
+    "n_types_500": 10,
+    "n_types_200": 12,
+    "top_assay": "10x 3' v3",
+    "n_tissues": 1,
+    "n_datasets": 2
+  },
+  "recommended_collection_count": 1,
+  "technology": "10x 3' v3",
+  "institution": "see collection metadata",
+  "independent_of_tabula": true,
+  "final_intersection_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "basal cell",
+    "endothelial cell",
+    "enterocyte of epithelium of large intestine",
+    "epithelial cell",
+    "fibroblast",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "hepatocyte",
+    "luminal epithelial cell of mammary gland",
+    "macrophage",
+    "mesenchymal stem cell",
+    "monocyte",
+    "myeloid dendritic cell",
+    "natural killer cell",
+    "neutrophil",
+    "pancreatic acinar cell",
+    "pancreatic ductal cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "final_intersection_count": 23,
+  "final_intersection_at_500": 19,
+  "all_original_6_covered": true,
+  "original_6_coverage": {
+    "B cell": {
+      "hca_count": 400779,
+      "hca_status": "PASS",
+      "in_intersection": true
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "hca_count": 489739,
+      "hca_status": "PASS",
+      "in_intersection": true
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "hca_count": 382331,
+      "hca_status": "PASS",
+      "in_intersection": true
+    },
+    "endothelial cell": {
+      "hca_count": 320724,
+      "hca_status": "PASS",
+      "in_intersection": true
+    },
+    "hepatocyte": {
+      "hca_count": 16708,
+      "hca_status": "PASS",
+      "in_intersection": true
+    },
+    "macrophage": {
+      "hca_count": 544442,
+      "hca_status": "PASS",
+      "in_intersection": true
+    }
+  },
+  "cd4_note": "MCA absent, HCA covered, MCA computational rescue pending",
+  "weak_types": [
+    "CD4-positive, alpha-beta T cell",
+    "basal cell",
+    "fibroblast",
+    "hepatocyte"
+  ],
+  "feasibility_verdict": "FEASIBLE"
+}

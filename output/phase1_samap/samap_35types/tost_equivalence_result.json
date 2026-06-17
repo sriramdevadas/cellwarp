@@ -1,0 +1,19 @@
+{
+  "analysis": "TOST equivalence test \u2014 SAMap vs CellWarp rigidity",
+  "input_file": "output/phase1_samap/samap_35types/samap_rigidity_correlation.json",
+  "observed_spearman_rho": 0.24677871148459385,
+  "n": 35,
+  "equivalence_bound": 0.5,
+  "fisher_z_obs": 0.2519797063734948,
+  "fisher_z_bound": 0.5493061443340549,
+  "se": 0.17677669529663687,
+  "df": 32,
+  "t1": 4.53275726963312,
+  "p1": 3.841714273151413e-05,
+  "t2": 1.681932324063627,
+  "p2": 0.05115864207106307,
+  "tost_p": 0.05115864207106307,
+  "alpha": 0.05,
+  "equivalence_declared": false,
+  "random_seed": 42
+}

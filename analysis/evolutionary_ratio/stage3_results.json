@@ -1,0 +1,23 @@
+{
+  "PanSci": {
+    "status": "structurally_feasible_but_computationally_impractical",
+    "n_donors": 75,
+    "n_types": 13,
+    "types": [
+      "B cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hepatocyte",
+      "large intestine goblet cell",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "plasma cell",
+      "smooth muscle cell"
+    ],
+    "reason": "PanSci MTX format requires loading 50+ GB of count data. Metadata confirms donor structure but computation requires pre-processing pipeline not yet built."
+  }
+}

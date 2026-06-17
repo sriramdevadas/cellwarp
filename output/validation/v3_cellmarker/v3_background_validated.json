@@ -1,0 +1,33 @@
+{
+  "validation": "CellMarker background \u2014 validated reconstruction",
+  "date": "2026-03-22",
+  "method": "sorted-by-closeness, 10 nearest expression-matched per identity gene",
+  "foreground": {
+    "k": 34,
+    "K": 257,
+    "n": 500,
+    "N": 16959,
+    "expected": 7.577097706232679,
+    "fold": 4.487206225680934,
+    "p_value": 2.096811988750795e-13
+  },
+  "background": {
+    "n_bg_genes": 2238,
+    "universe_size": 2738,
+    "n_cm_in_universe": 56,
+    "k": 34,
+    "K": 56,
+    "n": 500,
+    "expected": 10.226442658875092,
+    "fold": 3.3247142857142857,
+    "p_value": 1.1476529395303218e-12
+  },
+  "stored_comparison": {
+    "stored_bg": 1964,
+    "stored_universe": 2464,
+    "stored_cm": 52,
+    "stored_fold": 3.222,
+    "stored_p": 1.163e-12
+  },
+  "reconstruction_note": "Original code lost (ISSUE-126). Sorted-by-closeness is fully deterministic and selects the best expression matches. The fold differs from stored (3.33 vs 3.22) because different background genes bring different CellMarker genes into the universe. The scientific conclusion is unchanged: enrichment survives expression matching at p \u2248 10\u207b\u00b9\u00b2."
+}

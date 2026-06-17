@@ -1,0 +1,9 @@
+metric,6_type,35_type
+Cell types,6,35
+PCA components,7,33
+Cumulative variance,95.9%,95.2%
+Procrustes distance,12.4273,61.1530
+SSR,154.4380,3739.6888
+Scaling factor,1.0701,0.9023
+Permutation p-value,0.003500,0.000100
+Significant (p<0.01),True,True

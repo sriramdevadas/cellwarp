@@ -1,0 +1,136 @@
+{
+  "t1a_procrustes": {
+    "distance": 32.82340279652071,
+    "p_value": 0.5423457654234577,
+    "obs_null_ratio": 1.0030533272695865,
+    "scaling": 0.26729214442902316,
+    "n_types": 17,
+    "n_components": 14,
+    "cumulative_variance": 0.9569635987281799
+  },
+  "ranking_comparison": {
+    "rho": 0.12009803921568628,
+    "p_value": 0.6461426985863068,
+    "n_matched": 17,
+    "target_rho": 0.7,
+    "pass": false
+  },
+  "t1b_obs_null_comparison": {
+    "t1a_obs_null": 1.0030533272695865,
+    "t1a_n_types": 17,
+    "tabula_35_obs_null": 0.5222043484425903,
+    "tabula_6_obs_null": 0.3165582196086514
+  },
+  "per_type_residuals": {
+    "B cell": {
+      "t1a_residual": 3.884018848758958,
+      "mca_cells": 2047,
+      "hca_cells": 5000
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "t1a_residual": 3.42211811778991,
+      "mca_cells": 1019,
+      "hca_cells": 5000
+    },
+    "endothelial cell": {
+      "t1a_residual": 4.6316203917702925,
+      "mca_cells": 1464,
+      "hca_cells": 5000
+    },
+    "enterocyte of epithelium of large intestine": {
+      "t1a_residual": 13.875102875704295,
+      "mca_cells": 713,
+      "hca_cells": 2016
+    },
+    "epithelial cell": {
+      "t1a_residual": 7.282305114827002,
+      "mca_cells": 1248,
+      "hca_cells": 5000
+    },
+    "hematopoietic precursor cell": {
+      "t1a_residual": 4.179044743056602,
+      "mca_cells": 1022,
+      "hca_cells": 5000
+    },
+    "luminal epithelial cell of mammary gland": {
+      "t1a_residual": 3.2280035382372545,
+      "mca_cells": 794,
+      "hca_cells": 5000
+    },
+    "macrophage": {
+      "t1a_residual": 7.081185028758883,
+      "mca_cells": 2405,
+      "hca_cells": 5000
+    },
+    "mesenchymal stem cell": {
+      "t1a_residual": 6.692467520540542,
+      "mca_cells": 1677,
+      "hca_cells": 5000
+    },
+    "monocyte": {
+      "t1a_residual": 5.273229320517669,
+      "mca_cells": 323,
+      "hca_cells": 5000
+    },
+    "myeloid dendritic cell": {
+      "t1a_residual": 16.270543126683357,
+      "mca_cells": 903,
+      "hca_cells": 1347
+    },
+    "natural killer cell": {
+      "t1a_residual": 6.470636101221802,
+      "mca_cells": 329,
+      "hca_cells": 5000
+    },
+    "neutrophil": {
+      "t1a_residual": 10.025837960683361,
+      "mca_cells": 1128,
+      "hca_cells": 5000
+    },
+    "pancreatic acinar cell": {
+      "t1a_residual": 4.832785317855528,
+      "mca_cells": 272,
+      "hca_cells": 5000
+    },
+    "pancreatic ductal cell": {
+      "t1a_residual": 13.172677662033806,
+      "mca_cells": 236,
+      "hca_cells": 5000
+    },
+    "smooth muscle cell": {
+      "t1a_residual": 3.7211753850821774,
+      "mca_cells": 278,
+      "hca_cells": 5000
+    },
+    "stromal cell": {
+      "t1a_residual": 3.8876368265550005,
+      "mca_cells": 6144,
+      "hca_cells": 5000
+    }
+  },
+  "original_6_in_replication": {
+    "count": 4,
+    "types": [
+      "B cell",
+      "CD8-positive, alpha-beta T cell",
+      "endothelial cell",
+      "macrophage"
+    ],
+    "missing": [
+      "CD4-positive, alpha-beta T cell",
+      "hepatocyte"
+    ]
+  },
+  "cd4_rescue": {
+    "cd4_marker_present": true,
+    "cd8a_marker_present": true,
+    "cd8b_marker_present": false,
+    "n_generic_t_cells": 1984,
+    "n_classified_cd4": 136,
+    "n_classified_cd8": 713,
+    "n_ambiguous_both": 157,
+    "n_neither": 978
+  },
+  "mca_hepatocyte_cells": 0,
+  "excluded_tissues": []
+}

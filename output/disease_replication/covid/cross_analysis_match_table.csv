@@ -1,0 +1,16 @@
+covid_type,xs_type,covid_deformation,xs_residual,match_quality
+B cell,B cell,6.911415507376134,9.84610773899485,exact
+"CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell",9.87901154282232,10.211698233902776,exact
+"CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell",9.214620257864496,5.376250842092007,exact
+basal cell,basal cell,6.276867797930497,12.766119903451395,exact
+endothelial cell,endothelial cell,9.08149474484182,5.971297637181498,exact
+epithelial cell,epithelial cell,20.154878124265572,16.26737024211543,exact
+fibroblast,fibroblast,6.094331492383443,7.507949833964307,exact
+hematopoietic stem cell,hematopoietic stem cell,5.202826594199911,14.948369450470636,exact
+macrophage,macrophage,10.52682271336637,9.878526364594377,exact
+monocyte,monocyte,8.4154520717945,8.722376854060062,exact
+myeloid dendritic cell,myeloid dendritic cell,9.636267853455498,8.898942576915942,exact
+natural killer cell,natural killer cell,5.017706263935967,8.686953921396096,exact
+neutrophil,neutrophil,6.123746347831131,11.597874253364406,exact
+plasma cell,plasma cell,6.321695897450571,11.0837158067887,exact
+smooth muscle cell,smooth muscle cell,6.250870067849542,6.705384890826327,exact

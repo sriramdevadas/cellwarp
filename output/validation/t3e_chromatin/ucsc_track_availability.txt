@@ -1,0 +1,259 @@
+================================================================================
+UCSC phastCons Track Availability Report — hg38
+================================================================================
+Date checked: 2026-03-15
+Checked by: automated verification (no downloads)
+Method: HTTP HEAD/GET requests to hgdownload.soe.ucsc.edu, 3 retries each
+
+================================================================================
+SUMMARY
+================================================================================
+
+  Track             Exists?   bigWig?   Size (exact bytes)   Mus musculus?
+  ─────────────────────────────────────────────────────────────────────────
+  phastCons20way    YES       YES       7,117,778,282 (6.6G) YES (mm10)
+  phastCons30way    YES       YES       7,077,152,013 (6.6G) YES (mm10)
+  phastCons100way   YES       YES       5,886,377,734 (5.5G) YES (mm10)
+
+ALL THREE TRACKS ARE AVAILABLE. All include Mus musculus (mm10).
+
+================================================================================
+TRACK 1: phastCons20way (Placental Mammals)
+================================================================================
+
+URL: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons20way/
+
+Directory listing — HTTP 200 OK
+
+Files:
+  hg38.phastCons20way.bw         6.6G   2015-04-17   bigWig (genome-wide)
+  hg38.phastCons20way.wigFix.gz  3.2G   2015-04-15   whole-genome wiggle (fixed-step)
+  hg38.phastCons20way.mod        916B   2015-04-15   phylogenetic model file
+  md5sum.txt                     179B   2015-04-17   checksum file
+
+bigWig verified via HEAD request:
+  HTTP/1.1 200 OK
+  Content-Length: 7,117,778,282 bytes (6.63 GB)
+  Last-Modified: 2015-04-17
+
+Per-chromosome files: NO — only a single genome-wide wigFix.gz file.
+  (No per-chromosome subdirectory.)
+
+md5sum file: YES
+
+README: Not in directory listing (UCSC has a shared README at parent level).
+
+Species included (20 species, from .mod file):
+  1.  hg38       Homo sapiens (human)
+  2.  panTro4    Pan troglodytes (chimpanzee)
+  3.  panPan1    Pan paniscus (bonobo)
+  4.  gorGor3    Gorilla gorilla (gorilla)
+  5.  ponAbe2    Pongo abelii (orangutan)
+  6.  nomLeu3    Nomascus leucogenys (gibbon)
+  7.  rheMac3    Macaca mulatta (rhesus macaque)
+  8.  macFas5    Macaca fascicularis (crab-eating macaque)
+  9.  papAnu2    Papio anubis (olive baboon)
+  10. chlSab2    Chlorocebus sabaeus (green monkey)
+  11. nasLar1    Nasalis larvatus (proboscis monkey)
+  12. rhiRox1    Rhinopithecus roxellana (golden snub-nosed monkey)
+  13. calJac3    Callithrix jacchus (marmoset)
+  14. saiBol1    Saimiri boliviensis (squirrel monkey)
+  15. tarSyr2    Tarsius syrichta (tarsier)
+  16. micMur1    Microcebus murinus (mouse lemur)
+  17. otoGar3    Otolemur garnettii (bushbaby)
+  18. tupBel1    Tupaia belangeri (treeshrew)
+  19. mm10       Mus musculus (MOUSE) <<<
+  20. canFam3    Canis familiaris (dog)
+
+NOTE: This is heavily primate-biased (17/20 primates + treeshrew + mouse + dog).
+Only 3 non-primate mammals. Mouse IS included but this alignment is narrow
+taxonomically. For cross-species conservation scoring, 100way may be more
+informative as it spans vertebrates broadly.
+
+================================================================================
+TRACK 2: phastCons30way (30 species)
+================================================================================
+
+URL: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons30way/
+
+Directory listing — HTTP 200 OK
+
+Files:
+  hg38.phastCons30way.bw         6.6G   2017-11-06   bigWig (genome-wide)
+  hg38.30way.phastCons/          dir    2017-11-07   per-chromosome wigFix.gz files
+  hg38.phastCons30way.mod        1.2K   2017-11-03   phylogenetic model file
+  md5sum.txt                     115B   2017-11-07   checksum file
+
+bigWig verified via HEAD request:
+  HTTP/1.1 200 OK
+  Content-Length: 7,077,152,013 bytes (6.59 GB)
+  Last-Modified: 2017-11-06
+
+Per-chromosome files: YES — hg38.30way.phastCons/ directory contains ~700+ files
+  Examples: chr1.phastCons30way.wigFix.gz (253M)
+            chr2.phastCons30way.wigFix.gz (264M)
+            chrX.phastCons30way.wigFix.gz (192M)
+            chrM.phastCons30way.wigFix.gz (11K)
+  Includes alt contigs and unplaced scaffolds.
+
+md5sum file: YES
+
+Species included (30 species, from .mod file):
+  1.  hg38       Homo sapiens (human)
+  2.  panTro5    Pan troglodytes (chimpanzee)
+  3.  panPan2    Pan paniscus (bonobo)
+  4.  gorGor5    Gorilla gorilla (gorilla)
+  5.  ponAbe2    Pongo abelii (orangutan)
+  6.  nomLeu3    Nomascus leucogenys (gibbon)
+  7.  rheMac8    Macaca mulatta (rhesus macaque)
+  8.  macFas5    Macaca fascicularis (crab-eating macaque)
+  9.  macNem1    Macaca nemestrina (pig-tailed macaque)
+  10. cerAty1    Cercocebus atys (sooty mangabey)
+  11. papAnu3    Papio anubis (olive baboon)
+  12. chlSab2    Chlorocebus sabaeus (green monkey)
+  13. manLeu1    Mandrillus leucophaeus (drill)
+  14. nasLar1    Nasalis larvatus (proboscis monkey)
+  15. colAng1    Colobus angolensis (Angolan colobus)
+  16. rhiRox1    Rhinopithecus roxellana (golden snub-nosed monkey)
+  17. rhiBie1    Rhinopithecus bieti (black snub-nosed monkey)
+  18. calJac3    Callithrix jacchus (marmoset)
+  19. saiBol1    Saimiri boliviensis (squirrel monkey)
+  20. cebCap1    Cebus capucinus (capuchin)
+  21. aotNan1    Aotus nancymaae (owl monkey)
+  22. tarSyr2    Tarsius syrichta (tarsier)
+  23. micMur3    Microcebus murinus (mouse lemur)
+  24. proCoq1    Propithecus coquereli (Coquerel's sifaka)
+  25. eulMac1    Eulemur macaco (black lemur)
+  26. eulFla1    Eulemur flavifrons (blue-eyed black lemur)
+  27. otoGar3    Otolemur garnettii (bushbaby)
+  28. mm10       Mus musculus (MOUSE) <<<
+  29. canFam3    Canis familiaris (dog)
+  30. dasNov3    Dasypus novemcinctus (armadillo)
+
+NOTE: Even more primate-heavy than 20way (26/30 primates + mouse + dog + armadillo).
+Mouse IS included. This alignment is designed to resolve primate-specific
+conservation patterns. The 3 non-primate outgroups (mouse, dog, armadillo)
+anchor deep divergence.
+
+================================================================================
+TRACK 3: phastCons100way (100 Vertebrates)
+================================================================================
+
+URL: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons100way/
+
+Directory listing — HTTP 200 OK
+
+Files:
+  hg38.phastCons100way.bw        5.5G   2015-05-08   bigWig (genome-wide)
+  hg38.100way.phastCons/         dir    2015-05-11   per-chromosome wigFix.gz files
+  hg38.phastCons100way.mod       3.2K   2015-05-07   phylogenetic model file
+  md5sum.txt                     117B   2015-05-11   checksum file
+
+bigWig verified via HEAD request:
+  HTTP/1.1 200 OK
+  Content-Length: 5,886,377,734 bytes (5.48 GB)
+  Last-Modified: 2015-05-08
+
+Per-chromosome files: YES — hg38.100way.phastCons/ directory
+
+md5sum file: YES
+
+Species included (100 species, from .mod file — full list):
+  PRIMATES:
+    hg38, panTro4, gorGor3, ponAbe2, nomLeu3, rheMac3, macFas5,
+    papAnu2, chlSab2, calJac3, saiBol1, otoGar3
+  TREESHREW:
+    tupChi1
+  RODENTS:
+    speTri2 (ground squirrel), jacJac1 (jerboa), micOch1 (prairie vole),
+    criGri1 (Chinese hamster), mesAur1 (golden hamster),
+    mm10 (MOUSE) <<<, rn6 (rat), hetGla2 (naked mole-rat),
+    cavPor3 (guinea pig), chiLan1 (chinchilla), octDeg1 (degu)
+  LAGOMORPHS:
+    oryCun2 (rabbit), ochPri3 (pika)
+  ARTIODACTYLS:
+    susScr3 (pig), vicPac2 (alpaca), camFer1 (Bactrian camel),
+    turTru2 (dolphin), orcOrc1 (orca), panHod1 (Tibetan antelope),
+    bosTau8 (cow), oviAri3 (sheep), capHir1 (goat)
+  PERISSODACTYLS:
+    equCab2 (horse), cerSim1 (white rhino)
+  CARNIVORES:
+    felCat8 (cat), canFam3 (dog), musFur1 (ferret), ailMel1 (panda),
+    odoRosDiv1 (walrus), lepWed1 (Weddell seal)
+  BATS:
+    pteAle1, pteVam1, eptFus1, myoDav1, myoLuc2
+  INSECTIVORES:
+    eriEur2 (hedgehog), sorAra2 (shrew)
+  AFROTHERIA:
+    conCri1 (tenrec), loxAfr3 (elephant), eleEdw1 (elephant shrew),
+    triMan1 (manatee), chrAsi1 (Cape golden mole), echTel2 (tenrec),
+    oryAfe1 (aardvark)
+  XENARTHRA:
+    dasNov3 (armadillo)
+  MARSUPIALS:
+    monDom5 (opossum), sarHar1 (Tasmanian devil), macEug2 (wallaby)
+  MONOTREMES:
+    ornAna1 (platypus)
+  BIRDS:
+    colLiv1 (pigeon), falChe1, falPer1 (falcons), ficAlb2 (flycatcher),
+    zonAlb1 (white-throated sparrow), geoFor1 (finch), taeGut2 (zebra finch),
+    pseHum1 (Tibetan ground-tit), melUnd1 (budgerigar), amaVit1 (parrot),
+    araMac1 (scarlet macaw), anaPla1 (mallard), galGal4 (chicken),
+    melGal1 (turkey)
+  REPTILES:
+    allMis1 (alligator), cheMyd1 (turtle), chrPic2 (painted turtle),
+    pelSin1 (softshell turtle), apaSpi1 (spiny softshell turtle),
+    anoCar2 (anole lizard)
+  AMPHIBIANS:
+    xenTro7 (frog)
+  FISH:
+    latCha1 (coelacanth), tetNig2 (tetraodon), fr3 (fugu),
+    takFla1, oreNil2 (Nile tilapia), neoBri1, hapBur1, mayZeb1,
+    punNye1 (cichlids), oryLat2 (medaka), xipMac1 (platyfish),
+    gasAcu1 (stickleback), gadMor1 (cod), danRer10 (zebrafish),
+    astMex1 (cave fish)
+  JAWLESS FISH:
+    lepOcu1 (lamprey), petMar2 (sea lamprey)
+
+Mouse IS included (mm10). This alignment spans the full vertebrate tree.
+
+================================================================================
+RECOMMENDATION FOR CellWarp T3-E CHROMATIN THREAD
+================================================================================
+
+For scoring evolutionary conservation of regulatory elements near genes in
+human-mouse comparison:
+
+  RECOMMENDED: phastCons100way
+  - Broadest taxonomic scope (100 vertebrates)
+  - Includes mouse (mm10) AND many outgroups to calibrate conservation
+  - bigWig format enables fast programmatic access via pyBigWig
+  - Smaller file (5.5G vs 6.6G)
+  - Per-chromosome alternatives available if needed
+  - md5sum available for download verification
+
+  AVOID: phastCons20way and phastCons30way for this purpose
+  - Both are primate-dominated alignments (17/20 and 26/30 primates)
+  - Conservation scores will be inflated for primate-specific elements
+  - Less power to detect deep mammalian conservation patterns
+  - These are designed for primate-specific analysis, not broad mammalian
+    conservation assessment
+
+  ACCESS METHOD: pyBigWig
+  - pip install pyBigWig
+  - Can query specific genomic intervals without downloading full file
+  - Use UCSC remote URL: pyBigWig can open bigWig over HTTP
+  - OR download hg38.phastCons100way.bw (5.5G) for faster local queries
+
+================================================================================
+VERIFICATION CHECKSUMS
+================================================================================
+
+All tracks have md5sum.txt files available for post-download verification:
+  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons20way/md5sum.txt
+  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons30way/md5sum.txt
+  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons100way/md5sum.txt
+
+================================================================================
+END OF REPORT
+================================================================================

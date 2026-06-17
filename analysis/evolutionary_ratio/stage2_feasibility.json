@@ -1,0 +1,51 @@
+{
+  "Sun2023": {
+    "feasible": false,
+    "reason": "No donor/animal ID metadata. Biological replicates merged during processing.",
+    "n_donors": 0
+  },
+  "PanSci": {
+    "feasible": true,
+    "n_donors": 75,
+    "n_types_feasible": 13,
+    "n_overlap_with_primary": 13,
+    "feasible_types": [
+      "epithelial cell",
+      "endothelial cell",
+      "hepatocyte",
+      "T cell",
+      "macrophage",
+      "fibroblast",
+      "B cell",
+      "smooth muscle cell",
+      "large intestine goblet cell",
+      "plasma cell",
+      "monocyte",
+      "myeloid dendritic cell",
+      "granulocyte"
+    ],
+    "overlap_types": [
+      "B cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hepatocyte",
+      "large intestine goblet cell",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "plasma cell",
+      "smooth muscle cell"
+    ],
+    "reason": "Sufficient donors and type overlap"
+  },
+  "CellHint": {
+    "feasible": false,
+    "reason": "Census aggregates 15 datasets with mixed donor metadata. 1 pooled, 14 with individual IDs. Cross-dataset donor IDs not comparable.",
+    "n_datasets": 15,
+    "n_pooled": 1,
+    "n_individual_donor": 14
+  }
+}

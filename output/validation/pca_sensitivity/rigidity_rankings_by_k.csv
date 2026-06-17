@@ -1,0 +1,36 @@
+cell_type,ref (k=33),k=10,k=20,k=33,k=50
+B cell,19,13,10,19,15
+"CD4-positive, alpha-beta T cell",22,27,23,22,20
+"CD8-positive, alpha-beta T cell",1,4,1,1,2
+T cell,29,26,19,29,29
+adventitial cell,10,2,2,10,7
+basal cell,30,23,30,30,16
+bladder urothelial cell,7,12,16,7,6
+classical monocyte,21,25,25,21,21
+endothelial cell,3,1,4,3,1
+enterocyte of epithelium of large intestine,16,20,11,16,10
+epithelial cell,34,21,27,34,35
+fibroblast,8,6,9,8,17
+fibroblast of cardiac tissue,27,15,26,27,25
+granulocyte,9,17,13,9,8
+hematopoietic precursor cell,33,30,34,33,33
+hematopoietic stem cell,32,35,35,32,32
+hepatocyte,4,9,5,4,3
+intermediate monocyte,12,22,20,12,18
+large intestine goblet cell,17,29,15,17,14
+luminal epithelial cell of mammary gland,18,3,3,18,11
+macrophage,20,16,21,20,23
+mature NK T cell,11,19,8,11,19
+mesenchymal stem cell,23,8,22,23,27
+mesenchymal stem cell of adipose tissue,25,28,24,25,31
+monocyte,14,18,12,14,22
+myeloid dendritic cell,15,11,18,15,12
+myeloid leukocyte,26,24,28,26,28
+natural killer cell,13,10,7,13,13
+neutrophil,28,33,29,28,26
+non-classical monocyte,2,14,6,2,9
+pancreatic acinar cell,31,34,32,31,30
+pancreatic ductal cell,6,5,17,6,4
+plasma cell,24,31,31,24,24
+smooth muscle cell,5,7,14,5,5
+stromal cell,35,32,33,35,34

@@ -1,0 +1,30 @@
+{
+  "8fbed309-d3d4-441b-b3ff-e2dcbcec2d35": {
+    "collection": "Anomalous Epithelial Variations and Ectopic Inflammatory Response in Chronic Obstructive Pulmonary Disease",
+    "types_covered": [
+      "macrophage",
+      "CD4-positive, alpha-beta T cell",
+      "endothelial cell",
+      "B cell",
+      "CD8-positive, alpha-beta T cell"
+    ],
+    "cell_counts": {
+      "B cell": 367,
+      "CD4-positive, alpha-beta T cell": 7178,
+      "CD8-positive, alpha-beta T cell": 2599,
+      "endothelial cell": 587,
+      "macrophage": 2287
+    }
+  },
+  "fd072bc3-2dfb-46f8-b4e3-467cb3223182": {
+    "collection": "Mapping the developing human immune system across organs",
+    "types_covered": [
+      "hepatocyte"
+    ],
+    "cell_counts": {
+      "endothelial cell": 26758,
+      "hepatocyte": 12237,
+      "macrophage": 110557
+    }
+  }
+}

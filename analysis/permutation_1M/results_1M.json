@@ -1,0 +1,36 @@
+{
+  "test": "Procrustes permutation test (1M) \u2014 PRIMARY 35-type analysis",
+  "motivation": "tighter p-value bound at 1,000,000 permutations",
+  "observed_procrustes_distance": 61.15299531597359,
+  "obs_null_ratio": 0.5222683641667457,
+  "n_permutations": 1000000,
+  "random_seed": 42,
+  "n_cell_types": 35,
+  "n_pca_components": 33,
+  "n_null_leq_observed": 0,
+  "p_value": 9.99999000001e-07,
+  "p_value_str": "p < 10\u207b\u2076 (exact: 1.00e-06)",
+  "null_distribution_summary": {
+    "mean": 116.93528795267501,
+    "median": 117.09113458085918,
+    "std": 2.149564074627314,
+    "min": 98.88352329331659,
+    "max": 124.59131814124632,
+    "percentile_0_01": 106.4633496132573,
+    "percentile_0_1": 108.74946317170719,
+    "percentile_1": 111.22098562406956,
+    "percentile_5": 113.16048212655376,
+    "percentile_95": 120.184501228705,
+    "percentile_99": 121.2879883417773,
+    "percentile_99_9": 122.37899730495876
+  },
+  "runtime_seconds": 114.1,
+  "prior_10k_result": {
+    "n_permutations": 10000,
+    "p_value": 0.0001,
+    "obs_null_ratio": 0.522,
+    "observed_distance": 61.153,
+    "null_median": 117.105,
+    "note": "From output/phase2/scaled_35types/procrustes_results_35.json"
+  }
+}

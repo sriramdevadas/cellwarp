@@ -1,0 +1,16 @@
+cell_type,in_human_mouse,in_human_macaque,in_human_lemur,in_intersection,notes
+B cell,TRUE,TRUE,TRUE,TRUE,immune - adaptive
+"CD4-positive, alpha-beta T cell",TRUE,TRUE,TRUE,TRUE,immune - adaptive
+"CD8-positive, alpha-beta T cell",TRUE,TRUE,TRUE,TRUE,immune - adaptive
+T cell,TRUE,TRUE,TRUE,TRUE,immune - adaptive (generic)
+endothelial cell,TRUE,TRUE,TRUE,TRUE,vasculature - structural
+fibroblast,TRUE,TRUE,TRUE,TRUE,connective tissue - structural
+macrophage,TRUE,TRUE,TRUE,TRUE,immune - innate
+natural killer cell,TRUE,TRUE,TRUE,TRUE,immune - innate
+monocyte,TRUE,FALSE,TRUE,FALSE,macaque has subtypes only (classical/intermediate/non-classical)
+neutrophil,TRUE,FALSE,TRUE,FALSE,macaque has granulocyte (parent category) instead
+mature NK T cell,TRUE,FALSE,TRUE,FALSE,absent from macaque analysis
+mesenchymal stem cell,TRUE,FALSE,TRUE,FALSE,absent from macaque analysis
+plasma cell,TRUE,FALSE,TRUE,FALSE,absent from macaque analysis
+"enterocyte of epithelium of large intestine",TRUE,FALSE,TRUE,FALSE,absent from macaque analysis
+pancreatic acinar cell,TRUE,FALSE,TRUE,FALSE,absent from macaque analysis

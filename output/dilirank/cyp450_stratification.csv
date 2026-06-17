@@ -1,0 +1,60 @@
+compound_name,matched_name,is_cyp450,deformation
+Acarbose,acarbose,False,13358.066
+Acitretin,acitretin,False,15383.087
+Alaproclate,alaproclate,False,14285.781
+Albendazole,albendazole,True,12449.735
+Amiodarone hydrochloride,amiodarone,True,13214.987
+Atomoxetine hydrochloride,atomoxetine,True,17337.748
+Atorvastatin calcium,atorvastatin,False,17680.955
+Benzbromarone,benzbromarone,False,12281.763
+Bicalutamide,bicalutamide,False,13069.705
+Bosutinib monohydrate,bosutinib,False,12180.966
+Carbamazepine,carbamazepine,True,14601.315
+Clomipramine hydrochloride,clomipramine,True,11552.474
+Clozapine,clozapine,True,10940.894
+Crizotinib,crizotinib,False,15513.11
+Dactinomycin,dactinomycin,False,16501.111
+Danazol,danazol,False,14627.207
+Dantrolene sodium,dantrolene,False,10270.449
+Diclofenac sodium,diclofenac,True,13164.878
+Diflunisal,diflunisal,False,17691.37
+Diltiazem hydrochloride,diltiazem,True,12967.484
+Duloxetine hydrochloride,duloxetine,True,15504.819
+Erlotinib hydrochloride,erlotinib,True,10453.968
+Ethambutol hydrochloride,ethambutol,False,13016.325
+Etodolac,etodolac,False,12405.795
+Exemestane,exemestane,False,13405.213
+Febuxostat,febuxostat,True,14237.817
+Felbamate,felbamate,False,10408.194
+Fluconazole,fluconazole,False,9795.463
+Flutamide,flutamide,True,14564.992
+Gefitinib,gefitinib,False,10214.151
+Imatinib mesylate,imatinib,True,13403.868
+Isotretinoin,isotretinoin,False,16377.874
+Itraconazole,itraconazole,True,14473.176
+Labetalol hydrochloride,labetalol,True,13678.709
+Lamotrigine,lamotrigine,False,15321.351
+Leflunomide,leflunomide,True,9650.123
+Maraviroc,maraviroc,False,14816.406
+Mexiletine hydrochloride,mexiletine,True,12851.193
+Nefazodone hydrochloride,nefazodone,False,19019.986
+Niacin,niacin,False,19482.049
+Nialamide,nialamide,False,14761.34
+Nilotinib hydrochloride,nilotinib,False,17513.258
+Nilutamide,nilutamide,True,11744.396
+Nimesulide,nimesulide,False,13317.59
+Nortriptyline hydrochloride,nortriptyline,True,14536.84
+Papaverine hydrochloride,papaverine,True,13928.591
+Pazopanib hydrochloride,pazopanib,True,10763.19
+Perhexiline,perhexiline,True,15048.425
+Pirfenidone,pirfenidone,True,15071.5625
+Raltegravir potassium,raltegravir,False,10441.343
+Riluzole,riluzole,True,15608.516
+Sorafenib tosylate,sorafenib,True,13741.32
+suloctidil,suloctidil,False,15618.3125
+Sunitinib malate,sunitinib,False,13116.578
+Tamoxifen citrate,tamoxifen,True,16664.586
+Ticlopidine hydrochloride,ticlopidine,True,14278.256
+Tigecycline,tigecycline,False,19783.053
+Troglitazone,troglitazone,True,14218.581
+Voriconazole,voriconazole,True,15422.872

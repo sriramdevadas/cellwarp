@@ -1,0 +1,220 @@
+{
+  "analysis": "QU12_HUMAN_MACAQUE",
+  "types_included": [
+    "B cell",
+    "bladder urothelial cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "macrophage",
+    "monocyte",
+    "neutrophil",
+    "plasma cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "gene_space": 13927,
+  "label": "human-macaque-12",
+  "order": [
+    "B cell",
+    "bladder urothelial cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "macrophage",
+    "monocyte",
+    "neutrophil",
+    "plasma cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "procrustes": {
+    "distance": 39.880402522330726,
+    "scaling": 1.1684723547958298,
+    "distance_squared": 1590.446505343123,
+    "rotation_det": 1.0000000000000029
+  },
+  "permutation_test": {
+    "p_value": 0.004299570042995701,
+    "obs_null_ratio_median": 0.8104799197124155,
+    "obs_null_ratio_mean": 0.8129836275964116,
+    "null_median": 49.20591066152704,
+    "null_mean": 49.054373505942856,
+    "n_permutations": 10000,
+    "permuted_le_observed": 42
+  },
+  "pca": {
+    "n_components": 16,
+    "variance_explained": [
+      0.25143311426082243,
+      0.16920924922953692,
+      0.09910807742991709,
+      0.09115138022677759,
+      0.06400011715390284,
+      0.05111792729022014,
+      0.04027398461236101,
+      0.036449225670889186,
+      0.029581060235877,
+      0.028705471940060994,
+      0.02195288460889945,
+      0.019874136121290967,
+      0.01639942164876306,
+      0.01352677186518616,
+      0.011600859253916419,
+      0.009363890196158122
+    ],
+    "cumulative_variance": 0.9537475717445794
+  },
+  "per_type_residuals_ranked": [
+    {
+      "type": "hepatocyte",
+      "magnitude": 27.4233363408906,
+      "pct_ssr": 47.28479540425448
+    },
+    {
+      "type": "stromal cell",
+      "magnitude": 11.556859801068882,
+      "pct_ssr": 8.39770517353851
+    },
+    {
+      "type": "neutrophil",
+      "magnitude": 11.371286494051759,
+      "pct_ssr": 8.130179549918747
+    },
+    {
+      "type": "epithelial cell",
+      "magnitude": 10.749400171359998,
+      "pct_ssr": 7.265230465522993
+    },
+    {
+      "type": "macrophage",
+      "magnitude": 10.177349767416477,
+      "pct_ssr": 6.512538959365138
+    },
+    {
+      "type": "monocyte",
+      "magnitude": 10.015613849122488,
+      "pct_ssr": 6.307192378852928
+    },
+    {
+      "type": "B cell",
+      "magnitude": 9.719535479296631,
+      "pct_ssr": 5.939801786223875
+    },
+    {
+      "type": "endothelial cell",
+      "magnitude": 8.240869984633958,
+      "pct_ssr": 4.269991972410891
+    },
+    {
+      "type": "fibroblast",
+      "magnitude": 5.508904648508439,
+      "pct_ssr": 1.9081453116721212
+    },
+    {
+      "type": "plasma cell",
+      "magnitude": 5.114727997717694,
+      "pct_ssr": 1.6448489403919557
+    },
+    {
+      "type": "smooth muscle cell",
+      "magnitude": 4.429599876855343,
+      "pct_ssr": 1.2337010394954313
+    },
+    {
+      "type": "bladder urothelial cell",
+      "magnitude": 4.193835375413099,
+      "pct_ssr": 1.1058690183529207
+    }
+  ],
+  "per_type_cells": {
+    "available": {
+      "B cell": 19320,
+      "bladder urothelial cell": 3916,
+      "endothelial cell": 16919,
+      "epithelial cell": 23567,
+      "fibroblast": 8727,
+      "hepatocyte": 1101,
+      "macrophage": 3586,
+      "monocyte": 2991,
+      "neutrophil": 2143,
+      "plasma cell": 1662,
+      "smooth muscle cell": 11279,
+      "stromal cell": 619
+    },
+    "used": {
+      "B cell": 2000,
+      "bladder urothelial cell": 2000,
+      "endothelial cell": 2000,
+      "epithelial cell": 2000,
+      "fibroblast": 2000,
+      "hepatocyte": 1101,
+      "macrophage": 2000,
+      "monocyte": 2000,
+      "neutrophil": 2000,
+      "plasma cell": 1662,
+      "smooth muscle cell": 2000,
+      "stromal cell": 619
+    }
+  },
+  "organ_concentration_flagged_types": {
+    "B cell": {
+      "total": 19320,
+      "top5_organs": {
+        "Adipose": 3291,
+        "Colon": 3154,
+        "Stomach": 2770,
+        "Spleen": 2619,
+        "Trachea": 2493
+      },
+      "top_organ_fraction": 0.1703416149068323
+    },
+    "macrophage": {
+      "total": 3586,
+      "top5_organs": {
+        "Liver": 876,
+        "Kidney": 657,
+        "Lung": 500,
+        "Aorta": 331,
+        "Bladder": 235
+      },
+      "top_organ_fraction": 0.24428332403792527
+    },
+    "plasma cell": {
+      "total": 1662,
+      "top5_organs": {
+        "Colon": 626,
+        "Stomach": 562,
+        "Liver": 164,
+        "Trachea": 82,
+        "Lung": 53
+      },
+      "top_organ_fraction": 0.3766546329723225
+    },
+    "neutrophil": {
+      "total": 2143,
+      "top5_organs": {
+        "Liver": 1042,
+        "Heart": 215,
+        "Spleen": 190,
+        "Lung": 187,
+        "Muscle": 96
+      },
+      "top_organ_fraction": 0.48623425104993
+    },
+    "monocyte": {
+      "total": 2991,
+      "top5_organs": {
+        "Liver": 1210,
+        "Lung": 796,
+        "Kidney": 221,
+        "Uterus": 150,
+        "Heart": 145
+      },
+      "top_organ_fraction": 0.40454697425610164
+    }
+  },
+  "monocyte_mapping_note": "CL:0000576 generic; not subtype-split"
+}

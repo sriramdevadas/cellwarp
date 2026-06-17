@@ -1,0 +1,127 @@
+{
+  "our_label": "NK cell",
+  "organism": "human",
+  "organism_scientific": "Homo sapiens",
+  "tried_terms": [
+    "natural killer cell",
+    "NK cell"
+  ],
+  "successful_terms": [
+    "natural killer cell"
+  ],
+  "total_experiments": 5,
+  "experiments": [
+    {
+      "accession": "ENCSR854TTM",
+      "biosample_term": "natural killer cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens natural killer cell male adult (47 years) treated with 100 ng/mL Interleukin-12 subunit alpha for 72 hours, 100 ng/mL Interleukin-15 for 72 hours, 100 ng/mL Interleukin-12 subunit beta for 72 hours, 100 ng/mL Interleukin-18 for 72 hours",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR373GMM",
+      "biosample_term": "natural killer cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens natural killer cell male adult (33 years)",
+      "n_bio_replicates": 1,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "single replicate (n=1)",
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR808HWS",
+      "biosample_term": "natural killer cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens natural killer cell female adult (41 years) treated with 100 ng/mL Interleukin-18 for 72 hours, 100 ng/mL Interleukin-12 subunit beta for 72 hours, 100 ng/mL Interleukin-15 for 72 hours, 100 ng/mL Interleukin-12 subunit alpha for 72 hours",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR305QTE",
+      "biosample_term": "natural killer cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens natural killer cell male adult (47 years)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR044ATC",
+      "biosample_term": "natural killer cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens natural killer cell female adult (41 years)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    }
+  ],
+  "query_timestamp": "2026-03-15T20:18:14.195146"
+}

@@ -1,0 +1,308 @@
+{
+  "diagnostic": "Sun2023 expanded 10x replication \u2014 T1-A with BORDERLINE types",
+  "date": "2026-03-15",
+  "dataset": {
+    "name": "Sun et al. 2023 (Innovation, CAS Beijing)",
+    "protocol": "10x Chromium 3' v3",
+    "condition": "YC (young sedentary control)",
+    "tissues_loaded": [
+      "YC-Liver",
+      "YC-Spleen",
+      "YC-BM",
+      "YC-Lung",
+      "YC-Kidney",
+      "YC-Blood",
+      "YC-Artery",
+      "YC-Intestine"
+    ],
+    "n_tissues": 8,
+    "total_cells_post_qc": 57443,
+    "n_genes": 16959,
+    "zero_fill_rate": 0.07588890854413585,
+    "annotation_method": "Two-pass: (1) original 14 markers, (2) 8 BORDERLINE markers on unassigned clusters"
+  },
+  "procrustes": {
+    "n_types": 15,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hepatocyte",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "natural killer cell",
+      "plasma cell",
+      "smooth muscle cell"
+    ],
+    "p_value": 9.999000099990002e-05,
+    "distance": 34.81316343317309,
+    "obs_null_ratio": 0.5535267863044209,
+    "scaling": 1.0283877157447232,
+    "null_median": 62.89336721281459,
+    "pca_components": 17,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 4.269456033139181
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 4.125279927979678
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 2.326762152349724
+      },
+      "T cell": {
+        "magnitude": 6.20780906541533
+      },
+      "endothelial cell": {
+        "magnitude": 18.168193575679275
+      },
+      "epithelial cell": {
+        "magnitude": 5.223856613750728
+      },
+      "fibroblast": {
+        "magnitude": 1.9898006247839386
+      },
+      "granulocyte": {
+        "magnitude": 4.080632170349923
+      },
+      "hepatocyte": {
+        "magnitude": 23.177261363622353
+      },
+      "macrophage": {
+        "magnitude": 8.589969836429654
+      },
+      "monocyte": {
+        "magnitude": 7.445728161604463
+      },
+      "myeloid dendritic cell": {
+        "magnitude": 6.060828849517454
+      },
+      "natural killer cell": {
+        "magnitude": 4.783493163030204
+      },
+      "plasma cell": {
+        "magnitude": 4.77190454532354
+      },
+      "smooth muscle cell": {
+        "magnitude": 2.4450403097846114
+      }
+    }
+  },
+  "rigidity_ranking": {
+    "rho": 0.1464285714285714,
+    "p_value": 0.602549920983054,
+    "n_matched_types": 15,
+    "matched_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hepatocyte",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "natural killer cell",
+      "plasma cell",
+      "smooth muscle cell"
+    ]
+  },
+  "t1b_negative_control": {
+    "sun2023_expanded_obs_null": 0.5535267863044209,
+    "tabula_35_obs_null": 0.5222043484425903,
+    "permuted_baseline": 1.0,
+    "sun2023_lower_than_permuted": true,
+    "verdict": "PASS \u2014 obs/null in same range as Tabula primary"
+  },
+  "interpretation": {
+    "verdict": "PARTIAL",
+    "detail": "n=15 \u2265 10, but \u03c1=0.146 < 0.50, p=0.6025 \u2265 0.05. Ranking unstable. Flag to advisor."
+  },
+  "cell_count_audit": [
+    {
+      "cell_type": "B cell",
+      "n_cells_YC": 16125,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "n_cells_YC": 1978,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "n_cells_YC": 4611,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "T cell",
+      "n_cells_YC": 4422,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "adventitial cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "basal cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "bladder urothelial cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "classical monocyte",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "endothelial cell",
+      "n_cells_YC": 6639,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "enterocyte of epithelium of large intestine",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "epithelial cell",
+      "n_cells_YC": 1443,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "fibroblast",
+      "n_cells_YC": 2832,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "fibroblast of cardiac tissue",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "granulocyte",
+      "n_cells_YC": 8819,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "hematopoietic precursor cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "hematopoietic stem cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "hepatocyte",
+      "n_cells_YC": 1417,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "intermediate monocyte",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "large intestine goblet cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "luminal epithelial cell of mammary gland",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "macrophage",
+      "n_cells_YC": 2148,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "mature NK T cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "mesenchymal stem cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "mesenchymal stem cell of adipose tissue",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "monocyte",
+      "n_cells_YC": 2655,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "n_cells_YC": 1503,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "myeloid leukocyte",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "natural killer cell",
+      "n_cells_YC": 1130,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "neutrophil",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "non-classical monocyte",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "pancreatic acinar cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "pancreatic ductal cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "plasma cell",
+      "n_cells_YC": 1208,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "n_cells_YC": 513,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "stromal cell",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    }
+  ],
+  "random_seed": 42
+}

@@ -1,0 +1,144 @@
+cell_type,total_cells,in_primary_35,passes_gate
+neutrophil,58814,True,True
+"CD4-positive, alpha-beta T cell",17076,True,True
+unknown,16688,False,False
+basal cell of epidermis,10343,False,False
+epidermal cell,10099,False,False
+macrophage,9492,True,True
+monocyte,9260,True,True
+"CD8-positive, alpha-beta T cell",8326,True,True
+capillary endothelial cell,7940,False,False
+B cell,7650,True,True
+fibroblast,7476,True,True
+erythroid lineage cell,7239,False,False
+oral mucosa squamous cell,5097,False,False
+natural killer cell,5036,True,True
+alveolar macrophage,4987,False,False
+plasma cell,4531,True,True
+T cell,3478,True,True
+hair follicle cell,3247,False,False
+spermatid,3239,False,False
+spermatocyte,3180,False,False
+mature NK T cell,1965,True,True
+vascular associated smooth muscle cell,1942,False,False
+erythroid progenitor cell,1594,False,False
+vasa recta ascending limb cell,1434,False,False
+kidney proximal convoluted tubule epithelial cell,1421,False,False
+adipocyte,1231,False,False
+lymphocyte,1197,False,False
+kidney loop of Henle thin descending limb epithelial cell,1187,False,False
+enterocyte of epithelium of small intestine,1090,False,False
+pancreatic acinar cell,1053,True,True
+pulmonary alveolar type 2 cell,1049,False,False
+fibroblast of lung,997,False,False
+myeloid cell,983,False,False
+retinal rod cell,980,False,False
+dendritic cell,948,False,False
+endothelial cell,902,True,True
+mesenchymal stem cell,901,True,True
+myofibroblast cell,893,False,False
+kidney loop of Henle thick ascending limb epithelial cell,824,False,False
+enterocyte of epithelium of large intestine,802,True,True
+mesothelial cell,772,False,False
+pericyte,727,False,False
+endothelial cell of lymphatic vessel,706,False,False
+kidney proximal straight tubule epithelial cell,653,False,False
+vein endothelial cell,633,False,False
+GABAergic neuron,593,False,False
+oligodendrocyte,563,False,False
+renal alpha-intercalated cell,517,False,False
+conventional dendritic cell,484,False,False
+skeletal muscle satellite stem cell,472,False,False
+hepatocyte,458,True,False
+astrocyte,457,False,False
+kidney loop of Henle thin ascending limb epithelial cell,450,False,False
+hematopoietic precursor cell,444,True,False
+vasa recta descending limb cell,423,False,False
+glutamatergic neuron,414,False,False
+bladder urothelial cell,404,True,False
+granulocyte monocyte progenitor cell,363,False,False
+endothelial cell of artery,347,False,False
+plasmacytoid dendritic cell,342,False,False
+glomerular endothelial cell,280,False,False
+epithelial cell of large intestine,266,False,False
+epithelial cell of uterus,265,False,False
+epithelial cell,259,True,False
+cardiac muscle cell,257,False,False
+ependymal cell,250,False,False
+endothelial cell of hepatic sinusoid,240,False,False
+Langerhans cell,237,False,False
+oligodendrocyte precursor cell,231,False,False
+pulmonary alveolar type 1 cell,217,False,False
+epithelial cell of proximal tubule,215,False,False
+pancreatic ductal cell,204,True,False
+innate lymphoid cell,199,False,False
+megakaryocyte progenitor cell,189,False,False
+renal principal cell,178,False,False
+stromal cell,178,True,False
+non-myelinating Schwann cell,170,False,False
+epithelial cell of small intestine,163,False,False
+melanocyte,161,False,False
+regular ventricular cardiac myocyte,159,False,False
+kidney distal convoluted tubule epithelial cell,153,False,False
+basal cell of epithelium of trachea,144,False,False
+neuron,139,False,False
+tendon cell,130,False,False
+type B pancreatic cell,129,False,False
+platelet,123,False,False
+chondrocyte,119,False,False
+basophil,99,False,False
+smooth muscle cell,97,True,False
+pancreatic A cell,97,False,False
+macula densa epithelial cell,93,False,False
+small intestine goblet cell,89,False,False
+M cell of gut,77,False,False
+renal beta-intercalated cell,77,False,False
+choroid plexus epithelial cell,75,False,False
+eosinophil,73,False,False
+leptomeningeal cell,71,False,False
+fast muscle cell,71,False,False
+kidney collecting duct intercalated cell,69,False,False
+renal intercalated cell,68,False,False
+spermatogonium,62,False,False
+reticular cell,60,False,False
+osteoblast,57,False,False
+intestinal enteroendocrine cell,56,False,False
+large intestine goblet cell,55,True,False
+myelinating Schwann cell,51,False,False
+secretory cell,48,False,False
+ON-bipolar cell,47,False,False
+epithelial cell of exocrine pancreas,44,False,False
+regular atrial cardiac myocyte,43,False,False
+endothelial cell of sinusoid,39,False,False
+ciliated cell,38,False,False
+urothelial cell,32,False,False
+preosteoblast,30,False,False
+intestinal tuft cell,28,False,False
+intrahepatic cholangiocyte,27,False,False
+podocyte,22,False,False
+brush cell of trachea,20,False,False
+somatotroph,19,False,False
+pancreatic endocrine cell,19,False,False
+slow muscle cell,19,False,False
+kidney loop of Henle epithelial cell,18,False,False
+granulosa cell,18,False,False
+brush cell of bronchus,14,False,False
+epithelial cell of sweat gland,13,False,False
+club cell,11,False,False
+corticotroph,10,False,False
+mammotroph,9,False,False
+thyrotroph,9,False,False
+neuroendocrine cell,6,False,False
+retinal cone cell,6,False,False
+pancreatic D cell,6,False,False
+OFF-bipolar cell,4,False,False
+gonadtroph,4,False,False
+basal cell of epithelium of bronchus,3,False,False
+retina horizontal cell,2,False,False
+Mueller cell,2,False,False
+mesothelial cell of epicardium,1,False,False
+pancreatic PP cell,1,False,False
+interstitial cell of Cajal,1,False,False
+nodal myocyte,1,False,False
+retinal bipolar neuron,1,False,False
+Purkinje myocyte,1,False,False

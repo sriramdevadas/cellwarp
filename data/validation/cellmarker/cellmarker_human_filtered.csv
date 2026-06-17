@@ -1,0 +1,2219 @@
+cell_type,gene_symbol,cell_category,tissue,marker_source
+Proximal tubular cell,ALPI,Normal cell,Kidney,Experiment
+Ito cell (hepatic stellate cell),SYP,Normal cell,Liver,Experiment
+Trophoblast cell,CEACAM1,Normal cell,Endometrium,Experiment
+Primordial germ cell,DDX4,Normal cell,Germ,Experiment
+Epithelial cell,KLF6,Normal cell,Corneal epithelium,Experiment
+Cytotrophoblast,FGF10,Normal cell,Placenta,Experiment
+Periosteum-derived progenitor cell,"ALCAM, PTPRC, CD9, THY1",Normal cell,Periosteum,Experiment
+Amnion epithelial cell,"NANOG, POU5F1",Normal cell,Amniotic membrane,Experiment
+Primitive streak cell,"LHX1, MIXL1",Normal cell,Primitive streak,Experiment
+Stromal vascular fraction cell,CD34,Normal cell,Adipose tissue,Experiment
+Bulge stem cell,CD200,Normal cell,Scalp,Experiment
+Semilunar valve cell,MMP13,Normal cell,Heart,Experiment
+Villous stromal cell,"NOV, CYR61",Normal cell,Chorionic villus,Experiment
+Kupffer cell,"ITGAM, CD14, ITGB2, [FCGR2A, FCGR2B, FCGR2C], CD68",Normal cell,Liver,Experiment
+Adipose-derived stromal cell,"CDH5, PECAM1, CD34",Normal cell,Adipose tissue,Experiment
+Oligodendrocyte,RTN4,Normal cell,Brain,Experiment
+Mesenchymal stem cell,CD44,Normal cell,Amniotic fluid,Experiment
+Cartilage progenitor cell,"MCAM, COL2A1",Normal cell,Cartilage,Experiment
+Osteocyte,"DMP1, NA, MEPE, PHEX, SOST",Normal cell,Bone,Experiment
+Osteoclast,"NCAM1, RUNX2",Normal cell,Bone,Experiment
+Bipolar cell,"MIP, GNAS, ISL1",Normal cell,Retina,Experiment
+Muller cell,GLUL,Normal cell,Retina,Experiment
+Monocyte,"ITGAM, [FCGR3A, FCGR3B], CD19, CD2, [CD3D, CD3E, CD3G], NCAM1, KLRD1, KLRC1",Normal cell,Peripheral blood,Experiment
+Natural killer cell,"ITGAM, [FCGR3A, FCGR3B], CD19, CD2, [CD3D, CD3E, CD3G], NCAM1, KLRD1, KLRC1",Normal cell,Blood,Experiment
+Cancer stem cell,"BMI1, CD44, NANOG, POU5F1",Cancer cell,Tongue,Experiment
+Mesenchymal stem cell,"ENG, ALCAM, ITGB1, CD44, ITGA5, NT5E, THY1",Normal cell,Gingiva,Experiment
+Cancer stem cell,"ALDH family, ALDH1A1, CD44",Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, CD14, PECAM1, CD34, CD44, NT5E, THY1",Cancer cell,Undefined,Experiment
+Monocyte,"CD14, CD19, MS4A1, CD27, [CD3D, CD3E, CD3G], CD38, CD79A, IgG family",Normal cell,Peripheral blood,Experiment
+Endometrial stem cell,"ICAM1, SUSD2",Normal cell,Uterus,Experiment
+Cancer stem cell,SOX9,Cancer cell,Liver,Experiment
+Mesenchymal stem cell,"ENG, NA",Normal cell,Dental pulp,Experiment
+Natural killer cell,NCAM1,Normal cell,Breast,Experiment
+Dental pulp stem cell,"ENG, ITGB1, CD44, NT5E",Normal cell,Dental pulp,Experiment
+Cancer stem cell,TRO,Cancer cell,Liver,Experiment
+B cell,"CD19, CD27, CD38, PTPRC, IgD family, ZAP70",Normal cell,Peripheral blood,Experiment
+Adipose-derived stem cell,"MCAM, THY1, KLF4, NANOG, NES, POU5F1, PDGFRB, SOX2",Normal cell,Adipose tissue,Experiment
+Preadipocyte progenitor cell,"CD34, PDGFRA",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,NGFR,Cancer cell,Undefined,Experiment
+Regulatory T (Treg) cell,"ITGA2, LAG3",Normal cell,Undefined,Experiment
+Cancer stem cell,ITGA6,Cancer cell,Stomach,Experiment
+Nucleus pulposus cell,"CA12, CD24, FOXF1, KRT19, PAX1, PTN",Normal cell,Nucleus pulposus,Experiment
+Urine-derived stem cell,"ENG, MCAM, CD34, PTPRC, NT5E, THY1, POU5F1, NA",Normal cell,Urine,Experiment
+Fibroblast,COL11A1,Cancer cell,Pancreas,Experiment
+Fibroblast,THY1,Cancer cell,Undefined,Experiment
+Immune cell,"ITGAL, ITGAM, SIGLEC5, SIRPG, ITGB2, CCR5, CD2, LY9, CD28, [CD3D, CD3E, CD3G], LAIR1, SLAMF7, [FCGR2A, FCGR2B, FCGR2C], SLAMF6, CD4, SPN, PTPRC, NA, PTPRC, CD48, CD5, ICAM3, CD52, CD53, CD6, CD6, CD69, CD7, LILRB3, CD86, CD96, CCR8, HLA-DR family",Cancer cell,Undefined,Experiment
+Endothelial cell,"IL3RA, CDH5, A4GALT, TEK, INSR, TSPAN7, TNFRSF17, BMPR1A, KDR, FGFR2, CEA family, CEACAM3, NT5E, PROCR, NA",Cancer cell,Undefined,Experiment
+Fibroblast,"NECTIN1, PDGFRB, ADAM17, NGFR",Cancer cell,Undefined,Experiment
+Endothelial cell,CD209,Normal cell,Undefined,Experiment
+T cell,SLAMF1,Normal cell,Undefined,Experiment
+B cell,SLAMF1,Normal cell,Undefined,Experiment
+Thymocyte,SLAMF1,Normal cell,Undefined,Experiment
+Dendritic cell,SLAMF1,Normal cell,Undefined,Experiment
+Neutrophil,FCGR3B,Normal cell,Undefined,Experiment
+B cell,MS4A1,Normal cell,Undefined,Experiment
+Lymphocyte,CCR7,Normal cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Endothelial progenitor cell,"CD34, PTPRC, KDR",Normal cell,Peripheral blood,Experiment
+Endothelial cell,"PROM1, CDH5, CD34, PTPRC",Normal cell,Peripheral blood,Experiment
+Tumor endothelial cell,SBSN,Cancer cell,Kidney,Experiment
+Tumor endothelial cell,SBSN,Cancer cell,Colon,Experiment
+Premeiotic germ cell,MAGEA4,Normal cell,Gonad,Experiment
+Gonocyte,POU5F1,Normal cell,Gonad,Experiment
+Mesenchymal stem cell,"PECAM1, CD34, CD44, PTPRC, NT5E, THY1, ENG",Normal cell,Adipose tissue,Experiment
+Gonocyte,THY1,Normal cell,Testis,Experiment
+Gonocyte,KIT,Normal cell,Testis,Experiment
+Mesenchymal stromal cell,"B2M, ENG, ANPEP, BSG, CD151, CD276, ITGB1, CD44, CD47, CD59, NT5E, CD81, THY1, SLC3A2, HLA-ABC family, VIM",Normal cell,Bone marrow,Experiment
+Pancreatic stem cell,KIT,Normal cell,Pancreas,Experiment
+Myeloid-derived suppressor cell,"ITGAM, CD33, ENTPD1",Normal cell,Peripheral blood,Experiment
+Myeloid-derived suppressor cell,"ITGAM, ITGAX, CD14, CD1D, INSR, CD226, CD24, CD244, SIGLEC7, CD33, ENTPD1, GP1BA, CD46, ITGA1, ITGA4, ITGA5, ITGA6, CD52, CD53, ICAM1, NCAM1, SELL, SELP, CEACAM1, CEACAM6, CEACAM5, CD69, TFRC, CD81, CD84, LILRB2, LILRA2, LILRB1, LILRB4ITGAM",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,"CADM1, CLCC1, HMOX1, SCAMP3, SLC16A1",Cancer cell,Brain,Experiment
+Mesenchymal stem cell,"ITGB1, NT5E, THY1, ENG",Normal cell,Undefined,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+CD4+ T cell,CCR6,Normal cell,Colon,Experiment
+CD4+ T cell,CCR6,Normal cell,Blood,Experiment
+Anterior foregut endoderm cell,CPM,Normal cell,Lung,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Dendritic cell,"CD40, CD80, CD86, MHC class II",Normal cell,Bone marrow,Experiment
+Endoderm progenitor cell,"PROM1, PECAM1, CD34",Normal cell,Adipose tissue,Experiment
+Natural killer cell,KLRD1,Normal cell,Blood,Experiment
+Circulating fetal cell,"ACTB, ATF4, CD33, CD68, CD9, CDC42, CLDN6, COL1A2, CRABP1, CRIP1, CRYL1, CTNNB1, DLX5, EN1, F11R, NA, FOXA2, GATA5, HAMP, HMGA1, IL7R, JUN, JUNB, KCNQ4, MCAM, MMP9, NCAM1, OLIG2, PBLD, PDGFC, PF4, PUM2, SELE, SELPLG, SMAD3, SMC3, SOX13, TCF3, TNC, ",Normal cell,Blood,Experiment
+Neural progenitor cell,"NGFR, GFAP",Normal cell,Brain,Experiment
+Astroglial progenitor cell,PBXIP1,Normal cell,Embryo,Experiment
+Cancer stem cell,FLT1,Cancer cell,Undefined,Experiment
+Endothelial cell,"PECAM1, VWF",Normal cell,Skin,Experiment
+Cancer stem cell,"CD34, CD38",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD24, CD44",Cancer cell,Undefined,Experiment
+Endothelial cell,PECAM1,Normal cell,Undefined,Experiment
+Natural killer cell,"ITGA1, CXCR6",Normal cell,Peripheral blood,Experiment
+Paneth cell,AMACR,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Epithelial cell,"EPCAM, FZD4, KRT8, WNT4",Normal cell,Thymus,Experiment
+Mesenchymal stromal cell,THY1,Normal cell,Blood vessel,Experiment
+Hepatoblast,"PTPRC, TFRC, DLK1, PDGFRA, NA",Normal cell,Liver,Experiment
+Mesenchymal cell,"PTPRC, TFRC, DLK1, PDGFRA, NA",Normal cell,Liver,Experiment
+Endothelial cell,"PTPRC, TFRC, DLK1, KDR, NA",Normal cell,Liver,Experiment
+Hematopoietic cell,PTPRC,Normal cell,Liver,Experiment
+Hematopoietic cell,TFRC,Normal cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,CXCR4,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,THY1,Normal cell,Synovial fluid,Experiment
+CD4+ T cell,"[CD3D, CD3E, CD3G], CD4",Normal cell,Liver,Experiment
+CD8+ T cell,"[CD3D, CD3E, CD3G], CD8A",Normal cell,Liver,Experiment
+Monocyte,CD14,Normal cell,Liver,Experiment
+Dendritic cell,"ITGAX, HLA-DR family",Normal cell,Liver,Experiment
+Natural killer cell,"[FCGR3A, FCGR3B]",Normal cell,Liver,Experiment
+B cell,"CD19, MS4A1",Normal cell,Liver,Experiment
+Cancer stem cell,CD44,Cancer cell,Stomach,Experiment
+Periodontal stem cell,"NA, NA",Normal cell,Periodontal ligament,Experiment
+Natural regulatory T (Treg) cell,CD6,Normal cell,Blood,Experiment
+FOXP3+ natural regulatory T (Treg) cell,"IL2RA, CD6, CD4",Normal cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Stomach,Experiment
+Dendritic cell,CD83,Normal cell,Peripheral blood,Experiment
+Beige adipogenic precursor cell,EBF2,Normal cell,Adipose tissue,Experiment
+Brown adipogenic precursor cell,EBF2,Normal cell,Adipose tissue,Experiment
+Platelet,CD14,Normal cell,Blood,Experiment
+Leukocyte,GP1BA,Normal cell,Blood,Experiment
+Cytotoxic T cell,"[CD3D, CD3E, CD3G], CD8A",Normal cell,Liver,Experiment
+Natural killer T (NKT) cell,"[CD3D, CD3E, CD3G], NCAM1",Normal cell,Liver,Experiment
+T helper cell,"[CD3D, CD3E, CD3G], CD4",Normal cell,Liver,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Liver,Experiment
+Memory T cell,"[CD3D, CD3E, CD3G], PTPRC",Normal cell,Liver,Experiment
+B cell,CD19,Normal cell,Liver,Experiment
+Monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Liver,Experiment
+T helper cell,"[CD3D, CD3E, CD3G], CD4",Normal cell,Peripheral blood,Experiment
+Memory T cell,"[CD3D, CD3E, CD3G], PTPRC",Normal cell,Peripheral blood,Experiment
+Regulatory T (Treg) cell,"IL2RA, [CD3D, CD3E, CD3G], CD4, FOXP3",Normal cell,Peripheral blood,Experiment
+T helper1 (Th1) cell,"[CD3D, CD3E, CD3G], CD4, IFNG",Normal cell,Peripheral blood,Experiment
+T helper2 (Th2) cell,"[CD3D, CD3E, CD3G], CD4, IL4",Normal cell,Peripheral blood,Experiment
+T helper17 (Th17) cell,"[CD3D, CD3E, CD3G], CD4, IL17RA",Normal cell,Peripheral blood,Experiment
+Endothelial progenitor cell,"PROM1, PECAM1, CD34, PTPRC",Cancer cell,Peripheral blood,Experiment
+Endothelial cell,"PROM1, PECAM1, CD34, PTPRC",Cancer cell,Peripheral blood,Experiment
+Mesenchymal stromal cell,"ENG, CD34, PTPRC, NT5E, THY1",Normal cell,Undefined,Experiment
+Cancer stem cell,"CD44, EPCAM",Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Lung,Experiment
+Monocyte,CD14,Normal cell,Lung,Experiment
+Plasmacytoid dendritic cell,NRP1,Normal cell,Lung,Experiment
+T helper cell,GP1BA,Normal cell,Lung,Experiment
+Monocyte,CD14,Normal cell,Blood,Experiment
+Plasmacytoid dendritic cell,NRP1,Normal cell,Blood,Experiment
+T helper cell,GP1BA,Normal cell,Blood,Experiment
+Cancer stem cell,PIWIL1,Cancer cell,Undefined,Experiment
+Lymphatic endothelial cell,"PECAM1, CD34, PDPN, PROX1, FLT4",Normal cell,Lymph node,Experiment
+Fibroblast,"ENG, ITGAM, CD19, CD34, CD44, PTPRC, NT5E, THY1, HLA-DR family",Normal cell,Undefined,Experiment
+Platelet,ITGA2B,Normal cell,Peripheral blood,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Cancer cell,Colorectum,Experiment
+Endothelial progenitor cell,"PROM1, CD34, PTPRC",Normal cell,Blood,Experiment
+Endocrine cell,CD99,Normal cell,Pancreatic islet,Experiment
+Mesenchymal stromal cell,"ENG, CD34, PTPRC, THY1, HLA-DR family",Normal cell,Placenta,Experiment
+Responder T cell,"IL2RA, CD4, LRRC32",Normal cell,Blood,Experiment
+Regulatory T (Treg) cell,LRRC32,Normal cell,Blood,Experiment
+Cancer stem cell,"ALDH family, CD24, CD44",Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"CD34, PTPRC, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Cancer stem cell,CD44,Cancer cell,Blood,Experiment
+Cancer stem-like cell,PROM1,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, CD14, ITGB1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Adipose-derived stem cell,"VCAM1, ITGB1, PECAM1, CD34, PTPRC, THY1",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ENG, CD34, PTPRC, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, ALCAM, CD44, THY1",Cancer cell,Lung,Experiment
+Cancer stem cell,"PROM1, ALCAM, CD24, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,SOX2,Cancer cell,Skin,Experiment
+Macrophage,CD68,Normal cell,Synovium,Experiment
+Fibroblast,THY1,Normal cell,Synovium,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Synovium,Experiment
+B cell,MS4A1,Normal cell,Synovium,Experiment
+Naive B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Class-switched memory B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Non-switched memory B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Double-negative B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Transitional B cell,"CD19, CD24, CD38",Normal cell,Peripheral blood,Experiment
+Plasmablast,"CD19, CD24, CD38",Normal cell,Peripheral blood,Experiment
+Adipose-derived stem cell,"ENG, KIT",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,THY1,Cancer cell,Pancreas,Experiment
+Cancer stem cell,"PROM1, CD24",Cancer cell,Liver,Experiment
+Oral keratinocyte stem cell,"TFRC, [ITGA6, ITGB4]",Normal cell,Oral mucosa,Experiment
+Mesenchymal stromal cell,"ENG, CD44, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Urine-derived stem cell,"ENG, KIT, PROM1, CD14, MCAM, CD24, ITGB1, PECAM1, CD34, CD44, PTPRC, NT5E, THY1, NA, NA",Normal cell,Urine,Experiment
+Myogenic endothelial cell,"CDH5, CD34, PTPRC, NCAM1",Normal cell,Skeletal muscle,Experiment
+Pericyte,"MCAM, CD34, PTPRC, NCAM1",Normal cell,Skeletal muscle,Experiment
+Adventitial cell,"PECAM1, CD34, PTPRC, NCAM1",Normal cell,Skeletal muscle,Experiment
+White blood cell,PTPRC,Normal cell,Blood,Experiment
+Cancer stem cell,LIN28B,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, CD14, ALCAM, CD34, PTPRC, NT5E, THY1, HLA-ABC family, HLA-DR family, MHC class I",Normal cell,Endometrium,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Cancer stem cell,"ENG, CD14, ITGB1, PECAM1, CD34, CD44, PTPRC, NT5E, THY1",Cancer cell,Undefined,Experiment
+Pigment epithelial cell,RPE65,Normal cell,Eye,Experiment
+Bipolar cell,PRKCA,Normal cell,Eye,Experiment
+Amacrine cell,CRABP1,Normal cell,Eye,Experiment
+Neural progenitor cell,NES,Normal cell,Eye,Experiment
+Immature transitional B cell,"CD19, CD24, CD38",Normal cell,Blood,Experiment
+Naive B cell,"CD19, CD24, CD38",Normal cell,Blood,Experiment
+Memory B cell,"CD19, CD27",Normal cell,Blood,Experiment
+Naive B cell,"CD27, IgD family",Normal cell,Blood,Experiment
+Non-switched B cell,"CD27, IgD family",Normal cell,Blood,Experiment
+Switched memory B cell,"CD27, IgD family",Normal cell,Blood,Experiment
+Transitional B cell,"CD24, CD38",Normal cell,Blood,Experiment
+Plasmablast,"CD38, CD40LG",Normal cell,Blood,Experiment
+Effector CD4+ memory T (Tem) cell,"CCR7, PTPRC",Normal cell,Blood,Experiment
+Endothelial progenitor cell,"PROM1, KDR",Normal cell,Peripheral blood,Experiment
+Esophageal mucosal cell,DCLK1,Normal cell,Esophagus,Experiment
+Hematopoietic stem cell,PROM1,Normal cell,Umbilical cord blood,Experiment
+Hematopoietic progenitor cell,CD34,Normal cell,Umbilical cord blood,Experiment
+B cell,MS4A1,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, CD34, CD44, PTPRC, THY1",Normal cell,Periodontal ligament,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Liver,Experiment
+Mesenchymal stromal cell,"ENG, ALCAM, NT5E, THY1",Normal cell,Amniotic membrane,Experiment
+Cancer stem cell,CD24,Cancer cell,Undefined,Experiment
+Neural crest stem cell,"NGFR, ITGA4, CHST10",Normal cell,Hair follicle,Experiment
+Hematopoietic stem cell,"CD34, CD38, THY1",Normal cell,Bone marrow,Experiment
+Germinal center B cell,"GCSAM, GCSAM",Cancer cell,Undefined,Experiment
+Pluripotent stem cell,"CDH11, EFNA2, GPC3, PRSS50",Normal cell,Undefined,Experiment
+Pluripotent stem cell,"NECTIN2, PECAM1, EPCAM, ITGA6",Normal cell,Undefined,Experiment
+Cancer stem-like cell,PROM1,Cancer cell,Undefined,Experiment
+B cell,"AICDA, MME, TNFSF13B, CD28, CD38, TFRC, CD86",Normal cell,Blood,Experiment
+T cell,"CCR7, IL7R, IL2RA, CD27, BTLA, CD28, [CD3D, CD3E, CD3G], CD4, PTPRC, PTPRC, SELL, CD8A, CTLA4, PDCD1, HAVCR2",Normal cell,Peripheral blood,Experiment
+B cell,"CD19, MS4A1, CR2, CD24, CD27, CD38, PTPRC, CD5, IgD family, CD40LG",Normal cell,Peripheral blood,Experiment
+Myeloid cell,"ITGAM, ITGAX, IL3RA, FUT4, [FCGR3A, FCGR3B], CD33, PTPRC, CEACAM8, HLA-DR family, CASK",Normal cell,Peripheral blood,Experiment
+Monocyte,"CD274, CD14, F3, [FCGR3A, FCGR3B], [FCGR2A, FCGR2B, FCGR2C], CD40, PTPRC, FCGR1A, CD80, CD86, HLA-DR family, PDCD1, TNFRSF1B",Normal cell,Peripheral blood,Experiment
+Granulocyte,"CCR3, CD14, FUT4, [FCGR3A, FCGR3B], ENPP3, CD44, PTPRC, ITGA4, CD63, CEACAM8",Normal cell,Peripheral blood,Experiment
+Classical monocyte,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Intermediate monocyte,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Non-classical monocyte,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Suppressive monocyte,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Monocyte derived dendritic cell,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+CD16+ dendritic cell,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Immature myeloid cell,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Neutrophil,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Granulocyte,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Eosinophil,"ITGAM, ITGAX, IL3RA, CD14, FUT4, [FCGR3A, FCGR3B], CD33, CEACAM8, HLA-DR family",Normal cell,Peripheral blood,Experiment
+Regulatory T (Treg) cell,"IL7R, ITGA4",Normal cell,Blood,Experiment
+Unrestricted somatic stem cell,"ENG, ALCAM, CD34, CD44, NT5E, THY1",Normal cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, ALCAM, CD34, CD44, NT5E, THY1",Normal cell,Undefined,Experiment
+Transitional B cell,"CD19, CD27, CD38, IgD family",Normal cell,Peripheral blood,Experiment
+Naive B cell,"CD19, CD27, CD38, IgD family",Normal cell,Peripheral blood,Experiment
+Non-switched memory B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Switched memory B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Double-negative memory B cell,"CD19, CD27, IgD family",Normal cell,Peripheral blood,Experiment
+Plasma cell,"CD19, CD27, CD38, IgD family",Normal cell,Peripheral blood,Experiment
+Granulosa cell,"CHST8, FSHR, GLDC, GPX3, MGARP",Normal cell,Ovarian follicle,Experiment
+Theca interna cell,"CYP17A1, FBLN5, OGN, RAMP2",Normal cell,Ovarian follicle,Experiment
+Beta cell,PTGDR2,Normal cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, PECAM1, CD44, PTPRC, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Alveolar epithelial progenitor cell,TM4SF1,Normal cell,Lung,Experiment
+Limbal stem cell,"ABCG2, KRT14, TP63",Normal cell,Limbal epithelium,Experiment
+Cancer stem cell,ABCG2,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, THY1, NA",Normal cell,Oral mucosa,Experiment
+Cancer stem cell,IL1RAP,Cancer cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Cancer cell,Colorectum,Experiment
+Cancer stem cell,CD24,Cancer cell,Oral cavity,Experiment
+Cancer stem cell,SOX12,Cancer cell,Undefined,Experiment
+Primordial germ cell,"CCNA2, SLC2A3",Cancer cell,Undefined,Experiment
+Liver progenitor cell,PYGB,Normal cell,Liver,Experiment
+Dental pulp stem cell,OR13C4,Normal cell,Dental pulp,Experiment
+Mesenchymal stromal cell,"CD14, CD19, ITGB1, CD34, NT5E, CD9, HLA-DR family",Normal cell,Nasal concha,Experiment
+Monocyte,"KIT, KIR2DL1, KIR2DL3, [FCGR3A, FCGR3B], KLRB1, [CD3D, CD3E, CD3G], ITGA1, ITGA2, NCAM1, B3GAT1, CXCR6, KLRC2, NCR1",Normal cell,Peripheral blood,Experiment
+Hematopoietic stem cell,"KIT, PROM1, CD34",Normal cell,Breast,Experiment
+Mesenchymal stem cell,"ENG, NT5E, THY1",Normal cell,Breast,Experiment
+Myoepithelial cell,"ITGB1, CD44",Normal cell,Breast,Experiment
+Immune cell,"ANPEP, CD14, CD209, PTPRC, CD83, CD86, HLA-DR family",Normal cell,Breast,Experiment
+Endometrial stem cell,"ABCG2, ENG, VCAM1, KIT, PROM1, PDGFRB, MCAM, ALCAM, ITGB1, PECAM1, CD34, CD44, PTPRC, ITGA4, ICAM1, NT5E, THY1, NES, POU5F1, SOX2, NA",Normal cell,Endometrium,Experiment
+Oviduct-derived stem cell,"ABCG2, ENG, VCAM1, KIT, PROM1, PDGFRB, MCAM, ALCAM, ITGB1, PECAM1, CD34, CD44, PTPRC, ITGA4, ICAM1, NT5E, THY1, POU5F1, SOX2, NA",Normal cell,Oviduct,Experiment
+Mesenchymal stem cell,CDH2,Normal cell,Undefined,Experiment
+Cancer stem cell,NES,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, CD4, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Cancer stem cell,"BMI1, PROM1, SLC2A3, MSI1, NES, SOX2",Cancer cell,Brain,Experiment
+Endothelial cell,"ENG, VCAM1, NECTIN2, MCAM, ALCAM, CDH2, CD34, CD44, CD47, ICAM1, NT5E, THY1",Normal cell,Cornea,Experiment
+Cancer cell,"NA, GFAP, GLUL",Cancer cell,Undefined,Experiment
+Limbal mesenchymal cell,"ENG, CD34, CDH2, VIM",Normal cell,Sclerocorneal tissue,Experiment
+Macrophage,"CCR7, CD163, MRC1",Normal cell,Intervertebral disc,Experiment
+Cancer stem cell,GLI1,Cancer cell,Breast,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, CD34, CD44, PTPRC, NT5E, HLA-DR family",Normal cell,Placenta,Experiment
+Platelet,ITGA2B,Normal cell,Plasma,Experiment
+Monocyte,CD14,Normal cell,Plasma,Experiment
+Endothelial cell,"PECAM1, GP1BA",Normal cell,Plasma,Experiment
+Red blood cell (erythrocyte),GYPA,Normal cell,Plasma,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, CD34",Normal cell,Peripheral blood,Experiment
+Mesenchymal stem cell,"ENG, CD44, NT5E, THY1",Normal cell,Dental pulp,Experiment
+Pluripotent stem cell,ALPL,Normal cell,Embryoid body,Experiment
+Adipose multilineage-differentiating stress-enduring cell,"ENG, THY1, NA",Normal cell,Adipose tissue,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Kidney,Experiment
+Monocyte,CD68,Normal cell,Kidney,Experiment
+B cell,CD19,Normal cell,Kidney,Experiment
+Regulatory B cell,"CD19, CD1D",Normal cell,Peripheral blood,Experiment
+Macrophage,CD14,Normal cell,Peripheral blood,Experiment
+Neural stem cell,"PROM1, NES, SOX2",Normal cell,Inferior colliculus,Experiment
+Cardiac progenitor cell,SLC8A1,Normal cell,Undefined,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Blood,Experiment
+B cell,MS4A1,Normal cell,Blood,Experiment
+Endothelial progenitor cell,"PROM1, CD34, KDR",Normal cell,Peripheral blood,Experiment
+CD4+ T cell,SLC2A1,Normal cell,Peripheral blood,Experiment
+Pluripotent very small embryonic-like cell,"PROM1, POU5F1, NA",Normal cell,Ovary,Experiment
+Ovarian germ stem cell,POU5F1,Normal cell,Ovary,Experiment
+Primordial germ cell,"DPPA3, DDX4",Normal cell,Ovary,Experiment
+Germ cell,"DAZL, GDF9, SYCP3",Normal cell,Ovary,Experiment
+Pluripotent stem cell,"NANOG, POU5F1, SOX2, FUT4, NA",Normal cell,Ovarian cortex,Experiment
+Germline stem cell,"DDX4, IFITM3",Normal cell,Ovarian cortex,Experiment
+Cancer stem cell,"CD44, LGR5",Cancer cell,Ovarian cortex,Experiment
+Circulating stem like cell,"CD44, NANOG",Cancer cell,Peripheral blood,Experiment
+Ito cell (hepatic stellate cell),NGFR,Normal cell,Liver,Experiment
+Adipose-derived stem cell,"ENG, THY1, NANOG, POU5F1, SOX2",Normal cell,Subcutaneous adipose tissue,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Colorectum,Experiment
+Endothelial cell,"PECAM1, VWF",Normal cell,Adipose tissue,Experiment
+Circulating progenitor cell,"ALDH family, PROM1, CD34",Normal cell,Blood,Experiment
+Lymphocyte,"ANXA5, CX3CR1",Normal cell,Blood,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Undefined,Experiment
+Prostate stem cell,CD44,Normal cell,Prostate,Experiment
+M2 macrophage,"CD14, CD163",Normal cell,Peripheral blood,Experiment
+Epithelial cell,KRT19,Cancer cell,Blood,Experiment
+Cancer stem cell,CXCR4,Cancer cell,Kidney,Experiment
+Spermatogonial stem cell,"ADGRA3, ID4",Normal cell,Testis,Experiment
+Cancer stem cell,PROM1,Cancer cell,Kidney,Experiment
+Circulating precursor cell,"PROM1, CD34, PTPRC",Normal cell,Peripheral blood,Experiment
+Endothelial precursor cell,"PECAM1, KDR",Normal cell,Peripheral blood,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Cancer cell,Lymph node,Experiment
+Cardiomyocyte progenitor cell,"CD34, NA",Normal cell,Myocardium,Experiment
+Dendritic cell,"ITGAX, CD209, CD83",Cancer cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Smooth muscle cell,"ACTA2, DES",Normal cell,Undefined,Experiment
+Urothelium cell,"Pancytokeratin family, UPK3A",Normal cell,Undefined,Experiment
+Amniotic fluid stem cell,"CD44, ENG, NT5E, THY1",Normal cell,Amniotic fluid,Experiment
+Dental pulp stem cell,"CD34, PTPRC, MCAM, NA",Normal cell,Deciduous tooth,Experiment
+Natural killer cell,"[CD3D, CD3E, CD3G], NCAM1",Normal cell,Blood,Experiment
+Cancer stem-like cell,"ANPEP, PROM1, FUT4, ALCAM, EPCAM, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,NECTIN4,Cancer cell,Breast,Experiment
+Testis somatic cell,THY1,Normal cell,Testis,Experiment
+Photoreceptor cell,"CRX, NES, PRPH, PRRT2, RCVRN, RHO, RPE65",Normal cell,Retina,Experiment
+Endothelial cell,PECAM1,Cancer cell,Undefined,Experiment
+Neural crest cell,"CSPG4, NES",Cancer cell,Undefined,Experiment
+Pericyte,"Calponin family, THY1, DLK1, CSPG4, PDGFA, SMN1",Cancer cell,Undefined,Experiment
+Cancer stem cell,"MYC, EZH2, NANOG, POU5F1, SOX2",Cancer cell,Undefined,Experiment
+Placenta cell,CDX2,Cancer cell,Placenta,Experiment
+Myeloid dendritic cell,ITGAX,Normal cell,Thymus,Experiment
+Cartilage progenitor cell,MCAM,Normal cell,Cartilage,Experiment
+Fibroblast,"MME, C5AR2",Cancer cell,Undefined,Experiment
+Cancer stem-like cell,"PROM1, CXCR4",Cancer cell,Endometrium,Experiment
+Mesenchymal stem cell,"ENG, CD44, NT5E, THY1",Normal cell,Synovial fluid,Experiment
+T helper cell,CD4,Normal cell,Salivary gland,Experiment
+T cell,CD5,Normal cell,Salivary gland,Experiment
+B1 cell,CD5,Normal cell,Salivary gland,Experiment
+B cell,MS4A1,Normal cell,Salivary gland,Experiment
+Plasma cell,SDC1,Normal cell,Salivary gland,Experiment
+Follicular helper (Tfh) T cell,"BCL6, [CD3D, CD3E, CD3G]",Normal cell,Salivary gland,Experiment
+T helper17 (Th17) cell,"CCR6, MCAM",Normal cell,Peripheral blood,Experiment
+Adipose-derived stem cell,"ENG, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,KRT19,Cancer cell,Undefined,Experiment
+Mesenchymal progenitor cell,MCAM,Normal cell,Bone marrow,Experiment
+Dental pulp stem cell,ALDH1A1,Normal cell,Dental pulp,Experiment
+Endothelial cell,PECAM1,Normal cell,Lung,Experiment
+Basal cell,LGALS3,Cancer cell,Undefined,Experiment
+Mesenchymal stromal cell,"ENG, CD14, CD19, PECAM1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Tonsil,Experiment
+Mesenchymal stromal cell,"ENG, CD14, CD19, PECAM1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,"ENG, CD44, NT5E",Normal cell,Amniotic membrane,Experiment
+Endothelial progenitor cell,"PROM1, CD34, KDR",Normal cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Granulocyte,CEACAM8,Normal cell,Blood,Experiment
+Classical monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Blood,Experiment
+Intermediate monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Blood,Experiment
+Non-classical monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Blood,Experiment
+Hepatocyte,Albumin family,Normal cell,Liver,Experiment
+Endothelial cell,MCAM,Normal cell,Liver,Experiment
+Ito cell (hepatic stellate cell),ACTA2,Normal cell,Liver,Experiment
+Kupffer cell,"CD14, CD163, CD68",Normal cell,Liver,Experiment
+Hematopoietic stem cell,ITGA2,Normal cell,Umbilical cord blood,Experiment
+Myoepithelial cell,"Calponin family, TP63",Cancer cell,Undefined,Experiment
+Gastric stem cell,LGR5,Normal cell,Gastric gland,Experiment
+Cancer stem cell,LGR5,Cancer cell,Undefined,Experiment
+Side-population cell,CD44,Cancer cell,Undefined,Experiment
+Regulatory T (Treg) cell,TNFRSF18,Normal cell,Blood,Experiment
+Cancer stem cell,ALCAM,Cancer cell,Undefined,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Mesenchymal stem cell,ITGA6,Normal cell,Bone marrow,Experiment
+Cancer stem cell,IL1RAP,Cancer cell,Undefined,Experiment
+Germinal center B cell,CD9,Normal cell,Tonsil,Experiment
+Endometrial stem cell,IPO13,Cancer cell,Endometrium,Experiment
+Endometrial progenitor cell,IPO13,Cancer cell,Endometrium,Experiment
+Cancer stem cell,"KIT, NA",Cancer cell,Undefined,Experiment
+Cancer stem cell,IL1RAP,Cancer cell,Peripheral blood,Experiment
+Cancer stem cell,IL1RAP,Cancer cell,Bone marrow,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Retinal progenitor cell,KIT,Normal cell,Retina,Experiment
+Mesenchymal stem cell,"ENG, CD34, THY1, NA",Normal cell,Oral mucosa,Experiment
+Vaginal cell,"LOR, SFN",Normal cell,Vagina,Experiment
+Muscle satellite cell,NCAM1,Normal cell,Muscle,Experiment
+Endothelial cell,"CD34, PECAM1",Normal cell,Muscle,Experiment
+Inflammatory cell,"CD34, PECAM1",Normal cell,Muscle,Experiment
+Macrophage,CD14,Cancer cell,Bone marrow,Experiment
+Lymphocyte,"CD14, PTPRC",Cancer cell,Bone marrow,Experiment
+Epithelial cell,"CD14, PTPRC, EPCAM",Cancer cell,Bone marrow,Experiment
+Cancer stem cell,CD44,Cancer cell,Stomach,Experiment
+Spermatogonium,"ITGB1, KIT",Normal cell,Testis,Experiment
+Platelet,GP1BA,Normal cell,Liver,Experiment
+Cancer stem cell,Aldehyde dehydrogenase 1 family,Cancer cell,Undefined,Experiment
+Vascular stem cell,"KIT, MKI67",Normal cell,Blood,Experiment
+Vascular progenitor cell,"KIT, MKI67",Normal cell,Blood,Experiment
+Cancer stem cell,CD44,Cancer cell,Blood,Experiment
+Mesenchymal stem cell,"MME, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Keratinocyte progenitor cell,ABCG2,Normal cell,Skin,Experiment
+Adipose-derived stem cell,"ENG, ITGB1, PECAM1, CD34, CD44, ITGA4, NT5E, THY1",Normal cell,Abdominal adipose tissue,Experiment
+Adipose progenitor cell,ITGB1,Normal cell,Adipose tissue,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+B cell,CD19,Normal cell,Blood,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD8A",Normal cell,Blood,Experiment
+Natural killer cell,"[FCGR3A, FCGR3B], NCAM1",Normal cell,Blood,Experiment
+Cancer stem cell,ICAM1,Cancer cell,Undefined,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Endothelial progenitor cell,PECAM1,Normal cell,Umbilical cord blood,Experiment
+Cancer stem cell,"PROM1, FLOT2",Cancer cell,Venous blood,Experiment
+Myoepithelial cell,PDPN,Cancer cell,Parotid gland,Experiment
+Epithelial cell,FUT4,Normal cell,Endometrium,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Trophoblast cell,LVRN,Normal cell,Placenta,Experiment
+Cancer stem cell,"PROM1, FUT4",Cancer cell,Brain,Experiment
+Endothelial cell,"ENG, ITGAM, MCAM, CD34, PTPRC",Normal cell,Antecubital vein,Experiment
+Intestinal stem cell,"ALCAM, CD24, CD44",Normal cell,Intestinal crypt,Experiment
+Endometrial stromal stem cell,"ITGB1, CD34, GP1BA, THY1",Normal cell,Endometrium stroma,Experiment
+Adipose-derived stem cell,"ENG, PECAM1, CD34, PTPRC, THY1",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Adipose-derived stromal cell,"MME, ENG, ANPEP, ALCAM, ITGB1, CD44, TFRC, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Induced regulatory T (Treg) cell,"IL7R, IL2RA, CD4, FOXP3",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Eye,Experiment
+Corneal limbal stem cell,LGR5,Normal cell,Limbal epithelium,Experiment
+Cancer stem cell,ALDH family,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"PDGFRA, CASP3",Normal cell,Bone marrow,Experiment
+Mesenchymal progenitor cell,MCAM,Normal cell,Muscle,Experiment
+Mesenchymal progenitor cell,MCAM,Normal cell,Bone,Experiment
+Mesenchymal progenitor cell,MCAM,Normal cell,Adipose tissue,Experiment
+Mesenchymal progenitor cell,MCAM,Normal cell,Cartilage,Experiment
+Dental pulp stem cell,"ALDH1A1, CD44, PTPRC, NT5E, THY1, NA",Normal cell,Dental pulp,Experiment
+Hematopoietic stem cell,CMAHP,Normal cell,Umbilical cord blood,Experiment
+Mesenchymal stem cell,CMAHP,Normal cell,Umbilical cord blood,Experiment
+Epidermal transit amplifying cell,FABP5,Normal cell,Foreskin,Experiment
+Submandibular gland stem cell,CD34,Normal cell,Submandibular gland,Experiment
+Serous acinar cell,CD44,Normal cell,Salivary gland,Experiment
+Mucous acinar cell,ALCAM,Normal cell,Salivary gland,Experiment
+Lymphoid cell,"NCAM1, GZMB, TIA1",Normal cell,Blood,Experiment
+Multipotent progenitor cell,ISL1,Normal cell,Heart,Experiment
+Macrophage,CD68,Normal cell,Retinal pigment epithelium,Experiment
+EBV+ B lymphoma cell,B4GALT5,Cancer cell,Lymph,Experiment
+EBV+ B lymphoma cell,B4GALT5,Cancer cell,Kidney,Experiment
+EBV+ B lymphoma cell,B4GALT5,Cancer cell,Liver,Experiment
+Liver stem cell,"KRT19, EGF, GSTP1, H19, HGF, NA",Cancer cell,Liver,Experiment
+Premeiotic germ cell,MAGEA4,Cancer cell,Testis,Experiment
+Primordial germ cell,MAGEA4,Cancer cell,Testis,Experiment
+Mesenchymal stromal cell,FAP,Normal cell,Bone marrow,Experiment
+Megakaryocyte progenitor cell,TFRC,Normal cell,Subcutaneous adipose tissue,Experiment
+Blast cell,"ANPEP, CD34, HLA-DR family",Cancer cell,Bone marrow,Experiment
+Intestinal stem cell,LGR5,Normal cell,Gastrointestinal tract,Experiment
+Cancer stem cell,"PROM1, CD34",Cancer cell,Undefined,Experiment
+B cell,MS4A1,Normal cell,Blood,Experiment
+Megakaryocyte,"ITGA2B, ITGB3",Normal cell,Umbilical cord blood,Experiment
+Endocrine progenitor cell,"DDR1, DNER",Normal cell,Pancreas,Experiment
+Beta cell,HEPACAM2,Normal cell,Pancreas,Experiment
+Endocrine cell,"DISP2, LRP11, SEZ6L2, SLC30A8, Solute carrier family 30",Normal cell,Pancreas,Experiment
+Intestinal stem cell,DCLK1,Normal cell,Esophagus,Experiment
+Intestinal stem cell,DCLK1,Cancer cell,Esophagus,Experiment
+Lymphocyte,"[IL18R1, IL18RAP], IL1RL1",Normal cell,Undefined,Experiment
+Neutrophil,MPO,Normal cell,Brain,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Brain,Experiment
+B cell,MS4A1,Normal cell,Brain,Experiment
+T helper17 (Th17) cell,KLRB1,Normal cell,Umbilical cord blood,Experiment
+Early hematopoietic cell,PROM1,Normal cell,Blood,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Normal cell,Lymphoid tissue,Experiment
+B cell,"NA, MS4A1, CD40, CD74, CD80, CD86",Normal cell,Lymphoid tissue,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Cancer cell,Lymphoid tissue,Experiment
+B cell,"NA, MS4A1, CD40, CD74, CD80, CD86",Cancer cell,Lymphoid tissue,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Endothelial cell,"MCAM, PTPRC",Normal cell,Blood,Experiment
+Mesenchymal progenitor cell,ALCAM,Normal cell,Cartilage,Experiment
+Cancer stem cell,NCAM1,Cancer cell,Kidney,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Trophoblast cell,KRT7,Normal cell,Placenta,Experiment
+Podocyte,EZR,Normal cell,Renal glomerulus,Experiment
+Glomerular epithelial cell,EZR,Normal cell,Renal glomerulus,Experiment
+Dental pulp stem cell,IMMT,Normal cell,Dental pulp,Experiment
+Adipose-derived stem cell,"ANPEP, ITGB1, PECAM1, CD34, CD44",Normal cell,Subcutaneous adipose tissue,Experiment
+Paneth cell,DEFA5,Normal cell,Pyloric gland,Experiment
+B cell,CD24,Normal cell,Bone marrow,Experiment
+B cell,"CD24, CD79A",Normal cell,Bone marrow,Experiment
+Dermal papilla cell,PROM1,Normal cell,Hair follicle,Experiment
+Schwann cell,GFAP,Normal cell,Intervertebral disc,Experiment
+Endothelial cell,CD34,Normal cell,Intervertebral disc,Experiment
+Mesenchymal stromal cell,"IL6ST, LIFR",Normal cell,Bone marrow,Experiment
+Liver progenitor cell,CD24,Normal cell,Liver,Experiment
+Pluripotent stem cell,"ALPL, POU5F1, FUT4, NA, NA, PODXL",Normal cell,Embryo,Experiment
+Beta cell,FXYD2,Normal cell,Pancreas,Experiment
+Mesenchymal stem cell,NGFR,Normal cell,Bone marrow,Experiment
+T cell,"IL2RA, CD69",Cancer cell,Undefined,Experiment
+B cell,PAX5,Normal cell,Lymphoid tissue,Experiment
+Endothelial cell,CD34,Normal cell,Corpus luteum,Experiment
+Cancer stem cell,"CD24, DPP4, CD9, TFF2",Cancer cell,Undefined,Experiment
+Adipose-derived stem cell,"ENG, NGFR, ITGA1, THY1",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Undefined,Experiment
+Basal cell,TSC-22 family,Normal cell,Prostate,Experiment
+Ciliated cell,MUC8,Normal cell,Nasal epithelium,Experiment
+Multipotent stem cell,"CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Adventitia,Experiment
+Endothelial cell,VWF,Normal cell,Heart,Experiment
+Pancreatic stem cell,CXCR4,Normal cell,Pancreatic acinar tissue,Experiment
+Endocrine progenitor cell,CXCR4,Normal cell,Pancreatic acinar tissue,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,NES,Cancer cell,Thyroid,Experiment
+Basal cell,CD151,Normal cell,Airway epithelium,Experiment
+Adipose-derived stem cell,"CD44, NT5E, CD9, THY1",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,PROM1,Cancer cell,Gall bladder,Experiment
+Muller glia precursor cell,CD44,Normal cell,Retina,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Neural stem cell,"SOX1, SOX2, SOX9",Normal cell,Brain,Experiment
+Cancer stem cell,"CD44, EPCAM",Cancer cell,Stomach,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, PECAM1, CD34, CD44, PTPRC, NT5E, HLA-DR family, NA",Normal cell,Umbilical cord,Experiment
+Fibroblast,"ENG, CD14, ITGB1, PECAM1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Vocal fold,Experiment
+Cancer stem cell,"PROM1, FUT4, ALCAM, CD24, CD44",Normal cell,Undefined,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Central nervous system stem cell,"PROM1, CD24, CD34, PTPRC",Normal cell,Fetal brain,Experiment
+Osteogenic precursor-like cell,BMPR1B,Normal cell,Dermis,Experiment
+B cell,"CD19, CD27, CD40LG",Normal cell,Peripheral blood,Experiment
+CD4+ T cell,CD4,Normal cell,Peripheral blood,Experiment
+CD4-CD28+ T cell,"BCL2, ITGB2, IL2RA, TNFRSF8, PTPRC, B3GAT1, FAS, PRF1",Normal cell,Peripheral blood,Experiment
+CD4-CD28- T cell,"BCL2, ITGB2, IL2RA, TNFRSF8, PTPRC, B3GAT1, FAS, PRF1",Normal cell,Peripheral blood,Experiment
+Luteinizing granulosa cell,FSHR,Normal cell,Ovarian follicle,Experiment
+Monocyte,"CD14, PTPRC",Normal cell,Subcutaneous adipose tissue,Experiment
+Macrophage,"CD14, PTPRC",Normal cell,Subcutaneous adipose tissue,Experiment
+Macrophage,"CD14, MRC1, PTPRC",Normal cell,Adipose tissue,Experiment
+Mesenchymal stromal cell,CSPG4,Normal cell,Bone marrow,Experiment
+T helper cell,CD4,Normal cell,Peripheral blood,Experiment
+Suppressor T cell,CD8A,Normal cell,Peripheral blood,Experiment
+Cytotoxic T cell,CD8A,Normal cell,Peripheral blood,Experiment
+Natural killer cell,NCAM1,Normal cell,Peripheral blood,Experiment
+B cell,CD19,Normal cell,Peripheral blood,Experiment
+Decidual cell,BHLHE40,Normal cell,Blood,Experiment
+Activated CD4+ T cell,"IL2RA, ITGB1, CD4, TFRC",Normal cell,Blood,Experiment
+Mesenchymal stem cell,FZD9,Normal cell,Placenta,Experiment
+Cancer stem cell,PROM1,Normal cell,Undefined,Experiment
+Hair follicle cell,CD34,Normal cell,Hair follicle,Experiment
+T cell,CD4,Cancer cell,Ascites,Experiment
+T cell,CD8A,Cancer cell,Ascites,Experiment
+Natural killer cell,"NCAM1, [FCGR3A, FCGR3B], [CD3D, CD3E, CD3G]",Cancer cell,Ascites,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4, FOXP3",Cancer cell,Ascites,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Regulatory T (Treg) cell,ENTPD1,Normal cell,Peripheral blood,Experiment
+Pericyte,"MCAM, PECAM1, CD34",Normal cell,Subcutaneous adipose tissue,Experiment
+Mature endothelial cell,"PECAM1, CD34",Normal cell,Subcutaneous adipose tissue,Experiment
+Immature endothelial cell,"PECAM1, CD34",Normal cell,Subcutaneous adipose tissue,Experiment
+Cytokine induced killer cell,"[CD3D, CD3E, CD3G], NCAM1",Cancer cell,Blood,Experiment
+Cytokine induced killer cell,"[CD3D, CD3E, CD3G], NCAM1",Cancer cell,Blood,Experiment
+Cytokine induced killer cell,"[CD3D, CD3E, CD3G], NCAM1",Cancer cell,Blood,Experiment
+Cytokine induced killer cell,"[CD3D, CD3E, CD3G], NCAM1",Cancer cell,Blood,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4",Cancer cell,Blood,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4",Cancer cell,Blood,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4",Cancer cell,Blood,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4",Cancer cell,Blood,Experiment
+Hematopoietic stem cell,CD34,Normal cell,Peripheral blood,Experiment
+CD14+ endothelial progenitor cell,"CD14, KDR",Normal cell,Blood,Experiment
+Regulatory T (Treg) cell,ENTPD1,Normal cell,Peripheral blood,Experiment
+Lymphocyte,SIGLEC12,Normal cell,Peripheral blood,Experiment
+Mesenchymal stem cell,"ENG, NT5E, THY1",Normal cell,Undefined,Experiment
+Monocyte,CD34,Normal cell,Umbilical cord blood,Experiment
+Dendritic cell,CR1,Normal cell,Synovium,Experiment
+Monocyte,"CCR7, [CD3D, CD3E, CD3G], CD4, PTPRC, SELL, CD8A, TRA, TRB",Normal cell,Peripheral blood,Experiment
+Dedifferentiation adipocyte,"VCAM1, ITGB1, CD34, CD44, PTPRC, HLA-ABC family",Normal cell,Adipose tissue,Experiment
+Adipose-derived stem cell,"VCAM1, ITGB1, CD34, CD44, PTPRC, HLA-ABC family",Normal cell,Adipose tissue,Experiment
+Bile duct cell,"KRT19, KRT7",Normal cell,Liver,Experiment
+Dental pulp stem cell,"MCAM, NA",Normal cell,Molar,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Tonsil,Experiment
+B cell,"MS4A1, CR2, FCER2, CD40, ST6GAL1",Normal cell,Tonsil,Experiment
+Myeloid cell,"[ITGAL, ITGAM, ITGAX, ITGAD], CD14, [FCGR3A, FCGR3B], CR1, FCGR2C",Normal cell,Tonsil,Experiment
+Follicular dendritic cell,CMD1B,Normal cell,Tonsil,Experiment
+Hematopoietic cell,PTPRC,Normal cell,Bone marrow,Experiment
+Hematopoietic progenitor cell,CD34,Normal cell,Bone marrow,Experiment
+Hematopoietic cell,KIT,Normal cell,Bone marrow,Experiment
+Platelet,PECAM1,Normal cell,Bone marrow,Experiment
+Monocyte,PECAM1,Normal cell,Bone marrow,Experiment
+Endothelial cell,PECAM1,Normal cell,Bone marrow,Experiment
+Neural stem cell,PROM1,Normal cell,Bone marrow,Experiment
+Hematopoietic stem cell,PROM1,Normal cell,Bone marrow,Experiment
+Basophil,IL3RA,Normal cell,Blood,Experiment
+Muscle-derived cell,"CD34, NCAM1",Normal cell,Skeletal muscle,Experiment
+Muscle-derived cell,"KIT, CD34, VCAM1, KDR",Normal cell,Skeletal muscle,Experiment
+Endometrial stem cell,MSI1,Normal cell,Endometrium,Experiment
+Basal cell,TP63,Normal cell,Submandibular gland,Experiment
+Mature endothelial cell,CD34,Normal cell,Blood,Experiment
+Progenitor-like angiogenesis-promoting cell,CD34,Normal cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Adipose-derived stromal cell,PECAM1,Normal cell,Adipose tissue,Experiment
+Adipose-derived stem cell,PECAM1,Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ENG, NT5E, THY1",Normal cell,Embryonic stem cell,Experiment
+Cancer cell,SLC31A2,Cancer cell,Kidney,Experiment
+Dopaminergic neuron,FOLR1,Normal cell,Midbrain,Experiment
+Cancer cell,"ABCB5, NGFR, MCAM, SMCP",Cancer cell,Peripheral blood,Experiment
+Smooth muscle cell,ACTA2,Normal cell,Blood vessel,Experiment
+Alveolar epithelial progenitor cell,CPM,Normal cell,Embryonic stem cell,Experiment
+Neural stem cell,PROM1,Normal cell,Brain,Experiment
+Cancer cell,FOLH1,Cancer cell,Blood,Experiment
+Adipose-derived stromal cell,"ENG, VCAM1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Adipose-derived stem cell,"ENG, ITGB1, CD44, MYC, KLF4, NANOG, POU5F1, SOX2",Normal cell,Adipose tissue,Experiment
+Adipose-derived stromal cell,"ENG, ITGB1, CD44, MYC, KLF4, NANOG, POU5F1, SOX2",Normal cell,Adipose tissue,Experiment
+Neuron,"MAP2, RBFOX3, Synapsin family, TUBB3",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Undefined,Experiment
+IL-17Ralpha T cell,"IL7R, [CD3D, CD3E, CD3G]",Normal cell,Peripheral blood,Experiment
+Hematopoietic stem cell,"PROM1, CD34, KIT",Normal cell,Corneal endothelium,Experiment
+Mesenchymal stem cell,"ITGB1, NA, TGF-beta family, VIM",Normal cell,Corneal endothelium,Experiment
+Fibroblast,"TGF-beta family, ACTA2",Normal cell,Corneal endothelium,Experiment
+Corneal endothelial cell,"PROM1, NA, VEGFA, FLT1",Normal cell,Corneal endothelium,Experiment
+Cancer cell,TGM2,Cancer cell,Esophagus,Experiment
+Cancer cell,TNFRSF10A,Cancer cell,Undefined,Experiment
+Cancer cell,EPCAM,Cancer cell,Blood,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, CD44, NT5E, THY1",Normal cell,Skeletal muscle,Experiment
+Mesenchymal stromal cell,"ENG, ITGB1, CD44, NT5E, THY1",Normal cell,Skeletal muscle,Experiment
+Cancer stem cell,THY1,Cancer cell,Undefined,Experiment
+Cancer cell,ALDH1A1,Cancer cell,Undefined,Experiment
+Corneal epithelial progenitor cell,ABCG2,Normal cell,Embryonic stem cell,Experiment
+Cancer cell,HLA-ABC family,Cancer cell,Blood,Experiment
+Colonic stem cell,PTK7,Normal cell,Colon,Experiment
+Pluripotent stem cell,"ANPEP, NA, PODXL",Normal cell,Skin,Experiment
+Cancer cell,"EPCAM, ERBB2, NPEPPS",Cancer cell,Blood,Experiment
+Cancer cell,"EPCAM, ERBB2, NPEPPS",Cancer cell,Blood,Experiment
+Cancer cell,"EPCAM, POU5F1, SALL4",Cancer cell,Peripheral blood,Experiment
+Natural killer cell,"CD158 family, [FCGR3A, FCGR3B], KLRK1, NCAM1, KLRD1, FASLG, NCR1",Normal cell,Adipose tissue,Experiment
+Infiltrated mononuclear cell,"[CD3D, CD3E, CD3G], CD68, ATP6AP2",Normal cell,Kidney,Experiment
+Adipose-derived stem cell,"MME, THBD",Normal cell,Subcutaneous adipose tissue,Experiment
+Adipose-derived stromal cell,"MME, THBD",Normal cell,Subcutaneous adipose tissue,Experiment
+Adipose-derived stromal cell,"F3, CD200",Normal cell,Visceral adipose tissue,Experiment
+Adipose-derived stem cell,"F3, CD200",Normal cell,Visceral adipose tissue,Experiment
+Naive T cell,"CD27, CD4, PTPRC, SELL, CD8A",Normal cell,Peripheral blood,Experiment
+Central memory T cell,"CD27, CD4, PTPRC, SELL, CD8A",Normal cell,Peripheral blood,Experiment
+Effector memory T cell,"CD27, CD4, PTPRC, SELL, CD8A",Normal cell,Peripheral blood,Experiment
+Effector T cell,"CD27, CD4, PTPRC, SELL, CD8A",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Undefined,Experiment
+Gastric stem cell,"BHLHA15, RUNX1, SOX2, TNFRSF19",Normal cell,Gastric corpus,Experiment
+Cancer stem cell,"CDH2, TEK",Cancer cell,Blood,Experiment
+Cancer stem cell,POU5F1,Cancer cell,Undefined,Experiment
+Endothelial cell,F8,Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, NES",Cancer cell,Undefined,Experiment
+Cancer cell,MS4A1,Cancer cell,Undefined,Experiment
+B cell,MS4A1,Cancer cell,Undefined,Experiment
+T cell,CD8A,Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD24, CD44, EPCAM",Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, CD14, CD19, CD34, PTPRC, NT5E, THY1, HLA-DR family",Normal cell,Bone marrow,Experiment
+Cortical thymus epithelial cell,"PTPRC, CDR2, EPCAM",Normal cell,Thymus,Experiment
+Medullary thymus epithelial cell,"PTPRC, CDR2, EPCAM",Normal cell,Thymus,Experiment
+Cancer stem cell,PROM1,Cancer cell,Larynx,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Neutrophil,"ANPEP, FCGR3B, PTPRC",Normal cell,Pluripotent stem cell,Experiment
+Cardiac progenitor cell,"ALCAM, VCAM1, SIRPA",Normal cell,Embryonic stem cell,Experiment
+Cardiomyocyte,"ALCAM, VCAM1, SIRPA",Normal cell,Embryonic stem cell,Experiment
+Mesenchymal stem cell,"ENG, CD34, CD44, NT5E, THY1, HLA-ABC family, HLA-DR family",Normal cell,Embryonic stem cell,Experiment
+Mesenchymal stem cell,"ENG, CD34, CD44, NT5E, THY1, HLA-ABC family, HLA-DR family",Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,"ENG, CD34, CD44, NT5E, THY1, HLA-ABC family, HLA-DR family",Normal cell,Foreskin,Experiment
+Mesenchymal stromal cell,"ENG, CD14, CD19, PECAM1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Lymph,Experiment
+M1 macrophage,ROS1,Normal cell,Undefined,Experiment
+M2 macrophage,HLA-DR family,Normal cell,Undefined,Experiment
+Tumor-propagating cell,MCAM,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Undefined,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,SUSD2,Normal cell,Bone marrow,Experiment
+Mesenchymal stromal cell,SUSD2,Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,"ENG, MCAM, THY1, NA",Normal cell,Tooth,Experiment
+Keratinocyte,"ALDH family, CD44, TFRC, ITGA6",Normal cell,Skin,Experiment
+Flk1+ mesodermal cell,CXADR,Normal cell,Pluripotent stem cell,Experiment
+Cancer stem cell,"AFP, PROM1, CD44, THY1, EPCAM",Cancer cell,Undefined,Experiment
+Natural killer cell,NCR1,Normal cell,Splenic red pulp,Experiment
+Natural killer cell,NCR1,Normal cell,Lymph node,Experiment
+Natural killer cell,NCR1,Normal cell,Lung,Experiment
+Natural killer cell,NCR1,Normal cell,Gut,Experiment
+Colony-forming cell,ITGA6,Normal cell,Prostate,Experiment
+Hepatic progenitor-like cell,"ANPEP, PROM1",Normal cell,Pluripotent stem cell,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,ALDH family,Cancer cell,Undefined,Experiment
+Neural stem cell,"CD200, ITGA6",Cancer cell,Undefined,Experiment
+Endothelial progenitor cell,"CD34, PTPRC, KDR",Normal cell,Blood,Experiment
+Angiogenic T cell,"[CD3D, CD3E, CD3G], PECAM1, CXCR4",Normal cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Cancer cell,"CD24, CD44, PTPRC, EPCAM, ITGB1, PLAUR",Cancer cell,Blood,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Undefined,Experiment
+Megakaryocyte,"ITGA2B, GP1BA, POU5F1, SOX2",Normal cell,Undefined,Experiment
+Liver stem cell,NOTCH3,Normal cell,Fetal liver,Experiment
+Liver progenitor cell,NOTCH3,Normal cell,Fetal liver,Experiment
+Oxyntic stem cell,ASPM,Normal cell,Stomach,Experiment
+Oxyntic progenitor cell,ASPM,Cancer cell,Stomach,Experiment
+Oxyntic stem cell,ASPM,Cancer cell,Stomach,Experiment
+Oxyntic progenitor cell,ASPM,Normal cell,Stomach,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, THY1",Cancer cell,Undefined,Experiment
+Pancreatic progenitor cell,SLC2A2,Normal cell,Embryonic stem cell,Experiment
+Cancer cell,MS4A1,Cancer cell,Blood,Experiment
+Cardiomyocyte,VCAM1,Normal cell,Pluripotent stem cell,Experiment
+Cardiomyocyte,VCAM1,Normal cell,Embryonic stem cell,Experiment
+Pancreatic endoderm cell,F3,Normal cell,Embryonic stem cell,Experiment
+Endocrine cell,CD200,Normal cell,Embryonic stem cell,Experiment
+Endocrine cell,CDCP1,Normal cell,Embryonic stem cell,Experiment
+Cancer stem cell,CD9,Cancer cell,Undefined,Experiment
+Epithelial stem cell,NGFR,Normal cell,Laryngeal squamous epithelium,Experiment
+Stromal cell,"KIT, PROM1",Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"KIT, PROM1",Cancer cell,Undefined,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Cancer stem cell,"CD44, FLOT2",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD44, FLOT2",Cancer cell,Undefined,Experiment
+Cardiomyocyte,SIRPA,Normal cell,Embryonic stem cell,Experiment
+Cardiomyocyte,SIRPA,Normal cell,Pluripotent stem cell,Experiment
+Fibroblast,THY1,Normal cell,Embryonic stem cell,Experiment
+Vascular smooth muscle cell,PDGFRB,Normal cell,Embryonic stem cell,Experiment
+Endothelial cell,PECAM1,Normal cell,Embryonic stem cell,Experiment
+Cancer stem cell,"ITGA6, ITGB3, FLOT2",Cancer cell,Mammary gland,Experiment
+Cancer cell,"SDC1, MUM1, VIM",Cancer cell,Undefined,Experiment
+Pancreatic stem cell,PROM1,Normal cell,Pancreas,Experiment
+Pancreatic progenitor cell,PROM1,Normal cell,Pancreas,Experiment
+Malignant mesothelioma cell,MUC16,Cancer cell,Lung,Experiment
+Malignant mesothelioma cell,MUC16,Cancer cell,Pleura,Experiment
+Buccal epithelial stem cell,TP63,Normal cell,Oral mucosa,Experiment
+Stem cell,"MS4A1, NGFR",Cancer cell,Undefined,Experiment
+Macrophage,CD68,Normal cell,Brain,Experiment
+Microglial cell,CD68,Normal cell,Brain,Experiment
+Embryonic stem cell,"FUT4, NA, PODXL",Normal cell,Embryonic stem cell,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD24, CD44, CXCR4, FLOT2, PROCR",Cancer cell,Undefined,Experiment
+Primordial germ cell,"CD38, ALPL",Normal cell,Embryonic stem cell,Experiment
+Primordial germ cell,"CD38, ALPL",Normal cell,Pluripotent stem cell,Experiment
+Luminal cell,KRT8,Normal cell,Prostate,Experiment
+Myoepithelial cell,BHLHE40,Normal cell,Undefined,Experiment
+Cancer stem cell,"PROM1, NES",Cancer cell,Undefined,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Undefined,Experiment
+Cancer stem cell,"KIT, PROM1, CD44",Cancer cell,Undefined,Experiment
+PDX1+ pancreatic progenitor cell,"CD24, PDX1",Normal cell,Embryonic stem cell,Experiment
+Cancer stem cell,"ABCB1, ABCG2, PROM1",Cancer cell,Undefined,Experiment
+Regulatory T (Treg) cell,"CD101, IL2RA, CD4",Normal cell,Peripheral blood,Experiment
+Responder T cell,"CD101, IL2RA, CD4",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Progenitor cell,PROM1,Normal cell,Embryonic stem cell,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Side-population cell,"CD24, CD44, ITGA6",Normal cell,Undefined,Experiment
+Megakaryocyte,"CD34, ITGA2B, ITGB3",Normal cell,Umbilical cord blood,Experiment
+Megakaryocyte,"CD34, ITGA2B, ITGB3",Normal cell,Peripheral blood,Experiment
+Pancreatic endoderm cell,F3,Normal cell,Undefined,Experiment
+Endocrine cell,"CD200, CDCP1",Normal cell,Undefined,Experiment
+Progenitor cell,ALCAM,Cancer cell,Undefined,Experiment
+CD4+ T cell,CD4,Normal cell,Peripheral blood,Experiment
+T helper1 (Th1) cell,IFNG,Normal cell,Peripheral blood,Experiment
+T helper2 (Th2) cell,IL4,Normal cell,Peripheral blood,Experiment
+T helper17 (Th17) cell,IL17A,Normal cell,Peripheral blood,Experiment
+B cell,CD19,Normal cell,Blood,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Blood,Experiment
+Monocyte,CD14,Normal cell,Blood,Experiment
+Embryonic stem cell,"CD9, CDH3, EPCAM, PODXL",Normal cell,Embryonic stem cell,Experiment
+Plasma cell,"SDC1, CD19, CD38",Cancer cell,Peripheral blood,Experiment
+Abnormal plasma cell,"SDC1, CD38, NCAM1",Cancer cell,Peripheral blood,Experiment
+Cancer stem cell,"ALDH family, PROM1",Cancer cell,Ovary,Experiment
+Neutrophil,"ITGAM, [FCGR3A, FCGR3B], CEACAM8",Normal cell,Blood,Experiment
+Regulatory T (Treg) cell,IL2RB,Normal cell,Peripheral blood,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Undefined,Experiment
+T helper cell,CD4,Normal cell,Eye,Experiment
+Macrophage,CD68,Normal cell,Eye,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+B cell,PAX5,Cancer cell,Undefined,Experiment
+Regulatory T (Treg) cell,NT5E,Normal cell,Skin,Experiment
+Epithelial cell,"FLOT2, MUC family",Normal cell,Mammary epithelium,Experiment
+Endothelial progenitor cell,"PROM1, CD34, KDR",Normal cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Endothelial cell,EMCN,Normal cell,Undefined,Experiment
+Neural stem cell,NES,Normal cell,Spinal cord,Experiment
+Neuron,MAP2,Normal cell,Spinal cord,Experiment
+Astrocyte,GFAP,Normal cell,Spinal cord,Experiment
+Cholinergic neuron,CHAT,Normal cell,Spinal cord,Experiment
+Erythroid precursor,SHMT2,Normal cell,Bone marrow,Experiment
+Embryonic stem cell,EPCAM,Normal cell,Undefined,Experiment
+Neutrophil,FUT4,Normal cell,Peripheral blood,Experiment
+Monocyte,CD14,Normal cell,Peripheral blood,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Peripheral blood,Experiment
+Mesenchymal cell,"NT5E, THY1",Normal cell,Bone marrow,Experiment
+Endothelial progenitor cell,"FLT3, PECAM1, CD34, THY1",Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,"ENG, ALCAM",Normal cell,Tooth,Experiment
+Limbal stem cell,"KRT15, SOD2",Normal cell,Corneal epithelium,Experiment
+Cancer stem cell,MET,Cancer cell,Lung,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Undefined,Experiment
+Cancer stem-like cell,FUT4,Cancer cell,Brain,Experiment
+Cancer stem cell,"PROM1, CD44, [ITGA2, ITGB1]",Cancer cell,Undefined,Experiment
+Liver stem cell,THY1,Normal cell,Fetal liver,Experiment
+Platelet,"CD40LG, ITGA2B, ITGB3, SELP",Normal cell,Blood,Experiment
+Monocyte,"CD14, SELPLG, ICAM4, CD244, COX2, MPO",Normal cell,Blood,Experiment
+Leukocyte,PTPRC,Normal cell,Blood,Experiment
+Small intestinal stem cell,DCLK1,Normal cell,Small intestinal crypt,Experiment
+Sertoli cell,"AMH, KRT18",Normal cell,Testis,Experiment
+T cell,DPP4,Normal cell,Undefined,Experiment
+Eosinophil,EPO,Normal cell,Sputum,Experiment
+Neutrophil,LCN2,Normal cell,Sputum,Experiment
+Eosinophil,EPO,Normal cell,Bronchoalveolar system,Experiment
+Neutrophil,LCN2,Normal cell,Bronchoalveolar system,Experiment
+T cell,"[CD3D, CD3E, CD3G], MS4A1",Cancer cell,Undefined,Experiment
+Regulatory T (Treg) cell,FOXP3,Cancer cell,Colorectum,Experiment
+Hematopoietic progenitor cell,"ALDH family, CD34",Normal cell,Bone marrow,Experiment
+Red blood cell (erythrocyte),ALDH family,Normal cell,Bone marrow,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Undefined,Experiment
+Merkel cell,KRT20,Normal cell,Hair follicle,Experiment
+Interstitial cell,DECR1,Normal cell,Dorsolateral prefrontal cortex,Experiment
+Glutamatergic neuron,"BDNF, CAMK2A, TBR1",Normal cell,Dorsolateral prefrontal cortex,Experiment
+Embryonic stem cell,KIT,Normal cell,Periodontal ligament,Experiment
+Hematopoietic stem cell,CD34,Normal cell,Periodontal ligament,Experiment
+Cancer stem cell,EZH2,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,NGFR,Normal cell,Periodontal ligament,Experiment
+Mesenchymal stem cell,"MCAM, NA",Normal cell,Periodontal ligament,Experiment
+Mesenchymal stem cell,"PDGFRA, ITGAV",Normal cell,Periodontal ligament,Experiment
+Neural stem cell,"NA, NGFR, SLITRK6",Normal cell,Brain,Experiment
+Neural progenitor cell,"NA, NGFR, SLITRK6",Normal cell,Brain,Experiment
+Cancer stem cell,TLR4,Cancer cell,Undefined,Experiment
+Adipose-derived stem cell,"PECAM1, CD34, PTPRC",Normal cell,Adipose tissue,Experiment
+Endothelial cell,"PECAM1, CD34",Normal cell,Adipose tissue,Experiment
+Smooth muscle cell,"MCAM, PECAM1",Normal cell,Adipose tissue,Experiment
+Preadipocyte,"PECAM1, CD36",Normal cell,Adipose tissue,Experiment
+Regulatory T (Treg) cell,"ADA, DPP4",Cancer cell,Undefined,Experiment
+Multipotent mesenchymal stroma cell,"ENG, CD34, PTPRC, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Cancer stem-like cell,CDH5,Cancer cell,Brain,Experiment
+CD14+CD16+ monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Blood,Experiment
+CD14++CD16- monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Blood,Experiment
+Monocyte,"[FCGR3A, FCGR3B], NCAM1",Normal cell,Peripheral blood,Experiment
+Type II pneumocyte,ALPG,Normal cell,Undefined,Experiment
+Clara cell,SLC23A2,Normal cell,Undefined,Experiment
+Ito cell (hepatic stellate cell),LRAT,Normal cell,Liver,Experiment
+Follicular T cell,PDCD1,Cancer cell,Undefined,Experiment
+Endothelial cell,"PECAM1, CD34",Normal cell,Blood vessel,Experiment
+Mesangial cell,CD34,Normal cell,Kidney,Experiment
+Hematopoietic cell,"KIT, IL3RA, CD14, CD34, PTPRC, THY1, GYPA",Normal cell,Fetal liver,Experiment
+Hematopoietic precursor cell,"KIT, IL3RA, CD14, CD34, PTPRC, THY1, GYPA",Normal cell,Fetal liver,Experiment
+Endothelial precursor cell,"PROM1, KDR, FLT1, TEK",Normal cell,Fetal liver,Experiment
+Hepatocyte,"AFP, Albumin family, MET, KRT19",Normal cell,Fetal liver,Experiment
+Liver stem cell,"ALPG, ITGB1, HLA Class I, HLA class II",Normal cell,Fetal liver,Experiment
+Bone marrow stem cell,"ENG, CD14, ALCAM, ITGB1, CD34, CD44, PTPRC, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Myometrial stem cell,"CD44, NA",Normal cell,Myometrium,Experiment
+Cancer stem cell,"CD44, NA",Cancer cell,Myometrium,Experiment
+Stem cell,"DNMT3B, GDF3, NANOG, POU5F1",Cancer cell,Undefined,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Optic nerve,Experiment
+Microglial cell,AIF1,Normal cell,Optic nerve,Experiment
+Embryonic stem cell,"FUT4, NA, CHST10, NGFR",Normal cell,Embryo,Experiment
+Osteocyte,CD44,Normal cell,Bone,Experiment
+Osteoblast,"ALPL, NA",Normal cell,Bone marrow,Experiment
+Embryonic stem cell,POU5F1,Normal cell,Embryo,Experiment
+Cytotrophoblast,CEACAM1,Normal cell,Endometrium,Experiment
+Trophoblast cell,"KRT7, VIM",Normal cell,Placenta,Experiment
+B cell,"ICAM2, BST1, ITGB2, IL17RA, LAIR1, PECAM1, BST2, CD63, ADGRE5",Cancer cell,Undefined,Experiment
+Adipose-derived stromal cell,DLK1,Normal cell,Abdominal adipose tissue,Experiment
+Adipose progenitor cell,DLK1,Normal cell,Abdominal adipose tissue,Experiment
+Zymogenic chief cell,ANPEP,Normal cell,Gastric epithelium,Experiment
+Corneal epithelial stem cell,"KRT14, KRT3, TP63",Normal cell,Eye,Experiment
+Embryonic stem cell,EPCAM,Normal cell,Undefined,Experiment
+Cardiac progenitor cell,CASP3,Normal cell,Heart,Experiment
+Keratinocyte progenitor cell,"CD34, TP63",Normal cell,Skin,Experiment
+Stem cell,ALDH1A1,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"DAZL, DDX4, ITGA6, ITGB1, PIWIL2, ZBTB16, POU5F1, STRA8",Normal cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, PROM1, CD34, CD44, THY1",Normal cell,Umbilical cord,Experiment
+Stem cell,"DPP4, CD44",Cancer cell,Undefined,Experiment
+Osteoblast,ALPG,Cancer cell,Bone marrow,Experiment
+Cancer stem-like cell,"CD44, NA",Cancer cell,Oral cavity,Experiment
+Cardiovascular progenitor cell,"FLT1, FLT4, ISL1, NKX2-5",Normal cell,Heart,Experiment
+Mesenchymal stem cell,"NGFR, THY1",Normal cell,Synovium,Experiment
+Hematopoietic progenitor cell,"CASR, KDR",Normal cell,Undefined,Experiment
+Cardiac progenitor cell,"CASR, KDR",Normal cell,Undefined,Experiment
+Naive CD4+ T cell,"CD4, PTPRC, SELL",Normal cell,Blood,Experiment
+Thymic emigrant cell,"PECAM1, PTPRC, SELL",Normal cell,Blood,Experiment
+Mesenchymal stem cell,"ENG, CD14, PECAM1, CD34, PTPRC, NT5E, THY1",Normal cell,Umbilical cord,Experiment
+Mesenchymal stem cell,"MCAM, CD34, TFRC, THY1, NA",Normal cell,Tooth,Experiment
+Dendritic cell,CD34,Normal cell,Umbilical cord blood,Experiment
+T cell,"CD2, CD7",Normal cell,Undefined,Experiment
+B cell,"MME, CD19",Normal cell,Undefined,Experiment
+Myeloid cell,"ANPEP, CD14, FUT4, CD33, MPO",Normal cell,Undefined,Experiment
+Keratinocyte,CD34,Normal cell,Epithelium,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Stem cell,NGFR,Normal cell,Esophagus,Experiment
+Definitive zone cell,NCAM1,Normal cell,Adrenal gland,Experiment
+Chromaffin cell,NCAM1,Normal cell,Adrenal gland,Experiment
+Epidermal stem cell,SMCP,Normal cell,Foreskin,Experiment
+Type II pneumocyte,PGC,Normal cell,Lung,Experiment
+Pluripotent stem cell,"CD9, PODXL",Normal cell,Undefined,Experiment
+Mesenchymal stem cell,"CD34, CD44, PTPRC",Normal cell,Chorionic villus,Experiment
+Mesenchymal stem cell,"CD34, CD44, PTPRC",Normal cell,Amniotic membrane,Experiment
+Natural killer cell,"[FCGR3A, FCGR3B], [CD3D, CD3E, CD3G], NCAM1",Normal cell,Uterus,Experiment
+Circulating progenitor cell,"ALDH family, PROM1, CD14, MCAM, CD34",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,"PROM1, CD24, CD44, EPCAM",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, FUT4, ABCG2, NA",Cancer cell,Undefined,Experiment
+Cancer stem cell,"NA, KIT, IL3RA, CD34, CD38, CD7, THY1, NA",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, ALCAM, CD24, CD44, EPCAM",Cancer cell,Undefined,Experiment
+Cancer stem cell,"ABCG2, PROM1",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, ITGA6, THY1",Cancer cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44, FLOT2",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,SDC1,Cancer cell,Undefined,Experiment
+Cancer stem cell,MS4A1,Cancer cell,Undefined,Experiment
+Neuron,DCLK3,Normal cell,Brain,Experiment
+Primordial germ cell,"EPCAM, ITGA6",Normal cell,Undefined,Experiment
+Erythroblast,TFRC,Normal cell,Blood,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Synovium,Experiment
+B cell,MS4A1,Normal cell,Synovium,Experiment
+Monocyte,CD14,Normal cell,Synovium,Experiment
+Large granular lymphocyte,CHST10,Normal cell,Peripheral blood,Experiment
+Pigment epithelial cell,TUBB3,Normal cell,Retina,Experiment
+Mesenchymal stem cell,"PROM1, CD34, PTPRC, NES, POU5F1, NA",Normal cell,Dental pulp,Experiment
+Dendritic cell,"CD80, CD86, MHC class II",Normal cell,Undefined,Experiment
+Erythroid cell,"GYPA, TFRC",Normal cell,Umbilical cord blood,Experiment
+Cancer stem cell,"ALDH1A1, CD24, NGFR, CD44",Cancer cell,Oral cavity,Experiment
+Pluripotent stem cell,"NA, PODXL",Normal cell,Undefined,Experiment
+Naive T cell,"CCR5, CCR7, PTPRC",Normal cell,Bone marrow,Experiment
+T1 (Transitional) B cell,"MME, CD19, PTPRC, IgD family, CD40LG",Normal cell,Bone marrow,Experiment
+T2 (Transitional) B cell,"MME, CD19, PTPRC, IgD family, CD40LG",Normal cell,Bone marrow,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Limbal epithelial stem cell,"KIT, CDH5, MCAM, ALCAM, CXCR4",Normal cell,Limbal epithelium,Experiment
+Cancer stem cell,"PROM1, CD24, CD44",Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, ITGB1",Normal cell,Umbilical cord,Experiment
+Pancreatic stem cell,"LGR5, NANOG",Normal cell,Pancreas,Experiment
+Cancer stem cell,"LGR5, NANOG",Normal cell,Pancreas,Experiment
+Adipose-derived stem cell,"ENG, CD14, CD44, PTPRC, THY1",Normal cell,Abdominal adipose tissue,Experiment
+Eosinophil,PRG2,Normal cell,Sinonasal mucosa,Experiment
+Plasma cell,CD27,Normal cell,Sinonasal mucosa,Experiment
+Leydig cell,STAR,Normal cell,Testis,Experiment
+Peritubular myoid cell,ACTA2,Normal cell,Testis,Experiment
+Sertoli cell,SOX9,Normal cell,Testis,Experiment
+Spermatogonial stem cell,"UCHL1, DDX4",Normal cell,Testis,Experiment
+Adipose-derived stem cell,"MME, ITGAL, ITGAX, CDH5, CD34, CD44, ITGA4, ICAM1, CD55, CD59, TFRC, CD9",Normal cell,Adipose tissue,Experiment
+Embryonic stem cell,"NANOG, POU5F1, NA, PODXL",Normal cell,Tooth,Experiment
+Mesenchymal stem cell,"ENG, MCAM, CD24, CD34, ITGA6, CD81, THY1, NA",Normal cell,Tooth,Experiment
+Neural stem cell,"NGFR, NES",Normal cell,Tooth,Experiment
+Hematopoietic stem cell,"KIT, PTPRC",Normal cell,Tooth,Experiment
+Mesenchymal stromal cell,"PTPRC, ENG, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Neutrophil,"FUT4, [FCGR3A, FCGR3B], CD24",Normal cell,Vagina,Experiment
+B cell,"CD19, MS4A1",Cancer cell,Bone marrow,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Cancer cell,Bone marrow,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Normal cell,Thyroid,Experiment
+B cell,CD79A,Normal cell,Thyroid,Experiment
+Cancer stem-like cell,CD44,Cancer cell,Undefined,Experiment
+Regulatory T (Treg) cell,"FCRL3, TIGIT",Normal cell,Peripheral blood,Experiment
+Dendritic cell progenitor,"CSF1R, CSF2RA, KIT, IL3RA, FLT3, CD34, PTPRC",Normal cell,Bone marrow,Experiment
+Mesenchymal stromal cell,"NGFR, CD34, CD44, ALPL, SUSD2",Normal cell,Bone marrow,Experiment
+Mesenchymal stromal cell,"NGFR, CD34, CD44, ALPL, SUSD2",Normal cell,Adipose tissue,Experiment
+Cancer stem cell,"CD24, CD44, CXCR4, EPCAM",Normal cell,Serum,Experiment
+Multipotent mesenchymal stroma cell,NGFR,Normal cell,Bone marrow,Experiment
+Endothelial progenitor cell,"PROM1, PECAM1, CD34, CDH5, KDR",Normal cell,Bone marrow,Experiment
+Germinal center B cell,"GCSAM, LMO2",Normal cell,Lymphoid tissue,Experiment
+Cancer stem cell,"PROM1, CD24, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,"PROM1, EPCAM",Cancer cell,Undefined,Experiment
+Corneal endothelial cell,"CD200, GPC4",Normal cell,Eye,Experiment
+Natural killer cell,"[FCGR3A, FCGR3B], KLRC1, KLRK1",Normal cell,Peripheral blood,Experiment
+Osteoblast,THY1,Normal cell,Bone,Experiment
+Osteoblast,ENG,Normal cell,Bone,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Periodontal ligament stem cell,"PECAM1, CD34, PTPRC",Normal cell,Periodontal ligament,Experiment
+Dental pulp stem cell,"ENG, ITGAM, ANPEP, CD14, CD34, PTPRC, NT5E, CD9, HLA-DR family",Normal cell,Premolar,Experiment
+Cancer stem cell,"KIT, PROM1, NA",Cancer cell,Undefined,Experiment
+Follicular helper (Tfh) T cell,"BCL6, MME, CXCL13, ICOS, PDCD1",Normal cell,Lymph node,Experiment
+Natural killer cell,"[FCGR3A, FCGR3B], [CD3D, CD3E, CD3G], PTPRC, NCAM1",Normal cell,Peripheral blood,Experiment
+Dendritic cell,"CD83, CD86, MHC class II",Normal cell,Peripheral blood,Experiment
+Monocyte,"IL6R, SDC1, CD19, MS4A1, ENPP3, CD22, CD27, CD38",Normal cell,Peripheral blood,Experiment
+T helper1 (Th1) cell,CXCR3,Normal cell,Peripheral blood,Experiment
+T helper2 (Th2) cell,CCR4,Normal cell,Peripheral blood,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4, FOXP3",Normal cell,Peripheral blood,Experiment
+Dendritic cell,"CD80, CD86",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Skin,Experiment
+Mesenchymal stem cell,"ALCAM, NT5E, THY1",Normal cell,Periosteum,Experiment
+Germinal stem cell,"DDX4, IFITM3",Normal cell,Ovary,Experiment
+Cancer cell,"ABCB5, NGFR, MCAM, SMCP",Cancer cell,Peripheral blood,Experiment
+Epithelial cell,"KIT, ALCAM",Normal cell,Breast,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, CD44, THY1",Normal cell,Anterior cruciate ligament,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Undefined,Experiment
+B cell,MS4A1,Normal cell,Undefined,Experiment
+Macrophage,CD68,Normal cell,Undefined,Experiment
+Regulatory T (Treg) cell,"ITGA2, LAG3",Normal cell,Undefined,Experiment
+Intestinal stem cell,DCLK1,Normal cell,Colon,Experiment
+Cancer cell,PARP1,Cancer cell,Brain,Experiment
+Dental pulp cell,"ENG, ALCAM, NT5E, THY1, NA",Normal cell,Dental pulp,Experiment
+Migrating cancer stem cell,"MPL, CDCP1",Cancer cell,Liver,Experiment
+Migrating cancer stem cell,"MPL, CDCP1",Cancer cell,Lung,Experiment
+Cancer stem cell,CEACAM6,Cancer cell,Colon,Experiment
+Endothelial cell,CD34,Normal cell,Bladder,Experiment
+Epithelial progenitor cell,"CD24, CD44",Normal cell,Breast,Experiment
+Luminal progenitor,"CD24, CD44, ITGA6, EPCAM",Normal cell,Breast,Experiment
+Basal progenitor cell,"CD24, CD44, ITGA6, EPCAM",Normal cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44, ITGA6, EPCAM",Cancer cell,Breast,Experiment
+Endometrial stem cell,LGR5,Normal cell,Endometrium,Experiment
+Epithelial progenitor cell,CEACAM6,Normal cell,Lung,Experiment
+Intestinal epithelial stem cell,"CD24, CD44",Normal cell,Jejunum,Experiment
+Atypical memory B cell,"MME, CD19, MS4A1, CR2, CD27",Normal cell,Venous blood,Experiment
+Embryonic stem cell,L1TD1,Normal cell,Undefined,Experiment
+Mesenchymal stem cell,"ENG, ANPEP, CD14, ITGB1, CD34, PTPRC, HLA-DR family",Normal cell,Bone marrow,Experiment
+Cancer stem cell,HSPA5,Cancer cell,Undefined,Experiment
+T helper cell,"CCR4, CCR6",Normal cell,Bone marrow,Experiment
+Regulatory T (Treg) cell,"CCR4, CCR6",Normal cell,Bone marrow,Experiment
+Epithelial stem cell,NGFR,Normal cell,Corneal epithelium,Experiment
+Epithelial progenitor cell,NGFR,Normal cell,Corneal epithelium,Experiment
+Foxp3+IL-17+ T cell,"FOXP3, IL17A",Cancer cell,Undefined,Experiment
+Lymphatic endothelial cell,"PECAM1, LYVE1, PDPN, PROX1, FLT4",Cancer cell,Ovary,Experiment
+Cancer stem cell,"ICAM1, NCAM1",Cancer cell,Liver,Experiment
+Cancer stem cell,"CD44, MUC1",Cancer cell,Bladder,Experiment
+Cancer stem cell,"CD34, ITGA2",Cancer cell,Uterus,Experiment
+Embryonic stem cell,"NANOG, POU5F1",Normal cell,Hair follicle,Experiment
+Macrophage,CD68,Normal cell,Lymph node,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, CD34, CD44, THY1",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, CD34, THY1",Normal cell,Liver,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Stomach,Experiment
+Mesenchymal stem cell,"ITGB1, CASP3",Normal cell,Bone marrow,Experiment
+T helper cell,"BTLA, B3GAT1, CXCR5, ICOS, PDCD1",Normal cell,Tonsil,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Mesenchymal stem cell,"ITGB1, CD34, PTPRC, THY1",Normal cell,Umbilical vein,Experiment
+Cancer stem cell,Aldehyde dehydrogenase 1 family,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Endothelial progenitor cell,"PROM1, KDR",Normal cell,Peripheral blood,Experiment
+Cancer stem cell,ALDH family,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Lung,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Pancreatic ductal stem cell,"KRT19, INS, GCG",Normal cell,Pancreas,Experiment
+Basal cell,S100A6,Normal cell,Prostate,Experiment
+Mesenchymal progenitor cell,"ALCAM, CD44, ICAM1, CD9, THY1",Normal cell,Osteoarthritic cartilage,Experiment
+Macrophage,macrophage galactose-type C-type lectin family,Normal cell,Undefined,Experiment
+Mesenchymal stem cell,"BSG, CD34, CD44, PTPRC, THY1, HLA-DR family",Normal cell,Fetal liver,Experiment
+Bone marrow stromal cell,LAMC2,Normal cell,Bone marrow,Experiment
+Early transit-amplifying prostate epithelial cell,PSCA,Normal cell,Prostate,Experiment
+Late transit-amplifying prostate epithelial cell,PSCA,Normal cell,Prostate,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Blood,Experiment
+T cell,"NA, CD2, [CD3D, CD3E, CD3G], CD4, CD5, CD7, CD8A",Cancer cell,Undefined,Experiment
+Thecal cell,ANPEP,Normal cell,Ovary,Experiment
+Eosinophil,CD9,Normal cell,Sputum,Experiment
+Langerhans cell,CD1 family,Normal cell,Skin,Experiment
+Trophoblast cell,Cytokeratin family,Normal cell,Placenta,Experiment
+Trophoblast cell,Cytokeratin family,Normal cell,Decidua,Experiment
+Trophoblast cell,Cytokeratin family,Normal cell,Umbilical cord,Experiment
+T cell,"SPN, PTPRC",Cancer cell,Undefined,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Cancer cell,Undefined,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Cancer cell,Peripheral blood,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Cancer cell,Undefined,Experiment
+Natural killer cell,DPP4,Normal cell,Undefined,Experiment
+T cell,"CD5, DNTT",Cancer cell,Undefined,Experiment
+T cell,UCHL1,Normal cell,Blood,Experiment
+T cell,PTPRC,Normal cell,Tonsil,Experiment
+Glial cell,"GFAP, S100 family",Normal cell,Brain,Experiment
+Glial cell,"GFAP, S100 family",Normal cell,Sympathetic ganglion,Experiment
+T cell,"MT1 family, UCH family",Normal cell,Undefined,Experiment
+B cell,MB2 family,Normal cell,Undefined,Experiment
+T cell,"CD5, DNTT",Cancer cell,Undefined,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Cancer cell,Undefined,Experiment
+Macrophage,"ITGAM, CD14",Cancer cell,Undefined,Experiment
+Natural killer cell,"[FCGR3A, FCGR3B]",Cancer cell,Undefined,Experiment
+Granulocyte,"[FCGR3A, FCGR3B]",Cancer cell,Undefined,Experiment
+Monocyte,"[ITGAM, ITGB2], HLA-DR family",Normal cell,Blood,Experiment
+Macrophage,"[ITGAM, ITGB2], HLA-DR family",Normal cell,Alveolus,Experiment
+Sertoli cell,TF,Normal cell,Seminal plasma,Experiment
+Sertoli cell,TF,Normal cell,Serum,Experiment
+Neutrophil,"FPR1, CD68",Normal cell,Peripheral blood,Experiment
+T helper cell,"CD4, SELL",Cancer cell,Blood,Experiment
+Cytotoxic T cell,"ITGAM, CD8A",Cancer cell,Blood,Experiment
+Basophil,SMAD1,Cancer cell,Blood,Experiment
+Basophil,SMAD1,Cancer cell,Lung,Experiment
+Monocyte,CD14,Normal cell,Peripheral blood,Experiment
+Epithelial cell,FOLR1,Normal cell,Ovary,Experiment
+Epithelial cell,FOLR1,Normal cell,Uterus,Experiment
+Endothelial cell,PECAM1,Normal cell,Undefined,Experiment
+Endocrine cell,Chromogranin family,Normal cell,Duodenum,Experiment
+Endocrine cell,Chromogranin family,Normal cell,Colon,Experiment
+Endocrine cell,Chromogranin family,Normal cell,Rectum,Experiment
+Cytotoxic T cell,"ITGAM, CD8A",Normal cell,Peripheral blood,Experiment
+Suppressor T cell,"ITGAM, CD4, SELL, CD8A",Normal cell,Peripheral blood,Experiment
+T helper cell,"CD4, SELL",Normal cell,Peripheral blood,Experiment
+Lymphoid stem cell,HPRT1,Normal cell,Peripheral blood,Experiment
+Neuroendocrine cell,ENO2,Normal cell,Fetal pancreas,Experiment
+Epithelial cell,"KRT13, KRT19",Normal cell,Undefined,Experiment
+Cancer cell,ALPG,Cancer cell,Serum,Experiment
+Cancer cell,ALPG,Cancer cell,Serum,Experiment
+Cancer cell,ALPG,Cancer cell,Serum,Experiment
+Cancer cell,ALPG,Cancer cell,Serum,Experiment
+Cancer stem cell,"PROM1, CD44, [ITGA2, ITGB1]",Cancer cell,Prostate,Experiment
+Cancer stem cell,"CD24, CD44, FLOT2",Cancer cell,Pancreas,Experiment
+Cancer stem cell,PROM1,Cancer cell,Pancreas,Experiment
+Cancer stem cell,MET,Cancer cell,Pancreas,Experiment
+Cancer stem cell,ALDH family,Cancer cell,Undefined,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Cancer stem cell,BMI1,Cancer cell,Undefined,Experiment
+Epithelial hair follicle stem cell,"CD200, KRT15, KRT19",Normal cell,Hair follicle,Experiment
+Retinal ganglion cell,THY1,Normal cell,Embryonic stem cell,Experiment
+Somatic stem cell,LGR5,Normal cell,Endometrium,Experiment
+Cancer cell,EPCAM,Cancer cell,Undefined,Experiment
+Cancer cell,"CDH1, EPCAM, Keratins family, MUC1",Cancer cell,Blood,Experiment
+Cancer cell,"EPCAM, FOLH1, KLK3, KRT8, KRT18, KRT19",Cancer cell,Blood,Experiment
+Immune cell,"[CD3D, CD3E, CD3G], CD14, CD19, MS4A1, NCAM1",Cancer cell,Ovary,Experiment
+White blood cell,PTPRC,Normal cell,Blood,Experiment
+Cancer cell,KRT18,Cancer cell,Blood,Experiment
+Leukocyte,"[FCGR3A, FCGR3B], MS4A1, [CD3D, CD3E, CD3G], CD38, PTPRC",Normal cell,Blood,Experiment
+Lymphoid-primed multipotent progenitor,"MME, CD38, PTPRC, CD52, SELL, CSF3R",Normal cell,Bone marrow,Experiment
+Mast cell progenitor,TFRC,Normal cell,Bone marrow,Experiment
+Lymphoid cell,CD19,Normal cell,Peripheral blood,Experiment
+Lymphoid cell,NCAM1,Normal cell,Peripheral blood,Experiment
+Myeloid cell,CD14,Normal cell,Peripheral blood,Experiment
+Myeloid cell,FUT4,Normal cell,Peripheral blood,Experiment
+B cell,CD19,Normal cell,Peripheral blood,Experiment
+Granulocyte,FUT4,Normal cell,Peripheral blood,Experiment
+Natural killer cell,NCAM1,Normal cell,Peripheral blood,Experiment
+Activated CD4+ T cell,"CCR6, CD14, CD19, CD38, CD4, PTPRC, PTPRC, CD69, CXCR3",Normal cell,Blood,Experiment
+Multipotent mesenchymal stroma cell,"ENG, ITGAM, CD14, CD19, CD34, PTPRC, NT5E, CD79A, THY1",Normal cell,Bone marrow,Experiment
+Cancer cell,"MUC1, MUC16, PAX8, WT1",Cancer cell,Ovary,Experiment
+Endothelial cell,"CD24, CDH1, CLDN4, DSP, EPCAM, KRT18, KRT19, OCLN",Normal cell,Ovary,Experiment
+Mesenchymal cell,"ACTA2, CD44, CDH2, FN1, ITGA5, MMP2, S100A4, SNAI2, TNC, TWIST1, VIM, WNT5A, ZEB1, ZEB2",Normal cell,Ovary,Experiment
+Immune cell,"CD14, CD19, MS4A1, [CD3D, CD3E, CD3G], NCAM1",Normal cell,Ovary,Experiment
+Macrophage,LYZ,Normal cell,Peripheral blood,Experiment
+CD4+ T cell,"CD4, LTB",Normal cell,Peripheral blood,Experiment
+B cell,CD74,Normal cell,Peripheral blood,Experiment
+Megakaryocyte,PF4,Normal cell,Peripheral blood,Experiment
+CD8+ T cell,"CD3D, CD8A, NKG7",Normal cell,Peripheral blood,Experiment
+Natural killer cell,"CD3D, NKG7",Normal cell,Peripheral blood,Experiment
+Endothelial cell,VWF,Normal cell,Embryo,Experiment
+Endothelial cell,PECAM1,Normal cell,Embryo,Experiment
+Germ cell,"NANOG, POU5F1, PRDM1, TFAP2C",Normal cell,Embryo,Experiment
+Germ cell,DAZL,Normal cell,Embryo,Experiment
+Germ cell,"DAZL, DPPA3",Normal cell,Embryo,Experiment
+Germ cell,POU5F1,Normal cell,Embryo,Experiment
+Germ cell,POU5F1,Cancer cell,Embryo,Experiment
+Germ cell,POU5F1,Normal cell,Embryo,Experiment
+Germ cell,"BMP15, GDF9, NLRP5, DDX4, ZAR1",Normal cell,Embryo,Experiment
+Unrestricted somatic stem cell,"ENG, ALCAM, PECAM1, CD34, PTPRC, THY1",Normal cell,Embryo,Experiment
+Embryonic stem cell,"NANOG, POU5F1, SOX2, FUT4",Normal cell,Embryo,Experiment
+Mesenchymal stem cell,"ENG, ANPEP, CD34, NT5E, THY1",Normal cell,Embryo,Experiment
+Hematopoietic stem cell,ACE,Normal cell,Embryo,Experiment
+Cancer stem cell,"PROM1, CD44, SOX2",Normal cell,Embryo,Experiment
+Embryonic stem cell,"NANOG, POU5F1, SOX2",Normal cell,Embryo,Experiment
+Pluripotent stem cell,POU5F1,Normal cell,Embryo,Experiment
+Embryonic stem cell,"NANOG, POU5F1, SOX2, NA, NA, PODXL",Normal cell,Embryo,Experiment
+Embryonic stem cell,"NA, NA, PODXL, PODXL",Normal cell,Embryo,Experiment
+Embryonic stem cell,"LEFTY2, NANOG, POU5F1, ZFP42, SOX2, TERT",Normal cell,Embryo,Experiment
+Embryonic stem cell,"LIN28A, NANOG, SOX2",Normal cell,Embryo,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Embryo,Experiment
+Spermatogonial stem cell,THY1,Normal cell,Embryo,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Embryo,Experiment
+Neuron,APBB1,Normal cell,Embryo,Experiment
+Neuron,RBFOX3,Normal cell,Embryo,Experiment
+Pancreatic progenitor cell,SLC2A2,Normal cell,Embryo,Experiment
+Cardiomyocyte,"ACTN1, TNNI3",Normal cell,Heart,Experiment
+Cardiomyocyte,"TNNT2, GJA1, MYH6, SIRPA",Normal cell,Heart,Experiment
+Cardiomyocyte,ACTN1,Normal cell,Heart,Experiment
+Cardiomyocyte,"ACTN1, GJA1",Normal cell,Heart,Experiment
+Beta cell,CD99,Normal cell,Pancreas,Experiment
+Beta cell,PTGDR2,Normal cell,Pancreas,Experiment
+Beta cell,TSPAN7,Normal cell,Pancreas,Experiment
+Beta cell,FXYD2,Normal cell,Pancreas,Experiment
+Beta cell,"SLC2A2, IAPP, NKX6-1, PDX1",Normal cell,Pancreas,Experiment
+CD8+ T cell,"[CD3D, CD3E, CD3G], CD8A",Normal cell,Blood,Experiment
+CD8+ T cell,"NCAM1, CD8A",Normal cell,Blood,Experiment
+CD8+ T cell,TNFRSF8,Normal cell,Blood,Experiment
+Endothelial cell,PECAM1,Cancer cell,Lymph node,Experiment
+Lymphatic endothelial cell,PDPN,Cancer cell,Lymph node,Experiment
+Endothelial cell,CD34,Normal cell,Lymph node,Experiment
+Endothelial cell,CD34,Cancer cell,Lymph node,Experiment
+Macrophage,CD68,Normal cell,Lymph node,Experiment
+Macrophage,CD68,Normal cell,Lymph node,Experiment
+Natural killer cell,NCAM1,Cancer cell,Lymph node,Experiment
+B cell,"CD19, CD27, CD40LG",Normal cell,Lymph node,Experiment
+B cell,PAX5,Cancer cell,Lymph node,Experiment
+B cell,"POU2AF1, POU2F2, PAX5",Normal cell,Lymph node,Experiment
+B cell,PAX5,Cancer cell,Lymph node,Experiment
+B cell,"MS4A1, FCER2",Normal cell,Lymph node,Experiment
+B cell,MS4A1,Normal cell,Lymph node,Experiment
+B cell,"CR2, FCER2, [FCGR2A, FCGR2B, FCGR2C], CD80",Normal cell,Lymph node,Experiment
+B cell,"CD19, CR2",Normal cell,Lymph node,Experiment
+B cell,MS4A1,Normal cell,Lymph node,Experiment
+B cell,"CD19, MS4A1, CD79A",Cancer cell,Lymphoid tissue,Experiment
+B cell,"CD80, CD86",Normal cell,Lymphoid tissue,Experiment
+B cell,PAX5,Normal cell,Lymphoid tissue,Experiment
+CD8+ T cell,TIGIT,Normal cell,Lymphoid tissue,Experiment
+CD4+ memory T cell,CXCR5,Normal cell,Lymphoid tissue,Experiment
+Pericyte,PDGFRA,Normal cell,Muscle,Experiment
+Pericyte,"MCAM, CSPG4, PDGFRA, PDGFRB",Normal cell,Muscle,Experiment
+Pericyte,MCAM,Normal cell,Muscle,Experiment
+Pericyte,ALPG,Normal cell,Muscle,Experiment
+Pericyte,CSPG4,Normal cell,Muscle,Experiment
+Pericyte,"ALPG, CSPG4",Normal cell,Muscle,Experiment
+Pericyte,PDGFRB,Normal cell,Muscle,Experiment
+Mesenchymal progenitor cell,"ENG, NT5E, THY1",Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Muscle satellite cell,CD82,Normal cell,Muscle,Experiment
+Muscle satellite cell,"CDCP1, CD82",Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Muscle satellite cell,PAX7,Normal cell,Muscle,Experiment
+Acinar cell,BMI1,Normal cell,Pancreas,Experiment
+Alpha cell,GCG,Normal cell,Pancreatic islet,Experiment
+Beta cell,INS,Normal cell,Pancreatic islet,Experiment
+Beta cell,INS,Normal cell,Pancreatic islet,Experiment
+Delta cell,SST,Normal cell,Pancreas,Experiment
+Neuroendocrine cell,SV2A,Normal cell,Pancreas,Experiment
+Stem cell,"LGR5, NANOG",Cancer cell,Pancreas,Experiment
+Epithelial cell,EPCAM,Normal cell,Pancreas,Experiment
+Epithelial cell,"KRT19, CDH1, EPCAM",Normal cell,Pancreas,Experiment
+Epithelial cell,"GCG, INS",Normal cell,Pancreas,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,"PECAM1, CD34",Normal cell,Blood vessel,Experiment
+Endothelial cell,"PECAM1, VEGFA",Cancer cell,Blood vessel,Experiment
+Endothelial cell,"PECAM1, CD34, ENTPD1, KDR",Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,CD34,Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Cancer cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,ENG,Normal cell,Blood vessel,Experiment
+Endothelial progenitor cell,"PROM1, CD34",Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,"ENG, [FLT1, KDR, FLT4]",Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,PECAM1,Normal cell,Blood vessel,Experiment
+Endothelial cell,"ENG, CDH5",Normal cell,Blood vessel,Experiment
+Endothelial cell,"ICAM2, PECAM1, TIE1, TEK, VEGFA",Normal cell,Blood vessel,Experiment
+Stem cell,"PECAM1, TFRC, THY1, NES",Normal cell,Blood vessel,Experiment
+Stem cell,"POU5F1, SOX2",Normal cell,Blood vessel,Experiment
+Stem cell,CD34,Normal cell,Blood vessel,Experiment
+Stem cell,"KIT, TNFRSF8, POU5F1, ALP",Normal cell,Blood vessel,Experiment
+Stem cell,"PROM1, NES",Cancer cell,Blood vessel,Experiment
+Stem cell,NES,Normal cell,Blood vessel,Experiment
+Stem cell,NES,Normal cell,Blood vessel,Experiment
+Stem cell,NES,Normal cell,Blood vessel,Experiment
+Stem cell,NES,Normal cell,Blood vessel,Experiment
+Stem cell,NES,Normal cell,Blood vessel,Experiment
+Stem cell,NES,Normal cell,Blood vessel,Experiment
+B cell,CD27,Normal cell,Kidney,Experiment
+B cell,MS4A1,Normal cell,Kidney,Experiment
+B cell,MS4A1,Normal cell,Kidney,Experiment
+Cancer cell,KCNN4,Normal cell,Kidney,Experiment
+Cancer stem cell,PROM1,Normal cell,Kidney,Experiment
+Epithelial cell,EPCAM,Normal cell,Kidney,Experiment
+Epithelial cell,"MME, ANPEP",Normal cell,Kidney,Experiment
+Epithelial cell,"CLDN1, PAX2",Normal cell,Kidney,Experiment
+Epithelial cell,"CD34, TEK",Normal cell,Kidney,Experiment
+Epithelial cell,"CTNNB1, KRT18, CDH1, CDH2, OCLN, VIM, TJP1, TJP2",Normal cell,Kidney,Experiment
+Epithelial cell,"Cytokeratin family, CDH1, TJP1",Normal cell,Kidney,Experiment
+Mesangial cell,"ITGA8, PDGFRB",Normal cell,Kidney,Experiment
+Mesangial cell,"ACTA2, FN1, PDGFRB",Normal cell,Kidney,Experiment
+Proximal tubular cell,"MMRN1, ITK",Normal cell,Kidney,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Kidney,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Kidney,Experiment
+T cell,"CD28, [CD3D, CD3E, CD3G]",Normal cell,Kidney,Experiment
+Basal cell,KRT5,Normal cell,Prostate,Experiment
+Basal cell,TAZ,Cancer cell,Prostate,Experiment
+Basal cell,TP63,Cancer cell,Prostate,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Basal cell,TP63,Cancer cell,Prostate,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Basal cell,TEAD1,Normal cell,Prostate,Experiment
+Basal cell,TP63,Cancer cell,Prostate,Experiment
+Basal cell,TP63,Cancer cell,Prostate,Experiment
+Basal cell,"NA, TP63",Normal cell,Prostate,Experiment
+Basal cell,"NA, TP63",Normal cell,Prostate,Experiment
+Basal cell,TP63,Cancer cell,Prostate,Experiment
+Basal cell,TP63,Cancer cell,Prostate,Experiment
+Basal cell,KRT5,Normal cell,Prostate,Experiment
+Basal cell,TP63,Normal cell,Prostate,Experiment
+Basal cell,"KRT5, TP63",Normal cell,Prostate,Experiment
+Basal cell,"KRT14, KRT5, TP63",Normal cell,Prostate,Experiment
+Epithelial cell,CDH1,Normal cell,Prostate,Experiment
+Epithelial cell,CDH1,Cancer cell,Prostate,Experiment
+Epithelial cell,CDH1,Normal cell,Prostate,Experiment
+Epithelial cell,CDH1,Cancer cell,Prostate,Experiment
+Epithelial cell,CDH1,Normal cell,Prostate,Experiment
+Epithelial cell,"AR, KRT8, KRT18, TP63",Normal cell,Prostate,Experiment
+Epithelial cell,"CTNNB1, CDH1",Cancer cell,Prostate,Experiment
+Epithelial cell,AMACR,Cancer cell,Prostate,Experiment
+Luminal cell,KRT18,Normal cell,Prostate,Experiment
+Luminal cell,"AR, KRT8, KRT18",Normal cell,Prostate,Experiment
+Luminal cell,KRT8,Normal cell,Prostate,Experiment
+Luminal cell,"KRT18, KRT8",Normal cell,Prostate,Experiment
+Progenitor cell,"ABCG2, KRT5",Cancer cell,Prostate,Experiment
+Progenitor cell,"KRT19, CASP3",Cancer cell,Prostate,Experiment
+Cancer stem cell,PROM1,Normal cell,Prostate,Experiment
+Cancer stem cell,"CD44, EZH2, ITGA2, POU5F1, PROM1, PSCA, TACSTD2",Normal cell,Prostate,Experiment
+Cancer stem cell,"PROM1, CD44",Normal cell,Prostate,Experiment
+Cancer stem cell,HGF,Normal cell,Prostate,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, CD24, CD44, [ITGA1, ITGA2, ITGA3, ITGA4, ITGA5, ITGA6], CXCR4, EPCAM",Normal cell,Prostate,Experiment
+Cancer stem cell,PROM1,Normal cell,Prostate,Experiment
+Cancer stem cell,"ABCG2, PROM1, CD44, CXCR4, [ITGA2, ITGB1]",Normal cell,Prostate,Experiment
+Cancer stem cell,"CD24, CD44, [ITGA2, ITGB1]",Normal cell,Prostate,Experiment
+Cancer stem cell,"PROM1, CD44",Normal cell,Prostate,Experiment
+Cancer stem cell,PROM1,Normal cell,Prostate,Experiment
+Cancer stem cell,CD44,Normal cell,Prostate,Experiment
+Stem cell,"ALCAM, CD44, TACSTD2",Normal cell,Prostate,Experiment
+Stem cell,"PROM1, CD44, CASP3",Normal cell,Prostate,Experiment
+Cancer cell,MUC16,Normal cell,Ovary,Experiment
+Cancer cell,FASN,Normal cell,Ovary,Experiment
+Cancer stem cell,ALDH1A1,Normal cell,Ovary,Experiment
+Endothelial cell,PECAM1,Normal cell,Ovary,Experiment
+Granulosa cell,FOXL2,Normal cell,Ovary,Experiment
+Granulosa cell,"FOXL2, SPRR2 family",Normal cell,Ovary,Experiment
+Stem cell,"NANOG, POU5F1, SOX2",Normal cell,Ovarian cortex,Experiment
+Ovarian somatic cell,LGR5,Normal cell,Ovary,Experiment
+Stem cell,NANOG,Normal cell,Ovary,Experiment
+Stem cell,"PROM1, NANOG, POU5F1",Normal cell,Ovary,Experiment
+Stem cell,"LGR5, NANOG",Normal cell,Ovary,Experiment
+Stem cell,PROM1,Normal cell,Ovary,Experiment
+Stem cell,SALL4,Normal cell,Ovary,Experiment
+Germ cell,"AFP, GPC3, POU5F1, SALL4",Normal cell,Ovary,Experiment
+Germ cell,DDX4,Normal cell,Ovary,Experiment
+Germ cell,POU5F1,Normal cell,Ovary,Experiment
+Germ cell,"KIT, GDF9, DDX4",Normal cell,Ovary,Experiment
+Germ cell,SALL4,Normal cell,Ovary,Experiment
+Germ cell,DAZL,Normal cell,Ovary,Experiment
+Germ cell,DDX4,Normal cell,Ovary,Experiment
+Germ cell,"KIT, DAZL, DDX4, ZP4",Normal cell,Ovary,Experiment
+Germ cell,POU5F1,Cancer cell,Ovary,Experiment
+Germ cell,"BMP15, GDF9, NLRP5, DDX4, ZAR1",Normal cell,Ovary,Experiment
+Oocyte,NLRP9,Normal cell,Ovary,Experiment
+Cancer stem cell,CD44,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Stomach,Experiment
+Stem cell,CD44,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Stomach,Experiment
+Cancer stem cell,CD44,Normal cell,Stomach,Experiment
+Progenitor cell,ASPM,Normal cell,Stomach,Experiment
+Stem cell,LGR5,Normal cell,Gastric gland,Experiment
+Cytotrophoblast,KRT17,Normal cell,Placenta,Experiment
+Epithelial cell,KRT7,Normal cell,Placenta,Experiment
+Epithelial cell,Cytokeratin family,Normal cell,Placenta,Experiment
+Mesenchymal stem cell,"ENG, VCAM1, MCAM, ITGA1, NA, ACTA2",Normal cell,Placenta,Experiment
+Mesenchymal stem cell,"ITGB1, CD44, NT5E",Normal cell,Placenta,Experiment
+Stem cell,"ENG, NT5E, THY1",Normal cell,Placenta,Experiment
+Trophoblast cell,KRT7,Normal cell,Placenta,Experiment
+Epithelial cell,"Cytokeratin family, CDH1",Normal cell,Amniotic membrane,Experiment
+Stem cell,"FLT1, KDR",Normal cell,Amniotic fluid,Experiment
+Stem cell,KIT,Normal cell,Amniotic fluid,Experiment
+Stem cell,"ENG, ALCAM, NT5E, THY1, HLA-ABC family",Normal cell,Amniotic fluid,Experiment
+Stem cell,"ENG, ANPEP, ITGB1, CD44, THY1, POU5F1",Normal cell,Amniotic fluid,Experiment
+Stromal cell,VIM,Normal cell,Amniotic membrane,Experiment
+Stem cell,TP63,Normal cell,Amniotic membrane,Experiment
+Stem cell,"ABCG2, TP63",Normal cell,Amniotic membrane,Experiment
+Stem cell,"ABCG2, TP63",Normal cell,Amniotic membrane,Experiment
+Stem cell,"ABCG2, TP63, VIM",Normal cell,Amniotic membrane,Experiment
+Mesenchymal stem cell,CD44,Normal cell,Amniotic membrane,Experiment
+Basal cell,TP63,Cancer cell,Salivary gland,Experiment
+Stem cell,"BMI1, CD44, POU5F1",Cancer cell,Salivary gland,Experiment
+Stem cell,CD34,Normal cell,Submandibular gland,Experiment
+Stem cell,ABCG2,Normal cell,Submandibular gland,Experiment
+Acinar cell,BMP6,Normal cell,Salivary gland,Experiment
+Myoepithelial cell,"Actin family, Calponin family, TP63, S100 family",Normal cell,Salivary gland,Experiment
+Myoepithelial cell,PDPN,Cancer cell,Salivary gland,Experiment
+Myoepithelial cell,"Calponin family, TP63",Normal cell,Salivary gland,Experiment
+Myoepithelial cell,"Calponin family, ITGB1, TP63, S100 family, SMN1",Normal cell,Salivary gland,Experiment
+Follicular helper (Tfh) T cell,"CXCL13, ICOS, PDCD1",Normal cell,Lymph node,Experiment
+T cell,"PTPRC, NA, THY1",Normal cell,Lymph node,Experiment
+T cell,CD2,Normal cell,Lymph node,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Lymph node,Experiment
+T cell,"CD2, CD4, CD5",Normal cell,Lymph node,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Lymph node,Experiment
+Stem cell,NES,Normal cell,Muscle,Experiment
+Stem cell,"CD9, NES, CSPG4, VIM",Normal cell,Muscle,Experiment
+Stem cell,"PROM1, CXCR4, NANOG",Normal cell,Muscle,Experiment
+Stem cell,PAX7,Normal cell,Muscle,Experiment
+Stem cell,NCAM1,Normal cell,Muscle,Experiment
+Mesenchymal stem cell,"ENG, CD44, NT5E, THY1",Normal cell,Muscle,Experiment
+Stem cell,"CD44, RUNX1",Cancer cell,Muscle,Experiment
+Stem cell,CD34,Normal cell,Muscle,Experiment
+Stem cell,CD34,Normal cell,Muscle,Experiment
+Stem cell,"ACTA1, Calponin family, SMTN",Normal cell,Muscle,Experiment
+Stem cell,"KIT, CD34",Normal cell,Muscle,Experiment
+Stem cell,FUT4,Normal cell,Muscle,Experiment
+Stem cell,CASP3,Normal cell,Muscle,Experiment
+Stem cell,CASP3,Normal cell,Muscle,Experiment
+Stem cell,"VCAM1, CD34, THY1, KDR",Normal cell,Muscle,Experiment
+Stem cell,"CD34, CASP3",Normal cell,Muscle,Experiment
+Stem cell,"CD34, CASP3",Normal cell,Muscle,Experiment
+Stem cell,CASP3,Normal cell,Muscle,Experiment
+Endothelial cell,CDH5,Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,"PECAM1, NOS3",Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,MCAM,Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+Endothelial cell,"CDH5, CD34, NCAM1",Normal cell,Muscle,Experiment
+Endothelial cell,"PECAM1, KDR",Normal cell,Muscle,Experiment
+Endothelial cell,PECAM1,Normal cell,Muscle,Experiment
+B cell,CD19,Normal cell,Spleen,Experiment
+B cell,PTPRC,Normal cell,Spleen,Experiment
+Macrophage,"ITGAM, CD14",Normal cell,Spleen,Experiment
+Macrophage,"CD163, MRC1, FCGR1A",Normal cell,Spleen,Experiment
+Macrophage,ADGRE1,Normal cell,Spleen,Experiment
+Macrophage,CD68,Normal cell,Spleen,Experiment
+Neutrophil,MPO,Normal cell,Spleen,Experiment
+Neutrophil,MPO,Normal cell,Spleen,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4",Normal cell,Spleen,Experiment
+Plasma cell,SDC1,Normal cell,Undefined,Experiment
+Plasma cell,"LY9, LAIR1, ICAM1",Normal cell,Peripheral blood,Experiment
+Plasma cell,KIT,Normal cell,Bone marrow,Experiment
+Plasma cell,KIT,Normal cell,Peripheral blood,Experiment
+Plasma cell,CD27,Normal cell,Peripheral blood,Experiment
+Plasma cell,"CD19, CD38",Cancer cell,Peripheral blood,Experiment
+Plasma cell,CD38,Cancer cell,Peripheral blood,Experiment
+Memory B cell,"CD19, CD27",Normal cell,Blood,Experiment
+Memory B cell,CD27,Normal cell,Blood,Experiment
+Memory B cell,CD27,Normal cell,Peripheral blood,Experiment
+Memory B cell,CD27,Normal cell,Blood,Experiment
+Memory B cell,CD27,Normal cell,Blood,Experiment
+Basophil,"ENPP3, CD63",Normal cell,Blood,Experiment
+Basophil,"CCR3, IL3RA",Normal cell,Blood,Experiment
+Basophil,CD63,Normal cell,Blood,Experiment
+Basophil,"ENPP3, CD63",Normal cell,Peripheral blood,Experiment
+Basophil,CD63,Normal cell,Peripheral blood,Experiment
+Basophil,"ENPP3, CD63",Normal cell,Peripheral blood,Experiment
+Basophil,CD63,Normal cell,Blood,Experiment
+Basophil,"ENPP3, PTPRC",Normal cell,Umbilical cord blood,Experiment
+Basophil,CCR3,Normal cell,Blood,Experiment
+Basophil,"ENPP3, CD63",Normal cell,Blood,Experiment
+Basophil,CD63,Normal cell,Blood,Experiment
+Basophil,ENPP3,Normal cell,Peripheral blood,Experiment
+Basophil,ENPP3,Normal cell,Peripheral blood,Experiment
+Basophil,CD63,Normal cell,Blood,Experiment
+Basophil,CD63,Normal cell,Peripheral blood,Experiment
+Basophil,"ENPP3, CD63, CD69",Normal cell,Peripheral blood,Experiment
+Basophil,CD63,Normal cell,Blood,Experiment
+Basophil,ENPP3,Normal cell,Blood,Experiment
+Basophil,ENPP3,Normal cell,Peripheral blood,Experiment
+Basophil,HLA-DR family,Normal cell,Blood,Experiment
+Basophil,"CD19, CD22",Normal cell,Blood,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Blood,Experiment
+Cancer stem cell,"MYC, PROM1, NES",Cancer cell,Blood,Experiment
+Cancer stem cell,CD44,Cancer cell,Peripheral blood,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Blood,Experiment
+Cancer stem cell,CD44,Cancer cell,Blood,Experiment
+Cancer stem cell,PROM1,Cancer cell,Blood,Experiment
+Cancer stem cell,CD44,Cancer cell,Blood,Experiment
+Cancer stem cell,CD44,Cancer cell,Blood,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Peripheral blood,Experiment
+Eosinophil,"ITGAM, CD69, IL13, IL4, IL5, CXCL8",Normal cell,Peripheral blood,Experiment
+Eosinophil,"IL2RA, CD44, CEACAM5, IL3RA",Normal cell,Blood,Experiment
+Eosinophil,"CSF3R, CSF2RA, IL3RA, IL4R, IL5RA, IL6R",Normal cell,Blood,Experiment
+Eosinophil,"IL3RA, IL5RA",Normal cell,Peripheral blood,Experiment
+Circulating fetal cell,"CLDN6, F3, KCNQ4, MCAM, MMP14",Normal cell,Blood,Experiment
+Circulating fetal cell,TFRC,Normal cell,Peripheral blood,Experiment
+Megakaryocyte,ITGA2B,Normal cell,Undefined,Experiment
+Megakaryocyte,"ITGA2B, GP1BA",Normal cell,Undefined,Experiment
+Megakaryocyte,"ITGA2B, GP9",Normal cell,Peripheral blood,Experiment
+Myeloid-derived suppressor cell,"ITGAM, CD33",Cancer cell,Blood,Experiment
+Myeloid-derived suppressor cell,"ITGAM, CD33",Cancer cell,Liver,Experiment
+Sertoli cell,"AMH, INHBB",Normal cell,Undefined,Experiment
+Sertoli cell,AMH,Normal cell,Undefined,Experiment
+T helper17 (Th17) cell,KLRB1,Normal cell,Undefined,Experiment
+Naive T cell,"[CD3D, CD3E, CD3G], PTPRC",Normal cell,Umbilical cord blood,Experiment
+Naive T cell,PTPRC,Normal cell,Peripheral blood,Experiment
+Mesenchymal stromal cell,NGFR,Normal cell,Umbilical cord blood,Experiment
+Mesenchymal stromal cell,"ENG, CD44, NT5E, THY1",Normal cell,Umbilical cord blood,Experiment
+Hematopoietic cell,PTPRC,Normal cell,Undefined,Experiment
+Endothelial cell,"PECAM1, CDH5, VWF",Normal cell,Brain,Experiment
+Endothelial cell,"VCAM1, PECAM1",Normal cell,Brain,Experiment
+Endothelial cell,VWF,Normal cell,Brain,Experiment
+Macrophage,"CD68, AIF1",Normal cell,Brain,Experiment
+M1 macrophage,TSPO,Normal cell,Brain,Experiment
+Macrophage,CD68,Normal cell,Brain,Experiment
+M2 macrophage,CD163,Normal cell,Brain,Experiment
+Oligodendrocyte,OLIG2,Normal cell,Brain,Experiment
+Oligodendrocyte progenitor cell,"NA, CSPG4, OLIG2, PDGFRA",Normal cell,Brain,Experiment
+Oligodendrocyte,OLIG2,Normal cell,Brain,Experiment
+Neuron,RBFOX3,Normal cell,Brain,Experiment
+Neuron,"GFAP, MAP2, NES",Normal cell,Brain,Experiment
+Neuron,MARK4,Normal cell,Brain,Experiment
+Neuron,RBFOX3,Normal cell,Brain,Experiment
+Cancer stem cell,"PROM1, FUT4, THY1",Cancer cell,Brain,Experiment
+Cancer stem cell,"PROM1, NES",Cancer cell,Brain,Experiment
+Neuron,MHC class I,Normal cell,Brain,Experiment
+Stem cell,LGR5,Normal cell,Brain,Experiment
+Stem cell,"NES, PAX6, SOX1, SOX2",Normal cell,Brain,Experiment
+Endothelial cell,ECSCR,Normal cell,White adipose tissue,Experiment
+Endothelial cell,"ENG, PECAM1, VWF",Normal cell,Adipose tissue,Experiment
+Endothelial cell,"MCAM, ICAM family, THBD, VWF",Normal cell,White adipose tissue,Experiment
+Endothelial cell,PECAM1,Normal cell,Adipose tissue,Experiment
+Endothelial cell,"ABCG2, PROM1, PECAM1, CD34",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"NANOG, POU5F1, NA, PODXL, PODXL",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ENG, THY1, NANOG, POU5F1, SOX2",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"PPARGC1A, UCP1",Normal cell,Brown adipose tissue,Experiment
+Mesenchymal stem cell,LEP,Normal cell,White adipose tissue,Experiment
+Stem cell,"ENG, ITGB1, CD34, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ITGB1, CD44, THY1",Normal cell,Adipose tissue,Experiment
+Stem cell,"ENG, PECAM1, CD34, PTPRC, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Stem cell,CD34,Cancer cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"CD44, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ENG, CD34, CD44, PTPRC",Normal cell,Adipose tissue,Experiment
+Mesenchymal stem cell,"ENG, CD34, CD70, THY1",Normal cell,Adipose tissue,Experiment
+Stem cell,"CD44, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Stem cell,"ABCG2, CD34, THY1, TP63",Normal cell,Adipose tissue,Experiment
+Stem cell,"ITGB1, CD44",Normal cell,Adipose tissue,Experiment
+Macrophage,"[FCGR3A, FCGR3B], [FCGR2A, FCGR2B, FCGR2C]",Normal cell,Adipose tissue,Experiment
+Macrophage,CD68,Normal cell,Visceral adipose tissue,Experiment
+Macrophage,"CD14, CD68",Normal cell,Adipose tissue,Experiment
+Stromal cell,GREM1,Normal cell,Adipose tissue,Experiment
+Stromal cell,"ENG, CD44, NT5E, THY1",Normal cell,Adipose tissue,Experiment
+Pericyte,"MCAM, CSPG4",Normal cell,Adipose tissue,Experiment
+Pericyte,"MCAM, CSPG4",Normal cell,Adipose tissue,Experiment
+Endothelial progenitor cell,CD34,Normal cell,Adipose tissue,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colon,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colon,Experiment
+Cancer stem cell,"PROM1, CD24, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,"PROM1, CD44, NANOG, POU5F1",Cancer cell,Colon,Experiment
+Cancer stem cell,"ALCAM, CD24, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,CD44,Cancer cell,Colon,Experiment
+Cancer stem cell,CD44,Cancer cell,Stomach,Experiment
+Cancer stem cell,"ABCG2, ALDH1A1, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Colon,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, ALCAM, CD44, LGR5",Cancer cell,Colon,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colon,Experiment
+Basophil,CCR5,Normal cell,Lung,Experiment
+Mesothelial cell,"LRRN4, UPK3B",Normal cell,Undefined,Experiment
+Mesothelial cell,CDH2,Normal cell,Lung,Experiment
+Cancer cell,KRT19,Cancer cell,Lung,Experiment
+Cancer cell,NCAM1,Cancer cell,Undefined,Experiment
+Plasmacytoid dendritic cell,THBD,Normal cell,Lung,Experiment
+Cancer stem cell,"ALCAM, CD44, EPCAM",Cancer cell,Lung,Experiment
+Cancer stem cell,CD24,Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, SOX2",Cancer cell,Undefined,Experiment
+Cancer stem cell,CD44,Normal cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Cancer cell,Lung,Experiment
+Cancer stem cell,"ABCG2, CD44",Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH family, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,"ABCB1, ALDH1A1, CD44",Cancer cell,Lung,Experiment
+Cancer stem cell,CD44,Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Cancer cell,Lung,Experiment
+Cancer stem cell,ALDH1A1,Normal cell,Lung,Experiment
+Cancer stem cell,GLI1,Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Cancer cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, CD44",Normal cell,Undefined,Experiment
+Cancer stem cell,NES,Normal cell,Lung,Experiment
+Cancer stem cell,PDPN,Cancer cell,Lung,Experiment
+Cancer stem cell,PROM1,Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, CD44",Normal cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, CD44, NANOG, POU5F1, SOX2",Cancer cell,Lung,Experiment
+Cancer stem cell,SOX2,Normal cell,Lung,Experiment
+Cancer stem cell,PROM1,Cancer cell,Lung,Experiment
+Cancer stem cell,"ABCG2, KIT, PROM1",Cancer cell,Lung,Experiment
+Cancer stem cell,"ABCG2, ALDH1A1, PROM1, CD44",Normal cell,Lung,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH family, POU5F1",Normal cell,Undefined,Experiment
+Cancer stem cell,PROM1,Normal cell,Undefined,Experiment
+Cancer stem cell,"MYC, PROM1, KLF4, NANOG",Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, CD44",Cancer cell,Lung,Experiment
+Cancer stem cell,CD44,Normal cell,Undefined,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Lung,Experiment
+Cancer stem cell,CD44,Normal cell,Lung,Experiment
+Cancer stem cell,"ABCB1, ALDH1A1",Normal cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Normal cell,Lung,Experiment
+Cancer stem cell,PROM1,Normal cell,Undefined,Experiment
+Cancer stem cell,CD44,Normal cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, CD44, PDPN",Cancer cell,Lung,Experiment
+Cancer stem cell,MSI1,Normal cell,Lung,Experiment
+Cancer stem cell,NES,Cancer cell,Lung,Experiment
+Cancer stem cell,"ABCG5, ALDH1A1, PROM1, ALCAM, CD24, CD44, FLOT2, NES, POU5F1, SOX2",Cancer cell,Lung,Experiment
+Cancer stem cell,PROM1,Normal cell,Lung,Experiment
+Cancer stem cell,"ABCG2, ALDH1A1, BMI1",Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Cancer cell,Lung,Experiment
+Cancer stem cell,"NANOG, POU5F1, SOX2",Normal cell,Undefined,Experiment
+Cancer stem cell,"ALDH1A1, CTNNB1, PROM1, CD44",Cancer cell,Lung,Experiment
+Cancer stem cell,"ALDH family, PROM1, POU5F1",Normal cell,Lung,Experiment
+Cancer stem cell,"ABCG2, ALDH1A1, BMI1, PROM1",Cancer cell,Lung,Experiment
+Cancer stem cell,"PROM1, NES",Normal cell,Lung,Experiment
+Cancer stem cell,PROM1,Cancer cell,Lung,Experiment
+Cancer stem cell,"BMI1, PROM1, CD34, CD44, POU5F1",Normal cell,Undefined,Experiment
+Cancer stem cell,ALDH family,Cancer cell,Lung,Experiment
+Cancer stem cell,"ABCG2, PROM1",Cancer cell,Lung,Experiment
+Cancer stem cell,"ABCG2, PROM1",Cancer cell,Undefined,Experiment
+Cancer stem cell,POU5F1,Normal cell,Undefined,Experiment
+Cancer stem cell,"CD44, TP63, PDPN",Cancer cell,Lung,Experiment
+Clara cell,SCGB1A1,Normal cell,Lung,Experiment
+Clara cell,SCGB1A1,Normal cell,Lung,Experiment
+Clara cell,SCGB1A1,Normal cell,Lung,Experiment
+Clara cell,SCGB1A1,Normal cell,Lung,Experiment
+Dendritic cell,"THBD, CD1C, CLEC4C",Normal cell,Lung,Experiment
+Dendritic cell,"CCR6, NA, PCX3CR1, PFLT3",Normal cell,Lung,Experiment
+Dendritic cell,"ITGAX, CD209, CD83",Normal cell,Lung,Experiment
+Dendritic cell,CD83,Normal cell,Lung,Experiment
+Dendritic cell,"THBD, CD1C, CLEC4C, CD83",Normal cell,Lung,Experiment
+Dendritic cell,"CD1A, CD83",Cancer cell,Lung,Experiment
+Dendritic cell,"CD1A, MHC Class II",Normal cell,Lung,Experiment
+Endothelial cell,"CDH5, MCAM, PECAM1",Normal cell,Lung,Experiment
+Endothelial cell,"MCAM, PECAM1, VWF",Cancer cell,Lung,Experiment
+Endothelial cell,LYVE1,Normal cell,Lung,Experiment
+Endothelial cell,CD34,Normal cell,Lung,Experiment
+Endothelial cell,PECAM1,Normal cell,Lung,Experiment
+Endothelial cell,PECAM1,Cancer cell,Lung,Experiment
+Endothelial cell,"PECAM1, CD34, VWF",Normal cell,Lung,Experiment
+Endothelial cell,ESM1,Cancer cell,Lung,Experiment
+Endothelial cell,"CD34, FLT1, KDR, VWF",Normal cell,Lung,Experiment
+Endothelial cell,PECAM1,Normal cell,Lung,Experiment
+Endothelial cell,EMCN,Normal cell,Lung,Experiment
+B cell,CD19,Normal cell,Liver,Experiment
+B cell,"CD80, CD86",Normal cell,Liver,Experiment
+Memory B cell,CD27,Normal cell,Liver,Experiment
+B cell,"MME, CD19",Normal cell,Undefined,Experiment
+B cell,MS4A1,Normal cell,Liver,Experiment
+B cell,"MS4A1, CD79A",Normal cell,Liver,Experiment
+B cell,MS4A1,Normal cell,Liver,Experiment
+B cell,PAX5,Normal cell,Undefined,Experiment
+B cell,CD19,Normal cell,Fetal liver,Experiment
+B cell,PTPRC,Normal cell,Liver,Experiment
+B cell,"MS4A1, CD24",Normal cell,Fetal liver,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Liver,Experiment
+Cancer stem cell,THY1,Cancer cell,Liver,Experiment
+Cancer stem cell,CD44,Cancer cell,Undefined,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Undefined,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Undefined,Experiment
+Cancer stem cell,"ANPEP, THY1, EPCAM, POU5F1",Cancer cell,Liver,Experiment
+Cancer stem cell,THY1,Cancer cell,Liver,Experiment
+Cancer stem cell,THY1,Cancer cell,Undefined,Experiment
+Cancer stem cell,THY1,Cancer cell,Undefined,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Liver,Experiment
+Cancer stem cell,"AFP, ANPEP, CD44, THY1, GPC3",Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Liver,Experiment
+Cancer stem cell,KLF8,Cancer cell,Liver,Experiment
+Cancer stem cell,"ANPEP, CD44, CD44, EPCAM",Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,THY1,Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, CD44, LGR5, SOX2",Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD44, THY1, EPCAM",Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,"CTNNB1, PROM1, CD44",Cancer cell,Liver,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Colon,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Pancreas,Experiment
+Cancer stem cell,"POU5F1, SOX2",Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, CD44, THY1",Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, THY1, EPCAM",Cancer cell,Liver,Experiment
+Cancer stem cell,"Aldehyde dehydrogenase 1 family, PROM1, CD24, CD44",Cancer cell,Undefined,Experiment
+Cancer stem cell,USP22,Cancer cell,Undefined,Experiment
+Cancer stem cell,"PROM1, CD44, EPCAM",Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,ANPEP,Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, EPCAM",Cancer cell,Liver,Experiment
+Cancer stem cell,"ALDH family, PROM1, CD44, THY1",Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, THY1",Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Cancer stem cell,"PROM1, THY1, EPCAM, NA",Cancer cell,Liver,Experiment
+Cancer stem cell,PROM1,Cancer cell,Liver,Experiment
+Astrocyte,GFAP,Normal cell,Brain,Experiment
+Astrocyte,SOX9,Normal cell,Brain,Experiment
+Astrocyte,"ALDH1L1, GFAP, NFIA, S100B",Normal cell,Brain,Experiment
+Astrocyte,GFAP,Normal cell,Brain,Experiment
+Cancer cell,MBTPS2,Cancer cell,Brain,Experiment
+Oligodendrocyte progenitor cell,CSPG4,Normal cell,Brain,Experiment
+Cancer cell,CD44,Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Cancer stem cell,"PROM1, NANOG, SOX2",Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Cancer stem cell,"PROM1, NES",Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Undefined,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Cancer stem cell,HOXD9,Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+Cancer stem cell,"THY1, NA",Cancer cell,Brain,Experiment
+Cancer stem cell,PROM1,Cancer cell,Brain,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Brain,Experiment
+T helper1 (Th1) cell,"CCR6, CXCR3",Cancer cell,Brain,Experiment
+T helper2 (Th2) cell,"CCR6, CXCR3",Cancer cell,Brain,Experiment
+T helper17 (Th17) cell,"CCR6, CXCR3",Cancer cell,Brain,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4",Cancer cell,Brain,Experiment
+T cell,PTPRC,Cancer cell,Brain,Experiment
+T helper2 (Th2) cell,TNFRSF8,Normal cell,Brain,Experiment
+Glutamatergic neuron,"SLC17A7, SLC17A6",Normal cell,Brain,Experiment
+Neural progenitor cell,NES,Normal cell,Brain,Experiment
+Neural stem cell,NES,Normal cell,Brain,Experiment
+Neural stem cell,ADGRG1,Normal cell,Brain,Experiment
+Neural progenitor cell,ADGRG1,Normal cell,Brain,Experiment
+Neural stem cell,"DCX, NEUROD1, NCAM1, SOX2, DPYSL3",Normal cell,Brain,Experiment
+Neural progenitor cell,"DCX, NEUROD1, NCAM1, SOX2, DPYSL3",Normal cell,Brain,Experiment
+Purkinje cell,MPRIP,Normal cell,Brain,Experiment
+Pericyte,CSPG4,Normal cell,Brain,Experiment
+Pericyte,ACTA2,Normal cell,Brain,Experiment
+Neural stem cell,HMGB2,Normal cell,Hippocampus,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colon,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colon,Experiment
+Cancer stem cell,CEACAM6,Cancer cell,Colon,Experiment
+Cancer stem cell,ALCAM,Cancer cell,Intestine,Experiment
+Cancer stem cell,ALCAM,Cancer cell,Colon,Experiment
+Cancer stem cell,LGR5,Cancer cell,Colorectum,Experiment
+Cancer stem cell,CD44,Cancer cell,Colorectum,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,"TNFRSF4, CD44",Cancer cell,Colorectum,Experiment
+Intestinal epithelial stem cell,PHLDA1,Normal cell,Intestine,Experiment
+Intestinal stem cell,DCLK1,Normal cell,Intestine,Experiment
+Cancer stem cell,ALCAM,Cancer cell,Gastrointestinal tract,Experiment
+Paneth cell,IL9,Normal cell,Intestine,Experiment
+Eosinophil,"ITGAM, CD44, CD48, ICAM1, CD69, CD81, HLA-DR family",Normal cell,Blood,Experiment
+Eosinophil,RNASE3,Normal cell,Lung,Experiment
+Follicular dendritic cell,"FCER2, CR1",Normal cell,Spleen,Experiment
+Dendritic cell,ITGAX,Normal cell,Spleen,Experiment
+Dendritic cell,ITGAX,Normal cell,Spleen,Experiment
+Follicular dendritic cell,CR1,Normal cell,Spleen,Experiment
+Monocyte,"ITGAM, CD14",Normal cell,Spleen,Experiment
+Macrophage,CD68,Normal cell,Synovium,Experiment
+Macrophage,CD163,Normal cell,Synovium,Experiment
+Macrophage,CD68,Normal cell,Synovium,Experiment
+Macrophage,CD68,Normal cell,Synovium,Experiment
+Macrophage,CD68,Normal cell,Synovium,Experiment
+Macrophage,CD68,Normal cell,Synovium,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD5, CD8A, THY1",Normal cell,Thymus,Experiment
+Sertoli cell,CLU,Normal cell,Testis,Experiment
+Sertoli cell,"AMH, SOX9",Normal cell,Testis,Experiment
+Sertoli cell,VIM,Normal cell,Testis,Experiment
+Leydig cell,HSD3B,Normal cell,Testis,Experiment
+Leydig cell,HSD3B,Normal cell,Testis,Experiment
+Stem cell,"NANOG, POU5F1, SOX2",Normal cell,Testis,Experiment
+Stem cell,SALL4,Normal cell,Testis,Experiment
+Stem cell,NES,Normal cell,Testis,Experiment
+Dendritic cell,ITGAX,Normal cell,Thymus,Experiment
+Dendritic cell,"ITGAX, CD80, CD83",Normal cell,Thymus,Experiment
+Cancer stem cell,"PROM1, CD44",Normal cell,Endometrium,Experiment
+Stem cell,LGR5,Normal cell,Endometrium,Experiment
+Stem cell,"ENG, ALCAM, NT5E, THY1, HLA-ABC family",Normal cell,Endometrium,Experiment
+Stem cell,"KIF4A, NANOG, POU5F1, SOX2",Normal cell,Endometrium,Experiment
+Mesenchymal stem cell,"ENG, THY1",Normal cell,Endometrium,Experiment
+Stem cell,"CDH5, PECAM1, CD34, MSI1, POU5F1",Normal cell,Endometrium,Experiment
+Stem cell,"KIT, NANOG, POU5F1, NA",Normal cell,Endometrium,Experiment
+Neutrophil,CEACAM8,Normal cell,Blood,Experiment
+Neutrophil,LCN2,Normal cell,Blood,Experiment
+Neutrophil,CEACAM8,Normal cell,Blood,Experiment
+Neutrophil,ITGAM,Normal cell,Blood,Experiment
+Macrophage,ADGRE1,Normal cell,Serum,Experiment
+Macrophage,CD68,Normal cell,Serum,Experiment
+Macrophage,CD68,Normal cell,Serum,Experiment
+Macrophage,CD68,Normal cell,Serum,Experiment
+Macrophage,"CSF1R, MRC1, CD68",Cancer cell,Serum,Experiment
+M2 macrophage,CD163,Normal cell,Serum,Experiment
+Macrophage,ITGAM,Normal cell,Serum,Experiment
+Macrophage,CD68,Normal cell,Serum,Experiment
+Macrophage,"ITGAM, ITGAX, CD68, CSF1R",Normal cell,Serum,Experiment
+Macrophage,ADGRE1,Normal cell,Serum,Experiment
+Macrophage,ITGAM,Normal cell,Serum,Experiment
+Macrophage,CD68,Normal cell,Serum,Experiment
+Macrophage,CD68,Normal cell,Serum,Experiment
+Mesenchymal stem cell,MCAM,Normal cell,Cartilage,Experiment
+Mesenchymal stem cell,"ENG, NT5E",Normal cell,Cartilage,Experiment
+Stem cell,"ENG, ALCAM, THY1, POU5F1, NA",Normal cell,Cartilage,Experiment
+Stem cell,MCAM,Normal cell,Cartilage,Experiment
+Stem cell,"CD44, NT5E, CD9, THY1",Normal cell,Cartilage,Experiment
+Chondrocyte,"ACAN, COL2A1, COMP",Normal cell,Cartilage,Experiment
+Chondrocyte,"ACAN, COL2A1, SOX9",Normal cell,Cartilage,Experiment
+Stem cell,DCLK1,Cancer cell,Esophagus,Experiment
+Stem cell,LGR5,Normal cell,Esophagus,Experiment
+Stem cell,PROM1,Cancer cell,Gastrointestinal tract,Experiment
+Stem cell,ALCAM,Cancer cell,Gastrointestinal tract,Experiment
+Stem cell,BMI1,Normal cell,Gastrointestinal tract,Experiment
+Germ cell,"POU5F1, SYCP3",Normal cell,Gonad,Experiment
+Nucleus pulposus cell,"FOXF1, PAX1",Normal cell,Intervertebral disc,Experiment
+Macrophage,CD68,Normal cell,Intervertebral disc,Experiment
+Schwann cell,GFAP,Normal cell,Intervertebral disc,Experiment
+Endothelial cell,CD34,Normal cell,Intervertebral disc,Experiment
+Endothelial cell,PECAM1,Normal cell,Intervertebral disc,Experiment
+Endothelial cell,PECAM1,Normal cell,Intervertebral disc,Experiment
+Endothelial cell,"LYVE1, PDPN",Normal cell,Intervertebral disc,Experiment
+Basal cell,TAZ,Normal cell,Epithelium,Experiment
+Basal cell,CD151,Normal cell,Epithelium,Experiment
+Basal cell,KRT5,Normal cell,Epithelium,Experiment
+Glial cell,S100 family,Normal cell,Nerve,Experiment
+Cancer stem cell,DCLK1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,"PROM1, CD44, NANOG, POU5F1",Cancer cell,Colorectum,Experiment
+Cancer stem cell,"ALCAM, CD24, CD44",Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,"CD44, PROM1, LGR5, SOX2",Cancer cell,Colorectum,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,CD44,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,CEACAM6,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,PROM1,Cancer cell,Colorectum,Experiment
+Cancer stem cell,ALCAM,Cancer cell,Colorectum,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, ALCAM, CD44, EPCAM",Cancer cell,Colorectum,Experiment
+Cancer stem cell,"PROM1, ALCAM, CD44",Cancer cell,Colorectum,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Artery,Experiment
+T cell,"IL2RA, [CD3D, CD3E, CD3G], CD4, CD8A",Normal cell,Artery,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Artery,Experiment
+Macrophage,CD68,Normal cell,Artery,Experiment
+Macrophage,CD68,Normal cell,Artery,Experiment
+Keratinocyte,KRT14,Normal cell,Skin,Experiment
+Keratinocyte,"ITGB1, KRT19, KRT5, KRT8",Normal cell,Skin,Experiment
+Keratinocyte,KRT14,Normal cell,Skin,Experiment
+Keratinocyte,SPRR2A,Normal cell,Skin,Experiment
+Osteocyte,GJA1,Normal cell,Bone,Experiment
+Osteocyte,SOST,Cancer cell,Bone,Experiment
+Osteocyte,DMP1,Normal cell,Bone,Experiment
+Osteocyte,SOST,Normal cell,Bone,Experiment
+Osteocyte,"DMP1, NA",Normal cell,Bone,Experiment
+Osteocyte,SOST,Normal cell,Bone,Experiment
+Progenitor cell,"ENG, CD44, NT5E, THY1, NA",Normal cell,Bone,Experiment
+Epithelial cell,ENG,Normal cell,Bone,Experiment
+Osteoclast,THNSL2,Normal cell,Bone,Experiment
+Osteoclast,"CTSK, TNFRSF11A, CD40LG",Normal cell,Bone,Experiment
+Osteoclast,"CALCR, CTSK, CD40LG",Normal cell,Bone,Experiment
+Osteoclast,"CTSK, CD40LG",Normal cell,Bone,Experiment
+Osteoclast,"CALCR, CD40LG",Normal cell,Bone,Experiment
+Mesenchymal stem cell,"ENG, ITGB1, THY1",Normal cell,Bone,Experiment
+Stem cell,"IBSP, OSX, RUNX2",Normal cell,Bone,Experiment
+Stem cell,"ENG, THY1",Normal cell,Bone,Experiment
+Stem cell,"NT5E, THY1",Normal cell,Bone,Experiment
+Stem cell,"MCAM, CD34, PTPRC, NA",Normal cell,Bone,Experiment
+Mesenchymal stem cell,"ENG, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,"ENG, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,ENG,Normal cell,Bone marrow,Experiment
+Mesenchymal stem cell,"ENG, NT5E, THY1, NA",Normal cell,Bone marrow,Experiment
+Endothelial cell,PECAM1,Normal cell,Eye,Experiment
+Endothelial cell,LGR5,Normal cell,Cornea,Experiment
+Epithelial cell,KRT3,Normal cell,Cornea,Experiment
+Progenitor cell,"ITGB1, TP63",Normal cell,Corneal epithelium,Experiment
+Stem cell,"CSF2RA, SOX2",Normal cell,Eye,Experiment
+Stem cell,"PROM1, CD34, CD44, THY1, NANOG, POU5F1, SOX2, NA",Normal cell,Eye,Experiment
+Stem cell,ABCG2,Normal cell,Lacrimal gland,Experiment
+Stem cell,NOTCH1,Normal cell,Eye,Experiment
+Stem cell,ABCG2,Normal cell,Limbal epithelium,Experiment
+T cell,"IL2RA, CD69",Normal cell,Eye,Experiment
+Stem cell,"ENG, CD44, NT5E, THY1",Normal cell,Deciduous tooth,Experiment
+Stem cell,"ENG, ITGB1, THY1",Normal cell,Deciduous tooth,Experiment
+Stem cell,"ENG, ITGB1, THY1",Normal cell,Molar,Experiment
+Stem cell,"ENG, ITGB1, THY1",Normal cell,Molar,Experiment
+Stem cell,"ENG, MCAM, PECAM1, PTPRC, THY1",Normal cell,Periodontal ligament,Experiment
+Stem cell,"PDGFRA, MCAM, NGFR, ITGAV, NA",Normal cell,Periodontal ligament,Experiment
+Stem cell,"MCAM, ALCAM, CD44, NT5E, THY1",Normal cell,Periodontal ligament,Experiment
+Stem cell,"ENG, MCAM, ITGB1, THY1, NA",Normal cell,Periodontal ligament,Experiment
+Stem cell,"CD44, NT5E, THY1",Normal cell,Periodontal ligament,Experiment
+Stem cell,"CDH1, NANOG, POU5F1",Normal cell,Periodontal ligament,Experiment
+Stem cell,"NA, NA",Normal cell,Periodontal ligament,Experiment
+Stem cell,"CD44, THY1, VIM",Normal cell,Periodontal ligament,Experiment
+Stem cell,"MSI1, NES, POU5F1, SOX2",Normal cell,Periodontal ligament,Experiment
+Stem cell,"ENG, MCAM, NA",Normal cell,Periodontal ligament,Experiment
+Stem cell,"KLF4, NANOG, POU5F1, SOX2",Normal cell,Periodontal ligament,Experiment
+Stem cell,"MCAM, CD44, NA",Normal cell,Periodontal ligament,Experiment
+Stem cell,"NANOG, POU5F1, SOX2",Normal cell,Dental pulp,Experiment
+Stem cell,ENG,Normal cell,Dental pulp,Experiment
+Stem cell,"ENG, ALCAM, NT5E, THY1, NA",Normal cell,Dental pulp,Experiment
+Stem cell,"ENG, MCAM, ALCAM, CD44, NT5E, THY1, NA, VIM",Normal cell,Dental pulp,Experiment
+Stem cell,"ENG, ALCAM, ITGB1, NT5E, THY1",Normal cell,Dental pulp,Experiment
+Stem cell,"MCAM, CD34, PTPRC, NA",Normal cell,Dental pulp,Experiment
+Stem cell,"NES, GNL3, SOX2",Normal cell,Dental pulp,Experiment
+Monocyte,CD163,Normal cell,Blood,Experiment
+Monocyte,BSG,Normal cell,Blood,Experiment
+Activated B cell,TAGLN2,Normal cell,Peripheral blood,Experiment
+B cell,CD19,Normal cell,Peripheral blood,Experiment
+Activated B cell,CD5,Normal cell,Peripheral blood,Experiment
+Dendritic cell,CLEC9A,Normal cell,Blood,Experiment
+Dendritic cell,ITGAX,Normal cell,Peripheral blood,Experiment
+Dendritic cell,CD83,Normal cell,Blood,Experiment
+Plasmacytoid dendritic cell,"CLEC4C, IL3RA",Normal cell,Blood,Experiment
+Myeloid dendritic cell,"CD1C, ITGAX",Normal cell,Blood,Experiment
+Dendritic cell,CD83,Normal cell,Blood,Experiment
+Endothelial cell,RFTN1,Normal cell,Blood,Experiment
+Leukocyte,PTPRC,Normal cell,Peripheral blood,Experiment
+Leukocyte,LY9,Normal cell,Peripheral blood,Experiment
+Leukocyte,PTPRC,Normal cell,Peripheral blood,Experiment
+Cancer stem cell,"ABCG2, CD44",Cancer cell,Tongue,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, CD24, CD44",Cancer cell,Thyroid,Experiment
+Dendritic cell,"ITGAX, CD80, CD83",Normal cell,Liver,Experiment
+Dendritic cell,"ITGAX, IL3RA, CD14",Normal cell,Liver,Experiment
+Dendritic cell,CD68,Normal cell,Liver,Experiment
+Endothelial cell,PECAM1,Normal cell,Liver,Experiment
+Endothelial cell,PECAM1,Normal cell,Liver,Experiment
+Endothelial cell,VWF,Normal cell,Liver,Experiment
+Endothelial cell,PECAM1,Normal cell,Liver,Experiment
+Endothelial cell,CD34,Normal cell,Liver,Experiment
+Endothelial cell,"PECAM1, STAB2",Normal cell,Liver,Experiment
+Endothelial cell,"ENG, PECAM1, CD34",Normal cell,Liver,Experiment
+Endothelial cell,CD34,Normal cell,Liver,Experiment
+Hematopoietic cell,"CD34, PTPRC",Normal cell,Liver,Experiment
+Hematopoietic cell,"CD109, PTPRC",Normal cell,Liver,Experiment
+Hematopoietic cell,"PECAM1, CD34",Normal cell,Fetal liver,Experiment
+Hepatocyte,ALB,Normal cell,Liver,Experiment
+Hepatocyte,KRT18,Normal cell,Liver,Experiment
+Hepatocyte,"AFP, ALB, P49715, KRT18, HNF4A, TAT",Normal cell,Liver,Experiment
+Hepatocyte,CPS1,Normal cell,Liver,Experiment
+Hepatocyte,"ARG1, KRT18, KRT8",Normal cell,Liver,Experiment
+Hepatocyte,"ALB, CYP3A4",Normal cell,Liver,Experiment
+Hepatocyte,"KRT18, ABCC2, TJP1",Normal cell,Liver,Experiment
+Hepatocyte,"Albumin family, HNF4A",Normal cell,Liver,Experiment
+Hepatocyte,"AFP, ALB, HNF4A",Normal cell,Undefined,Experiment
+Hepatocyte,"Albumin family, KRT18",Normal cell,Undefined,Experiment
+Hepatocyte,"Albumin family, KRT8",Normal cell,Undefined,Experiment
+Hepatocyte,KRT8,Normal cell,Liver,Experiment
+Hepatocyte,ALB,Normal cell,Liver,Experiment
+Hepatocyte,"Albumin family, MME, KRT18, KRT8",Normal cell,Liver,Experiment
+Hepatocyte,Albumin family,Normal cell,Liver,Experiment
+Hepatocyte,AFP,Normal cell,Liver,Experiment
+Ito cell (hepatic stellate cell),"ACTA2, GFAP",Normal cell,Liver,Experiment
+Ito cell (hepatic stellate cell),ACTA2,Normal cell,Liver,Experiment
+Ito cell (hepatic stellate cell),ACTA2,Normal cell,Liver,Experiment
+Ito cell (hepatic stellate cell),FAP,Normal cell,Liver,Experiment
+Kupffer cell,CD68,Normal cell,Liver,Experiment
+Kupffer cell,"CLEC4F, VSIG4",Normal cell,Liver,Experiment
+Kupffer cell,CD68,Normal cell,Liver,Experiment
+Mesenchymal cell,ACTA2,Normal cell,Undefined,Experiment
+Mesenchymal stromal cell,NGFR,Normal cell,Liver,Experiment
+Mesenchymal cell,"ENG, ALCAM",Normal cell,Liver,Experiment
+Monocyte,CD68,Normal cell,Liver,Experiment
+Monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Liver,Experiment
+Monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Liver,Experiment
+Hepatoblast,Albumin family,Normal cell,Liver,Experiment
+Liver progenitor cell,"KRT19, KRT7",Normal cell,Liver,Experiment
+Liver progenitor cell,"KRT19, EPCAM",Normal cell,Liver,Experiment
+Liver progenitor cell,"KRT19, KRT7",Normal cell,Liver,Experiment
+Natural killer cell,NCAM1,Normal cell,Liver,Experiment
+Natural killer cell,NCAM1,Normal cell,Liver,Experiment
+Platelet,GP1BA,Normal cell,Liver,Experiment
+Progenitor cell,KRT19,Cancer cell,Liver,Experiment
+Progenitor cell,KRT19,Normal cell,Liver,Experiment
+Progenitor cell,"KRT19, KRT7",Normal cell,Liver,Experiment
+Progenitor cell,NCAM1,Normal cell,Liver,Experiment
+Progenitor cell,DLK1,Normal cell,Liver,Experiment
+Progenitor cell,AFP,Normal cell,Liver,Experiment
+Progenitor cell,MCAM,Normal cell,Fetal liver,Experiment
+Progenitor cell,PROM1,Normal cell,Liver,Experiment
+Progenitor cell,"PROM1, NCAM1",Normal cell,Liver,Experiment
+Progenitor cell,"KRT19, KRT7",Normal cell,Liver,Experiment
+Progenitor cell,"KRT19, KRT7",Normal cell,Liver,Experiment
+Stem cell,LGR5,Normal cell,Liver,Experiment
+Stem cell,LGR5,Normal cell,Undefined,Experiment
+Stem cell,LIN28A,Normal cell,Liver,Experiment
+Stem cell,"KRT18, KRT19",Normal cell,Liver,Experiment
+Stem cell,ALDH family,Normal cell,Liver,Experiment
+Stem cell,"KIT, CD44, EPCAM",Normal cell,Liver,Experiment
+Stem cell,"PROM1, ITGA6, NANOG, POU5F1, SOX2",Normal cell,Liver,Experiment
+Stem cell,NES,Normal cell,Liver,Experiment
+Stem cell,"ADAM17, CD44, MSI1",Normal cell,Liver,Experiment
+Stem cell,DLK1,Normal cell,Liver,Experiment
+Stem cell,"PROM1, KRT19, EPCAM, SOX9",Normal cell,Liver,Experiment
+Stem cell,DCLK1,Normal cell,Liver,Experiment
+Stem cell,"PROM1, EPCAM",Normal cell,Liver,Experiment
+Stem cell,DLK1,Normal cell,Fetal liver,Experiment
+Stem cell,"KRT19, UBD, GSTP1, POU5F1",Normal cell,Liver,Experiment
+Stem cell,"KRT19, EPCAM",Normal cell,Liver,Experiment
+Stem cell,PROM1,Normal cell,Liver,Experiment
+Stem cell,"AFP, EPCAM, THY1",Normal cell,Liver,Experiment
+Stem cell,NES,Normal cell,Liver,Experiment
+Stem cell,THY1,Normal cell,Fetal liver,Experiment
+Stem cell,"KIT, CD34, NCAM1, NA",Normal cell,Liver,Experiment
+Mesenchymal stem cell,"ENG, ALCAM, ITGB1, CD44, NT5E, THY1",Normal cell,Liver,Experiment
+Mesenchymal stem cell,"ITGB1, CD44, NT5E, THY1",Normal cell,Liver,Experiment
+T cell,"CD244, PDCD1",Normal cell,Liver,Experiment
+T cell,"CD28, PTPRC, CD8A, [TRA, TRB]",Normal cell,Liver,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Normal cell,Liver,Experiment
+Regulatory T (Treg) cell,"IL2RA, CTLA4, FOXP3",Normal cell,Liver,Experiment
+T cell,"IL2RA, CD4, CD8A",Normal cell,Liver,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Normal cell,Liver,Experiment
+Regulatory T (Treg) cell,IL2RA,Normal cell,Liver,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Liver,Experiment
+T cell,"[CD3D, CD3E, CD3G], PTPRC",Normal cell,Liver,Experiment
+T cell,"CD27, CD4, PTPRC",Normal cell,Liver,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Normal cell,Liver,Experiment
+T cell,"CD58, CD7",Normal cell,Liver,Experiment
+T cell,CD7,Normal cell,Liver,Experiment
+T cell,"PTPRC, CD7",Normal cell,Fetal liver,Experiment
+Myofibroblast,"ACTA2, RBP1",Normal cell,Liver,Experiment
+Myofibroblast,ACTA2,Normal cell,Liver,Experiment
+Myofibroblast,ACTA2,Normal cell,Liver,Experiment
+Myofibroblast,ACTA2,Normal cell,Liver,Experiment
+Myofibroblast,ACTA2,Normal cell,Liver,Experiment
+Myofibroblast,ACTA2,Normal cell,Liver,Experiment
+Myofibroblast,"ACTA2, VIM",Normal cell,Liver,Experiment
+Myofibroblast,ACTA2,Normal cell,Liver,Experiment
+Cancer stem cell,"GLI1, KDM1A, SOX2",Cancer cell,Breast,Experiment
+Cancer stem cell,"PROM1, EPCAM",Cancer cell,Breast,Experiment
+Cancer stem cell,"KIT, MME, PROM1, CD24, CD34, CD44, EPCAM, POU5F1, TP63, SOX2",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH family, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"CD44, NA",Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"PROM1, FUT4, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,PROM1,Cancer cell,Breast,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"CD44, POU5F1",Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A3, SOX2",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,CD44,Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,CD24,Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, PROM1",Cancer cell,Breast,Experiment
+Cancer stem cell,PROM1,Cancer cell,Breast,Experiment
+Cancer stem cell,SOX2,Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,LGR5,Cancer cell,Breast,Experiment
+Cancer stem cell,CD44,Cancer cell,Breast,Experiment
+Cancer stem cell,EPCAM,Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,PROM1,Cancer cell,Breast,Experiment
+Cancer stem cell,"CD44, SOX2, POU5F1",Cancer cell,Breast,Experiment
+Cancer stem cell,CD44,Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, PROM1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,"ALDH1A1, CD24, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,CD44,Cancer cell,Breast,Experiment
+Cancer stem cell,"CD24, CD44, VEGFA",Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Cancer stem cell,"PROM1, CD44",Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH family,Cancer cell,Breast,Experiment
+Cancer stem cell,"FLOT2, PROCR",Cancer cell,Breast,Experiment
+Cancer stem cell,"PROM1, FLOT2",Cancer cell,Breast,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Breast,Experiment
+Epithelial cell,"MUC1, KRT19",Normal cell,Mammary epithelium,Experiment
+Epithelial cell,KRT8,Normal cell,Mammary epithelium,Experiment
+Epithelial cell,"TP63, SMN1",Normal cell,Breast,Experiment
+Epithelial cell,KRT18,Normal cell,Breast,Experiment
+Epithelial cell,CDH1,Normal cell,Breast,Experiment
+Epithelial cell,CDH1,Normal cell,Breast,Experiment
+Epithelial cell,CDH1,Normal cell,Breast,Experiment
+Luminal epithelial cell,"KRT18, MUC1",Normal cell,Breast,Experiment
+Luminal epithelial cell,"FLOT2, MUC family",Normal cell,Breast,Experiment
+Basal epithelial cell,VIM,Normal cell,Breast,Experiment
+Luminal epithelial cell,KRT19,Normal cell,Breast,Experiment
+Epithelial cell,"Cytokeratin family, MUC1, PIP",Normal cell,Breast,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Myoepithelial cell,"Calponin family, MME, KRT14, TP63, SMN1",Normal cell,Breast,Experiment
+Myoepithelial cell,LGALS7,Normal cell,Breast,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Myoepithelial cell,"Calponin family, CDH3, TP63",Normal cell,Breast,Experiment
+Myoepithelial cell,"TP63, SMN1",Normal cell,Breast,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Myoepithelial cell,TP63,Normal cell,Breast,Experiment
+Myoepithelial cell,ALPG,Normal cell,Breast,Experiment
+Progenitor cell,"CD24, ITGA6",Normal cell,Breast,Experiment
+Progenitor cell,GNL3,Normal cell,Undefined,Experiment
+Progenitor cell,"CD24, CD44, ITGA6, EPCAM",Normal cell,Breast,Experiment
+Progenitor cell,"ITGB1, CD44, ITGA6, TP63",Normal cell,Breast,Experiment
+Progenitor cell,"FLOT2, PROCR",Normal cell,Undefined,Experiment
+Progenitor cell,"CD24, CD44",Normal cell,Breast,Experiment
+Luminal progenitor,KIT,Normal cell,Breast,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Epithelial cell,CDH1,Cancer cell,Undefined,Experiment
+Type I pneumocyte,"AQP5, CDH1, TJP1",Normal cell,Undefined,Experiment
+Lung epithelial cell,MUC1,Normal cell,Lung,Experiment
+Fibroblast,"ACTA2, CD36, ADGRE5, DES",Normal cell,Lung,Experiment
+Fibroblast,"PTPN13, PDGFRA, PDGFRB, VIM",Normal cell,Lung,Experiment
+Fibroblast,THY1,Normal cell,Lung,Experiment
+Macrophage,CD163,Cancer cell,Lung,Experiment
+M2 macrophage,IL10,Normal cell,Undefined,Experiment
+Macrophage,"CCL18, CD163",Normal cell,Lung,Experiment
+Macrophage,"CCL18, CCL2, IL1RN",Normal cell,Lung,Experiment
+M2 macrophage,CCL18,Normal cell,Lung,Experiment
+M1 macrophage,CXCL10,Normal cell,Lung,Experiment
+Macrophage,CD68,Cancer cell,Lung,Experiment
+M1 macrophage,"CD68, HLA-DR family",Normal cell,Lung,Experiment
+M2 macrophage,"CD163, CD68",Normal cell,Lung,Experiment
+Macrophage,"CD14, CD68",Normal cell,Lung,Experiment
+M2 macrophage,CCL18,Normal cell,Lung,Experiment
+Macrophage,"ITGAM, CD14, FCGR1A, CD68, NA, CD80, CD83, CD86, RETNLB",Normal cell,Lung,Experiment
+Macrophage,CD14,Normal cell,Lung,Experiment
+Macrophage,CD68,Normal cell,Lung,Experiment
+Macrophage,CD68,Normal cell,Lung,Experiment
+Macrophage,"ITGAL, ITGAM, ITGAX, CD14, [FCGR3A, FCGR3B], ICAM1, TFRC, CD80, CD86, HLA class II",Normal cell,Lung,Experiment
+Macrophage,CD68,Normal cell,Lung,Experiment
+Macrophage,CD68,Normal cell,Lung,Experiment
+Macrophage,CD68,Normal cell,Lung,Experiment
+Macrophage,CD68,Normal cell,Lung,Experiment
+Macrophage,"NA, ITGAX, CD14, CD68",Normal cell,Lung,Experiment
+Monocyte,"CD36, CD68",Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Undefined,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Myofibroblast,"ACTA2, FN1",Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Myofibroblast,Calponin family,Normal cell,Lung,Experiment
+Myofibroblast,"ACTA2, DES",Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Undefined,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Myofibroblast,ACTA2,Normal cell,Lung,Experiment
+Neutrophil,ITGAM,Normal cell,Lung,Experiment
+Neutrophil,CEACAM8,Cancer cell,Lung,Experiment
+Type II pneumocyte,CD44,Normal cell,Lung,Experiment
+Type II pneumocyte,MUC1,Cancer cell,Undefined,Experiment
+Type II pneumocyte,MUC1,Cancer cell,Undefined,Experiment
+T cell,"[CD3D, CD3E, CD3G]",Cancer cell,Lung,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD8A",Normal cell,Lung,Experiment
+T cell,"IL2RA, FOXP3",Cancer cell,Lung,Experiment
+CD8+ T cell,ITGAE,Normal cell,Lung,Experiment
+T cell,"[CD3D, CD3E, CD3G], CD4, CD68, CD8A",Normal cell,Lung,Experiment
+Transitional B cell,"MME, CD19, PTPRC, IgD family, CD40LG",Normal cell,Bone marrow,Experiment
+B cell,"BCL2, BCL6, MME, GCSAM, LMO2",Normal cell,Bone marrow,Experiment
+B cell,"MS4A1, PAX5",Normal cell,Bone marrow,Experiment
+B cell,CD19,Normal cell,Bone marrow,Experiment
+B cell,"CD19, MS4A1, MB2 family",Normal cell,Bone marrow,Experiment
+B cell,"MME, MS4A1, CD34",Normal cell,Bone marrow,Experiment
+B cell,HLA-DR family,Normal cell,Bone marrow,Experiment
+Hematopoietic cell,DNTT,Normal cell,Bone marrow,Experiment
+Lymphocyte,"CD4, CD8A",Normal cell,Bone marrow,Experiment
+Lymphocyte,"CD2, CD4, CD8A",Normal cell,Bone marrow,Experiment
+Lymphocyte,DNTT,Normal cell,Bone marrow,Experiment
+M2 macrophage,"ARG1, CCL2, CD163, MRC1, RETNLB, IL10, MRC1",Normal cell,Bone marrow,Experiment
+Macrophage,"ARG1, MRC1",Normal cell,Bone marrow,Experiment
+Macrophage,IRF5,Normal cell,Bone marrow,Experiment
+M2 macrophage,"CD163, MRC1",Cancer cell,Bone marrow,Experiment
+Macrophage,"ADGRE1, [ITGAM, ITGB2]",Normal cell,Bone marrow,Experiment
+Macrophage,CD68,Normal cell,Bone marrow,Experiment
+Erythroid precursor,CR1,Normal cell,Bone marrow,Experiment
+Regulatory T (Treg) cell,"IL2RA, CD4, FOXP3",Normal cell,Bone marrow,Experiment
+Mast cell,"KIT, IL2RA",Normal cell,Bone marrow,Experiment
+Mast cell,IL2RA,Normal cell,Bone marrow,Experiment
+Mast cell,"KIT, FCER1A",Normal cell,Bone marrow,Experiment
+Mast cell,"KIT, CD2",Normal cell,Bone marrow,Experiment
+Mast cell,ENPP3,Normal cell,Bone marrow,Experiment
+Endothelial progenitor cell,"KIT, PROM1, CD34, NANOG",Normal cell,Bone marrow,Experiment
+Progenitor cell,"PROM1, CD34",Normal cell,Bone marrow,Experiment
+Progenitor cell,CD34,Normal cell,Bone marrow,Experiment
+Progenitor cell,BAALC,Normal cell,Bone marrow,Experiment
+Stromal cell,"ENG, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Stromal cell,NGFR,Normal cell,Bone marrow,Experiment
+Mesenchymal stromal cell,NGFR,Normal cell,Bone marrow,Experiment
+Mesenchymal stromal cell,"KIT, ENG, PECAM1, CD34, PTPRC, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Stromal cell,"ENG, MCAM, ALCAM, ITGB1, CD34, CD44, PTPRC, ITGA1, NT5E, THY1",Normal cell,Bone marrow,Experiment
+Stromal cell,"MME, ENG, ANPEP, THY1",Normal cell,Bone marrow,Experiment
+Plasma cell,"SDC1, LY9, LAIR1, ICAM1",Normal cell,Bone marrow,Experiment
+Plasma cell,SDC1,Normal cell,Bone marrow,Experiment
+Plasma cell,"SDC1, TNFRSF17, LAIR1",Normal cell,Bone marrow,Experiment
+Plasma cell,SDC1,Normal cell,Bone marrow,Experiment
+Plasma cell,SDC1,Normal cell,Bone marrow,Experiment
+Plasma cell,SDC1,Normal cell,Bone marrow,Experiment
+Monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Bone marrow,Experiment
+Monocyte,CD14,Normal cell,Bone marrow,Experiment
+Monocyte,"CD14, [FCGR3A, FCGR3B]",Normal cell,Bone marrow,Experiment
+Dendritic cell,ITGAX,Normal cell,Undefined,Experiment
+Dendritic cell,CD1A,Normal cell,Bone marrow,Experiment
+Cancer stem cell,SOX2,Cancer cell,Bladder,Experiment
+Cancer stem cell,"PROM1, POU5F1",Cancer cell,Bladder,Experiment
+Cancer stem cell,ALDH1A1,Cancer cell,Bladder,Experiment
+Cancer stem cell,"CD24, CD44, CD47",Cancer cell,Bladder,Experiment
+Cancer stem cell,PROM1,Cancer cell,Bladder,Experiment
+Interstitial cell,CDH2,Normal cell,Bladder,Experiment
+Epithelial cell,MUC1,Normal cell,Bladder,Experiment
+T cell,"CD4, CD8A",Normal cell,Ascites,Experiment
+Merkel cell,KRT20,Normal cell,Skin,Experiment
+Merkel cell,"KRT18, KRT20",Normal cell,Skin,Experiment
+Merkel cell,NCAM1,Normal cell,Skin,Experiment
+Regulatory T (Treg) cell,FOXP3,Normal cell,Skin,Experiment
+Regulatory T (Treg) cell,"LAG3, ITGA2, FOXP3, IKZF2, NRP1",Normal cell,Skin,Experiment
+Regulatory T (Treg) cell,"FOXP3, IL10, TGF-beta family",Normal cell,Skin,Experiment
+T cell,"IL2RA, CD44, IL2",Normal cell,Skin,Experiment
+Stem cell,"CTNNB1, KRT15, LGR5, LRIG1, SOX9",Normal cell,Hair follicle,Experiment
+Stem cell,"CD200, KRT15, KRT19",Normal cell,Hair follicle,Experiment
+Epithelial cell,EPCAM,Normal cell,Epithelium,Experiment
+Epithelial cell,"PECAM1, CD34",Normal cell,Epithelium,Experiment
+Endothelial cell,PECAM1,Normal cell,Skin,Experiment
+Endothelial cell,PECAM1,Normal cell,Skin,Experiment
+Endothelial cell,PECAM1,Normal cell,Skin,Experiment
+Endothelial cell,"PECAM1, CDH5",Normal cell,Skin,Experiment
+Endothelial cell,PECAM1,Normal cell,Skin,Experiment
+Hair follicle cell,RUNX1,Normal cell,Hair follicle,Experiment
+Langerhans cell,"CD1A, CD207",Normal cell,Skin,Experiment
+Langerhans cell,CD1A,Normal cell,Skin,Experiment
+Langerhans cell,"CD1A, CD207",Normal cell,Skin,Experiment
+Langerhans cell,CD1A,Normal cell,Skin,Experiment
+Progenitor cell,"EPCAM, PHOX2A, PROM1",Normal cell,Skin,Experiment
+Endothelial cell,"AQP1, KDR, PECAM1, PLVAP, SEMA3G, SLC14A1",Normal cell,Fetal kidney,Experiment
+Natural killer T (NKT) cell,"CD3D, CD52, CD7, FCGR3A, GZMB, KLRD1, TRA",Normal cell,Fetal kidney,Experiment
+Monocyte,"CD52, CD68, HLA-DRA, ITGAX, LYZ, MNDA, S100A8",Normal cell,Fetal kidney,Experiment
+Megakaryocyte,"CTSW, FYB1, ITGA2B, PF4, PLEK, PPBP, RAB27B, RASGRP2, SRGN",Normal cell,Fetal kidney,Experiment
+Natural killer cell,"KIR2DL3, KLRD1, NCAM1, NKG7",Normal cell,Kidney,Experiment
+Natural killer T (NKT) cell,"CD3D, CD3E, FCGR3A, IL7R, KLRD1, TRA",Normal cell,Kidney,Experiment
+CD8+ T cell,"CD3D, CD3E, CD8A, IL7R, TRA",Normal cell,Kidney,Experiment
+Neutrophil,"CXCL8, FCGR3B, MNDA",Normal cell,Kidney,Experiment
+B cell,"CD19, CD40, HLA-DRA, IGHM, MS4A1",Normal cell,Kidney,Experiment
+Mast cell,"ENPP3, KIT, SLC18A2",Normal cell,Kidney,Experiment
+Plasmacytoid dendritic cell,"CLEC4C, CXCR3, JCHAIN, NRP1",Normal cell,Kidney,Experiment
+T helper cell,"CCR7, CD3D, CD3E, CD40LG, IL7R, TRA",Normal cell,Kidney,Experiment
+Nephron epithelial cell,"AQP2, ATP6V0D2, AVPR2, CLCNKB, CLDN16, CLDN8, KCNJ1, KRT23, PODXL, PTPRO, SAA2, SLC12A1, SLC13A3, SLC16A9, SLC17A3, SLC22A7, SLC22A8, SLC26A4, SLC34A1, SLC4A1, SLC7A13, SLC8A1, VCAM1, WT1",Normal cell,Kidney,Experiment
+Urothelium cell,"DHRS2, KRT5, NECTIN4, S100P, TP63, UPK1B",Normal cell,Kidney,Experiment
+Endothelial cell,"KDR, PECAM1, PLVAP, PTPRB, VCAM1",Normal cell,Kidney,Experiment
+T helper cell,"CCR6, CD3D, CD40LG, CD52, IL32, IL7R, TRA, TRBC2",Cancer cell,Kidney,Experiment
+Natural killer cell,"CD160, FCGR3A, KLRB1, KLRD1, NKG7, PRF1, XCL1, XCL2",Cancer cell,Kidney,Experiment
+Mast cell,"FCER1A, KIT, SLC18A2, TPSB2",Cancer cell,Kidney,Experiment
+Plasmacytoid dendritic cell,"CLEC4C, IRF8, JCHAIN",Cancer cell,Kidney,Experiment
+CD8+ T cell,"CCL5, CD3D, CD8A, GZMK, TRA, TRBC2",Cancer cell,Kidney,Experiment
+Plasma cell,"IGHA2, IGHG3, IGKC, JCHAIN, MZB1",Cancer cell,Kidney,Experiment
+Erythroblast,"AHSP, ALAS2, CA1, HBB, HBE1",Cancer cell,Kidney,Experiment
+Neutrophil,"CXCL8, FCGR3B, MNDA, SELL",Cancer cell,Kidney,Experiment
+Regulatory T (Treg) cell,"CD3D, CTLA4, FOXP3, IL32, TNFRSF18, TRA, TRBC2",Cancer cell,Kidney,Experiment
+Natural killer T (NKT) cell,"CD3D, CD8A, GNLY, PRF1, TRGC2",Cancer cell,Kidney,Experiment
+Cancer cell,"CA9, NDUFA4L2, SLC17A3",Cancer cell,Kidney,Experiment
+Cancer cell,"ELF3, HNF1B, PODXL, PTPRO, WT1",Cancer cell,Kidney,Experiment

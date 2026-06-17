@@ -1,0 +1,421 @@
+cell_type,track,option,window_kb,mean_phastCons,n_genes_found,n_windows_extracted,n_windows_failed
+B cell,placental_20way,A,1,0.14811617548311853,50,50,0
+B cell,placental_20way,A,2,0.14755261146481813,50,50,0
+B cell,placental_20way,A,5,0.1447311884096502,50,50,0
+B cell,placental_20way,B,1,0.13807623710972564,194,194,6
+B cell,placental_20way,B,2,0.14494399639367994,194,194,6
+B cell,placental_20way,B,5,0.14274250790336135,194,194,6
+"CD4-positive, alpha-beta T cell",placental_20way,A,1,0.138357100743877,50,50,0
+"CD4-positive, alpha-beta T cell",placental_20way,A,2,0.1488499578372248,50,50,0
+"CD4-positive, alpha-beta T cell",placental_20way,A,5,0.1484252710943535,50,50,0
+"CD4-positive, alpha-beta T cell",placental_20way,B,1,0.137767377204188,194,194,6
+"CD4-positive, alpha-beta T cell",placental_20way,B,2,0.1462423887263012,194,194,6
+"CD4-positive, alpha-beta T cell",placental_20way,B,5,0.1416534014294885,194,194,6
+"CD8-positive, alpha-beta T cell",placental_20way,A,1,0.18105537934792607,50,50,0
+"CD8-positive, alpha-beta T cell",placental_20way,A,2,0.18335546071897355,50,50,0
+"CD8-positive, alpha-beta T cell",placental_20way,A,5,0.168603563954186,50,50,0
+"CD8-positive, alpha-beta T cell",placental_20way,B,1,0.1440906580574234,194,194,6
+"CD8-positive, alpha-beta T cell",placental_20way,B,2,0.15035644922716276,194,194,6
+"CD8-positive, alpha-beta T cell",placental_20way,B,5,0.14403493235331705,194,194,6
+T cell,placental_20way,A,1,0.18939357130782825,50,50,0
+T cell,placental_20way,A,2,0.17442006533599533,50,50,0
+T cell,placental_20way,A,5,0.15797152503487769,50,50,0
+T cell,placental_20way,B,1,0.14527620589372084,194,194,6
+T cell,placental_20way,B,2,0.1514797167733806,194,194,6
+T cell,placental_20way,B,5,0.143511437372398,194,194,6
+adventitial cell,placental_20way,A,1,0.26151640417073685,46,46,4
+adventitial cell,placental_20way,A,2,0.24062540844777086,46,46,4
+adventitial cell,placental_20way,A,5,0.20175961280545743,46,46,4
+adventitial cell,placental_20way,B,1,0.1648584300666373,194,194,6
+adventitial cell,placental_20way,B,2,0.16098589746538555,194,194,6
+adventitial cell,placental_20way,B,5,0.14627251871585023,194,194,6
+basal cell,placental_20way,A,1,0.18685561508523826,48,48,2
+basal cell,placental_20way,A,2,0.16882292989692538,48,48,2
+basal cell,placental_20way,A,5,0.13924289928240774,48,48,2
+basal cell,placental_20way,B,1,0.1415966931611176,194,194,6
+basal cell,placental_20way,B,2,0.14681860216142995,194,194,6
+basal cell,placental_20way,B,5,0.1413056816780358,194,194,6
+bladder urothelial cell,placental_20way,A,1,0.17024135489901643,50,50,0
+bladder urothelial cell,placental_20way,A,2,0.15760923792296105,50,50,0
+bladder urothelial cell,placental_20way,A,5,0.1351118316649398,50,50,0
+bladder urothelial cell,placental_20way,B,1,0.1409710801581563,194,194,6
+bladder urothelial cell,placental_20way,B,2,0.14269617554016725,194,194,6
+bladder urothelial cell,placental_20way,B,5,0.13851805508932882,194,194,6
+classical monocyte,placental_20way,A,1,0.14986007237090002,50,50,0
+classical monocyte,placental_20way,A,2,0.13150800570162,50,50,0
+classical monocyte,placental_20way,A,5,0.11974894487685797,50,50,0
+classical monocyte,placental_20way,B,1,0.15323129686040482,194,194,6
+classical monocyte,placental_20way,B,2,0.1527630575925309,194,194,6
+classical monocyte,placental_20way,B,5,0.1404884127685887,194,194,6
+endothelial cell,placental_20way,A,1,0.18701157974706686,50,50,0
+endothelial cell,placental_20way,A,2,0.16710428785221368,50,50,0
+endothelial cell,placental_20way,A,5,0.1423992836695081,50,50,0
+endothelial cell,placental_20way,B,1,0.15774973846911317,194,194,6
+endothelial cell,placental_20way,B,2,0.15988714364327575,194,194,6
+endothelial cell,placental_20way,B,5,0.14798377517420572,194,194,6
+enterocyte of epithelium of large intestine,placental_20way,A,1,0.12516717034919564,47,47,3
+enterocyte of epithelium of large intestine,placental_20way,A,2,0.1179159927376804,47,47,3
+enterocyte of epithelium of large intestine,placental_20way,A,5,0.11851096011590939,47,47,3
+enterocyte of epithelium of large intestine,placental_20way,B,1,0.1564156828962319,194,194,6
+enterocyte of epithelium of large intestine,placental_20way,B,2,0.15582603923899177,194,194,6
+enterocyte of epithelium of large intestine,placental_20way,B,5,0.14490241127918635,194,194,6
+epithelial cell,placental_20way,A,1,0.14483542237206587,49,49,1
+epithelial cell,placental_20way,A,2,0.13001936704567346,49,49,1
+epithelial cell,placental_20way,A,5,0.12269352610814029,49,49,1
+epithelial cell,placental_20way,B,1,0.14978248913298578,194,194,6
+epithelial cell,placental_20way,B,2,0.15010034701946465,194,194,6
+epithelial cell,placental_20way,B,5,0.14302642993613504,194,194,6
+fibroblast,placental_20way,A,1,0.21580127917965408,50,50,0
+fibroblast,placental_20way,A,2,0.20102975855022173,50,50,0
+fibroblast,placental_20way,A,5,0.1632557402311038,50,50,0
+fibroblast,placental_20way,B,1,0.16489514085962673,194,194,6
+fibroblast,placental_20way,B,2,0.1627266213424094,194,194,6
+fibroblast,placental_20way,B,5,0.14770362262194328,194,194,6
+fibroblast of cardiac tissue,placental_20way,A,1,0.1978294189887691,49,49,1
+fibroblast of cardiac tissue,placental_20way,A,2,0.2066647604055433,49,49,1
+fibroblast of cardiac tissue,placental_20way,A,5,0.18834050678075798,49,49,1
+fibroblast of cardiac tissue,placental_20way,B,1,0.17505367061153276,194,194,6
+fibroblast of cardiac tissue,placental_20way,B,2,0.16777453621227273,194,194,6
+fibroblast of cardiac tissue,placental_20way,B,5,0.14952680645245567,194,194,6
+granulocyte,placental_20way,A,1,0.1417682939454889,50,50,0
+granulocyte,placental_20way,A,2,0.13961384390313877,50,50,0
+granulocyte,placental_20way,A,5,0.13516268210733856,50,50,0
+granulocyte,placental_20way,B,1,0.16353393687066026,194,194,6
+granulocyte,placental_20way,B,2,0.15999230418430263,194,194,6
+granulocyte,placental_20way,B,5,0.14239020372064948,194,194,6
+hematopoietic precursor cell,placental_20way,A,1,0.21566293784974838,50,50,0
+hematopoietic precursor cell,placental_20way,A,2,0.21558351088396566,50,50,0
+hematopoietic precursor cell,placental_20way,A,5,0.18270559987903728,50,50,0
+hematopoietic precursor cell,placental_20way,B,1,0.14682821888740266,194,194,6
+hematopoietic precursor cell,placental_20way,B,2,0.14887633192364474,194,194,6
+hematopoietic precursor cell,placental_20way,B,5,0.13997680307479368,194,194,6
+hematopoietic stem cell,placental_20way,A,1,0.1954456264372922,44,44,6
+hematopoietic stem cell,placental_20way,A,2,0.18950689154183767,44,44,6
+hematopoietic stem cell,placental_20way,A,5,0.15864570954423476,44,44,6
+hematopoietic stem cell,placental_20way,B,1,0.13732314623575806,194,194,6
+hematopoietic stem cell,placental_20way,B,2,0.14360506493406608,194,194,6
+hematopoietic stem cell,placental_20way,B,5,0.14167359825111558,194,194,6
+hepatocyte,placental_20way,A,1,0.11331200541152504,50,50,0
+hepatocyte,placental_20way,A,2,0.12616570988959322,50,50,0
+hepatocyte,placental_20way,A,5,0.13429080303325588,50,50,0
+hepatocyte,placental_20way,B,1,0.17894159689479053,194,194,6
+hepatocyte,placental_20way,B,2,0.17590813245462497,194,194,6
+hepatocyte,placental_20way,B,5,0.1537830242407647,194,194,6
+intermediate monocyte,placental_20way,A,1,0.15635831800147212,49,49,1
+intermediate monocyte,placental_20way,A,2,0.15138103085957547,49,49,1
+intermediate monocyte,placental_20way,A,5,0.14408344609839766,49,49,1
+intermediate monocyte,placental_20way,B,1,0.1531504225450193,194,194,6
+intermediate monocyte,placental_20way,B,2,0.15326392753701001,194,194,6
+intermediate monocyte,placental_20way,B,5,0.1418990815852982,194,194,6
+large intestine goblet cell,placental_20way,A,1,0.11893666873857103,50,50,0
+large intestine goblet cell,placental_20way,A,2,0.12213913454328479,50,50,0
+large intestine goblet cell,placental_20way,A,5,0.12847512503595782,50,50,0
+large intestine goblet cell,placental_20way,B,1,0.15681008723423234,194,194,6
+large intestine goblet cell,placental_20way,B,2,0.15693612317532382,194,194,6
+large intestine goblet cell,placental_20way,B,5,0.14384885184896942,194,194,6
+luminal epithelial cell of mammary gland,placental_20way,A,1,0.1905765469510391,47,47,3
+luminal epithelial cell of mammary gland,placental_20way,A,2,0.17792678414220642,47,47,3
+luminal epithelial cell of mammary gland,placental_20way,A,5,0.16864660913560747,47,47,3
+luminal epithelial cell of mammary gland,placental_20way,B,1,0.13347165841069697,194,194,6
+luminal epithelial cell of mammary gland,placental_20way,B,2,0.1406788367138647,194,194,6
+luminal epithelial cell of mammary gland,placental_20way,B,5,0.1360995229761301,194,194,6
+macrophage,placental_20way,A,1,0.18367869606484255,50,50,0
+macrophage,placental_20way,A,2,0.16702855197779168,50,50,0
+macrophage,placental_20way,A,5,0.15118786410880436,50,50,0
+macrophage,placental_20way,B,1,0.15295399711893837,194,194,6
+macrophage,placental_20way,B,2,0.1535368296259549,194,194,6
+macrophage,placental_20way,B,5,0.14335253182019986,194,194,6
+mature NK T cell,placental_20way,A,1,0.14282210641692442,50,50,0
+mature NK T cell,placental_20way,A,2,0.13647460586077087,50,50,0
+mature NK T cell,placental_20way,A,5,0.12699431754191395,50,50,0
+mature NK T cell,placental_20way,B,1,0.1467741613186385,194,194,6
+mature NK T cell,placental_20way,B,2,0.15211200456967147,194,194,6
+mature NK T cell,placental_20way,B,5,0.1452196456123599,194,194,6
+mesenchymal stem cell,placental_20way,A,1,0.2179697998448803,49,49,1
+mesenchymal stem cell,placental_20way,A,2,0.1970316714601906,49,49,1
+mesenchymal stem cell,placental_20way,A,5,0.16280738273598744,49,49,1
+mesenchymal stem cell,placental_20way,B,1,0.16819827013673672,194,194,6
+mesenchymal stem cell,placental_20way,B,2,0.16521835727692222,194,194,6
+mesenchymal stem cell,placental_20way,B,5,0.14925262895079536,194,194,6
+mesenchymal stem cell of adipose tissue,placental_20way,A,1,0.15023771203381187,50,50,0
+mesenchymal stem cell of adipose tissue,placental_20way,A,2,0.14767558398801695,50,50,0
+mesenchymal stem cell of adipose tissue,placental_20way,A,5,0.1395389325358354,50,50,0
+mesenchymal stem cell of adipose tissue,placental_20way,B,1,0.16222767227869492,194,194,6
+mesenchymal stem cell of adipose tissue,placental_20way,B,2,0.16033800474377544,194,194,6
+mesenchymal stem cell of adipose tissue,placental_20way,B,5,0.14666771001896425,194,194,6
+monocyte,placental_20way,A,1,0.15596622052240394,49,49,1
+monocyte,placental_20way,A,2,0.15558589901871556,49,49,1
+monocyte,placental_20way,A,5,0.1357982449486501,49,49,1
+monocyte,placental_20way,B,1,0.15103154981150496,194,194,6
+monocyte,placental_20way,B,2,0.15139176914864672,194,194,6
+monocyte,placental_20way,B,5,0.14058891255446174,194,194,6
+myeloid dendritic cell,placental_20way,A,1,0.14214436708269182,50,50,0
+myeloid dendritic cell,placental_20way,A,2,0.14045436808631762,50,50,0
+myeloid dendritic cell,placental_20way,A,5,0.1382469051754107,50,50,0
+myeloid dendritic cell,placental_20way,B,1,0.14325588024148825,194,194,6
+myeloid dendritic cell,placental_20way,B,2,0.14658662591803517,194,194,6
+myeloid dendritic cell,placental_20way,B,5,0.13978569012446135,194,194,6
+myeloid leukocyte,placental_20way,A,1,0.15674189075800615,50,50,0
+myeloid leukocyte,placental_20way,A,2,0.14721660186362986,50,50,0
+myeloid leukocyte,placental_20way,A,5,0.1474657495960215,50,50,0
+myeloid leukocyte,placental_20way,B,1,0.15580362827891037,194,194,6
+myeloid leukocyte,placental_20way,B,2,0.155223874755428,194,194,6
+myeloid leukocyte,placental_20way,B,5,0.14412511054464897,194,194,6
+natural killer cell,placental_20way,A,1,0.1459197195687342,50,50,0
+natural killer cell,placental_20way,A,2,0.14795800093496456,50,50,0
+natural killer cell,placental_20way,A,5,0.13639786797830758,50,50,0
+natural killer cell,placental_20way,B,1,0.14977918709668098,194,194,6
+natural killer cell,placental_20way,B,2,0.15332680991012915,194,194,6
+natural killer cell,placental_20way,B,5,0.1452137877908199,194,194,6
+neutrophil,placental_20way,A,1,0.11266989479528514,50,50,0
+neutrophil,placental_20way,A,2,0.12056359940425551,50,50,0
+neutrophil,placental_20way,A,5,0.1268455018803081,50,50,0
+neutrophil,placental_20way,B,1,0.1675840674391894,194,194,6
+neutrophil,placental_20way,B,2,0.15926029882753417,194,194,6
+neutrophil,placental_20way,B,5,0.1373757198480739,194,194,6
+non-classical monocyte,placental_20way,A,1,0.15455137108767805,50,50,0
+non-classical monocyte,placental_20way,A,2,0.15340057998774018,50,50,0
+non-classical monocyte,placental_20way,A,5,0.1470038996274289,50,50,0
+non-classical monocyte,placental_20way,B,1,0.15044215056871887,194,194,6
+non-classical monocyte,placental_20way,B,2,0.15121559403490095,194,194,6
+non-classical monocyte,placental_20way,B,5,0.14106403631192366,194,194,6
+pancreatic acinar cell,placental_20way,A,1,0.1397544909578065,41,41,9
+pancreatic acinar cell,placental_20way,A,2,0.13161948218480513,41,41,9
+pancreatic acinar cell,placental_20way,A,5,0.12263767135752142,41,41,9
+pancreatic acinar cell,placental_20way,B,1,0.13090549491042267,194,194,6
+pancreatic acinar cell,placental_20way,B,2,0.13399585935868696,194,194,6
+pancreatic acinar cell,placental_20way,B,5,0.13109009695895796,194,194,6
+pancreatic ductal cell,placental_20way,A,1,0.1780441641899926,50,50,0
+pancreatic ductal cell,placental_20way,A,2,0.1627798153465983,50,50,0
+pancreatic ductal cell,placental_20way,A,5,0.1514382793661173,50,50,0
+pancreatic ductal cell,placental_20way,B,1,0.1485985847654094,194,194,6
+pancreatic ductal cell,placental_20way,B,2,0.1495669918894433,194,194,6
+pancreatic ductal cell,placental_20way,B,5,0.13922985900555016,194,194,6
+plasma cell,placental_20way,A,1,0.2008451498077445,50,50,0
+plasma cell,placental_20way,A,2,0.18376718703274164,50,50,0
+plasma cell,placental_20way,A,5,0.16164824677269365,50,50,0
+plasma cell,placental_20way,B,1,0.1344793619611614,194,194,6
+plasma cell,placental_20way,B,2,0.1414206735664278,194,194,6
+plasma cell,placental_20way,B,5,0.13809038111121336,194,194,6
+smooth muscle cell,placental_20way,A,1,0.19135659525889107,47,47,3
+smooth muscle cell,placental_20way,A,2,0.17311475936156773,47,47,3
+smooth muscle cell,placental_20way,A,5,0.14955074146234526,47,47,3
+smooth muscle cell,placental_20way,B,1,0.16466848085679234,194,194,6
+smooth muscle cell,placental_20way,B,2,0.16676500957607407,194,194,6
+smooth muscle cell,placental_20way,B,5,0.15034452109942623,194,194,6
+stromal cell,placental_20way,A,1,0.20860032848760168,49,49,1
+stromal cell,placental_20way,A,2,0.18683623220970655,49,49,1
+stromal cell,placental_20way,A,5,0.14755106829957637,49,49,1
+stromal cell,placental_20way,B,1,0.1633196498649763,194,194,6
+stromal cell,placental_20way,B,2,0.16493285470997882,194,194,6
+stromal cell,placental_20way,B,5,0.15244536432932804,194,194,6
+B cell,100way_vertebrate,A,1,0.12983933251597096,50,50,0
+B cell,100way_vertebrate,A,2,0.12700611943864623,50,50,0
+B cell,100way_vertebrate,A,5,0.11934514016069069,50,50,0
+B cell,100way_vertebrate,B,1,0.1289334386260939,194,194,6
+B cell,100way_vertebrate,B,2,0.12890966744858104,194,194,6
+B cell,100way_vertebrate,B,5,0.12361464831865913,194,194,6
+"CD4-positive, alpha-beta T cell",100way_vertebrate,A,1,0.12940090434133225,50,50,0
+"CD4-positive, alpha-beta T cell",100way_vertebrate,A,2,0.1345687998742211,50,50,0
+"CD4-positive, alpha-beta T cell",100way_vertebrate,A,5,0.1324895646634894,50,50,0
+"CD4-positive, alpha-beta T cell",100way_vertebrate,B,1,0.12737918511517432,194,194,6
+"CD4-positive, alpha-beta T cell",100way_vertebrate,B,2,0.12972883544189714,194,194,6
+"CD4-positive, alpha-beta T cell",100way_vertebrate,B,5,0.12206224158915237,194,194,6
+"CD8-positive, alpha-beta T cell",100way_vertebrate,A,1,0.15755586386523543,50,50,0
+"CD8-positive, alpha-beta T cell",100way_vertebrate,A,2,0.15670839924614138,50,50,0
+"CD8-positive, alpha-beta T cell",100way_vertebrate,A,5,0.13917502607410662,50,50,0
+"CD8-positive, alpha-beta T cell",100way_vertebrate,B,1,0.13166268855212027,194,194,6
+"CD8-positive, alpha-beta T cell",100way_vertebrate,B,2,0.13231315633980378,194,194,6
+"CD8-positive, alpha-beta T cell",100way_vertebrate,B,5,0.1230597869946884,194,194,6
+T cell,100way_vertebrate,A,1,0.16311667648502656,50,50,0
+T cell,100way_vertebrate,A,2,0.14470004038907625,50,50,0
+T cell,100way_vertebrate,A,5,0.12566277963230274,50,50,0
+T cell,100way_vertebrate,B,1,0.13266939996431462,194,194,6
+T cell,100way_vertebrate,B,2,0.132886716435225,194,194,6
+T cell,100way_vertebrate,B,5,0.12207726414228684,194,194,6
+adventitial cell,100way_vertebrate,A,1,0.22919611465294684,46,46,4
+adventitial cell,100way_vertebrate,A,2,0.20663164055636163,46,46,4
+adventitial cell,100way_vertebrate,A,5,0.17167573267538308,46,46,4
+adventitial cell,100way_vertebrate,B,1,0.14715329399294702,194,194,6
+adventitial cell,100way_vertebrate,B,2,0.13880923275148352,194,194,6
+adventitial cell,100way_vertebrate,B,5,0.12189956271226941,194,194,6
+basal cell,100way_vertebrate,A,1,0.1439786769643426,48,48,2
+basal cell,100way_vertebrate,A,2,0.12787332162264897,48,48,2
+basal cell,100way_vertebrate,A,5,0.10281267138255364,48,48,2
+basal cell,100way_vertebrate,B,1,0.12720951164212246,194,194,6
+basal cell,100way_vertebrate,B,2,0.1278138988646915,194,194,6
+basal cell,100way_vertebrate,B,5,0.11983126836042421,194,194,6
+bladder urothelial cell,100way_vertebrate,A,1,0.13084961877062035,50,50,0
+bladder urothelial cell,100way_vertebrate,A,2,0.12007909695763073,50,50,0
+bladder urothelial cell,100way_vertebrate,A,5,0.09726688357811884,50,50,0
+bladder urothelial cell,100way_vertebrate,B,1,0.12354135981896372,194,194,6
+bladder urothelial cell,100way_vertebrate,B,2,0.12327191496667152,194,194,6
+bladder urothelial cell,100way_vertebrate,B,5,0.1166048723212573,194,194,6
+classical monocyte,100way_vertebrate,A,1,0.12661380448822554,50,50,0
+classical monocyte,100way_vertebrate,A,2,0.10477297866850291,50,50,0
+classical monocyte,100way_vertebrate,A,5,0.08955307622813441,50,50,0
+classical monocyte,100way_vertebrate,B,1,0.13618900649996632,194,194,6
+classical monocyte,100way_vertebrate,B,2,0.1303655941414553,194,194,6
+classical monocyte,100way_vertebrate,B,5,0.11536752314545846,194,194,6
+endothelial cell,100way_vertebrate,A,1,0.15451016405943271,50,50,0
+endothelial cell,100way_vertebrate,A,2,0.13443229504665244,50,50,0
+endothelial cell,100way_vertebrate,A,5,0.1049257922504917,50,50,0
+endothelial cell,100way_vertebrate,B,1,0.14167832004583994,194,194,6
+endothelial cell,100way_vertebrate,B,2,0.13757026160183583,194,194,6
+endothelial cell,100way_vertebrate,B,5,0.12336224266366186,194,194,6
+enterocyte of epithelium of large intestine,100way_vertebrate,A,1,0.09533548721217247,47,47,3
+enterocyte of epithelium of large intestine,100way_vertebrate,A,2,0.08702432931098132,47,47,3
+enterocyte of epithelium of large intestine,100way_vertebrate,A,5,0.08831797320649432,47,47,3
+enterocyte of epithelium of large intestine,100way_vertebrate,B,1,0.1356177477250071,194,194,6
+enterocyte of epithelium of large intestine,100way_vertebrate,B,2,0.13308491346623047,194,194,6
+enterocyte of epithelium of large intestine,100way_vertebrate,B,5,0.1213336080023798,194,194,6
+epithelial cell,100way_vertebrate,A,1,0.1184546347346156,49,49,1
+epithelial cell,100way_vertebrate,A,2,0.1040361753753124,49,49,1
+epithelial cell,100way_vertebrate,A,5,0.0920648364117987,49,49,1
+epithelial cell,100way_vertebrate,B,1,0.13201300695738852,194,194,6
+epithelial cell,100way_vertebrate,B,2,0.12960641140428833,194,194,6
+epithelial cell,100way_vertebrate,B,5,0.12054763381566819,194,194,6
+fibroblast,100way_vertebrate,A,1,0.1887280446555639,50,50,0
+fibroblast,100way_vertebrate,A,2,0.17246974661225647,50,50,0
+fibroblast,100way_vertebrate,A,5,0.13334794428009752,50,50,0
+fibroblast,100way_vertebrate,B,1,0.14889986027812166,194,194,6
+fibroblast,100way_vertebrate,B,2,0.14106435296754719,194,194,6
+fibroblast,100way_vertebrate,B,5,0.12385898430255107,194,194,6
+fibroblast of cardiac tissue,100way_vertebrate,A,1,0.17416757252526152,49,49,1
+fibroblast of cardiac tissue,100way_vertebrate,A,2,0.17340907850642892,49,49,1
+fibroblast of cardiac tissue,100way_vertebrate,A,5,0.15598041119195635,49,49,1
+fibroblast of cardiac tissue,100way_vertebrate,B,1,0.15947707748176912,194,194,6
+fibroblast of cardiac tissue,100way_vertebrate,B,2,0.14510856584054035,194,194,6
+fibroblast of cardiac tissue,100way_vertebrate,B,5,0.1242279535411349,194,194,6
+granulocyte,100way_vertebrate,A,1,0.13377700666109119,50,50,0
+granulocyte,100way_vertebrate,A,2,0.12658504529046766,50,50,0
+granulocyte,100way_vertebrate,A,5,0.11973445604428426,50,50,0
+granulocyte,100way_vertebrate,B,1,0.14582263419640756,194,194,6
+granulocyte,100way_vertebrate,B,2,0.13638146465136095,194,194,6
+granulocyte,100way_vertebrate,B,5,0.11707579232462367,194,194,6
+hematopoietic precursor cell,100way_vertebrate,A,1,0.18635000286041506,50,50,0
+hematopoietic precursor cell,100way_vertebrate,A,2,0.18278402841129968,50,50,0
+hematopoietic precursor cell,100way_vertebrate,A,5,0.14987776674173997,50,50,0
+hematopoietic precursor cell,100way_vertebrate,B,1,0.13461196504093914,194,194,6
+hematopoietic precursor cell,100way_vertebrate,B,2,0.13021125732991667,194,194,6
+hematopoietic precursor cell,100way_vertebrate,B,5,0.11813968466688886,194,194,6
+hematopoietic stem cell,100way_vertebrate,A,1,0.16270489660941323,44,44,6
+hematopoietic stem cell,100way_vertebrate,A,2,0.1559862758581946,44,44,6
+hematopoietic stem cell,100way_vertebrate,A,5,0.1279954059559534,44,44,6
+hematopoietic stem cell,100way_vertebrate,B,1,0.12868421397517357,194,194,6
+hematopoietic stem cell,100way_vertebrate,B,2,0.12791430789162653,194,194,6
+hematopoietic stem cell,100way_vertebrate,B,5,0.1227422086328913,194,194,6
+hepatocyte,100way_vertebrate,A,1,0.11011471887545239,50,50,0
+hepatocyte,100way_vertebrate,A,2,0.11477666926745649,50,50,0
+hepatocyte,100way_vertebrate,A,5,0.11876292428957055,50,50,0
+hepatocyte,100way_vertebrate,B,1,0.16049935832493767,194,194,6
+hepatocyte,100way_vertebrate,B,2,0.14984992816610676,194,194,6
+hepatocyte,100way_vertebrate,B,5,0.12635732577305098,194,194,6
+intermediate monocyte,100way_vertebrate,A,1,0.13840218119703684,49,49,1
+intermediate monocyte,100way_vertebrate,A,2,0.12495708493619667,49,49,1
+intermediate monocyte,100way_vertebrate,A,5,0.11013880759386958,49,49,1
+intermediate monocyte,100way_vertebrate,B,1,0.13618032490255386,194,194,6
+intermediate monocyte,100way_vertebrate,B,2,0.13095782494943572,194,194,6
+intermediate monocyte,100way_vertebrate,B,5,0.11691820188362193,194,194,6
+large intestine goblet cell,100way_vertebrate,A,1,0.10631769374670946,50,50,0
+large intestine goblet cell,100way_vertebrate,A,2,0.10528647167197089,50,50,0
+large intestine goblet cell,100way_vertebrate,A,5,0.10775893267124995,50,50,0
+large intestine goblet cell,100way_vertebrate,B,1,0.13760180981512,194,194,6
+large intestine goblet cell,100way_vertebrate,B,2,0.1346932904569519,194,194,6
+large intestine goblet cell,100way_vertebrate,B,5,0.12073744901876567,194,194,6
+luminal epithelial cell of mammary gland,100way_vertebrate,A,1,0.15774531950200912,47,47,3
+luminal epithelial cell of mammary gland,100way_vertebrate,A,2,0.1468907955079172,47,47,3
+luminal epithelial cell of mammary gland,100way_vertebrate,A,5,0.13214665142248055,47,47,3
+luminal epithelial cell of mammary gland,100way_vertebrate,B,1,0.11822252692208926,194,194,6
+luminal epithelial cell of mammary gland,100way_vertebrate,B,2,0.12110850876531383,194,194,6
+luminal epithelial cell of mammary gland,100way_vertebrate,B,5,0.11438609742215043,194,194,6
+macrophage,100way_vertebrate,A,1,0.15632579988096743,50,50,0
+macrophage,100way_vertebrate,A,2,0.1344995552458216,50,50,0
+macrophage,100way_vertebrate,A,5,0.11486646171570263,50,50,0
+macrophage,100way_vertebrate,B,1,0.1363133986847537,194,194,6
+macrophage,100way_vertebrate,B,2,0.13172782789966897,194,194,6
+macrophage,100way_vertebrate,B,5,0.11847432117454787,194,194,6
+mature NK T cell,100way_vertebrate,A,1,0.11953971655760869,50,50,0
+mature NK T cell,100way_vertebrate,A,2,0.11412367230857147,50,50,0
+mature NK T cell,100way_vertebrate,A,5,0.09776386986797947,50,50,0
+mature NK T cell,100way_vertebrate,B,1,0.13419634167755873,194,194,6
+mature NK T cell,100way_vertebrate,B,2,0.13448510166325986,194,194,6
+mature NK T cell,100way_vertebrate,B,5,0.1242869103769977,194,194,6
+mesenchymal stem cell,100way_vertebrate,A,1,0.1965970211479168,49,49,1
+mesenchymal stem cell,100way_vertebrate,A,2,0.16797733375886068,49,49,1
+mesenchymal stem cell,100way_vertebrate,A,5,0.1305842591566723,49,49,1
+mesenchymal stem cell,100way_vertebrate,B,1,0.15253137028449013,194,194,6
+mesenchymal stem cell,100way_vertebrate,B,2,0.1437495880853511,194,194,6
+mesenchymal stem cell,100way_vertebrate,B,5,0.12543342512258593,194,194,6
+mesenchymal stem cell of adipose tissue,100way_vertebrate,A,1,0.1403254576310248,50,50,0
+mesenchymal stem cell of adipose tissue,100way_vertebrate,A,2,0.1337695063346594,50,50,0
+mesenchymal stem cell of adipose tissue,100way_vertebrate,A,5,0.1235683222334017,50,50,0
+mesenchymal stem cell of adipose tissue,100way_vertebrate,B,1,0.14655659929766324,194,194,6
+mesenchymal stem cell of adipose tissue,100way_vertebrate,B,2,0.13947229652145227,194,194,6
+mesenchymal stem cell of adipose tissue,100way_vertebrate,B,5,0.1234465544633082,194,194,6
+monocyte,100way_vertebrate,A,1,0.127787665876767,49,49,1
+monocyte,100way_vertebrate,A,2,0.12406110230925553,49,49,1
+monocyte,100way_vertebrate,A,5,0.10664300596712255,49,49,1
+monocyte,100way_vertebrate,B,1,0.13448655409146612,194,194,6
+monocyte,100way_vertebrate,B,2,0.12947992281163684,194,194,6
+monocyte,100way_vertebrate,B,5,0.11586908419623682,194,194,6
+myeloid dendritic cell,100way_vertebrate,A,1,0.12446786010646699,50,50,0
+myeloid dendritic cell,100way_vertebrate,A,2,0.11561424363055557,50,50,0
+myeloid dendritic cell,100way_vertebrate,A,5,0.1051343915114618,50,50,0
+myeloid dendritic cell,100way_vertebrate,B,1,0.12804604329815714,194,194,6
+myeloid dendritic cell,100way_vertebrate,B,2,0.12592981955247343,194,194,6
+myeloid dendritic cell,100way_vertebrate,B,5,0.11638954027158778,194,194,6
+myeloid leukocyte,100way_vertebrate,A,1,0.14084127937161772,50,50,0
+myeloid leukocyte,100way_vertebrate,A,2,0.12231481306017847,50,50,0
+myeloid leukocyte,100way_vertebrate,A,5,0.11758643339822433,50,50,0
+myeloid leukocyte,100way_vertebrate,B,1,0.13971784837114062,194,194,6
+myeloid leukocyte,100way_vertebrate,B,2,0.13325872218026114,194,194,6
+myeloid leukocyte,100way_vertebrate,B,5,0.11870303339928902,194,194,6
+natural killer cell,100way_vertebrate,A,1,0.12651178337338545,50,50,0
+natural killer cell,100way_vertebrate,A,2,0.12492201611779029,50,50,0
+natural killer cell,100way_vertebrate,A,5,0.10809228383127367,50,50,0
+natural killer cell,100way_vertebrate,B,1,0.13619392825288673,194,194,6
+natural killer cell,100way_vertebrate,B,2,0.13542152025265397,194,194,6
+natural killer cell,100way_vertebrate,B,5,0.12413380429215293,194,194,6
+neutrophil,100way_vertebrate,A,1,0.11178966059392734,50,50,0
+neutrophil,100way_vertebrate,A,2,0.11215242473899821,50,50,0
+neutrophil,100way_vertebrate,A,5,0.11407272488950113,50,50,0
+neutrophil,100way_vertebrate,B,1,0.14503690144397266,194,194,6
+neutrophil,100way_vertebrate,B,2,0.13220011646588936,194,194,6
+neutrophil,100way_vertebrate,B,5,0.110302346499315,194,194,6
+non-classical monocyte,100way_vertebrate,A,1,0.14839211114300993,50,50,0
+non-classical monocyte,100way_vertebrate,A,2,0.13526938015459486,50,50,0
+non-classical monocyte,100way_vertebrate,A,5,0.12186085770461975,50,50,0
+non-classical monocyte,100way_vertebrate,B,1,0.1337616163423132,194,194,6
+non-classical monocyte,100way_vertebrate,B,2,0.1292465930131922,194,194,6
+non-classical monocyte,100way_vertebrate,B,5,0.11676172976047618,194,194,6
+pancreatic acinar cell,100way_vertebrate,A,1,0.11394597356074848,41,41,9
+pancreatic acinar cell,100way_vertebrate,A,2,0.10767926186027392,41,41,9
+pancreatic acinar cell,100way_vertebrate,A,5,0.09978872389745026,41,41,9
+pancreatic acinar cell,100way_vertebrate,B,1,0.11780045709916295,194,194,6
+pancreatic acinar cell,100way_vertebrate,B,2,0.11531366273095404,194,194,6
+pancreatic acinar cell,100way_vertebrate,B,5,0.11074239262718372,194,194,6
+pancreatic ductal cell,100way_vertebrate,A,1,0.15040247183640665,50,50,0
+pancreatic ductal cell,100way_vertebrate,A,2,0.12849541542764484,50,50,0
+pancreatic ductal cell,100way_vertebrate,A,5,0.1170144249258242,50,50,0
+pancreatic ductal cell,100way_vertebrate,B,1,0.13274379872770958,194,194,6
+pancreatic ductal cell,100way_vertebrate,B,2,0.128299940811114,194,194,6
+pancreatic ductal cell,100way_vertebrate,B,5,0.11629906475035195,194,194,6
+plasma cell,100way_vertebrate,A,1,0.17128354238319954,50,50,0
+plasma cell,100way_vertebrate,A,2,0.15108478275912968,50,50,0
+plasma cell,100way_vertebrate,A,5,0.12226032755951861,50,50,0
+plasma cell,100way_vertebrate,B,1,0.12338391881444835,194,194,6
+plasma cell,100way_vertebrate,B,2,0.12429375482740385,194,194,6
+plasma cell,100way_vertebrate,B,5,0.11786927509483043,194,194,6
+smooth muscle cell,100way_vertebrate,A,1,0.1581726067852186,47,47,3
+smooth muscle cell,100way_vertebrate,A,2,0.13453162557463155,47,47,3
+smooth muscle cell,100way_vertebrate,A,5,0.11073888470849579,47,47,3
+smooth muscle cell,100way_vertebrate,B,1,0.148429627682781,194,194,6
+smooth muscle cell,100way_vertebrate,B,2,0.1436452405278568,194,194,6
+smooth muscle cell,100way_vertebrate,B,5,0.12589660377019518,194,194,6
+stromal cell,100way_vertebrate,A,1,0.17865727261472672,49,49,1
+stromal cell,100way_vertebrate,A,2,0.15983156117504865,49,49,1
+stromal cell,100way_vertebrate,A,5,0.12084453586950236,49,49,1
+stromal cell,100way_vertebrate,B,1,0.1457485899522669,194,194,6
+stromal cell,100way_vertebrate,B,2,0.1426354682638804,194,194,6
+stromal cell,100way_vertebrate,B,5,0.1288777821695107,194,194,6

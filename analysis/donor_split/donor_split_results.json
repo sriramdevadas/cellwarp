@@ -1,0 +1,51 @@
+{
+  "n_splits": 100,
+  "n_splits_attempted": 100,
+  "n_permutations_per_split": 1000,
+  "min_cells_per_half": 100,
+  "random_seed": 42,
+  "infeasible_types": [
+    "pancreatic acinar cell",
+    "luminal epithelial cell of mammary gland",
+    "pancreatic ductal cell"
+  ],
+  "within_species": {
+    "mean_obs_null_ratio": 0.37748603840348144,
+    "median_obs_null_ratio": 0.3811359516074575,
+    "std_obs_null_ratio": 0.02707260323074425,
+    "ci_95": [
+      0.3201797467444789,
+      0.41874225937256737
+    ],
+    "pct_significant_p001": 1.0,
+    "median_n_types": 31.0
+  },
+  "cross_species_matched": {
+    "mean_obs_null_ratio": 0.5376983940785465,
+    "median_obs_null_ratio": 0.5336213769343753,
+    "std_obs_null_ratio": 0.028171485759596188,
+    "ci_95": [
+      0.48633620432679314,
+      0.5895910879302135
+    ],
+    "pct_significant_p001": 1.0,
+    "median_n_types": 31.0
+  },
+  "delta": {
+    "mean": 0.16021235567506498,
+    "median": 0.15739374866680955,
+    "std": 0.03549015090322219,
+    "ci_95": [
+      0.1039870929477577,
+      0.22561637523539094
+    ],
+    "pct_positive": 1.0,
+    "paired_ttest_p": 1.1999158307848953e-67,
+    "wilcoxon_p": 3.89655984509591e-18
+  },
+  "reference_values": {
+    "primary_cross_species_obs_null": 0.5223,
+    "self_comparison_obs_null": 0.033
+  },
+  "runtime_seconds": 58.29568791389465
+}

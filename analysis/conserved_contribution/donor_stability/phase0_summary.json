@@ -1,0 +1,26 @@
+{
+  "human": {
+    "total_cells": 804639,
+    "n_donors": 24,
+    "assays": [
+      "10x 3' v3",
+      "10x 5' v2",
+      "Smart-seq2",
+      "Smart-seq3"
+    ],
+    "n_datasets": 1,
+    "donor_powered_types_ge4donors": 32,
+    "donor_powered_types_ge6donors": 29
+  },
+  "mouse": {
+    "total_cells": 187553,
+    "n_donors": 44,
+    "assays": [
+      "10x 3' v2",
+      "Smart-seq2"
+    ],
+    "n_datasets": 2,
+    "donor_powered_types_ge4donors": 35,
+    "donor_powered_types_ge6donors": 35
+  }
+}

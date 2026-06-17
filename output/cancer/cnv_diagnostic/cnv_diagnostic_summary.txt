@@ -1,0 +1,51 @@
+======================================================================
+CANCER CNV DIAGNOSTIC — T2-A VALIDATION
+======================================================================
+
+Question: Do cancer Procrustes deformation loadings cluster on
+chromosomal arms with known CRC copy number variations?
+
+CRC CNV arms tested: 13q, 17p, 18q, 20q, 7p, 7q, 8q
+
+----------------------------------------------------------------------
+PER-CELL-TYPE RESULTS
+----------------------------------------------------------------------
+Cell Type                                      p-value    Ratio Verdict
+--------------------------------------------- -------- -------- --------------------
+B cell                                          0.5989    1.047 CLEAN
+CD4-positive, alpha-beta T cell                 0.7897    0.889 CLEAN
+CD8-positive, alpha-beta T cell                 0.9487    0.888 CLEAN
+T cell                                          0.9626    0.879 CLEAN
+endothelial cell                                0.8214    0.971 CLEAN
+enterocyte of epithelium of large intestine     0.8622    0.914 CLEAN
+epithelial cell                                 0.9040    0.920 CLEAN
+fibroblast                                      0.7920    0.997 CLEAN
+large intestine goblet cell                     0.7048    0.947 CLEAN
+macrophage                                      0.6389    0.948 CLEAN
+mast cell                                       0.7712    0.976 CLEAN
+monocyte                                        0.8876    0.955 CLEAN
+myeloid dendritic cell                          0.9600    0.865 CLEAN
+plasma cell                                     0.7264    0.992 CLEAN
+
+COMBINED                                        0.8859    0.955 CLEAN
+
+----------------------------------------------------------------------
+EPITHELIAL CELL — CRITICAL TEST
+----------------------------------------------------------------------
+Epithelial cell has the highest cancer deformation (10.07, 35.5% SSR).
+Epithelial tumor cells carry the CNVs.
+  p-value (Mann-Whitney, one-sided): 0.9040
+  Median loading ratio (CNV/non-CNV): 0.920
+  Mean loading ratio (CNV/non-CNV):   0.937
+  Verdict: CLEAN
+
+----------------------------------------------------------------------
+OVERALL VERDICT
+----------------------------------------------------------------------
+  Confounded:          0/14
+  Possibly confounded: 0/14
+  Clean:               14/14
+
+  LARGELY CLEAN — 0 confounded, 0 possibly confounded, 14 clean. CNV is not the dominant signal.
+
+======================================================================

@@ -1,0 +1,148 @@
+LUPUS (SLE) DISEASE REPLICATION — FEASIBILITY INVENTORY
+Generated: 2026-03-14
+Census version: stable (2025-11-08)
+======================================================================
+
+EXECUTIVE SUMMARY
+----------------------------------------
+Feasibility: MARGINAL
+- 8 coherent cell types pass ≥500 gate in both lupus and normal
+- Maximum Spearman n = 8 (need ≥10 for statistical confidence)
+- CRITICAL WEAKNESS: single dataset (1 study, 1 assay, 1 tissue)
+- All data is blood/PBMC — no tissue diversity
+- Lupus nephritis (kidney): 0 cells in Census
+- Residual range 5.4–11.1 provides decent dynamic range
+- Recommendation: PROCEED CAUTIOUSLY or prefer COVID-19 backup (see below)
+
+LUPUS DATA
+----------------------------------------
+Disease label: 'systemic lupus erythematosus'
+Total cells: 777,258
+Donors: 162
+Datasets: 1 (218acb0f-9f2f-4f76-b90b-15a4b7c7f629)
+Tissue: blood only
+Assay: 10x 3' v2 only
+
+MATCHED NORMAL CONTROLS
+----------------------------------------
+Total cells: 13,775,790
+Donors: 2,177
+Datasets: 62
+Tissue: blood (matching lupus)
+Shared assay: 10x 3' v2 (also available in normal)
+Adequacy: GOOD (abundant normal blood data)
+
+COARSE-MAPPED INVENTORY (35-type set)
+Mapping rules: separate CD4/CD8, separate macrophage/monocyte,
+NO catch-all categories (excluded: T cell, lymphocyte, immune cell).
+Coarsenings applied: memory/naive B → B cell, plasmablast → plasma,
+CD4/CD8 subtypes → parent, conventional DC → myeloid DC,
+CD14+/CD16- monocyte → classical monocyte.
+----------------------------------------
+Cell Type                                             Lupus   Normal  Pass  Residual‖  Rank
+-----------------------------------------------------------------------------------------------
+classical monocyte                                  221,222 1,475,563  YES     9.93     15
+CD4-positive, alpha-beta T cell                     195,325 4,761,384  YES    10.21     14
+CD8-positive, alpha-beta T cell                     160,146 1,811,181  YES     5.38     35
+B cell                                               91,835 1,238,127  YES     9.85     17
+natural killer cell                                  54,250  445,457   YES     8.69     23
+non-classical monocyte                               33,709   44,956   YES     5.89     34
+myeloid dendritic cell                               10,707   41,173   YES     8.90     21
+plasma cell                                             921   20,389   YES    11.08     12
+-----------------------------------------------------------------------------------------------
+Types passing ≥500 in BOTH: 8
+Maximum feasible n for Spearman: 8
+Residual range: 5.38 – 11.08  (dynamic range ratio: 2.1×)
+
+TYPES WITH 0 LUPUS CELLS (blood-only limitation)
+  intermediate monocyte: 0 lupus / 53,701 normal
+  monocyte (generic): 0 lupus / 69,961 normal
+  macrophage: 0 lupus / 4,116 normal
+  mature NK T cell: 0 lupus / 4,293 normal
+  neutrophil: 0 lupus / 32,970 normal
+  hematopoietic precursor cell: 0 lupus / 246,892 normal
+  hematopoietic stem cell: 0 lupus / 889 normal
+  endothelial cell: 0 lupus / 380 normal
+  granulocyte: 0 lupus / 385 normal
+  fibroblast: 0 lupus / 1 normal
+  epithelial cell: 0 lupus / 7 normal
+  basal cell: 0 lupus / 18 normal
+  myeloid leukocyte: 0 lupus / 1 normal
+
+UNMAPPED LUPUS CELL TYPES (>50 cells)
+  progenitor cell: 468 (not in 35-type set)
+
+EXCLUDED LUPUS CELL TYPES (catch-all / lineage-ambiguous)
+  lymphocyte: 6,407
+  plasmacytoid dendritic cell: 2,268 (not in 35-type set)
+
+DATASET PROVENANCE — CRITICAL ISSUE
+----------------------------------------
+Only 1 dataset: 218acb0f-9f2f-4f76-b90b-15a4b7c7f629
+  Cells: 777,258  |  Donors: 162
+  Tissue: blood  |  Assay: 10x 3' v2
+  THIS IS A SINGLE STUDY — no independent replication available
+  in CELLxGENE Census for lupus/SLE.
+
+BACKUP DISEASE STATE #1: RHEUMATOID ARTHRITIS
+----------------------------------------
+Verdict: REJECT — too small, single study
+Total cells: 48,637  |  Donors: 18  |  Datasets: 1
+Tissue: blood only  |  Assay: 10x 3' v3
+Types passing ≥500 in BOTH disease+normal: 4
+Top RA types (with coarsening):
+  CD4+ T subtypes: ~23,705 (many subtypes)
+  classical monocyte: 7,067
+  NK cell: 3,906
+  myeloid DC: 3,029
+  B cell subtypes: ~5,209
+  CD8+ T subtypes: ~3,542
+  non-classical monocyte: 714
+  plasmablast: 506
+
+BACKUP DISEASE STATE #2: NAFLD/NASH
+----------------------------------------
+Verdict: REJECT — no data
+Total cells: 0 in Census (stable 2025-11-08)
+Also checked: fatty liver disease, steatohepatitis,
+metabolic dysfunction-associated steatotic liver disease,
+metabolic dysfunction-associated steatohepatitis — all 0
+
+BACKUP DISEASE STATE #3: COVID-19 (discovered during inventory)
+----------------------------------------
+Verdict: STRONG CANDIDATE — investigate further
+Total cells: 4,688,586  |  Donors: 683  |  Datasets: 51
+Tissues: blood (3.6M), lung (813K), nasal cavity (88K),
+         respiratory airway (55K), brain (34K), saliva (15K)
+Advantages:
+  - Multiple independent datasets (51) — robust replication
+  - Multiple tissues — can test tissue-specific deformation
+  - Blood + lung gives both immune and structural cell types
+  - No CNV confound (unlike cancer)
+  - 683 donors — excellent statistical power
+  - PBMC overlap with our 35-type set + lung adds epithelial,
+    endothelial, fibroblast, smooth muscle types
+Disadvantages:
+  - Acute vs chronic disease (time course matters)
+  - Immune activation may swamp cell identity signal
+  - Overrepresented in literature (less novelty)
+  - Needs careful donor-level severity matching
+
+STATISTICAL ASSESSMENT
+----------------------------------------
+n=8 (lupus) vs n=13 (cancer):
+  - Spearman with n=8: critical ρ for p<0.05 (two-tailed) ≈ 0.738
+  - Need very strong correlation to reach significance
+  - Cancer at n=13 achieved ρ=0.407 (NS) or ρ=0.573 (n=12, NS)
+  - If lupus effect is similar magnitude, n=8 is underpowered
+  - COVID-19 with blood+lung could yield n≥15 types — much better
+
+RECOMMENDATION
+----------------------------------------
+1. Lupus is feasible but marginal: n=8, single study, blood only.
+   Proceed only if effect size is expected to be large (ρ > 0.74).
+2. COVID-19 is a substantially stronger candidate for disease-axis
+   replication: multi-study, multi-tissue, multi-cell-type.
+3. RA and NAFLD/NASH are not viable from Census alone.
+4. Consider COVID-19 as PRIMARY disease replication target,
+   with lupus as SECONDARY if COVID shows signal.

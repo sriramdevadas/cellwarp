@@ -1,0 +1,39 @@
+{
+  "task": "T3-C: Tissue-Stratified Rigidity Analysis",
+  "task0": {
+    "n_types_stratified_ge2": 6,
+    "n_types_single_tissue": 22,
+    "n_types_unstratified": 7,
+    "total_matched_pairs": 37
+  },
+  "task2": {
+    "n_types_with_ts_score": 28,
+    "spearman_ts_vs_aggregate": {
+      "rho": -0.0963327859879584,
+      "p_value": 0.6258037616535672,
+      "n": 28
+    }
+  },
+  "task3": {
+    "sun2023": {
+      "n_tissue_matched_pairs": 7,
+      "n_types_with_score": 6,
+      "shared_types_for_spearman": 6,
+      "spearman_rho": 0.7714285714285715,
+      "spearman_p": 0.07239650145772594
+    },
+    "pansci": {
+      "n_tissue_matched_pairs": 1,
+      "n_types_with_score": 1,
+      "shared_types_for_spearman": 1,
+      "spearman_rho": null,
+      "spearman_p": null
+    },
+    "verdict": "FAIL"
+  },
+  "task4": {
+    "n_types_ge3_tissues": 1,
+    "n_types_ge2_tissues": 6,
+    "macrophage_status": "UNSTRATIFIED"
+  }
+}

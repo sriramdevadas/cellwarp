@@ -1,0 +1,36 @@
+cell_type,mca_count,mca_status,hca_count,hca_status,in_intersection
+B cell,12517,PASS,400779,PASS,True
+"CD4-positive, alpha-beta T cell",0,ABSENT,489739,PASS,True
+"CD8-positive, alpha-beta T cell",2248,PASS,382331,PASS,True
+T cell,8172,PASS,336701,PASS,True
+adventitial cell,0,ABSENT,10170,PASS,False
+basal cell,344,BORDERLINE,163720,PASS,True
+bladder urothelial cell,337,BORDERLINE,0,ABSENT,False
+classical monocyte,0,ABSENT,334977,PASS,False
+endothelial cell,5637,PASS,320724,PASS,True
+enterocyte of epithelium of large intestine,3034,PASS,2016,PASS,True
+epithelial cell,7199,PASS,446348,PASS,True
+fibroblast,333,BORDERLINE,1560378,PASS,True
+fibroblast of cardiac tissue,0,ABSENT,33415,PASS,False
+granulocyte,847,PASS,539,PASS,True
+hematopoietic precursor cell,10190,PASS,246623,PASS,True
+hematopoietic stem cell,0,ABSENT,13908,PASS,False
+hepatocyte,375,BORDERLINE,16708,PASS,True
+intermediate monocyte,0,ABSENT,52859,PASS,False
+large intestine goblet cell,0,ABSENT,0,ABSENT,False
+luminal epithelial cell of mammary gland,2512,PASS,157543,PASS,True
+macrophage,10212,PASS,544442,PASS,True
+mature NK T cell,119,ABSENT,25051,PASS,False
+mesenchymal stem cell,7676,PASS,14404,PASS,True
+mesenchymal stem cell of adipose tissue,0,ABSENT,25531,PASS,False
+monocyte,1935,PASS,167254,PASS,True
+myeloid dendritic cell,3707,PASS,3447,PASS,True
+myeloid leukocyte,140,ABSENT,3220,PASS,False
+natural killer cell,1891,PASS,615297,PASS,True
+neutrophil,25654,PASS,36633,PASS,True
+non-classical monocyte,0,ABSENT,65773,PASS,False
+pancreatic acinar cell,1547,PASS,74682,PASS,True
+pancreatic ductal cell,591,PASS,29842,PASS,True
+plasma cell,51,ABSENT,161495,PASS,False
+smooth muscle cell,1349,PASS,94264,PASS,True
+stromal cell,21947,PASS,139938,PASS,True

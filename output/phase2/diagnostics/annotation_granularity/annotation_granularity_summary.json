@@ -1,0 +1,27 @@
+{
+  "proxy_used": "Multiple: manual broad/specific classification, label word count, label character length, Cell Ontology descendant count",
+  "n_cell_types": 35,
+  "n_broad": 15,
+  "n_specific": 20,
+  "correlations": {
+    "word_count": {
+      "rho": 0.0446,
+      "p": 0.7991
+    },
+    "char_length": {
+      "rho": -0.0388,
+      "p": 0.825
+    },
+    "broad_vs_specific": {
+      "U": 195.0,
+      "p": 0.138,
+      "r_rankbiserial": -0.3
+    },
+    "cl_descendants": {
+      "rho": 0.1954,
+      "p": 0.2606,
+      "n_terms": 35.0
+    }
+  },
+  "confound_detected": false
+}

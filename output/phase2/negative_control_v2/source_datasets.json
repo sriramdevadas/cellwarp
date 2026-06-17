@@ -1,0 +1,35 @@
+{
+  "01ad3cd7-3929-4654-84c0-6db05bd5fd59": {
+    "collection": "Type I interferon autoantibodies are associated with systemic immune alterations in patients with COVID-19",
+    "types_covered": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell"
+    ],
+    "cell_counts": {
+      "B cell": 11101,
+      "CD4-positive, alpha-beta T cell": 18815,
+      "CD8-positive, alpha-beta T cell": 24059
+    }
+  },
+  "61af564d-e5ea-4d34-a0f3-2668a00db376": {
+    "collection": "Single-nucleus chromatin accessibility and transcriptomic map of breast tissues of women of diverse genetic ancestry",
+    "types_covered": [
+      "endothelial cell",
+      "macrophage"
+    ],
+    "cell_counts": {
+      "endothelial cell": 5407,
+      "macrophage": 1640
+    }
+  },
+  "76af615b-12fe-4ebb-b8c6-239ad29e26e3": {
+    "collection": "Single-cell and spatial transcriptomics characterisation of the immunological landscape in the healthy and PSC human liver",
+    "types_covered": [
+      "hepatocyte"
+    ],
+    "cell_counts": {
+      "hepatocyte": 2220
+    }
+  }
+}

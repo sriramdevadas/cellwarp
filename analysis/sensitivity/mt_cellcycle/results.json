@@ -1,0 +1,1545 @@
+{
+  "metadata": {
+    "script": "analysis/sensitivity/mt_cellcycle/run.py",
+    "runtime_sec": 2.7824199199676514,
+    "data_sources": {
+      "atlas_human": "data/phase1/human_qc.h5ad",
+      "atlas_mouse": "data/phase1/mouse_aligned.h5ad",
+      "atlas_human_scaled_for_cellcycle": "data/phase2_scaled/human_scaled.h5ad",
+      "atlas_mouse_scaled_for_cellcycle": "data/phase2_scaled/mouse_scaled.h5ad"
+    },
+    "mt_fraction_methodology": "sum(MT-gene log-normalised expression) / sum(all log-normalised expression in the 16,959-gene ortholog space), per cell, averaged per cell type. Computed on phase2_scaled atlases (all 35 types). This is the 'expression share' devoted to MT genes, not the raw-count UMI fraction. The Spearman ranking test is invariant to monotone transformations so the per-type ORDERING is preserved. Caveat: phase1 raw-count h5ads cover only the 6-type subset; full per-species gene space not retained in the repo.",
+    "cell_cycle_methodology": "scanpy.tl.score_genes_cell_cycle with Tirosh et al. 2016 default S and G2M gene lists, mapped human-symbol \u2192 Ensembl. Applied to log-normalised scaled h5ad.",
+    "tirosh_S_genes_mapped": 41,
+    "tirosh_G2M_genes_mapped": 51
+  },
+  "mt_fraction": {
+    "per_type": [
+      {
+        "cell_type": "B cell",
+        "human_mt_fraction": 0.014997809194028378,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007498904597014189
+      },
+      {
+        "cell_type": "CD4-positive, alpha-beta T cell",
+        "human_mt_fraction": 0.014264700934290886,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007132350467145443
+      },
+      {
+        "cell_type": "CD8-positive, alpha-beta T cell",
+        "human_mt_fraction": 0.014515974558889866,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007257987279444933
+      },
+      {
+        "cell_type": "T cell",
+        "human_mt_fraction": 0.01451194193214178,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.00725597096607089
+      },
+      {
+        "cell_type": "adventitial cell",
+        "human_mt_fraction": 0.014507618732750416,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007253809366375208
+      },
+      {
+        "cell_type": "basal cell",
+        "human_mt_fraction": 0.013416125439107418,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006708062719553709
+      },
+      {
+        "cell_type": "bladder urothelial cell",
+        "human_mt_fraction": 0.015081269666552544,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007540634833276272
+      },
+      {
+        "cell_type": "classical monocyte",
+        "human_mt_fraction": 0.01132451742887497,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.005662258714437485
+      },
+      {
+        "cell_type": "endothelial cell",
+        "human_mt_fraction": 0.01224999688565731,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006124998442828655
+      },
+      {
+        "cell_type": "enterocyte of epithelium of large intestine",
+        "human_mt_fraction": 0.04441870003938675,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.022209350019693375
+      },
+      {
+        "cell_type": "epithelial cell",
+        "human_mt_fraction": 0.017297685146331787,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.008648842573165894
+      },
+      {
+        "cell_type": "fibroblast",
+        "human_mt_fraction": 0.012166627682745457,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006083313841372728
+      },
+      {
+        "cell_type": "fibroblast of cardiac tissue",
+        "human_mt_fraction": 0.01635728031396866,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.00817864015698433
+      },
+      {
+        "cell_type": "granulocyte",
+        "human_mt_fraction": 0.01287581492215395,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006437907461076975
+      },
+      {
+        "cell_type": "hematopoietic precursor cell",
+        "human_mt_fraction": 0.011359189637005329,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.0056795948185026646
+      },
+      {
+        "cell_type": "hematopoietic stem cell",
+        "human_mt_fraction": 0.01331415120512247,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006657075602561235
+      },
+      {
+        "cell_type": "hepatocyte",
+        "human_mt_fraction": 0.020583199337124825,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.010291599668562412
+      },
+      {
+        "cell_type": "intermediate monocyte",
+        "human_mt_fraction": 0.011310024186968803,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.005655012093484402
+      },
+      {
+        "cell_type": "large intestine goblet cell",
+        "human_mt_fraction": 0.021493112668395042,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.010746556334197521
+      },
+      {
+        "cell_type": "luminal epithelial cell of mammary gland",
+        "human_mt_fraction": 0.011393862776458263,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.005696931388229132
+      },
+      {
+        "cell_type": "macrophage",
+        "human_mt_fraction": 0.013568867929279804,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006784433964639902
+      },
+      {
+        "cell_type": "mature NK T cell",
+        "human_mt_fraction": 0.015119818039238453,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.0075599090196192265
+      },
+      {
+        "cell_type": "mesenchymal stem cell",
+        "human_mt_fraction": 0.013288572430610657,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006644286215305328
+      },
+      {
+        "cell_type": "mesenchymal stem cell of adipose tissue",
+        "human_mt_fraction": 0.012847455218434334,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006423727609217167
+      },
+      {
+        "cell_type": "monocyte",
+        "human_mt_fraction": 0.012127687223255634,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006063843611627817
+      },
+      {
+        "cell_type": "myeloid dendritic cell",
+        "human_mt_fraction": 0.01626572012901306,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.00813286006450653
+      },
+      {
+        "cell_type": "myeloid leukocyte",
+        "human_mt_fraction": 0.015842696651816368,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007921348325908184
+      },
+      {
+        "cell_type": "natural killer cell",
+        "human_mt_fraction": 0.013311738148331642,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006655869074165821
+      },
+      {
+        "cell_type": "neutrophil",
+        "human_mt_fraction": 0.009941281750798225,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.004970640875399113
+      },
+      {
+        "cell_type": "non-classical monocyte",
+        "human_mt_fraction": 0.012577474117279053,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.006288737058639526
+      },
+      {
+        "cell_type": "pancreatic acinar cell",
+        "human_mt_fraction": 0.0233509112149477,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.01167545560747385
+      },
+      {
+        "cell_type": "pancreatic ductal cell",
+        "human_mt_fraction": 0.015226347371935844,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007613173685967922
+      },
+      {
+        "cell_type": "plasma cell",
+        "human_mt_fraction": 0.01585506461560726,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.00792753230780363
+      },
+      {
+        "cell_type": "smooth muscle cell",
+        "human_mt_fraction": 0.014354240149259567,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.007177120074629784
+      },
+      {
+        "cell_type": "stromal cell",
+        "human_mt_fraction": 0.01896439492702484,
+        "mouse_mt_fraction": 0.0,
+        "mean_mt_fraction": 0.00948219746351242
+      }
+    ],
+    "spearman_vs_rigidity": {
+      "mean": {
+        "rho": -0.10476190476190476,
+        "p_value": 0.5492243108413788,
+        "n": 35,
+        "data": [
+          {
+            "cell_type": "B cell",
+            "value": 0.007498904597014189,
+            "rigidity_rank": 17
+          },
+          {
+            "cell_type": "CD4-positive, alpha-beta T cell",
+            "value": 0.007132350467145443,
+            "rigidity_rank": 14
+          },
+          {
+            "cell_type": "CD8-positive, alpha-beta T cell",
+            "value": 0.007257987279444933,
+            "rigidity_rank": 35
+          },
+          {
+            "cell_type": "T cell",
+            "value": 0.00725597096607089,
+            "rigidity_rank": 7
+          },
+          {
+            "cell_type": "adventitial cell",
+            "value": 0.007253809366375208,
+            "rigidity_rank": 26
+          },
+          {
+            "cell_type": "basal cell",
+            "value": 0.006708062719553709,
+            "rigidity_rank": 6
+          },
+          {
+            "cell_type": "bladder urothelial cell",
+            "value": 0.007540634833276272,
+            "rigidity_rank": 29
+          },
+          {
+            "cell_type": "classical monocyte",
+            "value": 0.005662258714437485,
+            "rigidity_rank": 15
+          },
+          {
+            "cell_type": "endothelial cell",
+            "value": 0.006124998442828655,
+            "rigidity_rank": 33
+          },
+          {
+            "cell_type": "enterocyte of epithelium of large intestine",
+            "value": 0.022209350019693375,
+            "rigidity_rank": 20
+          },
+          {
+            "cell_type": "epithelial cell",
+            "value": 0.008648842573165894,
+            "rigidity_rank": 2
+          },
+          {
+            "cell_type": "fibroblast",
+            "value": 0.006083313841372728,
+            "rigidity_rank": 28
+          },
+          {
+            "cell_type": "fibroblast of cardiac tissue",
+            "value": 0.00817864015698433,
+            "rigidity_rank": 9
+          },
+          {
+            "cell_type": "granulocyte",
+            "value": 0.006437907461076975,
+            "rigidity_rank": 27
+          },
+          {
+            "cell_type": "hematopoietic precursor cell",
+            "value": 0.0056795948185026646,
+            "rigidity_rank": 3
+          },
+          {
+            "cell_type": "hematopoietic stem cell",
+            "value": 0.006657075602561235,
+            "rigidity_rank": 4
+          },
+          {
+            "cell_type": "hepatocyte",
+            "value": 0.010291599668562412,
+            "rigidity_rank": 32
+          },
+          {
+            "cell_type": "intermediate monocyte",
+            "value": 0.005655012093484402,
+            "rigidity_rank": 24
+          },
+          {
+            "cell_type": "large intestine goblet cell",
+            "value": 0.010746556334197521,
+            "rigidity_rank": 19
+          },
+          {
+            "cell_type": "luminal epithelial cell of mammary gland",
+            "value": 0.005696931388229132,
+            "rigidity_rank": 18
+          },
+          {
+            "cell_type": "macrophage",
+            "value": 0.006784433964639902,
+            "rigidity_rank": 16
+          },
+          {
+            "cell_type": "mature NK T cell",
+            "value": 0.0075599090196192265,
+            "rigidity_rank": 25
+          },
+          {
+            "cell_type": "mesenchymal stem cell",
+            "value": 0.006644286215305328,
+            "rigidity_rank": 13
+          },
+          {
+            "cell_type": "mesenchymal stem cell of adipose tissue",
+            "value": 0.006423727609217167,
+            "rigidity_rank": 11
+          },
+          {
+            "cell_type": "monocyte",
+            "value": 0.006063843611627817,
+            "rigidity_rank": 22
+          },
+          {
+            "cell_type": "myeloid dendritic cell",
+            "value": 0.00813286006450653,
+            "rigidity_rank": 21
+          },
+          {
+            "cell_type": "myeloid leukocyte",
+            "value": 0.007921348325908184,
+            "rigidity_rank": 10
+          },
+          {
+            "cell_type": "natural killer cell",
+            "value": 0.006655869074165821,
+            "rigidity_rank": 23
+          },
+          {
+            "cell_type": "neutrophil",
+            "value": 0.004970640875399113,
+            "rigidity_rank": 8
+          },
+          {
+            "cell_type": "non-classical monocyte",
+            "value": 0.006288737058639526,
+            "rigidity_rank": 34
+          },
+          {
+            "cell_type": "pancreatic acinar cell",
+            "value": 0.01167545560747385,
+            "rigidity_rank": 5
+          },
+          {
+            "cell_type": "pancreatic ductal cell",
+            "value": 0.007613173685967922,
+            "rigidity_rank": 30
+          },
+          {
+            "cell_type": "plasma cell",
+            "value": 0.00792753230780363,
+            "rigidity_rank": 12
+          },
+          {
+            "cell_type": "smooth muscle cell",
+            "value": 0.007177120074629784,
+            "rigidity_rank": 31
+          },
+          {
+            "cell_type": "stromal cell",
+            "value": 0.00948219746351242,
+            "rigidity_rank": 1
+          }
+        ]
+      },
+      "human": {
+        "rho": -0.10476190476190476,
+        "p_value": 0.5492243108413788,
+        "n": 35,
+        "data": [
+          {
+            "cell_type": "B cell",
+            "value": 0.014997809194028378,
+            "rigidity_rank": 17
+          },
+          {
+            "cell_type": "CD4-positive, alpha-beta T cell",
+            "value": 0.014264700934290886,
+            "rigidity_rank": 14
+          },
+          {
+            "cell_type": "CD8-positive, alpha-beta T cell",
+            "value": 0.014515974558889866,
+            "rigidity_rank": 35
+          },
+          {
+            "cell_type": "T cell",
+            "value": 0.01451194193214178,
+            "rigidity_rank": 7
+          },
+          {
+            "cell_type": "adventitial cell",
+            "value": 0.014507618732750416,
+            "rigidity_rank": 26
+          },
+          {
+            "cell_type": "basal cell",
+            "value": 0.013416125439107418,
+            "rigidity_rank": 6
+          },
+          {
+            "cell_type": "bladder urothelial cell",
+            "value": 0.015081269666552544,
+            "rigidity_rank": 29
+          },
+          {
+            "cell_type": "classical monocyte",
+            "value": 0.01132451742887497,
+            "rigidity_rank": 15
+          },
+          {
+            "cell_type": "endothelial cell",
+            "value": 0.01224999688565731,
+            "rigidity_rank": 33
+          },
+          {
+            "cell_type": "enterocyte of epithelium of large intestine",
+            "value": 0.04441870003938675,
+            "rigidity_rank": 20
+          },
+          {
+            "cell_type": "epithelial cell",
+            "value": 0.017297685146331787,
+            "rigidity_rank": 2
+          },
+          {
+            "cell_type": "fibroblast",
+            "value": 0.012166627682745457,
+            "rigidity_rank": 28
+          },
+          {
+            "cell_type": "fibroblast of cardiac tissue",
+            "value": 0.01635728031396866,
+            "rigidity_rank": 9
+          },
+          {
+            "cell_type": "granulocyte",
+            "value": 0.01287581492215395,
+            "rigidity_rank": 27
+          },
+          {
+            "cell_type": "hematopoietic precursor cell",
+            "value": 0.011359189637005329,
+            "rigidity_rank": 3
+          },
+          {
+            "cell_type": "hematopoietic stem cell",
+            "value": 0.01331415120512247,
+            "rigidity_rank": 4
+          },
+          {
+            "cell_type": "hepatocyte",
+            "value": 0.020583199337124825,
+            "rigidity_rank": 32
+          },
+          {
+            "cell_type": "intermediate monocyte",
+            "value": 0.011310024186968803,
+            "rigidity_rank": 24
+          },
+          {
+            "cell_type": "large intestine goblet cell",
+            "value": 0.021493112668395042,
+            "rigidity_rank": 19
+          },
+          {
+            "cell_type": "luminal epithelial cell of mammary gland",
+            "value": 0.011393862776458263,
+            "rigidity_rank": 18
+          },
+          {
+            "cell_type": "macrophage",
+            "value": 0.013568867929279804,
+            "rigidity_rank": 16
+          },
+          {
+            "cell_type": "mature NK T cell",
+            "value": 0.015119818039238453,
+            "rigidity_rank": 25
+          },
+          {
+            "cell_type": "mesenchymal stem cell",
+            "value": 0.013288572430610657,
+            "rigidity_rank": 13
+          },
+          {
+            "cell_type": "mesenchymal stem cell of adipose tissue",
+            "value": 0.012847455218434334,
+            "rigidity_rank": 11
+          },
+          {
+            "cell_type": "monocyte",
+            "value": 0.012127687223255634,
+            "rigidity_rank": 22
+          },
+          {
+            "cell_type": "myeloid dendritic cell",
+            "value": 0.01626572012901306,
+            "rigidity_rank": 21
+          },
+          {
+            "cell_type": "myeloid leukocyte",
+            "value": 0.015842696651816368,
+            "rigidity_rank": 10
+          },
+          {
+            "cell_type": "natural killer cell",
+            "value": 0.013311738148331642,
+            "rigidity_rank": 23
+          },
+          {
+            "cell_type": "neutrophil",
+            "value": 0.009941281750798225,
+            "rigidity_rank": 8
+          },
+          {
+            "cell_type": "non-classical monocyte",
+            "value": 0.012577474117279053,
+            "rigidity_rank": 34
+          },
+          {
+            "cell_type": "pancreatic acinar cell",
+            "value": 0.0233509112149477,
+            "rigidity_rank": 5
+          },
+          {
+            "cell_type": "pancreatic ductal cell",
+            "value": 0.015226347371935844,
+            "rigidity_rank": 30
+          },
+          {
+            "cell_type": "plasma cell",
+            "value": 0.01585506461560726,
+            "rigidity_rank": 12
+          },
+          {
+            "cell_type": "smooth muscle cell",
+            "value": 0.014354240149259567,
+            "rigidity_rank": 31
+          },
+          {
+            "cell_type": "stromal cell",
+            "value": 0.01896439492702484,
+            "rigidity_rank": 1
+          }
+        ]
+      },
+      "mouse": {
+        "rho": NaN,
+        "p_value": NaN,
+        "n": 35,
+        "data": [
+          {
+            "cell_type": "B cell",
+            "value": 0.0,
+            "rigidity_rank": 17
+          },
+          {
+            "cell_type": "CD4-positive, alpha-beta T cell",
+            "value": 0.0,
+            "rigidity_rank": 14
+          },
+          {
+            "cell_type": "CD8-positive, alpha-beta T cell",
+            "value": 0.0,
+            "rigidity_rank": 35
+          },
+          {
+            "cell_type": "T cell",
+            "value": 0.0,
+            "rigidity_rank": 7
+          },
+          {
+            "cell_type": "adventitial cell",
+            "value": 0.0,
+            "rigidity_rank": 26
+          },
+          {
+            "cell_type": "basal cell",
+            "value": 0.0,
+            "rigidity_rank": 6
+          },
+          {
+            "cell_type": "bladder urothelial cell",
+            "value": 0.0,
+            "rigidity_rank": 29
+          },
+          {
+            "cell_type": "classical monocyte",
+            "value": 0.0,
+            "rigidity_rank": 15
+          },
+          {
+            "cell_type": "endothelial cell",
+            "value": 0.0,
+            "rigidity_rank": 33
+          },
+          {
+            "cell_type": "enterocyte of epithelium of large intestine",
+            "value": 0.0,
+            "rigidity_rank": 20
+          },
+          {
+            "cell_type": "epithelial cell",
+            "value": 0.0,
+            "rigidity_rank": 2
+          },
+          {
+            "cell_type": "fibroblast",
+            "value": 0.0,
+            "rigidity_rank": 28
+          },
+          {
+            "cell_type": "fibroblast of cardiac tissue",
+            "value": 0.0,
+            "rigidity_rank": 9
+          },
+          {
+            "cell_type": "granulocyte",
+            "value": 0.0,
+            "rigidity_rank": 27
+          },
+          {
+            "cell_type": "hematopoietic precursor cell",
+            "value": 0.0,
+            "rigidity_rank": 3
+          },
+          {
+            "cell_type": "hematopoietic stem cell",
+            "value": 0.0,
+            "rigidity_rank": 4
+          },
+          {
+            "cell_type": "hepatocyte",
+            "value": 0.0,
+            "rigidity_rank": 32
+          },
+          {
+            "cell_type": "intermediate monocyte",
+            "value": 0.0,
+            "rigidity_rank": 24
+          },
+          {
+            "cell_type": "large intestine goblet cell",
+            "value": 0.0,
+            "rigidity_rank": 19
+          },
+          {
+            "cell_type": "luminal epithelial cell of mammary gland",
+            "value": 0.0,
+            "rigidity_rank": 18
+          },
+          {
+            "cell_type": "macrophage",
+            "value": 0.0,
+            "rigidity_rank": 16
+          },
+          {
+            "cell_type": "mature NK T cell",
+            "value": 0.0,
+            "rigidity_rank": 25
+          },
+          {
+            "cell_type": "mesenchymal stem cell",
+            "value": 0.0,
+            "rigidity_rank": 13
+          },
+          {
+            "cell_type": "mesenchymal stem cell of adipose tissue",
+            "value": 0.0,
+            "rigidity_rank": 11
+          },
+          {
+            "cell_type": "monocyte",
+            "value": 0.0,
+            "rigidity_rank": 22
+          },
+          {
+            "cell_type": "myeloid dendritic cell",
+            "value": 0.0,
+            "rigidity_rank": 21
+          },
+          {
+            "cell_type": "myeloid leukocyte",
+            "value": 0.0,
+            "rigidity_rank": 10
+          },
+          {
+            "cell_type": "natural killer cell",
+            "value": 0.0,
+            "rigidity_rank": 23
+          },
+          {
+            "cell_type": "neutrophil",
+            "value": 0.0,
+            "rigidity_rank": 8
+          },
+          {
+            "cell_type": "non-classical monocyte",
+            "value": 0.0,
+            "rigidity_rank": 34
+          },
+          {
+            "cell_type": "pancreatic acinar cell",
+            "value": 0.0,
+            "rigidity_rank": 5
+          },
+          {
+            "cell_type": "pancreatic ductal cell",
+            "value": 0.0,
+            "rigidity_rank": 30
+          },
+          {
+            "cell_type": "plasma cell",
+            "value": 0.0,
+            "rigidity_rank": 12
+          },
+          {
+            "cell_type": "smooth muscle cell",
+            "value": 0.0,
+            "rigidity_rank": 31
+          },
+          {
+            "cell_type": "stromal cell",
+            "value": 0.0,
+            "rigidity_rank": 1
+          }
+        ]
+      }
+    }
+  },
+  "cell_cycle": {
+    "per_type": [
+      {
+        "cell_type": "B cell",
+        "human_sg2m_frac": 0.3685,
+        "mouse_sg2m_frac": 0.4335,
+        "mean_sg2m_frac": 0.401
+      },
+      {
+        "cell_type": "CD4-positive, alpha-beta T cell",
+        "human_sg2m_frac": 0.5055,
+        "mouse_sg2m_frac": 0.49215572341661823,
+        "mean_sg2m_frac": 0.49882786170830906
+      },
+      {
+        "cell_type": "CD8-positive, alpha-beta T cell",
+        "human_sg2m_frac": 0.489,
+        "mouse_sg2m_frac": 0.5768041237113402,
+        "mean_sg2m_frac": 0.5329020618556701
+      },
+      {
+        "cell_type": "T cell",
+        "human_sg2m_frac": 0.631,
+        "mouse_sg2m_frac": 0.463,
+        "mean_sg2m_frac": 0.547
+      },
+      {
+        "cell_type": "adventitial cell",
+        "human_sg2m_frac": 0.16555023923444975,
+        "mouse_sg2m_frac": 0.0343558282208589,
+        "mean_sg2m_frac": 0.09995303372765432
+      },
+      {
+        "cell_type": "basal cell",
+        "human_sg2m_frac": 0.3145,
+        "mouse_sg2m_frac": 0.127,
+        "mean_sg2m_frac": 0.22075
+      },
+      {
+        "cell_type": "bladder urothelial cell",
+        "human_sg2m_frac": 0.0435,
+        "mouse_sg2m_frac": 0.0185,
+        "mean_sg2m_frac": 0.031
+      },
+      {
+        "cell_type": "classical monocyte",
+        "human_sg2m_frac": 0.1535,
+        "mouse_sg2m_frac": 0.4415,
+        "mean_sg2m_frac": 0.2975
+      },
+      {
+        "cell_type": "endothelial cell",
+        "human_sg2m_frac": 0.1475,
+        "mouse_sg2m_frac": 0.196,
+        "mean_sg2m_frac": 0.17175
+      },
+      {
+        "cell_type": "enterocyte of epithelium of large intestine",
+        "human_sg2m_frac": 0.152,
+        "mouse_sg2m_frac": 0.0565,
+        "mean_sg2m_frac": 0.10425
+      },
+      {
+        "cell_type": "epithelial cell",
+        "human_sg2m_frac": 0.19761194029850745,
+        "mouse_sg2m_frac": 0.24214659685863874,
+        "mean_sg2m_frac": 0.2198792685785731
+      },
+      {
+        "cell_type": "fibroblast",
+        "human_sg2m_frac": 0.0715,
+        "mouse_sg2m_frac": 0.0835,
+        "mean_sg2m_frac": 0.0775
+      },
+      {
+        "cell_type": "fibroblast of cardiac tissue",
+        "human_sg2m_frac": 0.058038007190549565,
+        "mouse_sg2m_frac": 0.046,
+        "mean_sg2m_frac": 0.05201900359527478
+      },
+      {
+        "cell_type": "granulocyte",
+        "human_sg2m_frac": 0.2925877763328999,
+        "mouse_sg2m_frac": 0.734,
+        "mean_sg2m_frac": 0.5132938881664499
+      },
+      {
+        "cell_type": "hematopoietic precursor cell",
+        "human_sg2m_frac": 0.8855,
+        "mouse_sg2m_frac": 0.7155,
+        "mean_sg2m_frac": 0.8005
+      },
+      {
+        "cell_type": "hematopoietic stem cell",
+        "human_sg2m_frac": 0.5547785547785548,
+        "mouse_sg2m_frac": 0.7805,
+        "mean_sg2m_frac": 0.6676392773892774
+      },
+      {
+        "cell_type": "hepatocyte",
+        "human_sg2m_frac": 0.0215,
+        "mouse_sg2m_frac": 0.032,
+        "mean_sg2m_frac": 0.02675
+      },
+      {
+        "cell_type": "intermediate monocyte",
+        "human_sg2m_frac": 0.135,
+        "mouse_sg2m_frac": 0.15275411697898922,
+        "mean_sg2m_frac": 0.1438770584894946
+      },
+      {
+        "cell_type": "large intestine goblet cell",
+        "human_sg2m_frac": 0.1817597944765575,
+        "mouse_sg2m_frac": 0.12607449856733524,
+        "mean_sg2m_frac": 0.15391714652194638
+      },
+      {
+        "cell_type": "luminal epithelial cell of mammary gland",
+        "human_sg2m_frac": 0.064,
+        "mouse_sg2m_frac": 0.11,
+        "mean_sg2m_frac": 0.087
+      },
+      {
+        "cell_type": "macrophage",
+        "human_sg2m_frac": 0.183,
+        "mouse_sg2m_frac": 0.312,
+        "mean_sg2m_frac": 0.2475
+      },
+      {
+        "cell_type": "mature NK T cell",
+        "human_sg2m_frac": 0.403,
+        "mouse_sg2m_frac": 0.511,
+        "mean_sg2m_frac": 0.457
+      },
+      {
+        "cell_type": "mesenchymal stem cell",
+        "human_sg2m_frac": 0.0615,
+        "mouse_sg2m_frac": 0.0845,
+        "mean_sg2m_frac": 0.07300000000000001
+      },
+      {
+        "cell_type": "mesenchymal stem cell of adipose tissue",
+        "human_sg2m_frac": 0.0735,
+        "mouse_sg2m_frac": 0.0505,
+        "mean_sg2m_frac": 0.062
+      },
+      {
+        "cell_type": "monocyte",
+        "human_sg2m_frac": 0.2105,
+        "mouse_sg2m_frac": 0.2835,
+        "mean_sg2m_frac": 0.247
+      },
+      {
+        "cell_type": "myeloid dendritic cell",
+        "human_sg2m_frac": 0.34851138353765326,
+        "mouse_sg2m_frac": 0.1553398058252427,
+        "mean_sg2m_frac": 0.251925594681448
+      },
+      {
+        "cell_type": "myeloid leukocyte",
+        "human_sg2m_frac": 0.19760479041916168,
+        "mouse_sg2m_frac": 0.18410852713178294,
+        "mean_sg2m_frac": 0.1908566587754723
+      },
+      {
+        "cell_type": "natural killer cell",
+        "human_sg2m_frac": 0.367,
+        "mouse_sg2m_frac": 0.544,
+        "mean_sg2m_frac": 0.4555
+      },
+      {
+        "cell_type": "neutrophil",
+        "human_sg2m_frac": 0.196,
+        "mouse_sg2m_frac": 0.4595744680851064,
+        "mean_sg2m_frac": 0.32778723404255317
+      },
+      {
+        "cell_type": "non-classical monocyte",
+        "human_sg2m_frac": 0.17679127725856697,
+        "mouse_sg2m_frac": 0.21138912855910266,
+        "mean_sg2m_frac": 0.19409020290883483
+      },
+      {
+        "cell_type": "pancreatic acinar cell",
+        "human_sg2m_frac": 0.035,
+        "mouse_sg2m_frac": 0.1185,
+        "mean_sg2m_frac": 0.07675
+      },
+      {
+        "cell_type": "pancreatic ductal cell",
+        "human_sg2m_frac": 0.076,
+        "mouse_sg2m_frac": 0.13517665130568357,
+        "mean_sg2m_frac": 0.10558832565284179
+      },
+      {
+        "cell_type": "plasma cell",
+        "human_sg2m_frac": 0.396,
+        "mouse_sg2m_frac": 0.34933171324422846,
+        "mean_sg2m_frac": 0.37266585662211427
+      },
+      {
+        "cell_type": "smooth muscle cell",
+        "human_sg2m_frac": 0.082,
+        "mouse_sg2m_frac": 0.09448356807511737,
+        "mean_sg2m_frac": 0.0882417840375587
+      },
+      {
+        "cell_type": "stromal cell",
+        "human_sg2m_frac": 0.2955,
+        "mouse_sg2m_frac": 0.038,
+        "mean_sg2m_frac": 0.16674999999999998
+      }
+    ],
+    "spearman_vs_rigidity": {
+      "mean": {
+        "rho": -0.20112044817927172,
+        "p_value": 0.24665281773508788,
+        "n": 35,
+        "data": [
+          {
+            "cell_type": "B cell",
+            "value": 0.401,
+            "rigidity_rank": 17
+          },
+          {
+            "cell_type": "CD4-positive, alpha-beta T cell",
+            "value": 0.49882786170830906,
+            "rigidity_rank": 14
+          },
+          {
+            "cell_type": "CD8-positive, alpha-beta T cell",
+            "value": 0.5329020618556701,
+            "rigidity_rank": 35
+          },
+          {
+            "cell_type": "T cell",
+            "value": 0.547,
+            "rigidity_rank": 7
+          },
+          {
+            "cell_type": "adventitial cell",
+            "value": 0.09995303372765432,
+            "rigidity_rank": 26
+          },
+          {
+            "cell_type": "basal cell",
+            "value": 0.22075,
+            "rigidity_rank": 6
+          },
+          {
+            "cell_type": "bladder urothelial cell",
+            "value": 0.031,
+            "rigidity_rank": 29
+          },
+          {
+            "cell_type": "classical monocyte",
+            "value": 0.2975,
+            "rigidity_rank": 15
+          },
+          {
+            "cell_type": "endothelial cell",
+            "value": 0.17175,
+            "rigidity_rank": 33
+          },
+          {
+            "cell_type": "enterocyte of epithelium of large intestine",
+            "value": 0.10425,
+            "rigidity_rank": 20
+          },
+          {
+            "cell_type": "epithelial cell",
+            "value": 0.2198792685785731,
+            "rigidity_rank": 2
+          },
+          {
+            "cell_type": "fibroblast",
+            "value": 0.0775,
+            "rigidity_rank": 28
+          },
+          {
+            "cell_type": "fibroblast of cardiac tissue",
+            "value": 0.05201900359527478,
+            "rigidity_rank": 9
+          },
+          {
+            "cell_type": "granulocyte",
+            "value": 0.5132938881664499,
+            "rigidity_rank": 27
+          },
+          {
+            "cell_type": "hematopoietic precursor cell",
+            "value": 0.8005,
+            "rigidity_rank": 3
+          },
+          {
+            "cell_type": "hematopoietic stem cell",
+            "value": 0.6676392773892774,
+            "rigidity_rank": 4
+          },
+          {
+            "cell_type": "hepatocyte",
+            "value": 0.02675,
+            "rigidity_rank": 32
+          },
+          {
+            "cell_type": "intermediate monocyte",
+            "value": 0.1438770584894946,
+            "rigidity_rank": 24
+          },
+          {
+            "cell_type": "large intestine goblet cell",
+            "value": 0.15391714652194638,
+            "rigidity_rank": 19
+          },
+          {
+            "cell_type": "luminal epithelial cell of mammary gland",
+            "value": 0.087,
+            "rigidity_rank": 18
+          },
+          {
+            "cell_type": "macrophage",
+            "value": 0.2475,
+            "rigidity_rank": 16
+          },
+          {
+            "cell_type": "mature NK T cell",
+            "value": 0.457,
+            "rigidity_rank": 25
+          },
+          {
+            "cell_type": "mesenchymal stem cell",
+            "value": 0.07300000000000001,
+            "rigidity_rank": 13
+          },
+          {
+            "cell_type": "mesenchymal stem cell of adipose tissue",
+            "value": 0.062,
+            "rigidity_rank": 11
+          },
+          {
+            "cell_type": "monocyte",
+            "value": 0.247,
+            "rigidity_rank": 22
+          },
+          {
+            "cell_type": "myeloid dendritic cell",
+            "value": 0.251925594681448,
+            "rigidity_rank": 21
+          },
+          {
+            "cell_type": "myeloid leukocyte",
+            "value": 0.1908566587754723,
+            "rigidity_rank": 10
+          },
+          {
+            "cell_type": "natural killer cell",
+            "value": 0.4555,
+            "rigidity_rank": 23
+          },
+          {
+            "cell_type": "neutrophil",
+            "value": 0.32778723404255317,
+            "rigidity_rank": 8
+          },
+          {
+            "cell_type": "non-classical monocyte",
+            "value": 0.19409020290883483,
+            "rigidity_rank": 34
+          },
+          {
+            "cell_type": "pancreatic acinar cell",
+            "value": 0.07675,
+            "rigidity_rank": 5
+          },
+          {
+            "cell_type": "pancreatic ductal cell",
+            "value": 0.10558832565284179,
+            "rigidity_rank": 30
+          },
+          {
+            "cell_type": "plasma cell",
+            "value": 0.37266585662211427,
+            "rigidity_rank": 12
+          },
+          {
+            "cell_type": "smooth muscle cell",
+            "value": 0.0882417840375587,
+            "rigidity_rank": 31
+          },
+          {
+            "cell_type": "stromal cell",
+            "value": 0.16674999999999998,
+            "rigidity_rank": 1
+          }
+        ]
+      },
+      "human": {
+        "rho": -0.2915966386554622,
+        "p_value": 0.08920283775596655,
+        "n": 35,
+        "data": [
+          {
+            "cell_type": "B cell",
+            "value": 0.3685,
+            "rigidity_rank": 17
+          },
+          {
+            "cell_type": "CD4-positive, alpha-beta T cell",
+            "value": 0.5055,
+            "rigidity_rank": 14
+          },
+          {
+            "cell_type": "CD8-positive, alpha-beta T cell",
+            "value": 0.489,
+            "rigidity_rank": 35
+          },
+          {
+            "cell_type": "T cell",
+            "value": 0.631,
+            "rigidity_rank": 7
+          },
+          {
+            "cell_type": "adventitial cell",
+            "value": 0.16555023923444975,
+            "rigidity_rank": 26
+          },
+          {
+            "cell_type": "basal cell",
+            "value": 0.3145,
+            "rigidity_rank": 6
+          },
+          {
+            "cell_type": "bladder urothelial cell",
+            "value": 0.0435,
+            "rigidity_rank": 29
+          },
+          {
+            "cell_type": "classical monocyte",
+            "value": 0.1535,
+            "rigidity_rank": 15
+          },
+          {
+            "cell_type": "endothelial cell",
+            "value": 0.1475,
+            "rigidity_rank": 33
+          },
+          {
+            "cell_type": "enterocyte of epithelium of large intestine",
+            "value": 0.152,
+            "rigidity_rank": 20
+          },
+          {
+            "cell_type": "epithelial cell",
+            "value": 0.19761194029850745,
+            "rigidity_rank": 2
+          },
+          {
+            "cell_type": "fibroblast",
+            "value": 0.0715,
+            "rigidity_rank": 28
+          },
+          {
+            "cell_type": "fibroblast of cardiac tissue",
+            "value": 0.058038007190549565,
+            "rigidity_rank": 9
+          },
+          {
+            "cell_type": "granulocyte",
+            "value": 0.2925877763328999,
+            "rigidity_rank": 27
+          },
+          {
+            "cell_type": "hematopoietic precursor cell",
+            "value": 0.8855,
+            "rigidity_rank": 3
+          },
+          {
+            "cell_type": "hematopoietic stem cell",
+            "value": 0.5547785547785548,
+            "rigidity_rank": 4
+          },
+          {
+            "cell_type": "hepatocyte",
+            "value": 0.0215,
+            "rigidity_rank": 32
+          },
+          {
+            "cell_type": "intermediate monocyte",
+            "value": 0.135,
+            "rigidity_rank": 24
+          },
+          {
+            "cell_type": "large intestine goblet cell",
+            "value": 0.1817597944765575,
+            "rigidity_rank": 19
+          },
+          {
+            "cell_type": "luminal epithelial cell of mammary gland",
+            "value": 0.064,
+            "rigidity_rank": 18
+          },
+          {
+            "cell_type": "macrophage",
+            "value": 0.183,
+            "rigidity_rank": 16
+          },
+          {
+            "cell_type": "mature NK T cell",
+            "value": 0.403,
+            "rigidity_rank": 25
+          },
+          {
+            "cell_type": "mesenchymal stem cell",
+            "value": 0.0615,
+            "rigidity_rank": 13
+          },
+          {
+            "cell_type": "mesenchymal stem cell of adipose tissue",
+            "value": 0.0735,
+            "rigidity_rank": 11
+          },
+          {
+            "cell_type": "monocyte",
+            "value": 0.2105,
+            "rigidity_rank": 22
+          },
+          {
+            "cell_type": "myeloid dendritic cell",
+            "value": 0.34851138353765326,
+            "rigidity_rank": 21
+          },
+          {
+            "cell_type": "myeloid leukocyte",
+            "value": 0.19760479041916168,
+            "rigidity_rank": 10
+          },
+          {
+            "cell_type": "natural killer cell",
+            "value": 0.367,
+            "rigidity_rank": 23
+          },
+          {
+            "cell_type": "neutrophil",
+            "value": 0.196,
+            "rigidity_rank": 8
+          },
+          {
+            "cell_type": "non-classical monocyte",
+            "value": 0.17679127725856697,
+            "rigidity_rank": 34
+          },
+          {
+            "cell_type": "pancreatic acinar cell",
+            "value": 0.035,
+            "rigidity_rank": 5
+          },
+          {
+            "cell_type": "pancreatic ductal cell",
+            "value": 0.076,
+            "rigidity_rank": 30
+          },
+          {
+            "cell_type": "plasma cell",
+            "value": 0.396,
+            "rigidity_rank": 12
+          },
+          {
+            "cell_type": "smooth muscle cell",
+            "value": 0.082,
+            "rigidity_rank": 31
+          },
+          {
+            "cell_type": "stromal cell",
+            "value": 0.2955,
+            "rigidity_rank": 1
+          }
+        ]
+      },
+      "mouse": {
+        "rho": -0.1235294117647059,
+        "p_value": 0.4795765805686995,
+        "n": 35,
+        "data": [
+          {
+            "cell_type": "B cell",
+            "value": 0.4335,
+            "rigidity_rank": 17
+          },
+          {
+            "cell_type": "CD4-positive, alpha-beta T cell",
+            "value": 0.49215572341661823,
+            "rigidity_rank": 14
+          },
+          {
+            "cell_type": "CD8-positive, alpha-beta T cell",
+            "value": 0.5768041237113402,
+            "rigidity_rank": 35
+          },
+          {
+            "cell_type": "T cell",
+            "value": 0.463,
+            "rigidity_rank": 7
+          },
+          {
+            "cell_type": "adventitial cell",
+            "value": 0.0343558282208589,
+            "rigidity_rank": 26
+          },
+          {
+            "cell_type": "basal cell",
+            "value": 0.127,
+            "rigidity_rank": 6
+          },
+          {
+            "cell_type": "bladder urothelial cell",
+            "value": 0.0185,
+            "rigidity_rank": 29
+          },
+          {
+            "cell_type": "classical monocyte",
+            "value": 0.4415,
+            "rigidity_rank": 15
+          },
+          {
+            "cell_type": "endothelial cell",
+            "value": 0.196,
+            "rigidity_rank": 33
+          },
+          {
+            "cell_type": "enterocyte of epithelium of large intestine",
+            "value": 0.0565,
+            "rigidity_rank": 20
+          },
+          {
+            "cell_type": "epithelial cell",
+            "value": 0.24214659685863874,
+            "rigidity_rank": 2
+          },
+          {
+            "cell_type": "fibroblast",
+            "value": 0.0835,
+            "rigidity_rank": 28
+          },
+          {
+            "cell_type": "fibroblast of cardiac tissue",
+            "value": 0.046,
+            "rigidity_rank": 9
+          },
+          {
+            "cell_type": "granulocyte",
+            "value": 0.734,
+            "rigidity_rank": 27
+          },
+          {
+            "cell_type": "hematopoietic precursor cell",
+            "value": 0.7155,
+            "rigidity_rank": 3
+          },
+          {
+            "cell_type": "hematopoietic stem cell",
+            "value": 0.7805,
+            "rigidity_rank": 4
+          },
+          {
+            "cell_type": "hepatocyte",
+            "value": 0.032,
+            "rigidity_rank": 32
+          },
+          {
+            "cell_type": "intermediate monocyte",
+            "value": 0.15275411697898922,
+            "rigidity_rank": 24
+          },
+          {
+            "cell_type": "large intestine goblet cell",
+            "value": 0.12607449856733524,
+            "rigidity_rank": 19
+          },
+          {
+            "cell_type": "luminal epithelial cell of mammary gland",
+            "value": 0.11,
+            "rigidity_rank": 18
+          },
+          {
+            "cell_type": "macrophage",
+            "value": 0.312,
+            "rigidity_rank": 16
+          },
+          {
+            "cell_type": "mature NK T cell",
+            "value": 0.511,
+            "rigidity_rank": 25
+          },
+          {
+            "cell_type": "mesenchymal stem cell",
+            "value": 0.0845,
+            "rigidity_rank": 13
+          },
+          {
+            "cell_type": "mesenchymal stem cell of adipose tissue",
+            "value": 0.0505,
+            "rigidity_rank": 11
+          },
+          {
+            "cell_type": "monocyte",
+            "value": 0.2835,
+            "rigidity_rank": 22
+          },
+          {
+            "cell_type": "myeloid dendritic cell",
+            "value": 0.1553398058252427,
+            "rigidity_rank": 21
+          },
+          {
+            "cell_type": "myeloid leukocyte",
+            "value": 0.18410852713178294,
+            "rigidity_rank": 10
+          },
+          {
+            "cell_type": "natural killer cell",
+            "value": 0.544,
+            "rigidity_rank": 23
+          },
+          {
+            "cell_type": "neutrophil",
+            "value": 0.4595744680851064,
+            "rigidity_rank": 8
+          },
+          {
+            "cell_type": "non-classical monocyte",
+            "value": 0.21138912855910266,
+            "rigidity_rank": 34
+          },
+          {
+            "cell_type": "pancreatic acinar cell",
+            "value": 0.1185,
+            "rigidity_rank": 5
+          },
+          {
+            "cell_type": "pancreatic ductal cell",
+            "value": 0.13517665130568357,
+            "rigidity_rank": 30
+          },
+          {
+            "cell_type": "plasma cell",
+            "value": 0.34933171324422846,
+            "rigidity_rank": 12
+          },
+          {
+            "cell_type": "smooth muscle cell",
+            "value": 0.09448356807511737,
+            "rigidity_rank": 31
+          },
+          {
+            "cell_type": "stromal cell",
+            "value": 0.038,
+            "rigidity_rank": 1
+          }
+        ]
+      }
+    }
+  },
+  "comparison_with_table_S1": {
+    "cell_cycle_fraction_elastic_net_coef": 0.32,
+    "note_table_S1": "Table S1 Sheet 1 lists 'Cell cycle fraction' as an elastic-net predictor but does NOT report a univariate Spearman \u03c1; Figure 7B does not include it as a mechanistic null. This run provides the univariate Spearman \u03c1.",
+    "mitochondrial_fraction_status": "Not currently in Table S1 or Figure 7B; this run is the first univariate test."
+  }
+}

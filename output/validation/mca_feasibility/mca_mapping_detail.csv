@@ -1,0 +1,265 @@
+mca_base_label,our_type,cell_count
+B cell,B cell,3878
+B cell_Igkc high,B cell,331
+Pre-pro B cell,B cell,572
+B cell_Fcmr high,B cell,97
+B cell_Jchain high,B cell,1923
+B Cell,B cell,698
+B cell_Vpreb3 high,B cell,291
+B cell_Rps27rt high,B cell,77
+B cell_Ly6d high,B cell,1720
+B cell_Igha high,B cell,32
+B cell_Ms4a1 high,B cell,197
+B cell_Ighd high,B cell,117
+B cell_Igkv12-46 high,B cell,94
+Marginal zone B cell,B cell,1026
+B cell_Cd79a high,B cell,177
+B cell_Igkv6-23 high,B cell,90
+B cell_Igkv6-15 high,B cell,207
+B cell_Cd79a&Iglc2 high,B cell,742
+B cell_Cd79a&Fcer2a high,B cell,248
+T Cell_Cd8b1 high,"CD8-positive, alpha-beta T cell",460
+T cell_Cd8b1 high,"CD8-positive, alpha-beta T cell",1788
+T cell_Ms4a4b high,T cell,553
+T cell,T cell,2017
+T cell_Gzma high,T cell,114
+T cell_Trbc2 high,T cell,1776
+T cell_Gm14303 high,T cell,131
+T cell_Cd7 high,T cell,609
+T cell_Icos high,T cell,311
+T cell_Ccl5 high,T cell,662
+DPT cell,T cell,1012
+abT cell,T cell,237
+T cell_Id2 high,T cell,26
+gdT cell,T cell,77
+Pre T cell,T cell,18
+T cell_Pclaf high,T cell,182
+T cell_Grwd1 high,T cell,6
+T cell_Ly6c2 high,T cell,441
+Basal epithelial cell,basal cell,344
+Urothelium,bladder urothelial cell,337
+Vascular endothelial cell,endothelial cell,395
+Endothelial cell_Ly6c1 high,endothelial cell,36
+Endothelial cells_Ly6c1 high,endothelial cell,184
+Endothelial cells,endothelial cell,84
+Endothelial Cell,endothelial cell,14
+Endothelial cell,endothelial cell,1725
+Fenestrated endothelial cell_Plvap high,endothelial cell,117
+Fenestrated endothelial cell_Tm4sf1 high,endothelial cell,75
+Endothelial cells_Vwf high,endothelial cell,74
+Endothelial cell_Tmem100 high,endothelial cell,143
+Endothelial cell_Kdr high,endothelial cell,104
+Vascular Endothelial cell,endothelial cell,142
+Endothelial cell_Igfbp5 high,endothelial cell,349
+Endothelial cell_Eln high,endothelial cell,15
+Endothelial cell_Enpp2 high,endothelial cell,32
+Lymphatic vessel endothelial cell,endothelial cell,190
+Endothelial cell_Fabp4 high,endothelial cell,712
+Endothelial cell_Tm4sf1 high,endothelial cell,372
+Endothelial cell_Lrg1 high,endothelial cell,21
+Endothelial cell_Maged2 high,endothelial cell,153
+Endothelial cell_Cldn5 high,endothelial cell,29
+Glomerular endothelial cell,endothelial cell,405
+Glomerular endothelial cell_Egfl7 high,endothelial cell,150
+Endothelial cell_Fabp4&Aqp1 high,endothelial cell,16
+Endothelial cell_Glycam1 high,endothelial cell,45
+Endothelial cell_Aqp1 high,endothelial cell,55
+Enterocyte progenitor,enterocyte of epithelium of large intestine,868
+Enterocyte progenitor_late_Ccnb1 high,enterocyte of epithelium of large intestine,163
+Enterocyte progenitor_late_Ube2c high,enterocyte of epithelium of large intestine,602
+Epithelium of small intestinal villi_S100g high,enterocyte of epithelium of large intestine,96
+Epithelium of small intestinal villi_Gm23935 high,enterocyte of epithelium of large intestine,207
+Epithelium of small intestinal villi_Fabp1 high,enterocyte of epithelium of large intestine,582
+Epithelium of small intestinal villi_mt-Nd1 high,enterocyte of epithelium of large intestine,88
+Epithelium of small intestinal villi_Fabp6 high,enterocyte of epithelium of large intestine,428
+Epithelial cell_Upk3a high,epithelial cell,224
+Epithelial cell_Gm23935 high,epithelial cell,64
+Epithelial cell_Upk3b high,epithelial cell,340
+Epithelial cell_S100a6 high,epithelial cell,56
+Epithelial cell_Bex1 high,epithelial cell,190
+Epithelial cell_Lgals2 high,epithelial cell,334
+Epithelial cell_Sftpc high,epithelial cell,825
+Epithelial cell_Aldh1a2_high,epithelial cell,90
+Epithelial cell,epithelial cell,2013
+Epithelial cell_Cryab high,epithelial cell,72
+Epithelial cells,epithelial cell,68
+Multiciliated epithelial cell,epithelial cell,33
+Epithelial cell_Kcne3 high,epithelial cell,628
+Epithelial cell_Sh2d6 high,epithelial cell,43
+Epithelial cell_Krt20 high,epithelial cell,165
+Epithelial cell_Pla2g1b high,epithelial cell,205
+Epithelial cell_Gkn3 high,epithelial cell,36
+Glomerular epithelial cell_Aldh1a2 high,epithelial cell,1133
+Distal convoluted tubule epithelial cell,epithelial cell,586
+Myoepithelial cell,epithelial cell,94
+Fibroblasts,fibroblast,333
+Granulocyte_Il33 high,granulocyte,16
+Granulocyte_Ngp high,granulocyte,10
+Granulocyte,granulocyte,442
+Eosinophil granulocyte,granulocyte,265
+Granulocyte_Ly6c2 high,granulocyte,11
+Granulocyte_S100a9 high,granulocyte,63
+Granulocyte_Neat1 high,granulocyte,40
+Monocyte progenitor,hematopoietic precursor cell,2374
+Multipotent progenitor_Ctla2a high,hematopoietic precursor cell,1596
+Monocyte progenitor cell_Prtn3 high,hematopoietic precursor cell,2627
+Monocyte progenitor cell_Ctsg high,hematopoietic precursor cell,2223
+Megakaryocyte progenitor cell,hematopoietic precursor cell,452
+Eosinophil progenitor cell,hematopoietic precursor cell,182
+Granulocyte monocyte progenitors,hematopoietic precursor cell,86
+Hematopoietic stem progenitor cell,hematopoietic precursor cell,481
+Lymphoid progenitor cell,hematopoietic precursor cell,32
+Monocyte progenitor cell,hematopoietic precursor cell,13
+Granulocyte monocyte progenitor cell,hematopoietic precursor cell,124
+Hepatocyte_Afp high,hepatocyte,52
+Hepatocyte-Like Cell,hepatocyte,13
+Pericentral (PC) hepatocytes,hepatocyte,119
+Hepatocyte_mt-Nd4 high,hepatocyte,16
+Periportal (PP) hepatocyte,hepatocyte,26
+Hepatocyte_Fabp1 high,hepatocyte,149
+Luminal cell,luminal epithelial cell of mammary gland,187
+Ductal luminal cell,luminal epithelial cell of mammary gland,2109
+Luminal progenitor,luminal epithelial cell of mammary gland,56
+Luminal cell_Krt19 high,luminal epithelial cell of mammary gland,160
+Macrophage_Pf4 high,macrophage,746
+Macrophage_C1qc high,macrophage,388
+Macrophage_Cd74 high,macrophage,413
+Macrophage_S100a4 high,macrophage,1214
+Macrophage_Ms4a6c high,macrophage,993
+Macrophage_Klf2 high,macrophage,88
+Macrophage_Lyz2 high,macrophage,1112
+Macrophage,macrophage,1628
+Macrophage_Apoe high,macrophage,628
+Macrophage_Pf4high,macrophage,126
+Macrophage_Ccl4 high,macrophage,193
+Macrophage_Chil3 high,macrophage,191
+Alveolar macrophage_Ear2 high,macrophage,499
+Interstitial macrophage,macrophage,224
+Alveolar macrophage_Pclaf high,macrophage,36
+Macrophage_Retnla high,macrophage,188
+Macrophage_Ctss high,macrophage,213
+Macrophage_Ly6c2 high,macrophage,13
+Macrophage_Flt-ps1 high,macrophage,32
+Macrophage_Ace high,macrophage,297
+Macrophage_Spp1 high,macrophage,388
+Macrophage_G0s2 high,macrophage,86
+Macrophage_Cxcl2 high,macrophage,8
+Macrophage_Plbd1 high,macrophage,97
+Macrophage_C1qb high,macrophage,212
+Macrophage_Lyz1 high,macrophage,199
+NKT cell,mature NK T cell,119
+Mesenchymal stromal cell,mesenchymal stem cell,357
+Mesenchymal stem cell_Cxcl1 high,mesenchymal stem cell,3697
+Mesenchymal stem cell_Tmsb10 high,mesenchymal stem cell,3564
+Mesenchymal stem cell_Cxcl10 high,mesenchymal stem cell,58
+Monocyte_Prtn3 high,monocyte,944
+Monocyte_Mif high,monocyte,30
+Monocyte_Elane high,monocyte,226
+Monocyte_F13a1 high,monocyte,133
+Monocyte,monocyte,602
+Dendritic cell_Lyz2 high,myeloid dendritic cell,41
+Dendritic cell_Cd74 high,myeloid dendritic cell,38
+Dendritic cell_Siglech high,myeloid dendritic cell,514
+Dendritic cell_H2-Eb1 high,myeloid dendritic cell,54
+Dendritic Cell,myeloid dendritic cell,66
+Dendritic cell,myeloid dendritic cell,922
+Dendritic cell_Ccr7 high,myeloid dendritic cell,53
+Dendritic cell_Cst3 high,myeloid dendritic cell,569
+Dendritic cell_Naaa high,myeloid dendritic cell,186
+Conventional dendritic cell_H2-M2 high,myeloid dendritic cell,21
+Plasmacytoid dendritic cell,myeloid dendritic cell,295
+Conventional dendritic cell_Gngt2 high,myeloid dendritic cell,161
+Conventional dendritic cell_Tubb5 high,myeloid dendritic cell,30
+Conventional dendritic cell_Mgl2 high,myeloid dendritic cell,161
+Dendritic cells,myeloid dendritic cell,35
+Dendritic cell_S100a4 high,myeloid dendritic cell,67
+Dendritic cell_Ccl22 high,myeloid dendritic cell,94
+Dendritic cell_Il1b high,myeloid dendritic cell,74
+Dendritic cell_Cd209a high,myeloid dendritic cell,61
+Dendritic cell_Fscn1 high,myeloid dendritic cell,265
+Myeloid leukocyte,myeloid leukocyte,140
+NK cell,natural killer cell,464
+NK Cell,natural killer cell,275
+NK cell_Gzma high,natural killer cell,517
+NK cell_Cd8b1 high,natural killer cell,635
+Neutrophil_Fcnb high,neutrophil,2907
+Neutrophil_Ltf high,neutrophil,2039
+Neutrophil_Ighg1 high,neutrophil,3330
+Neutrophil_Ngp high,neutrophil,3305
+Neutrophil_Lcn2 high,neutrophil,4647
+Neutrophil_Retnlg high,neutrophil,1271
+Neutrophil,neutrophil,1419
+Neutrophil_Mmp8 high,neutrophil,1122
+Neutrophil progenitor,neutrophil,1088
+Neutrophil_Cebpe high,neutrophil,1226
+Neutrophil_S100a9 high,neutrophil,35
+Neutrophil_Elane high,neutrophil,452
+Neutrophil_S100a8 high,neutrophil,155
+Neutrophil_Gm5483 high,neutrophil,96
+Neutrophil progenitor_S100a8 high,neutrophil,13
+Neutrophil granulocyte,neutrophil,70
+Neutrophil_Camp high,neutrophil,925
+Neutrophil_Prg2 high,neutrophil,8
+Neutrophil_Hmox1 high,neutrophil,250
+Neutrophil_Stfa3 high,neutrophil,613
+Neutrophil_Il1b high,neutrophil,406
+Neutrophil_Ctsg high,neutrophil,252
+Neutrophil_Rps27 high,neutrophil,25
+Acinar cell,pancreatic acinar cell,974
+Acinar cell_Ctrb1 high,pancreatic acinar cell,238
+Acinar cell_Spp1 high,pancreatic acinar cell,335
+Ductal cell,pancreatic ductal cell,591
+Ig−producing B cell,plasma cell,30
+Plasma cell,plasma cell,21
+Smooth muscle cell,smooth muscle cell,679
+Smooth muscle cell_Ptn high,smooth muscle cell,392
+Smooth muscle cell_Mgp high,smooth muscle cell,37
+Smooth muscle cell_Mylk high,smooth muscle cell,93
+Smooth muscle cell_Acta2 high,smooth muscle cell,81
+Smooth muscle cell_Rgs5 high,smooth muscle cell,67
+Stromal cell_Dpt high,stromal cell,717
+Stromal cell_Car3 high,stromal cell,236
+Stromal cell_Col1a2 high,stromal cell,1371
+Stromal cell_Cnmd high,stromal cell,210
+Stromal cell_Col10a1_high,stromal cell,65
+Stromal Cell_Cxcl14 high,stromal cell,145
+Stromal cell_Cxcl12 high,stromal cell,561
+Stromal Cell_fabp7 high,stromal cell,100
+Stromal Cell_Agtr2 high,stromal cell,191
+Stromal Cell_Cnmd high,stromal cell,112
+Stromal Cell Cldn11 high,stromal cell,28
+Stromal cell,stromal cell,2346
+Stromal cell_Adamdec1 high,stromal cell,1342
+Stromal cell_Upk3b high,stromal cell,194
+Stromal cell_Stmn2 high,stromal cell,360
+Stromal cell_Ankfy1 high,stromal cell,2389
+Stromal cell_Ptn high,stromal cell,1267
+Stromal cell_Dcn high,stromal cell,1081
+Stromal cell_Cdkn1c high,stromal cell,525
+Stromal cell_Ankrd1 high,stromal cell,23
+Stromal cell_Cxcl10 high,stromal cell,35
+Stromal cell_Mgp high,stromal cell,942
+Stromal cell_Ptgds high,stromal cell,79
+Stromal cell_Acta2 high,stromal cell,104
+Stromal cell_Inmt high,stromal cell,167
+Stromal cell_Col1a1 high,stromal cell,323
+Stromal cell_Col3a1 high,stromal cell,1426
+Stromal cell_Fmod high,stromal cell,295
+Stromal cell_Ndn high,stromal cell,814
+Stromal cell_Spp1 high,stromal cell,15
+Stromal cell_Tnmd high,stromal cell,236
+Stromal cell_Acta1 high,stromal cell,372
+Stromal cell_Gas6 high,stromal cell,382
+Stromal cell_Akr1c18 high,stromal cell,61
+Stromal cell_Smoc2 high,stromal cell,519
+Stromal cell_Fn1 high,stromal cell,188
+Stromal cell_Mfap4 high,stromal cell,71
+Decidual stromal cell,stromal cell,103
+Stromal cell_Gm23935 high,stromal cell,90
+Stromal cell_Has1 high,stromal cell,268
+Stromal cell_Ccl11 high,stromal cell,489
+Stromal cell_Hsd11b2 high,stromal cell,563
+Stromal cell_Cxcl14 high,stromal cell,445
+Stromal cell_Dlk1 high,stromal cell,194
+Stromal cell_Penk high,stromal cell,410
+Stromal cell_Pi16 high,stromal cell,93

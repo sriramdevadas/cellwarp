@@ -1,0 +1,156 @@
+# ImmGen ATAC — Yoshida et al. 2019 — GSE100738 GEO Metadata
+# Retrieved: 2026-03-15
+# Source: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE100738
+# NOTE: Task originally specified GSE131651 — that is WRONG (NSD2 myeloma study).
+#       Correct accession is GSE100738.
+
+## Series Info
+- Title: ImmGen ATAC-seq data
+- Accession: GSE100738
+- Organism: Mus musculus (C57BL/6)
+- Total samples: 154
+- Cell populations: 86 unique immunocyte populations
+- Platform: GPL19057
+- PubMed IDs: 30686579 (primary), 31541153 (ImmGen sexual dimorphism)
+- Protocol: Fast-ATAC, 10,000 cells per library
+- Supplementary: BigWig files (.bw), RAW.tar — NO processed peak BED/narrowPeak files
+- Related: GSE126267 (umbrella), GSE109125 (RNAseq)
+
+## Publication
+Yoshida H, Lareau CA, Ramirez RN, et al. (Immunological Genome Project).
+"The cis-Regulatory Atlas of the Mouse Immune System."
+Cell 176(4):897-912 (2019).  [NOT Science 2021 as originally specified in task]
+
+## Complete Sample List (154 samples, 86 populations)
+### B cells (resting)
+- B.Fem.Sp (2 reps) — Follicular B, female, spleen
+- B.Fo.Sp (3 reps) — Follicular B, spleen
+- B.FrE.BM (2 reps) — Fraction E (immature), bone marrow
+- B.GC.CB.Sp (2 reps) — Germinal center centroblast, spleen [in vivo activated]
+- B.GC.CC.Sp (2 reps) — Germinal center centrocyte, spleen [in vivo activated]
+- B.mem.Sp (2 reps) — Memory B, spleen
+- B.MZ.Sp (2 reps) — Marginal zone B, spleen
+- B.PB.Sp (2 reps) — Plasmablast, spleen
+- B.PC.BM (2 reps) — Plasma cell, bone marrow
+- B.PC.Sp (2 reps) — Plasma cell, spleen
+- B.Sp (2 reps) — B cell (bulk), spleen
+- B.T1.Sp (2 reps) — Transitional 1, spleen
+- B.T2.Sp (2 reps) — Transitional 2, spleen
+- B.T3.Sp (2 reps) — Transitional 3, spleen
+- B1b.PC (2 reps) — B1b, peritoneal cavity
+
+### B cell development
+- preB.FrD.BM (2 reps) — pre-B Fraction D, bone marrow
+- proB.CLP.BM (2 reps) — CLP/pro-B, bone marrow
+- proB.FrA.BM (2 reps) — pro-B Fraction A, bone marrow
+- proB.FrBC.BM (2 reps) — pro-B Fraction BC, bone marrow
+
+### T cells (resting)
+- T.4.Nve.Sp (2 reps) — CD4+ naive, spleen
+- T.4.Nve.Fem.Sp (2 reps) — CD4+ naive female, spleen
+- T.4.Th (2 reps) — CD4 SP, thymus (developmental)
+- T.8.Nve.Sp (2 reps) — CD8+ naive, spleen
+- T.8.Th (2 reps) — CD8 SP, thymus (developmental)
+- T8.TN.P14.Sp (2 reps) — CD8+ naive P14 TCR transgenic, spleen
+
+### T cells (ACTIVATED — EXCLUDE)
+- T.4.Sp.aCD3+CD40.18hr (2 reps) — anti-CD3/CD40 stimulated
+- T8.IEL.LCMV.d7.SI (2 reps) — LCMV day 7 IEL
+- T8.MP.LCMV.d7.Sp (2 reps) — LCMV day 7 memory precursor
+- T8.TE.LCMV.d7.Sp (2 reps) — LCMV day 7 terminal effector
+- T8.Tcm.LCMV.d180.Sp (2 reps) — LCMV day 180 central memory
+- T8.Tem.LCMV.d180.Sp (2 reps) — LCMV day 180 effector memory
+
+### Thymic development
+- preT.DN1.Th (2 reps)
+- preT.DN2a.Th (2 reps)
+- preT.DN2b.Th (2 reps)
+- preT.DN3.Th (2 reps)
+- T.DN4.Th (2 reps)
+- T.ISP.Th (2 reps) — Immature single positive
+- T.DP.Th (2 reps) — Double positive
+- T.DP.Th.Rorc(γt)+/GFP (2 reps)
+- T.DP.Th.Rorc(γt)GFP/GFP (2 reps)
+
+### Gamma-delta T cells
+- Tgd.Sp (2 reps) — Gamma-delta T, spleen
+- Tgd.g1.1+d1.24a+.Th (2 reps)
+- Tgd.g1.1+d1.LN (2 reps)
+- Tgd.g2+d1.24a+.Th (2 reps)
+- Tgd.g2+d1.LN (2 reps)
+- Tgd.g2+d17.24a+.Th (2 reps)
+- Tgd.g2+d17.LN (2 reps)
+
+### Regulatory T cells
+- Treg.4.25hi.Sp (2 reps) — CD4+CD25hi Treg, spleen
+- Treg.4.FP3+.Nrplo.Co (2 reps) — FoxP3+ Nrp1lo, colon
+
+### NK cells
+- NK.27-11b+.BM (2 reps) — CD27-CD11b+ (mature), BM
+- NK.27-11b+.Sp (2 reps) — CD27-CD11b+ (mature), spleen
+- NK.27+11b-.BM (2 reps) — CD27+CD11b- (immature), BM
+- NK.27+11b-.Sp (2 reps) — CD27+CD11b- (immature), spleen
+- NK.27+11b+.BM (2 reps) — CD27+CD11b+ (transitional), BM
+- NK.27+11b+.Sp (2 reps) — CD27+CD11b+ (transitional), spleen
+
+### NKT cells
+- NKT.Sp (2 reps) — NKT, spleen (resting)
+- NKT.Sp.LPS.3hr (2 reps) — LPS 3hr [EXCLUDE]
+- NKT.Sp.LPS.18hr (2 reps) — LPS 18hr [EXCLUDE]
+- NKT.Sp.LPS.3d (2 reps) — LPS 3 day [EXCLUDE]
+
+### Monocytes
+- Mo.6C+II-.Bl (3 reps) — Ly6C+ MHCII- (classical), blood
+- Mo.6C-II-.Bl (3 reps) — Ly6C- MHCII- (non-classical/patrolling), blood
+
+### Macrophages
+- MF.PC (2 reps) — Peritoneal cavity (resident)
+- MF.Fem.PC (2 reps) — Female peritoneal cavity
+- MF.226+II+480lo.PC (2 reps) — CD226+MHCII+F4/80lo peritoneal
+- MF.ICAM+480hi.PC (4 reps) — ICAM+F4/80hi peritoneal (large peritoneal MF)
+- MF.Alv.Lu (2 reps) — Alveolar, lung
+- MF.pIC.Alv.Lu (2 reps) — polyIC-treated alveolar [EXCLUDE]
+- MF.LP.SI (2 reps) — Lamina propria, small intestine
+- MF.microglia.CNS (2 reps) — Microglia, CNS
+- MF.RP.Sp (2 reps) — Red pulp, spleen
+
+### Granulocytes/Neutrophils
+- GN.BM (2 reps) — Granulocyte, bone marrow
+- GN.Sp (2 reps) — Granulocyte, spleen
+- GN.Thio.PC (3 reps) — Thioglycollate-elicited, peritoneal [EXCLUDE — inflammatory]
+
+### Dendritic cells
+- DC.4+.Sp (2 reps) — CD4+ DC (cDC2), spleen
+- DC.8+.Sp (2 reps) — CD8+ DC (cDC1), spleen
+- DC.pDC.Sp (2 reps) — Plasmacytoid DC, spleen
+- DC.103+11b-.SI (2 reps) — CD103+CD11b- (cDC1), small intestine
+- DC.103+11b+.SI (2 reps) — CD103+CD11b+ (cDC2), small intestine
+
+### ILCs
+- ILC2.SI (2 reps) — ILC2, small intestine
+- ILC3.CCR6+.SI (2 reps)
+- ILC3.NKp46-CCR6-.SI (2 reps)
+- ILC3.NKp46+.SI (2 reps)
+
+### Hematopoietic stem/progenitor cells
+- LTHSC.34-.BM (1 rep) — LT-HSC CD34-, bone marrow
+- LTHSC.34+.BM (1 rep) — LT-HSC CD34+, bone marrow
+- STHSC.150-.BM (1 rep) — ST-HSC CD150-, bone marrow
+- MPP3.48+.BM (1 rep) — MPP3 CD48+, bone marrow
+- MPP4.135+.BM (1 rep) — MPP4 CD135+, bone marrow
+
+### Stromal/Endothelial (lymph node)
+- BEC.SLN (2 reps) — Blood endothelial cell, subcutaneous LN
+- LEC.SLN (2 reps) — Lymphatic endothelial cell, subcutaneous LN
+- FRC.CD140a+.Madcam-.CD35-.SLN (2 reps) — Fibroblastic reticular cell, LN
+- IAP.SLN (2 reps) — Integrin alpha-positive, subcutaneous LN
+
+### Thymic epithelium
+- Ep.MEChi.Th (2 reps) — Medullary epithelial cell (MHCIIhi), thymus
+
+## Key Notes
+- Activated/stimulated samples to EXCLUDE: LPS-treated NKT (3 conditions),
+  anti-CD3/CD40 CD4 T, polyIC alveolar MF, all LCMV T8 effector/memory,
+  thioglycollate-elicited granulocytes
+- HSC/progenitor populations have only 1 replicate each (rare cells)
+- Endothelial cells are lymph node-specific (BEC, LEC) — not general vasculature

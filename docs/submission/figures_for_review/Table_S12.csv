@@ -1,0 +1,18 @@
+Package,Version,Primary use
+Python,3.12.12,Language runtime
+numpy,2.4.3,"Array operations, SVD"
+scipy,1.17.1,"Statistical tests, Procrustes utilities"
+pandas,2.3.3,Data manipulation
+scanpy,1.12,Single-cell data handling
+anndata,0.12.10,AnnData format
+scikit-learn,1.8.0,"PCA, preprocessing"
+statsmodels,0.14.6,"Partial correlations, FDR correction"
+cellxgene-census,1.17.0,CELLxGENE Census data access
+samap,1.0.14,SAMap cross-species validation
+matplotlib,3.10.8,Figure generation
+seaborn,0.13.2,Figure generation
+decoupler,2.1.4,Enrichment and TF-activity inference
+gseapy,1.2.1,Gene-set enrichment analysis
+pybiomart,0.2.0,Ensembl BioMart ortholog queries
+pyBigWig,0.3.25,bigWig conservation/ChIP-seq track access
+networkx,3.6.1,Network analysis (PPI centrality)

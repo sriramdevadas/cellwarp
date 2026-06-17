@@ -1,0 +1,20 @@
+{
+  "tableS5_primary": {
+    "n_types_with_markers": 25,
+    "n_types_lt5_markers": 35,
+    "median_markers": 2.0,
+    "n_used": 25,
+    "spearman_rho": -0.06096328053561775,
+    "p": 0.7722139741427757,
+    "median_retention": 1.0
+  },
+  "cellmarker_secondary": {
+    "n_types_with_markers": 32,
+    "n_types_lt5_markers": 12,
+    "median_markers": 12.0,
+    "n_used": 32,
+    "spearman_rho": 0.308345491680746,
+    "p": 0.08598142440221407,
+    "median_retention": 0.24324324324324326
+  }
+}

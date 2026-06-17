@@ -1,0 +1,286 @@
+{
+  "step": "inventory",
+  "date": "2026-05-08",
+  "tissues_found": [
+    "Heart",
+    "Hippocampus",
+    "Blood",
+    "Lung",
+    "Intestine",
+    "Liver",
+    "Kidney",
+    "Lymph_node",
+    "Pancreas"
+  ],
+  "tissues_requested": [
+    "Heart",
+    "Hippocampus",
+    "Blood",
+    "Lung",
+    "Intestine",
+    "Liver",
+    "Kidney",
+    "Lymph_node",
+    "Pancreas"
+  ],
+  "total_mapped_cells": 2866638,
+  "total_computation_cells": 297514,
+  "hepatocyte_count": 71243,
+  "n_types_above_500": 22,
+  "n_shared_with_mouse_35": 15,
+  "shared_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "macrophage",
+    "monocyte",
+    "myeloid dendritic cell",
+    "natural killer cell",
+    "neutrophil",
+    "plasma cell",
+    "smooth muscle cell"
+  ],
+  "cellhint_only_types": [
+    "astrocyte",
+    "cardiac muscle cell",
+    "cholangiocyte",
+    "mast cell",
+    "neuron",
+    "oligodendrocyte",
+    "pericyte"
+  ],
+  "cell_count_audit": [
+    {
+      "cell_type": "cardiac muscle cell",
+      "n_cells_full": 323043,
+      "n_cells_computation": 4868,
+      "status": "PASS",
+      "tissues": "Heart(323,043)"
+    },
+    {
+      "cell_type": "neuron",
+      "n_cells_full": 320058,
+      "n_cells_computation": 9903,
+      "status": "PASS",
+      "tissues": "Hippocampus(312,704), Heart(7,354)"
+    },
+    {
+      "cell_type": "endothelial cell",
+      "n_cells_full": 254245,
+      "n_cells_computation": 28666,
+      "status": "PASS",
+      "tissues": "Heart(171,665), Lung(39,798), Kidney(17,817), Liver(12,647), Intestine(5,359), Hippocampus(4,064), Pancreas(2,106), Lymph_node(789)"
+    },
+    {
+      "cell_type": "epithelial cell",
+      "n_cells_full": 230968,
+      "n_cells_computation": 9537,
+      "status": "PASS",
+      "tissues": "Kidney(143,716), Intestine(56,122), Lung(31,130)"
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "n_cells_full": 223875,
+      "n_cells_computation": 24577,
+      "status": "PASS",
+      "tissues": "Blood(107,694), Lymph_node(75,358), Lung(18,298), Intestine(16,646), Liver(5,879)"
+    },
+    {
+      "cell_type": "fibroblast",
+      "n_cells_full": 212916,
+      "n_cells_computation": 16537,
+      "status": "PASS",
+      "tissues": "Heart(187,661), Lung(15,125), Kidney(8,321), Liver(1,248), Intestine(561)"
+    },
+    {
+      "cell_type": "oligodendrocyte",
+      "n_cells_full": 196021,
+      "n_cells_computation": 4962,
+      "status": "PASS",
+      "tissues": "Hippocampus(196,021)"
+    },
+    {
+      "cell_type": "macrophage",
+      "n_cells_full": 180113,
+      "n_cells_computation": 19599,
+      "status": "PASS",
+      "tissues": "Lung(113,114), Hippocampus(44,857), Liver(15,912), Intestine(5,098), Lymph_node(581), Pancreas(551)"
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "n_cells_full": 163757,
+      "n_cells_computation": 24308,
+      "status": "PASS",
+      "tissues": "Blood(68,840), Liver(51,718), Lung(16,191), Intestine(14,661), Lymph_node(12,347)"
+    },
+    {
+      "cell_type": "pericyte",
+      "n_cells_full": 122064,
+      "n_cells_computation": 9065,
+      "status": "PASS",
+      "tissues": "Heart(117,417), Lung(2,801), Intestine(1,154), Hippocampus(692)"
+    },
+    {
+      "cell_type": "natural killer cell",
+      "n_cells_full": 118178,
+      "n_cells_computation": 22213,
+      "status": "PASS",
+      "tissues": "Blood(48,187), Lung(36,287), Liver(24,571), Heart(4,302), Lymph_node(2,174), Kidney(2,014), Intestine(643)"
+    },
+    {
+      "cell_type": "monocyte",
+      "n_cells_full": 108279,
+      "n_cells_computation": 16295,
+      "status": "PASS",
+      "tissues": "Blood(53,172), Liver(29,220), Lung(23,505), Kidney(1,627), Intestine(560), Lymph_node(195)"
+    },
+    {
+      "cell_type": "B cell",
+      "n_cells_full": 77664,
+      "n_cells_computation": 22597,
+      "status": "PASS",
+      "tissues": "Blood(30,917), Lymph_node(27,590), Intestine(8,158), Lung(7,094), Liver(2,513), Kidney(1,392)"
+    },
+    {
+      "cell_type": "T cell",
+      "n_cells_full": 75400,
+      "n_cells_computation": 24012,
+      "status": "PASS",
+      "tissues": "Liver(25,463), Blood(17,451), Heart(16,636), Kidney(9,137), Intestine(4,006), Lymph_node(1,858), Hippocampus(750), Lung(99)"
+    },
+    {
+      "cell_type": "hepatocyte",
+      "n_cells_full": 71243,
+      "n_cells_computation": 3568,
+      "status": "PASS",
+      "tissues": "Liver(71,243)"
+    },
+    {
+      "cell_type": "astrocyte",
+      "n_cells_full": 65712,
+      "n_cells_computation": 4991,
+      "status": "PASS",
+      "tissues": "Hippocampus(65,712)"
+    },
+    {
+      "cell_type": "plasma cell",
+      "n_cells_full": 52004,
+      "n_cells_computation": 9493,
+      "status": "PASS",
+      "tissues": "Intestine(46,348), Liver(1,994), Lymph_node(1,621), Lung(1,471), Blood(570)"
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "n_cells_full": 36468,
+      "n_cells_computation": 12420,
+      "status": "PASS",
+      "tissues": "Heart(26,335), Kidney(5,180), Lung(3,561), Hippocampus(1,392)"
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "n_cells_full": 15568,
+      "n_cells_computation": 13728,
+      "status": "PASS",
+      "tissues": "Blood(5,329), Liver(3,779), Lung(2,480), Kidney(2,221), Intestine(1,292), Lymph_node(467)"
+    },
+    {
+      "cell_type": "mast cell",
+      "n_cells_full": 12307,
+      "n_cells_computation": 9827,
+      "status": "PASS",
+      "tissues": "Lung(7,143), Heart(2,927), Intestine(2,156), Lymph_node(81)"
+    },
+    {
+      "cell_type": "cholangiocyte",
+      "n_cells_full": 3631,
+      "n_cells_computation": 3423,
+      "status": "PASS",
+      "tissues": "Liver(3,631)"
+    },
+    {
+      "cell_type": "neutrophil",
+      "n_cells_full": 3002,
+      "n_cells_computation": 2885,
+      "status": "PASS",
+      "tissues": "Liver(3,002)"
+    },
+    {
+      "cell_type": "erythrocyte",
+      "n_cells_full": 122,
+      "n_cells_computation": 40,
+      "status": "FAIL",
+      "tissues": "Lung(122)"
+    }
+  ],
+  "tissue_stats": {
+    "Heart": {
+      "total_cells": 931012,
+      "mapped_cells": 857340,
+      "qc_cells": 40400,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Hippocampus": {
+      "total_cells": 676845,
+      "mapped_cells": 626192,
+      "qc_cells": 26720,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Blood": {
+      "total_cells": 335916,
+      "mapped_cells": 332160,
+      "qc_cells": 35472,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Lung": {
+      "total_cells": 318426,
+      "mapped_cells": 318219,
+      "qc_cells": 59099,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Intestine": {
+      "total_cells": 263275,
+      "mapped_cells": 162764,
+      "qc_cells": 37354,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Liver": {
+      "total_cells": 259678,
+      "mapped_cells": 252820,
+      "qc_cells": 51394,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Kidney": {
+      "total_cells": 194504,
+      "mapped_cells": 191425,
+      "qc_cells": 22591,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Lymph_node": {
+      "total_cells": 124440,
+      "mapped_cells": 123061,
+      "qc_cells": 21950,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    },
+    "Pancreas": {
+      "total_cells": 121916,
+      "mapped_cells": 2657,
+      "qc_cells": 2534,
+      "ortho_genes": 16959,
+      "zero_fill": 0.0
+    }
+  },
+  "ts_donor_overlaps": {}
+}

@@ -1,0 +1,41 @@
+{
+  "our_label": "Monocyte",
+  "organism": "mouse",
+  "organism_scientific": "Mus musculus",
+  "tried_terms": [
+    "monocyte",
+    "CD14-positive monocyte",
+    "CD14+ monocyte",
+    "classical monocyte",
+    "CD14-positive, CD16-negative classical monocyte"
+  ],
+  "successful_terms": [
+    "monocyte"
+  ],
+  "total_experiments": 1,
+  "experiments": [
+    {
+      "accession": "ENCSR862JVD",
+      "biosample_term": "monocyte",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Mus musculus strain C57BL/6J monocyte adult (5-6 weeks)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Ross Hardison, PennState",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    }
+  ],
+  "query_timestamp": "2026-03-15T20:22:15.677067"
+}

@@ -1,0 +1,68 @@
+Number,Context,Source file,Source key/line,DECISION log reference,First appears in section,Verified
+0.0001,Primary Procrustes p-value (35 types Tabula),output/phase2/scaled_35types/procrustes_results_35.json,permutation_test.p_value = 9.999e-05,DECISION-021 (Phase 1 GO),All sections,YES
+0.004,Bootstrap CV (100 iterations 50% subsample),output/phase3/bootstrap/bootstrap_summary.json,gate_criterion.cv = 0.003966,DECISION-010,All sections,YES
+35/35,LOOCV all types better than chance,output/phase3/loocv/loocv_summary.json,n_better_than_chance = 35,DECISION-010,All sections,YES
+0.522,Primary Tabula obs/null ratio,output/phase2/scaled_35types/procrustes_results_35.json,distance/null_median = 61.153/117.105,—,Results,YES
+0.607,H-vs-H v2 obs/null ratio,output/phase2/negative_control_v2/negctrl_v2_results.json,permutation_test.obs_null_ratio (line 4 comparison_3way.csv) = 0.6066,DECISION-046,Results,YES
+0.317,H-vs-M obs/null ratio (6-type),output/phase2/negative_control_v2/comparison_3way.csv,obs_to_null_ratio = 0.3166 (cross-species row),DECISION-046,Results,YES
+1.91,H-vs-H / H-vs-M obs/null ratio,DERIVED from comparison_3way.csv,0.6066 / 0.3166 = 1.916,DECISION-046,Results,YES
+0.0001,Sun2023 expanded 15-type p-value,output/validation/sun2023_replication_expanded/sun2023_expanded.json,procrustes.p_value = 9.999e-05,DECISION-100,Results,YES
+0.554,Sun2023 expanded 15-type obs/null,output/validation/sun2023_replication_expanded/sun2023_expanded.json,procrustes.obs_null_ratio = 0.5535,DECISION-100,Results,YES
+0.010,Sun2023 6-type p-value,output/validation/sun2023_replication/sun2023_replication.json,comparison_a.p_value = 0.0099,DECISION-098,Results,YES
+0.724,Sun2023 6-type obs/null,output/validation/sun2023_replication/sun2023_replication.json,comparison_a.obs_null_ratio = 0.7240,DECISION-098,Results,YES
+0.490,Sun2023 tissue-matched (lung endothelial) obs/null,output/validation/sun2023_issue092_diagnosis/issue092_diagnosis.json,obs_null_ratio = 0.4904,DECISION-101,Results,YES
+0.0001,PanSci p-value (16 types),output/validation/pansci_replication/pansci_replication.json,procrustes.p_value = 9.999e-05,DECISION-102,Results,YES
+0.552,PanSci obs/null,output/validation/pansci_replication/pansci_replication.json,procrustes.obs_null_ratio = 0.5519,DECISION-102,Results,YES
+CAS Beijing,Sun2023 institution,output/validation/sun2023_replication/sun2023_replication.json,dataset.name = "Sun et al. 2023 (Innovation CAS Beijing)",DECISION-098,Methods,YES
+Cao lab (Science 2025),PanSci institution,output/validation/pansci_replication/pansci_replication.json,dataset.name = "PanSci (Cao lab Science 2025)",DECISION-102,Methods,YES
+Stanford/CZ Biohub,Tabula Sapiens institution (primary),DECISION-098 author overlap check,—,DECISION-098,Methods,YES
+0.0001,Centroid position conservation p-value (35-type k=3),output/mechanistic/ellipsoid_alignment/permutation_results.json,35type.label_shuffle_pre.k=3.p_value = 9.999e-05,—,Results,YES
+0.0001,Centroid position conservation p-value (35-type k=5),output/mechanistic/ellipsoid_alignment/permutation_results.json,35type.label_shuffle_pre.k=5.p_value = 9.999e-05,—,Results,YES
+0.0001,Cloud shape direction conservation p-value (35-type k=3),output/mechanistic/ellipsoid_alignment/permutation_results.json,35type.label_shuffle_post.k=3.p_value = 9.999e-05,—,Results,YES
+0.0001,Cloud shape direction conservation p-value (35-type k=5),output/mechanistic/ellipsoid_alignment/permutation_results.json,35type.label_shuffle_post.k=5.p_value = 9.999e-05,—,Results,YES
+0.953,Eigenvalue mean Pearson r across 35 types,output/mechanistic/ellipsoid_alignment/35type_eigenvalue_conservation.csv,COMPUTED: mean of pearson_r column = 0.953483,—,Results,YES
+0.852,Fractal geometry Spearman rho (L1000 vs full),output/landmark_sensitivity/sensitivity_gate_result.json,spearman_rho = 0.8515,DECISION-128,Results,YES
+8.92e-11,Fractal geometry Spearman p-value,output/landmark_sensitivity/sensitivity_gate_result.json,spearman_p_value = 8.92e-11,DECISION-128,Results,YES
+35,Fractal geometry n cell types,output/landmark_sensitivity/sensitivity_gate_result.json,n_cell_types = 35,DECISION-128,Results,YES
+907/978,Landmark genes in centroids / total L1000,output/landmark_sensitivity/sensitivity_gate_result.json,"landmark_genes_in_centroids=907, l1000_landmark_genes_total=978",DECISION-128,Results,YES
+5.3%,Gene space reduction percentage,output/landmark_sensitivity/sensitivity_gate_result.json,gene_space_reduction_pct = 5.3,DECISION-128,Results,YES
+0.0002,Human-macaque Procrustes p-value (20 types),output/macaque_pipeline/primary_procrustes_results.json,permutation_test.p_value = 0.00020,DECISION-131,Results,YES
+0.841,Human-macaque obs/null ratio,output/macaque_pipeline/primary_procrustes_results.json,permutation_test.obs_null_ratio = 0.8406,DECISION-131,Results,YES
+20,Human-macaque n cell types,output/macaque_pipeline/primary_procrustes_results.json,n_types = 20,DECISION-131,Results,YES
+0.0002,Macaque sensitivity (RIRA-only 13 types) p-value,output/macaque_pipeline/sensitivity_procrustes_results.json,permutation_test.p_value = 0.00020,DECISION-131,Results,YES
+0.749,Macaque sensitivity obs/null ratio,output/macaque_pipeline/sensitivity_procrustes_results.json,permutation_test.obs_null_ratio = 0.7488,DECISION-131,Results,YES
+32/35,Hepatocyte rigidity rank human-mouse,output/macaque_pipeline/rigidity_ranking_comparison.csv,hepatocyte row hm_rank = 32,DECISION-131,Results,YES
+20/20,Hepatocyte rigidity rank macaque,output/macaque_pipeline/rigidity_ranking_comparison.csv,hepatocyte row mac_rank = 20 (last/most diverged),DECISION-131,Results,YES
+-0.349,Liang-Wagner treeness-rigidity Spearman rho,output/liang_wagner/treeness_rigidity_correlation.json,step3_correlation.rho_treeness_rigidity = -0.3487,DECISION-120,Discussion,YES
+0.040,Liang-Wagner treeness-rigidity p-value,output/liang_wagner/treeness_rigidity_correlation.json,step3_correlation.p_value = 0.04005,DECISION-120,Discussion,YES
+35,Liang-Wagner n cell types,output/liang_wagner/treeness_rigidity_correlation.json,step3_correlation.n = 35,DECISION-120,Discussion,YES
+-0.359,Liang-Wagner PCA space rho,output/liang_wagner/treeness_rigidity_correlation.json,step4_pca_sensitivity.rho_rigidity = -0.3594,DECISION-120,Discussion,YES
+4.36,CellMarker enrichment ratio (human primary),output/validation/issue073_cellmarker/primary_enrichment_results.json,human_primary.enrichment_ratio = 4.355,DECISION-114,Results,YES
+1.1e-12,CellMarker enrichment p-value,output/validation/issue073_cellmarker/primary_enrichment_results.json,human_primary.p_value = 1.1189e-12,DECISION-114,Results,YES
+6/6,CellMarker per-cell-type pass rate (n=50 loading genes),output/validation/issue073_cellmarker/issue073_summary.md,PER CELL TYPE RERUN section — all 3 failing at n=20 pass at n=50,DECISION-114,Results,YES — note: 3/6 at n=20 only 6/6 at n=50
+0.247,SAMap-CellWarp orthogonality Spearman rho,output/phase1_samap/samap_35types/samap_rigidity_correlation.json,spearman_rho = 0.2468,DECISION-133,Results,YES
+0.153,SAMap-CellWarp orthogonality p-value,output/phase1_samap/samap_35types/samap_rigidity_correlation.json,spearman_p = 0.1530,DECISION-133,Results,YES
+35,SAMap-CellWarp orthogonality n,output/phase1_samap/samap_35types/samap_rigidity_correlation.json,n = 35,DECISION-133,Results,YES
+17/8/10,SAMap confidence breakdown (HIGH/MODERATE/LOW),output/phase1_samap/samap_35types/samap_comparison_report_35.txt,Confidence: HIGH (>=0.6)=17 MODERATE (0.3-0.6)=8 LOW (<0.3)=10,DECISION-133,Results,YES
+7.97,Cancer identity enrichment median,output/mechanistic/identity_vs_state/identity_vs_state_results.json,identity_enrichment.cancer_median = 7.9656,—,Results,YES
+6.67,COVID identity enrichment median,output/mechanistic/identity_vs_state/identity_vs_state_results.json,identity_enrichment.covid_median = 6.6681,—,Results,YES
+0.003,Cancer vs COVID identity enrichment difference p-value,output/mechanistic/identity_vs_state/identity_vs_state_results.json,identity_enrichment.mann_whitney_p = 0.00262,—,Results,YES
+0.573,Cancer cross-axis rho (CLEANED — T cell excluded n=12),DECISIONS.md DECISION-077,Full: rho=0.407 n=13. Without T cell: rho=0.573 p=0.051 n=12,DECISION-077,QUALIFIED RESULT — see note,YES — CAUTION: 0.573 is with T cell excluded. Full rho=0.407
+0.007,COVID cross-axis rho,output/mechanistic/identity_vs_state/identity_vs_state_results.json,cross_axis_spearman.covid_original.rho = 0.00659,DECISION-079,Results,YES
+3.20,DILI Set B Fisher's OR (CYP450-excluded),output/dilirank/dilirank_results.json,step5_results.B.test2_odds_ratio = 3.2,DECISION-129,Results,YES
+0.020,DILI Set B Fisher's p-value,output/dilirank/dilirank_results.json,step5_results.B.test2_p = 0.02019,DECISION-129,Results,YES
+30,DILI Set B n (Most-Concern CYP450-excluded),output/dilirank/dilirank_results.json,step5_results.B.n_most = 30,DECISION-129,Results,YES
+0.054,DILI Set A (full drug set) MWU p-value (NS),output/dilirank/dilirank_results.json,step5_results.A.test1_p = 0.05360,DECISION-129,Results,YES
+29,CYP450-dependent drugs removed,output/dilirank/dilirank_results.json,step4_cyp450.most_concern_cyp450_dependent = 29,DECISION-129,Results,YES
+59/217,Most-Concern DILI drugs matched to HepG2 (27.2%),output/dilirank/dilirank_results.json,"step2_match_rate: matched_most_concern=59, total_most_concern=217, match_rate=27.2%",DECISION-129,Results,YES
+0.167,Null 1: Housekeeping gene ratio rho,output/phase2/mechanistic/housekeeping/hk_ratio_results.json,human_correlation.spearman_rho = 0.1672,—,Discussion,YES
+-0.229,Null 2: TF network complexity rho,output/phase2/mechanistic/tf_complexity/tf_complexity_results.json,human_correlations.n_active_tfs.spearman_rho = -0.2294,—,Discussion,YES
+0/6,Null 3: Niche adaptation gene sets,output/phase2/progenitor_analysis/niche_hypothesis/niche_hypothesis_results.json,progenitor_divergence.n_niche_sets_significant_q05 = 0,—,Discussion,YES
+-0.038,Null 4: Within-type variance rho,output/phase2/variance_diagnostic/diagnostic_results.json,spearman_rho_mean = -0.0381,—,Discussion,YES
+-0.127,Null 5: Inter-donor variance rho,output/phase2/diagnostics/interdonor_variance/diagnostic_results.json,spearman_rho_mean = -0.1266,—,Discussion,YES
+<0.21,Null 6: Expression-level confounds (all rho),output/phase2/diagnostics/expression_level_vs_rigidity/correlations.csv,max |rho| = 0.2087 (Human mean expression),—,Discussion,YES
+0.291,Null 7: PPI network centrality best rho,output/mechanistic/ppi_centrality/ppi_centrality_results.json,degree_C_identity_t900.spearman_rho = 0.2913,—,Discussion,YES
+0/27,Null 7: PPI combos significant,output/mechanistic/ppi_centrality/ppi_centrality_results.json,all 27 entries have significant: false,—,Discussion,YES
+-0.058,Null 8: Promoter phastCons conservation rho,output/validation/t3e_chromatin/t3e_step2_summary.md,Spearman rho = -0.0583 n=35,—,Discussion,YES
+-0.429,Null 9: H3K27ac enhancer conservation rho,output/validation/t3e_enhancer/t3e_step3b_summary.md,Spearman rho = -0.4286 n=6,—,Discussion,YES
+-0.176,Null 10: Drug target conservation rho,output/t3g/primary_correlation_results.json,primary_correlation.rho = -0.1762 n=34,DECISION-115,Discussion,YES

@@ -1,0 +1,16 @@
+cell_type,residual_magnitude,rank
+epithelial cell,13.49733926597369,1
+macrophage,10.296829643700919,2
+T cell,8.809438174972204,3
+myeloid dendritic cell,8.800200509243602,4
+"CD4-positive, alpha-beta T cell",8.268488439010225,5
+natural killer cell,7.01292286255478,6
+monocyte,6.616551683949548,7
+fibroblast,6.489010309051845,8
+neutrophil,6.171821185749318,9
+plasma cell,6.005653416908236,10
+B cell,5.5296576870090925,11
+endothelial cell,5.363407329172398,12
+smooth muscle cell,4.436516670841749,13
+hepatocyte,3.783900791066533,14
+"CD8-positive, alpha-beta T cell",3.577917390907779,15

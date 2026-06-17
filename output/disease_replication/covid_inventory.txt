@@ -1,0 +1,466 @@
+COVID-19 DISEASE REPLICATION — DETAILED FEASIBILITY INVENTORY
+Generated: 2026-03-14
+Census version: stable (2025-11-08)
+======================================================================
+
+EXECUTIVE SUMMARY
+----------------------------------------
+Feasibility: STRONG
+- 20 coherent cell types pass all criteria
+  (≥500 COVID + ≥500 normal, tissue-matched, ≥2 datasets, no catch-alls)
+- Maximum Spearman n = 20
+- Total COVID cells: 4,688,586
+- COVID donors: 683
+- COVID datasets: 51
+- COVID tissues: 12
+- Residual range: 5.38 – 16.98 (dynamic range: 3.2×)
+- PASS: 20 | MARGINAL: 2 | FAIL: 13
+- Study dominance: top dataset = 26.8% of total
+- Severity metadata: NO — not in Census cell-level metadata
+
+Comparison: vs lupus n=8 (single dataset, blood only)
+Recommendation: GO — proceed to download
+
+COVID-19 DATA
+----------------------------------------
+Disease label: 'COVID-19' — 4,688,586 cells
+Total cells: 4,688,586
+Donors: 683
+Datasets: 51
+Tissues: blood, lung, upper lobe of left lung, lower lobe of left lung, nasal cavity, respiratory airway, medial orbital frontal cortex, nasopharynx, saliva, choroid plexus, bronchus, trachea
+Assays: 10x 3' v3, Seq-Well, Seq-Well S3, 10x 5' v1, 10x 3' v2, 10x 5' v2, 10x 5' transcription profiling, 10x 3' transcription profiling
+
+MATCHED NORMAL CONTROLS
+----------------------------------------
+Total cells: 16,671,233
+Donors: 2609
+Datasets: 86
+Tissues: blood, respiratory airway, lung, nasopharynx, lower lobe of left lung, upper lobe of left lung, bronchus, trachea, nasal cavity, choroid plexus
+Adequacy: GOOD
+
+COARSE-MAPPED INVENTORY (35-type set)
+Mapping rules: separate CD4/CD8, separate macrophage/monocyte,
+NO catch-all categories (T cell, lymphocyte, immune cell excluded).
+----------------------------------------
+Cell Type                                             COVID   Normal   DS Verdict     Resid Rank TisMatch
+---------------------------------------------------------------------------------------------------------
+classical monocyte                                  658,837 1,514,799   12 PASS          9.9   15      YES
+CD4-positive, alpha-beta T cell                     596,351 4,804,222   18 PASS         10.2   14      YES
+B cell                                              589,173 1,273,615   47 PASS          9.8   17      YES
+CD8-positive, alpha-beta T cell                     569,155 1,842,142   19 PASS          5.4   35      YES
+natural killer cell                                 206,617  478,670   19 PASS          8.7   23      YES
+macrophage                                          145,859  337,887   10 PASS          9.9   16      YES
+monocyte                                             70,061   92,032    8 PASS          8.7   22      YES
+mature NK T cell                                     66,289    6,639   35 PASS          8.3   25      YES
+plasma cell                                          62,266   25,503   31 PASS         11.1   12      YES
+epithelial cell                                      58,308  182,434   24 PASS         16.3    2      YES
+non-classical monocyte                               58,043   53,289   12 PASS          5.9   34      YES
+endothelial cell                                     42,730  100,823    7 PASS          6.0   33      YES
+myeloid dendritic cell                               33,898   61,123   28 PASS          8.9   21      YES
+fibroblast                                           26,342   46,037    6 PASS          7.5   28      YES
+neutrophil                                           21,583   40,216   32 PASS         11.6    8      YES
+basal cell                                            6,133    3,472    5 PASS         12.8    6      YES
+smooth muscle cell                                    3,294    7,206    6 PASS          6.7   31      YES
+hematopoietic stem cell                               2,390      889    3 PASS         14.9    4      YES
+intermediate monocyte                                 1,768   53,701    3 PASS          8.4   24      YES
+pancreatic acinar cell                                1,193        0    2 FAIL         12.8    5 MISMATCH
+granulocyte                                           1,061      385    3 MARGINAL      7.9   27      YES
+stromal cell                                            850   87,597    4 PASS         17.0    1      YES
+hematopoietic precursor cell                            426  246,892    2 MARGINAL     15.4    3      YES
+luminal epithelial cell of mammary gland                  0        0    0 FAIL (no COVID data)    9.7   18      YES
+large intestine goblet cell                               0        0    0 FAIL (no COVID data)    9.5   19      YES
+hepatocyte                                                0        0    0 FAIL (no COVID data)    6.1   32      YES
+mesenchymal stem cell                                     0        0    0 FAIL (no COVID data)   10.3   13      YES
+mesenchymal stem cell of adipose tissue                   0        0    0 FAIL (no COVID data)   11.4   11      YES
+myeloid leukocyte                                         0        0    0 FAIL (no COVID data)   11.5   10      YES
+fibroblast of cardiac tissue                              0        0    0 FAIL (no COVID data)   11.5    9      YES
+enterocyte of epithelium of large intestine               0        0    0 FAIL (no COVID data)    9.3   20      YES
+bladder urothelial cell                                   0        0    0 FAIL (no COVID data)    7.4   29      YES
+pancreatic ductal cell                                    0        0    0 FAIL (no COVID data)    6.8   30      YES
+adventitial cell                                          0        0    0 FAIL (no COVID data)    8.1   26      YES
+T cell                                                    0        0    0 FAIL (no COVID data)   11.7    7      YES [CATCH-ALL]
+
+PASS: 20  |  MARGINAL: 2  |  FAIL: 13
+
+TISSUE-MATCH DETAILS (passing types)
+----------------------------------------
+
+  B cell:
+    respiratory airway: COVID 869 (15 DS, 4 donors) | Normal 10,726 | OK
+    blood: COVID 579,063 (24 DS, 516 donors) | Normal 1,238,127 | OK
+    nasopharynx: COVID 54 (1 DS, 14 donors) | Normal 12 | WARNING: <200 normal
+    lung: COVID 2,510 (3 DS, 79 donors) | Normal 9,671 | OK
+    upper lobe of left lung: COVID 4,465 (3 DS, 3 donors) | Normal 392 | OK
+    lower lobe of left lung: COVID 227 (1 DS, 1 donors) | Normal 563 | OK
+    nasal cavity: COVID 1,767 (1 DS, 13 donors) | Normal 9,406 | OK
+    trachea: COVID 6 (1 DS, 1 donors) | Normal 2,137 | OK
+    bronchus: COVID 81 (1 DS, 4 donors) | Normal 2,581 | OK
+    saliva: COVID 131 (1 DS, 11 donors) | Normal 0 | WARNING: <200 normal
+
+  CD4-positive, alpha-beta T cell:
+    blood: COVID 553,277 (11 DS, 357 donors) | Normal 4,761,384 | OK
+    lung: COVID 15,675 (2 DS, 77 donors) | Normal 33,286 | OK
+    upper lobe of left lung: COVID 21,065 (3 DS, 3 donors) | Normal 756 | OK
+    lower lobe of left lung: COVID 6,126 (1 DS, 1 donors) | Normal 3,133 | OK
+    nasal cavity: COVID 154 (1 DS, 13 donors) | Normal 103 | WARNING: <200 normal
+    trachea: COVID 6 (1 DS, 1 donors) | Normal 628 | OK
+    bronchus: COVID 48 (1 DS, 4 donors) | Normal 4,932 | OK
+
+  CD8-positive, alpha-beta T cell:
+    nasopharynx: COVID 626 (1 DS, 28 donors) | Normal 301 | OK
+    blood: COVID 536,038 (12 DS, 516 donors) | Normal 1,811,181 | OK
+    lung: COVID 20,265 (3 DS, 83 donors) | Normal 25,136 | OK
+    upper lobe of left lung: COVID 11,440 (3 DS, 3 donors) | Normal 1,518 | OK
+    lower lobe of left lung: COVID 745 (1 DS, 1 donors) | Normal 4,006 | OK
+    saliva: COVID 41 (1 DS, 10 donors) | Normal 0 | WARNING: <200 normal
+
+  basal cell:
+    nasopharynx: COVID 672 (1 DS, 30 donors) | Normal 3,181 | OK
+    upper lobe of left lung: COVID 2,787 (3 DS, 3 donors) | Normal 167 | WARNING: <200 normal
+    lower lobe of left lung: COVID 2,674 (1 DS, 1 donors) | Normal 124 | WARNING: <200 normal
+
+  classical monocyte:
+    blood: COVID 625,110 (8 DS, 388 donors) | Normal 1,475,563 | OK
+    upper lobe of left lung: COVID 14,243 (3 DS, 3 donors) | Normal 0 | WARNING: <200 normal
+    lung: COVID 12,322 (2 DS, 61 donors) | Normal 39,236 | OK
+    saliva: COVID 7,162 (1 DS, 10 donors) | Normal 0 | WARNING: <200 normal
+
+  endothelial cell:
+    lung: COVID 18,587 (2 DS, 39 donors) | Normal 87,317 | OK
+    medial orbital frontal cortex: COVID 236 (1 DS, 8 donors) | Normal 0 | WARNING: <200 normal
+    upper lobe of left lung: COVID 18,710 (3 DS, 3 donors) | Normal 3,732 | OK
+    lower lobe of left lung: COVID 5,197 (1 DS, 1 donors) | Normal 9,774 | OK
+
+  epithelial cell:
+    respiratory airway: COVID 7,996 (15 DS, 4 donors) | Normal 20,333 | OK
+    nasopharynx: COVID 10,367 (1 DS, 35 donors) | Normal 7,155 | OK
+    lung: COVID 3,350 (3 DS, 65 donors) | Normal 102,337 | OK
+    upper lobe of left lung: COVID 1,303 (3 DS, 3 donors) | Normal 887 | OK
+    lower lobe of left lung: COVID 739 (1 DS, 1 donors) | Normal 1,370 | OK
+    nasal cavity: COVID 26,212 (1 DS, 26 donors) | Normal 31,512 | OK
+    trachea: COVID 2,314 (1 DS, 2 donors) | Normal 10,924 | OK
+    bronchus: COVID 5,692 (1 DS, 4 donors) | Normal 7,916 | OK
+    saliva: COVID 335 (1 DS, 11 donors) | Normal 0 | WARNING: <200 normal
+
+  fibroblast:
+    lung: COVID 14,278 (2 DS, 36 donors) | Normal 42,681 | OK
+    upper lobe of left lung: COVID 5,261 (3 DS, 3 donors) | Normal 579 | OK
+    lower lobe of left lung: COVID 6,803 (1 DS, 1 donors) | Normal 2,777 | OK
+
+  hematopoietic stem cell:
+    blood: COVID 2,390 (3 DS, 125 donors) | Normal 889 | OK
+
+  intermediate monocyte:
+    blood: COVID 638 (2 DS, 17 donors) | Normal 53,701 | OK
+    lower lobe of left lung: COVID 1,130 (1 DS, 1 donors) | Normal 0 | WARNING: <200 normal
+
+  macrophage:
+    nasopharynx: COVID 595 (1 DS, 23 donors) | Normal 44 | WARNING: <200 normal
+    choroid plexus: COVID 331 (1 DS, 7 donors) | Normal 0 | WARNING: <200 normal
+    lung: COVID 30,428 (3 DS, 77 donors) | Normal 303,818 | OK
+    upper lobe of left lung: COVID 85,544 (3 DS, 3 donors) | Normal 8,531 | OK
+    lower lobe of left lung: COVID 25,807 (1 DS, 1 donors) | Normal 5,973 | OK
+    nasal cavity: COVID 110 (1 DS, 18 donors) | Normal 134 | WARNING: <200 normal
+    trachea: COVID 393 (1 DS, 2 donors) | Normal 3,877 | OK
+    bronchus: COVID 333 (1 DS, 4 donors) | Normal 11,387 | OK
+    blood: COVID 1,067 (1 DS, 97 donors) | Normal 4,123 | OK
+    saliva: COVID 1,251 (1 DS, 10 donors) | Normal 0 | WARNING: <200 normal
+
+  mature NK T cell:
+    respiratory airway: COVID 6,502 (15 DS, 4 donors) | Normal 0 | WARNING: <200 normal
+    blood: COVID 55,355 (15 DS, 118 donors) | Normal 4,293 | OK
+    upper lobe of left lung: COVID 1,551 (3 DS, 3 donors) | Normal 0 | WARNING: <200 normal
+    lower lobe of left lung: COVID 2,774 (1 DS, 1 donors) | Normal 0 | WARNING: <200 normal
+    nasal cavity: COVID 77 (1 DS, 9 donors) | Normal 24 | WARNING: <200 normal
+    trachea: COVID 1 (1 DS, 1 donors) | Normal 64 | WARNING: <200 normal
+    bronchus: COVID 29 (1 DS, 4 donors) | Normal 2,258 | OK
+
+  monocyte:
+    blood: COVID 56,984 (5 DS, 222 donors) | Normal 69,961 | OK
+    lung: COVID 6,445 (2 DS, 23 donors) | Normal 15,540 | OK
+    upper lobe of left lung: COVID 186 (1 DS, 1 donors) | Normal 1,330 | OK
+    nasal cavity: COVID 5,060 (1 DS, 21 donors) | Normal 392 | OK
+    trachea: COVID 459 (1 DS, 2 donors) | Normal 900 | OK
+    bronchus: COVID 728 (1 DS, 4 donors) | Normal 3,909 | OK
+    saliva: COVID 199 (1 DS, 10 donors) | Normal 0 | WARNING: <200 normal
+
+  myeloid dendritic cell:
+    blood: COVID 30,052 (24 DS, 508 donors) | Normal 41,173 | OK
+    nasopharynx: COVID 121 (1 DS, 13 donors) | Normal 14 | WARNING: <200 normal
+    lung: COVID 1,460 (3 DS, 55 donors) | Normal 17,293 | OK
+    nasal cavity: COVID 1,677 (1 DS, 27 donors) | Normal 1,315 | OK
+    trachea: COVID 35 (1 DS, 2 donors) | Normal 405 | OK
+    bronchus: COVID 315 (1 DS, 4 donors) | Normal 923 | OK
+    saliva: COVID 238 (1 DS, 11 donors) | Normal 0 | WARNING: <200 normal
+
+  natural killer cell:
+    blood: COVID 182,212 (13 DS, 517 donors) | Normal 445,457 | OK
+    lung: COVID 5,313 (3 DS, 76 donors) | Normal 27,446 | OK
+    upper lobe of left lung: COVID 9,536 (3 DS, 3 donors) | Normal 2,403 | OK
+    lower lobe of left lung: COVID 9,535 (1 DS, 1 donors) | Normal 3,364 | OK
+    saliva: COVID 21 (1 DS, 7 donors) | Normal 0 | WARNING: <200 normal
+
+  neutrophil:
+    respiratory airway: COVID 2,518 (15 DS, 4 donors) | Normal 0 | WARNING: <200 normal
+    blood: COVID 3,119 (12 DS, 141 donors) | Normal 32,970 | OK
+    upper lobe of left lung: COVID 12,107 (3 DS, 3 donors) | Normal 98 | WARNING: <200 normal
+    lower lobe of left lung: COVID 1,098 (1 DS, 1 donors) | Normal 0 | WARNING: <200 normal
+    trachea: COVID 71 (1 DS, 1 donors) | Normal 4,751 | OK
+    nasal cavity: COVID 527 (1 DS, 16 donors) | Normal 60 | WARNING: <200 normal
+    bronchus: COVID 57 (1 DS, 2 donors) | Normal 1,068 | OK
+    lung: COVID 149 (1 DS, 4 donors) | Normal 1,269 | OK
+    saliva: COVID 1,937 (1 DS, 10 donors) | Normal 0 | WARNING: <200 normal
+
+  non-classical monocyte:
+    blood: COVID 51,182 (7 DS, 227 donors) | Normal 44,956 | OK
+    upper lobe of left lung: COVID 1,845 (3 DS, 3 donors) | Normal 0 | WARNING: <200 normal
+    lower lobe of left lung: COVID 1,046 (1 DS, 1 donors) | Normal 0 | WARNING: <200 normal
+    lung: COVID 3,970 (1 DS, 49 donors) | Normal 8,333 | OK
+
+  plasma cell:
+    respiratory airway: COVID 39 (2 DS, 2 donors) | Normal 759 | OK
+    blood: COVID 38,446 (22 DS, 490 donors) | Normal 20,389 | OK
+    lung: COVID 22,343 (3 DS, 63 donors) | Normal 3,779 | OK
+    upper lobe of left lung: COVID 908 (3 DS, 3 donors) | Normal 12 | WARNING: <200 normal
+    lower lobe of left lung: COVID 251 (1 DS, 1 donors) | Normal 20 | WARNING: <200 normal
+    nasal cavity: COVID 82 (1 DS, 3 donors) | Normal 253 | OK
+    bronchus: COVID 197 (1 DS, 3 donors) | Normal 291 | OK
+
+  smooth muscle cell:
+    lung: COVID 400 (2 DS, 29 donors) | Normal 7,200 | OK
+    upper lobe of left lung: COVID 1,290 (3 DS, 3 donors) | Normal 2 | WARNING: <200 normal
+    lower lobe of left lung: COVID 1,604 (1 DS, 1 donors) | Normal 4 | WARNING: <200 normal
+
+  stromal cell:
+    upper lobe of left lung: COVID 661 (2 DS, 2 donors) | Normal 251 | OK
+    lower lobe of left lung: COVID 173 (1 DS, 1 donors) | Normal 0 | WARNING: <200 normal
+    lung: COVID 16 (1 DS, 7 donors) | Normal 87,346 | OK
+
+  TISSUE WARNINGS (25):
+    basal cell in upper lobe of left lung: normal count < 200
+    basal cell in lower lobe of left lung: normal count < 200
+    classical monocyte in upper lobe of left lung: normal count < 200
+    classical monocyte in saliva: normal count < 200
+    endothelial cell in medial orbital frontal cortex: normal count < 200
+    epithelial cell in saliva: normal count < 200
+    intermediate monocyte in lower lobe of left lung: normal count < 200
+    macrophage in nasopharynx: normal count < 200
+    macrophage in choroid plexus: normal count < 200
+    macrophage in saliva: normal count < 200
+    mature NK T cell in respiratory airway: normal count < 200
+    mature NK T cell in upper lobe of left lung: normal count < 200
+    mature NK T cell in lower lobe of left lung: normal count < 200
+    myeloid dendritic cell in saliva: normal count < 200
+    neutrophil in respiratory airway: normal count < 200
+    neutrophil in upper lobe of left lung: normal count < 200
+    neutrophil in lower lobe of left lung: normal count < 200
+    neutrophil in nasal cavity: normal count < 200
+    neutrophil in saliva: normal count < 200
+    non-classical monocyte in upper lobe of left lung: normal count < 200
+    non-classical monocyte in lower lobe of left lung: normal count < 200
+    plasma cell in upper lobe of left lung: normal count < 200
+    plasma cell in lower lobe of left lung: normal count < 200
+    smooth muscle cell in upper lobe of left lung: normal count < 200
+    smooth muscle cell in lower lobe of left lung: normal count < 200
+
+MAXIMUM COHERENT SET (for Spearman correlation)
+----------------------------------------
+Criteria: PASS verdict + no catch-alls + tissue-matched
+n = 20
+
+Cell Type                                             COVID   Normal   DS  Resid Rank
+-------------------------------------------------------------------------------------
+stromal cell                                            850   87,597    4   17.0    1
+epithelial cell                                      58,308  182,434   24   16.3    2
+hematopoietic stem cell                               2,390      889    3   14.9    4
+basal cell                                            6,133    3,472    5   12.8    6
+neutrophil                                           21,583   40,216   32   11.6    8
+plasma cell                                          62,266   25,503   31   11.1   12
+CD4-positive, alpha-beta T cell                     596,351 4,804,222   18   10.2   14
+classical monocyte                                  658,837 1,514,799   12    9.9   15
+macrophage                                          145,859  337,887   10    9.9   16
+B cell                                              589,173 1,273,615   47    9.8   17
+myeloid dendritic cell                               33,898   61,123   28    8.9   21
+monocyte                                             70,061   92,032    8    8.7   22
+natural killer cell                                 206,617  478,670   19    8.7   23
+intermediate monocyte                                 1,768   53,701    3    8.4   24
+mature NK T cell                                     66,289    6,639   35    8.3   25
+fibroblast                                           26,342   46,037    6    7.5   28
+smooth muscle cell                                    3,294    7,206    6    6.7   31
+endothelial cell                                     42,730  100,823    7    6.0   33
+non-classical monocyte                               58,043   53,289   12    5.9   34
+CD8-positive, alpha-beta T cell                     569,155 1,842,142   19    5.4   35
+
+Residual range: 5.38 – 16.98 (dynamic range: 3.2×)
+
+TOP 10 COVID DATASETS BY CELL COUNT
+----------------------------------------
+Rank Dataset ID                                    Cells  %Total  Donors Tissues                       
+----------------------------------------------------------------------------------------------------
+   1 9dbab10c-118d-496b-966a-67f1763a6b7d      1,256,129   26.8%     170 blood, lung, saliva           
+   2 ebc2e1ff-c8f9-466a-acf4-9d291afaf8b3        724,710   15.5%     102 blood                         
+   3 c7775e88-49bf-4ba2-a03b-93f00447c958        527,286   11.2%      86 blood                         
+   4 01ad3cd7-3929-4654-84c0-6db05bd5fd59        425,398    9.1%      54 blood                         
+   5 9f222629-9e39-47d0-b83f-e08d610c7479        341,761    7.3%      60 lung                          
+   6 21d3e683-80a4-4d9b-bc89-ebb2df513dde        178,805    3.8%      33 blood                         
+   7 7f7faf6b-f11d-4f07-bc1c-188a4472748d        134,076    2.9%       1 upper lobe of left lung       
+   8 7b55fe5c-d5c8-48e0-a1a3-54c5b9074f3f        125,530    2.7%       1 lower lobe of left lung       
+   9 edc8d3fe-153c-4e3d-8be0-2108d30f8d70        104,121    2.2%      32 nasal cavity, trachea, bronchus
+  10 30cd5311-6c09-46c9-94f1-71fe4b91813c         99,152    2.1%      33 blood                         
+
+Top 1 = 26.8%, Top 3 = 53.5%, Top 5 = 69.9%, Top 10 = 83.5%
+
+SEVERITY METADATA
+----------------------------------------
+Severity in disease labels: NO
+  Severity not encoded in Census cell-level metadata.
+  Would need to check individual dataset publications.
+  If available per-dataset, could add as stretch goal.
+
+UNMAPPED COVID CELL TYPES (>50 cells, not in 35-type set)
+----------------------------------------
+  mature alpha-beta T cell: 213,770
+  unknown: 212,241
+  CD14-positive monocyte: 142,230
+  CD16-positive, CD56-dim natural killer cell, human: 104,603
+  CD4-positive, alpha-beta memory T cell: 74,057
+  blood cell: 47,409
+  effector CD8-positive, alpha-beta T cell: 47,011
+  CD8-positive, alpha-beta memory T cell: 42,635
+  pulmonary alveolar type 1 cell: 32,701
+  pulmonary alveolar type 2 cell: 32,422
+  pulmonary capillary endothelial cell: 31,723
+  tracheal goblet cell: 31,537
+  elicited macrophage: 14,874
+  CD16-negative, CD56-bright natural killer cell, human: 14,012
+  T follicular helper cell: 12,789
+  lung multiciliated epithelial cell: 11,893
+  mature gamma-delta T cell: 11,751
+  basal cell of epithelium of trachea: 11,620
+  T-helper 22 cell: 11,118
+  multiciliated columnar cell of tracheobronchial tree: 11,044
+  choroid plexus epithelial cell: 7,972
+  alveolar type 1 fibroblast cell: 7,747
+  CD14-positive, CD16-positive monocyte: 7,545
+  class switched memory B cell: 7,523
+  CD14-low, CD16-positive monocyte: 5,865
+  double-positive, alpha-beta thymocyte: 5,791
+  squamous epithelial cell: 5,689
+  CD4-positive helper T cell: 5,637
+  oligodendrocyte: 4,829
+  immature B cell: 4,464
+  dendritic cell, human: 4,283
+  nasal mucosa goblet cell: 4,203
+  alveolar adventitial fibroblast: 4,031
+  double negative T regulatory cell: 3,933
+  double negative thymocyte: 3,778
+  astrocyte: 3,579
+  L2/3 intratelencephalic projecting glutamatergic neuron: 3,523
+  IgG plasma cell: 3,349
+  bronchus fibroblast of lung: 3,115
+  lung pericyte: 3,017
+  IgG-negative class switched memory B cell: 2,738
+  naive T cell: 2,734
+  L4 intratelencephalic projecting glutamatergic neuron: 2,676
+  mesenchymal cell: 2,581
+  unswitched memory B cell: 2,520
+  IgA plasma cell: 2,505
+  respiratory basal cell: 2,384
+  tracheobronchial smooth muscle cell: 2,328
+  multiciliated epithelial cell: 2,319
+  malignant cell: 2,291
+  CD34-positive, CD38-negative hematopoietic stem cell: 2,128
+  CD1c-positive myeloid dendritic cell: 2,051
+  mesothelial cell: 1,982
+  oligodendrocyte precursor cell: 1,955
+  effector CD4-positive, alpha-beta T cell: 1,813
+  myeloid dendritic cell, human: 1,730
+  progenitor cell: 1,701
+  neuron: 1,686
+  plasmacytoid dendritic cell, human: 1,673
+  pulmonary artery endothelial cell: 1,642
+  alpha-beta T cell: 1,625
+  CD8-positive, alpha-beta cytotoxic T cell: 1,499
+  microglial cell: 1,370
+  immature neutrophil: 1,327
+  megakaryocyte-erythroid progenitor cell: 1,321
+  IgG memory B cell: 1,308
+  lung goblet cell: 1,257
+  VIP GABAergic cortical interneuron: 1,204
+  alternatively activated macrophage: 1,162
+  transitional stage B cell: 1,107
+  IgG plasmablast: 1,087
+  IgM plasma cell: 1,071
+  activated CD4-positive, alpha-beta T cell, human: 962
+  duct epithelial cell: 907
+  IgA plasmablast: 890
+  memory T cell: 825
+  CD4-positive, alpha-beta cytotoxic T cell: 766
+  pvalb GABAergic cortical interneuron: 754
+  cerebral cortex neuron: 684
+  erythroid progenitor cell, mammalian: 669
+  neural cell: 668
+  L5/6 near-projecting glutamatergic neuron: 591
+  ILC1, human: 563
+  sst GABAergic cortical interneuron: 554
+  activated CD8-positive, alpha-beta T cell, human: 469
+  stem cell: 436
+  ionocyte: 399
+  erythroblast: 399
+  T-helper 1 cell: 377
+  epithelial cell of lower respiratory tract: 377
+  effector memory CD8-positive, alpha-beta T cell, terminally differentiated: 351
+  cerebral cortex GABAergic interneuron: 316
+  enucleated reticulocyte: 285
+  ependymal cell: 262
+  inflammatory macrophage: 216
+  Langerhans cell: 213
+  mesothelial fibroblast: 196
+  bronchial goblet cell: 131
+  glial cell: 124
+  respiratory tract hillock cell: 86
+  brush cell of tracheobronchial tree: 73
+  melanocyte: 61
+  group 2 innate lymphoid cell, human: 57
+  neuroendocrine cell: 56
+  cerebral cortex endothelial cell: 54
+
+EXCLUDED COVID CELL TYPES (in coarse map as None)
+----------------------------------------
+  gamma-delta T cell: 32,034
+  platelet: 28,270
+  mucosal invariant T cell: 15,509
+  megakaryocyte: 12,354
+  mast cell: 10,544
+  erythrocyte: 9,314
+  plasmacytoid dendritic cell: 7,819
+  pericyte: 437
+  innate lymphoid cell: 85
+
+CATCH-ALL / LINEAGE-AMBIGUOUS COVID CELL TYPES (excluded)
+----------------------------------------
+  myeloid cell: 58,590
+  T cell: 5,532
+  lymphocyte: 1,110
+  leukocyte: 326
+
+STATISTICAL ASSESSMENT
+----------------------------------------
+COVID coherent n = 20
+Lupus coherent n = 8 (for comparison)
+Cancer coherent n = 13 (for comparison)
+
+Spearman with n=20: can detect ρ≥0.60 at p<0.05 (two-tailed).
+Substantially better powered than lupus (n=8, need ρ≥0.74).
+
+Multi-study coverage: 51 datasets (vs lupus 1, cancer ~3).
+Multi-tissue coverage: 12 tissues (vs lupus 1, cancer 1).
+Multi-donor coverage: 683 donors (vs lupus 162, cancer ~290).
+
+RECOMMENDATION
+----------------------------------------
+1. COVID-19 is a STRONG candidate for disease-axis replication.
+   n=20 coherent types, multi-study, multi-tissue.
+2. Substantially superior to lupus (n=8, single study, blood only).
+3. Comparable or superior to cancer (n=13, single tissue).
+4. PROCEED TO DOWNLOAD: design download script matching cancer pipeline.

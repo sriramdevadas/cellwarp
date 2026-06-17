@@ -1,0 +1,87 @@
+{
+  "our_label": "CD4+ T cell",
+  "organism": "human",
+  "organism_scientific": "Homo sapiens",
+  "tried_terms": [
+    "CD4-positive, alpha-beta T cell",
+    "CD4+ T cell",
+    "CD4-positive T cell",
+    "helper T cell",
+    "naive thymus-derived CD4-positive, alpha-beta T cell"
+  ],
+  "successful_terms": [
+    "CD4-positive, alpha-beta T cell",
+    "naive thymus-derived CD4-positive, alpha-beta T cell"
+  ],
+  "total_experiments": 3,
+  "experiments": [
+    {
+      "accession": "ENCSR841LHT",
+      "biosample_term": "CD4-positive, alpha-beta T cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens CD4-positive, alpha-beta T cell male adult (20 years)",
+      "n_bio_replicates": 1,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "single replicate (n=1)",
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR260LAN",
+      "biosample_term": "naive thymus-derived CD4-positive, alpha-beta T cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens naive thymus-derived CD4-positive, alpha-beta T cell male adult (48 years)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR452COS",
+      "biosample_term": "naive thymus-derived CD4-positive, alpha-beta T cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens naive thymus-derived CD4-positive, alpha-beta T cell male adult (50 years)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    }
+  ],
+  "query_timestamp": "2026-03-15T20:13:48.395792"
+}

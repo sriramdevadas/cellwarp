@@ -1,0 +1,136 @@
+Declarations and Boilerplate — CellWarp Manuscript
+====================================================
+Generated: 2026-04-04
+Target: Cell Systems (Cell Press)
+
+================================================================
+SECTION 1 — DATA AVAILABILITY STATEMENT
+================================================================
+
+Data Availability
+
+All single-cell RNA-sequencing datasets analyzed in this study are publicly
+available. No new data were generated. Local fetch instructions, accession
+numbers, and required on-disk layouts for the heavy off-Census datasets
+(Sun et al. 2023, PanSci, UCSC phastCons, ENCODE H3K27ac + Lara-Astiaso
+mouse bigWig, macaque atlases, DILIrank/LINCS) are documented in
+DATA_SOURCES.md at the repository root; the summary below records the
+canonical accessions for the manuscript.
+
+CELLxGENE Census version pinning:
+All Census-derived data are fetched at Census release "2025-11-08", pinned
+explicitly at every cellxgene_census.open_soma() call site in scripts/,
+analysis/, and src/cellwarp/. The cellxgene-census Python client is pinned
+to v1.17.0 in environment.yml and pyproject.toml. Manifest-level uniformity
+of the resolved Census version is asserted by
+tests/test_pan_census_manifest.py::test_census_version_uniform, so any
+re-run that drifts off "2025-11-08" fails the test gate.
+
+Primary datasets:
+- Tabula Sapiens (TSP1): CZ CELLxGENE Census (version 2025-11-08);
+  original deposit figshare doi:10.6084/m9.figshare.14267219.
+- Tabula Muris Senis (TMS): CZ CELLxGENE Census (version 2025-11-08);
+  original deposit figshare doi:10.6084/m9.figshare.12654728.
+- Tabula Microcebus: CZ CELLxGENE Census (version 2025-11-08).
+
+Replication datasets:
+- Sun et al. (2023): OMIX002605 / GSA CRA007207
+  (fetch and layout: DATA_SOURCES.md, data/replication/sun2023/).
+- PanSci (Zhang et al., 2025): GEO GSE247719
+  (DATA_SOURCES.md, data/replication/pansci/).
+- CellHint Human (Xu et al., 2023): CZ CELLxGENE Census (version 2025-11-08).
+
+Macaque datasets:
+- RIRA (Mahyari et al., 2025): GEO GSE277821
+  (DATA_SOURCES.md, data/macaque/rira/).
+- Qu et al. (2022): GEO GSE196792
+  (DATA_SOURCES.md, data/macaque/qu_2022/).
+
+Non-replicating datasets (reported for transparency):
+- Andrews et al. (2024): GEO GSE240429.
+- Mouse Cell Atlas (MCA): accessed via CZ CELLxGENE Census (version 2025-11-08).
+
+Disease deformation data:
+- Cancer (colon adenocarcinoma) and COVID-19 transcriptomic data:
+  CZ CELLxGENE Census (version 2025-11-08).
+
+T3-E sensitivity tracks:
+- UCSC phastCons (placental 20-way primary; 100-way vertebrate sensitivity):
+  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/
+  (DATA_SOURCES.md, data/ucsc/).
+- ENCODE H3K27ac ChIP-seq (six immune cell types) and Lara-Astiaso 2014
+  mouse bigWig: https://www.encodeproject.org/ + GEO GSM1441277-GSM1441283
+  (DATA_SOURCES.md, data/h3k27ac/).
+
+DILI analysis:
+- L1000 LINCS Phase I Level 2: GEO GSE92742
+  (DATA_SOURCES.md, data/dilirank/).
+- DILIrank v2 database: National Center for Toxicological Research (NCTR), FDA
+  (DATA_SOURCES.md, data/dilirank/).
+
+External databases:
+- CellMarker 2.0: http://bio-bigdata.hrbmu.edu.cn/CellMarker/ (downloaded 2026-03-16).
+- Ensembl BioMart release 115 (GRCh38.p14; accessed 12 March 2026); the full
+  ortholog table is archived in the code repository.
+- STRING v12.0: https://string-db.org/
+- MSigDB: https://www.gsea-msigdb.org/gsea/msigdb/
+- L1000 landmark gene list (Subramanian et al., 2017).
+
+The original analysis outputs are archived at Zenodo
+(https://doi.org/10.5281/zenodo.20735640, CC0 1.0) and listed in the Key
+Resources Table.
+
+================================================================
+SECTION 2 — CODE AVAILABILITY STATEMENT
+================================================================
+
+Code Availability
+
+All original analysis code for the CellWarp framework — including data
+acquisition, quality control, ortholog mapping, Procrustes superimposition,
+permutation testing, bootstrap resampling, leave-one-out cross-validation,
+mechanistic null tests, disease deformation analyses, and figure generation —
+is archived at Zenodo (https://doi.org/10.5281/zenodo.20735612, MIT License)
+and maintained in the project's public GitHub repository
+(https://github.com/sriramdevadas/cellwarp); the DOI is listed in the Key
+Resources Table. The repository also contains the archived BioMart ortholog
+table and the pre-registration document for the DILI analysis.
+
+================================================================
+SECTION 3 — DECLARATION OF INTERESTS
+================================================================
+
+Declaration of Interests
+
+The author declares no competing interests.
+
+================================================================
+SECTION 4 — AUTHOR CONTRIBUTIONS (CRediT FORMAT)
+================================================================
+
+Author Contributions
+
+Sriram Devadas: Conceptualization, Methodology, Software, Validation,
+Formal analysis, Investigation, Resources, Data curation,
+Writing – original draft, Writing – review & editing,
+Visualization, Project administration.
+
+================================================================
+SECTION 5 — FUNDING
+================================================================
+
+Funding
+
+This research received no specific grant funding from any agency.
+The author conducted this work using personal resources.
+
+================================================================
+SECTION 6 — AI DISCLOSURE (Cell Systems requirement)
+================================================================
+
+AI Disclosure
+
+Generative AI tools (Claude, Anthropic) were used to assist with code
+development, literature search, and manuscript drafting. All AI-generated
+content was reviewed, verified, and revised by the author. The author
+takes full responsibility for the accuracy and integrity of the work.

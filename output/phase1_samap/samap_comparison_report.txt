@@ -1,0 +1,58 @@
+SAMap Validation Report — CellWarp Phase 1
+==================================================
+
+Confirmed: 6/6 (100%)
+
+Per-pairing details:
+--------------------------------------------------
+
+  Human: B cell
+  Manual mouse pairing: B cell
+  SAMap top match:      B cell
+  Score (manual pair):  0.9357
+  Score (SAMap top):    0.9357
+  Rank of manual pair:  1
+  Status: CONFIRMED
+
+  Human: CD4-positive, alpha-beta T cell
+  Manual mouse pairing: CD4-positive, alpha-beta T cell
+  SAMap top match:      CD4-positive, alpha-beta T cell
+  Score (manual pair):  0.5910
+  Score (SAMap top):    0.5910
+  Rank of manual pair:  1
+  Status: CONFIRMED
+
+  Human: CD8-positive, alpha-beta T cell
+  Manual mouse pairing: CD8-positive, alpha-beta T cell
+  SAMap top match:      CD8-positive, alpha-beta T cell
+  Score (manual pair):  0.5938
+  Score (SAMap top):    0.5938
+  Rank of manual pair:  1
+  Status: CONFIRMED
+
+  Human: endothelial cell
+  Manual mouse pairing: endothelial cell
+  SAMap top match:      endothelial cell
+  Score (manual pair):  0.8705
+  Score (SAMap top):    0.8705
+  Rank of manual pair:  1
+  Status: CONFIRMED
+
+  Human: hepatocyte
+  Manual mouse pairing: hepatocyte
+  SAMap top match:      hepatocyte
+  Score (manual pair):  0.6488
+  Score (SAMap top):    0.6488
+  Rank of manual pair:  1
+  Status: CONFIRMED
+
+  Human: macrophage
+  Manual mouse pairing: macrophage
+  SAMap top match:      macrophage
+  Score (manual pair):  0.8124
+  Score (SAMap top):    0.8124
+  Rank of manual pair:  1
+  Status: CONFIRMED
+
+==================================================
+RESULT: ALL PAIRINGS CONFIRMED — Phase 1 SAMap gate PASSED

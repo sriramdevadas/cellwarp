@@ -1,0 +1,23 @@
+cell_type,in_primary,human_cells,mouse_cells
+B cell,True,2000,2000
+"CD4-positive, alpha-beta T cell",True,2000,2000
+"CD8-positive, alpha-beta T cell",True,2000,2000
+T cell,True,2000,2000
+basal cell,True,2000,2000
+endothelial cell,True,2000,2000
+epithelial cell,True,2000,2000
+fibroblast,True,2000,2000
+fibroblast of cardiac tissue,True,2000,2000
+granulocyte,True,1635,2000
+hepatocyte,True,2000,2000
+macrophage,True,2000,2000
+mature NK T cell,True,2000,739
+mesenchymal stem cell,True,2000,2000
+monocyte,True,2000,2000
+myeloid leukocyte,True,222,1255
+natural killer cell,True,2000,2000
+neutrophil,True,2000,2000
+pancreatic ductal cell,True,2000,2000
+plasma cell,True,2000,2000
+smooth muscle cell,True,2000,1232
+stromal cell,True,2000,2000

@@ -1,0 +1,84 @@
+{
+  "analysis": "HUMAN_MOUSE_7TYPE_CONTROL",
+  "cell_types": [
+    "bladder urothelial cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "gene_space": 16959,
+  "procrustes": {
+    "distance": 17.35643341074343,
+    "distance_squared": 301.2457807415709,
+    "scaling": 1.024621021934475,
+    "rotation_det": 1.000000000000001
+  },
+  "permutation_test": {
+    "p_value": 0.0005999400059994001,
+    "obs_null_ratio_median": 0.48478454930685405,
+    "obs_null_ratio_mean": 0.49711757074957125,
+    "null_median": 35.80236506208726,
+    "null_mean": 34.91414190927268,
+    "n_permutations": 10000,
+    "permuted_le_observed": 5
+  },
+  "pca": {
+    "n_components": 10,
+    "variance_explained": [
+      0.3370637220881513,
+      0.20575056008869583,
+      0.13584140000319248,
+      0.06678416381957501,
+      0.05684043648824032,
+      0.04353902433965658,
+      0.03854748507711373,
+      0.03622496897271662,
+      0.025499992373706832,
+      0.018634094114156678
+    ],
+    "cumulative_variance": 0.9647258473652054
+  },
+  "per_type_residuals_ranked": [
+    {
+      "type": "epithelial cell",
+      "magnitude": 11.884021097846178,
+      "pct_ssr": 46.881970298933325
+    },
+    {
+      "type": "fibroblast",
+      "magnitude": 8.234041554531885,
+      "pct_ssr": 22.506353501402504
+    },
+    {
+      "type": "stromal cell",
+      "magnitude": 5.103855001548067,
+      "pct_ssr": 8.647203560063836
+    },
+    {
+      "type": "endothelial cell",
+      "magnitude": 4.77186659914669,
+      "pct_ssr": 7.558848055563658
+    },
+    {
+      "type": "bladder urothelial cell",
+      "magnitude": 4.484080000904758,
+      "pct_ssr": 6.674607493262499
+    },
+    {
+      "type": "smooth muscle cell",
+      "magnitude": 4.257818200978205,
+      "pct_ssr": 6.018014854167727
+    },
+    {
+      "type": "hepatocyte",
+      "magnitude": 2.2716397077410138,
+      "pct_ssr": 1.7130022366064521
+    }
+  ],
+  "seed": 42,
+  "runtime_s": 0.5040309429168701,
+  "preprocessing": "committed symmetric: normalize_total(1e4) + log1p (raw Tabula)"
+}

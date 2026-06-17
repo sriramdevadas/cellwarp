@@ -1,0 +1,22 @@
+{
+  "analysis": "Thread 4A: Housekeeping gene ratio vs Procrustes rigidity",
+  "hk_gene_source": "HOUNKPE_HOUSEKEEPING_GENES (MSigDB, 1129 symbols)",
+  "hk_genes_in_ortholog_space": 1097,
+  "hk_genes_in_centroids": 1096,
+  "unmapped_hk_genes": 32,
+  "n_cell_types": 35,
+  "human_correlation": {
+    "spearman_rho": 0.1672,
+    "p_value": 0.337,
+    "significant_at_005": false
+  },
+  "mouse_correlation": {
+    "spearman_rho": 0.1681,
+    "p_value": 0.3345,
+    "significant_at_005": false
+  },
+  "cross_species_agreement": {
+    "spearman_rho": 0.6555,
+    "p_value": 1.924028e-05
+  }
+}

@@ -1,0 +1,67 @@
+cell_type,human_count,mouse_count,min_count,passes_200_gate
+B cell,114495,36349,36349,True
+mesenchymal stem cell,23499,16142,16142,True
+endothelial cell,33703,14822,14822,True
+macrophage,69072,9631,9631,True
+classical monocyte,18200,8124,8124,True
+bladder urothelial cell,27241,6651,6651,True
+T cell,6290,12745,6290,True
+hepatocyte,7414,4091,4091,True
+mesenchymal stem cell of adipose tissue,3777,6626,3777,True
+basal cell,33526,3726,3726,True
+monocyte,25753,3674,3674,True
+enterocyte of epithelium of large intestine,4567,3667,3667,True
+natural killer cell,14231,3362,3362,True
+mature NK T cell,5394,3161,3161,True
+fibroblast,83338,3143,3143,True
+stromal cell,3458,3123,3123,True
+pancreatic acinar cell,5482,2717,2717,True
+luminal epithelial cell of mammary gland,15432,2671,2671,True
+hematopoietic precursor cell,2140,2144,2140,True
+fibroblast of cardiac tissue,1947,6335,1947,True
+"CD8-positive, alpha-beta T cell",76277,1940,1940,True
+intermediate monocyte,5478,1761,1761,True
+"CD4-positive, alpha-beta T cell",97130,1721,1721,True
+smooth muscle cell,18425,1704,1704,True
+plasma cell,27349,1646,1646,True
+large intestine goblet cell,1557,1745,1557,True
+non-classical monocyte,1284,1159,1159,True
+hematopoietic stem cell,858,3342,858,True
+adventitial cell,1045,815,815,True
+granulocyte,769,15562,769,True
+epithelial cell,1675,764,764,True
+neutrophil,69539,705,705,True
+pancreatic ductal cell,2721,651,651,True
+myeloid dendritic cell,571,618,571,True
+myeloid leukocyte,1002,516,516,True
+vein endothelial cell,4698,472,472,True
+thymocyte,455,3517,455,True
+microglial cell,410,13268,410,True
+regular atrial cardiac myocyte,5816,403,403,True
+erythrocyte,14611,356,356,True
+basophil,1669,325,325,True
+pulmonary alveolar type 2 cell,11594,292,292,True
+Schwann cell,318,274,274,True
+bronchial smooth muscle cell,220,4456,220,True
+leukocyte,201,1658,201,True
+regulatory T cell,2649,170,170,False
+endothelial cell of lymphatic vessel,2438,140,140,False
+multiciliated columnar cell of tracheobronchial tree,713,127,127,False
+type B pancreatic cell,102,4016,102,False
+pericyte,10888,99,99,False
+plasmacytoid dendritic cell,99,122,99,False
+neuron,82,484,82,False
+myeloid cell,81,4427,81,False
+Langerhans cell,76,175,76,False
+mast cell,6222,76,76,False
+mucus secreting cell,270,73,73,False
+pancreatic stellate cell,438,69,69,False
+pancreatic A cell,48,831,48,False
+hepatic stellate cell,223,39,39,False
+club cell,1747,37,37,False
+enteroendocrine cell,25,161,25,False
+pancreatic D cell,9,463,9,False
+pulmonary alveolar type 1 cell,3116,4,4,False
+mesenchymal cell,2,879,2,False
+pancreatic PP cell,2,228,2,False
+duct epithelial cell,3889,2,2,False

@@ -1,0 +1,17 @@
+fine_label,normal_count,tumor_count,passes_500,in_xs_35,xs_magnitude
+B cell,12117,13543,True,True,9.84610773899485
+"CD4-positive, alpha-beta T cell",8846,24085,True,True,10.211698233902775
+"CD8-positive, alpha-beta T cell",4982,20860,True,True,5.376250842092007
+Other,22593,103022,True,False,
+T cell,8254,11742,True,True,11.669230240557653
+endothelial cell,2746,2420,True,True,5.971297637181498
+enterocyte of epithelium of large intestine,19936,1347,True,True,9.29725882164393
+epithelial cell,9237,6882,True,True,16.26737024211543
+fibroblast,6819,2820,True,True,7.507949833964307
+large intestine goblet cell,10657,6536,True,True,9.466735129187661
+macrophage,1549,18976,True,True,9.878526364594375
+mast cell,1326,2715,True,False,
+monocyte,1219,13401,True,True,8.722376854060062
+myeloid dendritic cell,702,2874,True,True,8.898942576915942
+plasma cell,20772,17971,True,True,11.083715806788701
+smooth muscle cell,660,238,False,True,6.705384890826327

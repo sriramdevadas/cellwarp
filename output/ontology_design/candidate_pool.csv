@@ -1,0 +1,125 @@
+candidate_id,cell_type,source_a_cellmarker,source_b_ts_count,source_b_ts_tissues,source_c_tms_count,source_c_tms_tissues,passes_strict_intersection,data_source_note,organ_system
+1,B cell,YES (CD19 CD20 CD79A),114495,blood/spleen/lymph_node/bone_marrow,36349,marrow/spleen/lung/fat,YES,Current ontology,immune
+2,"CD4-positive, alpha-beta T cell",YES (CD4 CD3E IL7R),97130,blood/spleen/thymus/lymph_node,1721,spleen/thymus,YES,Current ontology,immune
+3,"CD8-positive, alpha-beta T cell",YES (CD8A CD8B GZMB),76277,blood/spleen/thymus/lymph_node,1940,spleen/marrow,YES,Current ontology,immune
+4,T cell,YES (CD3E CD3D TRAC),6290,blood/spleen,12745,thymus/spleen,YES,Current ontology,immune
+5,natural killer cell,YES (NKG7 GNLY KLRD1),14231,blood/spleen,3362,spleen/lung,YES,Current ontology,immune
+6,mature NK T cell,YES (CD3E NKG7 KLRB1),5394,blood/thymus,3161,thymus/spleen,YES,Current ontology,immune
+7,macrophage,YES (CD68 CD163 MARCO),69072,lung/liver/fat/skin,9631,lung/liver/marrow,YES,Current ontology,immune
+8,classical monocyte,YES (CD14 S100A8 FCN1),18200,blood/spleen,8124,marrow/spleen,YES,Current ontology,immune
+9,intermediate monocyte,YES (CD14 CD16 HLA-DRA),5478,blood,1761,marrow/spleen,YES,Current ontology,immune
+10,non-classical monocyte,YES (FCGR3A CD16 CX3CR1),1284,blood,1159,marrow/spleen,YES,Current ontology,immune
+11,monocyte,YES (CD14 LYZ S100A9),25753,blood/spleen,3674,marrow/spleen,YES,Current ontology,immune
+12,myeloid dendritic cell,YES (HLA-DRA ITGAX CD1C),571,blood/spleen,618,spleen/lung,YES,Current ontology,immune
+13,myeloid leukocyte,PARTIAL (generic label),1002,blood,516,marrow,YES,Current ontology,immune
+14,neutrophil,YES (FCGR3B CSF3R CXCR2),69539,blood/spleen,705,marrow/spleen,YES,Current ontology,immune
+15,granulocyte,PARTIAL (generic label),769,blood,15562,marrow/spleen,YES,Current ontology,immune
+16,plasma cell,YES (SDC1 MZB1 JCHAIN),27349,blood/bone_marrow,1646,marrow/spleen,YES,Current ontology,immune
+17,hematopoietic precursor cell,YES (CD34 CD38 FLT3),2140,bone_marrow,2144,marrow,YES,Current ontology,hematopoietic
+18,hematopoietic stem cell,YES (CD34 KIT THY1),858,bone_marrow,3342,marrow,YES,Current ontology,hematopoietic
+19,mesenchymal stem cell,YES (ENG NT5E THY1),23499,fat/muscle/bone_marrow,16142,fat/marrow/muscle,YES,Current ontology,hematopoietic
+20,mesenchymal stem cell of adipose tissue,YES (ENG NT5E PDGFRA),3777,fat,6626,fat,YES,Current ontology,hematopoietic
+21,stromal cell,PARTIAL (generic label),3458,multiple,3123,multiple,YES,Current ontology,structural
+22,fibroblast,YES (COL1A1 DCN LUM),83338,heart/skin/lung/muscle,3143,heart/skin/lung,YES,Current ontology,structural
+23,fibroblast of cardiac tissue,YES (COL1A1 DCN DDR2),1947,heart,6335,heart,YES,Current ontology,structural
+24,adventitial cell,YES (PDGFRA DCN MFAP5),1045,vasculature,815,aorta,YES,Current ontology,structural
+25,smooth muscle cell,YES (ACTA2 MYH11 TAGLN),18425,vasculature/bladder/muscle,1704,aorta/bladder,YES,Current ontology,structural
+26,epithelial cell,PARTIAL (generic label),1675,multiple,764,multiple,YES,Current ontology,epithelial
+27,basal cell,YES (KRT5 KRT14 TP63),33526,prostate/skin/trachea,3726,trachea/tongue,YES,Current ontology,epithelial
+28,luminal epithelial cell of mammary gland,YES (KRT18 KRT8 EPCAM),15432,mammary,2671,mammary,YES,Current ontology,epithelial
+29,large intestine goblet cell,YES (MUC2 TFF3 FCGBP),1557,large_intestine,1745,large_intestine,YES,Current ontology,epithelial
+30,enterocyte of epithelium of large intestine,YES (FABP1 ANPEP SLC26A3),4567,large_intestine,3667,large_intestine,YES,Current ontology,epithelial
+31,bladder urothelial cell,YES (UPK2 UPK1A KRT20),27241,bladder,6651,bladder,YES,Current ontology,epithelial
+32,pancreatic ductal cell,YES (KRT19 SOX9 CFTR),2721,pancreas,651,pancreas,YES,Current ontology,epithelial
+33,hepatocyte,YES (ALB APOB CYP3A4),7414,liver,4091,liver,YES,Current ontology,metabolic
+34,pancreatic acinar cell,YES (PRSS1 CPA1 CELA3A),5482,pancreas,2717,pancreas,YES,Current ontology,metabolic
+35,endothelial cell,YES (PECAM1 VWF CDH5),33703,vasculature/heart/lung,14822,multiple,YES,Current ontology,vascular
+36,regulatory T cell,YES (FOXP3 IL2RA CTLA4),2649,blood/thymus,170,spleen/thymus,NO_mouse_under_500,Census mouse pooling needed,immune
+37,mast cell,YES (KIT TPSAB1 CPA3),6222,skin/lung,76,skin,NO_mouse_under_500,Census mouse pooling needed,immune
+38,basophil,YES (CLC IL4 GATA2),1669,blood,325,marrow,NO_mouse_under_500,Near-miss mouse (325),immune
+39,plasmacytoid dendritic cell,YES (LILRA4 IRF7 IL3RA),99,blood,122,spleen,NO_both_under_500,Census pooling needed both species,immune
+40,vein endothelial cell,YES (PECAM1 VWF ACKR1),4698,vasculature,472,multiple,NO_mouse_under_500,Near-miss mouse (472),vascular
+41,thymocyte,YES (CD3E RAG1 PTCRA),455,thymus,3517,thymus,NO_human_under_500,Near-miss human (455),hematopoietic
+42,microglial cell,YES (TMEM119 P2RY12 CX3CR1),410,eye,13268,brain,NO_human_under_500,TS has no brain tissue; Census human brain datasets needed,neural
+43,cardiac myocyte,YES (TNNT2 MYH7 MYL2),5816,heart,403,heart,NO_mouse_under_500,Near-miss mouse (403),cardiac
+44,erythrocyte,YES (HBA1 HBB SLC4A1),14611,blood,356,marrow,NO_mouse_under_500,Near-miss mouse (356); nucleated in mouse,hematopoietic
+45,pulmonary alveolar type 2 cell,YES (SFTPC SFTPB ABCA3),11594,lung,292,lung,NO_mouse_under_500,Near-miss mouse (292),epithelial
+46,Schwann cell,YES (MPZ PMP22 MBP),318,eye,274,peripheral_nerve,NO_both_under_500,Census pooling needed both,neural
+47,bronchial smooth muscle cell,YES (ACTA2 DES CNN1),220,trachea,4456,trachea,NO_human_under_500,Census human airway pooling,structural
+48,oligodendrocyte,YES (MBP PLP1 MOG),est_5000+,brain*,est_5000+,brain,NO_ts_absent,Requires human brain atlas (Allen Brain),neural
+49,astrocyte,YES (GFAP AQP4 S100B),est_5000+,brain*,est_5000+,brain,NO_ts_absent,Requires human brain atlas (Allen Brain),neural
+50,oligodendrocyte precursor cell,YES (PDGFRA CSPG4 OLIG2),est_2000+,brain*,est_2000+,brain,NO_ts_absent,Requires human brain atlas,neural
+51,excitatory neuron,YES (SLC17A7 CAMK2A SATB2),est_50000+,brain*,est_10000+,brain,NO_ts_absent,Requires human brain atlas; broad class,neural
+52,inhibitory neuron,YES (GAD1 GAD2 SLC32A1),est_30000+,brain*,est_10000+,brain,NO_ts_absent,Requires human brain atlas; broad class,neural
+53,ependymal cell,YES (FOXJ1 PIFO CCDC153),est_500+,brain*,est_500+,brain,NO_ts_absent,Requires human brain atlas,neural
+54,Purkinje neuron,YES (CALB1 PCP2 GRID2),est_1000+,brain*,est_1000+,cerebellum,NO_ts_absent,Requires human brain atlas,neural
+55,medium spiny neuron,YES (PPP1R1B DRD1 DRD2),est_5000+,brain*,est_5000+,brain,NO_ts_absent,Requires human brain atlas,neural
+56,dopaminergic neuron,YES (TH SLC6A3 NR4A2),est_500+,brain*,est_500+,brain,NO_ts_absent,Requires human brain atlas; rare subtype,neural
+57,cerebellar granule cell,YES (GABRA6 NEUROD1 PAX6),est_5000+,brain*,est_5000+,cerebellum,NO_ts_absent,Requires human brain atlas,neural
+58,pericyte,YES (PDGFRB RGS5 ABCC9),10888,vasculature/heart,99,multiple,NO_mouse_under_500,Census mouse pooling needed,structural
+59,myofibroblast,YES (ACTA2 COL1A1 TAGLN),est_2000+,heart/lung,est_1000+,heart,NO_tabula_unverified,Census query needed,structural
+60,adipocyte,YES (ADIPOQ LEP PPARG),est_1000+,fat,est_1000+,fat,NO_tabula_unverified,Census query needed,structural
+61,osteoblast,YES (BGLAP RUNX2 SP7),est_500+,bone_marrow*,est_500+,bone*,NO_tabula_unverified,Census query needed; may be rare,structural
+62,satellite cell,YES (PAX7 MYF5 MYOD1),est_500+,muscle,est_500+,muscle,NO_tabula_unverified,Census query needed,structural
+63,mesothelial cell,YES (MSLN WT1 UPK3B),est_1000+,lung/heart,est_500+,lung,NO_tabula_unverified,Census query needed,structural
+64,chondrocyte,YES (COL2A1 ACAN SOX9),est_500+,trachea*,est_500+,trachea*,NO_tabula_unverified,Census query needed; may be rare,structural
+65,keratinocyte,YES (KRT14 KRT5 KRT10),est_10000+,skin,est_5000+,skin,NO_tabula_unverified,Census query needed,epithelial
+66,ciliated epithelial cell,YES (FOXJ1 DNAH5 RSPH1),est_5000+,lung/trachea,est_2000+,trachea,NO_tabula_unverified,Census query needed,epithelial
+67,proximal tubule epithelial cell,YES (SLC34A1 LRP2 CUBN),est_5000+,kidney,est_2000+,kidney,NO_tabula_unverified,Census query needed,epithelial
+68,Paneth cell,YES (DEFA5 LYZ REG3A),est_500+,small_intestine,est_500+,small_intestine,NO_tabula_unverified,Census query needed; may be borderline,epithelial
+69,club cell,YES (SCGB1A1 SCGB3A2 CYP2F1),1747,trachea/lung,37,trachea,NO_mouse_under_500,Census mouse airway pooling needed,epithelial
+70,podocyte,YES (NPHS1 NPHS2 WT1),est_1000+,kidney,est_500+,kidney,NO_tabula_unverified,Census query needed,epithelial
+71,type I pneumocyte,YES (AGER HOPX PDPN),3116,lung,4,lung,NO_mouse_under_500,TMS nearly absent; Census mouse lung needed,epithelial
+72,cholangiocyte,YES (KRT19 SOX9 EPCAM),est_1000+,liver,est_500+,liver,NO_tabula_unverified,Census query needed,metabolic
+73,Kupffer cell,YES (CLEC4F CD68 TIMD4),est_1000+,liver,est_500+,liver,NO_tabula_unverified,Census query needed; may be annotated as macrophage,metabolic
+74,hepatic stellate cell,YES (ACTA2 DES LRAT),223,liver,39,liver,NO_both_under_500,Both under 500; Census pooling unlikely to help,metabolic
+75,enterocyte of small intestine,YES (FABP2 SI ANPEP),est_2000+,small_intestine,est_1000+,small_intestine,NO_tabula_unverified,Census query needed,metabolic
+76,gastric chief cell,YES (PGA3 PGA4 PGA5),est_500+,stomach*,est_500+,stomach*,NO_tabula_unverified,Census query needed; TS has no stomach,metabolic
+77,parietal cell,YES (ATP4A ATP4B GIF),est_500+,stomach*,est_500+,stomach*,NO_tabula_unverified,Census query needed; TS has no stomach,metabolic
+78,arterial endothelial cell,YES (GJA5 BMX EFNB2),est_2000+,vasculature,est_1000+,aorta,NO_tabula_unverified,Census query needed,vascular
+79,capillary endothelial cell,YES (CA4 RGCC BTNL9),est_5000+,lung/heart,est_2000+,lung/heart,NO_tabula_unverified,Census query needed,vascular
+80,lymphatic endothelial cell,YES (PROX1 LYVE1 FLT4),2438,vasculature,140,multiple,NO_mouse_under_500,Census mouse pooling needed,vascular
+81,brain endothelial cell,YES (CLDN5 SLC2A1 MFSD2A),est_2000+,brain*,est_2000+,brain,NO_ts_absent,Requires human brain atlas,vascular
+82,sinusoidal endothelial cell,YES (STAB2 CLEC4G LYVE1),est_1000+,liver,est_500+,liver,NO_tabula_unverified,Census query needed,vascular
+83,endocardial cell,YES (NPR3 CYTL1 CDH11),est_500+,heart,est_500+,heart,NO_tabula_unverified,Census query needed; may be under endothelial,vascular
+84,megakaryocyte,YES (ITGA2B GP1BA PF4),est_1000+,bone_marrow,est_500+,marrow,NO_tabula_unverified,Census query needed,hematopoietic
+85,erythroid progenitor,YES (GATA1 KLF1 EPOR),est_1000+,bone_marrow,est_500+,marrow,NO_tabula_unverified,Census query needed,hematopoietic
+86,common myeloid progenitor,YES (CD34 CD38 IL3RA),est_500+,bone_marrow,est_500+,marrow,NO_tabula_unverified,Census query needed; annotation-dependent,hematopoietic
+87,pro-B cell,YES (CD34 CD19 PAX5),est_500+,bone_marrow,est_500+,marrow,NO_tabula_unverified,Census query needed; annotation-dependent,hematopoietic
+88,pancreatic beta cell,YES (INS GCG MAFA),102,pancreas,4016,pancreas,NO_human_under_500,TS critically low (102); requires second human atlas,endocrine
+89,pancreatic alpha cell,YES (GCG ARX IRX1),48,pancreas,831,pancreas,NO_human_under_500,TS critically low (48); requires second human atlas,endocrine
+90,pancreatic delta cell,YES (SST HHEX RBP4),9,pancreas,463,pancreas,NO_both_under_500,Both very low; requires supplementary atlases,endocrine
+91,thyroid follicular cell,YES (TG TPO SLC5A5),est_500+,thyroid*,est_500+,thyroid*,NO_tabula_unverified,Census query needed; TS has no thyroid,endocrine
+92,enteroendocrine cell,YES (CHGA SYP NEUROD1),25,small_intestine,161,small_intestine,NO_both_under_500,Both very low; requires supplementary atlases,endocrine
+93,adrenocortical cell,YES (CYP11A1 STAR CYP17A1),est_500+,adrenal*,est_500+,adrenal*,NO_tabula_unverified,Census query needed; TS has no adrenal,endocrine
+94,chromaffin cell,YES (PNMT TH DBH),est_500+,adrenal*,est_500+,adrenal*,NO_tabula_unverified,Census query needed; rare,endocrine
+95,parathyroid cell,YES (PTH CASR GCM2),est_200+,parathyroid*,est_200+,parathyroid*,NO_tabula_unverified,Census query needed; very rare tissue,endocrine
+96,melanocyte,YES (MLANA PMEL TYRP1),est_500+,skin,est_500+,skin,NO_tabula_unverified,Census query needed,other
+97,cardiac myocyte (atrial),YES (TNNT2 MYH6 NPPA),5816,heart,403,heart,NO_mouse_under_500,Near-miss mouse (403),other
+98,alveolar macrophage,YES (MARCO FABP4 MCEMP1),est_2000+,lung,est_1000+,lung,NO_tabula_unverified,Census query; may be annotated as macrophage,other
+99,goblet cell (airway),YES (MUC5AC MUC5B SPDEF),est_500+,trachea/lung,est_500+,trachea,NO_tabula_unverified,Census query needed,other
+100,follicular helper T cell,YES (CXCR5 BCL6 PDCD1),est_500+,lymph_node/tonsil,est_500+,spleen,NO_tabula_unverified,Census query needed,other
+101,Langerhans cell,YES (CD207 CD1A EPCAM),76,skin,175,skin,NO_both_under_500,Both very low; may not be achievable,other
+102,dendritic cell type 2,YES (CD1C CLEC10A FCER1A),est_1000+,blood/spleen,est_500+,spleen,NO_tabula_unverified,Census query needed; overlaps with myeloid DC,other
+103,tuft cell,YES (DCLK1 TRPM5 POU2F3),est_200+,small_intestine,est_200+,small_intestine,NO_tabula_unverified,Census query; rare chemosensory type,other
+104,collecting duct cell,YES (AQP2 FXYD4 SLC4A1),est_500+,kidney,est_500+,kidney,NO_tabula_unverified,Census query needed,epithelial
+105,intercalated cell,YES (SLC4A1 ATP6V1B1 SLC26A4),est_500+,kidney,est_500+,kidney,NO_tabula_unverified,Census query needed,epithelial
+#
+# CANDIDATE POOL SUMMARY
+#
+# Source A (CellMarker 2.0 ≥5 validated markers): ~180 human cell types estimated
+# Source B (Tabula Sapiens ≥500 cells): 36 types confirmed from inventory
+# Source C (Tabula Muris Senis ≥500 cells): 35 types confirmed from inventory
+# Strict intersection (B ∩ C at ≥500 both species): 35 types (current ontology)
+#
+# REALISTIC CEILING WITH CENSUS POOLING:
+# If Source B/C expanded to use full CELLxGENE Census rather than single-atlas queries:
+# Estimated ~80-120 types pass ≥500 in both species (Census pools hundreds of datasets)
+# Neural types require Allen Brain Cell Atlas (not in Tabula series)
+# Endocrine types remain bottleneck (<500 even with Census pooling for several)
+#
+# This file lists 105 candidates enumerated for selection in Step 2.
+# Types 1-35: confirmed pass (current ontology)
+# Types 36-47: near-miss types (≥200 in at least one species from inventory)
+# Types 48-105: require Census query or supplementary atlas for verification
+# Counts marked "est_" are literature-informed estimates, not confirmed from data.

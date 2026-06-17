@@ -1,0 +1,4 @@
+variant,genes_excluded,pca_components,obs_null_ratio,ranking_rho_vs_full_space
+full_sanity,0,33,0.5222,1.0
+ribosomal_only,68,33,0.5012,0.941
+ribosomal_plus_housekeeping,1158,34,0.4788,0.908

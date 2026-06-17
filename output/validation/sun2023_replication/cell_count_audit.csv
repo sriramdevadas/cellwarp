@@ -1,0 +1,16 @@
+cell_type,n_cells_YC,status
+B cell,16271,PASS
+"CD4-positive, alpha-beta T cell",2036,PASS
+"CD8-positive, alpha-beta T cell",4685,PASS
+endothelial cell,6614,PASS
+hepatocyte,1417,PASS
+macrophage,2050,PASS
+monocyte,2686,PASS
+natural killer cell,1015,PASS
+neutrophil,0,FAIL
+epithelial cell,1520,PASS
+fibroblast,2754,PASS
+smooth muscle cell,385,BORDERLINE
+plasma cell,1197,PASS
+myeloid dendritic cell,1448,PASS
+granulocyte,8676,PASS

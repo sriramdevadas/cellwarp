@@ -1,0 +1,60 @@
+{
+  "progenitor_types": [
+    "hematopoietic precursor cell",
+    "hematopoietic stem cell",
+    "basal cell",
+    "mesenchymal stem cell of adipose tissue",
+    "mesenchymal stem cell"
+  ],
+  "n_progenitor": 5,
+  "n_differentiated": 30,
+  "progenitor_median_residual": 12.766119470797328,
+  "differentiated_median_residual": 9.09809959544265,
+  "residual_ratio": 1.403163302058381,
+  "n_genes_specificity_gt_0.7": 1591,
+  "n_genes_specificity_gt_0.5": 13037,
+  "top10_progenitor_genes": [
+    "GPR3",
+    "FAM187A",
+    "STAC2",
+    "KRT71",
+    "ENSG00000286131",
+    "IL17B",
+    "NPY",
+    "GJB4",
+    "LRRTM1",
+    "MIR490"
+  ],
+  "go_enrichment_shared": {
+    "n_terms_tested": 637,
+    "n_significant": 1,
+    "top_term": "DNA-templated DNA Replication Maintenance Of Fidelity",
+    "top_p_adj": 0.0398185028427308
+  },
+  "pairwise_overlap": {
+    "mean_jaccard": 0.08053504486528175,
+    "mean_overlap_count": 14.4,
+    "interpretation": "LOW \u2014 each progenitor type diverges independently",
+    "genes_in_3plus_progenitors": 23,
+    "genes_in_all_5_progenitors": 0
+  },
+  "vs_top_differentiated": {
+    "differentiated_type": "stromal cell",
+    "overlap_count": 0,
+    "jaccard": 0.0
+  },
+  "expression_direction": {
+    "human_higher_pct": 11.600000000000001,
+    "mouse_higher_pct": 32.800000000000004,
+    "similar_pct": 55.60000000000001,
+    "mean_log2fc": -0.6693538204245012
+  },
+  "category_breakdown": {
+    "other": 44,
+    "structural": 2,
+    "signaling": 2,
+    "stem_cell": 1,
+    "cell_cycle": 1
+  },
+  "runtime_seconds": 4.9
+}

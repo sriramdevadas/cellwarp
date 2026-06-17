@@ -1,0 +1,36 @@
+cell_type,n_markers,n_retained_1to1,retention_fraction,residual_magnitude
+stromal cell,8,3,0.375,16.985
+epithelial cell,33,10,0.303,16.267
+hematopoietic precursor cell,1,0,0.0,15.354
+hematopoietic stem cell,9,4,0.4444,14.948
+pancreatic acinar cell,2,2,1.0,12.838
+basal cell,11,5,0.4545,12.766
+T cell,37,9,0.2432,11.669
+neutrophil,13,4,0.3077,11.598
+fibroblast of cardiac tissue,9,2,0.2222,11.522
+myeloid leukocyte,4,3,0.75,11.509
+mesenchymal stem cell of adipose tissue,164,28,0.1707,11.432
+plasma cell,11,4,0.3636,11.084
+mesenchymal stem cell,76,10,0.1316,10.341
+"CD4-positive, alpha-beta T cell",37,9,0.2432,10.212
+classical monocyte,2,0,0.0,9.929
+macrophage,26,6,0.2308,9.879
+B cell,34,9,0.2647,9.846
+luminal epithelial cell of mammary gland,34,10,0.2941,9.654
+large intestine goblet cell,37,9,0.2432,9.467
+enterocyte of epithelium of large intestine,0,,,9.297
+myeloid dendritic cell,2,1,0.5,8.899
+monocyte,20,5,0.25,8.722
+natural killer cell,17,4,0.2353,8.687
+intermediate monocyte,2,0,0.0,8.428
+mature NK T cell,37,9,0.2432,8.275
+adventitial cell,1,0,0.0,8.08
+granulocyte,5,1,0.2,7.932
+fibroblast,9,2,0.2222,7.508
+bladder urothelial cell,0,,,7.398
+pancreatic ductal cell,0,,,6.788
+smooth muscle cell,3,1,0.3333,6.705
+hepatocyte,16,5,0.3125,6.059
+endothelial cell,49,13,0.2653,5.971
+non-classical monocyte,2,0,0.0,5.893
+"CD8-positive, alpha-beta T cell",37,9,0.2432,5.376

@@ -1,0 +1,49 @@
+{
+  "analysis": "Thread 4B: TF network complexity vs Procrustes rigidity",
+  "dorothea_levels": [
+    "A",
+    "B",
+    "C"
+  ],
+  "total_tf_target_pairs": 32286,
+  "filtered_tf_target_pairs": 30635,
+  "n_tfs_total": 429,
+  "n_tfs_after_filter": 419,
+  "n_targets_in_ortholog_space": 8457,
+  "n_cell_types": 35,
+  "n_tfs_in_activity_matrix": 296,
+  "human_correlations": {
+    "n_active_tfs": {
+      "spearman_rho": -0.2294,
+      "p_value": 0.185,
+      "significant_at_005": false
+    },
+    "mean_activity": {
+      "spearman_rho": -0.2104,
+      "p_value": 0.2251,
+      "significant_at_005": false
+    },
+    "activity_entropy": {
+      "spearman_rho": -0.1022,
+      "p_value": 0.5589,
+      "significant_at_005": false
+    }
+  },
+  "mouse_correlations": {
+    "n_active_tfs": {
+      "spearman_rho": -0.1147,
+      "p_value": 0.5119,
+      "significant_at_005": false
+    },
+    "mean_activity": {
+      "spearman_rho": -0.0902,
+      "p_value": 0.6064,
+      "significant_at_005": false
+    },
+    "activity_entropy": {
+      "spearman_rho": -0.2336,
+      "p_value": 0.1768,
+      "significant_at_005": false
+    }
+  }
+}

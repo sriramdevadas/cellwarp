@@ -1,0 +1,15 @@
+level,seed,n_types,rho,p_value,description
+0_unharmonized,42,15,-0.13928571428571426,0.6205460876279013,"Original 15 shared types, no restrictions"
+1_ontology_only,42,14,-0.03736263736263736,0.8990930969739669,Exclude T cell (overlaps CD4+/CD8+)
+2_ontology_tissue,42,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue restriction, seed=42"
+2_ontology_tissue,1,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue restriction, seed=1"
+2_ontology_tissue,2,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue restriction, seed=2"
+2_ontology_tissue,3,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue restriction, seed=3"
+2_ontology_tissue,4,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue restriction, seed=4"
+3_full_harmonized,42,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue + count cap, seed=42"
+3_full_harmonized,1,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue + count cap, seed=1"
+3_full_harmonized,2,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue + count cap, seed=2"
+3_full_harmonized,3,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue + count cap, seed=3"
+3_full_harmonized,4,12,-0.04195804195804196,0.8969858708195542,"Ontology + tissue + count cap, seed=4"
+2b_tissue_only,42,13,-0.3626373626373627,0.22331572029248167,"Tissue restriction only (keep T cell, no count cap)"
+1b_count_cap_only,42,12,-0.11188811188811189,0.729194990751066,Ontology + count capping only (no tissue restriction)

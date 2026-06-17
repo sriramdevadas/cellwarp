@@ -1,0 +1,7 @@
+human_type,mouse_type_manual,mouse_type_samap,score_manual,score_top,rank,confirmed
+B cell,B cell,B cell,0.9357087255067708,0.9357087255067708,1,True
+"CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell",0.5910306098174257,0.5910306098174257,1,True
+"CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell",0.5938361012860975,0.5938361012860975,1,True
+endothelial cell,endothelial cell,endothelial cell,0.8705159334199474,0.8705159334199474,1,True
+hepatocyte,hepatocyte,hepatocyte,0.6487988170022476,0.6487988170022476,1,True
+macrophage,macrophage,macrophage,0.8123746669134739,0.8123746669134739,1,True

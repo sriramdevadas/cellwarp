@@ -1,0 +1,321 @@
+{
+  "analysis": "Cell count vs rigidity confound test",
+  "date_run": "2026-03-22",
+  "n": 35,
+  "spearman_rho": 0.0516,
+  "spearman_p": 0.7683,
+  "partial_rho": 0.061,
+  "partial_p": 0.7316,
+  "lineage_covariate": "immune (1) vs non-immune (0)",
+  "n_immune": 18,
+  "n_non_immune": 17,
+  "cell_count_measure": "min(n_human, n_mouse) per type",
+  "cell_count_range": "516\u20132000",
+  "source_files": {
+    "rigidity": "output/phase2/scaled_35types/residuals_ranked.csv",
+    "human_counts": "data/phase2_scaled/human_scaled.h5ad",
+    "mouse_counts": "data/phase2_scaled/mouse_scaled.h5ad"
+  },
+  "immune_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "classical monocyte",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "hematopoietic stem cell",
+    "intermediate monocyte",
+    "macrophage",
+    "mature NK T cell",
+    "monocyte",
+    "myeloid dendritic cell",
+    "myeloid leukocyte",
+    "natural killer cell",
+    "neutrophil",
+    "non-classical monocyte",
+    "plasma cell"
+  ],
+  "per_type_data": [
+    {
+      "cell_type": "stromal cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 16.9846,
+      "immune": false
+    },
+    {
+      "cell_type": "epithelial cell",
+      "min_cells": 764,
+      "n_human": 1675,
+      "n_mouse": 764,
+      "residual_magnitude": 16.2674,
+      "immune": false
+    },
+    {
+      "cell_type": "hematopoietic precursor cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 15.3539,
+      "immune": true
+    },
+    {
+      "cell_type": "hematopoietic stem cell",
+      "min_cells": 858,
+      "n_human": 858,
+      "n_mouse": 2000,
+      "residual_magnitude": 14.9484,
+      "immune": true
+    },
+    {
+      "cell_type": "pancreatic acinar cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 12.8377,
+      "immune": false
+    },
+    {
+      "cell_type": "basal cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 12.7661,
+      "immune": false
+    },
+    {
+      "cell_type": "T cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 11.6692,
+      "immune": true
+    },
+    {
+      "cell_type": "neutrophil",
+      "min_cells": 705,
+      "n_human": 2000,
+      "n_mouse": 705,
+      "residual_magnitude": 11.5979,
+      "immune": true
+    },
+    {
+      "cell_type": "fibroblast of cardiac tissue",
+      "min_cells": 1947,
+      "n_human": 1947,
+      "n_mouse": 2000,
+      "residual_magnitude": 11.5219,
+      "immune": false
+    },
+    {
+      "cell_type": "myeloid leukocyte",
+      "min_cells": 516,
+      "n_human": 1002,
+      "n_mouse": 516,
+      "residual_magnitude": 11.5092,
+      "immune": true
+    },
+    {
+      "cell_type": "mesenchymal stem cell of adipose tissue",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 11.4325,
+      "immune": false
+    },
+    {
+      "cell_type": "plasma cell",
+      "min_cells": 1646,
+      "n_human": 2000,
+      "n_mouse": 1646,
+      "residual_magnitude": 11.0837,
+      "immune": true
+    },
+    {
+      "cell_type": "mesenchymal stem cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 10.3408,
+      "immune": false
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "min_cells": 1721,
+      "n_human": 2000,
+      "n_mouse": 1721,
+      "residual_magnitude": 10.2117,
+      "immune": true
+    },
+    {
+      "cell_type": "classical monocyte",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 9.9286,
+      "immune": true
+    },
+    {
+      "cell_type": "macrophage",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 9.8785,
+      "immune": true
+    },
+    {
+      "cell_type": "B cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 9.8461,
+      "immune": true
+    },
+    {
+      "cell_type": "luminal epithelial cell of mammary gland",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 9.6541,
+      "immune": false
+    },
+    {
+      "cell_type": "large intestine goblet cell",
+      "min_cells": 1557,
+      "n_human": 1557,
+      "n_mouse": 1745,
+      "residual_magnitude": 9.4667,
+      "immune": false
+    },
+    {
+      "cell_type": "enterocyte of epithelium of large intestine",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 9.2973,
+      "immune": false
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "min_cells": 571,
+      "n_human": 571,
+      "n_mouse": 618,
+      "residual_magnitude": 8.8989,
+      "immune": true
+    },
+    {
+      "cell_type": "monocyte",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 8.7224,
+      "immune": true
+    },
+    {
+      "cell_type": "natural killer cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 8.687,
+      "immune": true
+    },
+    {
+      "cell_type": "intermediate monocyte",
+      "min_cells": 1761,
+      "n_human": 2000,
+      "n_mouse": 1761,
+      "residual_magnitude": 8.428,
+      "immune": true
+    },
+    {
+      "cell_type": "mature NK T cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 8.2747,
+      "immune": true
+    },
+    {
+      "cell_type": "adventitial cell",
+      "min_cells": 815,
+      "n_human": 1045,
+      "n_mouse": 815,
+      "residual_magnitude": 8.0803,
+      "immune": false
+    },
+    {
+      "cell_type": "granulocyte",
+      "min_cells": 769,
+      "n_human": 769,
+      "n_mouse": 2000,
+      "residual_magnitude": 7.9325,
+      "immune": true
+    },
+    {
+      "cell_type": "fibroblast",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 7.5079,
+      "immune": false
+    },
+    {
+      "cell_type": "bladder urothelial cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 7.3981,
+      "immune": false
+    },
+    {
+      "cell_type": "pancreatic ductal cell",
+      "min_cells": 651,
+      "n_human": 2000,
+      "n_mouse": 651,
+      "residual_magnitude": 6.7876,
+      "immune": false
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "min_cells": 1704,
+      "n_human": 2000,
+      "n_mouse": 1704,
+      "residual_magnitude": 6.7054,
+      "immune": false
+    },
+    {
+      "cell_type": "hepatocyte",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 6.0586,
+      "immune": false
+    },
+    {
+      "cell_type": "endothelial cell",
+      "min_cells": 2000,
+      "n_human": 2000,
+      "n_mouse": 2000,
+      "residual_magnitude": 5.9713,
+      "immune": false
+    },
+    {
+      "cell_type": "non-classical monocyte",
+      "min_cells": 1159,
+      "n_human": 1284,
+      "n_mouse": 1159,
+      "residual_magnitude": 5.8929,
+      "immune": true
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "min_cells": 1940,
+      "n_human": 2000,
+      "n_mouse": 1940,
+      "residual_magnitude": 5.3762,
+      "immune": true
+    }
+  ]
+}

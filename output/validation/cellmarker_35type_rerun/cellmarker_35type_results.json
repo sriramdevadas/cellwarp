@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "centroid_source": "output/phase2/scaled_35types/centroids_human_35.csv",
+    "n_cell_types": 35,
+    "n_genes": 16959,
+    "cellmarker_source": "data/validation/cellmarker/cellmarker_human_filtered.csv",
+    "comparison_note": "Rerun of issue073 CellMarker validation using 35-type centroids"
+  },
+  "gene_set_comparison": {
+    "overlap_6type_vs_35type_top500": 274,
+    "overlap_pct": 54.8
+  },
+  "human_primary_35type": {
+    "observed_overlap": 34,
+    "expected_overlap": 7.58,
+    "enrichment_ratio": 4.487,
+    "p_value": 2.096811988750795e-13,
+    "n_identity_genes": 500,
+    "n_cellmarker_genes": 257,
+    "n_background_genes": 16959,
+    "overlapping_genes": [
+      "ACTA2",
+      "AIF1",
+      "ALB",
+      "CD163",
+      "CD24",
+      "CD44",
+      "CD63",
+      "CD74",
+      "CD83",
+      "CD9",
+      "CDH1",
+      "CLU",
+      "CPS1",
+      "CXCR4",
+      "DCLK1",
+      "EPCAM",
+      "EZR",
+      "FABP5",
+      "GLUL",
+      "KLRD1",
+      "KRT18",
+      "KRT19",
+      "KRT7",
+      "KRT8",
+      "LGALS3",
+      "LYZ",
+      "PTPRC",
+      "RTN4",
+      "RUNX1",
+      "S100A6",
+      "SLC8A1",
+      "TM4SF1",
+      "TSPO",
+      "VIM"
+    ]
+  },
+  "human_expression_matched_35type": {
+    "universe_size": 2738,
+    "n_cellmarker_in_universe": 56,
+    "n_identity_genes": 500,
+    "observed_overlap": 34,
+    "expected_overlap": 10.23,
+    "enrichment_ratio": 3.325,
+    "p_value": 1.1476529395303218e-12,
+    "n_matched_bg_genes": 2238
+  },
+  "per_cell_type_35type": [
+    {
+      "cell_type": "B cell",
+      "n_loading_genes": 50,
+      "n_cellmarker_markers": 9,
+      "overlap": 4,
+      "enrichment_ratio": 150.75,
+      "p_value": 8.331258718482788e-09,
+      "pass": "PASS",
+      "overlapping_genes": [
+        "CD74",
+        "CD79A",
+        "MS4A1",
+        "PAX5"
+      ]
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "n_loading_genes": 50,
+      "n_cellmarker_markers": 4,
+      "overlap": 0,
+      "enrichment_ratio": 0.0,
+      "p_value": 1.0,
+      "pass": "FAIL",
+      "overlapping_genes": []
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "n_loading_genes": 50,
+      "n_cellmarker_markers": 4,
+      "overlap": 1,
+      "enrichment_ratio": 84.8,
+      "p_value": 0.011742130267792564,
+      "pass": "PASS",
+      "overlapping_genes": [
+        "CD8A"
+      ]
+    },
+    {
+      "cell_type": "endothelial cell",
+      "n_loading_genes": 50,
+      "n_cellmarker_markers": 13,
+      "overlap": 4,
+      "enrichment_ratio": 104.36,
+      "p_value": 4.686758588903521e-08,
+      "pass": "PASS",
+      "overlapping_genes": [
+        "EMCN",
+        "ENG",
+        "PECAM1",
+        "VWF"
+      ]
+    },
+    {
+      "cell_type": "hepatocyte",
+      "n_loading_genes": 50,
+      "n_cellmarker_markers": 5,
+      "overlap": 2,
+      "enrichment_ratio": 135.67,
+      "p_value": 8.470921521565636e-05,
+      "pass": "PASS",
+      "overlapping_genes": [
+        "ALB",
+        "CPS1"
+      ]
+    },
+    {
+      "cell_type": "macrophage",
+      "n_loading_genes": 50,
+      "n_cellmarker_markers": 6,
+      "overlap": 2,
+      "enrichment_ratio": 113.06,
+      "p_value": 0.00012682417566571748,
+      "pass": "PASS",
+      "overlapping_genes": [
+        "CD14",
+        "CD163"
+      ]
+    }
+  ],
+  "comparison_with_original": {
+    "original_global_enrichment": 4.355,
+    "original_global_p": 1.12e-12,
+    "original_per_type_pass": "6/6",
+    "original_expression_matched_enrichment": 2.857,
+    "original_expression_matched_p": 1.44e-10,
+    "rerun_global_enrichment": 4.487,
+    "rerun_global_p": 2.096811988750795e-13,
+    "rerun_per_type_pass": "5/6",
+    "rerun_expression_matched_enrichment": 3.325,
+    "rerun_expression_matched_p": 1.1476529395303218e-12
+  },
+  "global_enrichment": {
+    "enrichment": 4.487,
+    "p_value": 2.096811988750795e-13,
+    "observed": 34,
+    "expected": 7.58
+  },
+  "expression_matched": {
+    "enrichment": 3.325,
+    "p_value": 1.1476529395303218e-12,
+    "observed": 34
+  },
+  "per_type_pass": "5/6"
+}

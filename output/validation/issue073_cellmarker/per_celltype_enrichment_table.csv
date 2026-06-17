@@ -1,0 +1,7 @@
+cell_type,n_loading_genes,n_cellmarker_markers,overlap,enrichment_ratio,p_value,pass
+B cell,20,34,1,94.21,0.010567624077835168,PASS
+"CD4-positive, alpha-beta T cell",20,40,0,0.0,1.0,FAIL
+"CD8-positive, alpha-beta T cell",20,45,0,0.0,1.0,FAIL
+endothelial cell,20,49,0,0.0,1.0,FAIL
+hepatocyte,20,16,2,339.14,1.318829823751013e-05,PASS
+macrophage,20,26,1,141.31,0.007056927009314289,PASS

@@ -1,0 +1,18 @@
+{
+  "test": "Sensitivity Gate \u2014 Fractal Geometry Test",
+  "date": "2026-03-16",
+  "preregistration": "docs/preregistration_dilirank_hepatocyte_2026-03-16.md",
+  "l1000_landmark_genes_total": 978,
+  "landmark_genes_in_ortholog_space": 908,
+  "landmark_genes_in_centroids": 907,
+  "full_space_genes": 16959,
+  "gene_space_reduction_pct": 5.3,
+  "procrustes_distance_landmark": 18.58956,
+  "procrustes_p_value_landmark": 0.0001,
+  "spearman_rho": 0.8515,
+  "spearman_p_value": 8.92e-11,
+  "threshold": 0.6,
+  "result": "PASS",
+  "n_cell_types": 35,
+  "pca_components_landmark": 30
+}

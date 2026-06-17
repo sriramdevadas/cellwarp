@@ -1,0 +1,196 @@
+{
+  "diagnostic": "Sun2023 10x replication \u2014 T1-A independent atlas validation",
+  "date": "2026-03-15",
+  "dataset": {
+    "name": "Sun et al. 2023 (Innovation, CAS Beijing)",
+    "protocol": "10x Chromium 3' v3",
+    "condition": "YC (young sedentary control, 2-month C57BL/6J male)",
+    "tissues_loaded": [
+      "YC-Liver",
+      "YC-Spleen",
+      "YC-BM",
+      "YC-Lung",
+      "YC-Kidney",
+      "YC-Blood",
+      "YC-Artery",
+      "YC-Intestine"
+    ],
+    "n_tissues": 8,
+    "total_cells_post_qc": 52754,
+    "n_genes": 16959,
+    "gene_overlap_with_orthologs": 15676,
+    "zero_fill_rate": 0.07588890854413585,
+    "access_method": "OMIX002605 via HTTPS (cncb.ac.cn), .tar.gz Cell Ranger outputs"
+  },
+  "comparison_a": {
+    "name": "Sun2023 YC mouse vs Tabula Sapiens human",
+    "n_types": 6,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "endothelial cell",
+      "hepatocyte",
+      "macrophage"
+    ],
+    "p_value": 0.011898810118988102,
+    "distance": 29.387819875905375,
+    "obs_null_ratio": 0.730900854531702,
+    "scaling": 1.1497239283698695,
+    "null_median": 40.207669335308886,
+    "pca_components": 7,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 2.821306608549474
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 0.9735839460320694
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 2.050681997433904
+      },
+      "endothelial cell": {
+        "magnitude": 19.246530201144694
+      },
+      "hepatocyte": {
+        "magnitude": 21.482859697768642
+      },
+      "macrophage": {
+        "magnitude": 4.311477490032392
+      }
+    }
+  },
+  "comparison_b": {
+    "name": "Tabula mouse vs Tabula human (same type set)",
+    "n_types": 6,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "endothelial cell",
+      "hepatocyte",
+      "macrophage"
+    ],
+    "p_value": 0.0022997700229977,
+    "distance": 12.427336431363965,
+    "obs_null_ratio": 0.3165590104695723,
+    "scaling": 1.0700846782970308,
+    "null_median": 39.257566584282976,
+    "pca_components": 7,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 6.076944297954207
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 3.7924126501305593
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 0.4258115864891161
+      },
+      "endothelial cell": {
+        "magnitude": 2.4883757362094547
+      },
+      "hepatocyte": {
+        "magnitude": 1.7252650237222826
+      },
+      "macrophage": {
+        "magnitude": 9.683861644776522
+      }
+    }
+  },
+  "rigidity_ranking": {
+    "rho": -0.3142857142857143,
+    "p_value": 0.5440932944606415,
+    "n_matched_types": 6,
+    "matched_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "endothelial cell",
+      "hepatocyte",
+      "macrophage"
+    ]
+  },
+  "interpretation": {
+    "verdict": "PARTIAL",
+    "detail": "obs/null < 0.80 AND p < 0.05 BUT rigidity \u03c1 \u2264 0.50. Geometry replicates, ranking unstable. Flag to advisor."
+  },
+  "cell_count_audit": [
+    {
+      "cell_type": "B cell",
+      "n_cells_YC": 16271,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "n_cells_YC": 2036,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "n_cells_YC": 4685,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "endothelial cell",
+      "n_cells_YC": 6614,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "hepatocyte",
+      "n_cells_YC": 1417,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "macrophage",
+      "n_cells_YC": 2050,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "monocyte",
+      "n_cells_YC": 2686,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "natural killer cell",
+      "n_cells_YC": 1015,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "neutrophil",
+      "n_cells_YC": 0,
+      "status": "FAIL"
+    },
+    {
+      "cell_type": "epithelial cell",
+      "n_cells_YC": 1520,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "fibroblast",
+      "n_cells_YC": 2754,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "n_cells_YC": 385,
+      "status": "BORDERLINE"
+    },
+    {
+      "cell_type": "plasma cell",
+      "n_cells_YC": 1197,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "n_cells_YC": 1448,
+      "status": "PASS"
+    },
+    {
+      "cell_type": "granulocyte",
+      "n_cells_YC": 8676,
+      "status": "PASS"
+    }
+  ],
+  "random_seed": 42
+}

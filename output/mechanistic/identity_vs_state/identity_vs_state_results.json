@@ -1,0 +1,378 @@
+{
+  "activation_genes": {
+    "n_hallmark_sets": 5,
+    "sets_used": [
+      "Interferon Alpha Response",
+      "Interferon Gamma Response",
+      "TNF-alpha Signaling via NF-kB",
+      "Inflammatory Response",
+      "IL-6/JAK/STAT3 Signaling"
+    ],
+    "n_raw": 563,
+    "n_mapped": 510,
+    "n_total_genes": 17180
+  },
+  "identity_genes": {
+    "n_identity": 500,
+    "method": "top 500 genes by variance across cell type centroids",
+    "overlap_with_activation": 70,
+    "examples": [
+      "HLA-DRA",
+      "CD74",
+      "JCHAIN",
+      "IGKC",
+      "LYZ",
+      "TYROBP",
+      "SRGN",
+      "CCL5",
+      "MT-CO1",
+      "S100A8",
+      "MT-CO3",
+      "TFF3",
+      "S100A4",
+      "S100A6",
+      "FABP1",
+      "VIM",
+      "FCER1G",
+      "RPS18",
+      "FXYD3",
+      "MT-ND4"
+    ]
+  },
+  "activation_enrichment": {
+    "cancer": {
+      "B cell": {
+        "mean_target": 0.03164807132028393,
+        "mean_all": 0.012278968847258367,
+        "enrichment_ratio": 2.5774209311843213
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "mean_target": 0.0418452852145341,
+        "mean_all": 0.016773679046361123,
+        "enrichment_ratio": 2.494699290410711
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "mean_target": 0.03288520114654047,
+        "mean_all": 0.012712525129646662,
+        "enrichment_ratio": 2.5868347013017465
+      },
+      "T cell": {
+        "mean_target": 0.0219283945788017,
+        "mean_all": 0.007945570957155517,
+        "enrichment_ratio": 2.7598261593842692
+      },
+      "endothelial cell": {
+        "mean_target": 0.016179353787983144,
+        "mean_all": 0.007007972261980335,
+        "enrichment_ratio": 2.3087068816980634
+      },
+      "enterocyte of epithelium of large intestine": {
+        "mean_target": 0.030962777292587434,
+        "mean_all": 0.012894061872496646,
+        "enrichment_ratio": 2.401320669837315
+      },
+      "epithelial cell": {
+        "mean_target": 0.05095779250137877,
+        "mean_all": 0.027456807650000296,
+        "enrichment_ratio": 1.855925610542645
+      },
+      "fibroblast": {
+        "mean_target": 0.01851746341030841,
+        "mean_all": 0.007040513004219661,
+        "enrichment_ratio": 2.6301298498007393
+      },
+      "large intestine goblet cell": {
+        "mean_target": 0.03018566811420155,
+        "mean_all": 0.015940901201236635,
+        "enrichment_ratio": 1.8935985947808183
+      },
+      "macrophage": {
+        "mean_target": 0.035400147007912955,
+        "mean_all": 0.011132908393431918,
+        "enrichment_ratio": 3.179775289339305
+      },
+      "mast cell": {
+        "mean_target": 0.027911364127127778,
+        "mean_all": 0.009373366665709542,
+        "enrichment_ratio": 2.9777309607694677
+      },
+      "monocyte": {
+        "mean_target": 0.025511651850694296,
+        "mean_all": 0.01014115912272562,
+        "enrichment_ratio": 2.515654427857708
+      },
+      "myeloid dendritic cell": {
+        "mean_target": 0.03140953034247704,
+        "mean_all": 0.010032725319389145,
+        "enrichment_ratio": 3.1307076933298768
+      },
+      "plasma cell": {
+        "mean_target": 0.02022857040364644,
+        "mean_all": 0.009413240001827269,
+        "enrichment_ratio": 2.1489487572525223
+      }
+    },
+    "covid": {
+      "B cell": {
+        "mean_target": 0.06332178398658739,
+        "mean_all": 0.023850886134251275,
+        "enrichment_ratio": 2.6549027834925423
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "mean_target": 0.07276386799081193,
+        "mean_all": 0.036108988917136986,
+        "enrichment_ratio": 2.0151178466334425
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "mean_target": 0.08412000623211743,
+        "mean_all": 0.03238222751588149,
+        "enrichment_ratio": 2.597721425768556
+      },
+      "basal cell": {
+        "mean_target": 0.053833076944761915,
+        "mean_all": 0.024024221482101017,
+        "enrichment_ratio": 2.2407834103956152
+      },
+      "endothelial cell": {
+        "mean_target": 0.06741547266653275,
+        "mean_all": 0.032364930198951126,
+        "enrichment_ratio": 2.082979084216209
+      },
+      "epithelial cell": {
+        "mean_target": 0.09377051581170012,
+        "mean_all": 0.06848480241683737,
+        "enrichment_ratio": 1.3692164174024999
+      },
+      "fibroblast": {
+        "mean_target": 0.05421278810408573,
+        "mean_all": 0.021283949563878638,
+        "enrichment_ratio": 2.547120680838823
+      },
+      "hematopoietic stem cell": {
+        "mean_target": 0.04272937852807811,
+        "mean_all": 0.018777931155226097,
+        "enrichment_ratio": 2.2755104476025343
+      },
+      "macrophage": {
+        "mean_target": 0.09722243938608716,
+        "mean_all": 0.03596783504246502,
+        "enrichment_ratio": 2.703038402820258
+      },
+      "monocyte": {
+        "mean_target": 0.08956186236425868,
+        "mean_all": 0.027787535918030553,
+        "enrichment_ratio": 3.2230947943154797
+      },
+      "myeloid dendritic cell": {
+        "mean_target": 0.07763273057638449,
+        "mean_all": 0.03663432887223958,
+        "enrichment_ratio": 2.1191252294296103
+      },
+      "natural killer cell": {
+        "mean_target": 0.04334988972746079,
+        "mean_all": 0.019637876034021298,
+        "enrichment_ratio": 2.2074632537836587
+      },
+      "neutrophil": {
+        "mean_target": 0.04884755224909486,
+        "mean_all": 0.0202706055537573,
+        "enrichment_ratio": 2.409772718410014
+      },
+      "plasma cell": {
+        "mean_target": 0.04707101349599038,
+        "mean_all": 0.02332068637117264,
+        "enrichment_ratio": 2.0184231607426524
+      },
+      "smooth muscle cell": {
+        "mean_target": 0.04305158997654587,
+        "mean_all": 0.02326852681571441,
+        "enrichment_ratio": 1.8502069476728094
+      }
+    },
+    "mann_whitney_U": 138.0,
+    "mann_whitney_p": 0.15606926343164354,
+    "cancer_median": 2.5465376795210144,
+    "covid_median": 2.2407834103956152
+  },
+  "identity_enrichment": {
+    "cancer": {
+      "B cell": 9.171698253018619,
+      "CD4-positive, alpha-beta T cell": 7.8256350318749295,
+      "CD8-positive, alpha-beta T cell": 6.254215068474619,
+      "T cell": 6.271281296291244,
+      "endothelial cell": 7.066130083877344,
+      "enterocyte of epithelium of large intestine": 7.987086595821671,
+      "epithelial cell": 8.512962550613716,
+      "fibroblast": 9.202658230707549,
+      "large intestine goblet cell": 9.025369716452033,
+      "macrophage": 8.509965021212382,
+      "mast cell": 7.9033995399292705,
+      "monocyte": 8.170257460122293,
+      "myeloid dendritic cell": 7.473813985629397,
+      "plasma cell": 8.54904386471698
+    },
+    "covid": {
+      "B cell": 6.928926250407359,
+      "CD4-positive, alpha-beta T cell": 6.908083378414293,
+      "CD8-positive, alpha-beta T cell": 7.019268389109938,
+      "basal cell": 6.103070404433919,
+      "endothelial cell": 6.859105116491597,
+      "epithelial cell": 5.326148501557647,
+      "fibroblast": 6.574924331962804,
+      "hematopoietic stem cell": 6.132457133140051,
+      "macrophage": 6.663989249182243,
+      "monocyte": 7.531688122244243,
+      "myeloid dendritic cell": 6.439001739289041,
+      "natural killer cell": 5.654293880234966,
+      "neutrophil": 7.551889021063546,
+      "plasma cell": 6.986533758149576,
+      "smooth muscle cell": 6.153881215290457
+    },
+    "mann_whitney_U": 186.0,
+    "mann_whitney_p": 0.00044256408225805226,
+    "cancer_median": 8.078672027971983,
+    "covid_median": 6.663989249182243
+  },
+  "cross_axis_spearman": {
+    "cancer_original": {
+      "rho": 0.40659340659340654,
+      "p": 0.1679783461478964
+    },
+    "cancer_residual": {
+      "rho": 0.40659340659340654,
+      "p": 0.1679783461478964
+    },
+    "covid_original": {
+      "rho": 0.06071428571428571,
+      "p": 0.8298120954425187
+    },
+    "covid_residual": {
+      "rho": 0.024999999999999998,
+      "p": 0.9295289708192378
+    }
+  },
+  "deformation_magnitude": {
+    "cancer_mean_reduction_pct": 1.5270700995417013,
+    "covid_mean_reduction_pct": 1.602593660541718,
+    "cancer_per_type": {
+      "B cell": {
+        "original": 4.037717521721266,
+        "residual": 3.975887288342815
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "original": 5.145334646870838,
+        "residual": 5.062670329428123
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "original": 3.990862897743261,
+        "residual": 3.92284942958896
+      },
+      "T cell": {
+        "original": 2.460788353780393,
+        "residual": 2.4100874703706436
+      },
+      "endothelial cell": {
+        "original": 2.066454464353114,
+        "residual": 2.0369611309416147
+      },
+      "enterocyte of epithelium of large intestine": {
+        "original": 4.851945355842654,
+        "residual": 4.804233271636833
+      },
+      "epithelial cell": {
+        "original": 10.070442118907417,
+        "residual": 10.019353268235676
+      },
+      "fibroblast": {
+        "original": 2.2774372434774466,
+        "residual": 2.2397797966815407
+      },
+      "large intestine goblet cell": {
+        "original": 5.512386684528216,
+        "residual": 5.479090744642859
+      },
+      "macrophage": {
+        "original": 3.8676196263770817,
+        "residual": 3.778619525721359
+      },
+      "mast cell": {
+        "original": 3.2070186631216044,
+        "residual": 3.141696177647948
+      },
+      "monocyte": {
+        "original": 3.095745082310166,
+        "residual": 3.0441456325153267
+      },
+      "myeloid dendritic cell": {
+        "original": 3.3856944821318953,
+        "residual": 3.306402030195876
+      },
+      "plasma cell": {
+        "original": 3.0965347946986657,
+        "residual": 3.0669856136813927
+      }
+    },
+    "covid_per_type": {
+      "B cell": {
+        "original": 6.911415638547405,
+        "residual": 6.765383072475991
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "original": 9.879010673928676,
+        "residual": 9.765650886716807
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "original": 9.214621045352834,
+        "residual": 9.02261428823512
+      },
+      "basal cell": {
+        "original": 6.27686782025191,
+        "residual": 6.170933290540831
+      },
+      "endothelial cell": {
+        "original": 9.08149351613915,
+        "residual": 8.973008092514622
+      },
+      "epithelial cell": {
+        "original": 20.154881709989592,
+        "residual": 20.10041459551625
+      },
+      "fibroblast": {
+        "original": 6.094330784992751,
+        "residual": 5.976063295185209
+      },
+      "hematopoietic stem cell": {
+        "original": 5.202825848354206,
+        "residual": 5.121578531771765
+      },
+      "macrophage": {
+        "original": 10.526822054825322,
+        "residual": 10.298312868018009
+      },
+      "monocyte": {
+        "original": 8.415452506800083,
+        "residual": 8.153698618799368
+      },
+      "myeloid dendritic cell": {
+        "original": 9.636266602225117,
+        "residual": 9.49729736072119
+      },
+      "natural killer cell": {
+        "original": 5.01770585673799,
+        "residual": 4.932706552710324
+      },
+      "neutrophil": {
+        "original": 6.1237461572071,
+        "residual": 6.0306761066207555
+      },
+      "plasma cell": {
+        "original": 6.321695119670881,
+        "residual": 6.247645428048129
+      },
+      "smooth muscle cell": {
+        "original": 6.250869514865839,
+        "residual": 6.192635742659402
+      }
+    }
+  }
+}

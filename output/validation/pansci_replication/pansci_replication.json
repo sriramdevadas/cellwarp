@@ -1,0 +1,248 @@
+{
+  "diagnostic": "PanSci replication \u2014 rigidity ranking validation (T1-A)",
+  "date": "2026-03-15",
+  "dataset": {
+    "name": "PanSci (Cao lab, Science 2025)",
+    "accession": "GEO GSE247719",
+    "protocol": "EasySci snRNA-seq (combinatorial indexing)",
+    "condition": "WT, 06_months (young adult)",
+    "tissues_loaded": [
+      "lung",
+      "liver",
+      "colon"
+    ],
+    "n_tissues": 3,
+    "median_genes_per_cell": 502.0,
+    "zero_fill_rate": 0.031900465829353145,
+    "endothelial_tissue": "lung"
+  },
+  "procrustes": {
+    "n_types": 16,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hepatocyte",
+      "large intestine goblet cell",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "myeloid leukocyte",
+      "plasma cell",
+      "smooth muscle cell"
+    ],
+    "p_value": 9.999000099990002e-05,
+    "distance": 38.32270785064544,
+    "obs_null_ratio": 0.5518603574068689,
+    "scaling": 1.7201550484429917,
+    "null_median": 69.44276271395834,
+    "pca_components": 17,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 8.62350077679567
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 3.8669963797344318
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 4.968464897433978
+      },
+      "T cell": {
+        "magnitude": 5.551132918780452
+      },
+      "endothelial cell": {
+        "magnitude": 6.223893458227744
+      },
+      "epithelial cell": {
+        "magnitude": 12.007298019037552
+      },
+      "fibroblast": {
+        "magnitude": 14.052042085896906
+      },
+      "granulocyte": {
+        "magnitude": 17.354719835196942
+      },
+      "hepatocyte": {
+        "magnitude": 4.2170879307212275
+      },
+      "large intestine goblet cell": {
+        "magnitude": 8.010279431816203
+      },
+      "macrophage": {
+        "magnitude": 11.825373588115824
+      },
+      "monocyte": {
+        "magnitude": 7.924947139601907
+      },
+      "myeloid dendritic cell": {
+        "magnitude": 5.661268685492085
+      },
+      "myeloid leukocyte": {
+        "magnitude": 13.339465872432667
+      },
+      "plasma cell": {
+        "magnitude": 8.499469415474387
+      },
+      "smooth muscle cell": {
+        "magnitude": 8.684906407577353
+      }
+    }
+  },
+  "rigidity_ranking": {
+    "rho": 0.19411764705882353,
+    "p_value": 0.47128972836210753,
+    "n_matched_types": 16,
+    "matched_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hepatocyte",
+      "large intestine goblet cell",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "myeloid leukocyte",
+      "plasma cell",
+      "smooth muscle cell"
+    ],
+    "verdict": "FAIL",
+    "detail": "n=16 \u2265 15, but \u03c1=0.194 < 0.50, p=0.4713. Third consecutive ranking null. Flag to advisor."
+  },
+  "protocol_sensitivity": {
+    "zerofill_vs_residual_rho": 0.3588235294117647,
+    "zerofill_vs_residual_p": 0.17230386289263253,
+    "per_type_zero_fill": {
+      "B cell": 0.9777085913084499,
+      "CD4-positive, alpha-beta T cell": 0.9687931210086063,
+      "CD8-positive, alpha-beta T cell": 0.9658815576828464,
+      "T cell": 0.9782211411836391,
+      "endothelial cell": 0.976149153841618,
+      "epithelial cell": 0.9636116221475323,
+      "fibroblast": 0.9667712718910313,
+      "granulocyte": 0.9811202311457043,
+      "hepatocyte": 0.9613165280971756,
+      "large intestine goblet cell": 0.9635234388820095,
+      "macrophage": 0.9646894864083968,
+      "monocyte": 0.9731511881596793,
+      "myeloid dendritic cell": 0.962704005473216,
+      "myeloid leukocyte": 0.9789934548027597,
+      "plasma cell": 0.9786696441026658,
+      "smooth muscle cell": 0.968954891208208
+    }
+  },
+  "cell_count_audit": [
+    {
+      "cell_type": "hepatocyte",
+      "n_cells": 292135,
+      "status": "PASS",
+      "tissues": "liver(292,135)"
+    },
+    {
+      "cell_type": "epithelial cell",
+      "n_cells": 205149,
+      "status": "PASS",
+      "tissues": "lung(123,240), colon(81,909)"
+    },
+    {
+      "cell_type": "endothelial cell",
+      "n_cells": 98013,
+      "status": "PASS",
+      "tissues": "lung(75,215), liver(22,798)"
+    },
+    {
+      "cell_type": "B cell",
+      "n_cells": 59604,
+      "status": "PASS",
+      "tissues": "lung(44,756), colon(11,073), liver(3,775)"
+    },
+    {
+      "cell_type": "T cell",
+      "n_cells": 38652,
+      "status": "PASS",
+      "tissues": "lung(30,155), colon(4,769), liver(3,728)"
+    },
+    {
+      "cell_type": "fibroblast",
+      "n_cells": 38345,
+      "status": "PASS",
+      "tissues": "colon(20,272), lung(18,073)"
+    },
+    {
+      "cell_type": "large intestine goblet cell",
+      "n_cells": 37359,
+      "status": "PASS",
+      "tissues": "colon(37,359)"
+    },
+    {
+      "cell_type": "macrophage",
+      "n_cells": 30784,
+      "status": "PASS",
+      "tissues": "lung(30,784)"
+    },
+    {
+      "cell_type": "myeloid leukocyte",
+      "n_cells": 21661,
+      "status": "PASS",
+      "tissues": "liver(15,611), colon(6,050)"
+    },
+    {
+      "cell_type": "monocyte",
+      "n_cells": 18377,
+      "status": "PASS",
+      "tissues": "lung(18,377)"
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "n_cells": 15930,
+      "status": "PASS",
+      "tissues": "lung(10,886), colon(5,044)"
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "n_cells": 7756,
+      "status": "PASS",
+      "tissues": "lung(7,493), colon(263)"
+    },
+    {
+      "cell_type": "plasma cell",
+      "n_cells": 3791,
+      "status": "PASS",
+      "tissues": "colon(3,290), lung(501)"
+    },
+    {
+      "cell_type": "granulocyte",
+      "n_cells": 3116,
+      "status": "PASS",
+      "tissues": "lung(3,116)"
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "n_cells": 1617,
+      "status": "PASS",
+      "tissues": "lung(1,341), colon(222), liver(54)"
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "n_cells": 1316,
+      "status": "PASS",
+      "tissues": "lung(1,143), colon(151), liver(22)"
+    },
+    {
+      "cell_type": "basal cell",
+      "n_cells": 332,
+      "status": "BORDERLINE",
+      "tissues": "lung(332)"
+    }
+  ],
+  "random_seed": 42
+}

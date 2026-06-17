@@ -1,0 +1,44 @@
+{
+  "verdict": "RIBOSOMAL CONFOUND NEGATIVE \u2014 EXPRESSION LEVEL CONFOUND POSITIVE. Excluding ribosomal genes barely changes the correlation (rho -0.234 \u2192 -0.229), so the anticorrelation is NOT driven by ribosomal proteins specifically. However, expression-level normalization REVERSES the sign (rho \u2192 +0.228). This means the raw anticorrelation reflects a scale confound: highly conserved housekeeping genes are highly expressed, and highly expressed genes have larger absolute Procrustes loadings. After normalizing for expression level, conserved genes show LESS proportional expression divergence \u2014 the intuitive direction. The original finding (rho = -0.234) should be reported with this caveat.",
+  "results": {
+    "all_genes": {
+      "n": 16324,
+      "rho": -0.2336,
+      "p": 3.033019653807865e-201,
+      "note": "Original (all 16,324 genes)"
+    },
+    "excl_ribosomal": {
+      "n": 16173,
+      "rho": -0.2285,
+      "p": 1.5672596951523512e-190,
+      "note": "Excluded 151 ribosomal genes"
+    },
+    "excl_ribo_hist_hsp": {
+      "n": 16124,
+      "rho": -0.2287,
+      "p": 2.224735783981034e-190,
+      "note": "Excluded 200 genes (ribo+hist+HSP)"
+    },
+    "expr_normalized": {
+      "n": 16245,
+      "rho": 0.2278,
+      "p": 2.915993045968857e-190,
+      "note": "divergence / mean_expression_level"
+    },
+    "expr_normalized_excl_ribo": {
+      "n": 16094,
+      "rho": 0.2262,
+      "p": 7.496340688311941e-186,
+      "note": "Normalized + excluded ribosomal"
+    }
+  },
+  "ribosomal_stats": {
+    "n_ribosomal": 151,
+    "n_histone": 23,
+    "n_hsp": 26,
+    "ribo_mean_identity": 88.05,
+    "nonribo_mean_identity": 84.2,
+    "ribo_mean_expr_div": 0.1183,
+    "nonribo_mean_expr_div": 0.0388
+  }
+}

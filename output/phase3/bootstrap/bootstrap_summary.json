@@ -1,0 +1,25 @@
+{
+  "n_bootstrap": 100,
+  "subsample_fraction": 0.5,
+  "n_permutations_per_iteration": 1000,
+  "distances": {
+    "mean": 61.18414176827528,
+    "std": 0.2426846629160817,
+    "cv": 0.003966463464261856,
+    "median": 61.187205616470536,
+    "min": 60.600111749353935,
+    "max": 61.754055008966986
+  },
+  "p_values": {
+    "mean": 0.000999000999000999,
+    "fraction_significant_001": 1.0
+  },
+  "pca_components": {
+    "mean": 33.0
+  },
+  "gate_criterion": {
+    "threshold": 0.2,
+    "cv": 0.003966463464261856,
+    "pass": true
+  }
+}

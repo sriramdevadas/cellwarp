@@ -1,0 +1,345 @@
+compound_name,dili_class,matched_name,drug_name,deformation,deformation_std,n_replicates
+Acamprosate calcium,less-concern,acamprosate,acamprosate,13233.481,2116.1779278494637,3
+Acarbose,most-concern,acarbose,acarbose,13358.066,2060.178320919452,6
+Acitretin,most-concern,acitretin,acitretin,15383.087,4719.904626103878,3
+Acyclovir,less-concern,acyclovir,acyclovir,10592.101,1594.5169687371026,3
+Afatinib dimaleate,ambiguous,afatinib,afatinib,11365.097,224.88316983120646,3
+Alaproclate,most-concern,alaproclate,alaproclate,14285.781,4836.173249397948,5
+Albendazole,most-concern,albendazole,albendazole,12449.735,3528.385368892778,5
+Alfuzosin hydrochloride,less-concern,alfuzosin,alfuzosin,14185.208,3839.568094510941,5
+Altretamine,ambiguous,altretamine,altretamine,15499.653,3092.9734802837693,6
+Amantadine hydrochloride,ambiguous,amantadine,amantadine,15169.08,6493.070856836379,2
+Amiloride hydrochloride,less-concern,amiloride,amiloride,13580.883,3183.878746577807,3
+Amiodarone hydrochloride,most-concern,amiodarone,amiodarone,13214.987,1835.445284538193,9
+Amitriptyline hydrochloride,less-concern,amitriptyline,amitriptyline,11186.402,1636.4170346232056,2
+Amlodipine besylate,less-concern,amlodipine,amlodipine,14733.325,4863.84562376725,5
+Amoxapine,ambiguous,amoxapine,amoxapine,13502.882,4942.77547932998,6
+Anagrelide hydrochloride,ambiguous,anagrelide,anagrelide,13918.231,5793.121235471822,5
+Anastrozole,less-concern,anastrozole,anastrozole,10758.984,1360.7549550319407,3
+Aprepitant,ambiguous,aprepitant,aprepitant,16667.518,11267.413310513273,3
+Artesunate,ambiguous,artesunate,artesunate,13512.989,3652.664121336647,3
+Atomoxetine hydrochloride,most-concern,atomoxetine,atomoxetine,17337.748,8891.387666263652,3
+Atorvastatin calcium,most-concern,atorvastatin,atorvastatin,17680.955,4091.9657025210254,9
+Auranofin,less-concern,auranofin,auranofin,20026.826,2674.0769873451877,3
+Axitinib,ambiguous,axitinib,axitinib,11131.617,155.2092544429335,3
+Azithromycin,less-concern,azithromycin,azithromycin,10927.776,906.6873931444693,3
+Balsalazide disodium,ambiguous,balsalazide,balsalazide,14880.082,2800.35280035429,3
+Belinostat,ambiguous,belinostat,belinostat,13291.683,847.3381428507663,3
+Benazepril hydrochloride,less-concern,benazepril,benazepril,15726.741,4682.778280751294,6
+Bendroflumethiazide,less-concern,bendroflumethiazide,bendroflumethiazide,15621.583,5586.231255662119,6
+Benzbromarone,most-concern,benzbromarone,benzbromarone,12281.763,1659.7811993270757,3
+Benzonatate,less-concern,benzonatate,benzonatate,20956.795,5701.326102408291,5
+Betaxolol hydrochloride,ambiguous,betaxolol,betaxolol,11219.875,2103.3395296189037,2
+Bicalutamide,most-concern,bicalutamide,bicalutamide,13069.705,3154.858412756784,2
+Biperiden hydrochloride,no-concern,biperiden,biperiden,13461.771,3532.8482807169216,7
+Bisacodyl,no-concern,bisacodyl,bisacodyl,12900.181,1339.3532099475335,5
+Bisoprolol fumarate,ambiguous,bisoprolol,bisoprolol,12776.494,5714.713389093534,4
+Bosutinib monohydrate,most-concern,bosutinib,bosutinib,12180.966,3350.168655092478,3
+Bromocriptine mesylate,less-concern,bromocriptine,bromocriptine,14012.859,5290.312667511809,8
+Brompheniramine maleate,no-concern,brompheniramine,brompheniramine,12483.891,3060.8375179192703,5
+Budesonide,no-concern,budesonide,budesonide,15449.589,3668.295435157774,6
+Bumetanide,ambiguous,bumetanide,bumetanide,18767.691,9508.232176668962,2
+Bupropion hydrochloride,less-concern,bupropion,bupropion,15626.822,4823.207141244234,5
+Buspirone hydrochloride,ambiguous,buspirone,buspirone,14668.552,4022.7948038154627,6
+Cabergoline,no-concern,cabergoline,cabergoline,15220.825,5713.742127671903,6
+Caffeine citrate,no-concern,caffeine,caffeine,15752.529,5405.337528415394,5
+Calcitriol,no-concern,calcitriol,calcitriol,11992.527,5988.073878658171,3
+Capecitabine,less-concern,capecitabine,capecitabine,9511.839,898.4987751068433,3
+Carbamazepine,most-concern,carbamazepine,carbamazepine,14601.315,4974.552613414853,5
+Carbidopa,ambiguous,carbidopa,carbidopa,9643.879,1011.6809453170785,3
+Carbinoxamine maleate,no-concern,carbinoxamine,carbinoxamine,12544.648,3408.170323829191,5
+Carvedilol,less-concern,carvedilol,carvedilol,14495.675,4088.07122355458,5
+Cefaclor,less-concern,cefaclor,cefaclor,13103.828,926.1555860003696,3
+Cefdinir,less-concern,cefdinir,cefdinir,13722.383,1384.343740986548,3
+Cefixime,less-concern,cefixime,cefixime,17750.15,3354.7757704575715,6
+Cefotaxime sodium,less-concern,cefotaxime,cefotaxime,11473.082,1541.0329726045054,3
+Celecoxib,less-concern,celecoxib,celecoxib,12281.414,3351.6467244655382,8
+Cetirizine hydrochloride,less-concern,cetirizine,cetirizine,10874.972,1242.5734510122713,5
+Chlorambucil,less-concern,chlorambucil,chlorambucil,14202.6455,4020.3134727160527,5
+Chlordiazepoxide hydrochloride,less-concern,chlordiazepoxide,chlordiazepoxide,15638.859,1436.295820712786,3
+Chloroquine phosphate,less-concern,chloroquine,chloroquine,14476.556,5384.508536798757,9
+Chlorpromazine hydrochloride,less-concern,chlorpromazine,chlorpromazine,13026.34,2692.0167073751018,9
+Chlorthalidone,ambiguous,chlorthalidone,chlorthalidone,11993.967,2861.930757510059,9
+Cilostazol,ambiguous,cilostazol,cilostazol,16808.926,5023.337745121248,5
+Cimetidine,less-concern,cimetidine,cimetidine,12253.968,1464.5828596210692,8
+Cinacalcet hydrochloride,no-concern,cinacalcet,cinacalcet,10380.441,1292.5959797395212,3
+Cladribine,less-concern,cladribine,cladribine,13038.609,2758.0635551775017,3
+Clemastine fumarate,no-concern,clemastine,clemastine,13469.417,3831.233711964541,6
+Clofarabine,ambiguous,clofarabine,clofarabine,16368.039,5124.901196343581,3
+Clofibrate,less-concern,clofibrate,clofibrate,12415.014,3921.883347854399,5
+Clomipramine hydrochloride,most-concern,clomipramine,clomipramine,11552.474,2774.9203277258516,3
+Clonidine hydrochloride,ambiguous,clonidine,clonidine,13115.79,2701.0451859456966,9
+Clozapine,most-concern,clozapine,clozapine,10940.894,1366.8674337164007,3
+Cortisone acetate,no-concern,cortisone,cortisone,17602.264,7238.152342324482,3
+Crizotinib,most-concern,crizotinib,crizotinib,15513.11,6702.141880082059,4
+Cyproheptadine hydrochloride,less-concern,cyproheptadine,cyproheptadine,13425.692,2267.754187823092,3
+Dactinomycin,most-concern,dactinomycin,dactinomycin,16501.111,2538.9530502113957,5
+Danazol,most-concern,danazol,danazol,14627.207,7297.208657472345,12
+Dantrolene sodium,most-concern,dantrolene,dantrolene,10270.449,669.7366877549146,3
+Dasatinib,less-concern,dasatinib,dasatinib,11676.247,897.8059742093001,3
+Daunorubicin hydrochloride,no-concern,daunorubicin,daunorubicin,15679.344,3521.281812284646,13
+Decitabine,ambiguous,decitabine,decitabine,10445.56,2335.0816129194577,3
+Desipramine hydrochloride,ambiguous,desipramine,desipramine,12968.332,3208.642106823828,6
+Dexamethasone,ambiguous,dexamethasone,dexamethasone,13126.343,3332.792452483691,22
+Dexchlorpheniramine maleate,no-concern,dexchlorpheniramine,dexchlorpheniramine,14397.403,1454.8047829340946,3
+Dexrazoxane hydrochloride,ambiguous,dexrazoxane,dexrazoxane,10365.217,229.50241627075684,2
+Diazoxide,ambiguous,diazoxide,diazoxide,11270.453,2285.2161093541613,3
+Diclofenac sodium,most-concern,diclofenac,diclofenac,13164.878,1964.729551994097,6
+Dicloxacillin sodium,less-concern,dicloxacillin,dicloxacillin,10813.44,1756.437359239208,3
+Diflunisal,most-concern,diflunisal,diflunisal,17691.37,6064.252172402844,6
+Digoxin,no-concern,digoxin,digoxin,14464.822,2173.691900448686,9
+Dihydroergotamine mesylate,no-concern,dihydroergotamine,dihydroergotamine,13051.978,3745.0967890356555,6
+Diltiazem hydrochloride,most-concern,diltiazem,diltiazem,12967.484,4619.945942179578,11
+Dipyridamole,ambiguous,dipyridamole,dipyridamole,12984.0205,3335.6841574822874,6
+Disopyramide phosphate,less-concern,disopyramide,disopyramide,13851.339,1796.32256191598,6
+Dobutamine hydrochloride,no-concern,dobutamine,dobutamine,14050.575,4736.476913061145,3
+Docetaxel,less-concern,docetaxel,docetaxel,14870.617,4965.649793125945,3
+Dolasetron mesylate,ambiguous,dolasetron,dolasetron,13327.172,1608.732641771516,3
+Donepezil hydrochloride,less-concern,donepezil,donepezil,14264.635,3852.2650268007483,5
+Dopamine hydrochloride,no-concern,dopamine,dopamine,10847.913,994.336894082567,3
+Doxapram hydrochloride,no-concern,doxapram,doxapram,14014.755,1232.6110671013878,3
+Doxepin hydrochloride,less-concern,doxepin,doxepin,12467.45,3358.8014446019974,15
+Doxorubicin hydrochloride,less-concern,doxorubicin,doxorubicin,20359.314,6877.655248823836,11
+Doxylamine succinate,no-concern,doxylamine,doxylamine,14479.411,7181.299417462281,6
+Droperidol,no-concern,droperidol,droperidol,13587.874,5679.6104188396,6
+Duloxetine hydrochloride,most-concern,duloxetine,duloxetine,15504.819,5324.738537719009,8
+Enalapril maleate,less-concern,enalapril,enalapril,14644.693,3963.452970926717,2
+Entecavir,ambiguous,entecavir,entecavir,9300.173,1095.680607380928,3
+Epirubicin hydrochloride,ambiguous,epirubicin,epirubicin,16601.309,3280.937763065379,5
+Eplerenone,less-concern,eplerenone,eplerenone,14972.355,3729.402007421902,2
+Erlotinib hydrochloride,most-concern,erlotinib,erlotinib,10453.968,322.54871187464863,3
+Escitalopram oxalate,less-concern,escitalopram,escitalopram,14307.703,4129.524424143421,5
+Estrone,ambiguous,estrone,estrone,17105.1,3843.003209950935,8
+Estropipate,ambiguous,estropipate,estropipate,12406.158,4921.908919116725,5
+Ethambutol hydrochloride,most-concern,ethambutol,ethambutol,13016.325,5091.357922140503,3
+Etodolac,most-concern,etodolac,etodolac,12405.795,4244.238712937196,8
+Etomidate,no-concern,etomidate,etomidate,13920.604,4965.823321213061,5
+Everolimus,less-concern,everolimus,everolimus,17853.178,4918.4523365344985,3
+Exemestane,most-concern,exemestane,exemestane,13405.213,3259.554306086492,5
+Ezetimibe,less-concern,ezetimibe,ezetimibe,14980.222,3639.5832561925013,5
+Famciclovir,ambiguous,famciclovir,famciclovir,15792.4375,4728.525796596554,5
+Febuxostat,most-concern,febuxostat,febuxostat,14237.817,5574.695509472305,3
+Felbamate,most-concern,felbamate,felbamate,10408.194,1195.9232915326158,3
+Felodipine,less-concern,felodipine,felodipine,10190.43,1019.0575719300695,2
+Fenofibrate,less-concern,fenofibrate,fenofibrate,13617.849,1082.0695374166214,3
+Fenoldopam mesylate,no-concern,fenoldopam,fenoldopam,10706.902,931.5280116570948,3
+Fexofenadine hydrochloride,no-concern,fexofenadine,fexofenadine,14487.967,4295.590583108812,5
+Finasteride,less-concern,finasteride,finasteride,12535.373,1835.0179832374545,5
+Flavoxate hydrochloride,less-concern,flavoxate,flavoxate,11983.636,1389.7654007575702,3
+Flecainide acetate,less-concern,flecainide,flecainide,13508.3955,3504.4298469080354,6
+Fluconazole,most-concern,fluconazole,fluconazole,9795.463,180.10575954673487,2
+Fludarabine phosphate,no-concern,fludarabine,fludarabine,18718.705,7212.9538974619045,2
+Flumazenil,no-concern,flumazenil,flumazenil,11688.78,3248.4158950898955,3
+Fluoxetine hydrochloride,less-concern,fluoxetine,fluoxetine,11950.836,1538.4567609051496,3
+Fluphenazine hydrochloride,ambiguous,fluphenazine,fluphenazine,13721.325,2584.507100725764,4
+Flutamide,most-concern,flutamide,flutamide,14564.992,5497.684082598867,6
+Fluvastatin sodium,less-concern,fluvastatin,fluvastatin,13725.161,3276.4254583783186,5
+Fluvoxamine maleate,ambiguous,fluvoxamine,fluvoxamine,14852.003,4190.6277586041615,3
+Fostamatinib disodium,ambiguous,fostamatinib,fostamatinib,15088.427,4567.511929225638,3
+Fulvestrant,ambiguous,fulvestrant,fulvestrant,17741.064,4249.326637716345,14
+Gefitinib,most-concern,gefitinib,gefitinib,10214.151,1418.6162841873884,6
+Glimepiride,less-concern,glimepiride,glimepiride,13858.199,5189.204058939332,4
+Glipizide,less-concern,glipizide,glipizide,13057.125,245.93367199178604,2
+Glycopyrrolate,no-concern,glycopyrrolate,glycopyrrolate,11342.602,4211.36823736166,3
+Goserelin acetate,ambiguous,goserelin,goserelin,13188.836,1540.235320634583,2
+Granisetron hydrochloride,ambiguous,granisetron,granisetron,12821.93,3807.002842681923,3
+Guanfacine hydrochloride,ambiguous,guanfacine,guanfacine,13564.857,5221.888824283767,5
+Haloperidol lactate,less-concern,haloperidol,haloperidol,14745.214,1274.7730699170954,3
+Hydralazine hydrochloride,less-concern,hydralazine,hydralazine,15549.327,7023.797856993558,3
+Hydrocortisone acetate,no-concern,hydrocortisone,hydrocortisone,10666.473,678.9985961004163,2
+Iloperidone,ambiguous,iloperidone,iloperidone,10611.048,571.2836469714716,3
+Imatinib mesylate,most-concern,imatinib,imatinib,13403.868,4855.146104386064,3
+Irbesartan,less-concern,irbesartan,irbesartan,12945.395,3664.2299333137576,5
+Irinotecan hydrochloride,less-concern,irinotecan,irinotecan,23210.986,841.6945299709633,3
+Isocarboxazid,ambiguous,isocarboxazid,isocarboxazid,15419.151,3517.7230667508934,3
+Isotretinoin,most-concern,isotretinoin,isotretinoin,16377.874,10421.885250857793,3
+Isoxsuprine hydrochloride,no-concern,isoxsuprine,isoxsuprine,10852.671,553.1560789183832,3
+Itraconazole,most-concern,itraconazole,itraconazole,14473.176,1401.6994786004614,3
+Ivermectin,less-concern,ivermectin,ivermectin,11689.373,470.35099613690056,2
+Ixazomib citrate,ambiguous,ixazomib,ixazomib,18354.982,3146.53708269365,3
+Ketoprofen,less-concern,ketoprofen,ketoprofen,11802.826,1685.8233588227515,2
+Ketorolac tromethamine,less-concern,ketorolac,ketorolac,13606.615,3901.6124456860503,5
+Labetalol hydrochloride,most-concern,labetalol,labetalol,13678.709,5546.4217012784875,5
+Lamivudine,less-concern,lamivudine,lamivudine,11497.048,1302.362659101875,3
+Lamotrigine,most-concern,lamotrigine,lamotrigine,15321.351,7056.138804932545,3
+Leflunomide,most-concern,leflunomide,leflunomide,9650.123,673.919028246502,2
+Lenalidomide,less-concern,lenalidomide,lenalidomide,10487.593,806.9238383300028,3
+Levonorgestrel,no-concern,levonorgestrel,levonorgestrel,16387.42,12162.141664522698,3
+Lidocaine,no-concern,lidocaine,lidocaine,10337.406,413.2141441879567,2
+Linezolid,less-concern,linezolid,linezolid,9364.328,161.35222168405457,3
+Lofexidine hydrochloride,no-concern,lofexidine,lofexidine,14997.911,1870.774548042111,3
+Loperamide hydrochloride,no-concern,loperamide,loperamide,13063.978,2965.038529138414,6
+Losartan potassium,less-concern,losartan,losartan,12103.611,2702.0007135806245,2
+Lovastatin,less-concern,lovastatin,lovastatin,11617.3125,2050.876875521547,5
+Loxapine succinate,ambiguous,loxapine,loxapine,13480.911,6379.1396906336895,6
+Maprotiline hydrochloride,ambiguous,maprotiline,maprotiline,15387.6045,3360.444062653124,3
+Maraviroc,most-concern,maraviroc,maraviroc,14816.406,4573.719267532333,3
+Mebendazole,less-concern,mebendazole,mebendazole,13774.281,2877.9656031858635,3
+Meclizine hydrochloride,no-concern,meclizine,meclizine,11942.261,4155.135729937183,3
+Medroxyprogesterone acetate,ambiguous,medroxyprogesterone,medroxyprogesterone,12269.648,2940.4830959610185,3
+Meloxicam,less-concern,meloxicam,meloxicam,12582.421,4729.108446212844,8
+Mepivacaine hydrochloride,less-concern,mepivacaine,mepivacaine,13542.867,1109.1763569553045,3
+Mesoridazine besylate,ambiguous,mesoridazine,mesoridazine,12599.692,3758.885219230658,6
+Metaxalone,less-concern,metaxalone,metaxalone,12472.758,394.29420405345456,2
+Methocarbamol,ambiguous,methocarbamol,methocarbamol,12792.649,2552.8792912808995,3
+Methylprednisolone,less-concern,methylprednisolone,methylprednisolone,10663.656,2044.9710672230628,3
+Methysergide maleate,no-concern,methysergide,methysergide,13104.657,4163.214597802367,8
+Metoclopramide hydrochloride,less-concern,metoclopramide,metoclopramide,11985.372,3930.7225954516107,3
+Metolazone,ambiguous,metolazone,metolazone,13005.145,4265.844123526109,6
+Metoprolol succinate,ambiguous,metoprolol,metoprolol,14718.992,5800.7097821621355,3
+Metoprolol tartrate,less-concern,metoprolol,metoprolol,14718.992,5800.7097821621355,3
+Mexiletine hydrochloride,most-concern,mexiletine,mexiletine,12851.193,3501.4034956661912,5
+Midodrine hydrochloride,no-concern,midodrine,midodrine,12934.798,4164.097338661983,5
+Midostaurin,ambiguous,midostaurin,midostaurin,11970.37,1670.2152591611052,3
+Mifepristone,less-concern,mifepristone,mifepristone,13995.07,8424.363392304696,6
+Milrinone lactate,ambiguous,milrinone,milrinone,10327.874,2779.264685284289,3
+Minoxidil,no-concern,minoxidil,minoxidil,14871.758,4973.14200267151,6
+Mirtazapine,less-concern,mirtazapine,mirtazapine,14723.577,4182.270075768636,6
+Mitotane,no-concern,mitotane,mitotane,15871.052,5944.363679337337,5
+Mitoxantrone hydrochloride,less-concern,mitoxantrone,mitoxantrone,19973.639,4281.76867067536,6
+Modafinil,less-concern,modafinil,modafinil,10398.719,1734.212526490376,2
+Moexipril hydrochloride,ambiguous,moexipril,moexipril,13279.399,4290.0808327416635,3
+Moxifloxacin hydrochloride,less-concern,moxifloxacin,moxifloxacin,14171.276,9169.610915282212,3
+Nadolol,ambiguous,nadolol,nadolol,14301.829,3111.527989946656,6
+Nafcillin sodium,less-concern,nafcillin,nafcillin,15915.074,6321.866264989993,3
+Nalbuphine hydrochloride,no-concern,nalbuphine,nalbuphine,13300.972,4333.113568535932,3
+Naloxone hydrochloride,no-concern,naloxone,naloxone,10346.796,1115.1379987258529,4
+Naltrexone hydrochloride,ambiguous,naltrexone,naltrexone,12983.467,3127.5722765050623,8
+Naproxen,less-concern,naproxen,naproxen,13377.056,2648.717789454539,6
+Nateglinide,ambiguous,nateglinide,nateglinide,10770.518,552.7123633299493,2
+Nefazodone hydrochloride,most-concern,nefazodone,nefazodone,19019.986,4506.01793762626,2
+Nelfinavir mesylate,less-concern,nelfinavir,nelfinavir,9409.958,795.4080115959615,3
+Neratinib maleate,ambiguous,neratinib,neratinib,13986.849,3153.2992437629664,3
+Niacin,most-concern,niacin,niacin,19482.049,6049.6450146634215,9
+Nialamide,most-concern,nialamide,nialamide,14761.34,,1
+Nicardipine hydrochloride,ambiguous,nicardipine,nicardipine,12054.089,4155.662609963314,3
+Nifedipine,less-concern,nifedipine,nifedipine,12919.788,2788.242686509001,6
+Nifurtimox,no-concern,nifurtimox,nifurtimox,10226.764,1479.2376932817192,2
+Nilotinib hydrochloride,most-concern,nilotinib,nilotinib,17513.258,2898.0034691963106,5
+Nilutamide,most-concern,nilutamide,nilutamide,11744.396,231.49529729664002,2
+Nimesulide,most-concern,nimesulide,nimesulide,13317.59,4388.950079127328,3
+Nimodipine,ambiguous,nimodipine,nimodipine,15064.907,4663.621973789472,11
+Nizatidine,less-concern,nizatidine,nizatidine,14622.487,3905.1384984530746,5
+Nortriptyline hydrochloride,most-concern,nortriptyline,nortriptyline,14536.84,2698.115656690493,3
+Omeprazole,less-concern,omeprazole,omeprazole,12546.739,1741.3676545344247,5
+Ondansetron hydrochloride,less-concern,ondansetron,ondansetron,11594.137,799.1556924486772,3
+Orphenadrine hydrochloride,no-concern,orphenadrine,orphenadrine,19590.28,10155.183090187498,3
+Oxaprozin,less-concern,oxaprozin,oxaprozin,18025.201,5259.125724637394,11
+Paclitaxel,less-concern,paclitaxel,paclitaxel,12660.486,3973.4726967669258,8
+Palbociclib,less-concern,palbociclib,palbociclib,12411.477,1863.2807378331618,3
+Palonosetron hydrochloride,ambiguous,palonosetron,palonosetron,14902.414,2932.7044984411464,3
+Panobinostat lactate,ambiguous,panobinostat,panobinostat,21476.695,1589.8861076654175,3
+Pantoprazole sodium,less-concern,pantoprazole,pantoprazole,10816.385,1367.9208558262542,2
+Papaverine hydrochloride,most-concern,papaverine,papaverine,13928.591,559.8418643656688,3
+Paroxetine hydrochloride,less-concern,paroxetine,paroxetine,14212.995,5768.313760432522,5
+Pazopanib hydrochloride,most-concern,pazopanib,pazopanib,10763.19,1630.1522517995215,3
+Pentoxifylline,ambiguous,pentoxifylline,pentoxifylline,9321.204,1415.9260866087811,2
+Pergolide mesylate,ambiguous,pergolide,pergolide,14499.094,3218.727416105458,5
+Perhexiline,most-concern,perhexiline,perhexiline,15048.425,4839.6550417437475,3
+Perphenazine,less-concern,perphenazine,perphenazine,13085.398,3471.345266653603,5
+Phenelzine sulfate,less-concern,phenelzine,phenelzine,9988.206,1958.9045293959412,3
+Phenoxybenzamine hydrochloride,no-concern,phenoxybenzamine,phenoxybenzamine,11583.202,1032.1438811197825,2
+Phentolamine mesylate,no-concern,phentolamine,phentolamine,12642.869,968.9020183774107,2
+Pimozide,no-concern,pimozide,pimozide,13630.953,2304.5485798807517,5
+Pindolol,no-concern,pindolol,pindolol,11716.988,1564.4807162174432,5
+Pioglitazone hydrochloride,less-concern,pioglitazone,pioglitazone,13596.275,4445.932809323039,5
+Pirfenidone,most-concern,pirfenidone,pirfenidone,15071.5625,3521.050360998137,3
+Piroxicam,less-concern,piroxicam,piroxicam,15041.101,3465.096891716165,4
+Pitavastatin calcium,ambiguous,pitavastatin,pitavastatin,18503.006,1750.8873611914025,3
+Pravastatin sodium,less-concern,pravastatin,pravastatin,11414.977,1246.4910178529187,5
+Praziquantel,ambiguous,praziquantel,praziquantel,13963.578,6187.597049552792,5
+Prazosin hydrochloride,ambiguous,prazosin,prazosin,13511.738,4885.684560677884,2
+Prednisolone,less-concern,prednisolone,prednisolone,12521.354,4207.602184513563,4
+Prednisone,less-concern,prednisone,prednisone,14484.531,7028.88192642342,5
+Primaquine phosphate,no-concern,primaquine,primaquine,14278.422,7356.88054324131,5
+Primidone,no-concern,primidone,primidone,13426.654,4026.088519967388,5
+Probenecid,ambiguous,probenecid,probenecid,11711.189,372.5106195619401,2
+Procainamide hydrochloride,less-concern,procainamide,procainamide,10276.719,1126.2519216084995,2
+Procarbazine hydrochloride,less-concern,procarbazine,procarbazine,11258.943,1775.9352792502123,2
+Prochlorperazine maleate,less-concern,prochlorperazine,prochlorperazine,13664.586,3443.6969149805745,5
+Progesterone,less-concern,progesterone,progesterone,17851.686,8463.638619550986,3
+Propafenone hydrochloride,less-concern,propafenone,propafenone,16020.719,7043.9705685055715,2
+Propofol,less-concern,propofol,propofol,11207.109,2066.507828940263,2
+Propranolol hydrochloride,ambiguous,propranolol,propranolol,9432.806,494.3050906615242,3
+Protriptyline hydrochloride,no-concern,protriptyline,protriptyline,15622.448,4235.329126113258,5
+Pseudoephedrine hydrochloride,no-concern,pseudoephedrine,pseudoephedrine,14844.828,6635.089320940605,3
+Pyrimethamine,less-concern,pyrimethamine,pyrimethamine,11460.697,2269.5752239245126,2
+Quetiapine fumarate,less-concern,quetiapine,quetiapine,14380.537,2909.2948442853954,5
+Quinapril hydrochloride,less-concern,quinapril,quinapril,15655.888,4464.740153039501,5
+Quinidine gluconate,less-concern,quinidine,quinidine,14370.745,8324.791472055596,5
+Quinine sulfate,less-concern,quinine,quinine,13433.435,3611.5897457744923,3
+Raloxifene hydrochloride,less-concern,raloxifene,raloxifene,19097.393,5702.681227220096,20
+Raltegravir potassium,most-concern,raltegravir,raltegravir,10441.343,992.3797419674547,3
+Ranitidine hydrochloride,less-concern,ranitidine,ranitidine,12724.217,4648.979365792851,10
+Ranolazine,no-concern,ranolazine,ranolazine,9591.324,485.98192299133285,2
+Reserpine,no-concern,reserpine,reserpine,12414.694,2534.9446649234046,2
+Ribavirin,less-concern,ribavirin,ribavirin,13495.7295,4900.704131684873,3
+Rifabutin,less-concern,rifabutin,rifabutin,14227.959,4847.658926772025,2
+Rifapentine,ambiguous,rifapentine,rifapentine,10701.468,2680.476143616134,3
+Riluzole,most-concern,riluzole,riluzole,15608.516,6971.335702923653,3
+Risperidone,less-concern,risperidone,risperidone,13193.751,2254.3143171070974,3
+Rivaroxaban,less-concern,rivaroxaban,rivaroxaban,9201.012,375.4426267815866,2
+Rizatriptan benzoate,less-concern,rizatriptan,rizatriptan,14604.888,4838.4802166410755,5
+Ropinirole hydrochloride,less-concern,ropinirole,ropinirole,14433.094,4347.518822768005,5
+Rosiglitazone maleate,less-concern,rosiglitazone,rosiglitazone,15306.164,6115.441746881403,3
+Rosuvastatin calcium,less-concern,rosuvastatin,rosuvastatin,14593.625,4299.569742083588,5
+Ruxolitinib phosphate,ambiguous,ruxolitinib,ruxolitinib,11662.386,3447.597921641279,6
+Safinamide mesylate,no-concern,safinamide,safinamide,9669.495,1553.762374098733,3
+Saquinavir mesylate,less-concern,saquinavir,saquinavir,11658.911,2859.656118668649,3
+Scopolamine,no-concern,scopolamine,scopolamine,13498.635,6140.579329781815,8
+Sertraline hydrochloride,less-concern,sertraline,sertraline,14001.192,2632.574464578977,5
+Sildenafil citrate,less-concern,sildenafil,sildenafil,12705.057,3240.9841618389555,5
+Simvastatin,less-concern,simvastatin,simvastatin,17674.639,7872.496230995152,14
+Sirolimus,less-concern,sirolimus,sirolimus,14923.973,3835.867407933948,17
+Sitagliptin phosphate,less-concern,sitagliptin,sitagliptin,12768.384,2558.4264518621944,3
+Sonidegib phosphate,ambiguous,sonidegib,sonidegib,17131.143,7729.343416465558,3
+Sorafenib tosylate,most-concern,sorafenib,sorafenib,13741.32,5719.378101403534,6
+Spironolactone,less-concern,spironolactone,spironolactone,17507.037,7240.718822738129,3
+Stiripentol,no-concern,stiripentol,stiripentol,13473.441,986.9768841336847,3
+suloctidil,most-concern,suloctidil,suloctidil,15618.3125,6207.194552557003,6
+Sunitinib malate,most-concern,sunitinib,sunitinib,13116.578,2132.089057507366,3
+Tacrolimus,less-concern,tacrolimus,tacrolimus,15415.176,5710.392000101694,8
+Tadalafil,less-concern,tadalafil,tadalafil,13153.5625,4056.0719208010596,5
+Tamoxifen citrate,most-concern,tamoxifen,tamoxifen,16664.586,4828.353454890674,11
+Telmisartan,less-concern,telmisartan,telmisartan,14015.883,5434.442881708676,3
+Temozolomide,less-concern,temozolomide,temozolomide,15642.589,6131.816018963259,3
+Temsirolimus,no-concern,temsirolimus,temsirolimus,13271.754,3012.996218221169,3
+Teniposide,less-concern,teniposide,teniposide,15501.013,2221.4766014936918,5
+Terazosin hydrochloride,no-concern,terazosin,terazosin,9642.906,1162.9752670066534,3
+Thalidomide,less-concern,thalidomide,thalidomide,13867.051,3501.5906662739153,8
+Thioridazine hydrochloride,less-concern,thioridazine,thioridazine,15056.434,5892.669352570912,3
+Thiotepa,less-concern,thiotepa,thiotepa,12934.945,2853.9568804229457,5
+Thiothixene,ambiguous,thiothixene,thiothixene,12624.091,4960.7337598595195,5
+Ticlopidine hydrochloride,most-concern,ticlopidine,ticlopidine,14278.256,4791.698626717849,5
+Tigecycline,most-concern,tigecycline,tigecycline,19783.053,3021.714780040058,6
+Timolol maleate,ambiguous,timolol,timolol,10635.5625,963.3841492910681,3
+Tinidazole,less-concern,tinidazole,tinidazole,14565.198,265.33117492694845,3
+Tivozanib hydrochloride,ambiguous,tivozanib,tivozanib,13618.621,3297.9382655315108,3
+Tofacitinib citrate,ambiguous,tofacitinib,tofacitinib,10626.821,898.622576280262,3
+Tolazamide,less-concern,tolazamide,tolazamide,14064.12,3294.7313994252404,6
+Tolbutamide,ambiguous,tolbutamide,tolbutamide,16982.553,9690.723731068236,2
+Tolmetin sodium,less-concern,tolmetin,tolmetin,15302.17,5263.580831365947,5
+Toremifene citrate,ambiguous,toremifene,toremifene,17649.363,5163.590927489663,14
+Tramadol hydrochloride,less-concern,tramadol,tramadol,11758.887,1290.8301636715848,4
+Trazodone hydrochloride,less-concern,trazodone,trazodone,17129.992,4574.432330138759,6
+Tretinoin,less-concern,tretinoin,tretinoin,12150.666,6084.245391931955,5
+Triamterene,less-concern,triamterene,triamterene,11440.696,459.2299466144305,2
+Trifluoperazine hydrochloride,less-concern,trifluoperazine,trifluoperazine,13777.008,1690.5126336999408,3
+Trimethobenzamide hydrochloride,ambiguous,trimethobenzamide,trimethobenzamide,13722.834,2947.6153588801176,2
+Trimipramine maleate,ambiguous,trimipramine,trimipramine,14473.23,5902.090913020567,6
+Troglitazone,most-concern,troglitazone,troglitazone,14218.581,3936.5657220565477,3
+Valsartan,less-concern,valsartan,valsartan,11553.922,395.43220402942666,2
+Vardenafil hydrochloride,ambiguous,vardenafil,vardenafil,13811.06,3072.3870484348245,5
+Vecuronium bromide,no-concern,vecuronium,vecuronium,11824.387,2256.5782896929377,6
+Vemurafenib,less-concern,vemurafenib,vemurafenib,13077.093,2625.419409601542,6
+Venlafaxine hydrochloride,less-concern,venlafaxine,venlafaxine,16123.903,4299.781748583424,5
+Verapamil hydrochloride,less-concern,verapamil,verapamil,12477.308,3885.2349920480196,6
+Verteporfin,ambiguous,verteporfin,verteporfin,16797.107,5591.98918864579,6
+Vinblastine sulfate,less-concern,vinblastine,vinblastine,19913.268,7208.255391367301,11
+Vincristine sulfate,less-concern,vincristine,vincristine,12254.488,1932.544464889607,4
+Vinorelbine tartrate,ambiguous,vinorelbine,vinorelbine,11494.386,1525.1239730123652,6
+Voriconazole,most-concern,voriconazole,voriconazole,15422.872,4434.986007862569,3
+Vorinostat,no-concern,vorinostat,vorinostat,16924.938,5156.348517838385,43
+Warfarin sodium,less-concern,warfarin,warfarin,10590.763,2588.796470249743,3
+Ziprasidone hydrochloride,less-concern,ziprasidone,ziprasidone,9497.108,1585.9604379755403,3
+Zolmitriptan,ambiguous,zolmitriptan,zolmitriptan,12802.853,1048.4474976647873,5

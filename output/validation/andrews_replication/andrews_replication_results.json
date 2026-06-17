@@ -1,0 +1,43 @@
+{
+  "dataset": "Andrews et al. 2024",
+  "collection_id": "0c8a364b-97b5-4cc8-a593-23c38c6f0ac5",
+  "n_types": 6,
+  "types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "endothelial cell",
+    "hepatocyte",
+    "macrophage"
+  ],
+  "n_pca_components": 6,
+  "variance_explained": 0.9687543481962803,
+  "procrustes_distance": 10.844887285555007,
+  "scaling": 0.2287330851316999,
+  "p_value": 0.11588841115888411,
+  "obs_null_ratio": 0.7969511279222591,
+  "null_mean": 13.251800548372776,
+  "null_median": 13.607970307826584,
+  "per_type_ssr_fraction": {
+    "B cell": 0.1530605564263411,
+    "CD4-positive, alpha-beta T cell": 0.1573518178578851,
+    "CD8-positive, alpha-beta T cell": 0.25148574383511785,
+    "endothelial cell": 0.11081522447982636,
+    "hepatocyte": 0.20132907746353396,
+    "macrophage": 0.1259575799372955
+  },
+  "comparison": {
+    "tabula_35": {
+      "obs_null": 0.522,
+      "p": 0.0001
+    },
+    "sun2023_15": {
+      "obs_null": 0.554,
+      "p": 0.0001
+    },
+    "pansci_16": {
+      "obs_null": 0.552,
+      "p": 0.0001
+    }
+  }
+}

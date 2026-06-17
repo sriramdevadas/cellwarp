@@ -1,0 +1,13 @@
+{
+  "our_label": "Hepatocyte",
+  "organism": "mouse",
+  "organism_scientific": "Mus musculus",
+  "tried_terms": [
+    "hepatocyte",
+    "liver cell"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:29:34.069365"
+}

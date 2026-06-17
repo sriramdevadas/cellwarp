@@ -1,0 +1,35 @@
+{
+  "chembl_build": {
+    "total_drug_target_genes": 446,
+    "overlap_with_ortholog_set": 420,
+    "ortholog_set_size": 16959
+  },
+  "phastcons_coverage": {
+    "orthologs_scored": 17173,
+    "total_orthologs": 17174,
+    "nan_rate": 5.8e-05
+  },
+  "per_celltype_coverage": {
+    "types_with_drug_targets": 34,
+    "total_types": 35
+  },
+  "primary_correlation": {
+    "rho": -0.1762,
+    "p_value": 0.3189538882588583,
+    "n": 34,
+    "description": "rigidity_rank vs drug_target_conservation_ratio"
+  },
+  "density_correlation": {
+    "rho": -0.3226,
+    "p_value": 0.05874852461182751,
+    "n": 35,
+    "description": "rigidity_rank vs drug_target_density (Option A)"
+  },
+  "partial_correlation": {
+    "partial_rho": -0.1704,
+    "p_value": 0.33541418274976115,
+    "n": 34,
+    "covariate": "mean_phastcons_all_loading_genes",
+    "tautology_check": "INCONCLUSIVE"
+  }
+}

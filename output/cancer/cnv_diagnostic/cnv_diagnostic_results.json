@@ -1,0 +1,418 @@
+{
+  "B cell": {
+    "u_statistic": 17141878.0,
+    "p_value": 0.5989282894200842,
+    "median_cnv": 0.00341356396868184,
+    "median_non_cnv": 0.003259628330253384,
+    "median_ratio": 1.0472249050604152,
+    "mean_cnv": 0.011713758871005618,
+    "mean_non_cnv": 0.012272028120136407,
+    "mean_ratio": 0.9545088029732625,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "CD4-positive, alpha-beta T cell": {
+    "u_statistic": 17018835.0,
+    "p_value": 0.7896738188113481,
+    "median_cnv": 0.004376170423339758,
+    "median_non_cnv": 0.004921276314893487,
+    "median_ratio": 0.8892348535878691,
+    "mean_cnv": 0.016121466266370555,
+    "mean_non_cnv": 0.01685360982069165,
+    "mean_ratio": 0.9565586505140151,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "CD8-positive, alpha-beta T cell": {
+    "u_statistic": 16835379.0,
+    "p_value": 0.9486988348749079,
+    "median_cnv": 0.0031836416735199578,
+    "median_non_cnv": 0.0035851154068046263,
+    "median_ratio": 0.8880165105640219,
+    "mean_cnv": 0.011625327026478938,
+    "mean_non_cnv": 0.012842141991310311,
+    "mean_ratio": 0.9052482860215425,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "T cell": {
+    "u_statistic": 16802314.0,
+    "p_value": 0.9625791792782892,
+    "median_cnv": 0.002115793592886473,
+    "median_non_cnv": 0.0024080064855378255,
+    "median_ratio": 0.8786494577957554,
+    "mean_cnv": 0.007104591595626606,
+    "mean_non_cnv": 0.00806298857668745,
+    "mean_ratio": 0.8811362595958698,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "endothelial cell": {
+    "u_statistic": 16993271.0,
+    "p_value": 0.8213547840048041,
+    "median_cnv": 0.0023638620919569776,
+    "median_non_cnv": 0.0024351016767866617,
+    "median_ratio": 0.9707447185845269,
+    "mean_cnv": 0.00691511653751437,
+    "mean_non_cnv": 0.006990939856780825,
+    "mean_ratio": 0.9891540592796102,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "enterocyte of epithelium of large intestine": {
+    "u_statistic": 16955640.0,
+    "p_value": 0.8621858404020271,
+    "median_cnv": 0.003174491720973634,
+    "median_non_cnv": 0.003473936396681088,
+    "median_ratio": 0.9138024875776263,
+    "mean_cnv": 0.011904189124055815,
+    "mean_non_cnv": 0.012890118100910435,
+    "mean_ratio": 0.9235128049924551,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "epithelial cell": {
+    "u_statistic": 16908033.0,
+    "p_value": 0.9040228691387371,
+    "median_cnv": 0.0053086810530537714,
+    "median_non_cnv": 0.005773324808984644,
+    "median_ratio": 0.9195188610888863,
+    "mean_cnv": 0.02584566295878225,
+    "mean_non_cnv": 0.02757923360353313,
+    "mean_ratio": 0.9371421748090637,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "fibroblast": {
+    "u_statistic": 17017047.0,
+    "p_value": 0.7919915311662431,
+    "median_cnv": 0.0018881279143033018,
+    "median_non_cnv": 0.001893835147225704,
+    "median_ratio": 0.9969864151424358,
+    "mean_cnv": 0.006528120545233495,
+    "mean_non_cnv": 0.0070674198093754765,
+    "mean_ratio": 0.9236921990361235,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "large intestine goblet cell": {
+    "u_statistic": 17078079.0,
+    "p_value": 0.7047804085507158,
+    "median_cnv": 0.004071791092211116,
+    "median_non_cnv": 0.004299188734221955,
+    "median_ratio": 0.9471068482756453,
+    "mean_cnv": 0.015257125038294133,
+    "mean_non_cnv": 0.01591442533750606,
+    "mean_ratio": 0.9586978300961426,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "macrophage": {
+    "u_statistic": 17118616.0,
+    "p_value": 0.6388723934838882,
+    "median_cnv": 0.002684384398705669,
+    "median_non_cnv": 0.002831719779665428,
+    "median_ratio": 0.9479696465668057,
+    "mean_cnv": 0.010977661938996902,
+    "mean_non_cnv": 0.011146454438217983,
+    "mean_ratio": 0.9848568439267702,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "mast cell": {
+    "u_statistic": 17032696.0,
+    "p_value": 0.7711987047878742,
+    "median_cnv": 0.0026486766188347005,
+    "median_non_cnv": 0.00271275378366838,
+    "median_ratio": 0.9763792920612834,
+    "mean_cnv": 0.009034046648538612,
+    "mean_non_cnv": 0.009400621659096936,
+    "mean_ratio": 0.9610052373287897,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "monocyte": {
+    "u_statistic": 16928238.0,
+    "p_value": 0.8875744392985657,
+    "median_cnv": 0.0027773984936050955,
+    "median_non_cnv": 0.002908246759853637,
+    "median_ratio": 0.9550078528222528,
+    "mean_cnv": 0.009512633324440786,
+    "mean_non_cnv": 0.010224898122111664,
+    "mean_ratio": 0.9303401570201876,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "myeloid dendritic cell": {
+    "u_statistic": 16809026.0,
+    "p_value": 0.9600420148790045,
+    "median_cnv": 0.002657916387681125,
+    "median_non_cnv": 0.0030723132643805714,
+    "median_ratio": 0.8651189377385982,
+    "mean_cnv": 0.009317125314007834,
+    "mean_non_cnv": 0.01010470621958803,
+    "mean_ratio": 0.9220580105482468,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "plasma cell": {
+    "u_statistic": 17063932.0,
+    "p_value": 0.7264058611885811,
+    "median_cnv": 0.0024627243611191597,
+    "median_non_cnv": 0.00248158201473721,
+    "median_ratio": 0.9924009549126075,
+    "mean_cnv": 0.008927003446245698,
+    "mean_non_cnv": 0.009428916051303799,
+    "mean_ratio": 0.9467687905664726,
+    "n_cnv_genes": 2316,
+    "n_non_cnv_genes": 14851,
+    "verdict": "CLEAN"
+  },
+  "_combined": {
+    "u_statistic": 16930192.0,
+    "p_value": 0.8858829140247878,
+    "median_cnv": 0.004796861769790696,
+    "median_non_cnv": 0.005022529692213845,
+    "median_ratio": 0.9550688724104529,
+    "mean_cnv": 0.011484559188256546,
+    "mean_non_cnv": 0.012198464407660725,
+    "mean_ratio": 0.9414758124017772,
+    "verdict": "CLEAN"
+  },
+  "_per_arm": {
+    "12p": {
+      "mean_loading": 0.016762514263101075,
+      "n_genes": 232,
+      "is_cnv": false
+    },
+    "21q": {
+      "mean_loading": 0.016092369722260365,
+      "n_genes": 172,
+      "is_cnv": false
+    },
+    "2p": {
+      "mean_loading": 0.014563887018586347,
+      "n_genes": 443,
+      "is_cnv": false
+    },
+    "18p": {
+      "mean_loading": 0.014262530152045462,
+      "n_genes": 61,
+      "is_cnv": false
+    },
+    "19q": {
+      "mean_loading": 0.014230439033016953,
+      "n_genes": 553,
+      "is_cnv": false
+    },
+    "19p": {
+      "mean_loading": 0.013836976710596171,
+      "n_genes": 482,
+      "is_cnv": false
+    },
+    "1q": {
+      "mean_loading": 0.013698917581660393,
+      "n_genes": 803,
+      "is_cnv": false
+    },
+    "1p": {
+      "mean_loading": 0.0136589797314504,
+      "n_genes": 967,
+      "is_cnv": false
+    },
+    "16p": {
+      "mean_loading": 0.013465603378681646,
+      "n_genes": 391,
+      "is_cnv": false
+    },
+    "22q": {
+      "mean_loading": 0.013022495453464905,
+      "n_genes": 377,
+      "is_cnv": false
+    },
+    "10p": {
+      "mean_loading": 0.012953778072864231,
+      "n_genes": 140,
+      "is_cnv": false
+    },
+    "7p": {
+      "mean_loading": 0.012829049890630757,
+      "n_genes": 273,
+      "is_cnv": true
+    },
+    "5p": {
+      "mean_loading": 0.012803251487779235,
+      "n_genes": 134,
+      "is_cnv": false
+    },
+    "12q": {
+      "mean_loading": 0.012502249783805488,
+      "n_genes": 689,
+      "is_cnv": false
+    },
+    "17q": {
+      "mean_loading": 0.012475201392610305,
+      "n_genes": 727,
+      "is_cnv": false
+    },
+    "5q": {
+      "mean_loading": 0.012290827060576836,
+      "n_genes": 682,
+      "is_cnv": false
+    },
+    "8q": {
+      "mean_loading": 0.012260936896811223,
+      "n_genes": 392,
+      "is_cnv": true
+    },
+    "6p": {
+      "mean_loading": 0.01220909578270015,
+      "n_genes": 487,
+      "is_cnv": false
+    },
+    "20q": {
+      "mean_loading": 0.011846636170182832,
+      "n_genes": 332,
+      "is_cnv": true
+    },
+    "15q": {
+      "mean_loading": 0.01180246778220988,
+      "n_genes": 523,
+      "is_cnv": false
+    },
+    "11p": {
+      "mean_loading": 0.011639413904089775,
+      "n_genes": 358,
+      "is_cnv": false
+    },
+    "9q": {
+      "mean_loading": 0.011589806643805222,
+      "n_genes": 505,
+      "is_cnv": false
+    },
+    "8p": {
+      "mean_loading": 0.011583366635947747,
+      "n_genes": 216,
+      "is_cnv": false
+    },
+    "9p": {
+      "mean_loading": 0.011532323911757264,
+      "n_genes": 173,
+      "is_cnv": false
+    },
+    "13q": {
+      "mean_loading": 0.01152171598375502,
+      "n_genes": 302,
+      "is_cnv": true
+    },
+    "2q": {
+      "mean_loading": 0.011509982764492627,
+      "n_genes": 709,
+      "is_cnv": false
+    },
+    "11q": {
+      "mean_loading": 0.011496604963939512,
+      "n_genes": 739,
+      "is_cnv": false
+    },
+    "7q": {
+      "mean_loading": 0.01145926358291143,
+      "n_genes": 529,
+      "is_cnv": true
+    },
+    "10q": {
+      "mean_loading": 0.01140718299150226,
+      "n_genes": 519,
+      "is_cnv": false
+    },
+    "4q": {
+      "mean_loading": 0.011310874976628674,
+      "n_genes": 482,
+      "is_cnv": false
+    },
+    "16q": {
+      "mean_loading": 0.011250248496897456,
+      "n_genes": 339,
+      "is_cnv": false
+    },
+    "14q": {
+      "mean_loading": 0.010831345523533632,
+      "n_genes": 586,
+      "is_cnv": false
+    },
+    "3q": {
+      "mean_loading": 0.010564446711779925,
+      "n_genes": 527,
+      "is_cnv": false
+    },
+    "3p": {
+      "mean_loading": 0.010519532971066309,
+      "n_genes": 474,
+      "is_cnv": false
+    },
+    "6q": {
+      "mean_loading": 0.010459598878544174,
+      "n_genes": 394,
+      "is_cnv": false
+    },
+    "4p": {
+      "mean_loading": 0.010433953975794864,
+      "n_genes": 196,
+      "is_cnv": false
+    },
+    "17p": {
+      "mean_loading": 0.010352815413897654,
+      "n_genes": 297,
+      "is_cnv": true
+    },
+    "Xp": {
+      "mean_loading": 0.009620824782717958,
+      "n_genes": 224,
+      "is_cnv": false
+    },
+    "Xq": {
+      "mean_loading": 0.009207357322033868,
+      "n_genes": 378,
+      "is_cnv": false
+    },
+    "18q": {
+      "mean_loading": 0.009111220667159654,
+      "n_genes": 191,
+      "is_cnv": true
+    },
+    "20p": {
+      "mean_loading": 0.008982813353039519,
+      "n_genes": 163,
+      "is_cnv": false
+    },
+    "Yq": {
+      "mean_loading": 0.003853747731300105,
+      "n_genes": 5,
+      "is_cnv": false
+    },
+    "Yp": {
+      "mean_loading": 1.0591723170921527e-05,
+      "n_genes": 1,
+      "is_cnv": false
+    }
+  },
+  "_overall": {
+    "n_confounded": 0,
+    "n_possibly_confounded": 0,
+    "n_clean": 14,
+    "verdict": "LARGELY CLEAN \u2014 0 confounded, 0 possibly confounded, 14 clean. CNV is not the dominant signal."
+  }
+}

@@ -1,0 +1,1856 @@
+dataset,cell_type,tissue,n_cells,passes_100
+tabula_human,B cell,adipose,262,True
+tabula_human,B cell,bladder,8,False
+tabula_human,B cell,blood,60,False
+tabula_human,B cell,bone_marrow,49,False
+tabula_human,B cell,colon,26,False
+tabula_human,B cell,endocrine_gland,80,False
+tabula_human,B cell,exocrine_gland,77,False
+tabula_human,B cell,eye,70,False
+tabula_human,B cell,heart,2,False
+tabula_human,B cell,kidney,11,False
+tabula_human,B cell,large_intestine,8,False
+tabula_human,B cell,liver,3,False
+tabula_human,B cell,lung,8,False
+tabula_human,B cell,lymph_node,954,True
+tabula_human,B cell,mucosa,0,False
+tabula_human,B cell,muscle,0,False
+tabula_human,B cell,ovary,0,False
+tabula_human,B cell,pancreas,0,False
+tabula_human,B cell,peripheral_nerve,0,False
+tabula_human,B cell,prostate,0,False
+tabula_human,B cell,respiratory,13,False
+tabula_human,B cell,sensory,0,False
+tabula_human,B cell,skin,1,False
+tabula_human,B cell,small_intestine,9,False
+tabula_human,B cell,spleen,298,True
+tabula_human,B cell,stomach,33,False
+tabula_human,B cell,testis,0,False
+tabula_human,B cell,tongue,28,False
+tabula_human,B cell,uterus,0,False
+tabula_human,B cell,vasculature,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",adipose,253,True
+tabula_human,"CD4-positive, alpha-beta T cell",bladder,45,False
+tabula_human,"CD4-positive, alpha-beta T cell",blood,99,False
+tabula_human,"CD4-positive, alpha-beta T cell",bone_marrow,47,False
+tabula_human,"CD4-positive, alpha-beta T cell",colon,37,False
+tabula_human,"CD4-positive, alpha-beta T cell",endocrine_gland,156,True
+tabula_human,"CD4-positive, alpha-beta T cell",exocrine_gland,49,False
+tabula_human,"CD4-positive, alpha-beta T cell",eye,54,False
+tabula_human,"CD4-positive, alpha-beta T cell",heart,4,False
+tabula_human,"CD4-positive, alpha-beta T cell",kidney,8,False
+tabula_human,"CD4-positive, alpha-beta T cell",large_intestine,57,False
+tabula_human,"CD4-positive, alpha-beta T cell",liver,3,False
+tabula_human,"CD4-positive, alpha-beta T cell",lung,47,False
+tabula_human,"CD4-positive, alpha-beta T cell",lymph_node,798,True
+tabula_human,"CD4-positive, alpha-beta T cell",mucosa,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",muscle,9,False
+tabula_human,"CD4-positive, alpha-beta T cell",ovary,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",pancreas,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",peripheral_nerve,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",prostate,2,False
+tabula_human,"CD4-positive, alpha-beta T cell",respiratory,3,False
+tabula_human,"CD4-positive, alpha-beta T cell",sensory,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",skin,5,False
+tabula_human,"CD4-positive, alpha-beta T cell",small_intestine,97,False
+tabula_human,"CD4-positive, alpha-beta T cell",spleen,60,False
+tabula_human,"CD4-positive, alpha-beta T cell",stomach,109,True
+tabula_human,"CD4-positive, alpha-beta T cell",testis,0,False
+tabula_human,"CD4-positive, alpha-beta T cell",tongue,41,False
+tabula_human,"CD4-positive, alpha-beta T cell",uterus,8,False
+tabula_human,"CD4-positive, alpha-beta T cell",vasculature,9,False
+tabula_human,"CD8-positive, alpha-beta T cell",adipose,131,True
+tabula_human,"CD8-positive, alpha-beta T cell",bladder,124,True
+tabula_human,"CD8-positive, alpha-beta T cell",blood,130,True
+tabula_human,"CD8-positive, alpha-beta T cell",bone_marrow,80,False
+tabula_human,"CD8-positive, alpha-beta T cell",colon,19,False
+tabula_human,"CD8-positive, alpha-beta T cell",endocrine_gland,80,False
+tabula_human,"CD8-positive, alpha-beta T cell",exocrine_gland,178,True
+tabula_human,"CD8-positive, alpha-beta T cell",eye,24,False
+tabula_human,"CD8-positive, alpha-beta T cell",heart,18,False
+tabula_human,"CD8-positive, alpha-beta T cell",kidney,13,False
+tabula_human,"CD8-positive, alpha-beta T cell",large_intestine,51,False
+tabula_human,"CD8-positive, alpha-beta T cell",liver,34,False
+tabula_human,"CD8-positive, alpha-beta T cell",lung,54,False
+tabula_human,"CD8-positive, alpha-beta T cell",lymph_node,364,True
+tabula_human,"CD8-positive, alpha-beta T cell",mucosa,4,False
+tabula_human,"CD8-positive, alpha-beta T cell",muscle,42,False
+tabula_human,"CD8-positive, alpha-beta T cell",ovary,3,False
+tabula_human,"CD8-positive, alpha-beta T cell",pancreas,22,False
+tabula_human,"CD8-positive, alpha-beta T cell",peripheral_nerve,0,False
+tabula_human,"CD8-positive, alpha-beta T cell",prostate,74,False
+tabula_human,"CD8-positive, alpha-beta T cell",respiratory,27,False
+tabula_human,"CD8-positive, alpha-beta T cell",sensory,0,False
+tabula_human,"CD8-positive, alpha-beta T cell",skin,46,False
+tabula_human,"CD8-positive, alpha-beta T cell",small_intestine,83,False
+tabula_human,"CD8-positive, alpha-beta T cell",spleen,273,True
+tabula_human,"CD8-positive, alpha-beta T cell",stomach,38,False
+tabula_human,"CD8-positive, alpha-beta T cell",testis,1,False
+tabula_human,"CD8-positive, alpha-beta T cell",tongue,30,False
+tabula_human,"CD8-positive, alpha-beta T cell",uterus,32,False
+tabula_human,"CD8-positive, alpha-beta T cell",vasculature,25,False
+tabula_human,T cell,adipose,116,True
+tabula_human,T cell,bladder,258,True
+tabula_human,T cell,blood,0,False
+tabula_human,T cell,bone_marrow,26,False
+tabula_human,T cell,colon,0,False
+tabula_human,T cell,endocrine_gland,0,False
+tabula_human,T cell,exocrine_gland,116,True
+tabula_human,T cell,eye,20,False
+tabula_human,T cell,heart,3,False
+tabula_human,T cell,kidney,8,False
+tabula_human,T cell,large_intestine,0,False
+tabula_human,T cell,liver,7,False
+tabula_human,T cell,lung,0,False
+tabula_human,T cell,lymph_node,400,True
+tabula_human,T cell,mucosa,0,False
+tabula_human,T cell,muscle,42,False
+tabula_human,T cell,ovary,1,False
+tabula_human,T cell,pancreas,0,False
+tabula_human,T cell,peripheral_nerve,0,False
+tabula_human,T cell,prostate,3,False
+tabula_human,T cell,respiratory,5,False
+tabula_human,T cell,sensory,0,False
+tabula_human,T cell,skin,842,True
+tabula_human,T cell,small_intestine,0,False
+tabula_human,T cell,spleen,52,False
+tabula_human,T cell,stomach,20,False
+tabula_human,T cell,testis,0,False
+tabula_human,T cell,tongue,65,False
+tabula_human,T cell,uterus,13,False
+tabula_human,T cell,vasculature,3,False
+tabula_human,adventitial cell,adipose,0,False
+tabula_human,adventitial cell,bladder,0,False
+tabula_human,adventitial cell,blood,0,False
+tabula_human,adventitial cell,bone_marrow,0,False
+tabula_human,adventitial cell,colon,0,False
+tabula_human,adventitial cell,endocrine_gland,0,False
+tabula_human,adventitial cell,exocrine_gland,460,True
+tabula_human,adventitial cell,eye,0,False
+tabula_human,adventitial cell,heart,0,False
+tabula_human,adventitial cell,kidney,0,False
+tabula_human,adventitial cell,large_intestine,0,False
+tabula_human,adventitial cell,liver,0,False
+tabula_human,adventitial cell,lung,581,True
+tabula_human,adventitial cell,lymph_node,0,False
+tabula_human,adventitial cell,mucosa,0,False
+tabula_human,adventitial cell,muscle,0,False
+tabula_human,adventitial cell,ovary,0,False
+tabula_human,adventitial cell,pancreas,0,False
+tabula_human,adventitial cell,peripheral_nerve,0,False
+tabula_human,adventitial cell,prostate,0,False
+tabula_human,adventitial cell,respiratory,0,False
+tabula_human,adventitial cell,sensory,0,False
+tabula_human,adventitial cell,skin,0,False
+tabula_human,adventitial cell,small_intestine,0,False
+tabula_human,adventitial cell,spleen,0,False
+tabula_human,adventitial cell,stomach,0,False
+tabula_human,adventitial cell,testis,0,False
+tabula_human,adventitial cell,tongue,0,False
+tabula_human,adventitial cell,uterus,4,False
+tabula_human,adventitial cell,vasculature,0,False
+tabula_human,basal cell,adipose,0,False
+tabula_human,basal cell,bladder,0,False
+tabula_human,basal cell,blood,0,False
+tabula_human,basal cell,bone_marrow,0,False
+tabula_human,basal cell,colon,0,False
+tabula_human,basal cell,endocrine_gland,0,False
+tabula_human,basal cell,exocrine_gland,169,True
+tabula_human,basal cell,eye,0,False
+tabula_human,basal cell,heart,0,False
+tabula_human,basal cell,kidney,0,False
+tabula_human,basal cell,large_intestine,0,False
+tabula_human,basal cell,liver,0,False
+tabula_human,basal cell,lung,238,True
+tabula_human,basal cell,lymph_node,0,False
+tabula_human,basal cell,mucosa,0,False
+tabula_human,basal cell,muscle,0,False
+tabula_human,basal cell,ovary,0,False
+tabula_human,basal cell,pancreas,0,False
+tabula_human,basal cell,peripheral_nerve,0,False
+tabula_human,basal cell,prostate,0,False
+tabula_human,basal cell,respiratory,620,True
+tabula_human,basal cell,sensory,0,False
+tabula_human,basal cell,skin,0,False
+tabula_human,basal cell,small_intestine,0,False
+tabula_human,basal cell,spleen,0,False
+tabula_human,basal cell,stomach,0,False
+tabula_human,basal cell,testis,0,False
+tabula_human,basal cell,tongue,973,True
+tabula_human,basal cell,uterus,0,False
+tabula_human,basal cell,vasculature,0,False
+tabula_human,bladder urothelial cell,adipose,0,False
+tabula_human,bladder urothelial cell,bladder,2000,True
+tabula_human,bladder urothelial cell,blood,0,False
+tabula_human,bladder urothelial cell,bone_marrow,0,False
+tabula_human,bladder urothelial cell,colon,0,False
+tabula_human,bladder urothelial cell,endocrine_gland,0,False
+tabula_human,bladder urothelial cell,exocrine_gland,0,False
+tabula_human,bladder urothelial cell,eye,0,False
+tabula_human,bladder urothelial cell,heart,0,False
+tabula_human,bladder urothelial cell,kidney,0,False
+tabula_human,bladder urothelial cell,large_intestine,0,False
+tabula_human,bladder urothelial cell,liver,0,False
+tabula_human,bladder urothelial cell,lung,0,False
+tabula_human,bladder urothelial cell,lymph_node,0,False
+tabula_human,bladder urothelial cell,mucosa,0,False
+tabula_human,bladder urothelial cell,muscle,0,False
+tabula_human,bladder urothelial cell,ovary,0,False
+tabula_human,bladder urothelial cell,pancreas,0,False
+tabula_human,bladder urothelial cell,peripheral_nerve,0,False
+tabula_human,bladder urothelial cell,prostate,0,False
+tabula_human,bladder urothelial cell,respiratory,0,False
+tabula_human,bladder urothelial cell,sensory,0,False
+tabula_human,bladder urothelial cell,skin,0,False
+tabula_human,bladder urothelial cell,small_intestine,0,False
+tabula_human,bladder urothelial cell,spleen,0,False
+tabula_human,bladder urothelial cell,stomach,0,False
+tabula_human,bladder urothelial cell,testis,0,False
+tabula_human,bladder urothelial cell,tongue,0,False
+tabula_human,bladder urothelial cell,uterus,0,False
+tabula_human,bladder urothelial cell,vasculature,0,False
+tabula_human,classical monocyte,adipose,0,False
+tabula_human,classical monocyte,bladder,0,False
+tabula_human,classical monocyte,blood,1186,True
+tabula_human,classical monocyte,bone_marrow,28,False
+tabula_human,classical monocyte,colon,0,False
+tabula_human,classical monocyte,endocrine_gland,0,False
+tabula_human,classical monocyte,exocrine_gland,5,False
+tabula_human,classical monocyte,eye,1,False
+tabula_human,classical monocyte,heart,0,False
+tabula_human,classical monocyte,kidney,0,False
+tabula_human,classical monocyte,large_intestine,0,False
+tabula_human,classical monocyte,liver,39,False
+tabula_human,classical monocyte,lung,169,True
+tabula_human,classical monocyte,lymph_node,60,False
+tabula_human,classical monocyte,mucosa,0,False
+tabula_human,classical monocyte,muscle,0,False
+tabula_human,classical monocyte,ovary,1,False
+tabula_human,classical monocyte,pancreas,33,False
+tabula_human,classical monocyte,peripheral_nerve,0,False
+tabula_human,classical monocyte,prostate,0,False
+tabula_human,classical monocyte,respiratory,0,False
+tabula_human,classical monocyte,sensory,0,False
+tabula_human,classical monocyte,skin,0,False
+tabula_human,classical monocyte,small_intestine,0,False
+tabula_human,classical monocyte,spleen,477,True
+tabula_human,classical monocyte,stomach,0,False
+tabula_human,classical monocyte,testis,0,False
+tabula_human,classical monocyte,tongue,0,False
+tabula_human,classical monocyte,uterus,0,False
+tabula_human,classical monocyte,vasculature,1,False
+tabula_human,endothelial cell,adipose,407,True
+tabula_human,endothelial cell,bladder,3,False
+tabula_human,endothelial cell,blood,0,False
+tabula_human,endothelial cell,bone_marrow,0,False
+tabula_human,endothelial cell,colon,0,False
+tabula_human,endothelial cell,endocrine_gland,0,False
+tabula_human,endothelial cell,exocrine_gland,178,True
+tabula_human,endothelial cell,eye,0,False
+tabula_human,endothelial cell,heart,17,False
+tabula_human,endothelial cell,kidney,4,False
+tabula_human,endothelial cell,large_intestine,0,False
+tabula_human,endothelial cell,liver,116,True
+tabula_human,endothelial cell,lung,0,False
+tabula_human,endothelial cell,lymph_node,5,False
+tabula_human,endothelial cell,mucosa,4,False
+tabula_human,endothelial cell,muscle,198,True
+tabula_human,endothelial cell,ovary,95,False
+tabula_human,endothelial cell,pancreas,134,True
+tabula_human,endothelial cell,peripheral_nerve,0,False
+tabula_human,endothelial cell,prostate,71,False
+tabula_human,endothelial cell,respiratory,36,False
+tabula_human,endothelial cell,sensory,0,False
+tabula_human,endothelial cell,skin,123,True
+tabula_human,endothelial cell,small_intestine,0,False
+tabula_human,endothelial cell,spleen,85,False
+tabula_human,endothelial cell,stomach,0,False
+tabula_human,endothelial cell,testis,3,False
+tabula_human,endothelial cell,tongue,81,False
+tabula_human,endothelial cell,uterus,284,True
+tabula_human,endothelial cell,vasculature,156,True
+tabula_human,enterocyte of epithelium of large intestine,adipose,0,False
+tabula_human,enterocyte of epithelium of large intestine,bladder,0,False
+tabula_human,enterocyte of epithelium of large intestine,blood,0,False
+tabula_human,enterocyte of epithelium of large intestine,bone_marrow,0,False
+tabula_human,enterocyte of epithelium of large intestine,colon,1601,True
+tabula_human,enterocyte of epithelium of large intestine,endocrine_gland,0,False
+tabula_human,enterocyte of epithelium of large intestine,exocrine_gland,0,False
+tabula_human,enterocyte of epithelium of large intestine,eye,0,False
+tabula_human,enterocyte of epithelium of large intestine,heart,0,False
+tabula_human,enterocyte of epithelium of large intestine,kidney,0,False
+tabula_human,enterocyte of epithelium of large intestine,large_intestine,399,True
+tabula_human,enterocyte of epithelium of large intestine,liver,0,False
+tabula_human,enterocyte of epithelium of large intestine,lung,0,False
+tabula_human,enterocyte of epithelium of large intestine,lymph_node,0,False
+tabula_human,enterocyte of epithelium of large intestine,mucosa,0,False
+tabula_human,enterocyte of epithelium of large intestine,muscle,0,False
+tabula_human,enterocyte of epithelium of large intestine,ovary,0,False
+tabula_human,enterocyte of epithelium of large intestine,pancreas,0,False
+tabula_human,enterocyte of epithelium of large intestine,peripheral_nerve,0,False
+tabula_human,enterocyte of epithelium of large intestine,prostate,0,False
+tabula_human,enterocyte of epithelium of large intestine,respiratory,0,False
+tabula_human,enterocyte of epithelium of large intestine,sensory,0,False
+tabula_human,enterocyte of epithelium of large intestine,skin,0,False
+tabula_human,enterocyte of epithelium of large intestine,small_intestine,0,False
+tabula_human,enterocyte of epithelium of large intestine,spleen,0,False
+tabula_human,enterocyte of epithelium of large intestine,stomach,0,False
+tabula_human,enterocyte of epithelium of large intestine,testis,0,False
+tabula_human,enterocyte of epithelium of large intestine,tongue,0,False
+tabula_human,enterocyte of epithelium of large intestine,uterus,0,False
+tabula_human,enterocyte of epithelium of large intestine,vasculature,0,False
+tabula_human,epithelial cell,adipose,0,False
+tabula_human,epithelial cell,bladder,0,False
+tabula_human,epithelial cell,blood,0,False
+tabula_human,epithelial cell,bone_marrow,0,False
+tabula_human,epithelial cell,colon,0,False
+tabula_human,epithelial cell,endocrine_gland,0,False
+tabula_human,epithelial cell,exocrine_gland,0,False
+tabula_human,epithelial cell,eye,0,False
+tabula_human,epithelial cell,heart,0,False
+tabula_human,epithelial cell,kidney,0,False
+tabula_human,epithelial cell,large_intestine,0,False
+tabula_human,epithelial cell,liver,0,False
+tabula_human,epithelial cell,lung,0,False
+tabula_human,epithelial cell,lymph_node,0,False
+tabula_human,epithelial cell,mucosa,5,False
+tabula_human,epithelial cell,muscle,57,False
+tabula_human,epithelial cell,ovary,9,False
+tabula_human,epithelial cell,pancreas,0,False
+tabula_human,epithelial cell,peripheral_nerve,0,False
+tabula_human,epithelial cell,prostate,0,False
+tabula_human,epithelial cell,respiratory,0,False
+tabula_human,epithelial cell,sensory,0,False
+tabula_human,epithelial cell,skin,3,False
+tabula_human,epithelial cell,small_intestine,0,False
+tabula_human,epithelial cell,spleen,0,False
+tabula_human,epithelial cell,stomach,1601,True
+tabula_human,epithelial cell,testis,0,False
+tabula_human,epithelial cell,tongue,0,False
+tabula_human,epithelial cell,uterus,0,False
+tabula_human,epithelial cell,vasculature,0,False
+tabula_human,fibroblast,adipose,680,True
+tabula_human,fibroblast,bladder,315,True
+tabula_human,fibroblast,blood,0,False
+tabula_human,fibroblast,bone_marrow,0,False
+tabula_human,fibroblast,colon,31,False
+tabula_human,fibroblast,endocrine_gland,4,False
+tabula_human,fibroblast,exocrine_gland,118,True
+tabula_human,fibroblast,eye,30,False
+tabula_human,fibroblast,heart,80,False
+tabula_human,fibroblast,kidney,0,False
+tabula_human,fibroblast,large_intestine,23,False
+tabula_human,fibroblast,liver,2,False
+tabula_human,fibroblast,lung,0,False
+tabula_human,fibroblast,lymph_node,0,False
+tabula_human,fibroblast,mucosa,1,False
+tabula_human,fibroblast,muscle,0,False
+tabula_human,fibroblast,ovary,0,False
+tabula_human,fibroblast,pancreas,3,False
+tabula_human,fibroblast,peripheral_nerve,0,False
+tabula_human,fibroblast,prostate,15,False
+tabula_human,fibroblast,respiratory,35,False
+tabula_human,fibroblast,sensory,0,False
+tabula_human,fibroblast,skin,86,False
+tabula_human,fibroblast,small_intestine,8,False
+tabula_human,fibroblast,spleen,1,False
+tabula_human,fibroblast,stomach,158,True
+tabula_human,fibroblast,testis,0,False
+tabula_human,fibroblast,tongue,34,False
+tabula_human,fibroblast,uterus,147,True
+tabula_human,fibroblast,vasculature,229,True
+tabula_human,fibroblast of cardiac tissue,adipose,0,False
+tabula_human,fibroblast of cardiac tissue,bladder,0,False
+tabula_human,fibroblast of cardiac tissue,blood,0,False
+tabula_human,fibroblast of cardiac tissue,bone_marrow,0,False
+tabula_human,fibroblast of cardiac tissue,colon,0,False
+tabula_human,fibroblast of cardiac tissue,endocrine_gland,0,False
+tabula_human,fibroblast of cardiac tissue,exocrine_gland,0,False
+tabula_human,fibroblast of cardiac tissue,eye,0,False
+tabula_human,fibroblast of cardiac tissue,heart,1947,True
+tabula_human,fibroblast of cardiac tissue,kidney,0,False
+tabula_human,fibroblast of cardiac tissue,large_intestine,0,False
+tabula_human,fibroblast of cardiac tissue,liver,0,False
+tabula_human,fibroblast of cardiac tissue,lung,0,False
+tabula_human,fibroblast of cardiac tissue,lymph_node,0,False
+tabula_human,fibroblast of cardiac tissue,mucosa,0,False
+tabula_human,fibroblast of cardiac tissue,muscle,0,False
+tabula_human,fibroblast of cardiac tissue,ovary,0,False
+tabula_human,fibroblast of cardiac tissue,pancreas,0,False
+tabula_human,fibroblast of cardiac tissue,peripheral_nerve,0,False
+tabula_human,fibroblast of cardiac tissue,prostate,0,False
+tabula_human,fibroblast of cardiac tissue,respiratory,0,False
+tabula_human,fibroblast of cardiac tissue,sensory,0,False
+tabula_human,fibroblast of cardiac tissue,skin,0,False
+tabula_human,fibroblast of cardiac tissue,small_intestine,0,False
+tabula_human,fibroblast of cardiac tissue,spleen,0,False
+tabula_human,fibroblast of cardiac tissue,stomach,0,False
+tabula_human,fibroblast of cardiac tissue,testis,0,False
+tabula_human,fibroblast of cardiac tissue,tongue,0,False
+tabula_human,fibroblast of cardiac tissue,uterus,0,False
+tabula_human,fibroblast of cardiac tissue,vasculature,0,False
+tabula_human,granulocyte,adipose,0,False
+tabula_human,granulocyte,bladder,0,False
+tabula_human,granulocyte,blood,0,False
+tabula_human,granulocyte,bone_marrow,635,True
+tabula_human,granulocyte,colon,0,False
+tabula_human,granulocyte,endocrine_gland,0,False
+tabula_human,granulocyte,exocrine_gland,0,False
+tabula_human,granulocyte,eye,0,False
+tabula_human,granulocyte,heart,0,False
+tabula_human,granulocyte,kidney,0,False
+tabula_human,granulocyte,large_intestine,0,False
+tabula_human,granulocyte,liver,0,False
+tabula_human,granulocyte,lung,0,False
+tabula_human,granulocyte,lymph_node,0,False
+tabula_human,granulocyte,mucosa,0,False
+tabula_human,granulocyte,muscle,94,False
+tabula_human,granulocyte,ovary,0,False
+tabula_human,granulocyte,pancreas,0,False
+tabula_human,granulocyte,peripheral_nerve,0,False
+tabula_human,granulocyte,prostate,0,False
+tabula_human,granulocyte,respiratory,39,False
+tabula_human,granulocyte,sensory,0,False
+tabula_human,granulocyte,skin,0,False
+tabula_human,granulocyte,small_intestine,0,False
+tabula_human,granulocyte,spleen,0,False
+tabula_human,granulocyte,stomach,0,False
+tabula_human,granulocyte,testis,0,False
+tabula_human,granulocyte,tongue,0,False
+tabula_human,granulocyte,uterus,1,False
+tabula_human,granulocyte,vasculature,0,False
+tabula_human,hematopoietic precursor cell,adipose,67,False
+tabula_human,hematopoietic precursor cell,bladder,0,False
+tabula_human,hematopoietic precursor cell,blood,121,True
+tabula_human,hematopoietic precursor cell,bone_marrow,1607,True
+tabula_human,hematopoietic precursor cell,colon,0,False
+tabula_human,hematopoietic precursor cell,endocrine_gland,88,False
+tabula_human,hematopoietic precursor cell,exocrine_gland,1,False
+tabula_human,hematopoietic precursor cell,eye,0,False
+tabula_human,hematopoietic precursor cell,heart,0,False
+tabula_human,hematopoietic precursor cell,kidney,0,False
+tabula_human,hematopoietic precursor cell,large_intestine,0,False
+tabula_human,hematopoietic precursor cell,liver,39,False
+tabula_human,hematopoietic precursor cell,lung,0,False
+tabula_human,hematopoietic precursor cell,lymph_node,11,False
+tabula_human,hematopoietic precursor cell,mucosa,0,False
+tabula_human,hematopoietic precursor cell,muscle,0,False
+tabula_human,hematopoietic precursor cell,ovary,1,False
+tabula_human,hematopoietic precursor cell,pancreas,0,False
+tabula_human,hematopoietic precursor cell,peripheral_nerve,0,False
+tabula_human,hematopoietic precursor cell,prostate,0,False
+tabula_human,hematopoietic precursor cell,respiratory,0,False
+tabula_human,hematopoietic precursor cell,sensory,0,False
+tabula_human,hematopoietic precursor cell,skin,0,False
+tabula_human,hematopoietic precursor cell,small_intestine,0,False
+tabula_human,hematopoietic precursor cell,spleen,65,False
+tabula_human,hematopoietic precursor cell,stomach,0,False
+tabula_human,hematopoietic precursor cell,testis,0,False
+tabula_human,hematopoietic precursor cell,tongue,0,False
+tabula_human,hematopoietic precursor cell,uterus,0,False
+tabula_human,hematopoietic precursor cell,vasculature,0,False
+tabula_human,hematopoietic stem cell,adipose,0,False
+tabula_human,hematopoietic stem cell,bladder,0,False
+tabula_human,hematopoietic stem cell,blood,64,False
+tabula_human,hematopoietic stem cell,bone_marrow,792,True
+tabula_human,hematopoietic stem cell,colon,0,False
+tabula_human,hematopoietic stem cell,endocrine_gland,0,False
+tabula_human,hematopoietic stem cell,exocrine_gland,0,False
+tabula_human,hematopoietic stem cell,eye,0,False
+tabula_human,hematopoietic stem cell,heart,0,False
+tabula_human,hematopoietic stem cell,kidney,0,False
+tabula_human,hematopoietic stem cell,large_intestine,0,False
+tabula_human,hematopoietic stem cell,liver,0,False
+tabula_human,hematopoietic stem cell,lung,0,False
+tabula_human,hematopoietic stem cell,lymph_node,0,False
+tabula_human,hematopoietic stem cell,mucosa,0,False
+tabula_human,hematopoietic stem cell,muscle,0,False
+tabula_human,hematopoietic stem cell,ovary,0,False
+tabula_human,hematopoietic stem cell,pancreas,0,False
+tabula_human,hematopoietic stem cell,peripheral_nerve,0,False
+tabula_human,hematopoietic stem cell,prostate,0,False
+tabula_human,hematopoietic stem cell,respiratory,0,False
+tabula_human,hematopoietic stem cell,sensory,0,False
+tabula_human,hematopoietic stem cell,skin,0,False
+tabula_human,hematopoietic stem cell,small_intestine,0,False
+tabula_human,hematopoietic stem cell,spleen,2,False
+tabula_human,hematopoietic stem cell,stomach,0,False
+tabula_human,hematopoietic stem cell,testis,0,False
+tabula_human,hematopoietic stem cell,tongue,0,False
+tabula_human,hematopoietic stem cell,uterus,0,False
+tabula_human,hematopoietic stem cell,vasculature,0,False
+tabula_human,hepatocyte,adipose,0,False
+tabula_human,hepatocyte,bladder,0,False
+tabula_human,hepatocyte,blood,0,False
+tabula_human,hepatocyte,bone_marrow,0,False
+tabula_human,hepatocyte,colon,0,False
+tabula_human,hepatocyte,endocrine_gland,0,False
+tabula_human,hepatocyte,exocrine_gland,0,False
+tabula_human,hepatocyte,eye,0,False
+tabula_human,hepatocyte,heart,0,False
+tabula_human,hepatocyte,kidney,0,False
+tabula_human,hepatocyte,large_intestine,0,False
+tabula_human,hepatocyte,liver,2000,True
+tabula_human,hepatocyte,lung,0,False
+tabula_human,hepatocyte,lymph_node,0,False
+tabula_human,hepatocyte,mucosa,0,False
+tabula_human,hepatocyte,muscle,0,False
+tabula_human,hepatocyte,ovary,0,False
+tabula_human,hepatocyte,pancreas,0,False
+tabula_human,hepatocyte,peripheral_nerve,0,False
+tabula_human,hepatocyte,prostate,0,False
+tabula_human,hepatocyte,respiratory,0,False
+tabula_human,hepatocyte,sensory,0,False
+tabula_human,hepatocyte,skin,0,False
+tabula_human,hepatocyte,small_intestine,0,False
+tabula_human,hepatocyte,spleen,0,False
+tabula_human,hepatocyte,stomach,0,False
+tabula_human,hepatocyte,testis,0,False
+tabula_human,hepatocyte,tongue,0,False
+tabula_human,hepatocyte,uterus,0,False
+tabula_human,hepatocyte,vasculature,0,False
+tabula_human,intermediate monocyte,adipose,23,False
+tabula_human,intermediate monocyte,bladder,0,False
+tabula_human,intermediate monocyte,blood,368,True
+tabula_human,intermediate monocyte,bone_marrow,79,False
+tabula_human,intermediate monocyte,colon,0,False
+tabula_human,intermediate monocyte,endocrine_gland,0,False
+tabula_human,intermediate monocyte,exocrine_gland,16,False
+tabula_human,intermediate monocyte,eye,12,False
+tabula_human,intermediate monocyte,heart,1,False
+tabula_human,intermediate monocyte,kidney,0,False
+tabula_human,intermediate monocyte,large_intestine,0,False
+tabula_human,intermediate monocyte,liver,206,True
+tabula_human,intermediate monocyte,lung,996,True
+tabula_human,intermediate monocyte,lymph_node,118,True
+tabula_human,intermediate monocyte,mucosa,0,False
+tabula_human,intermediate monocyte,muscle,1,False
+tabula_human,intermediate monocyte,ovary,0,False
+tabula_human,intermediate monocyte,pancreas,19,False
+tabula_human,intermediate monocyte,peripheral_nerve,0,False
+tabula_human,intermediate monocyte,prostate,0,False
+tabula_human,intermediate monocyte,respiratory,5,False
+tabula_human,intermediate monocyte,sensory,2,False
+tabula_human,intermediate monocyte,skin,0,False
+tabula_human,intermediate monocyte,small_intestine,0,False
+tabula_human,intermediate monocyte,spleen,151,True
+tabula_human,intermediate monocyte,stomach,0,False
+tabula_human,intermediate monocyte,testis,0,False
+tabula_human,intermediate monocyte,tongue,0,False
+tabula_human,intermediate monocyte,uterus,0,False
+tabula_human,intermediate monocyte,vasculature,3,False
+tabula_human,large intestine goblet cell,adipose,0,False
+tabula_human,large intestine goblet cell,bladder,0,False
+tabula_human,large intestine goblet cell,blood,0,False
+tabula_human,large intestine goblet cell,bone_marrow,0,False
+tabula_human,large intestine goblet cell,colon,961,True
+tabula_human,large intestine goblet cell,endocrine_gland,0,False
+tabula_human,large intestine goblet cell,exocrine_gland,0,False
+tabula_human,large intestine goblet cell,eye,0,False
+tabula_human,large intestine goblet cell,heart,0,False
+tabula_human,large intestine goblet cell,kidney,0,False
+tabula_human,large intestine goblet cell,large_intestine,596,True
+tabula_human,large intestine goblet cell,liver,0,False
+tabula_human,large intestine goblet cell,lung,0,False
+tabula_human,large intestine goblet cell,lymph_node,0,False
+tabula_human,large intestine goblet cell,mucosa,0,False
+tabula_human,large intestine goblet cell,muscle,0,False
+tabula_human,large intestine goblet cell,ovary,0,False
+tabula_human,large intestine goblet cell,pancreas,0,False
+tabula_human,large intestine goblet cell,peripheral_nerve,0,False
+tabula_human,large intestine goblet cell,prostate,0,False
+tabula_human,large intestine goblet cell,respiratory,0,False
+tabula_human,large intestine goblet cell,sensory,0,False
+tabula_human,large intestine goblet cell,skin,0,False
+tabula_human,large intestine goblet cell,small_intestine,0,False
+tabula_human,large intestine goblet cell,spleen,0,False
+tabula_human,large intestine goblet cell,stomach,0,False
+tabula_human,large intestine goblet cell,testis,0,False
+tabula_human,large intestine goblet cell,tongue,0,False
+tabula_human,large intestine goblet cell,uterus,0,False
+tabula_human,large intestine goblet cell,vasculature,0,False
+tabula_human,luminal epithelial cell of mammary gland,adipose,0,False
+tabula_human,luminal epithelial cell of mammary gland,bladder,0,False
+tabula_human,luminal epithelial cell of mammary gland,blood,0,False
+tabula_human,luminal epithelial cell of mammary gland,bone_marrow,0,False
+tabula_human,luminal epithelial cell of mammary gland,colon,0,False
+tabula_human,luminal epithelial cell of mammary gland,endocrine_gland,0,False
+tabula_human,luminal epithelial cell of mammary gland,exocrine_gland,2000,True
+tabula_human,luminal epithelial cell of mammary gland,eye,0,False
+tabula_human,luminal epithelial cell of mammary gland,heart,0,False
+tabula_human,luminal epithelial cell of mammary gland,kidney,0,False
+tabula_human,luminal epithelial cell of mammary gland,large_intestine,0,False
+tabula_human,luminal epithelial cell of mammary gland,liver,0,False
+tabula_human,luminal epithelial cell of mammary gland,lung,0,False
+tabula_human,luminal epithelial cell of mammary gland,lymph_node,0,False
+tabula_human,luminal epithelial cell of mammary gland,mucosa,0,False
+tabula_human,luminal epithelial cell of mammary gland,muscle,0,False
+tabula_human,luminal epithelial cell of mammary gland,ovary,0,False
+tabula_human,luminal epithelial cell of mammary gland,pancreas,0,False
+tabula_human,luminal epithelial cell of mammary gland,peripheral_nerve,0,False
+tabula_human,luminal epithelial cell of mammary gland,prostate,0,False
+tabula_human,luminal epithelial cell of mammary gland,respiratory,0,False
+tabula_human,luminal epithelial cell of mammary gland,sensory,0,False
+tabula_human,luminal epithelial cell of mammary gland,skin,0,False
+tabula_human,luminal epithelial cell of mammary gland,small_intestine,0,False
+tabula_human,luminal epithelial cell of mammary gland,spleen,0,False
+tabula_human,luminal epithelial cell of mammary gland,stomach,0,False
+tabula_human,luminal epithelial cell of mammary gland,testis,0,False
+tabula_human,luminal epithelial cell of mammary gland,tongue,0,False
+tabula_human,luminal epithelial cell of mammary gland,uterus,0,False
+tabula_human,luminal epithelial cell of mammary gland,vasculature,0,False
+tabula_human,macrophage,adipose,465,True
+tabula_human,macrophage,bladder,101,True
+tabula_human,macrophage,blood,31,False
+tabula_human,macrophage,bone_marrow,10,False
+tabula_human,macrophage,colon,0,False
+tabula_human,macrophage,endocrine_gland,18,False
+tabula_human,macrophage,exocrine_gland,78,False
+tabula_human,macrophage,eye,6,False
+tabula_human,macrophage,heart,91,False
+tabula_human,macrophage,kidney,15,False
+tabula_human,macrophage,large_intestine,0,False
+tabula_human,macrophage,liver,93,False
+tabula_human,macrophage,lung,470,True
+tabula_human,macrophage,lymph_node,59,False
+tabula_human,macrophage,mucosa,2,False
+tabula_human,macrophage,muscle,92,False
+tabula_human,macrophage,ovary,9,False
+tabula_human,macrophage,pancreas,45,False
+tabula_human,macrophage,peripheral_nerve,0,False
+tabula_human,macrophage,prostate,23,False
+tabula_human,macrophage,respiratory,16,False
+tabula_human,macrophage,sensory,5,False
+tabula_human,macrophage,skin,107,True
+tabula_human,macrophage,small_intestine,8,False
+tabula_human,macrophage,spleen,65,False
+tabula_human,macrophage,stomach,26,False
+tabula_human,macrophage,testis,1,False
+tabula_human,macrophage,tongue,13,False
+tabula_human,macrophage,uterus,26,False
+tabula_human,macrophage,vasculature,125,True
+tabula_human,mature NK T cell,adipose,140,True
+tabula_human,mature NK T cell,bladder,31,False
+tabula_human,mature NK T cell,blood,76,False
+tabula_human,mature NK T cell,bone_marrow,29,False
+tabula_human,mature NK T cell,colon,10,False
+tabula_human,mature NK T cell,endocrine_gland,0,False
+tabula_human,mature NK T cell,exocrine_gland,10,False
+tabula_human,mature NK T cell,eye,35,False
+tabula_human,mature NK T cell,heart,39,False
+tabula_human,mature NK T cell,kidney,0,False
+tabula_human,mature NK T cell,large_intestine,1,False
+tabula_human,mature NK T cell,liver,286,True
+tabula_human,mature NK T cell,lung,56,False
+tabula_human,mature NK T cell,lymph_node,374,True
+tabula_human,mature NK T cell,mucosa,1,False
+tabula_human,mature NK T cell,muscle,40,False
+tabula_human,mature NK T cell,ovary,1,False
+tabula_human,mature NK T cell,pancreas,0,False
+tabula_human,mature NK T cell,peripheral_nerve,0,False
+tabula_human,mature NK T cell,prostate,181,True
+tabula_human,mature NK T cell,respiratory,13,False
+tabula_human,mature NK T cell,sensory,0,False
+tabula_human,mature NK T cell,skin,15,False
+tabula_human,mature NK T cell,small_intestine,0,False
+tabula_human,mature NK T cell,spleen,381,True
+tabula_human,mature NK T cell,stomach,33,False
+tabula_human,mature NK T cell,testis,0,False
+tabula_human,mature NK T cell,tongue,0,False
+tabula_human,mature NK T cell,uterus,80,False
+tabula_human,mature NK T cell,vasculature,168,True
+tabula_human,mesenchymal stem cell,adipose,2,False
+tabula_human,mesenchymal stem cell,bladder,0,False
+tabula_human,mesenchymal stem cell,blood,0,False
+tabula_human,mesenchymal stem cell,bone_marrow,0,False
+tabula_human,mesenchymal stem cell,colon,0,False
+tabula_human,mesenchymal stem cell,endocrine_gland,0,False
+tabula_human,mesenchymal stem cell,exocrine_gland,0,False
+tabula_human,mesenchymal stem cell,eye,0,False
+tabula_human,mesenchymal stem cell,heart,0,False
+tabula_human,mesenchymal stem cell,kidney,0,False
+tabula_human,mesenchymal stem cell,large_intestine,0,False
+tabula_human,mesenchymal stem cell,liver,0,False
+tabula_human,mesenchymal stem cell,lung,0,False
+tabula_human,mesenchymal stem cell,lymph_node,0,False
+tabula_human,mesenchymal stem cell,mucosa,0,False
+tabula_human,mesenchymal stem cell,muscle,1998,True
+tabula_human,mesenchymal stem cell,ovary,0,False
+tabula_human,mesenchymal stem cell,pancreas,0,False
+tabula_human,mesenchymal stem cell,peripheral_nerve,0,False
+tabula_human,mesenchymal stem cell,prostate,0,False
+tabula_human,mesenchymal stem cell,respiratory,0,False
+tabula_human,mesenchymal stem cell,sensory,0,False
+tabula_human,mesenchymal stem cell,skin,0,False
+tabula_human,mesenchymal stem cell,small_intestine,0,False
+tabula_human,mesenchymal stem cell,spleen,0,False
+tabula_human,mesenchymal stem cell,stomach,0,False
+tabula_human,mesenchymal stem cell,testis,0,False
+tabula_human,mesenchymal stem cell,tongue,0,False
+tabula_human,mesenchymal stem cell,uterus,0,False
+tabula_human,mesenchymal stem cell,vasculature,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,adipose,2000,True
+tabula_human,mesenchymal stem cell of adipose tissue,bladder,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,blood,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,bone_marrow,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,colon,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,endocrine_gland,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,exocrine_gland,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,eye,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,heart,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,kidney,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,large_intestine,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,liver,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,lung,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,lymph_node,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,mucosa,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,muscle,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,ovary,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,pancreas,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,peripheral_nerve,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,prostate,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,respiratory,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,sensory,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,skin,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,small_intestine,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,spleen,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,stomach,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,testis,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,tongue,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,uterus,0,False
+tabula_human,mesenchymal stem cell of adipose tissue,vasculature,0,False
+tabula_human,monocyte,adipose,75,False
+tabula_human,monocyte,bladder,405,True
+tabula_human,monocyte,blood,732,True
+tabula_human,monocyte,bone_marrow,158,True
+tabula_human,monocyte,colon,2,False
+tabula_human,monocyte,endocrine_gland,1,False
+tabula_human,monocyte,exocrine_gland,7,False
+tabula_human,monocyte,eye,7,False
+tabula_human,monocyte,heart,24,False
+tabula_human,monocyte,kidney,4,False
+tabula_human,monocyte,large_intestine,1,False
+tabula_human,monocyte,liver,136,True
+tabula_human,monocyte,lung,43,False
+tabula_human,monocyte,lymph_node,54,False
+tabula_human,monocyte,mucosa,0,False
+tabula_human,monocyte,muscle,3,False
+tabula_human,monocyte,ovary,1,False
+tabula_human,monocyte,pancreas,2,False
+tabula_human,monocyte,peripheral_nerve,0,False
+tabula_human,monocyte,prostate,0,False
+tabula_human,monocyte,respiratory,6,False
+tabula_human,monocyte,sensory,0,False
+tabula_human,monocyte,skin,0,False
+tabula_human,monocyte,small_intestine,7,False
+tabula_human,monocyte,spleen,221,True
+tabula_human,monocyte,stomach,87,False
+tabula_human,monocyte,testis,0,False
+tabula_human,monocyte,tongue,14,False
+tabula_human,monocyte,uterus,1,False
+tabula_human,monocyte,vasculature,9,False
+tabula_human,myeloid dendritic cell,adipose,6,False
+tabula_human,myeloid dendritic cell,bladder,0,False
+tabula_human,myeloid dendritic cell,blood,1,False
+tabula_human,myeloid dendritic cell,bone_marrow,108,True
+tabula_human,myeloid dendritic cell,colon,36,False
+tabula_human,myeloid dendritic cell,endocrine_gland,0,False
+tabula_human,myeloid dendritic cell,exocrine_gland,1,False
+tabula_human,myeloid dendritic cell,eye,28,False
+tabula_human,myeloid dendritic cell,heart,0,False
+tabula_human,myeloid dendritic cell,kidney,0,False
+tabula_human,myeloid dendritic cell,large_intestine,4,False
+tabula_human,myeloid dendritic cell,liver,56,False
+tabula_human,myeloid dendritic cell,lung,33,False
+tabula_human,myeloid dendritic cell,lymph_node,122,True
+tabula_human,myeloid dendritic cell,mucosa,0,False
+tabula_human,myeloid dendritic cell,muscle,9,False
+tabula_human,myeloid dendritic cell,ovary,1,False
+tabula_human,myeloid dendritic cell,pancreas,0,False
+tabula_human,myeloid dendritic cell,peripheral_nerve,0,False
+tabula_human,myeloid dendritic cell,prostate,0,False
+tabula_human,myeloid dendritic cell,respiratory,1,False
+tabula_human,myeloid dendritic cell,sensory,0,False
+tabula_human,myeloid dendritic cell,skin,108,True
+tabula_human,myeloid dendritic cell,small_intestine,11,False
+tabula_human,myeloid dendritic cell,spleen,17,False
+tabula_human,myeloid dendritic cell,stomach,0,False
+tabula_human,myeloid dendritic cell,testis,0,False
+tabula_human,myeloid dendritic cell,tongue,22,False
+tabula_human,myeloid dendritic cell,uterus,2,False
+tabula_human,myeloid dendritic cell,vasculature,5,False
+tabula_human,myeloid leukocyte,adipose,0,False
+tabula_human,myeloid leukocyte,bladder,0,False
+tabula_human,myeloid leukocyte,blood,0,False
+tabula_human,myeloid leukocyte,bone_marrow,0,False
+tabula_human,myeloid leukocyte,colon,341,True
+tabula_human,myeloid leukocyte,endocrine_gland,0,False
+tabula_human,myeloid leukocyte,exocrine_gland,0,False
+tabula_human,myeloid leukocyte,eye,648,True
+tabula_human,myeloid leukocyte,heart,0,False
+tabula_human,myeloid leukocyte,kidney,0,False
+tabula_human,myeloid leukocyte,large_intestine,13,False
+tabula_human,myeloid leukocyte,liver,0,False
+tabula_human,myeloid leukocyte,lung,0,False
+tabula_human,myeloid leukocyte,lymph_node,0,False
+tabula_human,myeloid leukocyte,mucosa,0,False
+tabula_human,myeloid leukocyte,muscle,0,False
+tabula_human,myeloid leukocyte,ovary,0,False
+tabula_human,myeloid leukocyte,pancreas,0,False
+tabula_human,myeloid leukocyte,peripheral_nerve,0,False
+tabula_human,myeloid leukocyte,prostate,0,False
+tabula_human,myeloid leukocyte,respiratory,0,False
+tabula_human,myeloid leukocyte,sensory,0,False
+tabula_human,myeloid leukocyte,skin,0,False
+tabula_human,myeloid leukocyte,small_intestine,0,False
+tabula_human,myeloid leukocyte,spleen,0,False
+tabula_human,myeloid leukocyte,stomach,0,False
+tabula_human,myeloid leukocyte,testis,0,False
+tabula_human,myeloid leukocyte,tongue,0,False
+tabula_human,myeloid leukocyte,uterus,0,False
+tabula_human,myeloid leukocyte,vasculature,0,False
+tabula_human,natural killer cell,adipose,125,True
+tabula_human,natural killer cell,bladder,31,False
+tabula_human,natural killer cell,blood,423,True
+tabula_human,natural killer cell,bone_marrow,150,True
+tabula_human,natural killer cell,colon,0,False
+tabula_human,natural killer cell,endocrine_gland,61,False
+tabula_human,natural killer cell,exocrine_gland,7,False
+tabula_human,natural killer cell,eye,6,False
+tabula_human,natural killer cell,heart,23,False
+tabula_human,natural killer cell,kidney,38,False
+tabula_human,natural killer cell,large_intestine,1,False
+tabula_human,natural killer cell,liver,111,True
+tabula_human,natural killer cell,lung,146,True
+tabula_human,natural killer cell,lymph_node,212,True
+tabula_human,natural killer cell,mucosa,0,False
+tabula_human,natural killer cell,muscle,12,False
+tabula_human,natural killer cell,ovary,0,False
+tabula_human,natural killer cell,pancreas,6,False
+tabula_human,natural killer cell,peripheral_nerve,0,False
+tabula_human,natural killer cell,prostate,0,False
+tabula_human,natural killer cell,respiratory,7,False
+tabula_human,natural killer cell,sensory,0,False
+tabula_human,natural killer cell,skin,12,False
+tabula_human,natural killer cell,small_intestine,18,False
+tabula_human,natural killer cell,spleen,555,True
+tabula_human,natural killer cell,stomach,16,False
+tabula_human,natural killer cell,testis,0,False
+tabula_human,natural killer cell,tongue,0,False
+tabula_human,natural killer cell,uterus,10,False
+tabula_human,natural killer cell,vasculature,30,False
+tabula_human,neutrophil,adipose,110,True
+tabula_human,neutrophil,bladder,11,False
+tabula_human,neutrophil,blood,902,True
+tabula_human,neutrophil,bone_marrow,235,True
+tabula_human,neutrophil,colon,0,False
+tabula_human,neutrophil,endocrine_gland,2,False
+tabula_human,neutrophil,exocrine_gland,9,False
+tabula_human,neutrophil,eye,0,False
+tabula_human,neutrophil,heart,27,False
+tabula_human,neutrophil,kidney,1,False
+tabula_human,neutrophil,large_intestine,0,False
+tabula_human,neutrophil,liver,22,False
+tabula_human,neutrophil,lung,4,False
+tabula_human,neutrophil,lymph_node,10,False
+tabula_human,neutrophil,mucosa,0,False
+tabula_human,neutrophil,muscle,4,False
+tabula_human,neutrophil,ovary,1,False
+tabula_human,neutrophil,pancreas,0,False
+tabula_human,neutrophil,peripheral_nerve,0,False
+tabula_human,neutrophil,prostate,9,False
+tabula_human,neutrophil,respiratory,130,True
+tabula_human,neutrophil,sensory,0,False
+tabula_human,neutrophil,skin,7,False
+tabula_human,neutrophil,small_intestine,3,False
+tabula_human,neutrophil,spleen,466,True
+tabula_human,neutrophil,stomach,21,False
+tabula_human,neutrophil,testis,0,False
+tabula_human,neutrophil,tongue,6,False
+tabula_human,neutrophil,uterus,6,False
+tabula_human,neutrophil,vasculature,14,False
+tabula_human,non-classical monocyte,adipose,1,False
+tabula_human,non-classical monocyte,bladder,0,False
+tabula_human,non-classical monocyte,blood,353,True
+tabula_human,non-classical monocyte,bone_marrow,53,False
+tabula_human,non-classical monocyte,colon,0,False
+tabula_human,non-classical monocyte,endocrine_gland,0,False
+tabula_human,non-classical monocyte,exocrine_gland,1,False
+tabula_human,non-classical monocyte,eye,2,False
+tabula_human,non-classical monocyte,heart,1,False
+tabula_human,non-classical monocyte,kidney,27,False
+tabula_human,non-classical monocyte,large_intestine,0,False
+tabula_human,non-classical monocyte,liver,113,True
+tabula_human,non-classical monocyte,lung,527,True
+tabula_human,non-classical monocyte,lymph_node,71,False
+tabula_human,non-classical monocyte,mucosa,0,False
+tabula_human,non-classical monocyte,muscle,3,False
+tabula_human,non-classical monocyte,ovary,0,False
+tabula_human,non-classical monocyte,pancreas,1,False
+tabula_human,non-classical monocyte,peripheral_nerve,0,False
+tabula_human,non-classical monocyte,prostate,0,False
+tabula_human,non-classical monocyte,respiratory,5,False
+tabula_human,non-classical monocyte,sensory,0,False
+tabula_human,non-classical monocyte,skin,0,False
+tabula_human,non-classical monocyte,small_intestine,0,False
+tabula_human,non-classical monocyte,spleen,126,True
+tabula_human,non-classical monocyte,stomach,0,False
+tabula_human,non-classical monocyte,testis,0,False
+tabula_human,non-classical monocyte,tongue,0,False
+tabula_human,non-classical monocyte,uterus,0,False
+tabula_human,non-classical monocyte,vasculature,0,False
+tabula_human,pancreatic acinar cell,adipose,0,False
+tabula_human,pancreatic acinar cell,bladder,0,False
+tabula_human,pancreatic acinar cell,blood,0,False
+tabula_human,pancreatic acinar cell,bone_marrow,0,False
+tabula_human,pancreatic acinar cell,colon,0,False
+tabula_human,pancreatic acinar cell,endocrine_gland,0,False
+tabula_human,pancreatic acinar cell,exocrine_gland,0,False
+tabula_human,pancreatic acinar cell,eye,0,False
+tabula_human,pancreatic acinar cell,heart,0,False
+tabula_human,pancreatic acinar cell,kidney,0,False
+tabula_human,pancreatic acinar cell,large_intestine,0,False
+tabula_human,pancreatic acinar cell,liver,0,False
+tabula_human,pancreatic acinar cell,lung,0,False
+tabula_human,pancreatic acinar cell,lymph_node,0,False
+tabula_human,pancreatic acinar cell,mucosa,0,False
+tabula_human,pancreatic acinar cell,muscle,0,False
+tabula_human,pancreatic acinar cell,ovary,0,False
+tabula_human,pancreatic acinar cell,pancreas,2000,True
+tabula_human,pancreatic acinar cell,peripheral_nerve,0,False
+tabula_human,pancreatic acinar cell,prostate,0,False
+tabula_human,pancreatic acinar cell,respiratory,0,False
+tabula_human,pancreatic acinar cell,sensory,0,False
+tabula_human,pancreatic acinar cell,skin,0,False
+tabula_human,pancreatic acinar cell,small_intestine,0,False
+tabula_human,pancreatic acinar cell,spleen,0,False
+tabula_human,pancreatic acinar cell,stomach,0,False
+tabula_human,pancreatic acinar cell,testis,0,False
+tabula_human,pancreatic acinar cell,tongue,0,False
+tabula_human,pancreatic acinar cell,uterus,0,False
+tabula_human,pancreatic acinar cell,vasculature,0,False
+tabula_human,pancreatic ductal cell,adipose,0,False
+tabula_human,pancreatic ductal cell,bladder,0,False
+tabula_human,pancreatic ductal cell,blood,0,False
+tabula_human,pancreatic ductal cell,bone_marrow,0,False
+tabula_human,pancreatic ductal cell,colon,0,False
+tabula_human,pancreatic ductal cell,endocrine_gland,0,False
+tabula_human,pancreatic ductal cell,exocrine_gland,0,False
+tabula_human,pancreatic ductal cell,eye,0,False
+tabula_human,pancreatic ductal cell,heart,0,False
+tabula_human,pancreatic ductal cell,kidney,0,False
+tabula_human,pancreatic ductal cell,large_intestine,0,False
+tabula_human,pancreatic ductal cell,liver,0,False
+tabula_human,pancreatic ductal cell,lung,0,False
+tabula_human,pancreatic ductal cell,lymph_node,0,False
+tabula_human,pancreatic ductal cell,mucosa,0,False
+tabula_human,pancreatic ductal cell,muscle,0,False
+tabula_human,pancreatic ductal cell,ovary,0,False
+tabula_human,pancreatic ductal cell,pancreas,2000,True
+tabula_human,pancreatic ductal cell,peripheral_nerve,0,False
+tabula_human,pancreatic ductal cell,prostate,0,False
+tabula_human,pancreatic ductal cell,respiratory,0,False
+tabula_human,pancreatic ductal cell,sensory,0,False
+tabula_human,pancreatic ductal cell,skin,0,False
+tabula_human,pancreatic ductal cell,small_intestine,0,False
+tabula_human,pancreatic ductal cell,spleen,0,False
+tabula_human,pancreatic ductal cell,stomach,0,False
+tabula_human,pancreatic ductal cell,testis,0,False
+tabula_human,pancreatic ductal cell,tongue,0,False
+tabula_human,pancreatic ductal cell,uterus,0,False
+tabula_human,pancreatic ductal cell,vasculature,0,False
+tabula_human,plasma cell,adipose,17,False
+tabula_human,plasma cell,bladder,90,False
+tabula_human,plasma cell,blood,63,False
+tabula_human,plasma cell,bone_marrow,108,True
+tabula_human,plasma cell,colon,193,True
+tabula_human,plasma cell,endocrine_gland,112,True
+tabula_human,plasma cell,exocrine_gland,67,False
+tabula_human,plasma cell,eye,94,False
+tabula_human,plasma cell,heart,2,False
+tabula_human,plasma cell,kidney,1,False
+tabula_human,plasma cell,large_intestine,33,False
+tabula_human,plasma cell,liver,54,False
+tabula_human,plasma cell,lung,8,False
+tabula_human,plasma cell,lymph_node,463,True
+tabula_human,plasma cell,mucosa,0,False
+tabula_human,plasma cell,muscle,1,False
+tabula_human,plasma cell,ovary,2,False
+tabula_human,plasma cell,pancreas,2,False
+tabula_human,plasma cell,peripheral_nerve,0,False
+tabula_human,plasma cell,prostate,0,False
+tabula_human,plasma cell,respiratory,20,False
+tabula_human,plasma cell,sensory,0,False
+tabula_human,plasma cell,skin,3,False
+tabula_human,plasma cell,small_intestine,54,False
+tabula_human,plasma cell,spleen,292,True
+tabula_human,plasma cell,stomach,304,True
+tabula_human,plasma cell,testis,0,False
+tabula_human,plasma cell,tongue,13,False
+tabula_human,plasma cell,uterus,1,False
+tabula_human,plasma cell,vasculature,3,False
+tabula_human,smooth muscle cell,adipose,195,True
+tabula_human,smooth muscle cell,bladder,126,True
+tabula_human,smooth muscle cell,blood,0,False
+tabula_human,smooth muscle cell,bone_marrow,0,False
+tabula_human,smooth muscle cell,colon,0,False
+tabula_human,smooth muscle cell,endocrine_gland,232,True
+tabula_human,smooth muscle cell,exocrine_gland,0,False
+tabula_human,smooth muscle cell,eye,50,False
+tabula_human,smooth muscle cell,heart,484,True
+tabula_human,smooth muscle cell,kidney,0,False
+tabula_human,smooth muscle cell,large_intestine,0,False
+tabula_human,smooth muscle cell,liver,0,False
+tabula_human,smooth muscle cell,lung,0,False
+tabula_human,smooth muscle cell,lymph_node,0,False
+tabula_human,smooth muscle cell,mucosa,0,False
+tabula_human,smooth muscle cell,muscle,29,False
+tabula_human,smooth muscle cell,ovary,153,True
+tabula_human,smooth muscle cell,pancreas,0,False
+tabula_human,smooth muscle cell,peripheral_nerve,0,False
+tabula_human,smooth muscle cell,prostate,48,False
+tabula_human,smooth muscle cell,respiratory,14,False
+tabula_human,smooth muscle cell,sensory,0,False
+tabula_human,smooth muscle cell,skin,49,False
+tabula_human,smooth muscle cell,small_intestine,0,False
+tabula_human,smooth muscle cell,spleen,0,False
+tabula_human,smooth muscle cell,stomach,6,False
+tabula_human,smooth muscle cell,testis,0,False
+tabula_human,smooth muscle cell,tongue,0,False
+tabula_human,smooth muscle cell,uterus,0,False
+tabula_human,smooth muscle cell,vasculature,614,True
+tabula_human,stromal cell,adipose,0,False
+tabula_human,stromal cell,bladder,0,False
+tabula_human,stromal cell,blood,0,False
+tabula_human,stromal cell,bone_marrow,0,False
+tabula_human,stromal cell,colon,0,False
+tabula_human,stromal cell,endocrine_gland,0,False
+tabula_human,stromal cell,exocrine_gland,0,False
+tabula_human,stromal cell,eye,2,False
+tabula_human,stromal cell,heart,0,False
+tabula_human,stromal cell,kidney,0,False
+tabula_human,stromal cell,large_intestine,0,False
+tabula_human,stromal cell,liver,0,False
+tabula_human,stromal cell,lung,0,False
+tabula_human,stromal cell,lymph_node,62,False
+tabula_human,stromal cell,mucosa,0,False
+tabula_human,stromal cell,muscle,0,False
+tabula_human,stromal cell,ovary,1237,True
+tabula_human,stromal cell,pancreas,0,False
+tabula_human,stromal cell,peripheral_nerve,108,True
+tabula_human,stromal cell,prostate,0,False
+tabula_human,stromal cell,respiratory,0,False
+tabula_human,stromal cell,sensory,549,True
+tabula_human,stromal cell,skin,2,False
+tabula_human,stromal cell,small_intestine,0,False
+tabula_human,stromal cell,spleen,0,False
+tabula_human,stromal cell,stomach,0,False
+tabula_human,stromal cell,testis,40,False
+tabula_human,stromal cell,tongue,0,False
+tabula_human,stromal cell,uterus,0,False
+tabula_human,stromal cell,vasculature,0,False
+tabula_mouse,B cell,adipose,127,True
+tabula_mouse,B cell,bone_marrow,0,False
+tabula_mouse,B cell,brain,0,False
+tabula_mouse,B cell,endocrine_gland,0,False
+tabula_mouse,B cell,exocrine_gland,95,False
+tabula_mouse,B cell,heart,24,False
+tabula_mouse,B cell,kidney,183,True
+tabula_mouse,B cell,large_intestine,0,False
+tabula_mouse,B cell,liver,17,False
+tabula_mouse,B cell,lung,96,False
+tabula_mouse,B cell,muscle,100,True
+tabula_mouse,B cell,pancreas,0,False
+tabula_mouse,B cell,respiratory,0,False
+tabula_mouse,B cell,skin,0,False
+tabula_mouse,B cell,spleen,1358,True
+tabula_mouse,B cell,bladder,0,False
+tabula_mouse,B cell,vasculature,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",adipose,375,True
+tabula_mouse,"CD4-positive, alpha-beta T cell",bone_marrow,280,True
+tabula_mouse,"CD4-positive, alpha-beta T cell",brain,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",endocrine_gland,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",exocrine_gland,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",heart,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",kidney,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",large_intestine,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",liver,42,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",lung,610,True
+tabula_mouse,"CD4-positive, alpha-beta T cell",muscle,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",pancreas,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",respiratory,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",skin,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",spleen,414,True
+tabula_mouse,"CD4-positive, alpha-beta T cell",bladder,0,False
+tabula_mouse,"CD4-positive, alpha-beta T cell",vasculature,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",adipose,429,True
+tabula_mouse,"CD8-positive, alpha-beta T cell",bone_marrow,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",brain,104,True
+tabula_mouse,"CD8-positive, alpha-beta T cell",endocrine_gland,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",exocrine_gland,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",heart,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",kidney,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",large_intestine,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",liver,64,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",lung,989,True
+tabula_mouse,"CD8-positive, alpha-beta T cell",muscle,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",pancreas,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",respiratory,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",skin,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",spleen,354,True
+tabula_mouse,"CD8-positive, alpha-beta T cell",bladder,0,False
+tabula_mouse,"CD8-positive, alpha-beta T cell",vasculature,0,False
+tabula_mouse,T cell,adipose,146,True
+tabula_mouse,T cell,bone_marrow,0,False
+tabula_mouse,T cell,brain,8,False
+tabula_mouse,T cell,endocrine_gland,0,False
+tabula_mouse,T cell,exocrine_gland,489,True
+tabula_mouse,T cell,heart,23,False
+tabula_mouse,T cell,kidney,242,True
+tabula_mouse,T cell,large_intestine,0,False
+tabula_mouse,T cell,liver,5,False
+tabula_mouse,T cell,lung,44,False
+tabula_mouse,T cell,muscle,210,True
+tabula_mouse,T cell,pancreas,0,False
+tabula_mouse,T cell,respiratory,46,False
+tabula_mouse,T cell,skin,14,False
+tabula_mouse,T cell,spleen,773,True
+tabula_mouse,T cell,bladder,0,False
+tabula_mouse,T cell,vasculature,0,False
+tabula_mouse,adventitial cell,adipose,0,False
+tabula_mouse,adventitial cell,bone_marrow,0,False
+tabula_mouse,adventitial cell,brain,0,False
+tabula_mouse,adventitial cell,endocrine_gland,0,False
+tabula_mouse,adventitial cell,exocrine_gland,0,False
+tabula_mouse,adventitial cell,heart,0,False
+tabula_mouse,adventitial cell,kidney,0,False
+tabula_mouse,adventitial cell,large_intestine,0,False
+tabula_mouse,adventitial cell,liver,0,False
+tabula_mouse,adventitial cell,lung,815,True
+tabula_mouse,adventitial cell,muscle,0,False
+tabula_mouse,adventitial cell,pancreas,0,False
+tabula_mouse,adventitial cell,respiratory,0,False
+tabula_mouse,adventitial cell,skin,0,False
+tabula_mouse,adventitial cell,spleen,0,False
+tabula_mouse,adventitial cell,bladder,0,False
+tabula_mouse,adventitial cell,vasculature,0,False
+tabula_mouse,basal cell,adipose,0,False
+tabula_mouse,basal cell,bone_marrow,0,False
+tabula_mouse,basal cell,brain,0,False
+tabula_mouse,basal cell,endocrine_gland,0,False
+tabula_mouse,basal cell,exocrine_gland,2000,True
+tabula_mouse,basal cell,heart,0,False
+tabula_mouse,basal cell,kidney,0,False
+tabula_mouse,basal cell,large_intestine,0,False
+tabula_mouse,basal cell,liver,0,False
+tabula_mouse,basal cell,lung,0,False
+tabula_mouse,basal cell,muscle,0,False
+tabula_mouse,basal cell,pancreas,0,False
+tabula_mouse,basal cell,respiratory,0,False
+tabula_mouse,basal cell,skin,0,False
+tabula_mouse,basal cell,spleen,0,False
+tabula_mouse,basal cell,bladder,0,False
+tabula_mouse,basal cell,vasculature,0,False
+tabula_mouse,bladder urothelial cell,adipose,0,False
+tabula_mouse,bladder urothelial cell,bone_marrow,0,False
+tabula_mouse,bladder urothelial cell,brain,0,False
+tabula_mouse,bladder urothelial cell,endocrine_gland,0,False
+tabula_mouse,bladder urothelial cell,exocrine_gland,0,False
+tabula_mouse,bladder urothelial cell,heart,0,False
+tabula_mouse,bladder urothelial cell,kidney,0,False
+tabula_mouse,bladder urothelial cell,large_intestine,0,False
+tabula_mouse,bladder urothelial cell,liver,0,False
+tabula_mouse,bladder urothelial cell,lung,0,False
+tabula_mouse,bladder urothelial cell,muscle,0,False
+tabula_mouse,bladder urothelial cell,pancreas,0,False
+tabula_mouse,bladder urothelial cell,respiratory,0,False
+tabula_mouse,bladder urothelial cell,skin,0,False
+tabula_mouse,bladder urothelial cell,spleen,0,False
+tabula_mouse,bladder urothelial cell,bladder,2000,True
+tabula_mouse,bladder urothelial cell,vasculature,0,False
+tabula_mouse,classical monocyte,adipose,0,False
+tabula_mouse,classical monocyte,bone_marrow,0,False
+tabula_mouse,classical monocyte,brain,0,False
+tabula_mouse,classical monocyte,endocrine_gland,0,False
+tabula_mouse,classical monocyte,exocrine_gland,0,False
+tabula_mouse,classical monocyte,heart,0,False
+tabula_mouse,classical monocyte,kidney,0,False
+tabula_mouse,classical monocyte,large_intestine,0,False
+tabula_mouse,classical monocyte,liver,0,False
+tabula_mouse,classical monocyte,lung,2000,True
+tabula_mouse,classical monocyte,muscle,0,False
+tabula_mouse,classical monocyte,pancreas,0,False
+tabula_mouse,classical monocyte,respiratory,0,False
+tabula_mouse,classical monocyte,skin,0,False
+tabula_mouse,classical monocyte,spleen,0,False
+tabula_mouse,classical monocyte,bladder,0,False
+tabula_mouse,classical monocyte,vasculature,0,False
+tabula_mouse,endothelial cell,adipose,406,True
+tabula_mouse,endothelial cell,bone_marrow,0,False
+tabula_mouse,endothelial cell,brain,304,True
+tabula_mouse,endothelial cell,endocrine_gland,8,False
+tabula_mouse,endothelial cell,exocrine_gland,88,False
+tabula_mouse,endothelial cell,heart,0,False
+tabula_mouse,endothelial cell,kidney,0,False
+tabula_mouse,endothelial cell,large_intestine,0,False
+tabula_mouse,endothelial cell,liver,0,False
+tabula_mouse,endothelial cell,lung,0,False
+tabula_mouse,endothelial cell,muscle,1022,True
+tabula_mouse,endothelial cell,pancreas,35,False
+tabula_mouse,endothelial cell,respiratory,95,False
+tabula_mouse,endothelial cell,skin,0,False
+tabula_mouse,endothelial cell,spleen,0,False
+tabula_mouse,endothelial cell,bladder,42,False
+tabula_mouse,endothelial cell,vasculature,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,adipose,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,bone_marrow,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,brain,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,endocrine_gland,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,exocrine_gland,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,heart,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,kidney,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,large_intestine,2000,True
+tabula_mouse,enterocyte of epithelium of large intestine,liver,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,lung,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,muscle,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,pancreas,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,respiratory,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,skin,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,spleen,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,bladder,0,False
+tabula_mouse,enterocyte of epithelium of large intestine,vasculature,0,False
+tabula_mouse,epithelial cell,adipose,553,True
+tabula_mouse,epithelial cell,bone_marrow,0,False
+tabula_mouse,epithelial cell,brain,0,False
+tabula_mouse,epithelial cell,endocrine_gland,0,False
+tabula_mouse,epithelial cell,exocrine_gland,0,False
+tabula_mouse,epithelial cell,heart,0,False
+tabula_mouse,epithelial cell,kidney,0,False
+tabula_mouse,epithelial cell,large_intestine,0,False
+tabula_mouse,epithelial cell,liver,0,False
+tabula_mouse,epithelial cell,lung,0,False
+tabula_mouse,epithelial cell,muscle,0,False
+tabula_mouse,epithelial cell,pancreas,0,False
+tabula_mouse,epithelial cell,respiratory,193,True
+tabula_mouse,epithelial cell,skin,0,False
+tabula_mouse,epithelial cell,spleen,0,False
+tabula_mouse,epithelial cell,bladder,0,False
+tabula_mouse,epithelial cell,vasculature,18,False
+tabula_mouse,fibroblast,adipose,0,False
+tabula_mouse,fibroblast,bone_marrow,0,False
+tabula_mouse,fibroblast,brain,0,False
+tabula_mouse,fibroblast,endocrine_gland,43,False
+tabula_mouse,fibroblast,exocrine_gland,0,False
+tabula_mouse,fibroblast,heart,0,False
+tabula_mouse,fibroblast,kidney,102,True
+tabula_mouse,fibroblast,large_intestine,0,False
+tabula_mouse,fibroblast,liver,0,False
+tabula_mouse,fibroblast,lung,0,False
+tabula_mouse,fibroblast,muscle,0,False
+tabula_mouse,fibroblast,pancreas,0,False
+tabula_mouse,fibroblast,respiratory,1845,True
+tabula_mouse,fibroblast,skin,10,False
+tabula_mouse,fibroblast,spleen,0,False
+tabula_mouse,fibroblast,bladder,0,False
+tabula_mouse,fibroblast,vasculature,0,False
+tabula_mouse,fibroblast of cardiac tissue,adipose,0,False
+tabula_mouse,fibroblast of cardiac tissue,bone_marrow,0,False
+tabula_mouse,fibroblast of cardiac tissue,brain,0,False
+tabula_mouse,fibroblast of cardiac tissue,endocrine_gland,0,False
+tabula_mouse,fibroblast of cardiac tissue,exocrine_gland,0,False
+tabula_mouse,fibroblast of cardiac tissue,heart,1944,True
+tabula_mouse,fibroblast of cardiac tissue,kidney,0,False
+tabula_mouse,fibroblast of cardiac tissue,large_intestine,0,False
+tabula_mouse,fibroblast of cardiac tissue,liver,0,False
+tabula_mouse,fibroblast of cardiac tissue,lung,0,False
+tabula_mouse,fibroblast of cardiac tissue,muscle,0,False
+tabula_mouse,fibroblast of cardiac tissue,pancreas,0,False
+tabula_mouse,fibroblast of cardiac tissue,respiratory,0,False
+tabula_mouse,fibroblast of cardiac tissue,skin,0,False
+tabula_mouse,fibroblast of cardiac tissue,spleen,0,False
+tabula_mouse,fibroblast of cardiac tissue,bladder,0,False
+tabula_mouse,fibroblast of cardiac tissue,vasculature,56,False
+tabula_mouse,granulocyte,adipose,0,False
+tabula_mouse,granulocyte,bone_marrow,1789,True
+tabula_mouse,granulocyte,brain,0,False
+tabula_mouse,granulocyte,endocrine_gland,0,False
+tabula_mouse,granulocyte,exocrine_gland,0,False
+tabula_mouse,granulocyte,heart,0,False
+tabula_mouse,granulocyte,kidney,0,False
+tabula_mouse,granulocyte,large_intestine,0,False
+tabula_mouse,granulocyte,liver,0,False
+tabula_mouse,granulocyte,lung,0,False
+tabula_mouse,granulocyte,muscle,0,False
+tabula_mouse,granulocyte,pancreas,0,False
+tabula_mouse,granulocyte,respiratory,52,False
+tabula_mouse,granulocyte,skin,0,False
+tabula_mouse,granulocyte,spleen,159,True
+tabula_mouse,granulocyte,bladder,0,False
+tabula_mouse,granulocyte,vasculature,0,False
+tabula_mouse,hematopoietic precursor cell,adipose,0,False
+tabula_mouse,hematopoietic precursor cell,bone_marrow,2000,True
+tabula_mouse,hematopoietic precursor cell,brain,0,False
+tabula_mouse,hematopoietic precursor cell,endocrine_gland,0,False
+tabula_mouse,hematopoietic precursor cell,exocrine_gland,0,False
+tabula_mouse,hematopoietic precursor cell,heart,0,False
+tabula_mouse,hematopoietic precursor cell,kidney,0,False
+tabula_mouse,hematopoietic precursor cell,large_intestine,0,False
+tabula_mouse,hematopoietic precursor cell,liver,0,False
+tabula_mouse,hematopoietic precursor cell,lung,0,False
+tabula_mouse,hematopoietic precursor cell,muscle,0,False
+tabula_mouse,hematopoietic precursor cell,pancreas,0,False
+tabula_mouse,hematopoietic precursor cell,respiratory,0,False
+tabula_mouse,hematopoietic precursor cell,skin,0,False
+tabula_mouse,hematopoietic precursor cell,spleen,0,False
+tabula_mouse,hematopoietic precursor cell,bladder,0,False
+tabula_mouse,hematopoietic precursor cell,vasculature,0,False
+tabula_mouse,hematopoietic stem cell,adipose,0,False
+tabula_mouse,hematopoietic stem cell,bone_marrow,1977,True
+tabula_mouse,hematopoietic stem cell,brain,0,False
+tabula_mouse,hematopoietic stem cell,endocrine_gland,0,False
+tabula_mouse,hematopoietic stem cell,exocrine_gland,0,False
+tabula_mouse,hematopoietic stem cell,heart,0,False
+tabula_mouse,hematopoietic stem cell,kidney,0,False
+tabula_mouse,hematopoietic stem cell,large_intestine,23,False
+tabula_mouse,hematopoietic stem cell,liver,0,False
+tabula_mouse,hematopoietic stem cell,lung,0,False
+tabula_mouse,hematopoietic stem cell,muscle,0,False
+tabula_mouse,hematopoietic stem cell,pancreas,0,False
+tabula_mouse,hematopoietic stem cell,respiratory,0,False
+tabula_mouse,hematopoietic stem cell,skin,0,False
+tabula_mouse,hematopoietic stem cell,spleen,0,False
+tabula_mouse,hematopoietic stem cell,bladder,0,False
+tabula_mouse,hematopoietic stem cell,vasculature,0,False
+tabula_mouse,hepatocyte,adipose,0,False
+tabula_mouse,hepatocyte,bone_marrow,0,False
+tabula_mouse,hepatocyte,brain,0,False
+tabula_mouse,hepatocyte,endocrine_gland,0,False
+tabula_mouse,hepatocyte,exocrine_gland,0,False
+tabula_mouse,hepatocyte,heart,0,False
+tabula_mouse,hepatocyte,kidney,0,False
+tabula_mouse,hepatocyte,large_intestine,0,False
+tabula_mouse,hepatocyte,liver,2000,True
+tabula_mouse,hepatocyte,lung,0,False
+tabula_mouse,hepatocyte,muscle,0,False
+tabula_mouse,hepatocyte,pancreas,0,False
+tabula_mouse,hepatocyte,respiratory,0,False
+tabula_mouse,hepatocyte,skin,0,False
+tabula_mouse,hepatocyte,spleen,0,False
+tabula_mouse,hepatocyte,bladder,0,False
+tabula_mouse,hepatocyte,vasculature,0,False
+tabula_mouse,intermediate monocyte,adipose,0,False
+tabula_mouse,intermediate monocyte,bone_marrow,0,False
+tabula_mouse,intermediate monocyte,brain,0,False
+tabula_mouse,intermediate monocyte,endocrine_gland,0,False
+tabula_mouse,intermediate monocyte,exocrine_gland,0,False
+tabula_mouse,intermediate monocyte,heart,0,False
+tabula_mouse,intermediate monocyte,kidney,0,False
+tabula_mouse,intermediate monocyte,large_intestine,0,False
+tabula_mouse,intermediate monocyte,liver,0,False
+tabula_mouse,intermediate monocyte,lung,1761,True
+tabula_mouse,intermediate monocyte,muscle,0,False
+tabula_mouse,intermediate monocyte,pancreas,0,False
+tabula_mouse,intermediate monocyte,respiratory,0,False
+tabula_mouse,intermediate monocyte,skin,0,False
+tabula_mouse,intermediate monocyte,spleen,0,False
+tabula_mouse,intermediate monocyte,bladder,0,False
+tabula_mouse,intermediate monocyte,vasculature,0,False
+tabula_mouse,large intestine goblet cell,adipose,0,False
+tabula_mouse,large intestine goblet cell,bone_marrow,0,False
+tabula_mouse,large intestine goblet cell,brain,0,False
+tabula_mouse,large intestine goblet cell,endocrine_gland,0,False
+tabula_mouse,large intestine goblet cell,exocrine_gland,0,False
+tabula_mouse,large intestine goblet cell,heart,0,False
+tabula_mouse,large intestine goblet cell,kidney,0,False
+tabula_mouse,large intestine goblet cell,large_intestine,1745,True
+tabula_mouse,large intestine goblet cell,liver,0,False
+tabula_mouse,large intestine goblet cell,lung,0,False
+tabula_mouse,large intestine goblet cell,muscle,0,False
+tabula_mouse,large intestine goblet cell,pancreas,0,False
+tabula_mouse,large intestine goblet cell,respiratory,0,False
+tabula_mouse,large intestine goblet cell,skin,0,False
+tabula_mouse,large intestine goblet cell,spleen,0,False
+tabula_mouse,large intestine goblet cell,bladder,0,False
+tabula_mouse,large intestine goblet cell,vasculature,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,adipose,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,bone_marrow,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,brain,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,endocrine_gland,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,exocrine_gland,2000,True
+tabula_mouse,luminal epithelial cell of mammary gland,heart,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,kidney,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,large_intestine,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,liver,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,lung,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,muscle,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,pancreas,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,respiratory,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,skin,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,spleen,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,bladder,0,False
+tabula_mouse,luminal epithelial cell of mammary gland,vasculature,0,False
+tabula_mouse,macrophage,adipose,51,False
+tabula_mouse,macrophage,bone_marrow,285,True
+tabula_mouse,macrophage,brain,63,False
+tabula_mouse,macrophage,endocrine_gland,87,False
+tabula_mouse,macrophage,exocrine_gland,107,True
+tabula_mouse,macrophage,heart,19,False
+tabula_mouse,macrophage,kidney,309,True
+tabula_mouse,macrophage,large_intestine,0,False
+tabula_mouse,macrophage,liver,0,False
+tabula_mouse,macrophage,lung,0,False
+tabula_mouse,macrophage,muscle,588,True
+tabula_mouse,macrophage,pancreas,0,False
+tabula_mouse,macrophage,respiratory,187,True
+tabula_mouse,macrophage,skin,6,False
+tabula_mouse,macrophage,spleen,288,True
+tabula_mouse,macrophage,bladder,0,False
+tabula_mouse,macrophage,vasculature,10,False
+tabula_mouse,mature NK T cell,adipose,0,False
+tabula_mouse,mature NK T cell,bone_marrow,0,False
+tabula_mouse,mature NK T cell,brain,11,False
+tabula_mouse,mature NK T cell,endocrine_gland,0,False
+tabula_mouse,mature NK T cell,exocrine_gland,0,False
+tabula_mouse,mature NK T cell,heart,0,False
+tabula_mouse,mature NK T cell,kidney,0,False
+tabula_mouse,mature NK T cell,large_intestine,0,False
+tabula_mouse,mature NK T cell,liver,95,False
+tabula_mouse,mature NK T cell,lung,278,True
+tabula_mouse,mature NK T cell,muscle,0,False
+tabula_mouse,mature NK T cell,pancreas,0,False
+tabula_mouse,mature NK T cell,respiratory,0,False
+tabula_mouse,mature NK T cell,skin,0,False
+tabula_mouse,mature NK T cell,spleen,1616,True
+tabula_mouse,mature NK T cell,bladder,0,False
+tabula_mouse,mature NK T cell,vasculature,0,False
+tabula_mouse,mesenchymal stem cell,adipose,0,False
+tabula_mouse,mesenchymal stem cell,bone_marrow,0,False
+tabula_mouse,mesenchymal stem cell,brain,0,False
+tabula_mouse,mesenchymal stem cell,endocrine_gland,0,False
+tabula_mouse,mesenchymal stem cell,exocrine_gland,0,False
+tabula_mouse,mesenchymal stem cell,heart,0,False
+tabula_mouse,mesenchymal stem cell,kidney,0,False
+tabula_mouse,mesenchymal stem cell,large_intestine,0,False
+tabula_mouse,mesenchymal stem cell,liver,0,False
+tabula_mouse,mesenchymal stem cell,lung,0,False
+tabula_mouse,mesenchymal stem cell,muscle,1791,True
+tabula_mouse,mesenchymal stem cell,pancreas,0,False
+tabula_mouse,mesenchymal stem cell,respiratory,209,True
+tabula_mouse,mesenchymal stem cell,skin,0,False
+tabula_mouse,mesenchymal stem cell,spleen,0,False
+tabula_mouse,mesenchymal stem cell,bladder,0,False
+tabula_mouse,mesenchymal stem cell,vasculature,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,adipose,2000,True
+tabula_mouse,mesenchymal stem cell of adipose tissue,bone_marrow,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,brain,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,endocrine_gland,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,exocrine_gland,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,heart,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,kidney,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,large_intestine,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,liver,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,lung,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,muscle,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,pancreas,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,respiratory,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,skin,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,spleen,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,bladder,0,False
+tabula_mouse,mesenchymal stem cell of adipose tissue,vasculature,0,False
+tabula_mouse,monocyte,adipose,0,False
+tabula_mouse,monocyte,bone_marrow,1309,True
+tabula_mouse,monocyte,brain,0,False
+tabula_mouse,monocyte,endocrine_gland,0,False
+tabula_mouse,monocyte,exocrine_gland,0,False
+tabula_mouse,monocyte,heart,691,True
+tabula_mouse,monocyte,kidney,0,False
+tabula_mouse,monocyte,large_intestine,0,False
+tabula_mouse,monocyte,liver,0,False
+tabula_mouse,monocyte,lung,0,False
+tabula_mouse,monocyte,muscle,0,False
+tabula_mouse,monocyte,pancreas,0,False
+tabula_mouse,monocyte,respiratory,0,False
+tabula_mouse,monocyte,skin,0,False
+tabula_mouse,monocyte,spleen,0,False
+tabula_mouse,monocyte,bladder,0,False
+tabula_mouse,monocyte,vasculature,0,False
+tabula_mouse,myeloid dendritic cell,adipose,0,False
+tabula_mouse,myeloid dendritic cell,bone_marrow,0,False
+tabula_mouse,myeloid dendritic cell,brain,0,False
+tabula_mouse,myeloid dendritic cell,endocrine_gland,0,False
+tabula_mouse,myeloid dendritic cell,exocrine_gland,0,False
+tabula_mouse,myeloid dendritic cell,heart,0,False
+tabula_mouse,myeloid dendritic cell,kidney,0,False
+tabula_mouse,myeloid dendritic cell,large_intestine,0,False
+tabula_mouse,myeloid dendritic cell,liver,0,False
+tabula_mouse,myeloid dendritic cell,lung,618,True
+tabula_mouse,myeloid dendritic cell,muscle,0,False
+tabula_mouse,myeloid dendritic cell,pancreas,0,False
+tabula_mouse,myeloid dendritic cell,respiratory,0,False
+tabula_mouse,myeloid dendritic cell,skin,0,False
+tabula_mouse,myeloid dendritic cell,spleen,0,False
+tabula_mouse,myeloid dendritic cell,bladder,0,False
+tabula_mouse,myeloid dendritic cell,vasculature,0,False
+tabula_mouse,myeloid leukocyte,adipose,0,False
+tabula_mouse,myeloid leukocyte,bone_marrow,0,False
+tabula_mouse,myeloid leukocyte,brain,0,False
+tabula_mouse,myeloid leukocyte,endocrine_gland,0,False
+tabula_mouse,myeloid leukocyte,exocrine_gland,0,False
+tabula_mouse,myeloid leukocyte,heart,0,False
+tabula_mouse,myeloid leukocyte,kidney,0,False
+tabula_mouse,myeloid leukocyte,large_intestine,0,False
+tabula_mouse,myeloid leukocyte,liver,516,True
+tabula_mouse,myeloid leukocyte,lung,0,False
+tabula_mouse,myeloid leukocyte,muscle,0,False
+tabula_mouse,myeloid leukocyte,pancreas,0,False
+tabula_mouse,myeloid leukocyte,respiratory,0,False
+tabula_mouse,myeloid leukocyte,skin,0,False
+tabula_mouse,myeloid leukocyte,spleen,0,False
+tabula_mouse,myeloid leukocyte,bladder,0,False
+tabula_mouse,myeloid leukocyte,vasculature,0,False
+tabula_mouse,natural killer cell,adipose,151,True
+tabula_mouse,natural killer cell,bone_marrow,372,True
+tabula_mouse,natural killer cell,brain,0,False
+tabula_mouse,natural killer cell,endocrine_gland,0,False
+tabula_mouse,natural killer cell,exocrine_gland,0,False
+tabula_mouse,natural killer cell,heart,0,False
+tabula_mouse,natural killer cell,kidney,36,False
+tabula_mouse,natural killer cell,large_intestine,0,False
+tabula_mouse,natural killer cell,liver,349,True
+tabula_mouse,natural killer cell,lung,744,True
+tabula_mouse,natural killer cell,muscle,0,False
+tabula_mouse,natural killer cell,pancreas,0,False
+tabula_mouse,natural killer cell,respiratory,0,False
+tabula_mouse,natural killer cell,skin,0,False
+tabula_mouse,natural killer cell,spleen,348,True
+tabula_mouse,natural killer cell,bladder,0,False
+tabula_mouse,natural killer cell,vasculature,0,False
+tabula_mouse,neutrophil,adipose,0,False
+tabula_mouse,neutrophil,bone_marrow,0,False
+tabula_mouse,neutrophil,brain,0,False
+tabula_mouse,neutrophil,endocrine_gland,0,False
+tabula_mouse,neutrophil,exocrine_gland,0,False
+tabula_mouse,neutrophil,heart,0,False
+tabula_mouse,neutrophil,kidney,0,False
+tabula_mouse,neutrophil,large_intestine,0,False
+tabula_mouse,neutrophil,liver,30,False
+tabula_mouse,neutrophil,lung,675,True
+tabula_mouse,neutrophil,muscle,0,False
+tabula_mouse,neutrophil,pancreas,0,False
+tabula_mouse,neutrophil,respiratory,0,False
+tabula_mouse,neutrophil,skin,0,False
+tabula_mouse,neutrophil,spleen,0,False
+tabula_mouse,neutrophil,bladder,0,False
+tabula_mouse,neutrophil,vasculature,0,False
+tabula_mouse,non-classical monocyte,adipose,0,False
+tabula_mouse,non-classical monocyte,bone_marrow,0,False
+tabula_mouse,non-classical monocyte,brain,0,False
+tabula_mouse,non-classical monocyte,endocrine_gland,0,False
+tabula_mouse,non-classical monocyte,exocrine_gland,0,False
+tabula_mouse,non-classical monocyte,heart,0,False
+tabula_mouse,non-classical monocyte,kidney,0,False
+tabula_mouse,non-classical monocyte,large_intestine,0,False
+tabula_mouse,non-classical monocyte,liver,0,False
+tabula_mouse,non-classical monocyte,lung,1159,True
+tabula_mouse,non-classical monocyte,muscle,0,False
+tabula_mouse,non-classical monocyte,pancreas,0,False
+tabula_mouse,non-classical monocyte,respiratory,0,False
+tabula_mouse,non-classical monocyte,skin,0,False
+tabula_mouse,non-classical monocyte,spleen,0,False
+tabula_mouse,non-classical monocyte,bladder,0,False
+tabula_mouse,non-classical monocyte,vasculature,0,False
+tabula_mouse,pancreatic acinar cell,adipose,0,False
+tabula_mouse,pancreatic acinar cell,bone_marrow,0,False
+tabula_mouse,pancreatic acinar cell,brain,0,False
+tabula_mouse,pancreatic acinar cell,endocrine_gland,0,False
+tabula_mouse,pancreatic acinar cell,exocrine_gland,0,False
+tabula_mouse,pancreatic acinar cell,heart,0,False
+tabula_mouse,pancreatic acinar cell,kidney,0,False
+tabula_mouse,pancreatic acinar cell,large_intestine,0,False
+tabula_mouse,pancreatic acinar cell,liver,0,False
+tabula_mouse,pancreatic acinar cell,lung,0,False
+tabula_mouse,pancreatic acinar cell,muscle,0,False
+tabula_mouse,pancreatic acinar cell,pancreas,2000,True
+tabula_mouse,pancreatic acinar cell,respiratory,0,False
+tabula_mouse,pancreatic acinar cell,skin,0,False
+tabula_mouse,pancreatic acinar cell,spleen,0,False
+tabula_mouse,pancreatic acinar cell,bladder,0,False
+tabula_mouse,pancreatic acinar cell,vasculature,0,False
+tabula_mouse,pancreatic ductal cell,adipose,0,False
+tabula_mouse,pancreatic ductal cell,bone_marrow,0,False
+tabula_mouse,pancreatic ductal cell,brain,0,False
+tabula_mouse,pancreatic ductal cell,endocrine_gland,0,False
+tabula_mouse,pancreatic ductal cell,exocrine_gland,0,False
+tabula_mouse,pancreatic ductal cell,heart,0,False
+tabula_mouse,pancreatic ductal cell,kidney,0,False
+tabula_mouse,pancreatic ductal cell,large_intestine,0,False
+tabula_mouse,pancreatic ductal cell,liver,0,False
+tabula_mouse,pancreatic ductal cell,lung,0,False
+tabula_mouse,pancreatic ductal cell,muscle,0,False
+tabula_mouse,pancreatic ductal cell,pancreas,651,True
+tabula_mouse,pancreatic ductal cell,respiratory,0,False
+tabula_mouse,pancreatic ductal cell,skin,0,False
+tabula_mouse,pancreatic ductal cell,spleen,0,False
+tabula_mouse,pancreatic ductal cell,bladder,0,False
+tabula_mouse,pancreatic ductal cell,vasculature,0,False
+tabula_mouse,plasma cell,adipose,0,False
+tabula_mouse,plasma cell,bone_marrow,445,True
+tabula_mouse,plasma cell,brain,0,False
+tabula_mouse,plasma cell,endocrine_gland,0,False
+tabula_mouse,plasma cell,exocrine_gland,0,False
+tabula_mouse,plasma cell,heart,0,False
+tabula_mouse,plasma cell,kidney,325,True
+tabula_mouse,plasma cell,large_intestine,0,False
+tabula_mouse,plasma cell,liver,0,False
+tabula_mouse,plasma cell,lung,74,False
+tabula_mouse,plasma cell,muscle,0,False
+tabula_mouse,plasma cell,pancreas,0,False
+tabula_mouse,plasma cell,respiratory,0,False
+tabula_mouse,plasma cell,skin,0,False
+tabula_mouse,plasma cell,spleen,802,True
+tabula_mouse,plasma cell,bladder,0,False
+tabula_mouse,plasma cell,vasculature,0,False
+tabula_mouse,smooth muscle cell,adipose,0,False
+tabula_mouse,smooth muscle cell,bone_marrow,0,False
+tabula_mouse,smooth muscle cell,brain,0,False
+tabula_mouse,smooth muscle cell,endocrine_gland,0,False
+tabula_mouse,smooth muscle cell,exocrine_gland,0,False
+tabula_mouse,smooth muscle cell,heart,539,True
+tabula_mouse,smooth muscle cell,kidney,0,False
+tabula_mouse,smooth muscle cell,large_intestine,0,False
+tabula_mouse,smooth muscle cell,liver,0,False
+tabula_mouse,smooth muscle cell,lung,0,False
+tabula_mouse,smooth muscle cell,muscle,1165,True
+tabula_mouse,smooth muscle cell,pancreas,0,False
+tabula_mouse,smooth muscle cell,respiratory,0,False
+tabula_mouse,smooth muscle cell,skin,0,False
+tabula_mouse,smooth muscle cell,spleen,0,False
+tabula_mouse,smooth muscle cell,bladder,0,False
+tabula_mouse,smooth muscle cell,vasculature,0,False
+tabula_mouse,stromal cell,adipose,0,False
+tabula_mouse,stromal cell,bone_marrow,0,False
+tabula_mouse,stromal cell,brain,0,False
+tabula_mouse,stromal cell,endocrine_gland,0,False
+tabula_mouse,stromal cell,exocrine_gland,2000,True
+tabula_mouse,stromal cell,heart,0,False
+tabula_mouse,stromal cell,kidney,0,False
+tabula_mouse,stromal cell,large_intestine,0,False
+tabula_mouse,stromal cell,liver,0,False
+tabula_mouse,stromal cell,lung,0,False
+tabula_mouse,stromal cell,muscle,0,False
+tabula_mouse,stromal cell,pancreas,0,False
+tabula_mouse,stromal cell,respiratory,0,False
+tabula_mouse,stromal cell,skin,0,False
+tabula_mouse,stromal cell,spleen,0,False
+tabula_mouse,stromal cell,bladder,0,False
+tabula_mouse,stromal cell,vasculature,0,False
+sun2023,B cell,aorta,2233,True
+sun2023,B cell,blood,5778,True
+sun2023,B cell,bone_marrow,1479,True
+sun2023,B cell,intestine,477,True
+sun2023,B cell,kidney,198,True
+sun2023,B cell,liver,185,True
+sun2023,B cell,lung,1762,True
+sun2023,B cell,spleen,4013,True
+sun2023,"CD4-positive, alpha-beta T cell",aorta,297,True
+sun2023,"CD4-positive, alpha-beta T cell",blood,148,True
+sun2023,"CD4-positive, alpha-beta T cell",bone_marrow,53,False
+sun2023,"CD4-positive, alpha-beta T cell",intestine,206,True
+sun2023,"CD4-positive, alpha-beta T cell",kidney,67,False
+sun2023,"CD4-positive, alpha-beta T cell",liver,12,False
+sun2023,"CD4-positive, alpha-beta T cell",lung,445,True
+sun2023,"CD4-positive, alpha-beta T cell",spleen,750,True
+sun2023,"CD8-positive, alpha-beta T cell",aorta,390,True
+sun2023,"CD8-positive, alpha-beta T cell",blood,198,True
+sun2023,"CD8-positive, alpha-beta T cell",bone_marrow,176,True
+sun2023,"CD8-positive, alpha-beta T cell",intestine,1603,True
+sun2023,"CD8-positive, alpha-beta T cell",kidney,158,True
+sun2023,"CD8-positive, alpha-beta T cell",liver,44,False
+sun2023,"CD8-positive, alpha-beta T cell",lung,1073,True
+sun2023,"CD8-positive, alpha-beta T cell",spleen,969,True
+sun2023,endothelial cell,aorta,1188,True
+sun2023,endothelial cell,blood,0,False
+sun2023,endothelial cell,bone_marrow,0,False
+sun2023,endothelial cell,intestine,387,True
+sun2023,endothelial cell,kidney,1330,True
+sun2023,endothelial cell,liver,3283,True
+sun2023,endothelial cell,lung,451,True
+sun2023,endothelial cell,spleen,0,False
+sun2023,epithelial cell,aorta,0,False
+sun2023,epithelial cell,blood,0,False
+sun2023,epithelial cell,bone_marrow,0,False
+sun2023,epithelial cell,intestine,1360,True
+sun2023,epithelial cell,kidney,0,False
+sun2023,epithelial cell,liver,0,False
+sun2023,epithelial cell,lung,83,False
+sun2023,epithelial cell,spleen,0,False
+sun2023,fibroblast,aorta,2015,True
+sun2023,fibroblast,blood,0,False
+sun2023,fibroblast,bone_marrow,1,False
+sun2023,fibroblast,intestine,566,True
+sun2023,fibroblast,kidney,14,False
+sun2023,fibroblast,liver,5,False
+sun2023,fibroblast,lung,231,True
+sun2023,fibroblast,spleen,0,False
+sun2023,granulocyte,aorta,42,False
+sun2023,granulocyte,blood,212,True
+sun2023,granulocyte,bone_marrow,6407,True
+sun2023,granulocyte,intestine,51,False
+sun2023,granulocyte,kidney,121,True
+sun2023,granulocyte,liver,527,True
+sun2023,granulocyte,lung,1319,True
+sun2023,granulocyte,spleen,140,True
+sun2023,hepatocyte,aorta,0,False
+sun2023,hepatocyte,blood,0,False
+sun2023,hepatocyte,bone_marrow,0,False
+sun2023,hepatocyte,intestine,0,False
+sun2023,hepatocyte,kidney,0,False
+sun2023,hepatocyte,liver,1417,True
+sun2023,hepatocyte,lung,0,False
+sun2023,hepatocyte,spleen,0,False
+sun2023,macrophage,aorta,221,True
+sun2023,macrophage,blood,0,False
+sun2023,macrophage,bone_marrow,11,False
+sun2023,macrophage,intestine,249,True
+sun2023,macrophage,kidney,1273,True
+sun2023,macrophage,liver,302,True
+sun2023,macrophage,lung,64,False
+sun2023,macrophage,spleen,28,False
+sun2023,monocyte,aorta,65,False
+sun2023,monocyte,blood,101,True
+sun2023,monocyte,bone_marrow,492,True
+sun2023,monocyte,intestine,173,True
+sun2023,monocyte,kidney,126,True
+sun2023,monocyte,liver,177,True
+sun2023,monocyte,lung,1441,True
+sun2023,monocyte,spleen,80,False
+sun2023,myeloid dendritic cell,aorta,358,True
+sun2023,myeloid dendritic cell,blood,3,False
+sun2023,myeloid dendritic cell,bone_marrow,36,False
+sun2023,myeloid dendritic cell,intestine,154,True
+sun2023,myeloid dendritic cell,kidney,205,True
+sun2023,myeloid dendritic cell,liver,93,False
+sun2023,myeloid dendritic cell,lung,492,True
+sun2023,myeloid dendritic cell,spleen,162,True
+sun2023,natural killer cell,aorta,41,False
+sun2023,natural killer cell,blood,125,True
+sun2023,natural killer cell,bone_marrow,78,False
+sun2023,natural killer cell,intestine,27,False
+sun2023,natural killer cell,kidney,7,False
+sun2023,natural killer cell,liver,59,False
+sun2023,natural killer cell,lung,642,True
+sun2023,natural killer cell,spleen,151,True
+sun2023,plasma cell,aorta,167,True
+sun2023,plasma cell,blood,3,False
+sun2023,plasma cell,bone_marrow,21,False
+sun2023,plasma cell,intestine,875,True
+sun2023,plasma cell,kidney,17,False
+sun2023,plasma cell,liver,22,False
+sun2023,plasma cell,lung,44,False
+sun2023,plasma cell,spleen,59,False
+sun2023,smooth muscle cell,aorta,247,True
+sun2023,smooth muscle cell,blood,0,False
+sun2023,smooth muscle cell,bone_marrow,0,False
+sun2023,smooth muscle cell,intestine,50,False
+sun2023,smooth muscle cell,kidney,168,True
+sun2023,smooth muscle cell,liver,2,False
+sun2023,smooth muscle cell,lung,46,False
+sun2023,smooth muscle cell,spleen,0,False
+pansci,B cell,brown_adipose,1074,True
+pansci,B cell,colon,18509,True
+pansci,B cell,duodenum,9517,True
+pansci,B cell,gonadal_wat,1758,True
+pansci,B cell,heart,8488,True
+pansci,B cell,ileum,49406,True
+pansci,B cell,inguinal_wat,38979,True
+pansci,B cell,jejunum,21278,True
+pansci,B cell,kidney,1792,True
+pansci,B cell,liver,7155,True
+pansci,B cell,lung,52324,True
+pansci,T cell,brown_adipose,1815,True
+pansci,T cell,colon,8501,True
+pansci,T cell,duodenum,18423,True
+pansci,T cell,gonadal_wat,5125,True
+pansci,T cell,heart,7631,True
+pansci,T cell,ileum,29415,True
+pansci,T cell,inguinal_wat,30506,True
+pansci,T cell,jejunum,30605,True
+pansci,T cell,kidney,2719,True
+pansci,T cell,liver,6656,True
+pansci,T cell,lung,36220,True
+pansci,T cell,muscle,580,True
+pansci,T cell,stomach,1984,True
+pansci,basal cell,lung,342,True
+pansci,bladder urothelial cell,kidney,1068,True
+pansci,endothelial cell,brown_adipose,71132,True
+pansci,endothelial cell,gonadal_wat,31269,True
+pansci,endothelial cell,heart,202192,True
+pansci,endothelial cell,inguinal_wat,10719,True
+pansci,endothelial cell,kidney,33357,True
+pansci,endothelial cell,liver,31547,True
+pansci,endothelial cell,lung,82769,True
+pansci,endothelial cell,muscle,17604,True
+pansci,endothelial cell,stomach,5175,True
+pansci,epithelial cell,colon,94446,True
+pansci,epithelial cell,duodenum,83571,True
+pansci,epithelial cell,ileum,70019,True
+pansci,epithelial cell,jejunum,111296,True
+pansci,epithelial cell,lung,129323,True
+pansci,epithelial cell,stomach,11830,True
+pansci,fibroblast,colon,28589,True
+pansci,fibroblast,duodenum,10789,True
+pansci,fibroblast,heart,70784,True
+pansci,fibroblast,ileum,14819,True
+pansci,fibroblast,jejunum,14644,True
+pansci,fibroblast,kidney,17950,True
+pansci,fibroblast,lung,19769,True
+pansci,fibroblast,muscle,15239,True
+pansci,fibroblast,stomach,10833,True
+pansci,granulocyte,lung,5381,True
+pansci,hepatocyte,liver,304483,True
+pansci,large intestine goblet cell,colon,40277,True
+pansci,large intestine goblet cell,duodenum,8581,True
+pansci,large intestine goblet cell,ileum,9998,True
+pansci,large intestine goblet cell,jejunum,9859,True
+pansci,macrophage,lung,33487,True
+pansci,monocyte,lung,20228,True
+pansci,myeloid dendritic cell,colon,292,True
+pansci,myeloid dendritic cell,duodenum,3081,True
+pansci,myeloid dendritic cell,gonadal_wat,1517,True
+pansci,myeloid dendritic cell,ileum,2515,True
+pansci,myeloid dendritic cell,inguinal_wat,2022,True
+pansci,myeloid dendritic cell,jejunum,3543,True
+pansci,myeloid dendritic cell,kidney,976,True
+pansci,myeloid dendritic cell,lung,7733,True
+pansci,myeloid leukocyte,brown_adipose,5939,True
+pansci,myeloid leukocyte,colon,8005,True
+pansci,myeloid leukocyte,duodenum,8381,True
+pansci,myeloid leukocyte,gonadal_wat,25368,True
+pansci,myeloid leukocyte,heart,30019,True
+pansci,myeloid leukocyte,ileum,10707,True
+pansci,myeloid leukocyte,inguinal_wat,9213,True
+pansci,myeloid leukocyte,jejunum,16118,True
+pansci,myeloid leukocyte,kidney,3234,True
+pansci,myeloid leukocyte,liver,20071,True
+pansci,myeloid leukocyte,muscle,4070,True
+pansci,myeloid leukocyte,stomach,3814,True
+pansci,pancreatic acinar cell,duodenum,371,True
+pansci,plasma cell,colon,5524,True
+pansci,plasma cell,duodenum,7708,True
+pansci,plasma cell,gonadal_wat,333,True
+pansci,plasma cell,ileum,10435,True
+pansci,plasma cell,inguinal_wat,351,True
+pansci,plasma cell,jejunum,14515,True
+pansci,plasma cell,kidney,169,True
+pansci,plasma cell,lung,548,True
+pansci,smooth muscle cell,brown_adipose,11583,True
+pansci,smooth muscle cell,colon,6494,True
+pansci,smooth muscle cell,duodenum,1613,True
+pansci,smooth muscle cell,gonadal_wat,10477,True
+pansci,smooth muscle cell,heart,37907,True
+pansci,smooth muscle cell,ileum,2490,True
+pansci,smooth muscle cell,inguinal_wat,3257,True
+pansci,smooth muscle cell,jejunum,1489,True
+pansci,smooth muscle cell,lung,12198,True
+pansci,smooth muscle cell,muscle,8917,True
+pansci,smooth muscle cell,stomach,8165,True

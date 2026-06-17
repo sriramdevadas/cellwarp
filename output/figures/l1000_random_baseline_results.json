@@ -1,0 +1,42 @@
+{
+  "analysis": "L1000 Random Baseline Test",
+  "date": "2026-03-18",
+  "input_files": {
+    "human_centroids": "output/phase2/scaled_35types/centroids_human_35.csv",
+    "mouse_centroids": "output/phase2/scaled_35types/centroids_mouse_35.csv",
+    "full_space_ranking": "output/phase2/scaled_35types/residuals_ranked.csv",
+    "sensitivity_gate_result": "output/landmark_sensitivity/sensitivity_gate_result.json"
+  },
+  "primary": {
+    "n_genes_sampled": 907,
+    "n_iterations": 1000,
+    "n_cell_types": 35,
+    "total_ortholog_genes": 16959,
+    "random_seed": 42,
+    "random_mean_rho": 0.701,
+    "random_std_rho": 0.089,
+    "percentile_5": 0.537,
+    "percentile_95": 0.835,
+    "observed_l1000_rho": 0.852,
+    "z_score": 1.691,
+    "empirical_p_value": 0.031,
+    "characterization": "The L1000 \u03c1=0.852 is significantly above the random baseline (random mean \u03c1=0.701 \u00b1 0.089, empirical p=0.031)",
+    "flag": "L1000 FINDING HOLDS \u2014 add random baseline to methods"
+  },
+  "secondary": {
+    "500": {
+      "n_genes": 500,
+      "mean_rho": 0.561,
+      "std_rho": 0.114,
+      "percentile_5": 0.361,
+      "percentile_95": 0.737
+    },
+    "2000": {
+      "n_genes": 2000,
+      "mean_rho": 0.848,
+      "std_rho": 0.048,
+      "percentile_5": 0.763,
+      "percentile_95": 0.92
+    }
+  }
+}

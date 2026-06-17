@@ -1,0 +1,69 @@
+{
+  "test": "layer1_vs_layer2_correlation",
+  "layer1_metric": "Procrustes residual magnitude (lower = more conserved centroid)",
+  "layer2_metric": "Krzanowski S score (higher = more aligned ellipsoid)",
+  "primary_result": {
+    "k": 3,
+    "metric": "S_pre",
+    "spearman_rho": -0.2658263305322129,
+    "p_value": 0.1227204596579776,
+    "n": 35,
+    "significant_at_005": false
+  },
+  "all_results": [
+    {
+      "k": 1,
+      "metric": "S_pre",
+      "description": "Pre-Procrustes ellipsoid alignment",
+      "spearman_rho": 0.21400560224089635,
+      "p_value": 0.21703301859495067,
+      "n": 35,
+      "significant_005": false
+    },
+    {
+      "k": 1,
+      "metric": "S_post",
+      "description": "Post-Procrustes ellipsoid alignment",
+      "spearman_rho": -0.3532212885154062,
+      "p_value": 0.03739557539589132,
+      "n": 35,
+      "significant_005": true
+    },
+    {
+      "k": 3,
+      "metric": "S_pre",
+      "description": "Pre-Procrustes ellipsoid alignment",
+      "spearman_rho": -0.2658263305322129,
+      "p_value": 0.1227204596579776,
+      "n": 35,
+      "significant_005": false
+    },
+    {
+      "k": 3,
+      "metric": "S_post",
+      "description": "Post-Procrustes ellipsoid alignment",
+      "spearman_rho": -0.08963585434173671,
+      "p_value": 0.6086042348066975,
+      "n": 35,
+      "significant_005": false
+    },
+    {
+      "k": 5,
+      "metric": "S_pre",
+      "description": "Pre-Procrustes ellipsoid alignment",
+      "spearman_rho": -0.17815126050420171,
+      "p_value": 0.3058824600624293,
+      "n": 35,
+      "significant_005": false
+    },
+    {
+      "k": 5,
+      "metric": "S_post",
+      "description": "Post-Procrustes ellipsoid alignment",
+      "spearman_rho": -0.22072829131652663,
+      "p_value": 0.20259035396818273,
+      "n": 35,
+      "significant_005": false
+    }
+  ]
+}

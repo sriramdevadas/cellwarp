@@ -1,0 +1,6 @@
+Harmonization level,n_types,Spearman rho,p-value
+Original (35-type vs 15-type PCA mismatch; Table S3),15,-0.386,0.156
+Level 0 (matched 15-type PCA baseline; Figure S4A),15,-0.139,0.621
+Level 1 (exclude T cell: tissue composition heterogeneity),14,-0.037,0.899
+Level 2 (Level 1 + tissue restriction),12,-0.042,0.897
+Level 3 (Level 2 + cell count cap; identical to Level 2),12,-0.042,0.897

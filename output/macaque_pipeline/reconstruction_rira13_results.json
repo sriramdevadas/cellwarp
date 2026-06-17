@@ -1,0 +1,95 @@
+{
+  "analysis": "RIRA13_RECONSTRUCTION",
+  "n_types": 13,
+  "cell_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "classical monocyte",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "intermediate monocyte",
+    "macrophage",
+    "myeloid dendritic cell",
+    "myeloid leukocyte",
+    "natural killer cell",
+    "non-classical monocyte"
+  ],
+  "gene_space": 13927,
+  "procrustes": {
+    "distance": 16.52332338514205,
+    "distance_squared": 273.02021568998214,
+    "scaling": 0.05299109318276252,
+    "rotation_det": 0.9999999999999999
+  },
+  "permutation_test": {
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.7505850321600577,
+    "obs_null_ratio_mean": 0.7558754976044522,
+    "null_median": 22.013926040585567,
+    "null_mean": 21.859847868476173,
+    "n_permutations": 10000
+  },
+  "pca": {
+    "n_components": 6,
+    "variance_explained": [
+      0.6549206444602419,
+      0.11478520227620068,
+      0.10294199003376484,
+      0.05065250404352335,
+      0.02470877619769333,
+      0.020566072403941517
+    ],
+    "cumulative_variance": 0.9685751894153656
+  },
+  "per_type_residuals": {
+    "B cell": {
+      "magnitude": 6.790358599953219
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "magnitude": 6.222007726772586
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "magnitude": 3.2468330650355655
+    },
+    "T cell": {
+      "magnitude": 2.6594582139217815
+    },
+    "classical monocyte": {
+      "magnitude": 5.4041721351855
+    },
+    "granulocyte": {
+      "magnitude": 2.320520072243368
+    },
+    "hematopoietic precursor cell": {
+      "magnitude": 1.983095147505677
+    },
+    "intermediate monocyte": {
+      "magnitude": 3.693434230256728
+    },
+    "macrophage": {
+      "magnitude": 4.975868378529276
+    },
+    "myeloid dendritic cell": {
+      "magnitude": 7.503954790709534
+    },
+    "myeloid leukocyte": {
+      "magnitude": 4.700613038357037
+    },
+    "natural killer cell": {
+      "magnitude": 1.6922165874112793
+    },
+    "non-classical monocyte": {
+      "magnitude": 3.520120238282622
+    }
+  },
+  "verification": {
+    "expected_obs_null": 0.7488054428,
+    "expected_p": 0.00019998000199980003,
+    "delta_obs_null": 0.0017795893600576207,
+    "delta_obs_null_within_tolerance": true,
+    "cell_counts_match_exact": true
+  },
+  "seed": 42
+}

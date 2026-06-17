@@ -1,0 +1,36 @@
+cell_type,lineage_block,ambiguous,ambiguity_note
+endothelial cell,endothelial,True,"Singleton block. Only one endothelial type in the 35-type ontology. Cannot be permuted within block — stays correctly matched in all iterations, making the null more conservative."
+basal cell,epithelial,False,
+bladder urothelial cell,epithelial,False,
+enterocyte of epithelium of large intestine,epithelial,False,
+epithelial cell,epithelial,False,
+large intestine goblet cell,epithelial,False,
+luminal epithelial cell of mammary gland,epithelial,False,
+pancreatic acinar cell,epithelial,False,
+pancreatic ductal cell,epithelial,False,
+B cell,immune_hematopoietic,False,
+"CD4-positive, alpha-beta T cell",immune_hematopoietic,False,
+"CD8-positive, alpha-beta T cell",immune_hematopoietic,False,
+T cell,immune_hematopoietic,False,
+classical monocyte,immune_hematopoietic,False,
+granulocyte,immune_hematopoietic,False,
+hematopoietic precursor cell,immune_hematopoietic,True,Could be classified as stem/progenitor. Assigned to immune/hematopoietic because Cell Ontology places it under hematopoietic cell (CL:0000988) and it differentiates exclusively into blood/immune lineages.
+hematopoietic stem cell,immune_hematopoietic,True,Could be classified as stem/progenitor. Assigned to immune/hematopoietic for the same reason as hematopoietic precursor cell.
+intermediate monocyte,immune_hematopoietic,False,
+macrophage,immune_hematopoietic,False,
+mature NK T cell,immune_hematopoietic,False,
+monocyte,immune_hematopoietic,False,
+myeloid dendritic cell,immune_hematopoietic,False,
+myeloid leukocyte,immune_hematopoietic,False,
+natural killer cell,immune_hematopoietic,False,
+neutrophil,immune_hematopoietic,False,
+non-classical monocyte,immune_hematopoietic,False,
+plasma cell,immune_hematopoietic,False,
+hepatocyte,metabolic_parenchymal,True,Singleton block. Only parenchymal/metabolic type in the ontology. Same singleton treatment as endothelial cell.
+adventitial cell,stromal_mesenchymal,False,
+fibroblast,stromal_mesenchymal,False,
+fibroblast of cardiac tissue,stromal_mesenchymal,False,
+mesenchymal stem cell,stromal_mesenchymal,True,"Could be classified as stem/progenitor. Assigned to stromal/mesenchymal because its differentiation products (fibroblasts, adipocytes, osteoblasts) are stromal, and its transcriptomic profile clusters with stromal types."
+mesenchymal stem cell of adipose tissue,stromal_mesenchymal,True,Same rationale as mesenchymal stem cell.
+smooth muscle cell,stromal_mesenchymal,False,
+stromal cell,stromal_mesenchymal,False,

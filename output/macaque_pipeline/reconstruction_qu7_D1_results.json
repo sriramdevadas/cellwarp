@@ -1,0 +1,124 @@
+{
+  "analysis": "QU7_D1_PILOT",
+  "gene_space_used": 13927,
+  "gene_space_rationale": "13,927 three-way ortholog intersection (consistent with prior analyses)",
+  "n_types_requested": 7,
+  "n_types_analyzed": 7,
+  "included_types": [
+    "bladder urothelial cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "excluded_low_power": [],
+  "per_type_available_cells": {
+    "bladder urothelial cell": 3916,
+    "endothelial cell": 16919,
+    "epithelial cell": 23567,
+    "fibroblast": 8727,
+    "hepatocyte": 1101,
+    "smooth muscle cell": 11279,
+    "stromal cell": 619
+  },
+  "per_type_used_cells": {
+    "bladder urothelial cell": 2000,
+    "endothelial cell": 2000,
+    "epithelial cell": 2000,
+    "fibroblast": 2000,
+    "hepatocyte": 1101,
+    "smooth muscle cell": 2000,
+    "stromal cell": 619
+  },
+  "label_mapping": {
+    "bladder urothelial cell": "finalcluster=Epithelial cell AND Organ=Bladder",
+    "hepatocyte": "finalcluster=Epithelial cell AND Organ=Liver",
+    "endothelial cell": "finalcluster=Endothelial cell",
+    "epithelial cell": "finalcluster=Epithelial cell AND Organ NOT IN {Bladder, Liver}",
+    "fibroblast": "finalcluster=Fibroblasts",
+    "smooth muscle cell": "finalcluster=Smooth muscle cell",
+    "stromal cell": "majorcluster=Stromal cell (AFTER specific finalcluster rules)"
+  },
+  "procrustes": {
+    "distance": 20.560482920756336,
+    "distance_squared": 422.733457934713,
+    "scaling": 1.2857112021375894,
+    "rotation_det": 1.0000000000000007
+  },
+  "permutation_test": {
+    "p_value": 0.0124987501249875,
+    "obs_null_ratio_median": 0.7333960985342546,
+    "obs_null_ratio_mean": 0.7303142294928278,
+    "null_median": 28.03462271185783,
+    "null_mean": 28.152926631368963,
+    "n_permutations": 10000
+  },
+  "pca": {
+    "n_components": 10,
+    "variance_explained": [
+      0.31370613615298115,
+      0.17242611788201803,
+      0.14252978687184872,
+      0.08163327698883706,
+      0.07067658108497045,
+      0.05084610719550518,
+      0.04202639788891343,
+      0.03942035979928393,
+      0.02586716409841288,
+      0.019084377514849118
+    ],
+    "cumulative_variance": 0.9582163054776198
+  },
+  "per_type_residuals_ranked": [
+    {
+      "type": "hepatocyte",
+      "magnitude": 11.238315605371493,
+      "pct_ssr": 29.876920143245957
+    },
+    {
+      "type": "epithelial cell",
+      "magnitude": 10.10446983778232,
+      "pct_ssr": 24.15240828144269
+    },
+    {
+      "type": "stromal cell",
+      "magnitude": 8.87186410890438,
+      "pct_ssr": 18.61929101883903
+    },
+    {
+      "type": "endothelial cell",
+      "magnitude": 5.760987757149259,
+      "pct_ssr": 7.851041670600239
+    },
+    {
+      "type": "smooth muscle cell",
+      "magnitude": 5.605815387142623,
+      "pct_ssr": 7.433801504204169
+    },
+    {
+      "type": "bladder urothelial cell",
+      "magnitude": 5.114477419433974,
+      "pct_ssr": 6.187794881837773
+    },
+    {
+      "type": "fibroblast",
+      "magnitude": 4.985119000847376,
+      "pct_ssr": 5.878742499830139
+    }
+  ],
+  "committed_context": {
+    "primary_obs_null_n20_asymmetric": 0.841,
+    "sensitivity_obs_null_n13_RIRA_only": 0.7488,
+    "primary_human_mouse_obs_null_n35": 0.522
+  },
+  "seed": 42,
+  "timings_s": {
+    "load_metadata": 0.09843993186950684,
+    "load_h5ad": 4.31194281578064,
+    "normalize": 0.9222609996795654
+  },
+  "runtime_total_s": 6.857507705688477,
+  "preprocessing": "raw UMI \u2192 normalize_total(1e4) \u2192 log1p (symmetric with human/mouse)"
+}

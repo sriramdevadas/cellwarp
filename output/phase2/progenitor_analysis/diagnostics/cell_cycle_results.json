@@ -1,0 +1,31 @@
+{
+  "n_cc_genes_found": 92,
+  "n_cc_genes_total": 97,
+  "cc_vs_residual": {
+    "spearman_rho": 0.16218487394957984,
+    "p": 0.3519387668074265
+  },
+  "cc_progenitor_vs_differentiated": {
+    "prog_mean": 0.1923065425829965,
+    "diff_mean": 0.09591217362667187,
+    "mannwhitney_p": 0.2569247640405135
+  },
+  "original_association": {
+    "spearman_rho": 0.4284796042308549,
+    "spearman_p": 0.010226919440366146,
+    "mannwhitney_p": 0.00986347618226176
+  },
+  "partial_correlation_mean_cc": {
+    "partial_rho": 0.40945947516684744,
+    "permutation_p": 0.015798420157984203
+  },
+  "partial_correlation_human_cc": {
+    "partial_rho": 0.4108784129565395,
+    "permutation_p": 0.0156984301569843
+  },
+  "partial_correlation_mouse_cc": {
+    "partial_rho": 0.4224187446511649,
+    "permutation_p": 0.012198780121987801
+  },
+  "conclusion": "SURVIVES: Progenitor divergence signal persists after cell cycle regression (partial rho=0.409, p=0.0158). Cell cycle is NOT the confound."
+}

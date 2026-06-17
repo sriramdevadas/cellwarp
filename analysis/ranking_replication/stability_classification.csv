@@ -1,0 +1,19 @@
+cell_type,n_datasets,mean_rank_shift,max_rank_shift,datasets,primary_residual,primary_rank_35,classification
+myeloid leukocyte,1,0.0,0,PanSci,11.50924569568494,10,insufficient data
+large intestine goblet cell,1,1.0,1,PanSci,9.46673512918766,19,insufficient data
+macrophage,3,1.3333333333333333,2,"Sun2023, PanSci, CellHint",9.878526364594377,16,stable
+monocyte,3,2.3333333333333335,4,"Sun2023, PanSci, CellHint",8.722376854060062,22,moderate
+B cell,3,3.0,5,"Sun2023, PanSci, CellHint",9.84610773899485,17,moderate
+natural killer cell,2,3.0,5,"Sun2023, CellHint",8.686953921396096,23,moderate
+myeloid dendritic cell,3,3.0,5,"Sun2023, PanSci, CellHint",8.898942576915942,21,moderate
+"CD8-positive, alpha-beta T cell",3,3.3333333333333335,7,"Sun2023, PanSci, CellHint",5.376250842092007,35,moderate
+smooth muscle cell,3,4.333333333333333,7,"Sun2023, PanSci, CellHint",6.705384890826327,31,volatile
+plasma cell,3,5.0,6,"Sun2023, PanSci, CellHint",11.0837158067887,12,volatile
+granulocyte,2,6.0,10,"Sun2023, PanSci",7.932484886776578,27,volatile
+"CD4-positive, alpha-beta T cell",3,6.333333333333333,11,"Sun2023, PanSci, CellHint",10.211698233902776,14,volatile
+endothelial cell,3,6.666666666666667,12,"Sun2023, PanSci, CellHint",5.971297637181498,33,volatile
+epithelial cell,3,7.333333333333333,13,"Sun2023, PanSci, CellHint",16.26737024211543,2,volatile
+fibroblast,3,7.666666666666667,10,"Sun2023, PanSci, CellHint",7.507949833964307,28,volatile
+T cell,3,7.666666666666667,11,"Sun2023, PanSci, CellHint",11.669230240557653,7,volatile
+hepatocyte,3,8.333333333333334,12,"Sun2023, PanSci, CellHint",6.058640371671017,32,volatile
+neutrophil,1,10.0,10,CellHint,11.597874253364406,8,insufficient data

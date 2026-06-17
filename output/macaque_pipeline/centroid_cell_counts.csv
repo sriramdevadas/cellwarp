@@ -1,0 +1,21 @@
+cell_type,cells,donors,source,LOW_CONFIDENCE
+B cell,84412,47,RIRA,False
+"CD4-positive, alpha-beta T cell",116863,45,RIRA,False
+"CD8-positive, alpha-beta T cell",110916,45,RIRA,False
+T cell,48226,48,RIRA,False
+bladder urothelial cell,963,1,Qu,True
+classical monocyte,7250,44,RIRA,False
+endothelial cell,5572,6,Qu,True
+epithelial cell,5844,7,Qu,True
+fibroblast,2083,6,Qu,True
+granulocyte,5698,39,RIRA,False
+hematopoietic precursor cell,1501,44,RIRA,False
+hepatocyte,2393,2,Qu,True
+intermediate monocyte,1452,33,RIRA,False
+macrophage,14298,44,RIRA,False
+myeloid dendritic cell,4780,44,RIRA,False
+myeloid leukocyte,2138,45,RIRA,False
+natural killer cell,11802,45,RIRA,False
+non-classical monocyte,3484,44,RIRA,False
+smooth muscle cell,3994,5,Qu,True
+stromal cell,14762,6,Qu,True

@@ -1,0 +1,36 @@
+rank,cell_type,treeness_score
+1,hematopoietic stem cell,0.3297537593233677
+2,granulocyte,0.3213188666170633
+3,plasma cell,0.31680736178509883
+4,hepatocyte,0.31217634963557506
+5,neutrophil,0.30747870744926964
+6,pancreatic acinar cell,0.292403938558774
+7,enterocyte of epithelium of large intestine,0.28706621640255126
+8,large intestine goblet cell,0.27440138628128646
+9,hematopoietic precursor cell,0.27396841405314454
+10,macrophage,0.2649787790555513
+11,luminal epithelial cell of mammary gland,0.2626196549948939
+12,myeloid dendritic cell,0.26155294339238877
+13,myeloid leukocyte,0.2601107711481485
+14,basal cell,0.2529276834256889
+15,stromal cell,0.25204884415214407
+16,epithelial cell,0.24980189848876194
+17,pancreatic ductal cell,0.24959501346404192
+18,endothelial cell,0.2484092168074649
+19,fibroblast of cardiac tissue,0.24207138602690914
+20,bladder urothelial cell,0.2343276856675178
+21,B cell,0.23420681461956921
+22,natural killer cell,0.23157242604635775
+23,T cell,0.22842200073032315
+24,"CD4-positive, alpha-beta T cell",0.21921576040382962
+25,mesenchymal stem cell of adipose tissue,0.21844959468305122
+26,smooth muscle cell,0.21739192097974663
+27,mature NK T cell,0.20897963388719126
+28,non-classical monocyte,0.20892971156126539
+29,intermediate monocyte,0.20798463607007228
+30,"CD8-positive, alpha-beta T cell",0.20686337804556595
+31,adventitial cell,0.20428819327888553
+32,classical monocyte,0.20343423502548152
+33,monocyte,0.1987485948782572
+34,mesenchymal stem cell,0.1961467138437285
+35,fibroblast,0.19509646916252277

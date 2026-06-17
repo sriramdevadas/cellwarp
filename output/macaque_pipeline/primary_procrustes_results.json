@@ -1,0 +1,168 @@
+{
+  "analysis": "PRIMARY",
+  "n_types": 20,
+  "cell_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "bladder urothelial cell",
+    "classical monocyte",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "hepatocyte",
+    "intermediate monocyte",
+    "macrophage",
+    "myeloid dendritic cell",
+    "myeloid leukocyte",
+    "natural killer cell",
+    "non-classical monocyte",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "gene_space": 13927,
+  "procrustes": {
+    "distance": 27.548808144684564,
+    "distance_squared": 758.9368301926386,
+    "scaling": 0.03533594196882099,
+    "rotation_det": 0.9999999999999968
+  },
+  "permutation_test": {
+    "p_value": 0.00019998000199980003,
+    "obs_null_ratio": 0.8405989795294208,
+    "null_median": 32.772830821311224,
+    "significant_at_001": true,
+    "n_permutations": 10000
+  },
+  "pca": {
+    "n_components": 8,
+    "variance_explained": [
+      0.46667140979249333,
+      0.22593374941517227,
+      0.10894744012028079,
+      0.050492192811927364,
+      0.040078971877348456,
+      0.029209297572989887,
+      0.023105280363344305,
+      0.012986495175092028
+    ]
+  },
+  "residuals": {
+    "B cell": {
+      "magnitude": 7.023236960681487,
+      "pct_ssr": 6.499336366817551
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "magnitude": 7.016262930386929,
+      "pct_ssr": 6.486435174825604
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "magnitude": 4.154165806579923,
+      "pct_ssr": 2.2738511114525175
+    },
+    "T cell": {
+      "magnitude": 3.102917023242759,
+      "pct_ssr": 1.2686291757228114
+    },
+    "bladder urothelial cell": {
+      "magnitude": 8.734435194086151,
+      "pct_ssr": 10.05226721443025
+    },
+    "classical monocyte": {
+      "magnitude": 7.251255883131217,
+      "pct_ssr": 6.928206642613284
+    },
+    "endothelial cell": {
+      "magnitude": 3.378019137634471,
+      "pct_ssr": 1.5035524486706375
+    },
+    "epithelial cell": {
+      "magnitude": 3.1676158684492433,
+      "pct_ssr": 1.3220850393443955
+    },
+    "fibroblast": {
+      "magnitude": 7.179040324099165,
+      "pct_ssr": 6.790897203125581
+    },
+    "granulocyte": {
+      "magnitude": 5.357297503014267,
+      "pct_ssr": 3.7816897789132073
+    },
+    "hematopoietic precursor cell": {
+      "magnitude": 2.766956452169333,
+      "pct_ssr": 1.0087859362759073
+    },
+    "hepatocyte": {
+      "magnitude": 12.766906954098598,
+      "pct_ssr": 21.476611318657298
+    },
+    "intermediate monocyte": {
+      "magnitude": 6.052224408500528,
+      "pct_ssr": 4.826412269589294
+    },
+    "macrophage": {
+      "magnitude": 6.024838968044975,
+      "pct_ssr": 4.78283345158775
+    },
+    "myeloid dendritic cell": {
+      "magnitude": 3.637976992113164,
+      "pct_ssr": 1.7438706449106414
+    },
+    "myeloid leukocyte": {
+      "magnitude": 5.295363370067238,
+      "pct_ssr": 3.6947572058049056
+    },
+    "natural killer cell": {
+      "magnitude": 2.241668485254977,
+      "pct_ssr": 0.662120666420925
+    },
+    "non-classical monocyte": {
+      "magnitude": 5.749988127854443,
+      "pct_ssr": 4.356405191466979
+    },
+    "smooth muscle cell": {
+      "magnitude": 4.87410661685347,
+      "pct_ssr": 3.1302888945875287
+    },
+    "stromal cell": {
+      "magnitude": 7.499635809681217,
+      "pct_ssr": 7.410964264782942
+    }
+  },
+  "top5_ssr": [
+    {
+      "type": "hepatocyte",
+      "pct": 21.476611318657298
+    },
+    {
+      "type": "bladder urothelial cell",
+      "pct": 10.05226721443025
+    },
+    {
+      "type": "stromal cell",
+      "pct": 7.410964264782942
+    },
+    {
+      "type": "classical monocyte",
+      "pct": 6.928206642613284
+    },
+    {
+      "type": "fibroblast",
+      "pct": 6.790897203125581
+    }
+  ],
+  "species_mixing_check": {
+    "shared_types": [
+      "B cell",
+      "T cell",
+      "macrophage",
+      "natural killer cell"
+    ],
+    "obs_null_ratio": 0.8211885276940274,
+    "p_value": 0.1272872712728727,
+    "verdict": "FLAG"
+  }
+}

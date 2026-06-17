@@ -1,0 +1,52 @@
+{
+  "primary_PR": {
+    "h2a_pr_vs_residual": {
+      "rho": -0.1523809523809524,
+      "p": 0.38218514752458377,
+      "pass": false
+    },
+    "h2b_pr_vs_treeness": {
+      "rho": -0.2750700280112045,
+      "p": 0.10976291150919183,
+      "pass": false
+    },
+    "h2c_mediation": {
+      "raw_rho": 0.34873949579831937,
+      "raw_p": 0.04005296407557929,
+      "partial_rho": 0.3229059001714064,
+      "partial_p": 0.0625086586244091,
+      "attenuation_pct": 7.407705733982267,
+      "pass": false
+    },
+    "verdict": "H2_REJECTED",
+    "description": "Concentration does not predict rigidity \u2014 H2 rejected"
+  },
+  "sensitivity_PC1": {
+    "h2a_pc1_vs_residual": {
+      "rho": 0.14789915966386555,
+      "p": 0.3965029298899747,
+      "pass": false
+    },
+    "h2b_pc1_vs_treeness": {
+      "rho": 0.2361344537815126,
+      "p": 0.17204604747305324,
+      "pass": false
+    },
+    "h2c_mediation": {
+      "partial_rho": 0.3265393933088561,
+      "partial_p": 0.05944970678265406,
+      "attenuation_pct": 6.365812521075003,
+      "pass": false
+    },
+    "verdict": "H2_REJECTED"
+  },
+  "consistent": true,
+  "n": 35,
+  "pr_summary": {
+    "mean": 9.768306067204199,
+    "median": 10.524951038390789,
+    "std": 4.545940220846284,
+    "min": 2.06110589313597,
+    "max": 20.539644341609474
+  }
+}

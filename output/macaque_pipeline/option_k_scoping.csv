@@ -1,0 +1,14 @@
+qu_label,ts35_target,in_ts35,qu_count,status,notes
+B cell,B cell,True,19320,clean,"Qu fine = TS fine, both are 'B cell'"
+Macrophage,macrophage,True,3586,clean,Qu fine = TS fine
+Monocyte,monocyte,True,2991,clean-generic,Qu is generic; TS has generic 'monocyte' AND subtypes (classical/intermediate/non-classical). Use TS 'monocyte' for parity; avoid subtype mismatch.
+Plasma cell,plasma cell,True,1662,clean,Both fine labels match
+Neutrophil,neutrophil,True,2143,clean,Qu fine = TS fine (TS also has 'granulocyte' broader; use 'neutrophil' tight)
+Dendritic cell,myeloid dendritic cell,True,689,granularity,Qu doesn't split mDC/pDC; TS is 'myeloid dendritic cell' specifically. Only 689 cells — below most per-type gates.
+Effector T cell,T cell,True,4024,granularity,"Qu doesn't distinguish CD4/CD8 effector. TS has CD4+ T, CD8+ T, and generic 'T cell'. Map to 'T cell' (generic) with caveat, or skip."
+NKT cell,mature NK T cell,True,38139,granularity,"Qu 'NKT cell' at 38,139 is 22% of cells — far beyond invariant NKT biology. Likely a broad T/NK bucket. TS 'mature NK T cell' is narrower. High risk of mismatch; skip."
+Secretory cell,(organ-dependent),False,10177,organ-stratified,Colon secretory → goblet; other organs → broader epithelial. Breaks one-to-one clean map.
+Ciliated cell,(no clean match),False,7418,no match,Airway epithelial subtype; TS doesn't have 'ciliated cell' as a 35-type
+FibSmo cell,(no clean match),False,619,no match,Hybrid label not in TS 35; already absorbed into 'stromal cell' via majorcluster
+Mast cell,(no clean match),False,341,no match,Not in TS 35 (DECISIONS.md notes mast cell absent from primary). Count 341 below gate.
+Spermatid,(no clean match),False,17615,no match,"Testis germ cell, not in TS 35"

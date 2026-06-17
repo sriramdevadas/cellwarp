@@ -1,0 +1,149 @@
+{
+  "test": "lineage_stratified_permutation",
+  "n_cell_types": 35,
+  "n_pca_components": 33,
+  "n_permutations": 10000,
+  "random_seed": 42,
+  "observed_procrustes_distance": 61.15299531597359,
+  "lineage_blocks": {
+    "immune_hematopoietic": {
+      "members": [
+        "B cell",
+        "CD4-positive, alpha-beta T cell",
+        "CD8-positive, alpha-beta T cell",
+        "T cell",
+        "classical monocyte",
+        "granulocyte",
+        "hematopoietic precursor cell",
+        "hematopoietic stem cell",
+        "intermediate monocyte",
+        "macrophage",
+        "mature NK T cell",
+        "monocyte",
+        "myeloid dendritic cell",
+        "myeloid leukocyte",
+        "natural killer cell",
+        "neutrophil",
+        "non-classical monocyte",
+        "plasma cell"
+      ],
+      "n_types": 18,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        13,
+        14,
+        15,
+        17,
+        20,
+        21,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        32
+      ]
+    },
+    "epithelial": {
+      "members": [
+        "basal cell",
+        "bladder urothelial cell",
+        "enterocyte of epithelium of large intestine",
+        "epithelial cell",
+        "large intestine goblet cell",
+        "luminal epithelial cell of mammary gland",
+        "pancreatic acinar cell",
+        "pancreatic ductal cell"
+      ],
+      "n_types": 8,
+      "indices": [
+        5,
+        6,
+        9,
+        10,
+        18,
+        19,
+        30,
+        31
+      ]
+    },
+    "stromal_mesenchymal": {
+      "members": [
+        "adventitial cell",
+        "fibroblast",
+        "fibroblast of cardiac tissue",
+        "mesenchymal stem cell",
+        "mesenchymal stem cell of adipose tissue",
+        "smooth muscle cell",
+        "stromal cell"
+      ],
+      "n_types": 7,
+      "indices": [
+        4,
+        11,
+        12,
+        22,
+        23,
+        33,
+        34
+      ]
+    },
+    "endothelial": {
+      "members": [
+        "endothelial cell"
+      ],
+      "n_types": 1,
+      "indices": [
+        8
+      ]
+    },
+    "metabolic_parenchymal": {
+      "members": [
+        "hepatocyte"
+      ],
+      "n_types": 1,
+      "indices": [
+        16
+      ]
+    }
+  },
+  "ambiguities": {
+    "hematopoietic precursor cell": "Could be classified as stem/progenitor. Assigned to immune/hematopoietic because Cell Ontology places it under hematopoietic cell (CL:0000988) and it differentiates exclusively into blood/immune lineages.",
+    "hematopoietic stem cell": "Could be classified as stem/progenitor. Assigned to immune/hematopoietic for the same reason as hematopoietic precursor cell.",
+    "mesenchymal stem cell": "Could be classified as stem/progenitor. Assigned to stromal/mesenchymal because its differentiation products (fibroblasts, adipocytes, osteoblasts) are stromal, and its transcriptomic profile clusters with stromal types.",
+    "mesenchymal stem cell of adipose tissue": "Same rationale as mesenchymal stem cell.",
+    "endothelial cell": "Singleton block. Only one endothelial type in the 35-type ontology. Cannot be permuted within block \u2014 stays correctly matched in all iterations, making the null more conservative.",
+    "hepatocyte": "Singleton block. Only parenchymal/metabolic type in the ontology. Same singleton treatment as endothelial cell."
+  },
+  "stratified_null": {
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.6682720235158841,
+    "null_mean": 91.38994983851747,
+    "null_median": 91.50913574720377,
+    "null_std": 2.629762758347445,
+    "null_min": 79.87757352517133,
+    "null_max": 99.87817587438015,
+    "null_percentile_2_5": 85.93804908593152,
+    "null_percentile_97_5": 96.30047663559431,
+    "significant_at_005": true,
+    "significant_at_001": true
+  },
+  "global_null": {
+    "obs_null_ratio": 0.5222043226858066,
+    "null_mean": 116.95879062676244,
+    "null_std": 2.13938800321912,
+    "null_median": 117.10549426602002
+  },
+  "distribution_comparison": {
+    "mean_difference": -25.56884078824497,
+    "std_ratio_strat_over_global": 1.2292126320192795,
+    "pct_tighter": 21.86141003273534,
+    "ks_statistic": 1.0,
+    "ks_p_value": 0.0
+  }
+}

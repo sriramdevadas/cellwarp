@@ -1,0 +1,16 @@
+{
+  "our_label": "CD4+ T cell",
+  "organism": "mouse",
+  "organism_scientific": "Mus musculus",
+  "tried_terms": [
+    "CD4-positive, alpha-beta T cell",
+    "CD4+ T cell",
+    "CD4-positive T cell",
+    "helper T cell",
+    "naive thymus-derived CD4-positive, alpha-beta T cell"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:15:36.944718"
+}

@@ -1,0 +1,36 @@
+cell_type,n_cells,n_donors,n_donors_ge50,n_donors_ge100,median_cells_per_donor,n_datasets,n_assays
+endothelial cell,14822,39,33,31,353.0,2,2
+B cell,36349,37,33,32,466.0,2,2
+natural killer cell,3362,37,25,11,61.0,2,2
+macrophage,9631,37,35,33,217.0,2,2
+T cell,12745,36,31,22,129.5,2,2
+granulocyte,15562,34,32,31,288.0,2,2
+monocyte,3674,33,28,17,101.0,2,2
+smooth muscle cell,1704,33,15,3,38.0,2,2
+mesenchymal stem cell,16142,32,30,25,392.5,2,2
+"CD4-positive, alpha-beta T cell",1721,30,17,4,55.5,2,2
+classical monocyte,8124,30,13,9,29.5,2,2
+adventitial cell,815,30,3,1,15.0,2,2
+fibroblast,3143,29,15,11,56.0,2,2
+"CD8-positive, alpha-beta T cell",1940,29,17,6,61.0,2,2
+non-classical monocyte,1159,29,9,3,22.0,2,2
+neutrophil,705,28,3,1,10.5,2,2
+myeloid dendritic cell,618,28,2,0,20.0,2,2
+mature NK T cell,3161,27,13,11,49.0,2,2
+fibroblast of cardiac tissue,6335,27,24,22,184.0,2,2
+plasma cell,1646,26,10,7,22.0,2,2
+epithelial cell,764,22,5,3,16.5,2,2
+bladder urothelial cell,6651,21,17,15,138.0,2,2
+mesenchymal stem cell of adipose tissue,6626,21,21,21,320.0,2,2
+hepatocyte,4091,20,17,11,134.0,2,2
+intermediate monocyte,1761,19,4,2,17.0,2,2
+large intestine goblet cell,1745,18,13,7,85.0,2,2
+enterocyte of epithelium of large intestine,3667,18,18,17,177.5,2,2
+hematopoietic precursor cell,2144,17,16,14,124.0,1,1
+hematopoietic stem cell,3342,16,12,12,252.5,2,2
+pancreatic acinar cell,2717,16,9,5,52.0,2,2
+pancreatic ductal cell,651,16,3,1,29.0,2,2
+luminal epithelial cell of mammary gland,2671,15,15,8,133.0,2,2
+myeloid leukocyte,516,15,3,1,13.0,2,2
+basal cell,3726,15,15,15,226.0,2,2
+stromal cell,3123,15,8,7,98.0,2,2

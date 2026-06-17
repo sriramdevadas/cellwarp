@@ -1,0 +1,36 @@
+human_cell_type,mouse_cell_type,cell_ontology_id,matching_basis,human_cell_count,mouse_cell_count
+"CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell",CL:0000625,"Cell Ontology + marker gene expression (CD8A, CD8B)",76277,1940
+endothelial cell,endothelial cell,CL:0000115,"Cell Ontology + marker gene expression (PECAM1, VWF)",33703,14822
+non-classical monocyte,non-classical monocyte,CL:0000875,Cell Ontology + marker gene expression (FCGR3A),1284,1159
+hepatocyte,hepatocyte,CL:0000182,"Cell Ontology + marker gene expression (ALB, CPS1)",7414,4091
+smooth muscle cell,smooth muscle cell,CL:0000192,"Cell Ontology + marker gene expression (ACTA2, MYH11)",18425,1704
+pancreatic ductal cell,pancreatic ductal cell,CL:0002079,Cell Ontology + marker gene expression (KRT19),2721,651
+bladder urothelial cell,bladder urothelial cell,CL:1001428,Cell Ontology + marker gene expression (UPK1A),27241,6651
+fibroblast,fibroblast,CL:0000057,"Cell Ontology + marker gene expression (COL1A1, DCN)",83338,3143
+granulocyte,granulocyte,CL:0000094,"Cell Ontology + marker gene expression [annotation-split: granulocyte and neutrophil are one granulocytic population partitioned inconsistently across the two atlases; see merge sensitivity, Methods]",769,15562
+adventitial cell,adventitial cell,CL:0002503,Cell Ontology + marker gene expression,1045,815
+mature NK T cell,mature NK T cell,CL:0000814,Cell Ontology + marker gene expression,5394,3161
+intermediate monocyte,intermediate monocyte,CL:0002393,Cell Ontology + marker gene expression,5478,1761
+natural killer cell,natural killer cell,CL:0000623,"Cell Ontology + marker gene expression (NCR1, KLRD1)",14231,3362
+monocyte,monocyte,CL:0000576,Cell Ontology + marker gene expression (CD14),25753,3674
+myeloid dendritic cell,myeloid dendritic cell,CL:0000782,"Cell Ontology + marker gene expression (ITGAX, HLA-DRA)",571,618
+enterocyte of epithelium of large intestine,enterocyte of epithelium of large intestine,CL:0002071,Cell Ontology + marker gene expression (FABP2),4567,3667
+large intestine goblet cell,large intestine goblet cell,CL:1000320,Cell Ontology + marker gene expression (MUC2),1557,1745
+luminal epithelial cell of mammary gland,luminal epithelial cell of mammary gland,CL:0002326,"Cell Ontology + marker gene expression (KRT18, EPCAM)",15432,2671
+B cell,B cell,CL:0000236,"Cell Ontology + marker gene expression (CD74, CD79A)",114495,36349
+macrophage,macrophage,CL:0000235,"Cell Ontology + marker gene expression (CD163, CD68)",69072,9631
+classical monocyte,classical monocyte,CL:0000860,"Cell Ontology + marker gene expression (CD14, LYZ)",18200,8124
+"CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell",CL:0000624,"Cell Ontology + marker gene expression (PTPRC, CD4)",97130,1721
+mesenchymal stem cell,mesenchymal stem cell,CL:0000134,Cell Ontology + marker gene expression,23499,16142
+plasma cell,plasma cell,CL:0000786,"Cell Ontology + marker gene expression (SDC1, MZB1)",27349,1646
+mesenchymal stem cell of adipose tissue,mesenchymal stem cell of adipose tissue,CL:0002570,Cell Ontology + marker gene expression,3777,6626
+myeloid leukocyte,myeloid leukocyte,CL:0000766,Cell Ontology + marker gene expression,1002,516
+fibroblast of cardiac tissue,fibroblast of cardiac tissue,CL:0002548,Cell Ontology + marker gene expression,1947,6335
+neutrophil,neutrophil,CL:0000775,"Cell Ontology + marker gene expression (S100A8, S100A9) [annotation-split: granulocyte and neutrophil are one granulocytic population partitioned inconsistently across the two atlases; see merge sensitivity, Methods]",69539,705
+T cell,T cell,CL:0000084,"Cell Ontology + marker gene expression (CD3D, CD3E)",6290,12745
+basal cell,basal cell,CL:0000646,"Cell Ontology + marker gene expression (KRT5, TP63)",33526,3726
+pancreatic acinar cell,pancreatic acinar cell,CL:0002064,Cell Ontology + marker gene expression (PRSS1),5482,2717
+hematopoietic stem cell,hematopoietic stem cell,CL:0000037,Cell Ontology + marker gene expression (CD34),858,3342
+hematopoietic precursor cell,hematopoietic precursor cell,CL:0008001,Cell Ontology + marker gene expression,2140,2144
+epithelial cell,epithelial cell,CL:0000066,Cell Ontology + marker gene expression (EPCAM),1675,764
+stromal cell,stromal cell,CL:0000499,Cell Ontology + marker gene expression,3458,3123

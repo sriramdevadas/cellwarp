@@ -1,0 +1,32 @@
+{
+  "task": "T3-C Task 0: Tissue Overlap Mapping",
+  "min_cells_per_tissue": 100,
+  "n_cell_types": 35,
+  "n_stratified_ge2": 6,
+  "n_single_tissue": 22,
+  "n_unstratified": 7,
+  "total_matched_pairs": 37,
+  "n_types_with_any_match": 28,
+  "datasets": {
+    "tabula_human": {
+      "n_cells": 62708,
+      "n_types": 35,
+      "n_tissues": 30
+    },
+    "tabula_mouse": {
+      "n_cells": 59745,
+      "n_types": 35,
+      "n_tissues": 17
+    },
+    "sun2023": {
+      "n_cells": 53021,
+      "n_types": 14,
+      "n_tissues": 8
+    },
+    "pansci": {
+      "n_cells": 2324991,
+      "n_types": 17,
+      "n_tissues": 13
+    }
+  }
+}

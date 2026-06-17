@@ -1,0 +1,269 @@
+{
+  "layer1_reproduction": {
+    "obs_over_null": 0.5518603574068688,
+    "p_value": 9.999000099990002e-05,
+    "n_pca_components": 17,
+    "variance_retained": 0.954518930120829,
+    "procrustes_scale_s": 1.7201550484429913,
+    "R_determinant": 1.0000000000000004
+  },
+  "layer2_pre_rotation": {
+    "k1": {
+      "S": 0.20264124870300293,
+      "null_mean": 0.12734261916801334,
+      "null_sd": 0.019585187325137938,
+      "p": 9.999000099990002e-05,
+      "margin": 0.07529862953498959
+    },
+    "k3": {
+      "S": 0.3745076656341553,
+      "null_mean": 0.2781904404103756,
+      "null_sd": 0.013282692306998268,
+      "p": 9.999000099990002e-05,
+      "margin": 0.09631722522377967
+    },
+    "k5": {
+      "S": 0.39642953872680664,
+      "null_mean": 0.30187365742623806,
+      "null_sd": 0.014635574185505503,
+      "p": 9.999000099990002e-05,
+      "margin": 0.09455588130056858
+    }
+  },
+  "layer2_post_rotation": {
+    "k1": {
+      "S": 0.10146604278890714,
+      "null_mean": 0.09350288841423564,
+      "null_sd": 0.01645936207055665,
+      "p": 0.31396860313968605,
+      "margin": 0.007963154374671502
+    },
+    "k3": {
+      "S": 0.2610807673980711,
+      "null_mean": 0.20606795329540814,
+      "null_sd": 0.010565439983974934,
+      "p": 9.999000099990002e-05,
+      "margin": 0.05501281410266298
+    },
+    "k5": {
+      "S": 0.40176584832797235,
+      "null_mean": 0.36005155745785283,
+      "null_sd": 0.009500455559737483,
+      "p": 9.999000099990002e-05,
+      "margin": 0.04171429087011952
+    }
+  },
+  "per_type_correlation": {
+    "spearman_rho": 0.28823529411764703,
+    "p_value": 0.2789844597370832,
+    "n": 16
+  },
+  "cpc1_classification": {
+    "ribosomal_dominated_count": 0,
+    "ribosomal_dominated_types": [],
+    "cell_type_specific_count": 16,
+    "cell_type_specific": [
+      {
+        "type": "B cell",
+        "rank1_driver": "ARHGAP15"
+      },
+      {
+        "type": "CD4-positive, alpha-beta T cell",
+        "rank1_driver": "MBNL1"
+      },
+      {
+        "type": "CD8-positive, alpha-beta T cell",
+        "rank1_driver": "MBNL1"
+      },
+      {
+        "type": "T cell",
+        "rank1_driver": "ARHGAP15"
+      },
+      {
+        "type": "endothelial cell",
+        "rank1_driver": "CALCRL"
+      },
+      {
+        "type": "epithelial cell",
+        "rank1_driver": "JCHAIN"
+      },
+      {
+        "type": "fibroblast",
+        "rank1_driver": "ZBTB20"
+      },
+      {
+        "type": "granulocyte",
+        "rank1_driver": "NAMPT"
+      },
+      {
+        "type": "hepatocyte",
+        "rank1_driver": "DPYD"
+      },
+      {
+        "type": "large intestine goblet cell",
+        "rank1_driver": "GMDS"
+      },
+      {
+        "type": "macrophage",
+        "rank1_driver": "KCNIP4"
+      },
+      {
+        "type": "monocyte",
+        "rank1_driver": "DOCK2"
+      },
+      {
+        "type": "myeloid dendritic cell",
+        "rank1_driver": "DOCK2"
+      },
+      {
+        "type": "myeloid leukocyte",
+        "rank1_driver": "DPYD"
+      },
+      {
+        "type": "plasma cell",
+        "rank1_driver": "MT-CO2"
+      },
+      {
+        "type": "smooth muscle cell",
+        "rank1_driver": "SPTBN1"
+      }
+    ]
+  },
+  "cell_counts": {
+    "TS_per_type": {
+      "B cell": 2000,
+      "CD4-positive, alpha-beta T cell": 2000,
+      "CD8-positive, alpha-beta T cell": 2000,
+      "T cell": 2000,
+      "endothelial cell": 2000,
+      "epithelial cell": 1675,
+      "fibroblast": 2000,
+      "granulocyte": 769,
+      "hepatocyte": 2000,
+      "large intestine goblet cell": 1557,
+      "macrophage": 2000,
+      "monocyte": 2000,
+      "myeloid dendritic cell": 571,
+      "myeloid leukocyte": 1002,
+      "plasma cell": 2000,
+      "smooth muscle cell": 2000
+    },
+    "PanSci_per_type": {
+      "B cell": 59604,
+      "CD4-positive, alpha-beta T cell": 1617,
+      "CD8-positive, alpha-beta T cell": 1316,
+      "T cell": 38652,
+      "endothelial cell": 75215,
+      "epithelial cell": 205149,
+      "fibroblast": 38345,
+      "granulocyte": 3116,
+      "hepatocyte": 292135,
+      "large intestine goblet cell": 37359,
+      "macrophage": 30784,
+      "monocyte": 18377,
+      "myeloid dendritic cell": 7756,
+      "myeloid leukocyte": 21661,
+      "plasma cell": 3791,
+      "smooth muscle cell": 15930
+    },
+    "PanSci_tissue_breakdown": {
+      "B cell": {
+        "lung": 44756,
+        "liver": 3775,
+        "colon": 11073
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "lung": 1341,
+        "liver": 54,
+        "colon": 222
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "lung": 1143,
+        "liver": 22,
+        "colon": 151
+      },
+      "T cell": {
+        "lung": 30155,
+        "liver": 3728,
+        "colon": 4769
+      },
+      "endothelial cell": {
+        "lung": 75215
+      },
+      "epithelial cell": {
+        "lung": 123240,
+        "colon": 81909
+      },
+      "fibroblast": {
+        "lung": 18073,
+        "colon": 20272
+      },
+      "granulocyte": {
+        "lung": 3116
+      },
+      "hepatocyte": {
+        "liver": 292135
+      },
+      "large intestine goblet cell": {
+        "colon": 37359
+      },
+      "macrophage": {
+        "lung": 30784
+      },
+      "monocyte": {
+        "lung": 18377
+      },
+      "myeloid dendritic cell": {
+        "lung": 7493,
+        "colon": 263
+      },
+      "myeloid leukocyte": {
+        "liver": 15611,
+        "colon": 6050
+      },
+      "plasma cell": {
+        "lung": 501,
+        "colon": 3290
+      },
+      "smooth muscle cell": {
+        "lung": 10886,
+        "colon": 5044
+      }
+    }
+  },
+  "qc_acknowledgments": {
+    "endothelial_tissue_restriction": "lung",
+    "w1_low_proxy_types": [
+      {"type": "monocyte", "ortholog_genes_per_cell_proxy": 455},
+      {"type": "endothelial cell", "ortholog_genes_per_cell_proxy": 405, "note": "lung-only"},
+      {"type": "B cell", "ortholog_genes_per_cell_proxy": 378},
+      {"type": "T cell", "ortholog_genes_per_cell_proxy": 369},
+      {"type": "plasma cell", "ortholog_genes_per_cell_proxy": 361},
+      {"type": "myeloid leukocyte", "ortholog_genes_per_cell_proxy": 356},
+      {"type": "granulocyte", "ortholog_genes_per_cell_proxy": 320}
+    ],
+    "w1_criterion": "mean ortholog-genes-detected per cell < 500",
+    "w2_single_tissue_types": [
+      {"type": "hepatocyte", "dominant_tissue": "liver", "concentration_pct": 100.0},
+      {"type": "large intestine goblet cell", "dominant_tissue": "colon", "concentration_pct": 100.0},
+      {"type": "macrophage", "dominant_tissue": "lung", "concentration_pct": 100.0},
+      {"type": "granulocyte", "dominant_tissue": "lung", "concentration_pct": 100.0},
+      {"type": "myeloid dendritic cell", "dominant_tissue": "lung", "concentration_pct": 96.6},
+      {"type": "CD8-positive, alpha-beta T cell", "dominant_tissue": "lung", "concentration_pct": 86.9},
+      {"type": "plasma cell", "dominant_tissue": "colon", "concentration_pct": 86.8},
+      {"type": "CD4-positive, alpha-beta T cell", "dominant_tissue": "lung", "concentration_pct": 82.9},
+      {"type": "endothelial cell", "dominant_tissue": "lung", "concentration_pct": 100.0, "note": "lung-only by design (ENDO_TISSUE)"}
+    ],
+    "w2_criterion": "≥ 80% concentration in one tissue"
+  },
+  "config": {
+    "random_seed": 42,
+    "n_permutations": 10000,
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "variance_threshold": 0.95
+  }
+}

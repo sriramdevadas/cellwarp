@@ -1,0 +1,36 @@
+cell_type,samap_score,samap_top_match,samap_top_score,rank_of_self,confirmed,confidence,note
+B cell,0.8976784715613683,B cell,0.8976784715613683,1,True,HIGH,
+"CD4-positive, alpha-beta T cell",0.35180820459686485,T cell,0.6279167093337138,2,False,MODERATE,SAMap maps to T cell (score 0.628) instead of self (score 0.352)
+"CD8-positive, alpha-beta T cell",0.4201705033289267,mature NK T cell,0.6432338138614286,2,False,MODERATE,SAMap maps to mature NK T cell (score 0.643) instead of self (score 0.420)
+T cell,0.36700123641777094,T cell,0.36700123641777094,1,True,MODERATE,
+adventitial cell,0.4781610692575554,mesenchymal stem cell of adipose tissue,0.5634370227651475,2,False,MODERATE,SAMap maps to mesenchymal stem cell of adipose tissue (score 0.563) instead of self (score 0.478)
+basal cell,0.4826362965064056,basal cell,0.4826362965064056,1,True,MODERATE,
+bladder urothelial cell,0.9210293908409308,bladder urothelial cell,0.9210293908409308,1,True,HIGH,
+classical monocyte,0.21580737369259034,monocyte,0.3492107854639994,2,False,LOW,SAMap maps to monocyte (score 0.349) instead of self (score 0.216)
+endothelial cell,0.8271267070072537,endothelial cell,0.8271267070072537,1,True,HIGH,
+enterocyte of epithelium of large intestine,0.9393663364907228,enterocyte of epithelium of large intestine,0.9393663364907228,1,True,HIGH,
+epithelial cell,0.049917876447828455,large intestine goblet cell,0.09051353061212626,2,False,LOW,SAMap maps to large intestine goblet cell (score 0.091) instead of self (score 0.050)
+fibroblast,0.13320591890346775,stromal cell,0.5040063202545115,5,False,LOW,SAMap maps to stromal cell (score 0.504) instead of self (score 0.133)
+fibroblast of cardiac tissue,0.7624018845894519,fibroblast of cardiac tissue,0.7624018845894519,1,True,HIGH,
+granulocyte,0.06201314237097311,granulocyte,0.06201314237097311,1,True,LOW,
+hematopoietic precursor cell,0.21540711574513796,classical monocyte,0.26183291587548874,2,False,LOW,SAMap maps to classical monocyte (score 0.262) instead of self (score 0.215)
+hematopoietic stem cell,0.7692198196646802,hematopoietic stem cell,0.7692198196646802,1,True,HIGH,
+hepatocyte,0.8293709004755755,hepatocyte,0.8293709004755755,1,True,HIGH,
+intermediate monocyte,0.1321247907632524,classical monocyte,0.2031700147335088,5,False,LOW,SAMap maps to classical monocyte (score 0.203) instead of self (score 0.132)
+large intestine goblet cell,0.9052619209992685,large intestine goblet cell,0.9052619209992685,1,True,HIGH,
+luminal epithelial cell of mammary gland,0.750611607729076,luminal epithelial cell of mammary gland,0.750611607729076,1,True,HIGH,
+macrophage,0.40381819336252206,macrophage,0.40381819336252206,1,True,MODERATE,
+mature NK T cell,0.053772050122294746,natural killer cell,0.3849034027347848,5,False,LOW,SAMap maps to natural killer cell (score 0.385) instead of self (score 0.054)
+mesenchymal stem cell,0.584869118574236,mesenchymal stem cell,0.584869118574236,1,True,MODERATE,
+mesenchymal stem cell of adipose tissue,0.41567884107313774,mesenchymal stem cell of adipose tissue,0.41567884107313774,1,True,MODERATE,
+monocyte,0.26018821903979694,monocyte,0.26018821903979694,1,True,LOW,
+myeloid dendritic cell,0.7196928330764629,myeloid dendritic cell,0.7196928330764629,1,True,HIGH,
+myeloid leukocyte,0.0803982469414731,macrophage,0.3954561356570575,3,False,LOW,SAMap maps to macrophage (score 0.395) instead of self (score 0.080)
+natural killer cell,0.6332566466791004,natural killer cell,0.6332566466791004,1,True,HIGH,
+neutrophil,0.8647251177327911,neutrophil,0.8647251177327911,1,True,HIGH,
+non-classical monocyte,0.8863127033326965,non-classical monocyte,0.8863127033326965,1,True,HIGH,
+pancreatic acinar cell,0.9263945768697177,pancreatic acinar cell,0.9263945768697177,1,True,HIGH,
+pancreatic ductal cell,0.8716476680806207,pancreatic ductal cell,0.8716476680806207,1,True,HIGH,
+plasma cell,0.6441104452426833,plasma cell,0.6441104452426833,1,True,HIGH,
+smooth muscle cell,0.836912932546136,smooth muscle cell,0.836912932546136,1,True,HIGH,
+stromal cell,0.006900483320719528,fibroblast,0.07047405682880728,10,False,LOW,SAMap maps to fibroblast (score 0.070) instead of self (score 0.007)

@@ -1,0 +1,29 @@
+{
+  "analysis": "SENSITIVITY",
+  "n_types": 13,
+  "cell_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "classical monocyte",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "intermediate monocyte",
+    "macrophage",
+    "myeloid dendritic cell",
+    "myeloid leukocyte",
+    "natural killer cell",
+    "non-classical monocyte"
+  ],
+  "procrustes": {
+    "distance": 16.53072257449272,
+    "scaling": 0.053443472070733244
+  },
+  "permutation_test": {
+    "p_value": 0.00019998000199980003,
+    "obs_null_ratio": 0.7488054428246411,
+    "significant_at_001": true
+  },
+  "material_change": "NO"
+}

@@ -1,0 +1,66 @@
+{
+  "rescue_stats": {
+    "cd4_marker_present": true,
+    "cd8a_marker_present": true,
+    "cd8b_marker_present": false,
+    "n_generic_t_cells": 1984,
+    "n_classified_cd4": 136,
+    "n_classified_cd8": 713,
+    "n_ambiguous_both": 157,
+    "n_neither": 978
+  },
+  "final_n_cells": 22002,
+  "final_n_genes": 16959,
+  "final_n_types": 17,
+  "final_types": [
+    "B cell",
+    "CD8-positive, alpha-beta T cell",
+    "endothelial cell",
+    "enterocyte of epithelium of large intestine",
+    "epithelial cell",
+    "hematopoietic precursor cell",
+    "luminal epithelial cell of mammary gland",
+    "macrophage",
+    "mesenchymal stem cell",
+    "monocyte",
+    "myeloid dendritic cell",
+    "natural killer cell",
+    "neutrophil",
+    "pancreatic acinar cell",
+    "pancreatic ductal cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "excluded_types": [
+    "T cell",
+    "basal cell",
+    "fibroblast",
+    "granulocyte",
+    "hepatocyte",
+    "CD4-positive, alpha-beta T cell"
+  ],
+  "download_stats": {
+    "source": "GSE108097_MCA_Figure2_BatchRemoved_dge.txt",
+    "excluded_tissues": []
+  },
+  "cd4_included": false,
+  "per_type_counts": {
+    "B cell": 2047,
+    "CD8-positive, alpha-beta T cell": 1019,
+    "endothelial cell": 1464,
+    "enterocyte of epithelium of large intestine": 713,
+    "epithelial cell": 1248,
+    "hematopoietic precursor cell": 1022,
+    "luminal epithelial cell of mammary gland": 794,
+    "macrophage": 2405,
+    "mesenchymal stem cell": 1677,
+    "monocyte": 323,
+    "myeloid dendritic cell": 903,
+    "natural killer cell": 329,
+    "neutrophil": 1128,
+    "pancreatic acinar cell": 272,
+    "pancreatic ductal cell": 236,
+    "smooth muscle cell": 278,
+    "stromal cell": 6144
+  }
+}

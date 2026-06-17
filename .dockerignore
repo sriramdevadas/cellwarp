@@ -1,0 +1,32 @@
+# Keep the build context lean and .git out of the image. The tracked deposit
+# (incl. the anchors under data/ and output/) IS copied in -- it is what the
+# gates read. Only local, non-tracked, or never-needed paths are excluded.
+
+# Required: never bake .git into the image.
+.git
+.gitignore
+.dockerignore
+Dockerfile
+
+# Local virtualenvs (rebuilt inside the image)
+.venv
+.venv.preMacClosure.bak
+
+# Python caches / build artifacts
+**/__pycache__
+**/*.py[cod]
+.pytest_cache
+*.egg-info
+build
+dist
+
+# OS / editor cruft
+.DS_Store
+**/.DS_Store
+
+# Large local-only artifacts (none are git-tracked: verified via git ls-files)
+*.log
+*.bundle
+*.jar
+*.sqlite
+**/*.h5ad

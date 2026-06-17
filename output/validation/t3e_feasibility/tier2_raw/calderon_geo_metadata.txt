@@ -1,0 +1,60 @@
+# Calderon et al. 2019 — GSE118189 GEO Metadata
+# Retrieved: 2026-03-15
+# Source: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118189
+
+## Series Info
+- Title: ATAC-seq data
+- Accession: GSE118189
+- Organism: Homo sapiens
+- Total samples: 175
+- Platforms: GPL20301, GPL24676
+- Submission date: 2018-08-06
+- Public date: 2018-09-05
+- Contact: Diego Calderon, University of Washington
+- Supplementary: GSE118189_ATAC_counts.txt.gz (consensus peak count matrix)
+
+## Publication
+Calderon D, Nguyen MLT, Mezger A, Kathiria A, Müller F, Nguyen V,
+Lescano N, Wu B, Dimmock J, Shcherbina A, Bettinger K, Anbunathan H,
+Horns F, Steinhart Z, Nazeeri A, Qi W, Park E, Greenleaf WJ, Kundaje A,
+Pritchard JK, Greenside P, Pritchard D.
+"Landscape of stimulation-responsive chromatin across diverse human immune cells."
+Nature Genetics 51:1494-1505 (2019).
+
+## Donors
+6 donors: 1001, 1002, 1003, 1004, 1008, 1010
+Not all donors have all cell types.
+
+## Unstimulated Cell Types (25 unique, suffix -U)
+1.  Bulk_B           — 4 donors (1001,1002,1003,1004)
+2.  CD8pos_T         — 4 donors (1001,1002,1003,1004)
+3.  Central_memory_CD8pos_T — 4 donors (1001,1002,1003,1004)
+4.  Effector_CD4pos_T — 4 donors (1001,1002,1003,1004)
+5.  Effector_memory_CD8pos_T — 4 donors (1001,1002,1003,1004)
+6.  Follicular_T_Helper — 5 donors (1001,1002,1003,1004,1010)
+7.  Gamma_delta_T    — 4 donors (1001,1002,1003,1004)
+8.  Immature_NK      — 5 donors (1001,1002,1003,1004,1008)
+9.  Mature_NK        — 4 donors (1001,1002,1003,1004,1008) [5 donors]
+10. Mem_B            — 4 donors (1001,1002,1003,1004)
+11. Memory_NK        — 6 donors (1001,1002,1003,1004,1008,1010)
+12. Memory_Teffs     — 4 donors (1001,1002,1003,1004)
+13. Memory_Tregs     — 4 donors (1001,1002,1003,1004)
+14. Monocytes        — 3 donors (1001,1003,1004)
+15. Myeloid_DCs      — 3 donors (1001,1002,1008)
+16. Naive_B          — 4 donors (1001,1002,1003,1004)
+17. Naive_CD8_T      — 4 donors (1001,1002,1003,1004)
+18. Naive_Teffs      — 4 donors (1001,1002,1003,1004)
+19. Naive_Tregs      — 3 donors (1004,1008,1010)
+20. pDCs             — 3 donors (1001,1002,1008)
+21. Plasmablasts     — 2 donors (1001,1010)  [1002 also has but only U seen for 1001,1010]
+22. Regulatory_T     — 4 donors (1001,1002,1003,1004)
+23. Th1_precursors   — 4 donors (1001,1002,1003,1004)
+24. Th17_precursors  — 3 donors (1001,1002,1004)
+25. Th2_precursors   — 4 donors (1001,1002,1003,1004)
+
+## Key Notes
+- Naming convention: {donor}-{celltype}-{U|S} where U=unstimulated, S=stimulated
+- Source: Peripheral blood (PBMCs via Ficoll gradient) + fetal thymus
+- NO neutrophils — PBMCs exclude granulocytes during density gradient
+- Consensus peak count matrix available (GSE118189_ATAC_counts.txt.gz)
+- Platform GPL20301 = Illumina HiSeq 2500

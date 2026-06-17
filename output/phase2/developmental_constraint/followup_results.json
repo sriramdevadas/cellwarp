@@ -1,0 +1,49 @@
+{
+  "bootstrap": {
+    "original_U": 128.0,
+    "original_p": 0.00986347618226176,
+    "bootstrap_n": 10000,
+    "p_value_95CI": [
+      0.0010298483565414488,
+      0.1369857158345784
+    ],
+    "p_value_median": 0.011574941765570668,
+    "p_value_mean": 0.026276088497889007,
+    "fraction_significant_005": 0.8557,
+    "U_median": 129.0,
+    "U_95CI": [
+      107.0,
+      145.0
+    ]
+  },
+  "stemness": {
+    "genes_used": [
+      "SOX2",
+      "KLF4",
+      "MYC",
+      "BMI1",
+      "CD44",
+      "PROM1",
+      "TERT",
+      "LIN28A",
+      "LIN28B",
+      "STAT3",
+      "LIFR",
+      "NES"
+    ],
+    "n_genes": 12,
+    "method": "mean z-scored expression, averaged across human and mouse",
+    "spearman_rho": -0.03165266106442577,
+    "spearman_p": 0.8567569589718834,
+    "significant_005": false,
+    "n_cell_types": 35,
+    "human_only": {
+      "rho": 0.08543417366946779,
+      "p": 0.6255688611826931
+    },
+    "mouse_only": {
+      "rho": -0.1358543417366947,
+      "p": 0.4364782566459894
+    }
+  }
+}

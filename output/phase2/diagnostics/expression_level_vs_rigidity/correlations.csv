@@ -1,0 +1,12 @@
+metric,column,rho,pval
+Human mean expression,h_mean_expr,-0.20868347338935572,0.22895644957566155
+Mouse mean expression,m_mean_expr,0.041736694677871146,0.8118393458822922
+Avg (H+M) mean expression,avg_mean_expr,-0.059383753501400564,0.7347157128994547
+Human median expression,h_median_expr,-0.0064425770308123255,0.9706995752429898
+Mouse median expression,m_median_expr,0.09803921568627454,0.575277435568107
+Human detection rate (>0.1),h_detect_rate,-0.013725490196078433,0.9376246907894197
+Mouse detection rate (>0.1),m_detect_rate,0.07114845938375351,0.6846333570742377
+Avg detection rate,avg_detect_rate,0.041176470588235294,0.8143207065399776
+Human top-100 gene concentration,h_top100_frac,0.14201680672268907,0.41575576145763526
+Mouse top-100 gene concentration,m_top100_frac,-0.008403361344537815,0.9617878010742488
+Avg top-100 gene concentration,avg_top100_frac,0.04089635854341737,0.8155620550919772

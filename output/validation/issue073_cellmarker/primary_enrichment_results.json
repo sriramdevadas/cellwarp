@@ -1,0 +1,142 @@
+{
+  "human_primary": {
+    "observed_overlap": 33,
+    "expected_overlap": 7.58,
+    "enrichment_ratio": 4.355,
+    "p_value": 1.1188897753420084e-12,
+    "n_identity_genes": 500,
+    "n_cellmarker_genes": 1101,
+    "n_background_genes": 16957,
+    "n_bg_in_cellmarker": 257,
+    "overlapping_genes": [
+      "AIF1",
+      "ALB",
+      "CD163",
+      "CD2",
+      "CD44",
+      "CD63",
+      "CD74",
+      "CD79A",
+      "CD83",
+      "CLU",
+      "CPS1",
+      "CXCR4",
+      "EMCN",
+      "ENG",
+      "EZR",
+      "FLT1",
+      "GLUL",
+      "ICAM1",
+      "IL1RAP",
+      "LGALS3",
+      "LY9",
+      "LYZ",
+      "MS4A1",
+      "NRP1",
+      "PECAM1",
+      "PTPRC",
+      "S100A6",
+      "SLC8A1",
+      "TEAD1",
+      "TF",
+      "TM4SF1",
+      "VIM",
+      "VWF"
+    ]
+  },
+  "human_expression_matched": {
+    "universe_size": 2294,
+    "n_cellmarker_in_universe": 53,
+    "n_identity_genes": 500,
+    "observed_overlap": 33,
+    "expected_overlap": 11.55,
+    "enrichment_ratio": 2.857,
+    "p_value": 1.4350784996717263e-10,
+    "n_matched_bg_genes": 1794
+  },
+  "mouse_primary": {
+    "observed_overlap": 17,
+    "expected_overlap": 4.66,
+    "enrichment_ratio": 3.648,
+    "p_value": 4.374956877343658e-06,
+    "n_identity_genes": 500,
+    "n_cellmarker_genes": 477,
+    "n_background_genes": 16953,
+    "n_bg_in_cellmarker": 158,
+    "overlapping_genes": [
+      "Aif1",
+      "Aldh1l1",
+      "Arg1",
+      "Cd44",
+      "Cd48",
+      "Cd69",
+      "Cd83",
+      "Emcn",
+      "Eng",
+      "Lgals3",
+      "Mrc1",
+      "Ms4a1",
+      "Nrp1",
+      "Pecam1",
+      "Ptprc",
+      "S100a6",
+      "Vim"
+    ]
+  },
+  "per_cell_type": [
+    {
+      "cell_type": "B cell",
+      "n_loading_genes": 20,
+      "n_cellmarker_markers": 34,
+      "overlap": 1,
+      "enrichment_ratio": 94.21,
+      "p_value": 0.010567624077835168,
+      "pass": "PASS"
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "n_loading_genes": 20,
+      "n_cellmarker_markers": 40,
+      "overlap": 0,
+      "enrichment_ratio": 0.0,
+      "p_value": 1.0,
+      "pass": "FAIL"
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "n_loading_genes": 20,
+      "n_cellmarker_markers": 45,
+      "overlap": 0,
+      "enrichment_ratio": 0.0,
+      "p_value": 1.0,
+      "pass": "FAIL"
+    },
+    {
+      "cell_type": "endothelial cell",
+      "n_loading_genes": 20,
+      "n_cellmarker_markers": 49,
+      "overlap": 0,
+      "enrichment_ratio": 0.0,
+      "p_value": 1.0,
+      "pass": "FAIL"
+    },
+    {
+      "cell_type": "hepatocyte",
+      "n_loading_genes": 20,
+      "n_cellmarker_markers": 16,
+      "overlap": 2,
+      "enrichment_ratio": 339.14,
+      "p_value": 1.318829823751013e-05,
+      "pass": "PASS"
+    },
+    {
+      "cell_type": "macrophage",
+      "n_loading_genes": 20,
+      "n_cellmarker_markers": 26,
+      "overlap": 1,
+      "enrichment_ratio": 141.31,
+      "p_value": 0.007056927009314289,
+      "pass": "PASS"
+    }
+  ]
+}

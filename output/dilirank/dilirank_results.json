@@ -1,0 +1,84 @@
+{
+  "step2_match_rate": {
+    "total_dilirank": 1336,
+    "total_most_concern": 217,
+    "matched_to_hepg2_10um": 344,
+    "matched_most_concern": 59,
+    "match_rate_most_concern_pct": 27.2,
+    "threshold_passed": true
+  },
+  "step3_deformation": {
+    "drugs_with_deformation": 344,
+    "primary_concentration": "10 \u00b5M",
+    "consistency_check_1um": "NOT AVAILABLE \u2014 insufficient 1\u00b5M data in Phase I",
+    "n_discordant_drugs": 0,
+    "note": "1\u00b5M consistency check not executable. 38 total 1\u00b5M HepG2 signatures in Phase I, 0 overlap with Most-Concern drugs. 10\u00b5M is the standard L1000 screening concentration and sole pre-specified primary."
+  },
+  "step4_cyp450": {
+    "most_concern_cyp450_dependent": 29,
+    "most_concern_cyp450_independent": 30,
+    "source": "Figshare curated CYP450 dataset (DrugBank-sourced)"
+  },
+  "step5_results": {
+    "A": {
+      "test1_U": 2007.0,
+      "test1_p": 0.053601354360580444,
+      "test1_median_most": 14218.5810546875,
+      "test1_median_no": 13363.8125,
+      "test2_odds_ratio": 2.0295454545454548,
+      "test2_p": 0.07630023147078072,
+      "test2_table": [
+        [
+          "19",
+          "40"
+        ],
+        [
+          "11",
+          "47"
+        ]
+      ],
+      "test3_dip": 0.04620011809818814,
+      "test3_p": 0.46039200800877345,
+      "test4_rho_zero": 0.1021625295376638,
+      "test4_p_zero": 0.0982831724387606,
+      "test4_rho_partial": 0.10562328792735395,
+      "test4_p_partial": 0.08734950094801633,
+      "test4_n": 263,
+      "n_most": 59,
+      "n_no": 58
+    },
+    "B": {
+      "test1_U": 1054.0,
+      "test1_p": 0.053121306002140045,
+      "test1_median_most": 14456.494140625,
+      "test1_median_no": 13363.8125,
+      "test2_odds_ratio": 3.2,
+      "test2_p": 0.020188912287861883,
+      "test2_table": [
+        [
+          "12",
+          "18"
+        ],
+        [
+          "10",
+          "48"
+        ]
+      ],
+      "test3_dip": 0.060770659903810795,
+      "test3_p": 0.5213562040137656,
+      "test4_rho_zero": 0.10153340254878013,
+      "test4_p_zero": 0.12141768324847468,
+      "test4_rho_partial": 0.10721864236208134,
+      "test4_p_partial": 0.10182569218453243,
+      "test4_n": 234,
+      "n_most": 30,
+      "n_no": 58
+    }
+  },
+  "data_sources": {
+    "dilirank": "DILIrank v2, FDA NCTR, accessed 2026-03-16",
+    "lincs": "GSE92742 Phase I Level 2 GEX (978 landmarks), replicate-collapsed manually",
+    "cyp450": "Figshare 26630515 (CYP450 curated dataset)",
+    "note": "Phase I (GSE92742) used instead of Phase II (GSE70138) due to HepG2 drug coverage: 3650 vs 269 unique drugs. Level 2 with manual replicate collapsing used in place of Level 5 (21GB, impractical for local processing). Mathematically equivalent: mean of per-instance distances."
+  }
+}

@@ -1,0 +1,14 @@
+NHP ORTHOLOG FEASIBILITY ASSESSMENT — SUMMARY
+==================================================
+Date: 2026-03-15
+Macaque species used: Macaca fascicularis (crab-eating macaque)
+
+Human-macaque 1:1 orthologs: 19,123
+Human-mouse 1:1 orthologs (existing): 17,187
+Three-way intersection: 15,028
+Only in human-macaque: 4,095
+Only in human-mouse: 2,159
+
+Gate check (>= 12,000 genes):
+  Pairwise human-macaque: PASS
+  Three-way intersection: PASS

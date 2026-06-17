@@ -1,0 +1,27 @@
+{
+  "statistic": "median C-percentile of the 73 master TFs vs matched background",
+  "n_testable_tfs": 73,
+  "expression_matched": {
+    "n_draws": 1000000,
+    "obs_median": 0.9377038895859473,
+    "null_median": 0.5399623588456712,
+    "null_mean": 0.5394128636135508,
+    "null_sd": 0.05340441585572309,
+    "exceedances": 0,
+    "p_empirical": 9.99999000001e-07,
+    "z": 7.458016712483404,
+    "p_normal_approx": 4.391726565933898e-14
+  },
+  "joint_expr_tau_matched": {
+    "n_draws": 1000000,
+    "obs_median": 0.9377038895859473,
+    "null_median": 0.7611041405269762,
+    "null_mean": 0.7581341558971142,
+    "null_sd": 0.05948631531322432,
+    "exceedances": 0,
+    "p_empirical": 9.99999000001e-07,
+    "z": 3.0186729963574197,
+    "p_normal_approx": 0.001269422020754944
+  },
+  "note": "Medians unchanged from the frozen gate (0.94 / 0.54 / 0.76); only the empirical p-resolution improves over the N=1000 floor (0.000999). p_empirical is (exceedances+1)/(N+1); p_normal_approx is the normal-tail context for the standardized effect z."
+}

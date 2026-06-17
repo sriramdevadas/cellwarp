@@ -1,0 +1,36 @@
+cell_type,n_10x,n_smartseq2,n_total,fraction_smartseq2,flag_low_10x
+B cell,1676,324,2000,0.162,False
+"CD4-positive, alpha-beta T cell",551,1170,1721,0.6798373038930854,False
+"CD8-positive, alpha-beta T cell",870,1070,1940,0.5515463917525774,False
+T cell,1814,186,2000,0.093,False
+adventitial cell,526,289,815,0.35460122699386504,False
+basal cell,854,1146,2000,0.573,False
+bladder urothelial cell,1578,422,2000,0.211,False
+classical monocyte,1948,52,2000,0.026,False
+endothelial cell,1328,672,2000,0.336,False
+enterocyte of epithelium of large intestine,613,1387,2000,0.6935,False
+epithelial cell,338,426,764,0.5575916230366492,False
+fibroblast,1177,823,2000,0.4115,False
+fibroblast of cardiac tissue,754,1246,2000,0.623,False
+granulocyte,1617,383,2000,0.1915,False
+hematopoietic precursor cell,2000,0,2000,0.0,False
+hematopoietic stem cell,23,1977,2000,0.9885,True
+hepatocyte,1437,563,2000,0.2815,False
+intermediate monocyte,1749,12,1761,0.0068143100511073255,False
+large intestine goblet cell,158,1587,1745,0.9094555873925502,False
+luminal epithelial cell of mammary gland,1440,560,2000,0.28,False
+macrophage,1477,523,2000,0.2615,False
+mature NK T cell,1891,109,2000,0.0545,False
+mesenchymal stem cell,1822,178,2000,0.089,False
+mesenchymal stem cell of adipose tissue,585,1415,2000,0.7075,False
+monocyte,1309,691,2000,0.3455,False
+myeloid dendritic cell,245,373,618,0.6035598705501618,False
+myeloid leukocyte,307,209,516,0.4050387596899225,False
+natural killer cell,1459,541,2000,0.2705,False
+neutrophil,552,153,705,0.2170212765957447,False
+non-classical monocyte,1010,149,1159,0.1285591026747196,False
+pancreatic acinar cell,1570,430,2000,0.215,False
+pancreatic ductal cell,338,313,651,0.4807987711213518,False
+plasma cell,1621,25,1646,0.015188335358444714,False
+smooth muscle cell,1601,103,1704,0.06044600938967136,False
+stromal cell,1781,219,2000,0.1095,False

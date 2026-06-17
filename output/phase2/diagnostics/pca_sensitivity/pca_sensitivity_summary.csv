@@ -1,0 +1,5 @@
+components,variance_explained,distance,p_value,rho_vs_baseline,pass
+10,76.4%,55.0239,0.000100,0.7555,True
+20,88.4%,57.2728,0.000100,0.8490,True
+33,95.2%,61.1530,0.000100,1.0000,True
+50,99.0%,56.2241,0.000100,0.9006,True

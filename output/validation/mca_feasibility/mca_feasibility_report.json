@@ -1,0 +1,232 @@
+{
+  "total_mca_cells": 270848,
+  "unique_mca_raw_labels": 840,
+  "unique_mca_base_labels": 597,
+  "tissues_represented": 43,
+  "types_pass": 19,
+  "types_borderline": 4,
+  "types_absent": 12,
+  "types_pass_list": [
+    "B cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "endothelial cell",
+    "enterocyte of epithelium of large intestine",
+    "epithelial cell",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "luminal epithelial cell of mammary gland",
+    "macrophage",
+    "mesenchymal stem cell",
+    "monocyte",
+    "myeloid dendritic cell",
+    "natural killer cell",
+    "neutrophil",
+    "pancreatic acinar cell",
+    "pancreatic ductal cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "types_borderline_list": [
+    "basal cell",
+    "bladder urothelial cell",
+    "fibroblast",
+    "hepatocyte"
+  ],
+  "types_absent_list": [
+    "CD4-positive, alpha-beta T cell",
+    "adventitial cell",
+    "classical monocyte",
+    "fibroblast of cardiac tissue",
+    "hematopoietic stem cell",
+    "intermediate monocyte",
+    "large intestine goblet cell",
+    "mature NK T cell",
+    "mesenchymal stem cell of adipose tissue",
+    "myeloid leukocyte",
+    "non-classical monocyte",
+    "plasma cell"
+  ],
+  "original_6_coverage": {
+    "B cell": {
+      "count": 12517,
+      "status": "PASS"
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "count": 0,
+      "status": "ABSENT"
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "count": 2248,
+      "status": "PASS"
+    },
+    "endothelial cell": {
+      "count": 5637,
+      "status": "PASS"
+    },
+    "hepatocyte": {
+      "count": 375,
+      "status": "BORDERLINE"
+    },
+    "macrophage": {
+      "count": 10212,
+      "status": "PASS"
+    }
+  },
+  "all_original_6_covered": false,
+  "feasibility_verdict": "PARTIAL",
+  "technology": "Microwell-seq (Illumina HiSeq 2500)",
+  "institution": "Zhejiang University School of Medicine / BGI",
+  "independent_of_tabula": true,
+  "review_needed": [
+    {
+      "type": "B cell",
+      "n_labels": 19,
+      "sample_labels": [
+        "B cell",
+        "B cell_Igkc high",
+        "Pre-pro B cell",
+        "B cell_Fcmr high",
+        "B cell_Jchain high"
+      ]
+    },
+    {
+      "type": "T cell",
+      "n_labels": 16,
+      "sample_labels": [
+        "T cell_Ms4a4b high",
+        "T cell",
+        "T cell_Gzma high",
+        "T cell_Trbc2 high",
+        "T cell_Gm14303 high"
+      ]
+    },
+    {
+      "type": "endothelial cell",
+      "n_labels": 26,
+      "sample_labels": [
+        "Vascular endothelial cell",
+        "Endothelial cell_Ly6c1 high",
+        "Endothelial cells_Ly6c1 high",
+        "Endothelial cells",
+        "Endothelial Cell"
+      ]
+    },
+    {
+      "type": "enterocyte of epithelium of large intestine",
+      "n_labels": 8,
+      "sample_labels": [
+        "Enterocyte progenitor",
+        "Enterocyte progenitor_late_Ccnb1 high",
+        "Enterocyte progenitor_late_Ube2c high",
+        "Epithelium of small intestinal villi_S100g high",
+        "Epithelium of small intestinal villi_Gm23935 high"
+      ]
+    },
+    {
+      "type": "epithelial cell",
+      "n_labels": 20,
+      "sample_labels": [
+        "Epithelial cell_Upk3a high",
+        "Epithelial cell_Gm23935 high",
+        "Epithelial cell_Upk3b high",
+        "Epithelial cell_S100a6 high",
+        "Epithelial cell_Bex1 high"
+      ]
+    },
+    {
+      "type": "granulocyte",
+      "n_labels": 7,
+      "sample_labels": [
+        "Granulocyte_Il33 high",
+        "Granulocyte_Ngp high",
+        "Granulocyte",
+        "Eosinophil granulocyte",
+        "Granulocyte_Ly6c2 high"
+      ]
+    },
+    {
+      "type": "hematopoietic precursor cell",
+      "n_labels": 11,
+      "sample_labels": [
+        "Monocyte progenitor",
+        "Multipotent progenitor_Ctla2a high",
+        "Monocyte progenitor cell_Prtn3 high",
+        "Monocyte progenitor cell_Ctsg high",
+        "Megakaryocyte progenitor cell"
+      ]
+    },
+    {
+      "type": "hepatocyte",
+      "n_labels": 6,
+      "sample_labels": [
+        "Hepatocyte_Afp high",
+        "Hepatocyte-Like Cell",
+        "Pericentral (PC) hepatocytes",
+        "Hepatocyte_mt-Nd4 high",
+        "Periportal (PP) hepatocyte"
+      ]
+    },
+    {
+      "type": "macrophage",
+      "n_labels": 26,
+      "sample_labels": [
+        "Macrophage_Pf4 high",
+        "Macrophage_C1qc high",
+        "Macrophage_Cd74 high",
+        "Macrophage_S100a4 high",
+        "Macrophage_Ms4a6c high"
+      ]
+    },
+    {
+      "type": "myeloid dendritic cell",
+      "n_labels": 20,
+      "sample_labels": [
+        "Dendritic cell_Lyz2 high",
+        "Dendritic cell_Cd74 high",
+        "Dendritic cell_Siglech high",
+        "Dendritic cell_H2-Eb1 high",
+        "Dendritic Cell"
+      ]
+    },
+    {
+      "type": "neutrophil",
+      "n_labels": 23,
+      "sample_labels": [
+        "Neutrophil_Fcnb high",
+        "Neutrophil_Ltf high",
+        "Neutrophil_Ighg1 high",
+        "Neutrophil_Ngp high",
+        "Neutrophil_Lcn2 high"
+      ]
+    },
+    {
+      "type": "smooth muscle cell",
+      "n_labels": 6,
+      "sample_labels": [
+        "Smooth muscle cell",
+        "Smooth muscle cell_Ptn high",
+        "Smooth muscle cell_Mgp high",
+        "Smooth muscle cell_Mylk high",
+        "Smooth muscle cell_Acta2 high"
+      ]
+    },
+    {
+      "type": "stromal cell",
+      "n_labels": 46,
+      "sample_labels": [
+        "Stromal cell_Dpt high",
+        "Stromal cell_Car3 high",
+        "Stromal cell_Col1a2 high",
+        "Stromal cell_Cnmd high",
+        "Stromal cell_Col10a1_high"
+      ]
+    }
+  ],
+  "data_source": "MCA_CellAssignments.csv from figshare (dataset 5435866)",
+  "geo_accession": "GSE108097",
+  "paper": "Han et al. Cell 172, 1091-1107 (2018)",
+  "doi": "10.1016/j.cell.2018.02.001",
+  "cells_mapped_to_our_types": 130564,
+  "cells_unmapped": 140284
+}

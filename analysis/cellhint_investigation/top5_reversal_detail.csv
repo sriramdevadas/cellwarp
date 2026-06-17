@@ -1,0 +1,6 @@
+cell_type,primary_residual,cellhint_residual,primary_rank,cellhint_rank,signed_rank_diff,primary_human_cells,primary_mouse_cells,cellhint_cells,cell_count_ratio,cellhint_n_tissues,cellhint_tissue_list,primary_rank_in_35
+epithelial cell,16.267367119340193,3.04790400545272,1,14,-13,1675,764,9537,5.693731343283582,3,"Kidney(143,716), Intestine(56,122), Lung(31,130)",2
+hepatocyte,6.058641994458259,10.601407356937456,13,1,12,7414,4091,3568,0.4812516859994605,1,"Liver(71,243)",32
+neutrophil,11.597880291489918,4.40017103622249,3,13,-10,69539,705,2885,0.04148751060555947,1,"Liver(3,002)",8
+T cell,11.669226435501992,5.749046757408019,2,11,-9,6290,12745,24012,3.817488076311606,8,"Liver(25,463), Blood(17,451), Heart(16,636), Kidney(9,137), Intestine(4,006), Lymph_node(1,858), Hippocampus(750), Lung(99)",7
+fibroblast,7.507943223117857,9.87455856889657,11,2,9,83338,3143,16537,0.19843288775828555,5,"Heart(187,661), Lung(15,125), Kidney(8,321), Liver(1,248), Intestine(561)",28

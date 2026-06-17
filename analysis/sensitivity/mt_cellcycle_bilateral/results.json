@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "script": "analysis/sensitivity/mt_cellcycle_bilateral/run.py",
+    "runtime_sec": 493.5503480434418,
+    "census_version": "2025-11-08",
+    "human_collection": "Tabula Sapiens",
+    "mouse_collection": "Tabula Muris Senis",
+    "max_cells_per_type": 2000,
+    "random_seed": 42,
+    "methodology": "Raw UMI counts pulled fresh from Census 2025-11-08, pre-ortholog filtering. mt-fraction = sum(mt-gene UMI counts) / sum(total UMI counts) per cell, mean per type. Mouse mt genes identified by feature_name ^mt-, human by ^MT-. Combined = arithmetic mean (human + mouse) / 2."
+  },
+  "human_atlas": {
+    "n_cells": 62708,
+    "n_genes_full": 61497,
+    "n_cell_types": 35
+  },
+  "mouse_atlas": {
+    "n_cells": 59745,
+    "n_genes_full": 53384,
+    "n_cell_types": 35
+  },
+  "per_type_table": [
+    {
+      "cell_type": "B cell",
+      "human_mt_fraction": 0.08034215867519379,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.04017107933759689,
+      "rigidity_rank": 17
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "human_mt_fraction": 0.06067410111427307,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.030337050557136536,
+      "rigidity_rank": 14
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "human_mt_fraction": 0.07511071115732193,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.037555355578660965,
+      "rigidity_rank": 35
+    },
+    {
+      "cell_type": "T cell",
+      "human_mt_fraction": 0.07332564145326614,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03666282072663307,
+      "rigidity_rank": 7
+    },
+    {
+      "cell_type": "adventitial cell",
+      "human_mt_fraction": 0.07366441190242767,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03683220595121384,
+      "rigidity_rank": 26
+    },
+    {
+      "cell_type": "basal cell",
+      "human_mt_fraction": 0.12133574485778809,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.06066787242889404,
+      "rigidity_rank": 6
+    },
+    {
+      "cell_type": "bladder urothelial cell",
+      "human_mt_fraction": 0.1444585919380188,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.0722292959690094,
+      "rigidity_rank": 29
+    },
+    {
+      "cell_type": "classical monocyte",
+      "human_mt_fraction": 0.05645829066634178,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.02822914533317089,
+      "rigidity_rank": 15
+    },
+    {
+      "cell_type": "endothelial cell",
+      "human_mt_fraction": 0.07896634191274643,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.039483170956373215,
+      "rigidity_rank": 33
+    },
+    {
+      "cell_type": "enterocyte of epithelium of large intestine",
+      "human_mt_fraction": 0.5693932771682739,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.28469663858413696,
+      "rigidity_rank": 20
+    },
+    {
+      "cell_type": "epithelial cell",
+      "human_mt_fraction": 0.16634495556354523,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.08317247778177261,
+      "rigidity_rank": 2
+    },
+    {
+      "cell_type": "fibroblast",
+      "human_mt_fraction": 0.07774728536605835,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.038873642683029175,
+      "rigidity_rank": 28
+    },
+    {
+      "cell_type": "fibroblast of cardiac tissue",
+      "human_mt_fraction": 0.12801270186901093,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.06400635093450546,
+      "rigidity_rank": 9
+    },
+    {
+      "cell_type": "granulocyte",
+      "human_mt_fraction": 0.0514814518392086,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.0257407259196043,
+      "rigidity_rank": 27
+    },
+    {
+      "cell_type": "hematopoietic precursor cell",
+      "human_mt_fraction": 0.06536535173654556,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03268267586827278,
+      "rigidity_rank": 3
+    },
+    {
+      "cell_type": "hematopoietic stem cell",
+      "human_mt_fraction": 0.05733947828412056,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.02866973914206028,
+      "rigidity_rank": 4
+    },
+    {
+      "cell_type": "hepatocyte",
+      "human_mt_fraction": 0.2657262682914734,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.1328631341457367,
+      "rigidity_rank": 32
+    },
+    {
+      "cell_type": "intermediate monocyte",
+      "human_mt_fraction": 0.06364833563566208,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03182416781783104,
+      "rigidity_rank": 24
+    },
+    {
+      "cell_type": "large intestine goblet cell",
+      "human_mt_fraction": 0.32546141743659973,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.16273070871829987,
+      "rigidity_rank": 19
+    },
+    {
+      "cell_type": "luminal epithelial cell of mammary gland",
+      "human_mt_fraction": 0.06795953959226608,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03397976979613304,
+      "rigidity_rank": 18
+    },
+    {
+      "cell_type": "macrophage",
+      "human_mt_fraction": 0.09867336601018906,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.04933668300509453,
+      "rigidity_rank": 16
+    },
+    {
+      "cell_type": "mature NK T cell",
+      "human_mt_fraction": 0.10932435095310211,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.054662175476551056,
+      "rigidity_rank": 25
+    },
+    {
+      "cell_type": "mesenchymal stem cell",
+      "human_mt_fraction": 0.07701511681079865,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03850755840539932,
+      "rigidity_rank": 13
+    },
+    {
+      "cell_type": "mesenchymal stem cell of adipose tissue",
+      "human_mt_fraction": 0.08206940442323685,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.04103470221161842,
+      "rigidity_rank": 11
+    },
+    {
+      "cell_type": "monocyte",
+      "human_mt_fraction": 0.06540488451719284,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03270244225859642,
+      "rigidity_rank": 22
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "human_mt_fraction": 0.0779963955283165,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03899819776415825,
+      "rigidity_rank": 21
+    },
+    {
+      "cell_type": "myeloid leukocyte",
+      "human_mt_fraction": 0.13862602412700653,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.06931301206350327,
+      "rigidity_rank": 10
+    },
+    {
+      "cell_type": "natural killer cell",
+      "human_mt_fraction": 0.07458756119012833,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03729378059506416,
+      "rigidity_rank": 23
+    },
+    {
+      "cell_type": "neutrophil",
+      "human_mt_fraction": 0.033741340041160583,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.016870670020580292,
+      "rigidity_rank": 8
+    },
+    {
+      "cell_type": "non-classical monocyte",
+      "human_mt_fraction": 0.07825685292482376,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.03912842646241188,
+      "rigidity_rank": 34
+    },
+    {
+      "cell_type": "pancreatic acinar cell",
+      "human_mt_fraction": 0.1129562184214592,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.0564781092107296,
+      "rigidity_rank": 5
+    },
+    {
+      "cell_type": "pancreatic ductal cell",
+      "human_mt_fraction": 0.19590020179748535,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.09795010089874268,
+      "rigidity_rank": 30
+    },
+    {
+      "cell_type": "plasma cell",
+      "human_mt_fraction": 0.06267078220844269,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.031335391104221344,
+      "rigidity_rank": 12
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "human_mt_fraction": 0.09368009120225906,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.04684004560112953,
+      "rigidity_rank": 31
+    },
+    {
+      "cell_type": "stromal cell",
+      "human_mt_fraction": 0.08313854783773422,
+      "mouse_mt_fraction": 0.0,
+      "combined_mt_fraction": 0.04156927391886711,
+      "rigidity_rank": 1
+    }
+  ],
+  "spearman_vs_rigidity": {
+    "combined": {
+      "rho": 0.09943977591036417,
+      "p_value": 0.5698040367892984,
+      "n": 35
+    },
+    "human": {
+      "rho": 0.09943977591036417,
+      "p_value": 0.5698040367892984,
+      "n": 35
+    },
+    "mouse": {
+      "rho": NaN,
+      "p_value": NaN,
+      "n": 35
+    }
+  }
+}

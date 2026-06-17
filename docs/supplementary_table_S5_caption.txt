@@ -1,0 +1,5 @@
+Table S5. Cell type matching table for 35 human-mouse paired cell types, related to STAR Methods.
+
+Full matching table for the 35 cell types used in the primary CellWarp analysis. Human cell types are from Tabula Sapiens (TSP1); mouse cell types are from Tabula Muris Senis (TMS). Cell Ontology IDs were assigned from the CELLxGENE Census metadata (cell_type_ontology_term_id field). Matching was performed by cross-referencing Cell Ontology identifiers, marker gene expression profiles, and published literature; detailed matching criteria are documented in the code repository (src/data_loader.py). Cell counts represent total cells per type per species prior to the 2,000-cell subsampling cap applied before centroid computation. All 35 types passed the pre-specified inclusion criterion of >= 500 cells per type per species.
+
+Columns: human_cell_type (Tabula Sapiens annotation), mouse_cell_type (Tabula Muris Senis annotation), cell_ontology_id (Cell Ontology term), matching_basis (method used to establish cross-species correspondence), human_cell_count (total cells in Tabula Sapiens), mouse_cell_count (total cells in Tabula Muris Senis).

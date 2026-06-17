@@ -1,0 +1,10 @@
+{
+  "spearman_rho": -0.4285714285714286,
+  "p_value": 0.3965014577259473,
+  "n": 6,
+  "ci_lower": -0.9201112824356978,
+  "ci_upper": 0.5872520204725802,
+  "threshold_triggered": "TRIGGERED",
+  "interpretation": "9th null \u2014 computational ceiling reached",
+  "note": "Null closure test. n=6 underpowered for positive detection (requires |\u03c1|\u22650.829) but sufficient for null closure."
+}

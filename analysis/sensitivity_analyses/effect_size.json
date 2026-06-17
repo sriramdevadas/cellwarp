@@ -1,0 +1,16 @@
+{
+  "obs_null_headline": 0.5222,
+  "procrustes_scaling_s": 0.9023,
+  "alignment_fraction_1_minus_obsnull": 0.4778,
+  "donor_split_canonical": {
+    "file": "analysis/donor_split/donor_split_comparison.json [shared_pca]",
+    "within_species_median": 0.3751,
+    "cross_species_median": 0.5273,
+    "delta": 0.1522
+  },
+  "normalized_excess_(cross-within)/(1-within)": 0.2436,
+  "excess_over_within_floor_ratio_(cross-within)/within": 0.4057,
+  "cross_over_within_ratio": 1.4057,
+  "position_between_self_and_null_(cross-self)/(null-self)": 0.5112,
+  "canonical_file_note": "manuscript 0.375/0.527 = SHARED-PCA donor split (donor_split_shared_pca_results.json / donor_split_comparison.json['shared_pca']: ws=0.37512, cs=0.52732). The 0.381/0.5223 a prior agent cited = INDEPENDENT-PCA variant (donor_split_comparison.json['independent_pca']: ws=0.38179, cs=0.53517). Manuscript uses shared-PCA."
+}

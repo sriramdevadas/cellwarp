@@ -1,0 +1,51 @@
+cell_type,rank,gene,loading,direction
+stromal cell,1,CFD,1.9186916547630632,↑mouse
+stromal cell,2,S100A6,1.6219320940572692,↑mouse
+stromal cell,3,MT1X,1.450616060697296,↑mouse
+stromal cell,4,NNMT,1.339085709333847,↑mouse
+stromal cell,5,VCAN,1.3029734270047981,↑mouse
+stromal cell,6,GPX3,1.2939293950907593,↑mouse
+stromal cell,7,MGST1,1.257436232437448,↑mouse
+stromal cell,8,MT-ND3,1.2343761118740746,↑mouse
+stromal cell,9,ELL2,1.2033186265535634,↑mouse
+stromal cell,10,APOD,1.202488142870315,↑mouse
+epithelial cell,1,CLDN18,-2.3382581697774896,↓mouse
+epithelial cell,2,PGC,-2.1737875186110402,↓mouse
+epithelial cell,3,TFF1,-2.0099529992037732,↓mouse
+epithelial cell,4,TFF2,-1.9407258457292431,↓mouse
+epithelial cell,5,MUC5AC,-1.9156993194968615,↓mouse
+epithelial cell,6,LYZ,-1.8344457746039802,↓mouse
+epithelial cell,7,AGR2,-1.7118343777366616,↓mouse
+epithelial cell,8,MUCL3,-1.6281916674569228,↓mouse
+epithelial cell,9,ANXA10,-1.495539294119652,↓mouse
+epithelial cell,10,MECOM,-1.467018151646067,↓mouse
+hematopoietic precursor cell,1,S100A8,-1.722839109390212,↓mouse
+hematopoietic precursor cell,2,IRAK3,-1.3015933770693693,↓mouse
+hematopoietic precursor cell,3,LYZ,-1.3010594220605118,↓mouse
+hematopoietic precursor cell,4,BTG1,1.234278662145335,↑mouse
+hematopoietic precursor cell,5,LRMDA,-1.1695673637875281,↓mouse
+hematopoietic precursor cell,6,SYTL3,1.1343245695137318,↑mouse
+hematopoietic precursor cell,7,MCTP1,-1.106272245754616,↓mouse
+hematopoietic precursor cell,8,FYN,1.0962687480485667,↑mouse
+hematopoietic precursor cell,9,CXCR4,1.077070081643128,↑mouse
+hematopoietic precursor cell,10,PLXDC2,-1.0023755259150895,↓mouse
+hematopoietic stem cell,1,PNLIP,-1.4051663260701912,↓mouse
+hematopoietic stem cell,2,CLPS,-1.3747352883230677,↓mouse
+hematopoietic stem cell,3,CPA1,-1.3056612598630921,↓mouse
+hematopoietic stem cell,4,CPB1,-1.2971489104382723,↓mouse
+hematopoietic stem cell,5,CEL,-1.228117262944159,↓mouse
+hematopoietic stem cell,6,MT1X,-1.1824518482185487,↓mouse
+hematopoietic stem cell,7,SYCN,-1.1654353870872507,↓mouse
+hematopoietic stem cell,8,PNLIPRP1,-1.1347414362623265,↓mouse
+hematopoietic stem cell,9,ACTA2,-1.1346331227438151,↓mouse
+hematopoietic stem cell,10,GP2,-1.0923366434901336,↓mouse
+pancreatic acinar cell,1,CLPS,1.5099072411774153,↑mouse
+pancreatic acinar cell,2,PNLIP,1.398994321371867,↑mouse
+pancreatic acinar cell,3,CPA1,1.3108201570734852,↑mouse
+pancreatic acinar cell,4,SYCN,1.3012765005524183,↑mouse
+pancreatic acinar cell,5,CPB1,1.2637115349516295,↑mouse
+pancreatic acinar cell,6,CEL,1.2297196443774463,↑mouse
+pancreatic acinar cell,7,PNLIPRP1,1.160056041456722,↑mouse
+pancreatic acinar cell,8,CPA2,1.1135313316139102,↑mouse
+pancreatic acinar cell,9,PLA2G1B,1.0831829182328414,↑mouse
+pancreatic acinar cell,10,GP2,1.0827555582603416,↑mouse

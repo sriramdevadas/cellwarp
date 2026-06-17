@@ -1,0 +1,345 @@
+compound_name,dili_class,matched_name,match_type
+Acamprosate calcium,less-concern,acamprosate,base
+Acarbose,most-concern,acarbose,base
+Acitretin,most-concern,acitretin,base
+Acyclovir,less-concern,acyclovir,base
+Afatinib dimaleate,ambiguous,afatinib,base
+Alaproclate,most-concern,alaproclate,base
+Albendazole,most-concern,albendazole,base
+Alfuzosin hydrochloride,less-concern,alfuzosin,base
+Altretamine,ambiguous,altretamine,base
+Amantadine hydrochloride,ambiguous,amantadine,base
+Amiloride hydrochloride,less-concern,amiloride,base
+Amiodarone hydrochloride,most-concern,amiodarone,base
+Amitriptyline hydrochloride,less-concern,amitriptyline,base
+Amlodipine besylate,less-concern,amlodipine,base
+Amoxapine,ambiguous,amoxapine,base
+Anagrelide hydrochloride,ambiguous,anagrelide,base
+Anastrozole,less-concern,anastrozole,base
+Aprepitant,ambiguous,aprepitant,base
+Artesunate,ambiguous,artesunate,base
+Atomoxetine hydrochloride,most-concern,atomoxetine,base
+Atorvastatin calcium,most-concern,atorvastatin,base
+Auranofin,less-concern,auranofin,base
+Axitinib,ambiguous,axitinib,base
+Azithromycin,less-concern,azithromycin,base
+Balsalazide disodium,ambiguous,balsalazide,base
+Belinostat,ambiguous,belinostat,base
+Benazepril hydrochloride,less-concern,benazepril,base
+Bendroflumethiazide,less-concern,bendroflumethiazide,base
+Benzbromarone,most-concern,benzbromarone,base
+Benzonatate,less-concern,benzonatate,base
+Betaxolol hydrochloride,ambiguous,betaxolol,base
+Bicalutamide,most-concern,bicalutamide,base
+Biperiden hydrochloride,no-concern,biperiden,base
+Bisacodyl,no-concern,bisacodyl,base
+Bisoprolol fumarate,ambiguous,bisoprolol,base
+Bosutinib monohydrate,most-concern,bosutinib,base
+Bromocriptine mesylate,less-concern,bromocriptine,base
+Brompheniramine maleate,no-concern,brompheniramine,base
+Budesonide,no-concern,budesonide,base
+Bumetanide,ambiguous,bumetanide,base
+Bupropion hydrochloride,less-concern,bupropion,base
+Buspirone hydrochloride,ambiguous,buspirone,base
+Cabergoline,no-concern,cabergoline,base
+Caffeine citrate,no-concern,caffeine,base
+Calcitriol,no-concern,calcitriol,base
+Capecitabine,less-concern,capecitabine,base
+Carbamazepine,most-concern,carbamazepine,base
+Carbidopa,ambiguous,carbidopa,base
+Carbinoxamine maleate,no-concern,carbinoxamine,base
+Carvedilol,less-concern,carvedilol,base
+Cefaclor,less-concern,cefaclor,base
+Cefdinir,less-concern,cefdinir,base
+Cefixime,less-concern,cefixime,base
+Cefotaxime sodium,less-concern,cefotaxime,base
+Celecoxib,less-concern,celecoxib,base
+Cetirizine hydrochloride,less-concern,cetirizine,base
+Chlorambucil,less-concern,chlorambucil,base
+Chlordiazepoxide hydrochloride,less-concern,chlordiazepoxide,base
+Chloroquine phosphate,less-concern,chloroquine,base
+Chlorpromazine hydrochloride,less-concern,chlorpromazine,base
+Chlorthalidone,ambiguous,chlorthalidone,base
+Cilostazol,ambiguous,cilostazol,base
+Cimetidine,less-concern,cimetidine,base
+Cinacalcet hydrochloride,no-concern,cinacalcet,base
+Cladribine,less-concern,cladribine,base
+Clemastine fumarate,no-concern,clemastine,base
+Clofarabine,ambiguous,clofarabine,base
+Clofibrate,less-concern,clofibrate,base
+Clomipramine hydrochloride,most-concern,clomipramine,base
+Clonidine hydrochloride,ambiguous,clonidine,base
+Clozapine,most-concern,clozapine,base
+Cortisone acetate,no-concern,cortisone,base
+Crizotinib,most-concern,crizotinib,base
+Cyproheptadine hydrochloride,less-concern,cyproheptadine,base
+Dactinomycin,most-concern,dactinomycin,base
+Danazol,most-concern,danazol,base
+Dantrolene sodium,most-concern,dantrolene,base
+Dasatinib,less-concern,dasatinib,base
+Daunorubicin hydrochloride,no-concern,daunorubicin,base
+Decitabine,ambiguous,decitabine,base
+Desipramine hydrochloride,ambiguous,desipramine,base
+Dexamethasone,ambiguous,dexamethasone,base
+Dexchlorpheniramine maleate,no-concern,dexchlorpheniramine,base
+Dexrazoxane hydrochloride,ambiguous,dexrazoxane,base
+Diazoxide,ambiguous,diazoxide,base
+Diclofenac sodium,most-concern,diclofenac,base
+Dicloxacillin sodium,less-concern,dicloxacillin,base
+Diflunisal,most-concern,diflunisal,base
+Digoxin,no-concern,digoxin,base
+Dihydroergotamine mesylate,no-concern,dihydroergotamine,base
+Diltiazem hydrochloride,most-concern,diltiazem,base
+Dipyridamole,ambiguous,dipyridamole,base
+Disopyramide phosphate,less-concern,disopyramide,base
+Dobutamine hydrochloride,no-concern,dobutamine,base
+Docetaxel,less-concern,docetaxel,base
+Dolasetron mesylate,ambiguous,dolasetron,base
+Donepezil hydrochloride,less-concern,donepezil,base
+Dopamine hydrochloride,no-concern,dopamine,base
+Doxapram hydrochloride,no-concern,doxapram,base
+Doxepin hydrochloride,less-concern,doxepin,base
+Doxorubicin hydrochloride,less-concern,doxorubicin,base
+Doxylamine succinate,no-concern,doxylamine,base
+Droperidol,no-concern,droperidol,base
+Duloxetine hydrochloride,most-concern,duloxetine,base
+Enalapril maleate,less-concern,enalapril,base
+Entecavir,ambiguous,entecavir,base
+Epirubicin hydrochloride,ambiguous,epirubicin,base
+Eplerenone,less-concern,eplerenone,base
+Erlotinib hydrochloride,most-concern,erlotinib,base
+Escitalopram oxalate,less-concern,escitalopram,base
+Estrone,ambiguous,estrone,base
+Estropipate,ambiguous,estropipate,base
+Ethambutol hydrochloride,most-concern,ethambutol,base
+Etodolac,most-concern,etodolac,base
+Etomidate,no-concern,etomidate,base
+Everolimus,less-concern,everolimus,base
+Exemestane,most-concern,exemestane,base
+Ezetimibe,less-concern,ezetimibe,base
+Famciclovir,ambiguous,famciclovir,base
+Febuxostat,most-concern,febuxostat,base
+Felbamate,most-concern,felbamate,base
+Felodipine,less-concern,felodipine,base
+Fenofibrate,less-concern,fenofibrate,base
+Fenoldopam mesylate,no-concern,fenoldopam,base
+Fexofenadine hydrochloride,no-concern,fexofenadine,base
+Finasteride,less-concern,finasteride,base
+Flavoxate hydrochloride,less-concern,flavoxate,base
+Flecainide acetate,less-concern,flecainide,base
+Fluconazole,most-concern,fluconazole,base
+Fludarabine phosphate,no-concern,fludarabine,base
+Flumazenil,no-concern,flumazenil,base
+Fluoxetine hydrochloride,less-concern,fluoxetine,base
+Fluphenazine hydrochloride,ambiguous,fluphenazine,base
+Flutamide,most-concern,flutamide,base
+Fluvastatin sodium,less-concern,fluvastatin,base
+Fluvoxamine maleate,ambiguous,fluvoxamine,base
+Fostamatinib disodium,ambiguous,fostamatinib,base
+Fulvestrant,ambiguous,fulvestrant,base
+Gefitinib,most-concern,gefitinib,base
+Glimepiride,less-concern,glimepiride,base
+Glipizide,less-concern,glipizide,base
+Glycopyrrolate,no-concern,glycopyrrolate,base
+Goserelin acetate,ambiguous,goserelin,base
+Granisetron hydrochloride,ambiguous,granisetron,base
+Guanfacine hydrochloride,ambiguous,guanfacine,base
+Haloperidol lactate,less-concern,haloperidol,base
+Hydralazine hydrochloride,less-concern,hydralazine,base
+Hydrocortisone acetate,no-concern,hydrocortisone,base
+Iloperidone,ambiguous,iloperidone,base
+Imatinib mesylate,most-concern,imatinib,base
+Irbesartan,less-concern,irbesartan,base
+Irinotecan hydrochloride,less-concern,irinotecan,base
+Isocarboxazid,ambiguous,isocarboxazid,base
+Isotretinoin,most-concern,isotretinoin,base
+Isoxsuprine hydrochloride,no-concern,isoxsuprine,base
+Itraconazole,most-concern,itraconazole,base
+Ivermectin,less-concern,ivermectin,base
+Ixazomib citrate,ambiguous,ixazomib,base
+Ketoprofen,less-concern,ketoprofen,base
+Ketorolac tromethamine,less-concern,ketorolac,base
+Labetalol hydrochloride,most-concern,labetalol,base
+Lamivudine,less-concern,lamivudine,base
+Lamotrigine,most-concern,lamotrigine,base
+Leflunomide,most-concern,leflunomide,base
+Lenalidomide,less-concern,lenalidomide,base
+Levonorgestrel,no-concern,levonorgestrel,base
+Lidocaine,no-concern,lidocaine,base
+Linezolid,less-concern,linezolid,base
+Lofexidine hydrochloride,no-concern,lofexidine,base
+Loperamide hydrochloride,no-concern,loperamide,base
+Losartan potassium,less-concern,losartan,base
+Lovastatin,less-concern,lovastatin,base
+Loxapine succinate,ambiguous,loxapine,base
+Maprotiline hydrochloride,ambiguous,maprotiline,base
+Maraviroc,most-concern,maraviroc,base
+Mebendazole,less-concern,mebendazole,base
+Meclizine hydrochloride,no-concern,meclizine,base
+Medroxyprogesterone acetate,ambiguous,medroxyprogesterone,base
+Meloxicam,less-concern,meloxicam,base
+Mepivacaine hydrochloride,less-concern,mepivacaine,base
+Mesoridazine besylate,ambiguous,mesoridazine,base
+Metaxalone,less-concern,metaxalone,base
+Methocarbamol,ambiguous,methocarbamol,base
+Methylprednisolone,less-concern,methylprednisolone,base
+Methysergide maleate,no-concern,methysergide,base
+Metoclopramide hydrochloride,less-concern,metoclopramide,base
+Metolazone,ambiguous,metolazone,base
+Metoprolol succinate,ambiguous,metoprolol,base
+Metoprolol tartrate,less-concern,metoprolol,base
+Mexiletine hydrochloride,most-concern,mexiletine,base
+Midodrine hydrochloride,no-concern,midodrine,base
+Midostaurin,ambiguous,midostaurin,base
+Mifepristone,less-concern,mifepristone,base
+Milrinone lactate,ambiguous,milrinone,base
+Minoxidil,no-concern,minoxidil,base
+Mirtazapine,less-concern,mirtazapine,base
+Mitotane,no-concern,mitotane,base
+Mitoxantrone hydrochloride,less-concern,mitoxantrone,base
+Modafinil,less-concern,modafinil,base
+Moexipril hydrochloride,ambiguous,moexipril,base
+Moxifloxacin hydrochloride,less-concern,moxifloxacin,base
+Nadolol,ambiguous,nadolol,base
+Nafcillin sodium,less-concern,nafcillin,base
+Nalbuphine hydrochloride,no-concern,nalbuphine,base
+Naloxone hydrochloride,no-concern,naloxone,base
+Naltrexone hydrochloride,ambiguous,naltrexone,base
+Naproxen,less-concern,naproxen,base
+Nateglinide,ambiguous,nateglinide,base
+Nefazodone hydrochloride,most-concern,nefazodone,base
+Nelfinavir mesylate,less-concern,nelfinavir,base
+Neratinib maleate,ambiguous,neratinib,base
+Niacin,most-concern,niacin,base
+Nialamide,most-concern,nialamide,base
+Nicardipine hydrochloride,ambiguous,nicardipine,base
+Nifedipine,less-concern,nifedipine,base
+Nifurtimox,no-concern,nifurtimox,base
+Nilotinib hydrochloride,most-concern,nilotinib,base
+Nilutamide,most-concern,nilutamide,base
+Nimesulide,most-concern,nimesulide,base
+Nimodipine,ambiguous,nimodipine,base
+Nizatidine,less-concern,nizatidine,base
+Nortriptyline hydrochloride,most-concern,nortriptyline,base
+Omeprazole,less-concern,omeprazole,base
+Ondansetron hydrochloride,less-concern,ondansetron,base
+Orphenadrine hydrochloride,no-concern,orphenadrine,base
+Oxaprozin,less-concern,oxaprozin,base
+Paclitaxel,less-concern,paclitaxel,base
+Palbociclib,less-concern,palbociclib,base
+Palonosetron hydrochloride,ambiguous,palonosetron,base
+Panobinostat lactate,ambiguous,panobinostat,base
+Pantoprazole sodium,less-concern,pantoprazole,base
+Papaverine hydrochloride,most-concern,papaverine,base
+Paroxetine hydrochloride,less-concern,paroxetine,base
+Pazopanib hydrochloride,most-concern,pazopanib,base
+Pentoxifylline,ambiguous,pentoxifylline,base
+Pergolide mesylate,ambiguous,pergolide,base
+Perhexiline,most-concern,perhexiline,base
+Perphenazine,less-concern,perphenazine,base
+Phenelzine sulfate,less-concern,phenelzine,base
+Phenoxybenzamine hydrochloride,no-concern,phenoxybenzamine,base
+Phentolamine mesylate,no-concern,phentolamine,base
+Pimozide,no-concern,pimozide,base
+Pindolol,no-concern,pindolol,base
+Pioglitazone hydrochloride,less-concern,pioglitazone,base
+Pirfenidone,most-concern,pirfenidone,base
+Piroxicam,less-concern,piroxicam,base
+Pitavastatin calcium,ambiguous,pitavastatin,base
+Pravastatin sodium,less-concern,pravastatin,base
+Praziquantel,ambiguous,praziquantel,base
+Prazosin hydrochloride,ambiguous,prazosin,base
+Prednisolone,less-concern,prednisolone,base
+Prednisone,less-concern,prednisone,base
+Primaquine phosphate,no-concern,primaquine,base
+Primidone,no-concern,primidone,base
+Probenecid,ambiguous,probenecid,base
+Procainamide hydrochloride,less-concern,procainamide,base
+Procarbazine hydrochloride,less-concern,procarbazine,base
+Prochlorperazine maleate,less-concern,prochlorperazine,base
+Progesterone,less-concern,progesterone,base
+Propafenone hydrochloride,less-concern,propafenone,base
+Propofol,less-concern,propofol,base
+Propranolol hydrochloride,ambiguous,propranolol,base
+Protriptyline hydrochloride,no-concern,protriptyline,base
+Pseudoephedrine hydrochloride,no-concern,pseudoephedrine,base
+Pyrimethamine,less-concern,pyrimethamine,base
+Quetiapine fumarate,less-concern,quetiapine,base
+Quinapril hydrochloride,less-concern,quinapril,base
+Quinidine gluconate,less-concern,quinidine,base
+Quinine sulfate,less-concern,quinine,base
+Raloxifene hydrochloride,less-concern,raloxifene,base
+Raltegravir potassium,most-concern,raltegravir,base
+Ranitidine hydrochloride,less-concern,ranitidine,base
+Ranolazine,no-concern,ranolazine,base
+Reserpine,no-concern,reserpine,base
+Ribavirin,less-concern,ribavirin,base
+Rifabutin,less-concern,rifabutin,base
+Rifapentine,ambiguous,rifapentine,base
+Riluzole,most-concern,riluzole,base
+Risperidone,less-concern,risperidone,base
+Rivaroxaban,less-concern,rivaroxaban,base
+Rizatriptan benzoate,less-concern,rizatriptan,base
+Ropinirole hydrochloride,less-concern,ropinirole,base
+Rosiglitazone maleate,less-concern,rosiglitazone,base
+Rosuvastatin calcium,less-concern,rosuvastatin,base
+Ruxolitinib phosphate,ambiguous,ruxolitinib,base
+Safinamide mesylate,no-concern,safinamide,base
+Saquinavir mesylate,less-concern,saquinavir,base
+Scopolamine,no-concern,scopolamine,base
+Sertraline hydrochloride,less-concern,sertraline,base
+Sildenafil citrate,less-concern,sildenafil,base
+Simvastatin,less-concern,simvastatin,base
+Sirolimus,less-concern,sirolimus,base
+Sitagliptin phosphate,less-concern,sitagliptin,base
+Sonidegib phosphate,ambiguous,sonidegib,base
+Sorafenib tosylate,most-concern,sorafenib,base
+Spironolactone,less-concern,spironolactone,base
+Stiripentol,no-concern,stiripentol,base
+suloctidil,most-concern,suloctidil,base
+Sunitinib malate,most-concern,sunitinib,base
+Tacrolimus,less-concern,tacrolimus,base
+Tadalafil,less-concern,tadalafil,base
+Tamoxifen citrate,most-concern,tamoxifen,base
+Telmisartan,less-concern,telmisartan,base
+Temozolomide,less-concern,temozolomide,base
+Temsirolimus,no-concern,temsirolimus,base
+Teniposide,less-concern,teniposide,base
+Terazosin hydrochloride,no-concern,terazosin,base
+Thalidomide,less-concern,thalidomide,base
+Thioridazine hydrochloride,less-concern,thioridazine,base
+Thiotepa,less-concern,thiotepa,base
+Thiothixene,ambiguous,thiothixene,base
+Ticlopidine hydrochloride,most-concern,ticlopidine,base
+Tigecycline,most-concern,tigecycline,base
+Timolol maleate,ambiguous,timolol,base
+Tinidazole,less-concern,tinidazole,base
+Tivozanib hydrochloride,ambiguous,tivozanib,base
+Tofacitinib citrate,ambiguous,tofacitinib,base
+Tolazamide,less-concern,tolazamide,base
+Tolbutamide,ambiguous,tolbutamide,base
+Tolmetin sodium,less-concern,tolmetin,base
+Toremifene citrate,ambiguous,toremifene,base
+Tramadol hydrochloride,less-concern,tramadol,base
+Trazodone hydrochloride,less-concern,trazodone,base
+Tretinoin,less-concern,tretinoin,base
+Triamterene,less-concern,triamterene,base
+Trifluoperazine hydrochloride,less-concern,trifluoperazine,base
+Trimethobenzamide hydrochloride,ambiguous,trimethobenzamide,base
+Trimipramine maleate,ambiguous,trimipramine,base
+Troglitazone,most-concern,troglitazone,base
+Valsartan,less-concern,valsartan,base
+Vardenafil hydrochloride,ambiguous,vardenafil,base
+Vecuronium bromide,no-concern,vecuronium,base
+Vemurafenib,less-concern,vemurafenib,base
+Venlafaxine hydrochloride,less-concern,venlafaxine,base
+Verapamil hydrochloride,less-concern,verapamil,base
+Verteporfin,ambiguous,verteporfin,base
+Vinblastine sulfate,less-concern,vinblastine,base
+Vincristine sulfate,less-concern,vincristine,base
+Vinorelbine tartrate,ambiguous,vinorelbine,base
+Voriconazole,most-concern,voriconazole,base
+Vorinostat,no-concern,vorinostat,base
+Warfarin sodium,less-concern,warfarin,base
+Ziprasidone hydrochloride,less-concern,ziprasidone,base
+Zolmitriptan,ambiguous,zolmitriptan,base

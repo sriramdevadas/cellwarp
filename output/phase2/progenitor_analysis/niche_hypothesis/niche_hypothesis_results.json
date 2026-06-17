@@ -1,0 +1,28 @@
+{
+  "hypothesis": "Progenitor divergence is driven by niche adaptation (cytokine/ECM/growth factor signaling)",
+  "progenitor_divergence": {
+    "n_niche_sets_tested": 6,
+    "n_niche_sets_significant_q05": 0,
+    "significant_niche_sets": [],
+    "strongest_set": "ECM_Organization",
+    "strongest_odds_ratio": 2.231517284046091,
+    "strongest_q_value": 0.30911858885731247
+  },
+  "differentiated_divergence": {
+    "n_niche_sets_significant_q05": 0,
+    "significant_niche_sets": []
+  },
+  "negative_controls": {
+    "Myc_Targets_V1_progenitor_q": 1.0,
+    "Myc_Targets_V1_differentiated_q": 0.1804597528654224,
+    "OxPhos_progenitor_q": 1.0,
+    "Bile_Acid_progenitor_q": 1.0
+  },
+  "specificity_analysis": {
+    "genome_mean": 0.5739441830249107,
+    "n_niche_sets_above_06": 0,
+    "sets_above_06": []
+  },
+  "verdict": "NOT_SUPPORTED",
+  "explanation": "No significant enrichment of niche-response gene sets in progenitor-specific divergence (0/6 significant). Evidence does not support the niche adaptation hypothesis. Niche-response sets NOT enriched in differentiated-cell divergence \u2014 enrichment is progenitor-specific."
+}

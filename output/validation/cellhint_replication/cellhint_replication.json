@@ -1,0 +1,113 @@
+{
+  "diagnostic": "CellHint human-side replication",
+  "date": "2026-03-19",
+  "dataset": {
+    "name": "CellHint (Xu et al., Cell 2023)",
+    "source": "CELLxGENE Census (TS-independent subset)",
+    "n_tissues": 9,
+    "ts_independent": true
+  },
+  "procrustes": {
+    "n_types": 15,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "hepatocyte",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "natural killer cell",
+      "neutrophil",
+      "plasma cell",
+      "smooth muscle cell"
+    ],
+    "p_value": 9.999000099990002e-05,
+    "distance": 28.147057450514172,
+    "obs_null_ratio": 0.44750163306632756,
+    "scaling": 0.9096628629487622,
+    "rotation_det": 0.9999999999999996,
+    "null_median": 62.898222868255516,
+    "pca_components": 15,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude": 5.153071573117836
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude": 9.476759641484726
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude": 6.2970353485104145
+      },
+      "T cell": {
+        "magnitude": 5.749046757408019
+      },
+      "endothelial cell": {
+        "magnitude": 5.770897265062862
+      },
+      "epithelial cell": {
+        "magnitude": 3.04790400545272
+      },
+      "fibroblast": {
+        "magnitude": 9.87455856889657
+      },
+      "hepatocyte": {
+        "magnitude": 10.601407356937456
+      },
+      "macrophage": {
+        "magnitude": 8.395758639145297
+      },
+      "monocyte": {
+        "magnitude": 7.996128079850854
+      },
+      "myeloid dendritic cell": {
+        "magnitude": 9.847800467838177
+      },
+      "natural killer cell": {
+        "magnitude": 3.0411804536326623
+      },
+      "neutrophil": {
+        "magnitude": 4.40017103622249
+      },
+      "plasma cell": {
+        "magnitude": 5.863024242140228
+      },
+      "smooth muscle cell": {
+        "magnitude": 7.503897188826186
+      }
+    }
+  },
+  "rigidity_ranking": {
+    "rho": -0.3857142857142856,
+    "p_value": 0.15563079458596027,
+    "n_matched": 15,
+    "matched_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "T cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "hepatocyte",
+      "macrophage",
+      "monocyte",
+      "myeloid dendritic cell",
+      "natural killer cell",
+      "neutrophil",
+      "plasma cell",
+      "smooth muscle cell"
+    ]
+  },
+  "comparison": {
+    "primary_obs_null": 0.522,
+    "sun2023_obs_null": 0.554,
+    "pansci_obs_null": 0.552,
+    "cellhint_obs_null": 0.44750163306632756
+  },
+  "random_seed": 42
+}

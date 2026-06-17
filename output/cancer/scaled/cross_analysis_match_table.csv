@@ -1,0 +1,14 @@
+cancer_type,xs_type,cancer_deformation,xs_residual,match_quality
+B cell,B cell,4.0377172005764965,9.84610068589495,exact
+"CD4-positive, alpha-beta T cell","CD4-positive, alpha-beta T cell",5.145334914884987,10.21169775481372,exact
+"CD8-positive, alpha-beta T cell","CD8-positive, alpha-beta T cell",3.990863645930881,5.3762488830814785,exact
+T cell,T cell,2.4607887615061386,11.669226435501992,exact
+endothelial cell,endothelial cell,2.06645476749763,5.971302732274846,exact
+enterocyte of epithelium of large intestine,enterocyte of epithelium of large intestine,4.851944703557251,9.297263435043051,exact
+epithelial cell,epithelial cell,10.070440933119318,16.267367119340193,exact
+fibroblast,fibroblast,2.277437049855303,7.507943223117857,exact
+large intestine goblet cell,large intestine goblet cell,5.512386375453439,9.466734231251584,exact
+macrophage,macrophage,3.867620490086862,9.878522208732335,exact
+monocyte,monocyte,3.095745172615148,8.722374107298508,exact
+myeloid dendritic cell,myeloid dendritic cell,3.3856942534836043,8.898935755842247,exact
+plasma cell,plasma cell,3.0965347861145784,11.083711716328304,exact

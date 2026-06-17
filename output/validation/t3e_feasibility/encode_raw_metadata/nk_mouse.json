@@ -1,0 +1,13 @@
+{
+  "our_label": "NK cell",
+  "organism": "mouse",
+  "organism_scientific": "Mus musculus",
+  "tried_terms": [
+    "natural killer cell",
+    "NK cell"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:18:57.509641"
+}

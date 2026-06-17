@@ -1,0 +1,36 @@
+cell_type,primary_rank,bootstrap_median_rank,bootstrap_CI_width,bootstrap_category,Sun2023_rank,PanSci_rank,CellHint_rank,CellHint_harmonized_rank,Pan_Census_rank,Macaque_rank,Mouse_lemur_rank,n_replications_present,mean_rank_shift,sd_rank_shift
+stromal cell,1,1.0,0.0,STABLE_FLEXIBLE,,,,,19.0,2.0,,2,9.5,12.020815280171307
+epithelial cell,2,2.0,0.0,STABLE_FLEXIBLE,7.0,4.0,14.0,,13.0,4.0,,5,7.0,4.847679857416329
+hematopoietic precursor cell,3,3.0,0.0,STABLE_FLEXIBLE,,,,,,,,0,,
+hematopoietic stem cell,4,4.0,0.0,STABLE_FLEXIBLE,,,,,,,,0,,
+pancreatic acinar cell,5,5.0,1.0,STABLE_FLEXIBLE,,,,,,,11.0,1,10.0,
+basal cell,6,6.0,1.0,STABLE_FLEXIBLE,,,,,22.0,,,1,19.0,
+T cell,7,8.0,4.0,STABLE_FLEXIBLE,5.0,13.0,11.0,,11.0,,1.0,5,6.2,4.147288270665544
+neutrophil,8,9.0,4.0,STABLE_FLEXIBLE,,,13.0,,2.0,3.0,5.0,4,3.75,4.349329450233296
+fibroblast of cardiac tissue,9,9.0,5.0,STABLE_FLEXIBLE,,,,,1.0,,,1,5.0,
+myeloid leukocyte,10,9.0,5.0,STABLE_FLEXIBLE,,3.0,,,7.0,,,2,0.0,0.0
+mesenchymal stem cell of adipose tissue,11,10.0,5.0,STABLE_FLEXIBLE,,,,,,,,0,,
+plasma cell,12,12.0,3.0,STABLE_FLEXIBLE,9.0,8.0,9.0,8.0,8.0,10.0,14.0,7,5.428571428571429,3.04724700110022
+mesenchymal stem cell,13,13.0,2.0,STABLE_MIDDLE,,,,,14.0,,6.0,2,3.0,2.8284271247461903
+"CD4-positive, alpha-beta T cell",14,14.0,3.0,STABLE_MIDDLE,11.0,16.0,4.0,4.0,9.0,,8.0,6,4.0,4.09878030638384
+classical monocyte,15,16.0,4.0,STABLE_MIDDLE,,,,,,,,0,,
+macrophage,16,16.0,5.0,STABLE_MIDDLE,3.0,5.0,5.0,5.0,20.0,5.0,12.0,7,2.857142857142857,3.132015933791495
+B cell,17,16.0,3.0,STABLE_MIDDLE,10.0,7.0,12.0,10.0,12.0,7.0,4.0,7,2.857142857142857,2.4784787961282104
+luminal epithelial cell of mammary gland,18,18.0,3.0,STABLE_MIDDLE,,,,,,,,0,,
+large intestine goblet cell,19,19.0,4.0,STABLE_MIDDLE,,9.0,,,,,,1,1.0,
+enterocyte of epithelium of large intestine,20,20.0,2.0,STABLE_MIDDLE,,,,,,,9.0,1,0.0,
+myeloid dendritic cell,21,21.0,7.0,STABLE_MIDDLE,6.0,12.0,3.0,3.0,,,,4,2.75,1.707825127659933
+monocyte,22,22.0,4.024999999999999,STABLE_MIDDLE,4.0,10.0,6.0,7.0,18.0,6.0,3.0,7,3.0,2.516611478423583
+natural killer cell,23,22.0,3.0,STABLE_MIDDLE,8.0,,15.0,12.0,16.0,,7.0,5,3.4,1.816590212458495
+intermediate monocyte,24,24.0,3.0,STABLE_MIDDLE,,,,,,,,0,,
+mature NK T cell,25,25.0,4.0,STABLE_MIDDLE,,,,,4.0,,10.0,2,6.5,6.363961030678928
+adventitial cell,26,26.0,3.0249999999999986,STABLE_MIDDLE,,,,,,,,0,,
+granulocyte,27,27.0,7.0,STABLE_MIDDLE,12.0,1.0,,,6.0,,,3,7.333333333333333,4.618802153517007
+fibroblast,28,28.0,2.0,STABLE_RIGID,15.0,2.0,2.0,2.0,15.0,9.0,15.0,7,4.857142857142857,3.5790395093549625
+bladder urothelial cell,29,29.0,2.0,STABLE_RIGID,,,,,,12.0,,1,3.0,
+pancreatic ductal cell,30,30.0,1.0,STABLE_RIGID,,,,,3.0,,,1,15.0,
+smooth muscle cell,31,31.0,1.0,STABLE_RIGID,13.0,6.0,7.0,6.0,21.0,11.0,,6,3.1666666666666665,2.401388487243717
+hepatocyte,32,32.0,2.0,STABLE_RIGID,1.0,15.0,1.0,1.0,5.0,1.0,,6,9.833333333333334,4.792355023020171
+endothelial cell,33,33.0,2.0,STABLE_RIGID,2.0,11.0,10.0,9.0,17.0,8.0,2.0,7,6.0,4.163331998932265
+non-classical monocyte,34,34.0,2.0,STABLE_RIGID,,,,,,,,0,,
+"CD8-positive, alpha-beta T cell",35,35.0,0.0,STABLE_RIGID,14.0,14.0,8.0,11.0,10.0,,13.0,6,4.166666666666667,4.445971959725642

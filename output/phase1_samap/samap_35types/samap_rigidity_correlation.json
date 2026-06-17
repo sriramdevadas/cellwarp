@@ -1,0 +1,7 @@
+{
+  "spearman_rho": -0.24677871148459385,
+  "spearman_p": 0.15296016895096742,
+  "n": 35,
+  "interpretation": "orthogonal",
+  "convention": "Spearman vs Procrustes residual (divergence); negation of legacy vs-rigidity value"
+}

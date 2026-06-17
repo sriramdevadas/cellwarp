@@ -1,0 +1,21 @@
+{
+  "without_hcl_n_types": 21,
+  "without_hcl_n_colls": 7,
+  "without_hcl_collections": [
+    "The landscape of immune dysregulation in Crohn\u2019s disease revealed through single-cell transcriptomic profiling in the ileum and colon",
+    "Automatic cell-type harmonization and integration across Human Cell Atlas datasets",
+    "Spatial proteogenomics reveals distinct and evolutionarily conserved hepatic macrophage niches",
+    "A spatially resolved single cell genomic atlas of the adult human breast",
+    "scRNA-seq assessment of the human lung, spleen, and esophagus tissue stability after cold preservation",
+    "Human circulating hematopoietic stem and progenitor cells in aging, cytopenia and MDS",
+    "Single-cell RNA-seq analysis reveals cell subsets and gene signatures associated with Rheumatoid Arthritis Disease Activity"
+  ],
+  "without_hcl_uncovered": [
+    "enterocyte of epithelium of large intestine",
+    "granulocyte"
+  ],
+  "without_hcl_verdict": "POOLED",
+  "with_hcl_n_types": 20,
+  "with_hcl_n_colls": 5,
+  "shared_lab_risk": "HCL (Guo lab) shares PI and institution with MCA"
+}

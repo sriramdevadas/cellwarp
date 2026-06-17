@@ -1,0 +1,31 @@
+{
+  "title": "CellWarp",
+  "description": "CellWarp: a Procrustes-based geometric framework for quantifying cross-species transcriptomic coherence at the cell-type level.",
+  "creators": [
+    {
+      "name": "Devadas, Sriram",
+      "affiliation": "Independent researcher, Acton, MA, USA",
+      "orcid": "0009-0002-4571-1116"
+    }
+  ],
+  "keywords": [
+    "Procrustes analysis",
+    "cross-species transcriptomics",
+    "cell type evolution",
+    "single-cell RNA-seq",
+    "covariance conservation",
+    "cell type homology"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "notes": "Generative AI tools (Claude, Anthropic) were used to assist with code development, literature search, and manuscript drafting. All AI-generated content was reviewed, verified, and revised by the author. The author takes full responsibility for the accuracy and integrity of the work. See docs/declarations.txt in the deposited code for the full disclosure statement.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/sriramdevadas/cellwarp",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ]
+}

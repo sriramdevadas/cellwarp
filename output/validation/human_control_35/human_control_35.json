@@ -1,0 +1,53 @@
+{
+  "status": "STOPPED_UNDERPOWERED",
+  "n_overlap": 15,
+  "shared_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "macrophage",
+    "monocyte",
+    "myeloid dendritic cell",
+    "natural killer cell",
+    "neutrophil",
+    "plasma cell",
+    "smooth muscle cell"
+  ],
+  "ts_only": [
+    "adventitial cell",
+    "basal cell",
+    "bladder urothelial cell",
+    "classical monocyte",
+    "enterocyte of epithelium of large intestine",
+    "fibroblast of cardiac tissue",
+    "granulocyte",
+    "hematopoietic precursor cell",
+    "hematopoietic stem cell",
+    "intermediate monocyte",
+    "large intestine goblet cell",
+    "luminal epithelial cell of mammary gland",
+    "mature NK T cell",
+    "mesenchymal stem cell",
+    "mesenchymal stem cell of adipose tissue",
+    "myeloid leukocyte",
+    "non-classical monocyte",
+    "pancreatic acinar cell",
+    "pancreatic ductal cell",
+    "stromal cell"
+  ],
+  "ch_only": [
+    "astrocyte",
+    "cardiac muscle cell",
+    "cholangiocyte",
+    "mast cell",
+    "neuron",
+    "oligodendrocyte",
+    "pericyte"
+  ],
+  "reason": "STOP: Only 15 overlapping types \u2014 below 20-type threshold."
+}

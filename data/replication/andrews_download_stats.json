@@ -1,0 +1,57 @@
+{
+  "hepatocyte": {
+    "mapped_to": "hepatocyte",
+    "n_cells": 2709,
+    "n_donors": 23
+  },
+  "periportal region hepatocyte": {
+    "mapped_to": "hepatocyte",
+    "n_cells": 33995,
+    "n_donors": 23
+  },
+  "centrilobular region hepatocyte": {
+    "mapped_to": "hepatocyte",
+    "n_cells": 11578,
+    "n_donors": 23
+  },
+  "midzonal region hepatocyte": {
+    "mapped_to": "hepatocyte",
+    "n_cells": 8376,
+    "n_donors": 23
+  },
+  "endothelial cell of pericentral hepatic sinusoid": {
+    "mapped_to": "endothelial cell",
+    "n_cells": 4727,
+    "n_donors": 23
+  },
+  "endothelial cell of periportal hepatic sinusoid": {
+    "mapped_to": "endothelial cell",
+    "n_cells": 1560,
+    "n_donors": 22
+  },
+  "vein endothelial cell": {
+    "mapped_to": "endothelial cell",
+    "n_cells": 790,
+    "n_donors": 22
+  },
+  "CD8-positive, alpha-beta T cell": {
+    "mapped_to": "CD8-positive, alpha-beta T cell",
+    "n_cells": 3557,
+    "n_donors": 21
+  },
+  "CD4-positive, alpha-beta T cell": {
+    "mapped_to": "CD4-positive, alpha-beta T cell",
+    "n_cells": 2463,
+    "n_donors": 23
+  },
+  "B cell": {
+    "mapped_to": "B cell",
+    "n_cells": 632,
+    "n_donors": 23
+  },
+  "macrophage": {
+    "mapped_to": "macrophage",
+    "n_cells": 1729,
+    "n_donors": 22
+  }
+}

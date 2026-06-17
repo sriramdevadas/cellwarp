@@ -1,0 +1,48 @@
+{
+  "normal_counts": {
+    "Other": 2996,
+    "Fibroblast": 2963,
+    "Endothelial cell": 2939,
+    "Epithelial cell": 2915,
+    "T cell": 2902,
+    "B cell": 2769,
+    "Macrophage": 2697,
+    "Mast cell": 2628,
+    "NK cell": 2193
+  },
+  "tumor_counts": {
+    "T cell": 2998,
+    "Endothelial cell": 2997,
+    "Epithelial cell": 2994,
+    "Macrophage": 2994,
+    "B cell": 2978,
+    "Other": 2977,
+    "Fibroblast": 2820,
+    "Mast cell": 2714,
+    "NK cell": 573
+  },
+  "normal_donors": 232,
+  "tumor_donors": 62,
+  "normal_assays": [
+    "10x 3' v1",
+    "10x 3' v2",
+    "10x 3' v3",
+    "10x 5' transcription profiling",
+    "10x 5' v1",
+    "10x 5' v2",
+    "SORT-seq",
+    "Smart-seq2",
+    "TruDrop",
+    "microwell-seq"
+  ],
+  "tumor_assays": [
+    "10x 3' v2",
+    "10x 3' v3"
+  ],
+  "dropped_types": [
+    "Smooth muscle cell"
+  ],
+  "normal_total": 25002,
+  "tumor_total": 24045,
+  "n_genes": 17180
+}

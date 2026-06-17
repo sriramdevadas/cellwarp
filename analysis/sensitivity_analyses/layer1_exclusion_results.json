@@ -1,0 +1,89 @@
+{
+  "seed": 42,
+  "n_permutations": 10000,
+  "headline_obs_null": 0.522,
+  "housekeeping_list": "HOUNKPE_HOUSEKEEPING_GENES (MSigDB)",
+  "variants": [
+    {
+      "variant": "full_sanity",
+      "n_excluded": 0,
+      "n_kept": 16959,
+      "pca_components": 33,
+      "pca_cumvar": 0.9518457117527077,
+      "procrustes_distance": 61.1529953159736,
+      "scaling_s": 0.9023016035933594,
+      "null_median": 117.10549426602002,
+      "obs_null_ratio": 0.5222043226858066,
+      "ranking_rho_vs_fullspace": 1.0,
+      "ranking_rho_p": 0.0,
+      "top5_flexible": [
+        "stromal cell",
+        "epithelial cell",
+        "hematopoietic precursor cell",
+        "hematopoietic stem cell",
+        "pancreatic acinar cell"
+      ],
+      "top5_rigid": [
+        "CD8-positive, alpha-beta T cell",
+        "non-classical monocyte",
+        "endothelial cell",
+        "hepatocyte",
+        "smooth muscle cell"
+      ]
+    },
+    {
+      "variant": "ribosomal_only",
+      "n_excluded": 68,
+      "n_kept": 16891,
+      "pca_components": 33,
+      "pca_cumvar": 0.9500339371422679,
+      "procrustes_distance": 57.141924432219646,
+      "scaling_s": 0.9145333358485392,
+      "null_median": 114.01119620516862,
+      "obs_null_ratio": 0.5011957275616161,
+      "ranking_rho_vs_fullspace": 0.9408963585434175,
+      "ranking_rho_p": 4.445608067156652e-17,
+      "top5_flexible": [
+        "epithelial cell",
+        "stromal cell",
+        "hematopoietic precursor cell",
+        "hematopoietic stem cell",
+        "basal cell"
+      ],
+      "top5_rigid": [
+        "hepatocyte",
+        "CD8-positive, alpha-beta T cell",
+        "non-classical monocyte",
+        "endothelial cell",
+        "smooth muscle cell"
+      ]
+    },
+    {
+      "variant": "ribosomal_plus_housekeeping",
+      "n_excluded": 1158,
+      "n_kept": 15801,
+      "pca_components": 34,
+      "pca_cumvar": 0.9528926311371368,
+      "procrustes_distance": 53.375643211644146,
+      "scaling_s": 0.9384623377577985,
+      "null_median": 111.4807239757263,
+      "obs_null_ratio": 0.4787880927582252,
+      "ranking_rho_vs_fullspace": 0.9081232492997199,
+      "ranking_rho_p": 5.029748174864896e-14,
+      "top5_flexible": [
+        "epithelial cell",
+        "stromal cell",
+        "hematopoietic precursor cell",
+        "hematopoietic stem cell",
+        "pancreatic acinar cell"
+      ],
+      "top5_rigid": [
+        "hepatocyte",
+        "CD8-positive, alpha-beta T cell",
+        "endothelial cell",
+        "non-classical monocyte",
+        "bladder urothelial cell"
+      ]
+    }
+  ]
+}

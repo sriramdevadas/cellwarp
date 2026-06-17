@@ -1,0 +1,85 @@
+{
+  "validation": "V4 — obs/null Formula Audit",
+  "date": "2026-03-22",
+  "verdict": "PASS with 4 flags (non-canonical scripts only)",
+  "formula": "obs/null = d_obs / median(null_distribution)",
+  "call_sites": {
+    "total_files": 17,
+    "using_median": 13,
+    "using_mean": 4,
+    "mean_flags": [
+      {
+        "file": "scripts/31_andrews_replication.py",
+        "line": 459,
+        "code": "obs_null_ratio = obs_distance / null_mean",
+        "impact": "Andrews replication (not in paper, obs/null=0.116, p=0.116, non-significant)"
+      },
+      {
+        "file": "scripts/15_hsc_10x_validation.py",
+        "line": 394,
+        "code": "ratio_a = result_a.distance / np.mean(null_a)",
+        "impact": "HSC 10x validation (diagnostic script, not in paper)"
+      },
+      {
+        "file": "scripts/15_hsc_10x_validation.py",
+        "line": 441,
+        "code": "ratio_b = result_b.distance / np.mean(null_b)",
+        "impact": "HSC 10x validation (diagnostic script, not in paper)"
+      },
+      {
+        "file": "scripts/14_smartseq2_sensitivity.py",
+        "line": 230,
+        "code": "obs_null_ratio = result.distance / null_mean",
+        "impact": "Smart-seq2 sensitivity (diagnostic, not in paper)"
+      },
+      {
+        "file": "scripts/18_pca_sensitivity_v2.py",
+        "lines": [111, 169],
+        "code": "obs_null_ratio = float(observed / null_mean)",
+        "impact": "PCA sensitivity v2 (diagnostic, not in paper — reported values use separate pipeline)"
+      }
+    ]
+  },
+  "canonical_comparisons_use_median": {
+    "primary_35type": "src/procrustes.py:permutation_test → median",
+    "sun2023_15type": "scripts/17_sun2023_expanded.py:568 → np.median(null_dist)",
+    "pansci_16type": "scripts/pansci_replication.py:583 → np.median(null_dist)",
+    "cellhint_15type": "scripts/33_cellhint_replication.py:748 → np.median(null_dist)",
+    "ancillary_6type": "src/procrustes.py:permutation_test → median",
+    "human_human_6type": "src/procrustes.py:permutation_test → median (via scripts/09_negative_control_v2.py:638)"
+  },
+  "random_seed": {
+    "value": 42,
+    "consistent": true,
+    "source": "src/procrustes.py:52 — RANDOM_SEED = 42"
+  },
+  "n_permutations": {
+    "value": 10000,
+    "consistent_across_canonical": true,
+    "source": "src/procrustes.py:53 — N_PERMUTATIONS = 10_000"
+  },
+  "ordering_check": {
+    "verified_by": "V1 validation (output/validation/v1_procrustes/v1_validation_results.json)",
+    "ordering_holds": true,
+    "values": {
+      "human_human_control": 0.607,
+      "sun2023": 0.554,
+      "pansci": 0.552,
+      "primary": 0.522,
+      "cellhint": 0.448,
+      "ancillary": 0.317
+    }
+  },
+  "type_counts": {
+    "verified_by": "V1 validation",
+    "all_match": true,
+    "counts": {
+      "primary": 35,
+      "sun2023": 15,
+      "pansci": 16,
+      "cellhint": 15,
+      "ancillary": 6,
+      "human_human": 6
+    }
+  }
+}

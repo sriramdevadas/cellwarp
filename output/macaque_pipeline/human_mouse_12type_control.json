@@ -1,0 +1,249 @@
+{
+  "analysis": "HUMAN_MOUSE_12TYPE_CONTROL",
+  "types_included": [
+    "B cell",
+    "bladder urothelial cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "macrophage",
+    "monocyte",
+    "neutrophil",
+    "plasma cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "gene_space": 16959,
+  "control_16959": {
+    "label": "human-mouse-12",
+    "order": [
+      "B cell",
+      "bladder urothelial cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "hepatocyte",
+      "macrophage",
+      "monocyte",
+      "neutrophil",
+      "plasma cell",
+      "smooth muscle cell",
+      "stromal cell"
+    ],
+    "procrustes": {
+      "distance": 24.975471863898967,
+      "scaling": 1.0623806010575765,
+      "distance_squared": 623.7741948244089,
+      "rotation_det": 1.0000000000000004
+    },
+    "permutation_test": {
+      "p_value": 9.999000099990002e-05,
+      "obs_null_ratio_median": 0.4400539610404331,
+      "obs_null_ratio_mean": 0.4427483209336351,
+      "null_median": 56.75547563496234,
+      "null_mean": 56.41008826692449,
+      "n_permutations": 10000,
+      "permuted_le_observed": 0
+    },
+    "pca": {
+      "n_components": 15,
+      "variance_explained": [
+        0.2865790407477479,
+        0.14421708651157386,
+        0.11695424337210568,
+        0.0898811557784291,
+        0.06044361033831143,
+        0.04303808029513747,
+        0.035405956627205075,
+        0.03276817907223271,
+        0.02912036724349985,
+        0.02328535994197235,
+        0.02179780874139884,
+        0.018997336436898358,
+        0.018639491071340646,
+        0.016179347539002763,
+        0.012764957227922197
+      ],
+      "cumulative_variance": 0.9500720209447783
+    },
+    "per_type_residuals_ranked": [
+      {
+        "type": "epithelial cell",
+        "magnitude": 13.103566834778334,
+        "pct_ssr": 27.526541690593156
+      },
+      {
+        "type": "macrophage",
+        "magnitude": 9.530876419280817,
+        "pct_ssr": 14.56257826522845
+      },
+      {
+        "type": "plasma cell",
+        "magnitude": 8.657036269117103,
+        "pct_ssr": 12.014648503679386
+      },
+      {
+        "type": "fibroblast",
+        "magnitude": 7.962032727199962,
+        "pct_ssr": 10.162966931783469
+      },
+      {
+        "type": "stromal cell",
+        "magnitude": 7.5700747220666695,
+        "pct_ssr": 9.186983330370744
+      },
+      {
+        "type": "monocyte",
+        "magnitude": 5.9486619557733125,
+        "pct_ssr": 5.6729789974761635
+      },
+      {
+        "type": "neutrophil",
+        "magnitude": 5.530112253566563,
+        "pct_ssr": 4.902758368459898
+      },
+      {
+        "type": "endothelial cell",
+        "magnitude": 5.380659786608172,
+        "pct_ssr": 4.641342969850185
+      },
+      {
+        "type": "B cell",
+        "magnitude": 4.7471295811725165,
+        "pct_ssr": 3.612723874668585
+      },
+      {
+        "type": "smooth muscle cell",
+        "magnitude": 4.352667581518184,
+        "pct_ssr": 3.037271376789246
+      },
+      {
+        "type": "bladder urothelial cell",
+        "magnitude": 4.065470194054488,
+        "pct_ssr": 2.649684458876669
+      },
+      {
+        "type": "hepatocyte",
+        "magnitude": 3.5580373417230993,
+        "pct_ssr": 2.029521232224048
+      }
+    ]
+  },
+  "control_13927_parity": {
+    "label": "human-mouse-12-3way-gene-space",
+    "order": [
+      "B cell",
+      "bladder urothelial cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "hepatocyte",
+      "macrophage",
+      "monocyte",
+      "neutrophil",
+      "plasma cell",
+      "smooth muscle cell",
+      "stromal cell"
+    ],
+    "procrustes": {
+      "distance": 22.513573300117375,
+      "scaling": 1.0731095054116722,
+      "distance_squared": 506.860982739758,
+      "rotation_det": 1.0
+    },
+    "permutation_test": {
+      "p_value": 9.999000099990002e-05,
+      "obs_null_ratio_median": 0.42906367114704863,
+      "obs_null_ratio_mean": 0.43157758907147215,
+      "null_median": 52.471404162300956,
+      "null_mean": 52.16576085091614,
+      "n_permutations": 10000,
+      "permuted_le_observed": 0
+    },
+    "pca": {
+      "n_components": 16,
+      "variance_explained": [
+        0.25292673662981824,
+        0.15589264574742867,
+        0.12268466201472256,
+        0.0901700982569712,
+        0.06101266283546558,
+        0.04515624536896587,
+        0.03704675173205087,
+        0.03471300513914588,
+        0.031030020404681773,
+        0.02457227145076365,
+        0.022549515208854624,
+        0.01999341046963527,
+        0.01962506132635508,
+        0.016946498005184468,
+        0.01365590790650141,
+        0.011273979710650719
+      ],
+      "cumulative_variance": 0.9592494722071958
+    },
+    "per_type_residuals_ranked": [
+      {
+        "type": "epithelial cell",
+        "magnitude": 12.62710937815522,
+        "pct_ssr": 31.45712467076207
+      },
+      {
+        "type": "macrophage",
+        "magnitude": 8.640175995936081,
+        "pct_ssr": 14.7284253045533
+      },
+      {
+        "type": "fibroblast",
+        "magnitude": 7.059460178182692,
+        "pct_ssr": 9.832277429990095
+      },
+      {
+        "type": "plasma cell",
+        "magnitude": 6.849580925800069,
+        "pct_ssr": 9.256336639976292
+      },
+      {
+        "type": "stromal cell",
+        "magnitude": 6.674530637021746,
+        "pct_ssr": 8.789265842428293
+      },
+      {
+        "type": "endothelial cell",
+        "magnitude": 5.030286129386953,
+        "pct_ssr": 4.992252196396563
+      },
+      {
+        "type": "neutrophil",
+        "magnitude": 4.828404584531896,
+        "pct_ssr": 4.599582849307357
+      },
+      {
+        "type": "monocyte",
+        "magnitude": 4.699671949201223,
+        "pct_ssr": 4.357588605601765
+      },
+      {
+        "type": "B cell",
+        "magnitude": 4.61863718530878,
+        "pct_ssr": 4.2086114686143805
+      },
+      {
+        "type": "smooth muscle cell",
+        "magnitude": 4.029187348763272,
+        "pct_ssr": 3.202919783582818
+      },
+      {
+        "type": "bladder urothelial cell",
+        "magnitude": 3.4456776167898298,
+        "pct_ssr": 2.342396562992567
+      },
+      {
+        "type": "hepatocyte",
+        "magnitude": 3.3644188167945974,
+        "pct_ssr": 2.233218645794508
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "total_cells": 114260,
+  "total_genes": 16959,
+  "n_types": 23,
+  "per_type": {
+    "B cell": {
+      "n_cells": 5000,
+      "n_datasets": 85,
+      "status": "PASS"
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "n_cells": 5000,
+      "n_datasets": 78,
+      "status": "PASS"
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "n_cells": 5000,
+      "n_datasets": 69,
+      "status": "PASS"
+    },
+    "T cell": {
+      "n_cells": 5000,
+      "n_datasets": 90,
+      "status": "PASS"
+    },
+    "basal cell": {
+      "n_cells": 5000,
+      "n_datasets": 53,
+      "status": "PASS"
+    },
+    "endothelial cell": {
+      "n_cells": 5000,
+      "n_datasets": 74,
+      "status": "PASS"
+    },
+    "enterocyte of epithelium of large intestine": {
+      "n_cells": 2016,
+      "n_datasets": 5,
+      "status": "PASS"
+    },
+    "epithelial cell": {
+      "n_cells": 5000,
+      "n_datasets": 96,
+      "status": "PASS"
+    },
+    "fibroblast": {
+      "n_cells": 5000,
+      "n_datasets": 176,
+      "status": "PASS"
+    },
+    "granulocyte": {
+      "n_cells": 539,
+      "n_datasets": 3,
+      "status": "PASS"
+    },
+    "hematopoietic precursor cell": {
+      "n_cells": 5000,
+      "n_datasets": 73,
+      "status": "PASS"
+    },
+    "hepatocyte": {
+      "n_cells": 15358,
+      "n_datasets": 8,
+      "status": "PASS"
+    },
+    "luminal epithelial cell of mammary gland": {
+      "n_cells": 5000,
+      "n_datasets": 55,
+      "status": "PASS"
+    },
+    "macrophage": {
+      "n_cells": 5000,
+      "n_datasets": 116,
+      "status": "PASS"
+    },
+    "mesenchymal stem cell": {
+      "n_cells": 5000,
+      "n_datasets": 11,
+      "status": "PASS"
+    },
+    "monocyte": {
+      "n_cells": 5000,
+      "n_datasets": 39,
+      "status": "PASS"
+    },
+    "myeloid dendritic cell": {
+      "n_cells": 1347,
+      "n_datasets": 5,
+      "status": "PASS"
+    },
+    "natural killer cell": {
+      "n_cells": 5000,
+      "n_datasets": 133,
+      "status": "PASS"
+    },
+    "neutrophil": {
+      "n_cells": 5000,
+      "n_datasets": 17,
+      "status": "PASS"
+    },
+    "pancreatic acinar cell": {
+      "n_cells": 5000,
+      "n_datasets": 30,
+      "status": "PASS"
+    },
+    "pancreatic ductal cell": {
+      "n_cells": 5000,
+      "n_datasets": 11,
+      "status": "PASS"
+    },
+    "smooth muscle cell": {
+      "n_cells": 5000,
+      "n_datasets": 33,
+      "status": "PASS"
+    },
+    "stromal cell": {
+      "n_cells": 5000,
+      "n_datasets": 51,
+      "status": "PASS"
+    }
+  },
+  "census_version": "stable",
+  "tabula_sapiens_excluded": 35,
+  "max_cells_per_type": 5000,
+  "random_seed": 42
+}

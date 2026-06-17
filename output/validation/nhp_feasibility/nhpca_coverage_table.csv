@@ -1,0 +1,36 @@
+our_type,nhpca_labels,n_labels,cell_count,median_genes,status,n_scrna,n_snrna
+B cell,BC; Mature BC; Pre BC; Cycling BC,4,23718,971.0,PASS,16153.0,7565.0
+"CD4-positive, alpha-beta T cell",CD4+ TC,1,13447,760.0,PASS,11648.0,1799.0
+"CD8-positive, alpha-beta T cell",CD8+ TC,1,5227,858.0,PASS,5227.0,0.0
+endothelial cell,Endo; Capillary endo; Arterial endo; Venous endo; Lymphatic endo; Peribronchial endo,6,43134,1190.0,PASS,5177.0,37957.0
+hepatocyte,Central hep; Portal hep; Midzonal hep; Hep,4,72614,1367.0,PASS,0.0,72614.0
+macrophage,Macro; Kupffer,2,14227,1227.0,PASS,1564.0,12663.0
+T cell,TC; Cycling TC; Treg,3,4271,1242.0,PASS,2062.0,2209.0
+adventitial cell,Adventitial,1,3745,1698.0,PASS,0.0,3745.0
+basal cell,Basal; Cycling basal,2,12159,991.0,PASS,0.0,12159.0
+bladder urothelial cell,Urothelial; Umbrella,2,4001,2074.0,PASS,0.0,4001.0
+classical monocyte,NO MAPPING,0,0,,ABSENT,,
+enterocyte of epithelium of large intestine,Enterocyte,1,733,1054.0,PASS,733.0,0.0
+epithelial cell,Epi; Cycling epi; Surface epi; Squamous,4,4991,1204.0,PASS,0.0,4991.0
+fibroblast,FAP,1,679,860.0,PASS,0.0,679.0
+fibroblast of cardiac tissue,NO MAPPING,0,0,,ABSENT,,
+granulocyte,Mast,1,431,860.0,PASS,322.0,109.0
+hematopoietic precursor cell,CMP; CLP; MEP,3,474,1829.5,PASS,474.0,0.0
+hematopoietic stem cell,NO MAPPING,0,0,,ABSENT,,
+intermediate monocyte,NO MAPPING,0,0,,ABSENT,,
+large intestine goblet cell,Goblet cell,1,0,,ABSENT,0.0,0.0
+luminal epithelial cell of mammary gland,NO MAPPING,0,0,,ABSENT,,
+mature NK T cell,NKT,1,6356,1040.0,PASS,1583.0,4773.0
+mesenchymal stem cell,Adipo progenitor; Stromal,2,74528,1136.0,PASS,10389.0,64139.0
+mesenchymal stem cell of adipose tissue,Adipo progenitor,1,22259,1244.0,PASS,0.0,22259.0
+monocyte,Mono,1,4320,1374.5,PASS,1130.0,3190.0
+myeloid dendritic cell,DC; mDC; lDC,3,5397,1193.0,PASS,355.0,5042.0
+myeloid leukocyte,NO MAPPING,0,0,,ABSENT,,
+natural killer cell,NK,1,1176,828.0,PASS,1133.0,43.0
+neutrophil,Neutro,1,282,769.5,PASS,54.0,228.0
+non-classical monocyte,NO MAPPING,0,0,,ABSENT,,
+pancreatic acinar cell,Acinar,1,35748,1766.0,PASS,0.0,35748.0
+pancreatic ductal cell,Ductal,1,2437,2073.0,PASS,0.0,2437.0
+plasma cell,Plasma BC,1,5533,871.0,PASS,5279.0,254.0
+smooth muscle cell,SMC,1,40667,1149.0,PASS,1031.0,39636.0
+stromal cell,Stromal; Myofibro,2,55888,1089.0,PASS,10389.0,45499.0

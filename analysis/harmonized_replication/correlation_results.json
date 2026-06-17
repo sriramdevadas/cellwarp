@@ -1,0 +1,152 @@
+{
+  "canonical_seed": 42,
+  "rho": -0.04195804195804196,
+  "p_value": 0.8969858708195542,
+  "n_types": 12,
+  "cell_types": [
+    {
+      "cell_type": "B cell",
+      "primary_residual": 5.602920508742473,
+      "cellhint_residual": 5.618583694998288,
+      "primary_rank": 8,
+      "cellhint_rank": 10,
+      "rank_diff": -2
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "primary_residual": 6.91871031614341,
+      "cellhint_residual": 8.675562550293666,
+      "primary_rank": 3,
+      "cellhint_rank": 4,
+      "rank_diff": -1
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "primary_residual": 2.697664202922938,
+      "cellhint_residual": 5.50629278483779,
+      "primary_rank": 11,
+      "cellhint_rank": 11,
+      "rank_diff": 0
+    },
+    {
+      "cell_type": "endothelial cell",
+      "primary_residual": 6.887377759822041,
+      "cellhint_residual": 5.915456914418257,
+      "primary_rank": 4,
+      "cellhint_rank": 9,
+      "rank_diff": -5
+    },
+    {
+      "cell_type": "fibroblast",
+      "primary_residual": 3.0780141945158697,
+      "cellhint_residual": 10.039404986569387,
+      "primary_rank": 10,
+      "cellhint_rank": 2,
+      "rank_diff": 8
+    },
+    {
+      "cell_type": "hepatocyte",
+      "primary_residual": 2.6203878699737113,
+      "cellhint_residual": 11.19477311670224,
+      "primary_rank": 12,
+      "cellhint_rank": 1,
+      "rank_diff": 11
+    },
+    {
+      "cell_type": "macrophage",
+      "primary_residual": 14.658810436114532,
+      "cellhint_residual": 8.374780483783026,
+      "primary_rank": 1,
+      "cellhint_rank": 5,
+      "rank_diff": -4
+    },
+    {
+      "cell_type": "monocyte",
+      "primary_residual": 8.496926805747755,
+      "cellhint_residual": 7.147232942441439,
+      "primary_rank": 2,
+      "cellhint_rank": 7,
+      "rank_diff": -5
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "primary_residual": 5.993226337766035,
+      "cellhint_residual": 9.097970201704605,
+      "primary_rank": 5,
+      "cellhint_rank": 3,
+      "rank_diff": 2
+    },
+    {
+      "cell_type": "natural killer cell",
+      "primary_residual": 5.6208916175188,
+      "cellhint_residual": 4.45985358237534,
+      "primary_rank": 7,
+      "cellhint_rank": 12,
+      "rank_diff": -5
+    },
+    {
+      "cell_type": "plasma cell",
+      "primary_residual": 5.821177659998883,
+      "cellhint_residual": 6.1145662786376205,
+      "primary_rank": 6,
+      "cellhint_rank": 8,
+      "rank_diff": -2
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "primary_residual": 5.195371604892567,
+      "cellhint_residual": 7.331973112618713,
+      "primary_rank": 9,
+      "cellhint_rank": 6,
+      "rank_diff": 3
+    }
+  ],
+  "unharmonized_rho": -0.13928571428571426,
+  "rho_improvement": 0.09732767232767231,
+  "per_seed_results": {
+    "42": {
+      "rho": -0.04195804195804196,
+      "p_value": 0.8969858708195542,
+      "n_types": 12
+    },
+    "1": {
+      "rho": -0.04195804195804196,
+      "p_value": 0.8969858708195542,
+      "n_types": 12
+    },
+    "2": {
+      "rho": -0.04195804195804196,
+      "p_value": 0.8969858708195542,
+      "n_types": 12
+    },
+    "3": {
+      "rho": -0.04195804195804196,
+      "p_value": 0.8969858708195542,
+      "n_types": 12
+    },
+    "4": {
+      "rho": -0.04195804195804196,
+      "p_value": 0.8969858708195542,
+      "n_types": 12
+    }
+  },
+  "seed_stability": {
+    "mean_rho": -0.04195804195804196,
+    "std_rho": 0.0,
+    "min_rho": -0.04195804195804196,
+    "max_rho": -0.04195804195804196,
+    "cv": 0.0
+  },
+  "primary_procrustes": {
+    "distance": 23.786233575598313,
+    "p_value": 9.999000099990002e-05,
+    "n_pca": 14,
+    "scaling": 1.0569765178783734
+  },
+  "cellhint_procrustes": {
+    "distance": 26.707439971132906,
+    "p_value": 9.999000099990002e-05,
+    "n_pca": 13,
+    "scaling": 0.9013261064511158
+  }
+}

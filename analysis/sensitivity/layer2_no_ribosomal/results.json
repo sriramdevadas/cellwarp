@@ -1,0 +1,1357 @@
+{
+  "metadata": {
+    "script": "analysis/sensitivity/layer2_no_ribosomal/run.py",
+    "seed": 42,
+    "n_permutations": 10000,
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "pca_variance_threshold": 0.95,
+    "ribosomal_regex": "^(RPL|RPS|Rpl|Rps)\\d",
+    "runtime_sec": 14.223446130752563
+  },
+  "ribosomal_filter": {
+    "n_excluded_genes": 68,
+    "n_genes_in_full_space": 16959,
+    "n_kept_genes": 16891
+  },
+  "joint_pca_reduced": {
+    "n_components": 33,
+    "cumulative_variance": 0.9500339371422679,
+    "primary_comparison": {
+      "n_components": 33,
+      "cumulative_variance": 0.952
+    }
+  },
+  "rotation": {
+    "shape": [
+      33,
+      33
+    ],
+    "determinant": 1.0000000000000036
+  },
+  "krzanowski_pre_rotation": {
+    "1": {
+      "observed_S": 0.0635928535648004,
+      "null_mean": 0.048955382016974684,
+      "null_std": 0.009456548226022574,
+      "p_value": 0.06509349065093491
+    },
+    "3": {
+      "observed_S": 0.35649434800161756,
+      "null_mean": 0.2650437407039034,
+      "null_std": 0.007604232694606264,
+      "p_value": 9.999000099990002e-05
+    },
+    "5": {
+      "observed_S": 0.44549348884507634,
+      "null_mean": 0.32872079738544296,
+      "null_std": 0.009214543598131198,
+      "p_value": 9.999000099990002e-05
+    }
+  },
+  "krzanowski_post_rotation": {
+    "1": {
+      "observed_S": 0.04868831358759085,
+      "null_mean": 0.039320033531000956,
+      "null_std": 0.006827956095242979,
+      "p_value": 0.08859114088591141
+    },
+    "3": {
+      "observed_S": 0.16331311812484708,
+      "null_mean": 0.136150413204122,
+      "null_std": 0.003949253043450524,
+      "p_value": 9.999000099990002e-05
+    },
+    "5": {
+      "observed_S": 0.23445442535875496,
+      "null_mean": 0.18003584058061814,
+      "null_std": 0.005246013767884667,
+      "p_value": 9.999000099990002e-05
+    }
+  },
+  "primary_comparison": {
+    "pre_rotation": {
+      "k=5": {
+        "S": 0.483,
+        "null_mean": 0.375,
+        "p": "<1e-4"
+      }
+    },
+    "post_rotation": {
+      "k=5": {
+        "S": 0.23,
+        "null_mean": 0.18,
+        "p": "<1e-4"
+      }
+    }
+  },
+  "cpc1_drivers": [
+    {
+      "cell_type": "B cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.0929993528671347,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.0929993528671347
+        ],
+        [
+          "ENSG00000154620",
+          "TMSB4Y",
+          0.0681583650111419
+        ],
+        [
+          "ENSG00000211592",
+          "IGKC",
+          -0.06618950692358941
+        ],
+        [
+          "ENSG00000160584",
+          "SIK3",
+          -0.06551709802127953
+        ],
+        [
+          "ENSG00000198899",
+          "MT-ATP6",
+          -0.06398235933146695
+        ]
+      ]
+    },
+    {
+      "cell_type": "CD4-positive, alpha-beta T cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.08137514047636538,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.08137514047636538
+        ],
+        [
+          "ENSG00000154620",
+          "TMSB4Y",
+          0.07307279579705532
+        ],
+        [
+          "ENSG00000151883",
+          "PARP8",
+          -0.07057421628137651
+        ],
+        [
+          "ENSG00000164674",
+          "SYTL3",
+          -0.06188052872902771
+        ],
+        [
+          "ENSG00000160584",
+          "SIK3",
+          -0.061794384237078434
+        ]
+      ]
+    },
+    {
+      "cell_type": "CD8-positive, alpha-beta T cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000149806",
+      "new_top1_symbol": "FAU",
+      "new_top1_loading": 0.08968890724418781,
+      "new_top5": [
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.08968890724418781
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.08860300862604893
+        ],
+        [
+          "ENSG00000204628",
+          "RACK1",
+          -0.07621882403997328
+        ],
+        [
+          "ENSG00000154620",
+          "TMSB4Y",
+          0.06460204689475713
+        ],
+        [
+          "ENSG00000132432",
+          "SEC61G",
+          0.05976688235867448
+        ]
+      ]
+    },
+    {
+      "cell_type": "T cell",
+      "old_top1_ensembl": "ENSG00000142937",
+      "old_top1_symbol": "RPS8",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.08492595199834346,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.08492595199834346
+        ],
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.07233960922649996
+        ],
+        [
+          "ENSG00000184009",
+          "ACTG1",
+          0.06538942892178876
+        ],
+        [
+          "ENSG00000075624",
+          "ACTB",
+          0.06476452817391615
+        ],
+        [
+          "ENSG00000198899",
+          "MT-ATP6",
+          -0.06433822139016147
+        ]
+      ]
+    },
+    {
+      "cell_type": "adventitial cell",
+      "old_top1_ensembl": "ENSG00000198918",
+      "old_top1_symbol": "RPL39",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.11273928638573724,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.11273928638573724
+        ],
+        [
+          "ENSG00000197766",
+          "CFD",
+          -0.09777465950973774
+        ],
+        [
+          "ENSG00000198899",
+          "MT-ATP6",
+          -0.07263551700557486
+        ],
+        [
+          "ENSG00000069667",
+          "RORA",
+          -0.06909751657390933
+        ],
+        [
+          "ENSG00000181722",
+          "ZBTB20",
+          -0.06529790725987573
+        ]
+      ]
+    },
+    {
+      "cell_type": "basal cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000149806",
+      "new_top1_symbol": "FAU",
+      "new_top1_loading": 0.10244139771641417,
+      "new_top5": [
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.10244139771641417
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.10142495288434861
+        ],
+        [
+          "ENSG00000204628",
+          "RACK1",
+          -0.08696125371274734
+        ],
+        [
+          "ENSG00000154620",
+          "TMSB4Y",
+          0.07633984469319138
+        ],
+        [
+          "ENSG00000067225",
+          "PKM",
+          -0.07166174342287271
+        ]
+      ]
+    },
+    {
+      "cell_type": "bladder urothelial cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000204628",
+      "new_top1_symbol": "RACK1",
+      "new_top1_loading": 0.10951386028811144,
+      "new_top5": [
+        [
+          "ENSG00000204628",
+          "RACK1",
+          0.10951386028811144
+        ],
+        [
+          "ENSG00000067225",
+          "PKM",
+          0.0786249829224455
+        ],
+        [
+          "ENSG00000158710",
+          "TAGLN2",
+          0.06459323544077242
+        ],
+        [
+          "ENSG00000120129",
+          "DUSP1",
+          0.06386588213306012
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          -0.06365800839128039
+        ]
+      ]
+    },
+    {
+      "cell_type": "classical monocyte",
+      "old_top1_ensembl": "ENSG00000196154",
+      "old_top1_symbol": "S100A4",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000196154",
+      "new_top1_symbol": "S100A4",
+      "new_top1_loading": -0.07824683804501012,
+      "new_top5": [
+        [
+          "ENSG00000196154",
+          "S100A4",
+          -0.07824683804501012
+        ],
+        [
+          "ENSG00000090382",
+          "LYZ",
+          -0.07414364675471921
+        ],
+        [
+          "ENSG00000188641",
+          "DPYD",
+          -0.06740249642985216
+        ],
+        [
+          "ENSG00000038427",
+          "VCAN",
+          -0.06536093979110323
+        ],
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.062480008916455096
+        ]
+      ]
+    },
+    {
+      "cell_type": "endothelial cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000187514",
+      "new_top1_symbol": "PTMA",
+      "new_top1_loading": 0.09693658173873425,
+      "new_top5": [
+        [
+          "ENSG00000187514",
+          "PTMA",
+          0.09693658173873425
+        ],
+        [
+          "ENSG00000173812",
+          "EIF1",
+          0.09524652908661357
+        ],
+        [
+          "ENSG00000187193",
+          "MT1X",
+          0.08985990518239068
+        ],
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.08694639708708529
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.08307009900314717
+        ]
+      ]
+    },
+    {
+      "cell_type": "enterocyte of epithelium of large intestine",
+      "old_top1_ensembl": "ENSG00000233927",
+      "old_top1_symbol": "RPS28",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000170421",
+      "new_top1_symbol": "KRT8",
+      "new_top1_loading": -0.09214019367777426,
+      "new_top5": [
+        [
+          "ENSG00000170421",
+          "KRT8",
+          -0.09214019367777426
+        ],
+        [
+          "ENSG00000171345",
+          "KRT19",
+          -0.07889009171987
+        ],
+        [
+          "ENSG00000119888",
+          "EPCAM",
+          -0.07174734049129723
+        ],
+        [
+          "ENSG00000171747",
+          "LGALS4",
+          -0.06968621022545829
+        ],
+        [
+          "ENSG00000197956",
+          "S100A6",
+          -0.0656367863613291
+        ]
+      ]
+    },
+    {
+      "cell_type": "epithelial cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.08553012825260567,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.08553012825260567
+        ],
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.08077637956386455
+        ],
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.08030976192698774
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.07519454499768892
+        ],
+        [
+          "ENSG00000173812",
+          "EIF1",
+          0.07486808183308713
+        ]
+      ]
+    },
+    {
+      "cell_type": "fibroblast",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000011465",
+      "new_top1_symbol": "DCN",
+      "new_top1_loading": -0.14190982622316933,
+      "new_top5": [
+        [
+          "ENSG00000011465",
+          "DCN",
+          -0.14190982622316933
+        ],
+        [
+          "ENSG00000148180",
+          "GSN",
+          -0.13868629932461066
+        ],
+        [
+          "ENSG00000132386",
+          "SERPINF1",
+          -0.09142369306356146
+        ],
+        [
+          "ENSG00000149131",
+          "SERPING1",
+          -0.09066741098031482
+        ],
+        [
+          "ENSG00000211445",
+          "GPX3",
+          -0.08543124715211492
+        ]
+      ]
+    },
+    {
+      "cell_type": "fibroblast of cardiac tissue",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000149806",
+      "new_top1_symbol": "FAU",
+      "new_top1_loading": 0.13116242119942592,
+      "new_top5": [
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.13116242119942592
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.12896423455124423
+        ],
+        [
+          "ENSG00000173812",
+          "EIF1",
+          0.10244039704283286
+        ],
+        [
+          "ENSG00000187514",
+          "PTMA",
+          0.09283101738828249
+        ],
+        [
+          "ENSG00000196531",
+          "NACA",
+          0.08736174812712626
+        ]
+      ]
+    },
+    {
+      "cell_type": "granulocyte",
+      "old_top1_ensembl": "ENSG00000142937",
+      "old_top1_symbol": "RPS8",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000115590",
+      "new_top1_symbol": "IL1R2",
+      "new_top1_loading": -0.0858929258872265,
+      "new_top5": [
+        [
+          "ENSG00000115590",
+          "IL1R2",
+          -0.0858929258872265
+        ],
+        [
+          "ENSG00000105835",
+          "NAMPT",
+          -0.0850458258532759
+        ],
+        [
+          "ENSG00000075884",
+          "ARHGAP15",
+          -0.07173302818564935
+        ],
+        [
+          "ENSG00000155307",
+          "SAMSN1",
+          -0.0698990440421572
+        ],
+        [
+          "ENSG00000122862",
+          "SRGN",
+          -0.06842555597862614
+        ]
+      ]
+    },
+    {
+      "cell_type": "hematopoietic precursor cell",
+      "old_top1_ensembl": "ENSG00000147403",
+      "old_top1_symbol": "RPL10",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000233276",
+      "new_top1_symbol": "GPX1",
+      "new_top1_loading": 0.0786333896292421,
+      "new_top5": [
+        [
+          "ENSG00000233276",
+          "GPX1",
+          0.0786333896292421
+        ],
+        [
+          "ENSG00000187514",
+          "PTMA",
+          0.06914692593760209
+        ],
+        [
+          "ENSG00000196531",
+          "NACA",
+          0.060618194101800346
+        ],
+        [
+          "ENSG00000005022",
+          "SLC25A5",
+          0.057788422379928185
+        ],
+        [
+          "ENSG00000096384",
+          "HSP90AB1",
+          0.057594401464331466
+        ]
+      ]
+    },
+    {
+      "cell_type": "hematopoietic stem cell",
+      "old_top1_ensembl": "ENSG00000113648",
+      "old_top1_symbol": "MACROH2A1",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000113648",
+      "new_top1_symbol": "MACROH2A1",
+      "new_top1_loading": -0.07957735135564797,
+      "new_top5": [
+        [
+          "ENSG00000113648",
+          "MACROH2A1",
+          -0.07957735135564797
+        ],
+        [
+          "ENSG00000204628",
+          "RACK1",
+          -0.07386056758936005
+        ],
+        [
+          "ENSG00000117632",
+          "STMN1",
+          -0.0686723049405932
+        ],
+        [
+          "ENSG00000153551",
+          "CMTM7",
+          -0.06440349181861052
+        ],
+        [
+          "ENSG00000196415",
+          "PRTN3",
+          -0.06179939114515261
+        ]
+      ]
+    },
+    {
+      "cell_type": "hepatocyte",
+      "old_top1_ensembl": "ENSG00000167996",
+      "old_top1_symbol": "FTH1",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000167996",
+      "new_top1_symbol": "FTH1",
+      "new_top1_loading": 0.07708567405612886,
+      "new_top5": [
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.07708567405612886
+        ],
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.07151282225743624
+        ],
+        [
+          "ENSG00000171723",
+          "GPHN",
+          -0.06897141923726105
+        ],
+        [
+          "ENSG00000069667",
+          "RORA",
+          -0.06834285949937519
+        ],
+        [
+          "ENSG00000021826",
+          "CPS1",
+          -0.06781337244747407
+        ]
+      ]
+    },
+    {
+      "cell_type": "intermediate monocyte",
+      "old_top1_ensembl": "ENSG00000188641",
+      "old_top1_symbol": "DPYD",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000090382",
+      "new_top1_symbol": "LYZ",
+      "new_top1_loading": -0.07109049935939793,
+      "new_top5": [
+        [
+          "ENSG00000090382",
+          "LYZ",
+          -0.07109049935939793
+        ],
+        [
+          "ENSG00000188641",
+          "DPYD",
+          -0.0702338012069259
+        ],
+        [
+          "ENSG00000196154",
+          "S100A4",
+          -0.06989154397537294
+        ],
+        [
+          "ENSG00000090376",
+          "IRAK3",
+          -0.0636640681906194
+        ],
+        [
+          "ENSG00000038427",
+          "VCAN",
+          -0.06316835292829139
+        ]
+      ]
+    },
+    {
+      "cell_type": "large intestine goblet cell",
+      "old_top1_ensembl": "ENSG00000106541",
+      "old_top1_symbol": "AGR2",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000106541",
+      "new_top1_symbol": "AGR2",
+      "new_top1_loading": -0.08693194795056036,
+      "new_top5": [
+        [
+          "ENSG00000106541",
+          "AGR2",
+          -0.08693194795056036
+        ],
+        [
+          "ENSG00000204628",
+          "RACK1",
+          -0.07949161177671515
+        ],
+        [
+          "ENSG00000122711",
+          "SPINK4",
+          -0.06710311619890441
+        ],
+        [
+          "ENSG00000167642",
+          "SPINT2",
+          -0.06334953410599074
+        ],
+        [
+          "ENSG00000132329",
+          "RAMP1",
+          -0.06304613137250388
+        ]
+      ]
+    },
+    {
+      "cell_type": "luminal epithelial cell of mammary gland",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000149806",
+      "new_top1_symbol": "FAU",
+      "new_top1_loading": 0.11334192432036876,
+      "new_top5": [
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.11334192432036876
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.11285862917243059
+        ],
+        [
+          "ENSG00000204628",
+          "RACK1",
+          -0.10537606487484577
+        ],
+        [
+          "ENSG00000067225",
+          "PKM",
+          -0.08366691009554666
+        ],
+        [
+          "ENSG00000154620",
+          "TMSB4Y",
+          0.07704614387900435
+        ]
+      ]
+    },
+    {
+      "cell_type": "macrophage",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000143546",
+      "new_top1_symbol": "S100A8",
+      "new_top1_loading": 0.07847888767020689,
+      "new_top5": [
+        [
+          "ENSG00000143546",
+          "S100A8",
+          0.07847888767020689
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.073354708513448
+        ],
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.07156029503595522
+        ],
+        [
+          "ENSG00000196531",
+          "NACA",
+          0.06608189853401401
+        ],
+        [
+          "ENSG00000145287",
+          "PLAC8",
+          0.06201924152321719
+        ]
+      ]
+    },
+    {
+      "cell_type": "mature NK T cell",
+      "old_top1_ensembl": "ENSG00000151883",
+      "old_top1_symbol": "PARP8",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000151883",
+      "new_top1_symbol": "PARP8",
+      "new_top1_loading": -0.07112044587759746,
+      "new_top5": [
+        [
+          "ENSG00000151883",
+          "PARP8",
+          -0.07112044587759746
+        ],
+        [
+          "ENSG00000105374",
+          "NKG7",
+          -0.0665122840927006
+        ],
+        [
+          "ENSG00000164674",
+          "SYTL3",
+          -0.06558308248602993
+        ],
+        [
+          "ENSG00000010810",
+          "FYN",
+          -0.06337725771555701
+        ],
+        [
+          "ENSG00000134539",
+          "KLRD1",
+          -0.060736157423356994
+        ]
+      ]
+    },
+    {
+      "cell_type": "mesenchymal stem cell",
+      "old_top1_ensembl": "ENSG00000198918",
+      "old_top1_symbol": "RPL39",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.08305993223551145,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.08305993223551145
+        ],
+        [
+          "ENSG00000197766",
+          "CFD",
+          -0.0768238812458657
+        ],
+        [
+          "ENSG00000291237",
+          "SOD2",
+          -0.06105767123657506
+        ],
+        [
+          "ENSG00000114423",
+          "CBLB",
+          -0.0608868531024868
+        ],
+        [
+          "ENSG00000075420",
+          "FNDC3B",
+          -0.060097782451702955
+        ]
+      ]
+    },
+    {
+      "cell_type": "mesenchymal stem cell of adipose tissue",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.08893708525142839,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.08893708525142839
+        ],
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.08467622114048415
+        ],
+        [
+          "ENSG00000170345",
+          "FOS",
+          0.07616813406749043
+        ],
+        [
+          "ENSG00000173812",
+          "EIF1",
+          0.0701750349104056
+        ],
+        [
+          "ENSG00000128016",
+          "ZFP36",
+          0.0660685921508321
+        ]
+      ]
+    },
+    {
+      "cell_type": "monocyte",
+      "old_top1_ensembl": "ENSG00000143546",
+      "old_top1_symbol": "S100A8",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000143546",
+      "new_top1_symbol": "S100A8",
+      "new_top1_loading": 0.1602333172510015,
+      "new_top5": [
+        [
+          "ENSG00000143546",
+          "S100A8",
+          0.1602333172510015
+        ],
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.12973581960739872
+        ],
+        [
+          "ENSG00000221983",
+          "UBA52",
+          0.12614598861532403
+        ],
+        [
+          "ENSG00000197956",
+          "S100A6",
+          0.11103801777100888
+        ],
+        [
+          "ENSG00000145287",
+          "PLAC8",
+          0.09160479210874437
+        ]
+      ]
+    },
+    {
+      "cell_type": "myeloid dendritic cell",
+      "old_top1_ensembl": "ENSG00000198918",
+      "old_top1_symbol": "RPL39",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000196154",
+      "new_top1_symbol": "S100A4",
+      "new_top1_loading": -0.08506597402609542,
+      "new_top5": [
+        [
+          "ENSG00000196154",
+          "S100A4",
+          -0.08506597402609542
+        ],
+        [
+          "ENSG00000090382",
+          "LYZ",
+          -0.07546836949868696
+        ],
+        [
+          "ENSG00000034510",
+          "TMSB10",
+          -0.06681774957618666
+        ],
+        [
+          "ENSG00000163131",
+          "CTSS",
+          -0.06599275961336604
+        ],
+        [
+          "ENSG00000169554",
+          "ZEB2",
+          -0.0656573983247436
+        ]
+      ]
+    },
+    {
+      "cell_type": "myeloid leukocyte",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000143546",
+      "new_top1_symbol": "S100A8",
+      "new_top1_loading": 0.09537032061327493,
+      "new_top5": [
+        [
+          "ENSG00000143546",
+          "S100A8",
+          0.09537032061327493
+        ],
+        [
+          "ENSG00000197956",
+          "S100A6",
+          0.08683527681810313
+        ],
+        [
+          "ENSG00000149806",
+          "FAU",
+          0.0859204732088483
+        ],
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.08419489311907519
+        ],
+        [
+          "ENSG00000163191",
+          "S100A11",
+          0.07777237039533635
+        ]
+      ]
+    },
+    {
+      "cell_type": "natural killer cell",
+      "old_top1_ensembl": "ENSG00000182899",
+      "old_top1_symbol": "RPL35A",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.07062026587932024,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.07062026587932024
+        ],
+        [
+          "ENSG00000151883",
+          "PARP8",
+          -0.06921018743400315
+        ],
+        [
+          "ENSG00000105374",
+          "NKG7",
+          -0.06608735551591093
+        ],
+        [
+          "ENSG00000164674",
+          "SYTL3",
+          -0.06475914735181437
+        ],
+        [
+          "ENSG00000010810",
+          "FYN",
+          -0.06236805610482605
+        ]
+      ]
+    },
+    {
+      "cell_type": "neutrophil",
+      "old_top1_ensembl": "ENSG00000105835",
+      "old_top1_symbol": "NAMPT",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000105835",
+      "new_top1_symbol": "NAMPT",
+      "new_top1_loading": 0.10693920216441483,
+      "new_top5": [
+        [
+          "ENSG00000105835",
+          "NAMPT",
+          0.10693920216441483
+        ],
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.08355791327393698
+        ],
+        [
+          "ENSG00000163162",
+          "RNF149",
+          0.0792647378654186
+        ],
+        [
+          "ENSG00000143546",
+          "S100A8",
+          0.07484897624911996
+        ],
+        [
+          "ENSG00000171223",
+          "JUNB",
+          0.0742246602243501
+        ]
+      ]
+    },
+    {
+      "cell_type": "non-classical monocyte",
+      "old_top1_ensembl": "ENSG00000198918",
+      "old_top1_symbol": "RPL39",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000196154",
+      "new_top1_symbol": "S100A4",
+      "new_top1_loading": -0.08224701714647069,
+      "new_top5": [
+        [
+          "ENSG00000196154",
+          "S100A4",
+          -0.08224701714647069
+        ],
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.07688750476573464
+        ],
+        [
+          "ENSG00000038427",
+          "VCAN",
+          -0.06989737083339073
+        ],
+        [
+          "ENSG00000188641",
+          "DPYD",
+          -0.0687848529221502
+        ],
+        [
+          "ENSG00000090382",
+          "LYZ",
+          -0.0629541657039416
+        ]
+      ]
+    },
+    {
+      "cell_type": "pancreatic acinar cell",
+      "old_top1_ensembl": "ENSG00000147403",
+      "old_top1_symbol": "RPL10",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000198840",
+      "new_top1_symbol": "MT-ND3",
+      "new_top1_loading": -0.0994646694656908,
+      "new_top5": [
+        [
+          "ENSG00000198840",
+          "MT-ND3",
+          -0.0994646694656908
+        ],
+        [
+          "ENSG00000141086",
+          "CTRL",
+          0.08105047487224695
+        ],
+        [
+          "ENSG00000198899",
+          "MT-ATP6",
+          -0.08091446617261533
+        ],
+        [
+          "ENSG00000198712",
+          "MT-CO2",
+          -0.08062070850684643
+        ],
+        [
+          "ENSG00000139610",
+          "CELA1",
+          0.07941097033820495
+        ]
+      ]
+    },
+    {
+      "cell_type": "pancreatic ductal cell",
+      "old_top1_ensembl": "ENSG00000147403",
+      "old_top1_symbol": "RPL10",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000075624",
+      "new_top1_symbol": "ACTB",
+      "new_top1_loading": 0.07597395169651397,
+      "new_top5": [
+        [
+          "ENSG00000075624",
+          "ACTB",
+          0.07597395169651397
+        ],
+        [
+          "ENSG00000167996",
+          "FTH1",
+          0.07406650177792076
+        ],
+        [
+          "ENSG00000184009",
+          "ACTG1",
+          0.0696005512308628
+        ],
+        [
+          "ENSG00000175535",
+          "PNLIP",
+          -0.06463446337727417
+        ],
+        [
+          "ENSG00000137392",
+          "CLPS",
+          -0.06351103046362519
+        ]
+      ]
+    },
+    {
+      "cell_type": "plasma cell",
+      "old_top1_ensembl": "ENSG00000180879",
+      "old_top1_symbol": "SSR4",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000180879",
+      "new_top1_symbol": "SSR4",
+      "new_top1_loading": -0.08434652502526466,
+      "new_top5": [
+        [
+          "ENSG00000180879",
+          "SSR4",
+          -0.08434652502526466
+        ],
+        [
+          "ENSG00000166598",
+          "HSP90B1",
+          -0.08203338626319062
+        ],
+        [
+          "ENSG00000211592",
+          "IGKC",
+          -0.07121780129706728
+        ],
+        [
+          "ENSG00000100219",
+          "XBP1",
+          -0.06952531892298017
+        ],
+        [
+          "ENSG00000118363",
+          "SPCS2",
+          -0.06745018528522118
+        ]
+      ]
+    },
+    {
+      "cell_type": "smooth muscle cell",
+      "old_top1_ensembl": "ENSG00000147403",
+      "old_top1_symbol": "RPL10",
+      "old_top1_was_ribosomal": true,
+      "new_top1_ensembl": "ENSG00000125740",
+      "new_top1_symbol": "FOSB",
+      "new_top1_loading": -0.08585690086886077,
+      "new_top5": [
+        [
+          "ENSG00000125740",
+          "FOSB",
+          -0.08585690086886077
+        ],
+        [
+          "ENSG00000149591",
+          "TAGLN",
+          0.08303967002019273
+        ],
+        [
+          "ENSG00000152583",
+          "SPARCL1",
+          0.0791423755743999
+        ],
+        [
+          "ENSG00000111341",
+          "MGP",
+          0.0788167467120498
+        ],
+        [
+          "ENSG00000163453",
+          "IGFBP7",
+          0.07514872395398267
+        ]
+      ]
+    },
+    {
+      "cell_type": "stromal cell",
+      "old_top1_ensembl": "ENSG00000197766",
+      "old_top1_symbol": "CFD",
+      "old_top1_was_ribosomal": false,
+      "new_top1_ensembl": "ENSG00000197766",
+      "new_top1_symbol": "CFD",
+      "new_top1_loading": -0.06595879152407232,
+      "new_top5": [
+        [
+          "ENSG00000197766",
+          "CFD",
+          -0.06595879152407232
+        ],
+        [
+          "ENSG00000211445",
+          "GPX3",
+          -0.05858400614828359
+        ],
+        [
+          "ENSG00000011465",
+          "DCN",
+          -0.05760291522254101
+        ],
+        [
+          "ENSG00000110651",
+          "CD81",
+          -0.05666285701895625
+        ],
+        [
+          "ENSG00000148180",
+          "GSN",
+          -0.056430883472653265
+        ]
+      ]
+    }
+  ],
+  "cpc1_summary": {
+    "n_originally_ribosomal_top1": 25,
+    "n_new_top1_still_ribosomal": 0
+  }
+}

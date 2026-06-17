@@ -1,0 +1,20 @@
+{
+  "test": "lever_arm_artifact",
+  "n_types": 35,
+  "n_pca_dims": 33,
+  "distance_frame": "human_centered_reference",
+  "primary": {
+    "rho": -0.18571428571428572,
+    "p_value": 0.28546413285728495
+  },
+  "sensitivity_mouse_aligned": {
+    "rho": -0.11680672268907563,
+    "p_value": 0.5039839365540726
+  },
+  "sensitivity_mean_distance": {
+    "rho": -0.041736694677871146,
+    "p_value": 0.8118393458822922
+  },
+  "verdict": "PASS",
+  "interpretation": "No evidence for lever-arm artifact. Distance from the centroid-of-centroids does not predict Procrustes residual magnitude (Spearman \u03c1=-0.186, p=0.285, n=35). No text change needed."
+}

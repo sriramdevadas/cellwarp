@@ -1,0 +1,4 @@
+scheme,layer1_obs_null,layer1_p,ranking_rho_vs_primary,cpc1_ribosomal_dominated_of_35,cpc1_mean_ribo_in_top20
+Primary (no per-gene scaling),0.522,<1e-5,1.0,25,14.09
+A: per-gene z across 70 centroids,0.606,<1e-5,0.538,0,0.0
+B: per-gene z across cells per species (pp.scale),0.487,<1e-5,0.763,1,3.03

@@ -1,0 +1,189 @@
+==============================================================================
+STEP 1 — Load 35 Cell Types from Main Analysis
+==============================================================================
+
+  Cell types: 35
+     1. B cell
+     2. CD4-positive, alpha-beta T cell
+     3. CD8-positive, alpha-beta T cell
+     4. T cell
+     5. adventitial cell
+     6. basal cell
+     7. bladder urothelial cell
+     8. classical monocyte
+     9. endothelial cell
+    10. enterocyte of epithelium of large intestine
+    11. epithelial cell
+    12. fibroblast
+    13. fibroblast of cardiac tissue
+    14. granulocyte
+    15. hematopoietic precursor cell
+    16. hematopoietic stem cell
+    17. hepatocyte
+    18. intermediate monocyte
+    19. large intestine goblet cell
+    20. luminal epithelial cell of mammary gland
+    21. macrophage
+    22. mature NK T cell
+    23. mesenchymal stem cell
+    24. mesenchymal stem cell of adipose tissue
+    25. monocyte
+    26. myeloid dendritic cell
+    27. myeloid leukocyte
+    28. natural killer cell
+    29. neutrophil
+    30. non-classical monocyte
+    31. pancreatic acinar cell
+    32. pancreatic ductal cell
+    33. plasma cell
+    34. smooth muscle cell
+    35. stromal cell
+
+==============================================================================
+STEP 2 — Query CELLxGENE Census (census_version='stable')
+==============================================================================
+
+  Loading Census datasets table...
+  Census contains 1845 datasets from 313 collections
+
+  --- Human exclusions ---
+  Total human-excluded dataset IDs: 35
+
+  --- Mouse exclusions ---
+  Total mouse-excluded dataset IDs: 42
+
+------------------------------------------------------------------------------
+  HUMAN — adult, normal, is_primary_data, non-Tabula Sapiens
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  MOUSE — normal, is_primary_data, non-Tabula Muris (Senis)
+  Note: adult filter applied if development_stage is populated
+------------------------------------------------------------------------------
+
+  Census connection closed.
+
+==============================================================================
+STEP 3 — Inventory Results
+==============================================================================
+
+  Cell Type                                             Human    Mouse  Status    
+  ----------------------------------------------------------------------------------
+  B cell                                               14,604        0  FAIL       <<
+  CD4-positive, alpha-beta T cell                      26,534        0  FAIL       <<
+  CD8-positive, alpha-beta T cell                      27,620        0  FAIL       <<
+  T cell                                               35,227       23  FAIL       <<
+  adventitial cell                                          0        0  FAIL       <<
+  basal cell                                          124,010        0  FAIL       <<
+  bladder urothelial cell                                   0        0  FAIL       <<
+  classical monocyte                                   42,457        0  FAIL       <<
+  endothelial cell                                      7,980   12,080  PASS      
+  enterocyte of epithelium of large intestine               0        0  FAIL       <<
+  epithelial cell                                      16,617       25  FAIL       <<
+  fibroblast                                          246,362    1,025  PASS      
+  fibroblast of cardiac tissue                              0        0  FAIL       <<
+  granulocyte                                               1        0  FAIL       <<
+  hematopoietic precursor cell                             61        0  FAIL       <<
+  hematopoietic stem cell                               7,951        0  FAIL       <<
+  hepatocyte                                            2,780        0  FAIL       <<
+  intermediate monocyte                                     0        0  FAIL       <<
+  large intestine goblet cell                               0        0  FAIL       <<
+  luminal epithelial cell of mammary gland            143,472        0  FAIL       <<
+  macrophage                                           21,405   11,009  PASS      
+  mature NK T cell                                      2,967        0  FAIL       <<
+  mesenchymal stem cell                                     0    1,738  FAIL       <<
+  mesenchymal stem cell of adipose tissue                 737        0  FAIL       <<
+  monocyte                                             10,925      244  MARGINAL   *
+  myeloid dendritic cell                                  917        0  FAIL       <<
+  myeloid leukocyte                                        30        0  FAIL       <<
+  natural killer cell                                  40,752        0  FAIL       <<
+  neutrophil                                              674       88  FAIL       <<
+  non-classical monocyte                                8,336        0  FAIL       <<
+  pancreatic acinar cell                                    0        0  FAIL       <<
+  pancreatic ductal cell                                    0        0  FAIL       <<
+  plasma cell                                           7,296    1,423  PASS      
+  smooth muscle cell                                    3,561      343  MARGINAL   *
+  stromal cell                                              0        0  FAIL       <<
+  ----------------------------------------------------------------------------------
+  TOTAL                                               793,276   27,998
+
+==============================================================================
+STEP 4 — Feasibility Summary
+==============================================================================
+
+  PASS (≥500 both species):     4/35
+  MARGINAL (200-499 either):       2/35
+  FAIL (<200 either):            29/35
+
+  --- Types that FAIL ---
+    B cell                                             mouse=0
+    CD4-positive, alpha-beta T cell                    mouse=0
+    CD8-positive, alpha-beta T cell                    mouse=0
+    T cell                                             mouse=23
+    adventitial cell                                   human=0, mouse=0
+    basal cell                                         mouse=0
+    bladder urothelial cell                            human=0, mouse=0
+    classical monocyte                                 mouse=0
+    enterocyte of epithelium of large intestine        human=0, mouse=0
+    epithelial cell                                    mouse=25
+    fibroblast of cardiac tissue                       human=0, mouse=0
+    granulocyte                                        human=1, mouse=0
+    hematopoietic precursor cell                       human=61, mouse=0
+    hematopoietic stem cell                            mouse=0
+    hepatocyte                                         mouse=0
+    intermediate monocyte                              human=0, mouse=0
+    large intestine goblet cell                        human=0, mouse=0
+    luminal epithelial cell of mammary gland           mouse=0
+    mature NK T cell                                   mouse=0
+    mesenchymal stem cell                              human=0
+    mesenchymal stem cell of adipose tissue            mouse=0
+    myeloid dendritic cell                             mouse=0
+    myeloid leukocyte                                  human=30, mouse=0
+    natural killer cell                                mouse=0
+    neutrophil                                         mouse=88
+    non-classical monocyte                             mouse=0
+    pancreatic acinar cell                             human=0, mouse=0
+    pancreatic ductal cell                             human=0, mouse=0
+    stromal cell                                       human=0, mouse=0
+
+  --- Types that are MARGINAL ---
+    monocyte                                           mouse=244
+    smooth muscle cell                                 mouse=343
+
+  Gap breakdown:
+    Human gap only:  1 types
+    Mouse gap only:  18 types
+    Both species:    12 types
+
+  Maximum feasible n for independent replication:
+    If requiring ≥500 both species: 4 cell types
+    If relaxing to ≥200 both species: 6 cell types
+
+==============================================================================
+STEP 5 — Top Contributing Collections (non-Tabula)
+==============================================================================
+
+  --- HUMAN: Top 5 collections by cell count ---
+      519,037 cells | 12 types |  2 datasets | A spatially resolved single cell genomic atlas of the adult human breast
+       88,799 cells |  6 types |  1 datasets | Type I interferon autoantibodies are associated with systemic immune alterations in patients with COVID-19
+       37,707 cells | 10 types |  1 datasets | Spatial proteogenomics reveals distinct and evolutionarily conserved hepatic macrophage niches
+       16,655 cells |  2 types |  1 datasets | Mapping the temporal and spatial dynamics of the human endometrium in vivo and in vitro
+       16,456 cells |  3 types |  1 datasets | A Web Portal and Workbench for Biological Dissection of Single Cell COVID-19 Host Responses
+      114,622 cells | ... 22 more collections
+
+    Concentration: top-1 = 65.4%, top-3 = 81.4% (27 total collections)
+
+  --- MOUSE: Top 5 collections by cell count ---
+       11,938 cells |  3 types |  1 datasets | An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+        7,214 cells |  2 types |  2 datasets | Thyroid hormone remodels cortex to coordinate body-wide metabolism and exploration
+        3,483 cells |  7 types |  1 datasets | Immune microniches shape intestinal Treg function
+        2,200 cells |  2 types |  1 datasets | Single Nuclei Atlas of Innervated and Denervated Mouse Muscle
+        1,738 cells |  1 types |  1 datasets | LungMAP — The genomic, epigenomic and biophysical cues controlling the emergence of the gas exchange niche in the lung.
+        1,425 cells | ... 3 more collections
+
+    Concentration: top-1 = 42.6%, top-3 = 80.8% (8 total collections)
+
+==============================================================================
+Saving outputs
+==============================================================================
+  Saved: output/validation/replication_inventory.csv

@@ -1,0 +1,160 @@
+{
+  "diagnostic": "ISSUE-092: Sun2023 endothelial tissue stratification diagnosis",
+  "date": "2026-03-15",
+  "task_0_metadata": {
+    "tissue_column": "PRESENT",
+    "endothelial_by_tissue": {
+      "liver": 3283,
+      "kidney": 1330,
+      "aorta": 1188,
+      "lung": 451,
+      "intestine": 387,
+      "blood": 0,
+      "bone_marrow": 0,
+      "spleen": 0
+    },
+    "endothelial_tissues_eligible": [
+      "liver",
+      "kidney",
+      "aorta",
+      "lung",
+      "intestine"
+    ],
+    "hepatocyte_by_tissue": {
+      "liver": 1417,
+      "aorta": 0,
+      "blood": 0,
+      "bone_marrow": 0,
+      "intestine": 0,
+      "kidney": 0,
+      "lung": 0,
+      "spleen": 0
+    },
+    "tabula_endothelial_top_tissues": {
+      "myometrium": 265,
+      "adipose tissue": 174,
+      "subcutaneous adipose tissue": 154,
+      "aorta": 128,
+      "muscle of abdomen": 126,
+      "exocrine pancreas": 120,
+      "brown adipose tissue": 111,
+      "muscle of pelvic diaphragm": 102,
+      "liver": 101,
+      "spleen": 82
+    }
+  },
+  "task_1_endothelial_stratification": {
+    "pca_components": 17,
+    "distances_to_tabula_endothelial_pca": {
+      "lung": 24.77820823560121,
+      "aorta": 24.874612142992433,
+      "intestine": 25.32950736900098,
+      "kidney": 25.54660979685764,
+      "POOLED": 28.394069981369945,
+      "liver": 33.59850757334291
+    },
+    "distances_to_tabula_endothelial_genespace": {
+      "aorta": 28.34265642291661,
+      "POOLED": 29.16868364254967,
+      "intestine": 29.40801925896717,
+      "kidney": 29.59694715718149,
+      "lung": 32.570214272326446,
+      "liver": 34.646852608086206
+    },
+    "best_tissue_match": "lung",
+    "best_distance": 24.77820823560121,
+    "pooled_distance": 28.394069981369945,
+    "distance_ratio_best_over_pooled": 0.8726543342274922
+  },
+  "task_1d_tissue_matched_procrustes": {
+    "endothelial_ssr_pooled_pct": 0.27235573153012826,
+    "endothelial_ssr_tissuematched_pct": 0.12365062049858433,
+    "ssr_threshold": 0.2,
+    "threshold_met": true,
+    "distance": 27.885055752942378,
+    "scaling": 1.0294510328979145,
+    "per_type_residuals": {
+      "B cell": {
+        "magnitude_pooled": 4.269456033139181,
+        "magnitude_tissuematched": 3.5693396466965464
+      },
+      "CD4-positive, alpha-beta T cell": {
+        "magnitude_pooled": 4.125279927979678,
+        "magnitude_tissuematched": 4.218901638561281
+      },
+      "CD8-positive, alpha-beta T cell": {
+        "magnitude_pooled": 2.326762152349724,
+        "magnitude_tissuematched": 2.385341073898288
+      },
+      "endothelial cell": {
+        "magnitude_pooled": 18.168193575679275,
+        "magnitude_tissuematched": 9.805498265092774
+      },
+      "epithelial cell": {
+        "magnitude_pooled": 5.223856613750728,
+        "magnitude_tissuematched": 4.961914289319999
+      },
+      "fibroblast": {
+        "magnitude_pooled": 1.9898006247839386,
+        "magnitude_tissuematched": 3.7697273329415193
+      },
+      "granulocyte": {
+        "magnitude_pooled": 4.080632170349923,
+        "magnitude_tissuematched": 4.116969607564421
+      },
+      "hepatocyte": {
+        "magnitude_pooled": 23.177261363622353,
+        "magnitude_tissuematched": 19.34244354696251
+      },
+      "macrophage": {
+        "magnitude_pooled": 8.589969836429654,
+        "magnitude_tissuematched": 9.058494744585111
+      },
+      "monocyte": {
+        "magnitude_pooled": 7.445728161604463,
+        "magnitude_tissuematched": 7.013118609192742
+      },
+      "myeloid dendritic cell": {
+        "magnitude_pooled": 6.060828849517454,
+        "magnitude_tissuematched": 5.7833653115704
+      },
+      "natural killer cell": {
+        "magnitude_pooled": 4.783493163030204,
+        "magnitude_tissuematched": 3.6432683100389616
+      },
+      "plasma cell": {
+        "magnitude_pooled": 4.77190454532354,
+        "magnitude_tissuematched": 4.64345081278439
+      },
+      "smooth muscle cell": {
+        "magnitude_pooled": 2.4450403097846114,
+        "magnitude_tissuematched": 3.9706243101609915
+      }
+    }
+  },
+  "task_2_hepatocyte": {
+    "single_tissue": true,
+    "tissue": "liver",
+    "n_cells": 1417,
+    "ssr_pct": 0.44323827760338824,
+    "explanation": "NOT pooling artifact \u2014 single tissue (liver). Likely annotation or biology."
+  },
+  "task_3_revised_procrustes": {
+    "ran": true,
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.4904477631802459,
+    "scaling": 1.0294510328979145,
+    "distance": 27.885055752942378,
+    "pca_components": 18,
+    "rho_vs_primary": 0.0989010989010989,
+    "rho_p_value": 0.7365853699253173,
+    "n_matched_types": 14,
+    "verdict": "PARTIAL"
+  },
+  "conclusion": {
+    "issue_092_status": "PARTIALLY RESOLVED",
+    "summary": "Tissue pooling partially explains endothelial inversion. Using lung endothelial centroid drops SSR from 27.2% to 12.4%. But rigidity ranking still does not replicate (\u03c1=0.099, p=0.7366). Hepatocyte SSR (48.1%) also remains elevated \u2014 not a pooling artifact.",
+    "endothelial_inversion_explained_by_pooling": true,
+    "hepatocyte_inversion_explained_by_pooling": false
+  }
+}

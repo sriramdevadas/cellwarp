@@ -1,0 +1,339 @@
+{
+  "validation": "V2 \u2014 LOOCV",
+  "date": "2026-03-21",
+  "verdict": "PASS",
+  "n_correct": 35,
+  "n_total": 35,
+  "mean_ratio": 0.42009306522869616,
+  "median_ratio": 0.3977917686734369,
+  "min_ratio": 0.22580093044804755,
+  "max_ratio": 0.7963673110224948,
+  "best_type": "CD8-positive, alpha-beta T cell",
+  "worst_type": "hematopoietic stem cell",
+  "expected_mean_ratio": 0.42,
+  "ratio_diff": 9.30652286961764e-05,
+  "ratio_tolerance": 0.02,
+  "pca_component_range": [
+    32,
+    33
+  ],
+  "pca_component_mode": 32,
+  "runtime_s": 0.9031071662902832,
+  "per_fold": [
+    {
+      "fold": 0,
+      "held_out": "B cell",
+      "error": 9.432000091152728,
+      "null_dist": 26.10854919706972,
+      "ratio": 0.36126098083655006,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 1,
+      "held_out": "CD4-positive, alpha-beta T cell",
+      "error": 11.394335445818697,
+      "null_dist": 26.79264170290643,
+      "ratio": 0.4252785362550739,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 2,
+      "held_out": "CD8-positive, alpha-beta T cell",
+      "error": 6.20800804782988,
+      "null_dist": 27.493279303639643,
+      "ratio": 0.22580093044804755,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 3,
+      "held_out": "T cell",
+      "error": 11.68799411661414,
+      "null_dist": 27.245742713934895,
+      "ratio": 0.42898423578801137,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 4,
+      "held_out": "adventitial cell",
+      "error": 9.394134556255397,
+      "null_dist": 30.64886747872366,
+      "ratio": 0.3065083746659407,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 5,
+      "held_out": "basal cell",
+      "error": 11.647439187653335,
+      "null_dist": 28.814374769374023,
+      "ratio": 0.4042232143115271,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 6,
+      "held_out": "bladder urothelial cell",
+      "error": 11.336974841480934,
+      "null_dist": 28.223472633356884,
+      "ratio": 0.4016860359019726,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 7,
+      "held_out": "classical monocyte",
+      "error": 12.536617276502403,
+      "null_dist": 27.90794069170986,
+      "ratio": 0.44921326926233734,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 8,
+      "held_out": "endothelial cell",
+      "error": 8.078711756497137,
+      "null_dist": 25.905305011571187,
+      "ratio": 0.3118554965050054,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 9,
+      "held_out": "enterocyte of epithelium of large intestine",
+      "error": 11.047944383171462,
+      "null_dist": 31.190696930409263,
+      "ratio": 0.3542063971132465,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 10,
+      "held_out": "epithelial cell",
+      "error": 9.717687887678547,
+      "null_dist": 24.863627050692035,
+      "ratio": 0.3908395129908479,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 11,
+      "held_out": "fibroblast",
+      "error": 8.266405047742957,
+      "null_dist": 27.795716986458235,
+      "ratio": 0.29739851833180836,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 12,
+      "held_out": "fibroblast of cardiac tissue",
+      "error": 12.329059856865566,
+      "null_dist": 30.427765815265943,
+      "ratio": 0.40519109854197516,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 13,
+      "held_out": "granulocyte",
+      "error": 11.189133012703579,
+      "null_dist": 29.996227462350298,
+      "ratio": 0.3730180079060807,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 14,
+      "held_out": "hematopoietic precursor cell",
+      "error": 16.37728498257525,
+      "null_dist": 27.361084341909134,
+      "ratio": 0.5985612550263611,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 15,
+      "held_out": "hematopoietic stem cell",
+      "error": 24.901131854859635,
+      "null_dist": 31.268400284898508,
+      "ratio": 0.7963673110224948,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 16,
+      "held_out": "hepatocyte",
+      "error": 14.992766011114021,
+      "null_dist": 26.969791864183,
+      "ratio": 0.5559095927256685,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 17,
+      "held_out": "intermediate monocyte",
+      "error": 10.260716094504483,
+      "null_dist": 28.753284387177896,
+      "ratio": 0.3568537060441032,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 18,
+      "held_out": "large intestine goblet cell",
+      "error": 14.288189593724676,
+      "null_dist": 31.64755324751731,
+      "ratio": 0.45147849130629264,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 19,
+      "held_out": "luminal epithelial cell of mammary gland",
+      "error": 7.76671244774926,
+      "null_dist": 27.468322711828073,
+      "ratio": 0.2827516091619549,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 20,
+      "held_out": "macrophage",
+      "error": 10.007721294098461,
+      "null_dist": 24.758326221604012,
+      "ratio": 0.40421639187247504,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 21,
+      "held_out": "mature NK T cell",
+      "error": 9.72152954148909,
+      "null_dist": 28.78196816914079,
+      "ratio": 0.3377645852555781,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 22,
+      "held_out": "mesenchymal stem cell",
+      "error": 11.8551980501566,
+      "null_dist": 29.80252228368507,
+      "ratio": 0.3977917686734369,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 23,
+      "held_out": "mesenchymal stem cell of adipose tissue",
+      "error": 12.83699647025859,
+      "null_dist": 32.401870432937415,
+      "ratio": 0.39618072348099453,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 24,
+      "held_out": "monocyte",
+      "error": 9.617524506410374,
+      "null_dist": 26.741396969673662,
+      "ratio": 0.3596492927171015,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 25,
+      "held_out": "myeloid dendritic cell",
+      "error": 9.761315232629244,
+      "null_dist": 26.41332279986633,
+      "ratio": 0.369560289956349,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 26,
+      "held_out": "myeloid leukocyte",
+      "error": 11.731148388620298,
+      "null_dist": 26.443526408967546,
+      "ratio": 0.44363025593447414,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 27,
+      "held_out": "natural killer cell",
+      "error": 6.6198894154971155,
+      "null_dist": 26.22446505903925,
+      "ratio": 0.2524318189367726,
+      "correct": true,
+      "n_pca_components": 33
+    },
+    {
+      "fold": 28,
+      "held_out": "neutrophil",
+      "error": 17.226394191752007,
+      "null_dist": 32.023388444702526,
+      "ratio": 0.537931650221783,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 29,
+      "held_out": "non-classical monocyte",
+      "error": 7.59188772808045,
+      "null_dist": 27.340840544412657,
+      "ratio": 0.27767572528533396,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 30,
+      "held_out": "pancreatic acinar cell",
+      "error": 26.13189655441489,
+      "null_dist": 33.46132986677265,
+      "ratio": 0.7809580987504043,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 31,
+      "held_out": "pancreatic ductal cell",
+      "error": 10.621564599554855,
+      "null_dist": 27.45507929823098,
+      "ratio": 0.38687065821875943,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 32,
+      "held_out": "plasma cell",
+      "error": 14.853431192148271,
+      "null_dist": 25.443920940167818,
+      "ratio": 0.5837713152417264,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 33,
+      "held_out": "smooth muscle cell",
+      "error": 11.642510329582056,
+      "null_dist": 27.2300303671244,
+      "ratio": 0.42756141556266475,
+      "correct": true,
+      "n_pca_components": 32
+    },
+    {
+      "fold": 34,
+      "held_out": "stromal cell",
+      "error": 17.045309049844512,
+      "null_dist": 29.910520098445804,
+      "ratio": 0.5698767187512133,
+      "correct": true,
+      "n_pca_components": 32
+    }
+  ]
+}

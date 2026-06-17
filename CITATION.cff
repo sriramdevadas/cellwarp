@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "CellWarp"
+abstract: "CellWarp: a Procrustes-based geometric framework for quantifying cross-species transcriptomic coherence at the cell-type level."
+authors:
+  - family-names: "Devadas"
+    given-names: "Sriram"
+    email: "sriram@sriramdevadas.com"
+    affiliation: "Independent Researcher, Acton, MA, USA"
+    orcid: "https://orcid.org/0009-0002-4571-1116"
+version: "0.1.0"
+date-released: 2026-04-30
+license: "MIT"
+repository-code: "https://github.com/sriramdevadas/cellwarp"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20735612"
+    description: "Archived analysis code (Zenodo)"
+  - type: doi
+    value: "10.5281/zenodo.20735640"
+    description: "Archived dataset (Zenodo)"
+keywords:
+  - "Procrustes analysis"
+  - "cross-species transcriptomics"
+  - "cell type evolution"
+  - "single-cell RNA-seq"
+  - "covariance conservation"
+  - "cell type homology"
+preferred-citation:
+  type: article
+  title: "Geometric Morphometrics Reveals Two-Layer Transcriptomic Coherence Across Species"
+  authors:
+    - family-names: "Devadas"
+      given-names: "Sriram"
+      email: "sriram@sriramdevadas.com"
+      affiliation: "Independent Researcher, Acton, MA, USA"
+      orcid: "https://orcid.org/0009-0002-4571-1116"
+  year: 2026
+  notes: "Manuscript in preparation."

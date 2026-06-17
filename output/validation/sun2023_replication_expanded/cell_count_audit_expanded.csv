@@ -1,0 +1,36 @@
+cell_type,n_cells_YC,status
+B cell,16125,PASS
+"CD4-positive, alpha-beta T cell",1978,PASS
+"CD8-positive, alpha-beta T cell",4611,PASS
+T cell,4422,PASS
+adventitial cell,0,FAIL
+basal cell,0,FAIL
+bladder urothelial cell,0,FAIL
+classical monocyte,0,FAIL
+endothelial cell,6639,PASS
+enterocyte of epithelium of large intestine,0,FAIL
+epithelial cell,1443,PASS
+fibroblast,2832,PASS
+fibroblast of cardiac tissue,0,FAIL
+granulocyte,8819,PASS
+hematopoietic precursor cell,0,FAIL
+hematopoietic stem cell,0,FAIL
+hepatocyte,1417,PASS
+intermediate monocyte,0,FAIL
+large intestine goblet cell,0,FAIL
+luminal epithelial cell of mammary gland,0,FAIL
+macrophage,2148,PASS
+mature NK T cell,0,FAIL
+mesenchymal stem cell,0,FAIL
+mesenchymal stem cell of adipose tissue,0,FAIL
+monocyte,2655,PASS
+myeloid dendritic cell,1503,PASS
+myeloid leukocyte,0,FAIL
+natural killer cell,1130,PASS
+neutrophil,0,FAIL
+non-classical monocyte,0,FAIL
+pancreatic acinar cell,0,FAIL
+pancreatic ductal cell,0,FAIL
+plasma cell,1208,PASS
+smooth muscle cell,513,PASS
+stromal cell,0,FAIL

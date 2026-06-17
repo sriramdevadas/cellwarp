@@ -1,0 +1,14 @@
+{
+  "our_label": "Neutrophil",
+  "organism": "human",
+  "organism_scientific": "Homo sapiens",
+  "tried_terms": [
+    "neutrophil",
+    "granulocyte",
+    "polymorphonuclear leukocyte"
+  ],
+  "successful_terms": [],
+  "total_experiments": 0,
+  "experiments": [],
+  "query_timestamp": "2026-03-15T20:30:40.133829"
+}

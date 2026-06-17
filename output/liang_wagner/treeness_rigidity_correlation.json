@@ -1,0 +1,39 @@
+{
+  "step1_overall": {
+    "n_cell_types": 35,
+    "n_tetrads": 52360,
+    "delta_mean": 0.24781568456987113,
+    "delta_median": 0.156941400567807,
+    "delta_std": 0.2488919942326807,
+    "delta_min": 4.258201727913161e-08,
+    "delta_max": 0.9999779069053925,
+    "delta_q25": 0.05455677082843881,
+    "delta_q75": 0.3649194248169708,
+    "n_significant_005": 703,
+    "n_significant_001": 140,
+    "pct_significant_005": 1.342627960275019,
+    "pct_significant_001": 0.26737967914438504,
+    "pi0_storey": 1.0,
+    "fraction_treelike": 0.0
+  },
+  "step3_correlation": {
+    "rho_treeness_rigidity": -0.34873949579831937,
+    "p_value": 0.04005296407557929,
+    "n": 35,
+    "outcome": "ANTICORRELATED",
+    "interpretation": "Most surprising \u2014 rigid types have less tree structure"
+  },
+  "step4_pca_sensitivity": {
+    "n_components": 20,
+    "variance_explained_pct": 95.64736796455443,
+    "delta_mean": 0.24903568826555797,
+    "delta_median": 0.1564114661652428,
+    "delta_std": 0.25093498534755665,
+    "pi0": 1.0,
+    "fraction_treelike": 0.0,
+    "rho_rigidity": -0.3593837535014006,
+    "p_rigidity": 0.03397707823814357,
+    "rho_consistency_with_full": 0.9907563025210085,
+    "p_consistency": 3.261725381539266e-30
+  }
+}

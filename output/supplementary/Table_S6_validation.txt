@@ -1,0 +1,42 @@
+Table S6 Validation Log
+==================================================
+Generated: 2026-05-09 06:24:50
+Random seed: 42
+Census version: 2025-11-08 (pinned)
+Gene space: 16959 shared 1:1 orthologs
+Top-N genes: 20
+PCA dimensions: 33 components (95.2% variance)
+Classification criterion: rank-1 CPC1 gene is ribosomal protein (RPL/RPS)
+
+METHOD
+  CPC1 = Common Principal Component 1 (Krzanowski 1984).
+  Within-type covariance matrices computed in 33-D PCA space
+  (fitted on 70 centroids = 35 types x 2 species).
+  Weighted sum of human and mouse covariance eigendecomposed;
+  top eigenvector projected to gene space via PCA loading matrix.
+  Gene loadings are shared across species (CPC is a common direction).
+  Variance fractions differ per species (how much of each species'
+  within-type variance lies along the shared CPC1 axis).
+
+COUNTS
+  Ribosomal-dominated: 25
+  Cell-type-specific:  10
+  Expected:            25 ribosomal / 10 specific
+
+CELL-TYPE-SPECIFIC TYPES (with top 3 genes):
+  rank  1: stromal cell                                       CFD, RPS28, RPL34
+  rank  4: hematopoietic stem cell                            MACROH2A1, RACK1, STMN1
+  rank  8: neutrophil                                         NAMPT, FTH1, RNF149
+  rank 12: plasma cell                                        SSR4, HSP90B1, RPS28
+  rank 15: classical monocyte                                 S100A4, LYZ, VCAN
+  rank 19: large intestine goblet cell                        AGR2, RACK1, SPINK4
+  rank 22: monocyte                                           S100A8, RPL35A, RPL39
+  rank 24: intermediate monocyte                              DPYD, IRAK3, LYZ
+  rank 25: mature NK T cell                                   PARP8, NKG7, FYN
+  rank 32: hepatocyte                                         FTH1, RPL10, MT-ND3
+
+NO DISCREPANCIES — matches manuscript claims (25/10 split).
+
+NOTE: CPC1 is a shared direction, so human and mouse top-20
+genes are the same orthologs (overlap = 20 by construction).
+Human and mouse columns use species-appropriate gene nomenclature.

@@ -1,0 +1,11 @@
+{
+  "rho": -0.058263,
+  "p_value": 0.739546,
+  "n": 35,
+  "ci_95_lower": -0.3841,
+  "ci_95_upper": 0.2804,
+  "track": "placental_20way",
+  "option": "A",
+  "window_kb": 2,
+  "conclusion": "NULL_TRIGGERED"
+}

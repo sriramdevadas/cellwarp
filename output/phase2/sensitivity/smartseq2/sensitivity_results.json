@@ -1,0 +1,77 @@
+{
+  "analysis": "Smart-seq2 sensitivity analysis",
+  "description": "Tests whether 35-type Procrustes result is robust to protocol mix",
+  "mouse_cells": {
+    "total": 59745,
+    "10x_only": 40019,
+    "smartseq2": 19726,
+    "smartseq2_fraction": 0.3301698886936145
+  },
+  "flagged_cell_types": {
+    "count": 1,
+    "types": [
+      "hematopoietic stem cell"
+    ],
+    "reason": "< 100 10x cells"
+  },
+  "procrustes_10x_only": {
+    "distance": 59.28656786381562,
+    "distance_squared": 3514.897129070815,
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.5075253810528996,
+    "scaling": 0.9226113142641944,
+    "n_cell_types": 35,
+    "n_pca_components": 33
+  },
+  "procrustes_original": {
+    "distance": 61.1529953159736,
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.5222043226858066
+  },
+  "rigidity_comparison": {
+    "spearman_rho_magnitudes": 0.7535014005602241,
+    "spearman_p_magnitudes": 1.748607199290298e-07,
+    "spearman_rho_ranks": 0.7535014005602241,
+    "spearman_p_ranks": 1.748607199290298e-07,
+    "spearman_rho_excl_hsc": 0.7790679908326967,
+    "spearman_p_excl_hsc": 5.7238019657656466e-08,
+    "ss2_fraction_vs_rank_change_rho": 0.13701526090475288,
+    "ss2_fraction_vs_rank_change_p": 0.4325316509189918,
+    "verdict": "MODERATE \u2014 some sensitivity to protocol mix"
+  },
+  "progenitor_analysis": {
+    "progenitor_types": [
+      "basal cell",
+      "hematopoietic precursor cell",
+      "hematopoietic stem cell",
+      "mesenchymal stem cell",
+      "mesenchymal stem cell of adipose tissue"
+    ],
+    "n_progenitor": 5,
+    "n_differentiated": 30,
+    "original": {
+      "mean_progenitor_residual": 12.968326951833518,
+      "mean_differentiated_residual": 9.41588626536873,
+      "mannwhitney_p": 0.00493173809113088
+    },
+    "tenx_only": {
+      "mean_progenitor_residual": 11.274453644395317,
+      "mean_differentiated_residual": 9.348170403244115,
+      "mannwhitney_p": 0.11874060474629733
+    },
+    "progenitor_finding_survives": false,
+    "tenx_only_excl_hsc": {
+      "progenitor_types": [
+        "basal cell",
+        "hematopoietic precursor cell",
+        "mesenchymal stem cell",
+        "mesenchymal stem cell of adipose tissue"
+      ],
+      "n_progenitor": 4,
+      "mean_progenitor_residual": 11.836010842690648,
+      "mean_differentiated_residual": 9.348170403244115,
+      "mannwhitney_p": 0.089938761428325,
+      "survives": false
+    }
+  }
+}

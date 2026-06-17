@@ -1,0 +1,38 @@
+cell_type,tissue,distance,dataset
+natural killer cell,adipose,36.11718979810437,tabula
+natural killer cell,bone_marrow,33.22113523995868,tabula
+natural killer cell,liver,39.534615543811306,tabula
+natural killer cell,lung,38.12475514783077,tabula
+natural killer cell,spleen,38.77768485435541,tabula
+B cell,adipose,34.262587772805425,tabula
+B cell,spleen,35.177205506170516,tabula
+plasma cell,bone_marrow,34.55541777235106,tabula
+plasma cell,spleen,34.355529260278026,tabula
+endothelial cell,adipose,32.32914473300606,tabula
+endothelial cell,muscle,36.13041862797018,tabula
+T cell,adipose,42.6992895601086,tabula
+T cell,exocrine_gland,38.404322866071404,tabula
+"CD8-positive, alpha-beta T cell",adipose,37.55385573946547,tabula
+"CD8-positive, alpha-beta T cell",spleen,37.34212855129286,tabula
+smooth muscle cell,heart,30.394553756595855,tabula
+pancreatic ductal cell,pancreas,39.84229386750012,tabula
+pancreatic acinar cell,pancreas,28.1517306520942,tabula
+"CD4-positive, alpha-beta T cell",adipose,36.481395765250134,tabula
+non-classical monocyte,lung,37.21535603678879,tabula
+monocyte,bone_marrow,38.070164388323875,tabula
+mesenchymal stem cell of adipose tissue,adipose,34.72521671557221,tabula
+mesenchymal stem cell,muscle,35.60073771363621,tabula
+mature NK T cell,spleen,42.202643815139965,tabula
+luminal epithelial cell of mammary gland,exocrine_gland,32.90812941703584,tabula
+large intestine goblet cell,large_intestine,45.153510521496536,tabula
+intermediate monocyte,lung,41.755887090496955,tabula
+hepatocyte,liver,48.81750883435882,tabula
+enterocyte of epithelium of large intestine,large_intestine,40.75849708133763,tabula
+adventitial cell,lung,27.690538362096227,tabula
+hematopoietic precursor cell,bone_marrow,41.839975135133834,tabula
+granulocyte,bone_marrow,43.15703734362635,tabula
+fibroblast of cardiac tissue,heart,38.14869959361726,tabula
+basal cell,exocrine_gland,36.16181314331447,tabula
+bladder urothelial cell,bladder,40.30284715566646,tabula
+hematopoietic stem cell,bone_marrow,38.502529704043376,tabula
+classical monocyte,lung,38.80044151852686,tabula

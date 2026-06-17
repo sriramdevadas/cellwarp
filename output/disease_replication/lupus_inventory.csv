@@ -1,0 +1,22 @@
+cross_species_type,lupus_cells,normal_cells,passes_500_gate
+classical monocyte,221222,1475563,True
+"CD4-positive, alpha-beta T cell",195325,4761384,True
+"CD8-positive, alpha-beta T cell",160146,1811181,True
+B cell,91835,1238127,True
+natural killer cell,54250,445457,True
+non-classical monocyte,33709,44956,True
+myeloid dendritic cell,10707,41173,True
+plasma cell,921,20389,True
+granulocyte,0,385,False
+hematopoietic precursor cell,0,246892,False
+fibroblast,0,1,False
+intermediate monocyte,0,53701,False
+macrophage,0,4116,False
+mature NK T cell,0,4293,False
+monocyte,0,69961,False
+epithelial cell,0,7,False
+myeloid leukocyte,0,1,False
+endothelial cell,0,380,False
+neutrophil,0,32970,False
+basal cell,0,18,False
+hematopoietic stem cell,0,889,False

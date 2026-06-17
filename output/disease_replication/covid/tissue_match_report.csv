@@ -1,0 +1,18 @@
+cell_type,covid_tissues,normal_tissues,overlap_tissues,fully_matched,covid_cells,normal_cells
+B cell,"['bronchus', 'lower lobe of left lung', 'nasal cavity', 'nasopharynx', 'respiratory airway', 'saliva']","['bronchus', 'lower lobe of left lung']","['bronchus', 'lower lobe of left lung']",False,3000,3000
+"CD4-positive, alpha-beta T cell","['lower lobe of left lung', 'lung', 'nasal cavity', 'upper lobe of left lung']",['lower lobe of left lung'],['lower lobe of left lung'],False,3000,3000
+"CD8-positive, alpha-beta T cell","['blood', 'lower lobe of left lung', 'nasopharynx']",['lower lobe of left lung'],['lower lobe of left lung'],False,2782,3000
+basal cell,"['lower lobe of left lung', 'nasopharynx']","['lower lobe of left lung', 'nasopharynx']","['lower lobe of left lung', 'nasopharynx']",True,3000,3000
+endothelial cell,"['lower lobe of left lung', 'lung', 'medial orbital frontal cortex']",['lower lobe of left lung'],['lower lobe of left lung'],False,3000,3000
+epithelial cell,"['bronchus', 'lower lobe of left lung', 'lung', 'nasal cavity', 'saliva', 'trachea']",['bronchus'],['bronchus'],False,3000,3000
+fibroblast,"['lung', 'upper lobe of left lung']",['lung'],['lung'],False,3000,3000
+hematopoietic stem cell,['blood'],['blood'],['blood'],True,2390,889
+macrophage,"['blood', 'bronchus', 'choroid plexus', 'nasal cavity', 'nasopharynx', 'saliva', 'trachea']","['blood', 'bronchus']","['blood', 'bronchus']",False,3000,3000
+mature NK T cell,"['lower lobe of left lung', 'nasal cavity', 'upper lobe of left lung']",['nasal cavity'],['nasal cavity'],False,3000,24
+monocyte,"['bronchus', 'nasal cavity', 'saliva', 'trachea', 'upper lobe of left lung']",['bronchus'],['bronchus'],False,3000,3000
+myeloid dendritic cell,"['blood', 'bronchus', 'lung', 'nasal cavity', 'nasopharynx', 'saliva']",['blood'],['blood'],False,3000,3000
+natural killer cell,['lower lobe of left lung'],['lower lobe of left lung'],['lower lobe of left lung'],True,3000,3000
+neutrophil,"['bronchus', 'lower lobe of left lung', 'lung', 'nasal cavity', 'saliva', 'trachea']","['bronchus', 'lung', 'nasal cavity', 'trachea']","['bronchus', 'lung', 'nasal cavity', 'trachea']",False,3000,3000
+plasma cell,"['bronchus', 'lower lobe of left lung', 'nasal cavity', 'upper lobe of left lung']","['bronchus', 'lower lobe of left lung', 'nasal cavity', 'upper lobe of left lung']","['bronchus', 'lower lobe of left lung', 'nasal cavity', 'upper lobe of left lung']",True,1438,576
+smooth muscle cell,"['lower lobe of left lung', 'lung', 'upper lobe of left lung']","['lower lobe of left lung', 'lung']","['lower lobe of left lung', 'lung']",False,3000,3000
+stromal cell,"['lower lobe of left lung', 'upper lobe of left lung']",['upper lobe of left lung'],['upper lobe of left lung'],False,834,251

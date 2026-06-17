@@ -1,0 +1,39 @@
+{
+  "our_label": "Neutrophil",
+  "organism": "mouse",
+  "organism_scientific": "Mus musculus",
+  "tried_terms": [
+    "neutrophil",
+    "granulocyte",
+    "polymorphonuclear leukocyte"
+  ],
+  "successful_terms": [
+    "neutrophil"
+  ],
+  "total_experiments": 1,
+  "experiments": [
+    {
+      "accession": "ENCSR351YUI",
+      "biosample_term": "neutrophil",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Mus musculus strain C57BL/6J neutrophil adult (5-6 weeks)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Ross Hardison, PennState",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    }
+  ],
+  "query_timestamp": "2026-03-15T20:31:24.499286"
+}

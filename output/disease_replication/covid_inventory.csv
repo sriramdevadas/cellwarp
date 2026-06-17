@@ -1,0 +1,36 @@
+cell_type,covid_cells,normal_cells_matched,covid_datasets,tissues,tissue_matched,verdict,residual,rank
+B cell,589173,1273615,47,respiratory airway; blood; nasopharynx; lung; upper lobe of left lung; lower lobe of left lung; nasal cavity; trachea; bronchus; saliva,True,PASS,9.84610068589495,17
+"CD4-positive, alpha-beta T cell",596351,4804222,18,blood; lung; upper lobe of left lung; lower lobe of left lung; nasal cavity; trachea; bronchus,True,PASS,10.21169775481372,14
+"CD8-positive, alpha-beta T cell",569155,1842142,19,nasopharynx; blood; lung; upper lobe of left lung; lower lobe of left lung; saliva,True,PASS,5.3762488830814785,35
+T cell,0,0,0,,True,FAIL (no COVID data),11.669226435501992,7
+adventitial cell,0,0,0,,True,FAIL (no COVID data),8.080278679217866,26
+basal cell,6133,3472,5,nasopharynx; upper lobe of left lung; lower lobe of left lung,True,PASS,12.766119470797328,6
+bladder urothelial cell,0,0,0,,True,FAIL (no COVID data),7.39810930054472,29
+classical monocyte,658837,1514799,12,blood; upper lobe of left lung; lung; saliva,True,PASS,9.928629416857593,15
+endothelial cell,42730,100823,7,lung; medial orbital frontal cortex; upper lobe of left lung; lower lobe of left lung,True,PASS,5.971302732274846,33
+enterocyte of epithelium of large intestine,0,0,0,,True,FAIL (no COVID data),9.297263435043051,20
+epithelial cell,58308,182434,24,respiratory airway; nasopharynx; lung; upper lobe of left lung; lower lobe of left lung; nasal cavity; trachea; bronchus; saliva,True,PASS,16.267367119340193,2
+fibroblast,26342,46037,6,lung; upper lobe of left lung; lower lobe of left lung,True,PASS,7.507943223117857,28
+fibroblast of cardiac tissue,0,0,0,,True,FAIL (no COVID data),11.521942001663705,9
+granulocyte,1061,385,3,blood,True,MARGINAL,7.932489173190314,27
+hematopoietic precursor cell,426,246892,2,blood,True,MARGINAL,15.353904628472929,3
+hematopoietic stem cell,2390,889,3,blood,True,PASS,14.94836253134559,4
+hepatocyte,0,0,0,,True,FAIL (no COVID data),6.058641994458259,32
+intermediate monocyte,1768,53701,3,blood; lower lobe of left lung,True,PASS,8.427986266571045,24
+large intestine goblet cell,0,0,0,,True,FAIL (no COVID data),9.466734231251584,19
+luminal epithelial cell of mammary gland,0,0,0,,True,FAIL (no COVID data),9.654116202287025,18
+macrophage,145859,337887,10,nasopharynx; choroid plexus; lung; upper lobe of left lung; lower lobe of left lung; nasal cavity; trachea; bronchus; blood; saliva,True,PASS,9.878522208732337,16
+mature NK T cell,66289,6639,35,respiratory airway; blood; upper lobe of left lung; lower lobe of left lung; nasal cavity; trachea; bronchus,True,PASS,8.274654323291125,25
+mesenchymal stem cell,0,0,0,,True,FAIL (no COVID data),10.340755101730728,13
+mesenchymal stem cell of adipose tissue,0,0,0,,True,FAIL (no COVID data),11.432483678688156,11
+monocyte,70061,92032,8,blood; lung; upper lobe of left lung; nasal cavity; trachea; bronchus; saliva,True,PASS,8.722374107298508,22
+myeloid dendritic cell,33898,61123,28,blood; nasopharynx; lung; nasal cavity; trachea; bronchus; saliva,True,PASS,8.898935755842247,21
+myeloid leukocyte,0,0,0,,True,FAIL (no COVID data),11.509243348794332,10
+natural killer cell,206617,478670,19,blood; lung; upper lobe of left lung; lower lobe of left lung; saliva,True,PASS,8.686951760199305,23
+neutrophil,21583,40216,32,respiratory airway; blood; upper lobe of left lung; lower lobe of left lung; trachea; nasal cavity; bronchus; lung; saliva,True,PASS,11.597880291489918,8
+non-classical monocyte,58043,53289,12,blood; upper lobe of left lung; lower lobe of left lung; lung,True,PASS,5.89287705793573,34
+pancreatic acinar cell,1193,0,2,lower lobe of left lung; upper lobe of left lung,False,FAIL,12.837688508209771,5
+pancreatic ductal cell,0,0,0,,True,FAIL (no COVID data),6.787640413838285,30
+plasma cell,62266,25503,31,respiratory airway; blood; lung; upper lobe of left lung; lower lobe of left lung; nasal cavity; bronchus,True,PASS,11.083711716328304,12
+smooth muscle cell,3294,7206,6,lung; upper lobe of left lung; lower lobe of left lung,True,PASS,6.705379907369501,31
+stromal cell,850,87597,4,upper lobe of left lung; lower lobe of left lung; lung,True,PASS,16.984603696210993,1

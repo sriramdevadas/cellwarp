@@ -1,0 +1,36 @@
+cell_type,residual_magnitude,rank
+hematopoietic stem cell,24.85474319293737,1
+hematopoietic precursor cell,17.119665479562663,2
+epithelial cell,16.386970653094945,3
+stromal cell,15.740168575439476,4
+neutrophil,13.546301885268928,5
+basal cell,12.336971557547846,6
+plasma cell,11.927917526693395,7
+T cell,11.759385357315795,8
+fibroblast of cardiac tissue,11.521397607111833,9
+mesenchymal stem cell,11.309111990486205,10
+mesenchymal stem cell of adipose tissue,10.829084808435644,11
+classical monocyte,10.586268736888053,12
+pancreatic acinar cell,10.468767113603887,13
+myeloid leukocyte,10.408851480154727,14
+B cell,10.278369226271057,15
+"CD4-positive, alpha-beta T cell",10.250780238286048,16
+luminal epithelial cell of mammary gland,10.040812745617004,17
+myeloid dendritic cell,10.010700225386108,18
+macrophage,9.610252488160828,19
+natural killer cell,9.314664812881201,20
+monocyte,9.285713940734627,21
+granulocyte,8.945761684671778,22
+intermediate monocyte,8.65194939754595,23
+enterocyte of epithelium of large intestine,8.58037058550005,24
+mature NK T cell,8.492255137517043,25
+adventitial cell,8.215406753073335,26
+fibroblast,8.156691423590328,27
+large intestine goblet cell,8.113883468731451,28
+bladder urothelial cell,7.769556184739987,29
+hepatocyte,7.698912102238293,30
+pancreatic ductal cell,7.574401664300853,31
+smooth muscle cell,7.073314850987753,32
+endothelial cell,6.013362667986097,33
+non-classical monocyte,5.567540259376716,34
+"CD8-positive, alpha-beta T cell",5.368458616287464,35

@@ -1,0 +1,271 @@
+SAMap Validation Report — CellWarp 35 Cell Types
+============================================================
+
+Configuration: 3 iterations, 1:1 ortholog gnnm
+Data: 500 cells/type/species (subsampled)
+SAMap runtime: 221s
+
+Confirmed: 24/35 (69%)
+Confidence: HIGH (≥0.6)=17, MODERATE (0.3–0.6)=8, LOW (<0.3)=10
+
+Per-type details:
+------------------------------------------------------------
+
+  B cell
+    SAMap self-score: 0.8977
+    SAMap top match:  B cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  CD4-positive, alpha-beta T cell
+    SAMap self-score: 0.3518
+    SAMap top match:  T cell
+    Rank of self:     2
+    Confirmed:        NO
+    Confidence:       MODERATE
+    Note: SAMap maps to T cell (score 0.628) instead of self (score 0.352)
+
+  CD8-positive, alpha-beta T cell
+    SAMap self-score: 0.4202
+    SAMap top match:  mature NK T cell
+    Rank of self:     2
+    Confirmed:        NO
+    Confidence:       MODERATE
+    Note: SAMap maps to mature NK T cell (score 0.643) instead of self (score 0.420)
+
+  T cell
+    SAMap self-score: 0.3670
+    SAMap top match:  T cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       MODERATE
+
+  adventitial cell
+    SAMap self-score: 0.4782
+    SAMap top match:  mesenchymal stem cell of adipose tissue
+    Rank of self:     2
+    Confirmed:        NO
+    Confidence:       MODERATE
+    Note: SAMap maps to mesenchymal stem cell of adipose tissue (score 0.563) instead of self (score 0.478)
+
+  basal cell
+    SAMap self-score: 0.4826
+    SAMap top match:  basal cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       MODERATE
+
+  bladder urothelial cell
+    SAMap self-score: 0.9210
+    SAMap top match:  bladder urothelial cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  classical monocyte
+    SAMap self-score: 0.2158
+    SAMap top match:  monocyte
+    Rank of self:     2
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to monocyte (score 0.349) instead of self (score 0.216)
+
+  endothelial cell
+    SAMap self-score: 0.8271
+    SAMap top match:  endothelial cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  enterocyte of epithelium of large intestine
+    SAMap self-score: 0.9394
+    SAMap top match:  enterocyte of epithelium of large intestine
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  epithelial cell
+    SAMap self-score: 0.0499
+    SAMap top match:  large intestine goblet cell
+    Rank of self:     2
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to large intestine goblet cell (score 0.091) instead of self (score 0.050)
+
+  fibroblast
+    SAMap self-score: 0.1332
+    SAMap top match:  stromal cell
+    Rank of self:     5
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to stromal cell (score 0.504) instead of self (score 0.133)
+
+  fibroblast of cardiac tissue
+    SAMap self-score: 0.7624
+    SAMap top match:  fibroblast of cardiac tissue
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  granulocyte
+    SAMap self-score: 0.0620
+    SAMap top match:  granulocyte
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       LOW
+
+  hematopoietic precursor cell
+    SAMap self-score: 0.2154
+    SAMap top match:  classical monocyte
+    Rank of self:     2
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to classical monocyte (score 0.262) instead of self (score 0.215)
+
+  hematopoietic stem cell
+    SAMap self-score: 0.7692
+    SAMap top match:  hematopoietic stem cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  hepatocyte
+    SAMap self-score: 0.8294
+    SAMap top match:  hepatocyte
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  intermediate monocyte
+    SAMap self-score: 0.1321
+    SAMap top match:  classical monocyte
+    Rank of self:     5
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to classical monocyte (score 0.203) instead of self (score 0.132)
+
+  large intestine goblet cell
+    SAMap self-score: 0.9053
+    SAMap top match:  large intestine goblet cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  luminal epithelial cell of mammary gland
+    SAMap self-score: 0.7506
+    SAMap top match:  luminal epithelial cell of mammary gland
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  macrophage
+    SAMap self-score: 0.4038
+    SAMap top match:  macrophage
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       MODERATE
+
+  mature NK T cell
+    SAMap self-score: 0.0538
+    SAMap top match:  natural killer cell
+    Rank of self:     5
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to natural killer cell (score 0.385) instead of self (score 0.054)
+
+  mesenchymal stem cell
+    SAMap self-score: 0.5849
+    SAMap top match:  mesenchymal stem cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       MODERATE
+
+  mesenchymal stem cell of adipose tissue
+    SAMap self-score: 0.4157
+    SAMap top match:  mesenchymal stem cell of adipose tissue
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       MODERATE
+
+  monocyte
+    SAMap self-score: 0.2602
+    SAMap top match:  monocyte
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       LOW
+
+  myeloid dendritic cell
+    SAMap self-score: 0.7197
+    SAMap top match:  myeloid dendritic cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  myeloid leukocyte
+    SAMap self-score: 0.0804
+    SAMap top match:  macrophage
+    Rank of self:     3
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to macrophage (score 0.395) instead of self (score 0.080)
+
+  natural killer cell
+    SAMap self-score: 0.6333
+    SAMap top match:  natural killer cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  neutrophil
+    SAMap self-score: 0.8647
+    SAMap top match:  neutrophil
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  non-classical monocyte
+    SAMap self-score: 0.8863
+    SAMap top match:  non-classical monocyte
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  pancreatic acinar cell
+    SAMap self-score: 0.9264
+    SAMap top match:  pancreatic acinar cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  pancreatic ductal cell
+    SAMap self-score: 0.8716
+    SAMap top match:  pancreatic ductal cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  plasma cell
+    SAMap self-score: 0.6441
+    SAMap top match:  plasma cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  smooth muscle cell
+    SAMap self-score: 0.8369
+    SAMap top match:  smooth muscle cell
+    Rank of self:     1
+    Confirmed:        YES
+    Confidence:       HIGH
+
+  stromal cell
+    SAMap self-score: 0.0069
+    SAMap top match:  fibroblast
+    Rank of self:     10
+    Confirmed:        NO
+    Confidence:       LOW
+    Note: SAMap maps to fibroblast (score 0.070) instead of self (score 0.007)
+
+============================================================
+RESULT: 24/35 confirmed — 11 unexpected cross-mappings

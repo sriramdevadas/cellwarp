@@ -1,0 +1,9 @@
+factor,test,rho,p_value,interpretation
+abs(log2 cell count ratio),Spearman vs |rank diff|,0.3716593098411624,0.1725621042548723,Do types with more extreme count asymmetry show larger rank reversals?
+log2(CellHint/primary cell count),Spearman vs signed rank diff,-0.05027002896631718,0.8587893776162931,Does direction of count asymmetry predict direction of rank shift?
+CellHint tissue count,Spearman vs |rank diff|,-0.5260223048327138,0.04399617869510576,Do multi-tissue types show larger rank reversals?
+Primary residual magnitude,Spearman vs |rank diff|,0.13846131150945265,0.6226363021154318,Do types that are most divergent in primary show largest reversals?
+Primary rank in 35-type set,Spearman vs |rank diff|,-0.13846131150945265,0.6226363021154318,Do types with extreme 35-type ranks (high or low) show more stability?
+Absolute residual difference,Spearman vs |rank diff|,0.6941284169092298,0.00409283628027624,Sanity check: do large rank diffs correspond to large residual diffs?
+CellHint absolute cell count,Spearman vs |rank diff|,-0.5046550432647157,0.05504485336670215,Do low-cell-count CellHint types show larger reversals?
+Primary human cell count,Spearman vs |rank diff|,-0.32429096643003386,0.23830988440623108,Do low-cell-count primary types show larger reversals?

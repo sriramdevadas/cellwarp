@@ -1,0 +1,1072 @@
+{
+  "6type": {
+    "B cell": {
+      "cpc1_var_frac_human": 0.28042845577471187,
+      "cpc1_var_frac_mouse": 0.4537439718590054,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.11611805224401703
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.10814837246377047
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.10769381767555539
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.10759577400437789
+        },
+        {
+          "gene": "ENSG00000198242",
+          "loading": 0.10672997382142058
+        }
+      ]
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "cpc1_var_frac_human": 0.23300038203851983,
+      "cpc1_var_frac_mouse": 0.5572616909005779,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12344057601688221
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11731053475724063
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.11670183097979567
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11519805262677843
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.11513671780655314
+        }
+      ]
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "cpc1_var_frac_human": 0.14739976176784636,
+      "cpc1_var_frac_mouse": 0.6720632826195786,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12874983948191432
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.12308981271287563
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.1185356533079378
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.11715329154812604
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11572294303451519
+        }
+      ]
+    },
+    "endothelial cell": {
+      "cpc1_var_frac_human": 0.31029158969004544,
+      "cpc1_var_frac_mouse": 0.4376055807414755,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.11149292295012042
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11064175997515821
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.10609236782253448
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.1058294766401136
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.1052143824374608
+        }
+      ]
+    },
+    "hepatocyte": {
+      "cpc1_var_frac_human": 0.7570160665046342,
+      "cpc1_var_frac_mouse": 0.13170198974118716,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000167996",
+          "loading": 0.07649341888895703
+        },
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.064735507743076
+        },
+        {
+          "gene": "ENSG00000198840",
+          "loading": -0.06452035889167598
+        },
+        {
+          "gene": "ENSG00000021826",
+          "loading": -0.061562672547365874
+        },
+        {
+          "gene": "ENSG00000069667",
+          "loading": -0.06133748921358277
+        }
+      ]
+    },
+    "macrophage": {
+      "cpc1_var_frac_human": 0.28140445756902144,
+      "cpc1_var_frac_mouse": 0.2861767639955751,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.09885708802589188
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.09663185102597534
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.09395769130832894
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.09390431330579878
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.09344659191753613
+        }
+      ]
+    }
+  },
+  "35type": {
+    "B cell": {
+      "cpc1_var_frac_human": 0.28042845577471187,
+      "cpc1_var_frac_mouse": 0.4537439718590054,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.11611805224401703
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.10814837246377047
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.10769381767555539
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.10759577400437789
+        },
+        {
+          "gene": "ENSG00000198242",
+          "loading": 0.10672997382142058
+        }
+      ]
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "cpc1_var_frac_human": 0.23300038203851983,
+      "cpc1_var_frac_mouse": 0.5572616909005779,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12344057601688221
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11731053475724063
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.11670183097979567
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11519805262677843
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.11513671780655314
+        }
+      ]
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "cpc1_var_frac_human": 0.14739976176784636,
+      "cpc1_var_frac_mouse": 0.6720632826195786,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12874983948191432
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.12308981271287563
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.1185356533079378
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.11715329154812604
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11572294303451519
+        }
+      ]
+    },
+    "T cell": {
+      "cpc1_var_frac_human": 0.5876453787656135,
+      "cpc1_var_frac_mouse": 0.1881657045745823,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000142937",
+          "loading": -0.09612748138101551
+        },
+        {
+          "gene": "ENSG00000137154",
+          "loading": -0.09441914376867241
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": -0.09422125880665441
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": -0.09390548577268985
+        },
+        {
+          "gene": "ENSG00000231500",
+          "loading": -0.0930983840533682
+        }
+      ]
+    },
+    "adventitial cell": {
+      "cpc1_var_frac_human": 0.31310366960727065,
+      "cpc1_var_frac_mouse": 0.5170198591438788,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000198918",
+          "loading": -0.12667741060443338
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": -0.11804831753361152
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": -0.11561493111391874
+        },
+        {
+          "gene": "ENSG00000233927",
+          "loading": -0.11109165104606573
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": -0.11085945776980258
+        }
+      ]
+    },
+    "basal cell": {
+      "cpc1_var_frac_human": 0.20027908527818802,
+      "cpc1_var_frac_mouse": 0.6345726123201156,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.11843731548612006
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11229155410473422
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.10659539823506227
+        },
+        {
+          "gene": "ENSG00000221983",
+          "loading": 0.10641387511847178
+        },
+        {
+          "gene": "ENSG00000149806",
+          "loading": 0.10559121429807601
+        }
+      ]
+    },
+    "bladder urothelial cell": {
+      "cpc1_var_frac_human": 0.17685486328707276,
+      "cpc1_var_frac_mouse": 0.7007318965281413,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12500740539772132
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11991844095199464
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.11234887323067348
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.11176232397047874
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.11166635338709704
+        }
+      ]
+    },
+    "classical monocyte": {
+      "cpc1_var_frac_human": 0.4901806595975628,
+      "cpc1_var_frac_mouse": 0.15246225281669942,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000196154",
+          "loading": -0.0796920846803003
+        },
+        {
+          "gene": "ENSG00000090382",
+          "loading": -0.07467027389240592
+        },
+        {
+          "gene": "ENSG00000038427",
+          "loading": -0.06638223701345922
+        },
+        {
+          "gene": "ENSG00000188641",
+          "loading": -0.06602656638463568
+        },
+        {
+          "gene": "ENSG00000198840",
+          "loading": -0.06083831020752177
+        }
+      ]
+    },
+    "endothelial cell": {
+      "cpc1_var_frac_human": 0.30115783454285205,
+      "cpc1_var_frac_mouse": 0.436269776032227,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.11086054920445182
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11045352149482884
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.10563977990652165
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.10509531701020916
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.1042529497857474
+        }
+      ]
+    },
+    "enterocyte of epithelium of large intestine": {
+      "cpc1_var_frac_human": 0.44821301414566406,
+      "cpc1_var_frac_mouse": 0.2929136473918333,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000233927",
+          "loading": 0.07476588018555824
+        },
+        {
+          "gene": "ENSG00000108107",
+          "loading": 0.07259215312789369
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.07250431902433592
+        },
+        {
+          "gene": "ENSG00000170421",
+          "loading": 0.07223387465212813
+        },
+        {
+          "gene": "ENSG00000197956",
+          "loading": 0.06971580747296882
+        }
+      ]
+    },
+    "epithelial cell": {
+      "cpc1_var_frac_human": 0.4397861410151575,
+      "cpc1_var_frac_mouse": 0.3056494054555048,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.09803736574895211
+        },
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.09544155821739259
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.09536113705113329
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.09522112828055912
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.0907368723475504
+        }
+      ]
+    },
+    "fibroblast": {
+      "cpc1_var_frac_human": 0.07935499826465907,
+      "cpc1_var_frac_mouse": 0.6917235792501346,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.1085607908097159
+        },
+        {
+          "gene": "ENSG00000148180",
+          "loading": -0.10600299704688952
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.10116948336603604
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.09858616053406075
+        },
+        {
+          "gene": "ENSG00000221983",
+          "loading": 0.09701701564901047
+        }
+      ]
+    },
+    "fibroblast of cardiac tissue": {
+      "cpc1_var_frac_human": 0.2855534353762191,
+      "cpc1_var_frac_mouse": 0.629467782010401,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12486520494768125
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.12212820624220941
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.1160361678453409
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11432484605471013
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.11406804541971609
+        }
+      ]
+    },
+    "granulocyte": {
+      "cpc1_var_frac_human": 0.6065884231776512,
+      "cpc1_var_frac_mouse": 0.25245681499411354,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.08369199534419633
+        },
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.08291982378086116
+        },
+        {
+          "gene": "ENSG00000231500",
+          "loading": 0.08286203217841923
+        },
+        {
+          "gene": "ENSG00000167526",
+          "loading": 0.08135735733962511
+        },
+        {
+          "gene": "ENSG00000144713",
+          "loading": 0.08029346529438897
+        }
+      ]
+    },
+    "hematopoietic precursor cell": {
+      "cpc1_var_frac_human": 0.44453747393231735,
+      "cpc1_var_frac_mouse": 0.14887400208262702,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.08082158973296323
+        },
+        {
+          "gene": "ENSG00000231500",
+          "loading": 0.07936577672770881
+        },
+        {
+          "gene": "ENSG00000100316",
+          "loading": 0.07902879453358325
+        },
+        {
+          "gene": "ENSG00000140988",
+          "loading": 0.07694947400319183
+        },
+        {
+          "gene": "ENSG00000167526",
+          "loading": 0.07673710501114142
+        }
+      ]
+    },
+    "hematopoietic stem cell": {
+      "cpc1_var_frac_human": 0.24680132682521463,
+      "cpc1_var_frac_mouse": 0.492877300919657,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000113648",
+          "loading": -0.07897861074641674
+        },
+        {
+          "gene": "ENSG00000204628",
+          "loading": -0.07086819850867601
+        },
+        {
+          "gene": "ENSG00000117632",
+          "loading": -0.06808499282169547
+        },
+        {
+          "gene": "ENSG00000153551",
+          "loading": -0.06415440268855072
+        },
+        {
+          "gene": "ENSG00000196415",
+          "loading": -0.061683662817528725
+        }
+      ]
+    },
+    "hepatocyte": {
+      "cpc1_var_frac_human": 0.7471465294986671,
+      "cpc1_var_frac_mouse": 0.1407094985056461,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000167996",
+          "loading": 0.0761432615096311
+        },
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.06553809602265226
+        },
+        {
+          "gene": "ENSG00000198840",
+          "loading": -0.06416781759742746
+        },
+        {
+          "gene": "ENSG00000166710",
+          "loading": 0.06148228687567974
+        },
+        {
+          "gene": "ENSG00000021826",
+          "loading": -0.061417911897850515
+        }
+      ]
+    },
+    "intermediate monocyte": {
+      "cpc1_var_frac_human": 0.32769702096558384,
+      "cpc1_var_frac_mouse": 0.13376741941032058,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000188641",
+          "loading": -0.06816102519563666
+        },
+        {
+          "gene": "ENSG00000090376",
+          "loading": -0.06348013105254699
+        },
+        {
+          "gene": "ENSG00000090382",
+          "loading": -0.06194459423117277
+        },
+        {
+          "gene": "ENSG00000075884",
+          "loading": -0.061184382578780463
+        },
+        {
+          "gene": "ENSG00000152601",
+          "loading": -0.06106458896041441
+        }
+      ]
+    },
+    "large intestine goblet cell": {
+      "cpc1_var_frac_human": 0.19111923960502053,
+      "cpc1_var_frac_mouse": 0.5988861783190315,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000106541",
+          "loading": 0.08380370903096948
+        },
+        {
+          "gene": "ENSG00000204628",
+          "loading": 0.07599722763004518
+        },
+        {
+          "gene": "ENSG00000122711",
+          "loading": 0.06435443114240502
+        },
+        {
+          "gene": "ENSG00000111057",
+          "loading": 0.061825293863350825
+        },
+        {
+          "gene": "ENSG00000167642",
+          "loading": 0.060392879550480956
+        }
+      ]
+    },
+    "luminal epithelial cell of mammary gland": {
+      "cpc1_var_frac_human": 0.09375886518515576,
+      "cpc1_var_frac_mouse": 0.6372786790850825,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.11676613282138139
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11375396048785734
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.10700249145025553
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.10575443612768456
+        },
+        {
+          "gene": "ENSG00000221983",
+          "loading": 0.1049231357997366
+        }
+      ]
+    },
+    "macrophage": {
+      "cpc1_var_frac_human": 0.28407063588635295,
+      "cpc1_var_frac_mouse": 0.2820937154451612,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.10237892773463789
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.09891008848518008
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.09792463510576921
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.0970855755742216
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.09658982169879402
+        }
+      ]
+    },
+    "mature NK T cell": {
+      "cpc1_var_frac_human": 0.3976815563895184,
+      "cpc1_var_frac_mouse": 0.062207040808965317,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000151883",
+          "loading": -0.0680699843862537
+        },
+        {
+          "gene": "ENSG00000105374",
+          "loading": -0.06539033745035144
+        },
+        {
+          "gene": "ENSG00000010810",
+          "loading": -0.062317242713819956
+        },
+        {
+          "gene": "ENSG00000164674",
+          "loading": -0.06188608189415253
+        },
+        {
+          "gene": "ENSG00000114423",
+          "loading": -0.05794841105577454
+        }
+      ]
+    },
+    "mesenchymal stem cell": {
+      "cpc1_var_frac_human": 0.3740675279010176,
+      "cpc1_var_frac_mouse": 0.17872969638342676,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000198918",
+          "loading": -0.09566224519977184
+        },
+        {
+          "gene": "ENSG00000233927",
+          "loading": -0.0916422416267017
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": -0.08579558045625274
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": -0.08108809423353149
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": -0.08029995326063909
+        }
+      ]
+    },
+    "mesenchymal stem cell of adipose tissue": {
+      "cpc1_var_frac_human": 0.4338581220771904,
+      "cpc1_var_frac_mouse": 0.4097882502800166,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.1087330429078118
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.10250868053345188
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.10066764187363417
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.10064011753502444
+        },
+        {
+          "gene": "ENSG00000198242",
+          "loading": 0.09820999628590889
+        }
+      ]
+    },
+    "monocyte": {
+      "cpc1_var_frac_human": 0.1573730104752925,
+      "cpc1_var_frac_mouse": 0.7304935106656416,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000143546",
+          "loading": 0.12012297119320023
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.1154657740504907
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.11476296936675007
+        },
+        {
+          "gene": "ENSG00000149806",
+          "loading": 0.11065811588863149
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.10815219783720151
+        }
+      ]
+    },
+    "myeloid dendritic cell": {
+      "cpc1_var_frac_human": 0.2969932769112164,
+      "cpc1_var_frac_mouse": 0.5167156319417179,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.12874910244660231
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.1223228625814009
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": 0.11968925931494985
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.11499803585798539
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11383512861484374
+        }
+      ]
+    },
+    "myeloid leukocyte": {
+      "cpc1_var_frac_human": 0.4990547765058882,
+      "cpc1_var_frac_mouse": 0.28723962474071435,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": -0.1013363189970522
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": -0.09690790653385024
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": -0.09588839224464174
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": -0.09525216418437207
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": -0.0945761850438672
+        }
+      ]
+    },
+    "natural killer cell": {
+      "cpc1_var_frac_human": 0.11259744537233762,
+      "cpc1_var_frac_mouse": 0.4923694378547729,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.12624944261679966
+        },
+        {
+          "gene": "ENSG00000198918",
+          "loading": 0.1192593572673664
+        },
+        {
+          "gene": "ENSG00000197756",
+          "loading": 0.1148548083306502
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.11445684713757065
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.11179253184791735
+        }
+      ]
+    },
+    "neutrophil": {
+      "cpc1_var_frac_human": 0.36692414253647676,
+      "cpc1_var_frac_mouse": 0.05973581770167258,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000105835",
+          "loading": -0.10619526728035912
+        },
+        {
+          "gene": "ENSG00000167996",
+          "loading": -0.07730642485363415
+        },
+        {
+          "gene": "ENSG00000163162",
+          "loading": -0.07666743058451163
+        },
+        {
+          "gene": "ENSG00000115590",
+          "loading": -0.07182405685133705
+        },
+        {
+          "gene": "ENSG00000151726",
+          "loading": -0.07022488752519315
+        }
+      ]
+    },
+    "non-classical monocyte": {
+      "cpc1_var_frac_human": 0.3500017876394805,
+      "cpc1_var_frac_mouse": 0.3083138329933122,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000198918",
+          "loading": -0.10513009486367422
+        },
+        {
+          "gene": "ENSG00000134419",
+          "loading": -0.09633552276400342
+        },
+        {
+          "gene": "ENSG00000233927",
+          "loading": -0.09308754283335818
+        },
+        {
+          "gene": "ENSG00000196154",
+          "loading": -0.09099418154542567
+        },
+        {
+          "gene": "ENSG00000108107",
+          "loading": -0.08941933369201226
+        }
+      ]
+    },
+    "pancreatic acinar cell": {
+      "cpc1_var_frac_human": 0.544152377356322,
+      "cpc1_var_frac_mouse": 0.5365544651325138,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.08846368439750293
+        },
+        {
+          "gene": "ENSG00000144713",
+          "loading": 0.08733705437286216
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.08580003890164425
+        },
+        {
+          "gene": "ENSG00000231500",
+          "loading": 0.08439378648112048
+        },
+        {
+          "gene": "ENSG00000137154",
+          "loading": 0.08238704964521974
+        }
+      ]
+    },
+    "pancreatic ductal cell": {
+      "cpc1_var_frac_human": 0.578598814033168,
+      "cpc1_var_frac_mouse": 0.2216026639003859,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.079085639550809
+        },
+        {
+          "gene": "ENSG00000108298",
+          "loading": 0.07715471139653868
+        },
+        {
+          "gene": "ENSG00000174748",
+          "loading": 0.07691358032489906
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.07604979417371147
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.0757590947294043
+        }
+      ]
+    },
+    "plasma cell": {
+      "cpc1_var_frac_human": 0.44288359161804886,
+      "cpc1_var_frac_mouse": 0.33303427243691436,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000180879",
+          "loading": 0.07830843538997247
+        },
+        {
+          "gene": "ENSG00000166598",
+          "loading": 0.07616298467520262
+        },
+        {
+          "gene": "ENSG00000233927",
+          "loading": 0.06535959789888099
+        },
+        {
+          "gene": "ENSG00000100219",
+          "loading": 0.06460066415112929
+        },
+        {
+          "gene": "ENSG00000211592",
+          "loading": 0.06302782814592195
+        }
+      ]
+    },
+    "smooth muscle cell": {
+      "cpc1_var_frac_human": 0.34899298829844033,
+      "cpc1_var_frac_mouse": 0.16965179228732954,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000147403",
+          "loading": 0.07653864040717945
+        },
+        {
+          "gene": "ENSG00000142937",
+          "loading": 0.07372046017995315
+        },
+        {
+          "gene": "ENSG00000186468",
+          "loading": 0.07186239464253455
+        },
+        {
+          "gene": "ENSG00000108298",
+          "loading": 0.0715185532942592
+        },
+        {
+          "gene": "ENSG00000182899",
+          "loading": 0.07090513272991227
+        }
+      ]
+    },
+    "stromal cell": {
+      "cpc1_var_frac_human": 0.5623559886420858,
+      "cpc1_var_frac_mouse": 0.06840996722984777,
+      "top5_genes": [
+        {
+          "gene": "ENSG00000197766",
+          "loading": -0.06455299442440647
+        },
+        {
+          "gene": "ENSG00000233927",
+          "loading": -0.05969359613608487
+        },
+        {
+          "gene": "ENSG00000109475",
+          "loading": -0.058035025973488606
+        },
+        {
+          "gene": "ENSG00000161970",
+          "loading": -0.05702721268234067
+        },
+        {
+          "gene": "ENSG00000197956",
+          "loading": -0.056724971862298704
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "gate_passed": true,
+  "n_cell_types_with_enrichment": 6,
+  "min_required": 3,
+  "p_adj_cutoff": 0.05,
+  "per_cell_type": {
+    "B cell": {
+      "n_significant": 154,
+      "top_term": "Microglial Cell Activation (GO:0001774)",
+      "top_p_adj": 1.3349936504612363e-06
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "n_significant": 37,
+      "top_term": "Cytoplasmic Translation (GO:0002181)",
+      "top_p_adj": 3.903414551337641e-19
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "n_significant": 23,
+      "top_term": "Cytoplasmic Translation (GO:0002181)",
+      "top_p_adj": 5.275978839832844e-12
+    },
+    "endothelial cell": {
+      "n_significant": 27,
+      "top_term": "B Cell Activation (GO:0042113)",
+      "top_p_adj": 0.0004876129538196926
+    },
+    "hepatocyte": {
+      "n_significant": 173,
+      "top_term": "Regulation Of Heterotypic Cell-Cell Adhesion (GO:0034114)",
+      "top_p_adj": 0.0004743107753704491
+    },
+    "macrophage": {
+      "n_significant": 56,
+      "top_term": "Microglial Cell Activation (GO:0001774)",
+      "top_p_adj": 0.0002622746669282403
+    }
+  }
+}

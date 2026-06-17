@@ -1,0 +1,86 @@
+{
+  "our_label": "B cell",
+  "organism": "human",
+  "organism_scientific": "Homo sapiens",
+  "tried_terms": [
+    "B cell",
+    "naive B cell",
+    "B lymphocyte",
+    "B-cell"
+  ],
+  "successful_terms": [
+    "B cell",
+    "naive B cell"
+  ],
+  "total_experiments": 3,
+  "experiments": [
+    {
+      "accession": "ENCSR603LVR",
+      "biosample_term": "B cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens B cell male adult (22 years)",
+      "n_bio_replicates": 1,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "single replicate (n=1)",
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR903WVU",
+      "biosample_term": "naive B cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens naive B cell male adult (40 years)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    },
+    {
+      "accession": "ENCSR685OFR",
+      "biosample_term": "naive B cell",
+      "biosample_type": "primary cell",
+      "biosample_summary": "Homo sapiens naive B cell female adult (39 years)",
+      "n_bio_replicates": 2,
+      "has_idr_peaks": false,
+      "has_overlap_peaks": false,
+      "peak_file_count": 0,
+      "treatments": [],
+      "is_stimulated": false,
+      "stim_details": [],
+      "is_cell_line": false,
+      "is_huvec": false,
+      "description": "",
+      "lab": "Michael Snyder, Stanford",
+      "date_released": "unknown",
+      "classification": "flag",
+      "classification_reasons": [
+        "no peak files visible in experiment metadata (may exist \u2014 check files endpoint)"
+      ]
+    }
+  ],
+  "query_timestamp": "2026-03-15T20:16:23.317607"
+}

@@ -1,0 +1,101 @@
+id,cellwarp_name,cellmarker_markers_top3,organ_system,ts_cell_count,tms_cell_count,macaque_compatibility,data_source,priority_tier,notes
+1,B cell,"CD19, MS4A1, CD79A",immune,114495,36349,CONFIRMED,Current ontology,RETAIN,Core type. NHPCA: 23718 cells.
+2,"CD4-positive, alpha-beta T cell","CD4, CD3E, IL7R",immune,97130,1721,CONFIRMED,Current ontology,RETAIN,Core type. NHPCA: 13447 cells.
+3,"CD8-positive, alpha-beta T cell","CD8A, CD8B, GZMB",immune,76277,1940,CONFIRMED,Current ontology,RETAIN,Core type. Most rigid (rank 35). NHPCA: 5227.
+4,T cell,"CD3E, CD3D, TRAC",immune,6290,12745,CONFIRMED,Current ontology,RETAIN,Catch-all T cell label. Known annotation ambiguity — includes unresolved CD4/CD8.
+5,natural killer cell,"NKG7, GNLY, KLRD1",immune,14231,3362,CONFIRMED,Current ontology,RETAIN,NHPCA: 1176 cells.
+6,mature NK T cell,"CD3E, NKG7, KLRB1",immune,5394,3161,CONFIRMED,Current ontology,RETAIN,Mammalian specialization. Absent in zebrafish.
+7,macrophage,"CD68, CD163, MARCO",immune,69072,9631,CONFIRMED,Current ontology,RETAIN,Core type. NHPCA: 14227 cells.
+8,classical monocyte,"CD14, S100A8, FCN1",immune,18200,8124,ABSENT_NHPCA,Current ontology,RETAIN,NHPCA annotates as generic monocyte. Annotation resolution gap.
+9,intermediate monocyte,"CD14, FCGR3A, HLA-DRA",immune,5478,1761,ABSENT_NHPCA,Current ontology,RETAIN,NHPCA annotation gap. Mammalian subtype.
+10,non-classical monocyte,"FCGR3A, CX3CR1, MS4A7",immune,1284,1159,ABSENT_NHPCA,Current ontology,RETAIN,NHPCA annotation gap. Mammalian subtype.
+11,monocyte,"CD14, LYZ, S100A9",immune,25753,3674,CONFIRMED,Current ontology,RETAIN,Generic monocyte label. Overlaps with subtypes.
+12,myeloid dendritic cell,"HLA-DRA, ITGAX, CD1C",immune,571,618,CONFIRMED,Current ontology,RETAIN,Borderline cell counts (571/618). NHPCA: 5397.
+13,myeloid leukocyte,"LYZ, S100A8, S100A9",immune,1002,516,ABSENT_NHPCA,Current ontology,RETAIN,Generic catch-all label. Annotation ambiguity risk.
+14,neutrophil,"FCGR3B, CSF3R, CXCR2",immune,69539,705,CONFIRMED,Current ontology,RETAIN,Mouse count borderline (705).
+15,granulocyte,"LYZ, S100A8, S100A9",immune,769,15562,CONFIRMED,Current ontology,RETAIN,Generic label overlapping with neutrophil/basophil/eosinophil.
+16,plasma cell,"SDC1, MZB1, JCHAIN",immune,27349,1646,CONFIRMED,Current ontology,RETAIN,NHPCA: 5533 cells.
+17,regulatory T cell,"FOXP3, IL2RA, CTLA4",immune,2649,170,LIKELY,Census mouse pooling,HIGH,TS: 2649 (PASS). TMS: 170 (FAIL). Census mouse datasets (e.g. spleen/lymph node) likely boost past 500. Key for autoimmune disease axis.
+18,mast cell,"KIT, TPSAB1, CPA3",immune,6222,76,LIKELY,Census mouse pooling,HIGH,TS: 6222 (PASS). TMS: 76 (FAIL). Census mouse skin/lung datasets needed. Disease-relevant (allergy/asthma).
+19,basophil,"CLC, IL4, GATA2",immune,1669,325,LIKELY,Census mouse pooling,MEDIUM,Near-miss in both. Rare granulocyte. Lower priority.
+20,plasmacytoid dendritic cell,"LILRA4, IRF7, IL3RA",immune,99,122,LIKELY,Census pooling both,MEDIUM,Both under 500 in Tabula. Census pooling of blood/spleen datasets needed. Key antiviral immune type.
+21,epithelial cell,"EPCAM, KRT8, KRT18",epithelial,1675,764,CONFIRMED,Current ontology,RETAIN,Generic catch-all. Annotation ambiguity.
+22,basal cell,"KRT5, KRT14, TP63",epithelial,33526,3726,CONFIRMED,Current ontology,RETAIN,Progenitor capacity in skin/airway/prostate.
+23,luminal epithelial cell of mammary gland,"KRT18, KRT8, EPCAM",epithelial,15432,2671,ABSENT_NHPCA,Current ontology,RETAIN,Mammalian-specific. Absent in zebrafish. Cancer-relevant (breast).
+24,large intestine goblet cell,"MUC2, TFF3, FCGBP",epithelial,1557,1745,ABSENT_NHPCA,Current ontology,RETAIN,GI secretory type. Absent in zebrafish (no large intestine).
+25,enterocyte of epithelium of large intestine,"FABP1, ANPEP, SLC26A3",epithelial,4567,3667,CONFIRMED,Current ontology,RETAIN,GI absorptive type.
+26,bladder urothelial cell,"UPK2, UPK1A, KRT20",epithelial,27241,6651,CONFIRMED,Current ontology,RETAIN,Absent in zebrafish. Cancer-relevant (bladder cancer).
+27,pancreatic ductal cell,"KRT19, SOX9, CFTR",epithelial,2721,651,CONFIRMED,Current ontology,RETAIN,Mouse count borderline (651). Cancer-relevant (PDAC).
+28,pulmonary alveolar type 2 cell,"SFTPC, SFTPB, ABCA3",epithelial,11594,292,LIKELY,Census mouse lung pooling,HIGH,TS abundant (11594). TMS near-miss (292). Census mouse lung datasets needed. COVID-relevant. Stem cell function in lung.
+29,keratinocyte,"KRT14, KRT5, KRT10",epithelial,est_10000,est_5000,LIKELY,Census query needed,HIGH,Abundant in skin datasets. Not in current Tabula query. Melanoma microenvironment.
+30,ciliated epithelial cell,"FOXJ1, DNAH5, RSPH1",epithelial,est_5000,est_2000,LIKELY,Census query needed,HIGH,Airway/respiratory. Both species have lung/trachea datasets. Primary ciliary dyskinesia relevant.
+31,proximal tubule epithelial cell,"SLC34A1, LRP2, CUBN",epithelial,est_5000,est_2000,LIKELY,Census query needed,HIGH,Kidney. Both species have kidney datasets in Census. Renal disease relevant.
+32,Paneth cell,"DEFA5, LYZ, REG3A",epithelial,est_500,est_500,LIKELY,Census query needed,MEDIUM,Small intestine innate immune. May be borderline in both species. Crohn's disease relevant.
+33,club cell,"SCGB1A1, SCGB3A2, CYP2F1",epithelial,1747,37,UNCERTAIN,Census mouse pooling,MEDIUM,TS: 1747 (PASS). TMS: 37 (FAIL). Mouse club cells are abundant but poorly captured in TMS. Census mouse lung needed.
+34,podocyte,"NPHS1, NPHS2, WT1",epithelial,est_1000,est_500,LIKELY,Census query needed,MEDIUM,Kidney glomerular. Critical for nephrotic syndrome. May be borderline.
+35,type I pneumocyte,"AGER, HOPX, PDPN",epithelial,3116,4,LIKELY,Census mouse lung pooling,LOW,TS: 3116 (PASS). TMS: 4 (FAIL). Extremely rare in mouse scRNA-seq — fragile cells lost in dissociation. May not be achievable even with Census.
+36,stromal cell,"PDGFRA, COL1A1, DCN",structural,3458,3123,CONFIRMED,Current ontology,RETAIN,Most flexible type (rank 1). Generic label.
+37,fibroblast,"COL1A1, DCN, LUM",structural,83338,3143,CONFIRMED,Current ontology,RETAIN,Large population across tissues.
+38,fibroblast of cardiac tissue,"COL1A1, DCN, DDR2",structural,1947,6335,ABSENT_NHPCA,Current ontology,RETAIN,Tissue-specific fibroblast.
+39,adventitial cell,"PDGFRA, DCN, MFAP5",structural,1045,815,CONFIRMED,Current ontology,RETAIN,Perivascular.
+40,smooth muscle cell,"ACTA2, MYH11, TAGLN",structural,18425,1704,CONFIRMED,Current ontology,RETAIN,Multiple vascular/visceral tissues.
+41,pericyte,"PDGFRB, RGS5, ABCC9",structural,10888,99,LIKELY,Census mouse pooling,HIGH,TS: 10888 (PASS). TMS: 99 (FAIL). Census mouse pooling needed. Vascular support. Neurovascular unit component.
+42,myofibroblast,"ACTA2, COL1A1, TAGLN",structural,est_2000,est_1000,LIKELY,Census query needed,MEDIUM,Activated fibroblast. May overlap with fibroblast annotation. Fibrosis-relevant.
+43,adipocyte,"ADIPOQ, LEP, PPARG",structural,est_1000,est_1000,LIKELY,Census query needed,MEDIUM,Metabolic/structural. Obesity-relevant. May be lost in standard dissociation.
+44,osteoblast,"BGLAP, RUNX2, SP7",structural,est_500,est_500,LIKELY,Census query needed,LOW,Bone-forming. May be rare in standard scRNA-seq. Osteoporosis-relevant.
+45,satellite cell,"PAX7, MYF5, MYOD1",structural,est_500,est_500,LIKELY,Census query needed,LOW,Skeletal muscle stem cell. Present in muscle tissue datasets.
+46,mesothelial cell,"MSLN, WT1, UPK3B",structural,est_1000,est_500,LIKELY,Census query needed,MEDIUM,Serosal lining. Present in lung/heart/peritoneal datasets.
+47,chondrocyte,"COL2A1, ACAN, SOX9",structural,est_500,est_500,LIKELY,Census query needed,LOW,Cartilage. May be rare. Osteoarthritis-relevant.
+48,oligodendrocyte,"MBP, PLP1, MOG",neural,est_5000,est_5000,CONFIRMED,Allen Brain + Census,HIGH,Major CNS glial type. Allen Brain has human and macaque data. TS has no brain — requires supplementary atlas.
+49,astrocyte,"GFAP, AQP4, S100B",neural,est_5000,est_5000,CONFIRMED,Allen Brain + Census,HIGH,Major CNS glial type. Neurodegenerative disease-relevant (Alzheimer's). Allen Brain coverage.
+50,microglial cell,"TMEM119, P2RY12, CX3CR1",neural,410,13268,CONFIRMED,TS eye (410) + Census brain,HIGH,Brain-resident macrophage. TS: 410 in eye only. Census human brain pools needed. TMS: 13268 (PASS). Neuroinflammation-relevant.
+51,oligodendrocyte precursor cell,"PDGFRA, CSPG4, OLIG2",neural,est_2000,est_2000,CONFIRMED,Allen Brain + Census,HIGH,OPC / NG2 glia. Well-defined in both species. MS-relevant.
+52,excitatory neuron,"SLC17A7, CAMK2A, SATB2",neural,est_50000,est_10000,CONFIRMED,Allen Brain + Census,HIGH,Broad glutamatergic class. Well-annotated in Allen Brain for all three species. Core neural type.
+53,inhibitory neuron,"GAD1, GAD2, SLC32A1",neural,est_30000,est_10000,CONFIRMED,Allen Brain + Census,HIGH,Broad GABAergic class. Well-annotated in Allen Brain. Core neural type.
+54,Schwann cell,"MPZ, PMP22, MBP",neural,318,274,LIKELY,Census pooling both,MEDIUM,Peripheral nerve glia. Both under 500 in Tabula. Census peripheral nerve datasets limited.
+55,ependymal cell,"FOXJ1, PIFO, CCDC153",neural,est_500,est_500,LIKELY,Census brain pooling,MEDIUM,Ventricular lining. Present in brain datasets. May be borderline.
+56,Purkinje neuron,"CALB1, PCP2, GRID2",neural,est_1000,est_1000,CONFIRMED,Allen Brain,MEDIUM,Cerebellar. Distinctive large neuron. Allen Brain has cerebellar data for all three species.
+57,medium spiny neuron,"PPP1R1B, DRD1, DRD2",neural,est_5000,est_5000,CONFIRMED,Allen Brain,MEDIUM,Striatal. Huntington's disease-relevant. Allen Brain striatal coverage.
+58,dopaminergic neuron,"TH, SLC6A3, NR4A2",neural,est_500,est_500,CONFIRMED,Allen Brain,LOW,Midbrain. Parkinson's disease-relevant. Rare subtype — may be borderline.
+59,cerebellar granule cell,"GABRA6, NEUROD1, PAX6",neural,est_5000,est_5000,CONFIRMED,Allen Brain,MEDIUM,Most abundant neuron type in brain. Well-represented in cerebellar datasets.
+60,endothelial cell,"PECAM1, VWF, CDH5",vascular,33703,14822,CONFIRMED,Current ontology,RETAIN,Core type. Generic endothelial.
+61,vein endothelial cell,"PECAM1, VWF, ACKR1",vascular,4698,472,LIKELY,Near-miss (TMS 472),HIGH,Mouse near-miss. Census mouse vascular pooling likely achievable. Venous-specific biology.
+62,arterial endothelial cell,"GJA5, BMX, EFNB2",vascular,est_2000,est_1000,LIKELY,Census query needed,HIGH,Arterial specification. Present in vascular/heart datasets. Atherosclerosis-relevant.
+63,capillary endothelial cell,"CA4, RGCC, BTNL9",vascular,est_5000,est_2000,LIKELY,Census query needed,HIGH,Tissue-dependent capillary phenotypes. Most abundant endothelial subtype.
+64,lymphatic endothelial cell,"PROX1, LYVE1, FLT4",vascular,2438,140,LIKELY,Census mouse pooling,MEDIUM,TS: 2438 (PASS). TMS: 140 (FAIL). Census mouse pooling needed. Cancer metastasis-relevant.
+65,brain endothelial cell,"CLDN5, SLC2A1, MFSD2A",vascular,est_2000,est_2000,CONFIRMED,Allen Brain + Census,MEDIUM,Blood-brain barrier. Requires brain atlas for human. Neurological disease-relevant.
+66,sinusoidal endothelial cell,"STAB2, CLEC4G, LYVE1",vascular,est_1000,est_500,LIKELY,Census liver pooling,MEDIUM,Liver-specific endothelium. Present in liver datasets. May be annotated as generic endothelial.
+67,endocardial cell,"NPR3, CYTL1, CDH11",vascular,est_500,est_500,LIKELY,Census query needed,LOW,Heart endothelium. May be annotated under endothelial. Cardiac development-relevant.
+68,hepatocyte,"ALB, APOB, CYP3A4",metabolic,7414,4091,CONFIRMED,Current ontology,RETAIN,Core type. Highly rigid (rank 32).
+69,pancreatic acinar cell,"PRSS1, CPA1, CELA3A",metabolic,5482,2717,CONFIRMED,Current ontology,RETAIN,Exocrine pancreas. High flexibility (rank 5).
+70,cholangiocyte,"KRT19, SOX9, EPCAM",metabolic,est_1000,est_500,LIKELY,Census liver pooling,HIGH,Biliary epithelium. Present in liver datasets. Cholangiocarcinoma-relevant.
+71,Kupffer cell,"CLEC4F, CD68, TIMD4",metabolic,est_1000,est_500,LIKELY,Census liver pooling,HIGH,Liver-resident macrophage. May be annotated as macrophage. NAFLD/NASH-relevant.
+72,hepatic stellate cell,"ACTA2, DES, LRAT",metabolic,223,39,UNCERTAIN,Census liver pooling,LOW,Both very low in Tabula (223/39). Even Census pooling may not reach 500. Liver fibrosis-relevant but may not be achievable.
+73,enterocyte of small intestine,"FABP2, SI, ANPEP",metabolic,est_2000,est_1000,LIKELY,Census GI pooling,HIGH,Absorptive intestinal epithelium. Distinct from large intestine enterocyte. Celiac disease-relevant.
+74,gastric chief cell,"PGA3, PGA4, PGA5",metabolic,est_500,est_500,LIKELY,Census GI pooling,MEDIUM,Stomach. TS lacks stomach tissue. Requires Census gastric datasets. Gastric cancer-relevant.
+75,parietal cell,"ATP4A, ATP4B, GIF",metabolic,est_500,est_500,LIKELY,Census GI pooling,MEDIUM,Stomach acid-secreting. TS lacks stomach. Requires Census gastric datasets.
+76,hematopoietic precursor cell,"CD34, CD38, FLT3",hematopoietic,2140,2144,CONFIRMED,Current ontology,RETAIN,Third-most flexible (rank 3).
+77,hematopoietic stem cell,"CD34, KIT, THY1",hematopoietic,858,3342,ABSENT_NHPCA,Current ontology,RETAIN,T2-D progenitor analysis pending. NHPCA: absent. Embryonic confound in TMS.
+78,mesenchymal stem cell,"ENG, NT5E, THY1",hematopoietic,23499,16142,CONFIRMED,Current ontology,RETAIN,Large populations. NHPCA: 74528 (massive).
+79,mesenchymal stem cell of adipose tissue,"ENG, NT5E, PDGFRA",hematopoietic,3777,6626,CONFIRMED,Current ontology,RETAIN,Tissue-specific MSC.
+80,erythrocyte,"HBA1, HBB, SLC4A1",hematopoietic,14611,356,LIKELY,Census mouse pooling,HIGH,TS: 14611 (PASS). TMS: 356 (FAIL). Mouse erythrocytes nucleated — different biology. Census mouse blood datasets needed.
+81,megakaryocyte,"ITGA2B, GP1BA, PF4",hematopoietic,est_1000,est_500,LIKELY,Census bone marrow pooling,MEDIUM,Platelet progenitor. Present in bone marrow datasets. Thrombocytopenia-relevant.
+82,thymocyte,"CD3E, RAG1, PTCRA",hematopoietic,455,3517,LIKELY,Census thymus pooling,HIGH,Near-miss human (455). TMS: 3517 (PASS). Census human thymus datasets should boost. T cell development.
+83,common myeloid progenitor,"CD34, CD38, IL3RA",hematopoietic,est_500,est_500,LIKELY,Census bone marrow pooling,LOW,Annotation-dependent. May not be consistently labeled across atlases.
+84,erythroid progenitor,"GATA1, KLF1, EPOR",hematopoietic,est_1000,est_500,LIKELY,Census bone marrow pooling,MEDIUM,Better-defined than CMP. Present in bone marrow datasets.
+85,pro-B cell,"CD34, CD19, PAX5",hematopoietic,est_500,est_500,LIKELY,Census bone marrow pooling,LOW,B cell progenitor. Annotation-dependent. ALL-relevant.
+86,pancreatic beta cell,"INS, MAFA, IAPP",endocrine,102,4016,LIKELY,Requires second human atlas,HIGH,TS critically low (102). TMS: 4016 (PASS). Requires human pancreas atlas (e.g. HPAP). Diabetes type 1/2 central.
+87,pancreatic alpha cell,"GCG, ARX, IRX1",endocrine,48,831,LIKELY,Requires second human atlas,HIGH,TS critically low (48). TMS: 831 (PASS). Same supplementary atlas as beta cell. Diabetes-relevant.
+88,pancreatic delta cell,"SST, HHEX, RBP4",endocrine,9,463,UNCERTAIN,Requires supplementary atlases,LOW,Both very low. Even with supplements may not reach 500 human. Lower priority.
+89,thyroid follicular cell,"TG, TPO, SLC5A5",endocrine,est_500,est_500,LIKELY,Census query needed,MEDIUM,TS lacks thyroid tissue. Requires Census thyroid datasets. Thyroid cancer-relevant.
+90,enteroendocrine cell,"CHGA, SYP, NEUROD1",endocrine,25,161,UNCERTAIN,Requires supplementary atlases,LOW,Both very low in Tabula. Rare cell type. GI hormone signaling.
+91,adrenocortical cell,"CYP11A1, STAR, CYP17A1",endocrine,est_500,est_500,UNCERTAIN,Census query needed,LOW,TS lacks adrenal tissue. Census adrenal datasets limited. Cushing's/Addison's-relevant.
+92,chromaffin cell,"PNMT, TH, DBH",endocrine,est_500,est_500,UNCERTAIN,Census query needed,LOW,Adrenal medulla. Rare in standard scRNA-seq. Pheochromocytoma-relevant.
+93,parathyroid cell,"PTH, CASR, GCM2",endocrine,est_200,est_200,UNCERTAIN,Census query needed,LOW,Very rare tissue in scRNA-seq. Likely not achievable at ≥500. Candidate for deferral.
+94,cardiac myocyte,"TNNT2, MYH7, MYL2",other,5816,403,LIKELY,Near-miss mouse (403),HIGH,Originally dropped (absent from TS at cell type level but present as regular atrial cardiac myocyte: 5816). Mouse near-miss. Heart failure/cardiomyopathy-relevant.
+95,melanocyte,"MLANA, PMEL, TYRP1",other,est_500,est_500,LIKELY,Census skin pooling,MEDIUM,Neural crest-derived. Melanoma-relevant. Present in skin datasets.
+96,alveolar macrophage,"MARCO, FABP4, MCEMP1",other,est_2000,est_1000,LIKELY,Census lung pooling,HIGH,Lung-resident macrophage. COVID-relevant. May be annotated as macrophage — requires careful annotation.
+97,Langerhans cell,"CD207, CD1A, EPCAM",other,76,175,UNCERTAIN,Census skin pooling,LOW,Both very low in Tabula. Skin-resident DC. May not be achievable.
+98,goblet cell (airway),"MUC5AC, MUC5B, SPDEF",other,est_500,est_500,LIKELY,Census airway pooling,MEDIUM,Respiratory secretory. Distinct from intestinal goblet. COPD/asthma-relevant.
+99,follicular helper T cell,"CXCR5, BCL6, PDCD1",other,est_500,est_500,LIKELY,Census lymphoid pooling,MEDIUM,Germinal center T cell. Autoimmune disease-relevant. Annotation may overlap with CD4+ T.
+100,dendritic cell type 2,"CD1C, CLEC10A, FCER1A",other,est_1000,est_500,LIKELY,Census blood/spleen pooling,MEDIUM,Conventional DC2. Overlaps with myeloid DC annotation. Cancer immunotherapy-relevant.

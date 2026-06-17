@@ -1,0 +1,16 @@
+cell_type,human_cells,lemur_cells
+B cell,from_precomputed_centroids,2000
+"CD4-positive, alpha-beta T cell",from_precomputed_centroids,2000
+"CD8-positive, alpha-beta T cell",from_precomputed_centroids,2000
+T cell,from_precomputed_centroids,2000
+endothelial cell,from_precomputed_centroids,878
+enterocyte of epithelium of large intestine,from_precomputed_centroids,633
+fibroblast,from_precomputed_centroids,2000
+macrophage,from_precomputed_centroids,2000
+mature NK T cell,from_precomputed_centroids,1826
+mesenchymal stem cell,from_precomputed_centroids,546
+monocyte,from_precomputed_centroids,2000
+natural killer cell,from_precomputed_centroids,2000
+neutrophil,from_precomputed_centroids,2000
+pancreatic acinar cell,from_precomputed_centroids,1034
+plasma cell,from_precomputed_centroids,2000

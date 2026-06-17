@@ -1,0 +1,166 @@
+{
+  "analysis": "human_vs_mouse_lemur",
+  "species": {
+    "reference": "Homo sapiens (Tabula Sapiens via Census, pre-computed centroids)",
+    "target": "Microcebus murinus (Tabula Microcebus, Ezran et al. 2025)"
+  },
+  "divergence_mya": 75,
+  "n_types": 15,
+  "cell_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "endothelial cell",
+    "enterocyte of epithelium of large intestine",
+    "fibroblast",
+    "macrophage",
+    "mature NK T cell",
+    "mesenchymal stem cell",
+    "monocyte",
+    "natural killer cell",
+    "neutrophil",
+    "pancreatic acinar cell",
+    "plasma cell"
+  ],
+  "gene_space": 13796,
+  "procrustes": {
+    "distance": 21.76513927556668,
+    "distance_squared": 473.72128768481525,
+    "scaling": 1.384536086093307,
+    "rotation_det": 0.9999999999999993
+  },
+  "permutation_test": {
+    "p_value": 9.999000099990002e-05,
+    "obs_null_ratio": 0.34625924106495204,
+    "null_median": 62.85793040100821,
+    "null_mean": 62.56252183075204,
+    "null_std": 2.8501262019038363,
+    "significant_at_001": true,
+    "n_permutations": 10000
+  },
+  "pca": {
+    "n_components": 15,
+    "variance_explained": [
+      0.32670310535089503,
+      0.14982713760982924,
+      0.11557296110977583,
+      0.09292208920997663,
+      0.048231451065596675,
+      0.04195585566930055,
+      0.030953417057401834,
+      0.03066150382161661,
+      0.02673573849395284,
+      0.02470981195025289,
+      0.0209960199591653,
+      0.014903836348185666,
+      0.01188225966220136,
+      0.009915816948670874,
+      0.009168622193231278
+    ],
+    "cumulative_variance": 0.9551396264500527
+  },
+  "residuals": {
+    "B cell": {
+      "magnitude": 6.220927165784162,
+      "pct_ssr": 8.169346788515002
+    },
+    "CD4-positive, alpha-beta T cell": {
+      "magnitude": 5.160481788560844,
+      "pct_ssr": 5.621569682928511
+    },
+    "CD8-positive, alpha-beta T cell": {
+      "magnitude": 2.9575405197899065,
+      "pct_ssr": 1.8464540550727568
+    },
+    "T cell": {
+      "magnitude": 9.84419680800865,
+      "pct_ssr": 20.45679882118458
+    },
+    "endothelial cell": {
+      "magnitude": 9.235492164093724,
+      "pct_ssr": 18.00516838284585
+    },
+    "enterocyte of epithelium of large intestine": {
+      "magnitude": 4.899318723517461,
+      "pct_ssr": 5.066971778261966
+    },
+    "fibroblast": {
+      "magnitude": 2.3651016313633106,
+      "pct_ssr": 1.1808010051680637
+    },
+    "macrophage": {
+      "magnitude": 3.605034361852422,
+      "pct_ssr": 2.743442840336028
+    },
+    "mature NK T cell": {
+      "magnitude": 3.961976989422945,
+      "pct_ssr": 3.3136069821630825
+    },
+    "mesenchymal stem cell": {
+      "magnitude": 5.495860597769291,
+      "pct_ssr": 6.376003041309223
+    },
+    "monocyte": {
+      "magnitude": 6.537530668954944,
+      "pct_ssr": 9.022036450251855
+    },
+    "natural killer cell": {
+      "magnitude": 5.325170425156211,
+      "pct_ssr": 5.986102122526033
+    },
+    "neutrophil": {
+      "magnitude": 5.877403307131646,
+      "pct_ssr": 7.292023924765094
+    },
+    "pancreatic acinar cell": {
+      "magnitude": 3.9596515835294817,
+      "pct_ssr": 3.309718408386
+    },
+    "plasma cell": {
+      "magnitude": 2.7616485928418193,
+      "pct_ssr": 1.6099557162859726
+    }
+  },
+  "ranking_correlation": {
+    "vs_primary": {
+      "rho": 0.15714285714285714,
+      "p": 0.5759526006037947,
+      "n_types": 15
+    },
+    "vs_macaque": {
+      "rho": -0.5476190476190477,
+      "p": 0.1600256425388966,
+      "n_types": 8
+    }
+  },
+  "evolutionary_context": {
+    "species_pairs": [
+      {
+        "pair": "human-macaque",
+        "divergence_mya": 25,
+        "obs_null": 0.841,
+        "p_value": 0.0002,
+        "n_types": 20,
+        "source": "DECISION-131"
+      },
+      {
+        "pair": "human-mouse_lemur",
+        "divergence_mya": 75,
+        "obs_null": 0.34625924106495204,
+        "p_value": 9.999000099990002e-05,
+        "n_types": 15,
+        "source": "This analysis"
+      },
+      {
+        "pair": "human-mouse",
+        "divergence_mya": 90,
+        "obs_null": 0.522,
+        "p_value": 0.0001,
+        "n_types": 35,
+        "source": "Primary analysis"
+      }
+    ],
+    "monotone_with_distance": false
+  }
+}

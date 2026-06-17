@@ -1,0 +1,98 @@
+{
+  "M1_close": true,
+  "analysis_version": "K-expansion n=12",
+  "types_included": [
+    "B cell",
+    "bladder urothelial cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hepatocyte",
+    "macrophage",
+    "monocyte",
+    "neutrophil",
+    "plasma cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "gene_space_macaque": 13927,
+  "gene_space_human_mouse_control_primary": 16959,
+  "spearman_ranking_correlation": {
+    "pair": "human-macaque 12-type vs human-mouse 12-type control",
+    "rho": 0.14685314685314685,
+    "p_value": 0.6487957097846665,
+    "n_types": 12,
+    "comment": "Direct comparison of per-type Procrustes residuals between two species pairs on the same 12 cell-type definitions; informs Figure 5C / Methods text on whether per-type divergence ranks co-vary across species pairs."
+  },
+  "human_macaque_12type": {
+    "n_types": 12,
+    "gene_space": 13927,
+    "obs_null_median": 0.8104799197124155,
+    "p_value": 0.004299570042995701,
+    "n_permuted_le_observed": 42,
+    "n_permutations": 10000,
+    "procrustes_distance": 39.880402522330726,
+    "procrustes_scaling": 1.1684723547958298,
+    "pca_components": 16,
+    "pca_cumulative_variance": 0.9537475717445794,
+    "hepatocyte_rank_of_n": "1/12",
+    "hepatocyte_residual_magnitude": 27.4233363408906,
+    "hepatocyte_pct_ssr": 47.28479540425448,
+    "preprocessing": "Qu raw UMI \u2192 normalize_total(1e4) \u2192 log1p; 2,000 cells/type (seed 42)"
+  },
+  "human_mouse_12type_control": {
+    "n_types": 12,
+    "gene_space_primary": 16959,
+    "obs_null_median_primary": 0.4400539610404331,
+    "p_value_primary": 9.999000099990002e-05,
+    "n_permuted_le_observed_primary": 0,
+    "procrustes_distance_primary": 24.975471863898967,
+    "procrustes_scaling_primary": 1.0623806010575765,
+    "pca_components_primary": 15,
+    "gene_space_parity_13927": 13927,
+    "obs_null_median_parity": 0.42906367114704863,
+    "p_value_parity": 9.999000099990002e-05,
+    "hepatocyte_rank_of_n": "12/12",
+    "hepatocyte_residual_magnitude": 3.5580373417230993,
+    "hepatocyte_pct_ssr": 2.029521232224048,
+    "preprocessing": "committed centroids_{human,mouse}_35.csv (symmetric: raw \u2192 NormalizeData + log1p)"
+  },
+  "no_immune_sensitivity_n7_D1": {
+    "n_types": 7,
+    "types": [
+      "bladder urothelial cell",
+      "endothelial cell",
+      "epithelial cell",
+      "fibroblast",
+      "hepatocyte",
+      "smooth muscle cell",
+      "stromal cell"
+    ],
+    "obs_null_median": 0.7334,
+    "p_value": 0.012798720127987202,
+    "framing": "Excluding the 5 immune types (B cell, macrophage, monocyte, plasma cell, neutrophil) added in K, the n=7 non-immune analysis confirms cross-species coherence at p < 0.05. Serves as the methodologically clean replacement for the committed sensitivity (RIRA-only 13-type, p=0.0002 but preprocessing-asymmetric).",
+    "human_mouse_7type_control_obs_null": 0.4848,
+    "human_mouse_7type_control_p": 0.0006,
+    "p_value_display": 0.0128,
+    "p_value_note": "Canonical from (cached centroids + src/procrustes.py + seed=42) via Part 4A null_distribution_qu7_D1.npy. Supersedes earlier 0.0125 recorded in reconstruction_qu7_D1_results.json, which is not bit-reproducible from currently-committed artifacts (3/10000 permutation-count shift, same observed distance, same significance framing: clears \u03b1=0.05, not \u03b1=0.01)."
+  },
+  "hepatocyte_rank_reversal": {
+    "human_macaque_12type": "1/12 (most flexible, %SSR=47.3%)",
+    "human_mouse_12type": "12/12 (most rigid, %SSR=2.0%)",
+    "narrative": "Hepatocyte rank reversal from most-rigid (mouse) to most-flexible (macaque) confirmed and strengthened at n=12 under symmetric preprocessing."
+  },
+  "preprocessing_symmetry": true,
+  "macaque_annotation_provenance": "Qu et al. 2022 author-assigned labels from Zenodo 10.5281/zenodo.5881495 @meta.data (finalcluster + majorcluster + Organ); no post-hoc marker-gene re-harmonization",
+  "committed_primary_reference": {
+    "macaque_primary_20type": {
+      "obs_null": 0.841,
+      "p": 0.0002,
+      "preprocessing": "ASYMMETRIC (RIRA SCT-@counts as-is + Qu, with undocumented marker-gene harmonization)"
+    },
+    "macaque_sensitivity_13type_RIRA": {
+      "obs_null": 0.7488,
+      "p": 0.0002,
+      "preprocessing": "ASYMMETRIC SCT \u2014 REPLACED by n=7 non-immune sensitivity in new framing"
+    }
+  }
+}

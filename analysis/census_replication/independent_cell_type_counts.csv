@@ -1,0 +1,36 @@
+cell_type,human_cells,mouse_cells,total,min_species
+fibroblast,2020214,725988,2746202,725988
+endothelial cell,416298,186367,602665,186367
+epithelial cell,660585,131839,792424,131839
+macrophage,756088,111423,867511,111423
+T cell,426247,92110,518357,92110
+B cell,423983,79585,503568,79585
+monocyte,198490,57979,256469,57979
+neutrophil,52540,39736,92276,39736
+hepatocyte,37130,296270,333400,37130
+stromal cell,485093,25910,511003,25910
+hematopoietic stem cell,21426,64160,85586,21426
+mesenchymal stem cell,41827,16928,58755,16928
+fibroblast of cardiac tissue,33415,14509,47924,14509
+"CD8-positive, alpha-beta T cell",412659,14123,426782,14123
+natural killer cell,713205,12273,725478,12273
+basal cell,210744,8319,219063,8319
+"CD4-positive, alpha-beta T cell",536229,6621,542850,6621
+smooth muscle cell,131316,6435,137751,6435
+plasma cell,164611,4061,168672,4061
+pancreatic acinar cell,74682,3818,78500,3818
+granulocyte,3500,14238,17738,3500
+pancreatic ductal cell,42237,2011,44248,2011
+myeloid leukocyte,11039,1255,12294,1255
+mature NK T cell,33548,805,34353,805
+classical monocyte,373420,413,373833,413
+non-classical monocyte,73708,239,73947,239
+intermediate monocyte,52859,91,52950,91
+mesenchymal stem cell of adipose tissue,25531,0,25531,0
+adventitial cell,10170,0,10170,0
+myeloid dendritic cell,4956,0,4956,0
+bladder urothelial cell,0,1313,1313,0
+luminal epithelial cell of mammary gland,157543,0,157543,0
+hematopoietic precursor cell,248177,0,248177,0
+large intestine goblet cell,0,0,0,0
+enterocyte of epithelium of large intestine,2016,0,2016,0

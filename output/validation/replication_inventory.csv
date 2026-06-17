@@ -1,0 +1,36 @@
+cell_type,human_non_tabula,mouse_non_tabula,status,gap_detail
+B cell,14604,0,FAIL,mouse=0
+"CD4-positive, alpha-beta T cell",26534,0,FAIL,mouse=0
+"CD8-positive, alpha-beta T cell",27620,0,FAIL,mouse=0
+T cell,35227,23,FAIL,mouse=23
+adventitial cell,0,0,FAIL,"human=0, mouse=0"
+basal cell,124010,0,FAIL,mouse=0
+bladder urothelial cell,0,0,FAIL,"human=0, mouse=0"
+classical monocyte,42457,0,FAIL,mouse=0
+endothelial cell,7980,12080,PASS,
+enterocyte of epithelium of large intestine,0,0,FAIL,"human=0, mouse=0"
+epithelial cell,16617,25,FAIL,mouse=25
+fibroblast,246362,1025,PASS,
+fibroblast of cardiac tissue,0,0,FAIL,"human=0, mouse=0"
+granulocyte,1,0,FAIL,"human=1, mouse=0"
+hematopoietic precursor cell,61,0,FAIL,"human=61, mouse=0"
+hematopoietic stem cell,7951,0,FAIL,mouse=0
+hepatocyte,2780,0,FAIL,mouse=0
+intermediate monocyte,0,0,FAIL,"human=0, mouse=0"
+large intestine goblet cell,0,0,FAIL,"human=0, mouse=0"
+luminal epithelial cell of mammary gland,143472,0,FAIL,mouse=0
+macrophage,21405,11009,PASS,
+mature NK T cell,2967,0,FAIL,mouse=0
+mesenchymal stem cell,0,1738,FAIL,human=0
+mesenchymal stem cell of adipose tissue,737,0,FAIL,mouse=0
+monocyte,10925,244,MARGINAL,mouse=244
+myeloid dendritic cell,917,0,FAIL,mouse=0
+myeloid leukocyte,30,0,FAIL,"human=30, mouse=0"
+natural killer cell,40752,0,FAIL,mouse=0
+neutrophil,674,88,FAIL,mouse=88
+non-classical monocyte,8336,0,FAIL,mouse=0
+pancreatic acinar cell,0,0,FAIL,"human=0, mouse=0"
+pancreatic ductal cell,0,0,FAIL,"human=0, mouse=0"
+plasma cell,7296,1423,PASS,
+smooth muscle cell,3561,343,MARGINAL,mouse=343
+stromal cell,0,0,FAIL,"human=0, mouse=0"

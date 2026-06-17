@@ -1,0 +1,9 @@
+partition,obs_null,p_100k,n_nonsingleton_groups,note
+Unrestricted (K=1 anchor),0.522,1.0e-05,1,recovers primary 0.522
+"Lineage (5 blocks, anchor)",0.668,<1e-4,3,recovers 0.668
+Marker-similarity K=5 (Ward),0.721,1.0e-05,5,beats null
+Marker-similarity K=8 (Ward),0.807,1.0e-05,6,beats null
+Marker-similarity K=10 (Ward),0.903,1.4e-03,8,beats null
+Marker-similarity K=15 (Ward),0.963,8.6e-02,9,n.s. (null degenerate)
+Marker-similarity K=15 (correlation linkage),0.902,5.6e-04,-,robustness: beats null even at K=15
+Monotonicity: residual vs marker-distinctness (Spearman),-0.136,0.44,-,"independent (|rho|<=0.15, n.s.)"

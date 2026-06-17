@@ -1,0 +1,15 @@
+# Large, regenerable Census aggregates produced by donor_stability/pull_aggregate.py
+# (rebuilt from CELLxGENE Census 2025-11-08; ~280 MB). Not deposited.
+checkpoints/
+donor_stability/checkpoints/
+donor_stability/agg_*.npz
+donor_stability/agg_*_groups.csv
+donor_stability/meta_*.parquet
+
+# Internal QA figures (the manuscript uses the publication Figure 2, not these)
+gate_figure.png
+donor_stability/donor_stability_figure.png
+
+# Run logs
+*.log
+donor_stability/*.log

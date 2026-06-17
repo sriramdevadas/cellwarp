@@ -1,0 +1,43 @@
+cell_type,in_cellhint,in_mouse_35,in_primary_human,status,reason
+B cell,True,True,True,included,Present in all three datasets at matching granularity
+"CD4-positive, alpha-beta T cell",True,True,True,included,Present in all three datasets at matching granularity
+"CD8-positive, alpha-beta T cell",True,True,True,included,Present in all three datasets at matching granularity
+T cell,True,True,True,included_flagged,Overlaps with CD4+/CD8+ T cells; what gets classified as generic T vs subtype varies between annotations. Tested with and without in sensitivity analysis.
+adventitial cell,False,True,True,excluded,absent from CellHint
+astrocyte,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+basal cell,False,True,True,excluded,absent from CellHint
+bladder urothelial cell,False,True,True,excluded,absent from CellHint
+cardiac muscle cell,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+cholangiocyte,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+classical monocyte,False,True,True,excluded,absent from CellHint
+endothelial cell,True,True,True,included,Present in all three datasets at matching granularity
+enterocyte of epithelium of large intestine,False,True,True,excluded,absent from CellHint
+epithelial cell,True,True,True,included,Present in all three datasets at matching granularity
+fibroblast,True,True,True,included,Present in all three datasets at matching granularity
+fibroblast of cardiac tissue,False,True,True,excluded,absent from CellHint
+granulocyte,False,True,True,excluded,absent from CellHint
+hematopoietic precursor cell,False,True,True,excluded,absent from CellHint
+hematopoietic stem cell,False,True,True,excluded,absent from CellHint
+hepatocyte,True,True,True,included,Present in all three datasets at matching granularity
+intermediate monocyte,False,True,True,excluded,absent from CellHint
+large intestine goblet cell,False,True,True,excluded,absent from CellHint
+luminal epithelial cell of mammary gland,False,True,True,excluded,absent from CellHint
+macrophage,True,True,True,included,Present in all three datasets at matching granularity
+mast cell,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+mature NK T cell,False,True,True,excluded,absent from CellHint
+mesenchymal stem cell,False,True,True,excluded,absent from CellHint
+mesenchymal stem cell of adipose tissue,False,True,True,excluded,absent from CellHint
+monocyte,True,True,True,included,Present in all three datasets at matching granularity
+myeloid dendritic cell,True,True,True,included,Present in all three datasets at matching granularity
+myeloid leukocyte,False,True,True,excluded,absent from CellHint
+natural killer cell,True,True,True,included,Present in all three datasets at matching granularity
+neuron,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+neutrophil,True,True,True,included,Present in all three datasets at matching granularity
+non-classical monocyte,False,True,True,excluded,absent from CellHint
+oligodendrocyte,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+pancreatic acinar cell,False,True,True,excluded,absent from CellHint
+pancreatic ductal cell,False,True,True,excluded,absent from CellHint
+pericyte,True,False,False,excluded,absent from mouse 35-type set; absent from primary human
+plasma cell,True,True,True,included,Present in all three datasets at matching granularity
+smooth muscle cell,True,True,True,included,Present in all three datasets at matching granularity
+stromal cell,False,True,True,excluded,absent from CellHint

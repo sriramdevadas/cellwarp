@@ -1,0 +1,16 @@
+cell_type,in_primary_35,residual_magnitude
+B cell,True,6.220927165784162
+"CD4-positive, alpha-beta T cell",True,5.160481788560844
+"CD8-positive, alpha-beta T cell",True,2.9575405197899065
+T cell,True,9.84419680800865
+endothelial cell,True,9.235492164093724
+enterocyte of epithelium of large intestine,True,4.899318723517461
+fibroblast,True,2.3651016313633106
+macrophage,True,3.605034361852422
+mature NK T cell,True,3.961976989422945
+mesenchymal stem cell,True,5.495860597769291
+monocyte,True,6.537530668954944
+natural killer cell,True,5.325170425156211
+neutrophil,True,5.877403307131646
+pancreatic acinar cell,True,3.9596515835294817
+plasma cell,True,2.7616485928418193

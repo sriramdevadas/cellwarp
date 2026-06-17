@@ -1,0 +1,74 @@
+{
+  "k3": {
+    "k": 3,
+    "is_primary": false,
+    "h1_density_vs_residual": {
+      "rho": 0.06946778711484594,
+      "p": 0.6917133185244979,
+      "pass": false
+    },
+    "h2_density_vs_treeness": {
+      "rho": 0.7532212885154063,
+      "p": 1.7775938371139622e-07,
+      "pass": true
+    },
+    "h3_mediation": {
+      "raw_rho_residual_treeness": 0.34873949579831937,
+      "raw_p": 0.04005296407557929,
+      "partial_rho": 0.45172926511366235,
+      "partial_p": 0.0073215539911500776,
+      "attenuation_pct": -29.532006141026056,
+      "pass": false
+    },
+    "verdict": "MEDIATION_REJECTED",
+    "description": "Density does not predict rigidity \u2014 mediation hypothesis rejected"
+  },
+  "k5": {
+    "k": 5,
+    "is_primary": true,
+    "h1_density_vs_residual": {
+      "rho": 0.09523809523809525,
+      "p": 0.5862947134611407,
+      "pass": false
+    },
+    "h2_density_vs_treeness": {
+      "rho": 0.7218487394957984,
+      "p": 9.879321886400642e-07,
+      "pass": true
+    },
+    "h3_mediation": {
+      "raw_rho_residual_treeness": 0.34873949579831937,
+      "raw_p": 0.04005296407557929,
+      "partial_rho": 0.40643039502366424,
+      "partial_p": 0.017068956283042305,
+      "attenuation_pct": -16.54269158509889,
+      "pass": false
+    },
+    "verdict": "MEDIATION_REJECTED",
+    "description": "Density does not predict rigidity \u2014 mediation hypothesis rejected"
+  },
+  "k10": {
+    "k": 10,
+    "is_primary": false,
+    "h1_density_vs_residual": {
+      "rho": 0.09523809523809525,
+      "p": 0.5862947134611407,
+      "pass": false
+    },
+    "h2_density_vs_treeness": {
+      "rho": 0.6282913165266106,
+      "p": 5.3184117548180165e-05,
+      "pass": true
+    },
+    "h3_mediation": {
+      "raw_rho_residual_treeness": 0.34873949579831937,
+      "raw_p": 0.04005296407557929,
+      "partial_rho": 0.3730457185064173,
+      "partial_p": 0.029782353524337946,
+      "attenuation_pct": -6.969736150032907,
+      "pass": false
+    },
+    "verdict": "MEDIATION_REJECTED",
+    "description": "Density does not predict rigidity \u2014 mediation hypothesis rejected"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "dataset": "Pan-Census (local h5ad)",
+  "census_version": "2025-11-08",
+  "n_cell_types": 22,
+  "cell_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "basal cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "fibroblast of cardiac tissue",
+    "granulocyte",
+    "hepatocyte",
+    "macrophage",
+    "mature NK T cell",
+    "mesenchymal stem cell",
+    "monocyte",
+    "myeloid leukocyte",
+    "natural killer cell",
+    "neutrophil",
+    "pancreatic ductal cell",
+    "plasma cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "n_shared_with_primary": 22,
+  "n_shared_genes": 12816,
+  "human_cells": 41857,
+  "mouse_cells": 41226,
+  "procrustes": {
+    "distance": 60.142668962466914,
+    "distance_squared": 3617.140629928881,
+    "scaling": 0.5829923052040106
+  },
+  "permutation_test": {
+    "p_value": 9.999000099990002e-05,
+    "n_permutations": 10000,
+    "null_mean": 73.96583361662817,
+    "null_median": 74.13412748341554,
+    "null_std": 2.0978979597710676,
+    "obs_null_ratio": 0.8112683187095088
+  },
+  "ranking_correlation": {
+    "spearman_rho": -0.05251270468661773,
+    "p_value": 0.8164691262307052,
+    "n_types": 22
+  },
+  "per_type_residuals": {
+    "B cell": 9.532312367785705,
+    "CD4-positive, alpha-beta T cell": 11.637380459576175,
+    "CD8-positive, alpha-beta T cell": 11.40887261445079,
+    "T cell": 11.168719144924083,
+    "basal cell": 6.20986433601364,
+    "endothelial cell": 8.709031168237178,
+    "epithelial cell": 9.284447533959197,
+    "fibroblast": 9.040557683266032,
+    "fibroblast of cardiac tissue": 25.401465264385937,
+    "granulocyte": 15.463599063982846,
+    "hepatocyte": 16.217812187441673,
+    "macrophage": 7.552092297240031,
+    "mature NK T cell": 17.25811126814268,
+    "mesenchymal stem cell": 9.168971997877387,
+    "monocyte": 8.195670515853564,
+    "myeloid leukocyte": 14.706115311114218,
+    "natural killer cell": 8.730979572505834,
+    "neutrophil": 18.49965113341275,
+    "pancreatic ductal cell": 17.848396959631042,
+    "plasma cell": 12.09024519668958,
+    "smooth muscle cell": 6.321043768568404,
+    "stromal cell": 7.7897320113780335
+  },
+  "comparison": {
+    "Sun2023": {
+      "rho": 0.146,
+      "p": 0.603,
+      "n": 15
+    },
+    "PanSci": {
+      "rho": 0.194,
+      "p": 0.471,
+      "n": 16
+    },
+    "CellHint": {
+      "rho": -0.042,
+      "p": 0.897,
+      "n": 12
+    },
+    "primary": {
+      "obs_null": 0.522,
+      "p": 0.0001,
+      "n_types": 35
+    }
+  }
+}

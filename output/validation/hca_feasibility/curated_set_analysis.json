@@ -1,0 +1,82 @@
+{
+  "greedy_n_types_500": 20,
+  "greedy_n_collections": 5,
+  "greedy_collections": [
+    {
+      "name": "Construction of a human cell landscape at single-cell level",
+      "total_cells": 200524,
+      "n_types_500": 11,
+      "top_assay": "microwell-seq",
+      "n_tissues": 28,
+      "doi": "10.1038/s41586-020-2157-4"
+    },
+    {
+      "name": "Automatic cell-type harmonization and integration across Human Cell Atlas datasets",
+      "total_cells": 253503,
+      "n_types_500": 8,
+      "top_assay": "10x 3' v2",
+      "n_tissues": 5,
+      "doi": "10.1016/j.cell.2023.11.026"
+    },
+    {
+      "name": "Single-cell and spatial transcriptomics characterisation of the immunological landscape in the healthy and PSC human liver",
+      "total_cells": 15050,
+      "n_types_500": 7,
+      "top_assay": "10x 3' v2",
+      "n_tissues": 1,
+      "doi": "10.1016/j.jhep.2023.12.023"
+    },
+    {
+      "name": "A spatially resolved single cell genomic atlas of the adult human breast",
+      "total_cells": 511008,
+      "n_types_500": 7,
+      "top_assay": "10x 3' v3",
+      "n_tissues": 1,
+      "doi": "10.1038/s41586-023-06252-9"
+    },
+    {
+      "name": "Human circulating hematopoietic stem and progenitor cells in aging, cytopenia and MDS",
+      "total_cells": 380490,
+      "n_types_500": 3,
+      "top_assay": "10x 3' v3",
+      "n_tissues": 1,
+      "doi": "10.1038/s41591-025-03716-5"
+    }
+  ],
+  "greedy_covered_types": [
+    "B cell",
+    "CD4-positive, alpha-beta T cell",
+    "CD8-positive, alpha-beta T cell",
+    "T cell",
+    "basal cell",
+    "endothelial cell",
+    "epithelial cell",
+    "fibroblast",
+    "hematopoietic precursor cell",
+    "hepatocyte",
+    "luminal epithelial cell of mammary gland",
+    "macrophage",
+    "mesenchymal stem cell",
+    "monocyte",
+    "natural killer cell",
+    "neutrophil",
+    "pancreatic acinar cell",
+    "pancreatic ductal cell",
+    "smooth muscle cell",
+    "stromal cell"
+  ],
+  "greedy_uncovered_types": [
+    "enterocyte of epithelium of large intestine",
+    "granulocyte",
+    "myeloid dendritic cell"
+  ],
+  "greedy_200_n_types": 21,
+  "greedy_200_n_collections": 5,
+  "original_6_in_curated": 6,
+  "technologies": [
+    "10x 3' v2",
+    "10x 3' v3",
+    "microwell-seq"
+  ],
+  "recommendation": "CURATED SET (with caveats)"
+}

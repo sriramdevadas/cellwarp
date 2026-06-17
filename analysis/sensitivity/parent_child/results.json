@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "script": "analysis/sensitivity/parent_child/run.py",
+    "seed": 42,
+    "n_permutations": 10000,
+    "pca_variance_threshold": 0.95,
+    "primary_reference": {
+      "n_types": 35,
+      "obs_null_ratio": 0.522,
+      "p_value": "<1e-6"
+    }
+  },
+  "parent_child_pairs": {
+    "T cell": [
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "mature NK T cell"
+    ],
+    "monocyte": [
+      "classical monocyte",
+      "intermediate monocyte",
+      "non-classical monocyte"
+    ],
+    "mesenchymal stem cell": [
+      "mesenchymal stem cell of adipose tissue"
+    ],
+    "fibroblast": [
+      "fibroblast of cardiac tissue"
+    ]
+  },
+  "broad_broader_pair": {
+    "broader_term": "myeloid leukocyte",
+    "more_specific_term": "macrophage"
+  },
+  "variant_A_drop_parents": {
+    "variant": "A_drop_parents",
+    "n_types": 30,
+    "cell_types": [
+      "B cell",
+      "CD4-positive, alpha-beta T cell",
+      "CD8-positive, alpha-beta T cell",
+      "adventitial cell",
+      "basal cell",
+      "bladder urothelial cell",
+      "classical monocyte",
+      "endothelial cell",
+      "enterocyte of epithelium of large intestine",
+      "epithelial cell",
+      "fibroblast of cardiac tissue",
+      "granulocyte",
+      "hematopoietic precursor cell",
+      "hematopoietic stem cell",
+      "hepatocyte",
+      "intermediate monocyte",
+      "large intestine goblet cell",
+      "luminal epithelial cell of mammary gland",
+      "macrophage",
+      "mature NK T cell",
+      "mesenchymal stem cell of adipose tissue",
+      "myeloid dendritic cell",
+      "natural killer cell",
+      "neutrophil",
+      "non-classical monocyte",
+      "pancreatic acinar cell",
+      "pancreatic ductal cell",
+      "plasma cell",
+      "smooth muscle cell",
+      "stromal cell"
+    ],
+    "n_pca_components": 32,
+    "cumulative_variance": 0.952868278659831,
+    "obs_distance": 54.541058372409566,
+    "null_mean": 104.68664504632099,
+    "obs_null_ratio": 0.5209934691122887,
+    "p_value_permutation": 9.999000099990002e-05,
+    "scaling": 0.8948616677089498,
+    "residuals": [
+      {
+        "cell_type": "CD8-positive, alpha-beta T cell",
+        "residual_magnitude": 5.247589208650035,
+        "rank": 1
+      },
+      {
+        "cell_type": "non-classical monocyte",
+        "residual_magnitude": 5.3041760587670765,
+        "rank": 2
+      },
+      {
+        "cell_type": "hepatocyte",
+        "residual_magnitude": 6.324872693468468,
+        "rank": 3
+      },
+      {
+        "cell_type": "endothelial cell",
+        "residual_magnitude": 6.335479923839203,
+        "rank": 4
+      },
+      {
+        "cell_type": "smooth muscle cell",
+        "residual_magnitude": 6.933656710842396,
+        "rank": 5
+      },
+      {
+        "cell_type": "bladder urothelial cell",
+        "residual_magnitude": 6.936191460553327,
+        "rank": 6
+      },
+      {
+        "cell_type": "pancreatic ductal cell",
+        "residual_magnitude": 6.9990435107101385,
+        "rank": 7
+      },
+      {
+        "cell_type": "intermediate monocyte",
+        "residual_magnitude": 7.176666800339734,
+        "rank": 8
+      },
+      {
+        "cell_type": "adventitial cell",
+        "residual_magnitude": 7.289858801580242,
+        "rank": 9
+      },
+      {
+        "cell_type": "natural killer cell",
+        "residual_magnitude": 7.776360367859494,
+        "rank": 10
+      },
+      {
+        "cell_type": "granulocyte",
+        "residual_magnitude": 7.935503696290663,
+        "rank": 11
+      },
+      {
+        "cell_type": "mature NK T cell",
+        "residual_magnitude": 8.420101634280556,
+        "rank": 12
+      },
+      {
+        "cell_type": "basal cell",
+        "residual_magnitude": 8.59638116888744,
+        "rank": 13
+      },
+      {
+        "cell_type": "CD4-positive, alpha-beta T cell",
+        "residual_magnitude": 9.066403547311904,
+        "rank": 14
+      },
+      {
+        "cell_type": "myeloid dendritic cell",
+        "residual_magnitude": 9.332049002784812,
+        "rank": 15
+      },
+      {
+        "cell_type": "large intestine goblet cell",
+        "residual_magnitude": 9.345644282942361,
+        "rank": 16
+      },
+      {
+        "cell_type": "classical monocyte",
+        "residual_magnitude": 9.362296597618199,
+        "rank": 17
+      },
+      {
+        "cell_type": "enterocyte of epithelium of large intestine",
+        "residual_magnitude": 9.441513499377084,
+        "rank": 18
+      },
+      {
+        "cell_type": "luminal epithelial cell of mammary gland",
+        "residual_magnitude": 9.732726298812484,
+        "rank": 19
+      },
+      {
+        "cell_type": "B cell",
+        "residual_magnitude": 10.262816460602751,
+        "rank": 20
+      },
+      {
+        "cell_type": "mesenchymal stem cell of adipose tissue",
+        "residual_magnitude": 10.534572260441553,
+        "rank": 21
+      },
+      {
+        "cell_type": "plasma cell",
+        "residual_magnitude": 10.80911545350751,
+        "rank": 22
+      },
+      {
+        "cell_type": "macrophage",
+        "residual_magnitude": 10.834720197461005,
+        "rank": 23
+      },
+      {
+        "cell_type": "neutrophil",
+        "residual_magnitude": 11.358407385424224,
+        "rank": 24
+      },
+      {
+        "cell_type": "fibroblast of cardiac tissue",
+        "residual_magnitude": 11.7189178242957,
+        "rank": 25
+      },
+      {
+        "cell_type": "pancreatic acinar cell",
+        "residual_magnitude": 12.569563685999459,
+        "rank": 26
+      },
+      {
+        "cell_type": "hematopoietic precursor cell",
+        "residual_magnitude": 14.558570528110268,
+        "rank": 27
+      },
+      {
+        "cell_type": "hematopoietic stem cell",
+        "residual_magnitude": 14.595251947207583,
+        "rank": 28
+      },
+      {
+        "cell_type": "stromal cell",
+        "residual_magnitude": 14.969444932077998,
+        "rank": 29
+      },
+      {
+        "cell_type": "epithelial cell",
+        "residual_magnitude": 16.394402615081724,
+        "rank": 30
+      }
+    ],
+    "ranking_spearman_vs_primary_subset": {
+      "rho": 0.935928809788654,
+      "p_value": 3.242977351822851e-14,
+      "n_overlap": 30
+    },
+    "runtime_sec": 0.9964408874511719
+  },
+  "variant_B_drop_children": {
+    "variant": "B_drop_children",
+    "n_types": 26,
+    "cell_types": [
+      "B cell",
+      "T cell",
+      "adventitial cell",
+      "basal cell",
+      "bladder urothelial cell",
+      "endothelial cell",
+      "enterocyte of epithelium of large intestine",
+      "epithelial cell",
+      "fibroblast",
+      "granulocyte",
+      "hematopoietic precursor cell",
+      "hematopoietic stem cell",
+      "hepatocyte",
+      "large intestine goblet cell",
+      "luminal epithelial cell of mammary gland",
+      "mesenchymal stem cell",
+      "monocyte",
+      "myeloid dendritic cell",
+      "myeloid leukocyte",
+      "natural killer cell",
+      "neutrophil",
+      "pancreatic acinar cell",
+      "pancreatic ductal cell",
+      "plasma cell",
+      "smooth muscle cell",
+      "stromal cell"
+    ],
+    "n_pca_components": 30,
+    "cumulative_variance": 0.9500116069948887,
+    "obs_distance": 51.0064299646412,
+    "null_mean": 93.75087255701698,
+    "obs_null_ratio": 0.5440635225407672,
+    "p_value_permutation": 9.999000099990002e-05,
+    "scaling": 0.9028236697739875,
+    "residuals": [
+      {
+        "cell_type": "adventitial cell",
+        "residual_magnitude": 5.7155623736108,
+        "rank": 1
+      },
+      {
+        "cell_type": "hepatocyte",
+        "residual_magnitude": 5.740083180518385,
+        "rank": 2
+      },
+      {
+        "cell_type": "endothelial cell",
+        "residual_magnitude": 5.913743538020281,
+        "rank": 3
+      },
+      {
+        "cell_type": "smooth muscle cell",
+        "residual_magnitude": 6.001403351293903,
+        "rank": 4
+      },
+      {
+        "cell_type": "myeloid dendritic cell",
+        "residual_magnitude": 6.744617968041041,
+        "rank": 5
+      },
+      {
+        "cell_type": "bladder urothelial cell",
+        "residual_magnitude": 7.269801068408456,
+        "rank": 6
+      },
+      {
+        "cell_type": "pancreatic ductal cell",
+        "residual_magnitude": 7.347971618051226,
+        "rank": 7
+      },
+      {
+        "cell_type": "natural killer cell",
+        "residual_magnitude": 7.8835630020235135,
+        "rank": 8
+      },
+      {
+        "cell_type": "fibroblast",
+        "residual_magnitude": 7.925954798207651,
+        "rank": 9
+      },
+      {
+        "cell_type": "granulocyte",
+        "residual_magnitude": 8.268268142383638,
+        "rank": 10
+      },
+      {
+        "cell_type": "enterocyte of epithelium of large intestine",
+        "residual_magnitude": 8.29335097913406,
+        "rank": 11
+      },
+      {
+        "cell_type": "monocyte",
+        "residual_magnitude": 8.746290942094316,
+        "rank": 12
+      },
+      {
+        "cell_type": "B cell",
+        "residual_magnitude": 8.757744914426159,
+        "rank": 13
+      },
+      {
+        "cell_type": "T cell",
+        "residual_magnitude": 8.988303917405458,
+        "rank": 14
+      },
+      {
+        "cell_type": "plasma cell",
+        "residual_magnitude": 9.122547224429592,
+        "rank": 15
+      },
+      {
+        "cell_type": "basal cell",
+        "residual_magnitude": 9.190029959820421,
+        "rank": 16
+      },
+      {
+        "cell_type": "large intestine goblet cell",
+        "residual_magnitude": 9.32849174821116,
+        "rank": 17
+      },
+      {
+        "cell_type": "luminal epithelial cell of mammary gland",
+        "residual_magnitude": 10.014862895497691,
+        "rank": 18
+      },
+      {
+        "cell_type": "myeloid leukocyte",
+        "residual_magnitude": 10.052621432272968,
+        "rank": 19
+      },
+      {
+        "cell_type": "mesenchymal stem cell",
+        "residual_magnitude": 10.313739524619157,
+        "rank": 20
+      },
+      {
+        "cell_type": "neutrophil",
+        "residual_magnitude": 10.713280685508337,
+        "rank": 21
+      },
+      {
+        "cell_type": "pancreatic acinar cell",
+        "residual_magnitude": 12.62859917087044,
+        "rank": 22
+      },
+      {
+        "cell_type": "stromal cell",
+        "residual_magnitude": 14.826288199227024,
+        "rank": 23
+      },
+      {
+        "cell_type": "hematopoietic stem cell",
+        "residual_magnitude": 15.095549760095437,
+        "rank": 24
+      },
+      {
+        "cell_type": "epithelial cell",
+        "residual_magnitude": 15.249102151826236,
+        "rank": 25
+      },
+      {
+        "cell_type": "hematopoietic precursor cell",
+        "residual_magnitude": 17.312068608028905,
+        "rank": 26
+      }
+    ],
+    "ranking_spearman_vs_primary_subset": {
+      "rho": 0.9111111111111111,
+      "p_value": 1.0138712210718768e-10,
+      "n_overlap": 26
+    },
+    "runtime_sec": 0.8638091087341309
+  },
+  "comparison": {
+    "primary_35_obs_null": 0.522,
+    "variant_A_obs_null": 0.5209934691122887,
+    "variant_A_p_perm": 9.999000099990002e-05,
+    "variant_A_ranking_spearman": 0.935928809788654,
+    "variant_B_obs_null": 0.5440635225407672,
+    "variant_B_p_perm": 9.999000099990002e-05,
+    "variant_B_ranking_spearman": 0.9111111111111111
+  }
+}

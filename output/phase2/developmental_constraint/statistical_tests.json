@@ -1,0 +1,97 @@
+{
+  "germ_layer_kw": {
+    "test": "Kruskal-Wallis",
+    "groups": [
+      "ectoderm",
+      "endoderm",
+      "mesoderm"
+    ],
+    "group_medians": {
+      "ectoderm": 11.210117836542176,
+      "endoderm": 8.347686367793886,
+      "mesoderm": 9.862311447313644
+    },
+    "group_sizes": {
+      "ectoderm": 2,
+      "endoderm": 6,
+      "mesoderm": 26
+    },
+    "H_statistic": 1.8670976082740793,
+    "p_value": 0.39315599810239166,
+    "significant_005": false
+  },
+  "lineage_kw": {
+    "test": "Kruskal-Wallis",
+    "groups": [
+      "endothelial",
+      "epithelial",
+      "hematopoietic",
+      "mesenchymal"
+    ],
+    "group_medians": {
+      "endothelial": 5.971302732274846,
+      "epithelial": 9.466734231251584,
+      "hematopoietic": 9.862311447313644,
+      "mesenchymal": 10.340755101730728
+    },
+    "group_sizes": {
+      "endothelial": 1,
+      "epithelial": 9,
+      "hematopoietic": 18,
+      "mesenchymal": 7
+    },
+    "H_statistic": 2.236507936507948,
+    "p_value": 0.5247932890541849,
+    "significant_005": false
+  },
+  "progenitor_mwu": {
+    "test": "Mann-Whitney U",
+    "progenitor_n": 5,
+    "progenitor_median": 12.766119470797328,
+    "differentiated_n": 30,
+    "differentiated_median": 9.09809959544265,
+    "U_statistic": 128.0,
+    "p_value": 0.00986347618226176,
+    "significant_005": true
+  },
+  "germ_layer_pairwise": [
+    {
+      "group1": "ectoderm",
+      "group2": "endoderm",
+      "median1": 11.210117836542176,
+      "median2": 8.347686367793886,
+      "U": 10.0,
+      "p": 0.2857142857142857
+    },
+    {
+      "group1": "ectoderm",
+      "group2": "mesoderm",
+      "median1": 11.210117836542176,
+      "median2": 9.862311447313644,
+      "U": 35.0,
+      "p": 0.47619047619047616
+    },
+    {
+      "group1": "endoderm",
+      "group2": "mesoderm",
+      "median1": 8.347686367793886,
+      "median2": 9.862311447313644,
+      "U": 58.0,
+      "p": 0.3558186344615711
+    }
+  ],
+  "mki67_correlation": {
+    "test": "Spearman correlation",
+    "rho": 0.25602240896358547,
+    "p_value": 0.1376735076696722,
+    "n": 35,
+    "significant_005": false
+  },
+  "mki67_mean_correlation": {
+    "test": "Spearman correlation (mean human+mouse)",
+    "rho": 0.26638655462184874,
+    "p_value": 0.1219041207632699,
+    "n": 35,
+    "significant_005": false
+  }
+}

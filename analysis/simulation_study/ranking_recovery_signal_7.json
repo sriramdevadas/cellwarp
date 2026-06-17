@@ -1,0 +1,37 @@
+{
+  "signal_strength": 7.0,
+  "n_types": 35,
+  "metric": "mean_rho (mean across N_REPS replicates of Spearman \u03c1 between planted and recovered per-type rankings)",
+  "n_reps": 100,
+  "results": [
+    {
+      "signal_strength": 7.0,
+      "n_cells_per_type": 50,
+      "mean_rho": 0.37482913165266096,
+      "std_rho": 0.13521631355412966,
+      "median_rho": 0.3666666666666667
+    },
+    {
+      "signal_strength": 7.0,
+      "n_cells_per_type": 200,
+      "mean_rho": 0.36701960784313725,
+      "std_rho": 0.14898769492537975,
+      "median_rho": 0.3673669467787115
+    },
+    {
+      "signal_strength": 7.0,
+      "n_cells_per_type": 500,
+      "mean_rho": 0.3541428571428572,
+      "std_rho": 0.15346154737818696,
+      "median_rho": 0.3505602240896359
+    },
+    {
+      "signal_strength": 7.0,
+      "n_cells_per_type": 2000,
+      "mean_rho": 0.33866106442577026,
+      "std_rho": 0.1595879173634589,
+      "median_rho": 0.33837535014005604
+    }
+  ],
+  "runtime_sec": 58.02414107322693
+}

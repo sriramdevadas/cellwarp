@@ -1,0 +1,49 @@
+# Conda environment for CellWarp — parallel to `pip install -e ".[lock]"`.
+# Mirrors version pins from pyproject.toml [lock] extras group.
+# Sync between this file and pyproject.toml [lock] is enforced by
+# tests/test_manifest_sync.py (run as part of pytest).
+#
+# Install:  conda env create -f environment.yml
+# Activate: conda activate cellwarp
+# Verify:   pytest tests/
+
+name: cellwarp
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - python=3.12.12
+  - pip
+  # ── core scientific stack (conda-forge) ──
+  - numpy=2.4.3
+  - scipy=1.17.1
+  - scikit-learn=1.8.0
+  - pandas=2.3.3
+  - h5py=3.16.0
+  - matplotlib=3.10.8
+  - seaborn=0.13.2
+  - statsmodels=0.14.6
+  - networkx=3.6.1
+  - openpyxl=3.1.5
+  - tqdm=4.67.3
+  - requests=2.32.5
+  - jupyter=1.1.1
+  # ── single-cell / bioinformatics (conda-forge or bioconda) ──
+  - anndata=0.12.10
+  - scanpy=1.12
+  # ── test infrastructure (required by tests/, not part of [lock] pins) ──
+  - pytest>=7.0
+  - pytest-cov
+  - pyyaml>=6.0
+  # ── pip-only (not reliably on conda-forge at exact pinned versions) ──
+  - pip:
+    - cellxgene-census==1.17.0
+    - tiledbsoma==2.3.0
+    - gseapy==1.2.1
+    - pybiomart==0.2.0
+    - decoupler==2.1.4
+    - samap==1.0.14
+    - pymupdf==1.27.2.3
+    - pyBigWig==0.3.25
+    - -e .
