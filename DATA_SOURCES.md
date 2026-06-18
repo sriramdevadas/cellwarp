@@ -45,16 +45,24 @@ Required files (place at data/ucsc/<filename>):
 Sentinel: scripts/t3e_step2_compute.py reads BASE/data/ucsc/{filename}
 
 ## data/macaque/ (13GB)
-Source: Two macaque scRNA-seq atlases (Strategy B from ISSUE-125):
-  - Qu et al. 2022 (Macaca fascicularis): GEO GSE196792
-    https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196792
-  - RIRA — Rhesus Immune-Cell Reference Atlas (Macaca mulatta, immune subset)
+Source: Qu et al. 2022 (Macaca fascicularis), single-source: GEO GSE196792
+  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196792
+The published human-macaque comparison (Figure 5; 12 cell types matched to Tabula Sapiens)
+uses Qu et al. as the sole macaque source; macaque cells are processed from raw 10x UMI
+counts, and cell-type assignments come from the author-provided finalcluster metadata in
+Qu's Zenodo deposition (10.5281/zenodo.5881495).
+Deprecated: an earlier design combined Qu et al. with the Rhesus Immune-Cell Reference
+Atlas (RIRA, Macaca mulatta immune subset). That combination used asymmetric cross-atlas
+preprocessing (RIRA in deposition-form SCTransform-corrected counts; Qu reprocessed from
+raw counts) and was deprecated in favor of the single-source Qu design with symmetric
+raw-count preprocessing; the RIRA code and intermediates remain in the repository for
+provenance but are not the published result.
 Required paths:
-  data/macaque/qu_2022/extracted/<GSM>_<tissue>_{barcodes,features,matrix}.{tsv.gz,mtx.gz}
-  data/macaque/rira/converted/{barcodes,genes,matrix}.{tsv.gz,mtx.gz}
-  data/macaque/rira/rira_metadata.csv  (produced by analysis/macaque/extract_rira_metadata.R)
+  data/macaque/qu_2022/extracted/<GSM>_<tissue>_{barcodes,features,matrix}.{tsv.gz,mtx.gz}  (published source; from the GSE196792 tar)
   data/macaque/biomart_macaque_human_orthologs.csv  (produced by scripts/fetch_macaque_orthologs.py)
-Used by: analysis/macaque/reconstruct_macaque_pipeline.py (canonical loader)
+  data/macaque/rira/converted/{barcodes,genes,matrix}.{tsv.gz,mtx.gz}  (deprecated combined analysis only)
+  data/macaque/rira/rira_metadata.csv  (produced by analysis/macaque/extract_rira_metadata.R; deprecated combined analysis only)
+Used by: analysis/macaque/reconstruct_macaque_pipeline.py (canonical loader; single-source Qu is the published path)
 
 ## Ortholog tables (BioMart-derived)
 
@@ -131,6 +139,6 @@ non-human primate Macaca fascicularis," Nature 604, 723-731
 across 45 tissues; raw data are deposited at the CNGB Nucleotide Sequence Archive under
 accession CNP0001469 (portal: https://db.cngb.org/nhpca/). These supplementary QC
 tables are third-party material and are not redistributed here; obtain them from that
-record. They are not used by any analysis in this repository: the macaque comparison
-draws on the Qu et al. 2022 (GEO GSE196792) and RIRA expression data and the BioMart
-macaque-human orthologs under data/macaque/.
+record. They are not used by any analysis in this repository; the macaque comparison
+uses single-source Qu et al. 2022 (GEO GSE196792) expression data and the BioMart
+macaque-human orthologs under data/macaque/ (the RIRA combination was deprecated).
