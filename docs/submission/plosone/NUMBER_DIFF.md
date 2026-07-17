@@ -97,16 +97,34 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
   human–mouse) is correct and unchanged. **This is the single place the frozen
   prose was edited on a factual basis — surfaced here, not silently changed.**
 
-### C2. FLAG (minor — awaiting coordinator): cells-per-type range in §2
-- **Frozen §2 draft:** "with **thousands to over 100,000** cells per type".
+### C2. APPLIED (coordinator-confirmed): cells-per-type range in §2
+- **Was:** "with **thousands to over 100,000** cells per type".
+- **Now:** "with **a few hundred to over 100,000** cells per type" (§2 Results;
+  Methods already used this wording).
 - **Code:** per-type cell floor is **~108** (e.g. `SN-VTR CALB1 Dopa` nH 108 / nM 110;
   `STR Cholinergic GABA` 159; `Monocyte` 242) up to ~145,491 (`Oligo OPALIN`), in
-  `layer2_results*.json` `per_type_n`.
-- The upper bound ("over 100,000") is correct; the floor ("thousands") understates
-  it — several matched types have a few hundred cells. **Suggested wording: "from a
-  few hundred to over 100,000 cells per type."** Not yet applied to the frozen
-  sentence pending coordinator confirmation (it is not a computed statistic, so no
-  validate.py impact either way).
+  `layer2_results*.json` `per_type_n`. 13/55, 15/52, 13/52 types are < 500 cells.
+
+### C3. §1 mouse-lemur / mammalian-breadth framing tightened (coordinator-directed)
+- **Was:** the mouse-lemur pair "plac[ed] conserved cell-type configuration across
+  the breadth of the mammalian tree." This mis-attributed mammalian breadth to a
+  *within-primate* pair.
+- **Now:** the mammalian reach is anchored to the **human–mouse** (primate–rodent,
+  ~90 Myr) comparison; the mouse-lemur pair (a **strepsirrhine primate**, ~75 Myr)
+  is framed as an **independent replication in a different primate lineage**, not a
+  deeper divergence. Title unchanged and consistent ("a mammalian configuration" =
+  human–mouse; "in primates" = the basal-ganglia replication).
+
+### New robustness result (additive; tracked): Layer-2 survives excluding low-n types
+- **Question:** does the Fig 2 compression + significance survive dropping the
+  13–15 sparsely-sampled types (n < 500) per pair?
+- **Answer: yes, unchanged.** Recomputing the aggregate Krzanowski S from the stored
+  sufficient statistics on the n≥500 subset (42/37/39 types) reproduces compression
+  (post < pre at k=5) and significance (p_post ≈ 10⁻⁴) in all three pairs and both
+  weightings; ratios barely move (e.g. Human–Macaque W2 0.628 full → 0.625 subset).
+  The recompute reproduces the deposited full-set S values exactly.
+- **Artifact:** `analysis/bg/layer2_lowN_robustness.py` + `.../results/layer2_lowN_robustness.json`
+  (BG deposit). A one-sentence note was added to Methods (Primate replication).
 
 ---
 
