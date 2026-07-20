@@ -1,6 +1,6 @@
 # Supplementary Materials Manifest
 
-**Target journal:** PLOS Computational Biology
+**Target journal:** PLOS ONE
 **Updated:** 2026-06-11
 
 Authoritative legends and "related to Figure N" cross-references for every supplementary
@@ -10,11 +10,10 @@ legends and figure references are not duplicated here, so nothing in it re-stale
 main figures are renumbered.
 
 ## Supplementary items
-- 8 supplementary figures (S1-S8)
-- 12 supplementary tables (S1-S12)
+- 5 supplementary figures (S1-S5)
+- 12 supplementary tables (S1-S7, S9-S12; no S8)
 
 ## Files in `docs/supplementary_materials/`
-- `supplementary_materials.pdf`: combined supplementary PDF (Figures S1-S8 + Tables S1-S12); the assembled deliverable.
 - `table_S*.csv` and `table_S*.xlsx`: per-table data exports (CSV or XLSX per table); each table's legend is in the manuscript Supporting Information.
 - `figure_S8_markernull.pdf` / `.png`: standalone Figure S8 rendering (marker-similarity null).
 - `supplementary_legends.md`: retired stub; authoritative legends are in the manuscript.

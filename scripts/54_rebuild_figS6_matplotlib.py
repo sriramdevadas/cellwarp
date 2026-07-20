@@ -38,9 +38,7 @@ from cellwarp.figure_style import (  # noqa
 )
 
 OUT_PDFS = [
-    PROJECT / "figures/submission/supplementary/figS6_cellmarker_enrichment.pdf",
     PROJECT / "figures/supplementary/figS6_cellmarker_enrichment.pdf",
-    PROJECT / "docs/submission/figures_for_review/Figure_S6.pdf",
 ]
 
 DATA_JSON = PROJECT / "output/validation/cellmarker_35type_rerun/cellmarker_35type_results.json"

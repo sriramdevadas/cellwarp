@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-Build all submission supplementary figures.
+Build submission supplementary figures S1-S3.
 
 Task A: Fix S2 panel labels (A–E individual labels, Arial Bold 9pt).
-Task B: Assemble composite S1 and rename remaining figures.
+Task B: Assemble composite S1 and build S3.
 
 Output directory: figures/submission/supplementary/
   figS1_pipeline_validation.pdf          — composite of S1+S7 (panels A–F)
   figS2_parameter_protocol_sensitivity.pdf — fixed labels (panels A–E)
-  figS3_bootstrap_rankings.pdf            — copy (panels A–B)
-  figS4_cellhint_investigation.pdf       — renumbered from S5 (panels A–B)
-  figS5_samap.pdf                        — renumbered from S6 (panel A)
+  figS3_bootstrap_rankings.pdf            — 4-panel composite (panels A–B)
+
+This script writes only those three. The renumbered S4/S5 keepers
+(figS4_matched_scale_control, figS5_markernull) land in the same output
+directory but come from other producers. The former S4/S5 cellhint and
+SAMap figures were cut from the submission and are no longer written here.
 """
 
 from pathlib import Path
@@ -21,7 +24,6 @@ import numpy as np
 import io
 import os
 import sys
-import shutil
 
 SUPP_DIR = str(Path(__file__).resolve().parent.parent / "figures/supplementary")
 OUT_DIR = str(Path(__file__).resolve().parent.parent / "figures/submission/supplementary")
@@ -249,23 +251,11 @@ s3_out = os.path.join(OUT_DIR, "figS3_bootstrap_rankings.pdf")
 print(f"  Saved: {s3_out} ({os.path.getsize(s3_out):,} bytes)")
 
 
-# ── S4: written directly by regenerate_figure_s4a.py ────────────
-# Previously copied from figS5_cellhint_investigation_polished.pdf, but the
-# polished alias is no longer maintained (deleted on disk; would crash this
-# step). The canonical writer
-# analysis/cellhint_investigation/regenerate_figure_s4a.py writes
-# figS4_cellhint_investigation.pdf directly to OUT_DIR, so no copy is needed
-# here.
-
-
-# ── S5: copied from figS4_samap (live composite) ─────────────────
-# Path-swapped from the absent figS6_samap_polished.pdf to the live
-# composite that the legacy disease composite (assembler pruned, S5) writes.
-# The polished alias is no longer maintained (mirrors the S3 producer).
-print("\n--- S5: copy from figS4_samap (live composite) ---")
-s5_out = os.path.join(OUT_DIR, "figS5_samap.pdf")
-shutil.copy2(os.path.join(SUPP_DIR, "figS4_samap.pdf"), s5_out)
-print(f"  Saved: {s5_out} ({os.path.getsize(s5_out):,} bytes)")
+# ── S4/S5: not produced here ─────────────────────────────────────
+# The renumbered keepers figS4_matched_scale_control.{pdf,png} and
+# figS5_markernull.pdf also live in OUT_DIR, but other producers write them
+# (figS4 from scripts/49_build_figS7_matched_scale.py). The cut cellhint and
+# SAMap figures are no longer copied into OUT_DIR at all.
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -280,8 +270,6 @@ expected = {
     "figS1_pipeline_validation.pdf": {"panels": 6, "labels": "ABCDEF"},
     "figS2_parameter_protocol_sensitivity.pdf": {"panels": 5, "labels": "ABCDE"},
     "figS3_bootstrap_rankings.pdf": {"panels": 2, "labels": "AB"},
-    "figS4_cellhint_investigation.pdf": {"panels": 2, "labels": "AB"},
-    "figS5_samap.pdf": {"panels": 1, "labels": "A"},
 }
 
 all_ok = True
@@ -330,14 +318,20 @@ for fname, spec in expected.items():
 
     doc.close()
 
-# File inventory
+# File inventory. This script produces a SUBSET of what lands in OUT_DIR (the
+# renumbered S4/S5 keepers come from other producers), so the check is
+# presence-of-expected, not a total file count for the shared directory.
 print("\n--- Final inventory ---")
 files = sorted(os.listdir(OUT_DIR))
-print(f"  Total files: {len(files)} (expected 5)")
+print(f"  Total files in {OUT_DIR}: {len(files)}")
 for f in files:
     print(f"    {f}  ({os.path.getsize(os.path.join(OUT_DIR, f)):,} bytes)")
 
-if all_ok and len(files) == 5:
+missing = [f for f in expected if f not in files]
+if missing:
+    print(f"\n  MISSING expected figures: {', '.join(missing)}")
+
+if all_ok and not missing:
     print("\n  ALL CHECKS PASSED")
 else:
     print("\n  SOME CHECKS FAILED — review above")

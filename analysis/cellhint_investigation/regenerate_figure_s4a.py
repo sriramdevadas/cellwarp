@@ -14,10 +14,9 @@ Reads per-type residuals from the newly-persisted Level 0 CSVs:
 
 Outputs (overwritten):
     figures/panels/figs2a_cellhint_rank.{pdf,png}
+    figures/panels/figs2b_cellhint_residual.{pdf,png}
     figures/supplementary/figS2_cellhint_investigation.{pdf,png}
     figures/supplementary/figS5_cellhint_investigation_polished.pdf
-    figures/submission/supplementary/figS4_cellhint_investigation.pdf
-    docs/submission/figures_for_review/Figure_S4.pdf
 """
 
 from __future__ import annotations
@@ -240,15 +239,13 @@ def main() -> int:
     _render_panel_b()
     composite_pdf = _assemble_composite()
 
-    # Canonical write only; mirrors materialized by
-    # scripts/build_submission_packet.py (R21 build script).
+    # Out-of-bundle producer-tree copy; the cellhint figure was cut from the
+    # submission, so no packet mirror is materialized from it.
     polished = SUPP / "figS5_cellhint_investigation_polished.pdf"
     shutil.copy2(composite_pdf, polished)
 
     print(f"Wrote {composite_pdf.relative_to(BASE)}")
     print(f"Wrote {polished.relative_to(BASE)}")
-    print("Mirrors (figS4_cellhint_investigation.pdf, Figure_S4.pdf) "
-          "are materialized by scripts/build_submission_packet.py")
     return 0
 
 

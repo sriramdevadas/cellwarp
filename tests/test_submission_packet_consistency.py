@@ -46,24 +46,14 @@ PACKET_CANONICAL_MAP = {
         "figures/submission/supplementary/figS2_parameter_protocol_sensitivity.pdf",
     "docs/submission/figures_for_review/Figure_S3.pdf":
         "figures/submission/supplementary/figS3_bootstrap_rankings.pdf",
-    # Figure_S4 chain (R21 A.5 Task 7: canonical re-pointed to figS5_polished).
-    # Both the submission-tree mirror and the packet file mirror the same canonical.
     "docs/submission/figures_for_review/Figure_S4.pdf":
-        "figures/supplementary/figS5_cellhint_investigation_polished.pdf",
-    "figures/submission/supplementary/figS4_cellhint_investigation.pdf":
-        "figures/supplementary/figS5_cellhint_investigation_polished.pdf",
-    "docs/submission/figures_for_review/Figure_S5.pdf":
-        "figures/submission/supplementary/figS5_samap.pdf",
-    "docs/submission/figures_for_review/Figure_S6.pdf":
-        "figures/submission/supplementary/figS6_cellmarker_enrichment.pdf",
-    "docs/submission/figures_for_review/Figure_S7.pdf":
-        "figures/submission/supplementary/figS7_matched_scale_control.pdf",
-    # Fig S7 .png pair (R21 A.5 Task 6): canonical at submission/supp side.
-    "figures/supplementary/figS7_matched_scale_control.png":
-        "figures/submission/supplementary/figS7_matched_scale_control.png",
-    # Fig S7 .pdf legacy mirror (R21 B.2: moved from scripts/49 dual-tree).
-    "figures/supplementary/figS7_matched_scale_control.pdf":
-        "figures/submission/supplementary/figS7_matched_scale_control.pdf",
+        "figures/submission/supplementary/figS4_matched_scale_control.pdf",
+    # Fig S4 .png pair (R21 A.5 Task 6): canonical at submission/supp side.
+    "figures/supplementary/figS4_matched_scale_control.png":
+        "figures/submission/supplementary/figS4_matched_scale_control.png",
+    # Fig S4 .pdf legacy mirror (R21 B.2: moved from scripts/49 dual-tree).
+    "figures/supplementary/figS4_matched_scale_control.pdf":
+        "figures/submission/supplementary/figS4_matched_scale_control.pdf",
     # Table_1.xlsx pin REMOVED (R21 B.2): no in-repo producer post-R21 cascade
     # revert; protected by test_table_1_lock_md5() below.
     "docs/submission/figures_for_review/Table_S1.xlsx":

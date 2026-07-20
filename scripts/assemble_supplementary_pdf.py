@@ -66,11 +66,8 @@ FIGURE_FILES = [
     ("S1", os.path.join(BASE, "figures/submission/supplementary/figS1_pipeline_validation.pdf")),
     ("S2", os.path.join(BASE, "figures/submission/supplementary/figS2_parameter_protocol_sensitivity.pdf")),
     ("S3", os.path.join(BASE, "figures/submission/supplementary/figS3_bootstrap_rankings.pdf")),
-    ("S4", os.path.join(BASE, "figures/submission/supplementary/figS4_cellhint_investigation.pdf")),
-    ("S5", os.path.join(BASE, "figures/submission/supplementary/figS5_samap.pdf")),
-    ("S6", os.path.join(BASE, "figures/submission/supplementary/figS6_cellmarker_enrichment.pdf")),
-    ("S7", os.path.join(BASE, "figures/submission/supplementary/figS7_matched_scale_control.pdf")),
-    ("S8", os.path.join(BASE, "figures/submission/supplementary/figS8_markernull.pdf")),
+    ("S4", os.path.join(BASE, "figures/submission/supplementary/figS4_matched_scale_control.pdf")),
+    ("S5", os.path.join(BASE, "figures/submission/supplementary/figS5_markernull.pdf")),
 ]
 
 MANUSCRIPT_PATH = os.path.join(BASE, "docs/submission/manuscript_combined.txt")

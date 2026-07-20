@@ -7,23 +7,21 @@ and lifts canonical-to-mirror copy operations out of the per-figure
 producer scripts (regenerate_figure_s4a.py, generate_phase3_figures.py,
 46_synthesis_pass_supplementary_table_edits.py, 49_build_figS7_matched_scale.py).
 
-Manifest: 33 rules covering 34 (canonical, mirror) pairs.
+Manifest: 30 rules covering 30 pairs.
   - Group A: 6 main-figure packet mirrors (figures/main/*.pdf → docs/...Figure_*.pdf)
-  - Group B: 6 supp-figure packet mirrors (figures/submission/supplementary/figS*.pdf
-             → docs/...Figure_S*.pdf), excluding Figure_S4 which is in Group D
+  - Group B: 4 supp-figure packet mirrors (figures/submission/supplementary/figS*.pdf
+             → docs/...Figure_S*.pdf)
   - Group C: 6 table packet mirrors (docs/supplementary_materials/table_S*.{csv,xlsx}
              → docs/submission/figures_for_review/Table_S*.{csv,xlsx})
   - Group D: 4 producer-tree / panel-promotion mirrors:
-             - figS5_cellhint_investigation_polished.pdf canonical →
-               [figS4_cellhint_investigation.pdf, Figure_S4.pdf]   (2 mirrors)
-             - figS7_matched_scale_control.png canonical (submission/supp) →
+             - figS4_matched_scale_control.png canonical (submission/supp) →
                legacy mirror
-             - figS7_matched_scale_control.pdf canonical (submission/supp) →
+             - figS4_matched_scale_control.pdf canonical (submission/supp) →
                legacy mirror
              - output/cancer/scaled/cross_analysis_scaled.png → figures/panels/suppl_text_s1_cancer.png
              - output/disease_replication/covid/covid_cross_analysis.png →
                figures/panels/suppl_text_s1_covid.png
-  - Group E: gene-std / marker-null consolidation (figS8, table_S9/S10)
+  - Group E: gene-std / marker-null consolidation (figS5, table_S9/S10)
   - Group F: conserved-contribution integration (Figure 7, Table S11, pre-registration)
 
 Idempotency: rerunning produces no diff after a clean run.
@@ -68,19 +66,15 @@ MATERIALIZATION_RULES: List[dict] = [
      "mirrors": ["docs/submission/figures_for_review/Figure_6.pdf"]},
     {"canonical": "figures/main/fig6_l1000_nulls.pdf",
      "mirrors": ["docs/submission/figures_for_review/Figure_7.pdf"]},
-    # ─── Group B: Supplementary figures (Figure_S4 in Group D) ───
+    # ─── Group B: Supplementary figures ───
     {"canonical": "figures/submission/supplementary/figS1_pipeline_validation.pdf",
      "mirrors": ["docs/submission/figures_for_review/Figure_S1.pdf"]},
     {"canonical": "figures/submission/supplementary/figS2_parameter_protocol_sensitivity.pdf",
      "mirrors": ["docs/submission/figures_for_review/Figure_S2.pdf"]},
     {"canonical": "figures/submission/supplementary/figS3_bootstrap_rankings.pdf",
      "mirrors": ["docs/submission/figures_for_review/Figure_S3.pdf"]},
-    {"canonical": "figures/submission/supplementary/figS5_samap.pdf",
-     "mirrors": ["docs/submission/figures_for_review/Figure_S5.pdf"]},
-    {"canonical": "figures/submission/supplementary/figS6_cellmarker_enrichment.pdf",
-     "mirrors": ["docs/submission/figures_for_review/Figure_S6.pdf"]},
-    {"canonical": "figures/submission/supplementary/figS7_matched_scale_control.pdf",
-     "mirrors": ["docs/submission/figures_for_review/Figure_S7.pdf"]},
+    {"canonical": "figures/submission/supplementary/figS4_matched_scale_control.pdf",
+     "mirrors": ["docs/submission/figures_for_review/Figure_S4.pdf"]},
     # ─── Group C: Tables ───
     # Table_1.xlsx is canonical-self (no in-repo producer post-R21); pinned by
     # tests/test_submission_packet_consistency.py::test_table_1_lock_md5().
@@ -103,27 +97,20 @@ MATERIALIZATION_RULES: List[dict] = [
     {"canonical": "docs/supplementary_materials/table_S12_software_environment.csv",
      "mirrors": ["docs/submission/figures_for_review/Table_S12.csv"]},
     # ─── Group D: Producer-tree / panel-promotion mirrors ───
-    # figS5_polished is the canonical for the cellhint Figure_S4 chain
-    # (A.5 Task 7: tracked-mirror vs untracked-canonical inversion fixed).
-    {"canonical": "figures/supplementary/figS5_cellhint_investigation_polished.pdf",
-     "mirrors": [
-        "figures/submission/supplementary/figS4_cellhint_investigation.pdf",
-        "docs/submission/figures_for_review/Figure_S4.pdf",
-     ]},
-    # Fig S7 .png pair (A.5 Task 6: missing from R20 pin)
-    {"canonical": "figures/submission/supplementary/figS7_matched_scale_control.png",
-     "mirrors": ["figures/supplementary/figS7_matched_scale_control.png"]},
-    # Fig S7 .pdf legacy mirror — moved from scripts/49 dual-tree write to here
-    {"canonical": "figures/submission/supplementary/figS7_matched_scale_control.pdf",
-     "mirrors": ["figures/supplementary/figS7_matched_scale_control.pdf"]},
+    # Fig S4 .png pair (A.5 Task 6: missing from R20 pin)
+    {"canonical": "figures/submission/supplementary/figS4_matched_scale_control.png",
+     "mirrors": ["figures/supplementary/figS4_matched_scale_control.png"]},
+    # Fig S4 .pdf legacy mirror — moved from scripts/49 dual-tree write to here
+    {"canonical": "figures/submission/supplementary/figS4_matched_scale_control.pdf",
+     "mirrors": ["figures/supplementary/figS4_matched_scale_control.pdf"]},
     # Panel promotions — moved from scripts/generate_phase3_figures.py to here
     {"canonical": "output/cancer/scaled/cross_analysis_scaled.png",
      "mirrors": ["figures/panels/suppl_text_s1_cancer.png"]},
     {"canonical": "output/disease_replication/covid/covid_cross_analysis.png",
      "mirrors": ["figures/panels/suppl_text_s1_covid.png"]},
     # ─── Group E: Stage-5 consolidation artifacts (gene-std / marker-null) ───
-    {"canonical": "figures/submission/supplementary/figS8_markernull.pdf",
-     "mirrors": ["docs/submission/figures_for_review/Figure_S8.pdf"]},
+    {"canonical": "figures/submission/supplementary/figS5_markernull.pdf",
+     "mirrors": ["docs/submission/figures_for_review/Figure_S5.pdf"]},
     {"canonical": "docs/supplementary_materials/table_S9_genestd_standardization.csv",
      "mirrors": ["docs/submission/figures_for_review/Table_S9.csv"]},
     {"canonical": "docs/supplementary_materials/table_S9_schemeB_CPC1_markers.csv",

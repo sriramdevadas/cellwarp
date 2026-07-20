@@ -15,9 +15,7 @@ import fitz  # PyMuPDF
 
 PROJECT = Path(__file__).resolve().parent.parent
 TARGETS = [
-    PROJECT / "figures/submission/supplementary/figS6_cellmarker_enrichment.pdf",
     PROJECT / "figures/supplementary/figS6_cellmarker_enrichment.pdf",
-    PROJECT / "docs/submission/figures_for_review/Figure_S6.pdf",
 ]
 
 # Located via page.get_text("dict"):

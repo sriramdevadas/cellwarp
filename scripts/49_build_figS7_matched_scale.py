@@ -145,7 +145,7 @@ def main():
     fig.tight_layout()
     # Canonical write to OUT_SUPP only; OUT_LEGACY mirrors (.pdf + .png) are
     # materialized by scripts/build_submission_packet.py (R21 build script).
-    base = OUT_SUPP / "figS7_matched_scale_control"
+    base = OUT_SUPP / "figS4_matched_scale_control"
     base.parent.mkdir(parents=True, exist_ok=True)
     for ext in ("pdf", "png"):
         fig.savefig(f"{base}.{ext}", dpi=300, bbox_inches="tight")
