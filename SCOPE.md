@@ -35,7 +35,7 @@ is on the record rather than inferred.
 | Preregistration file | Date | In paper? | Category | Disposition |
 |---|---|---|---|---|
 | `docs/submission/figures_for_review/Supplementary_Preregistration.md` | — | **Yes** | PAPER | The deposited pre-specification of record (submitted as supplementary). |
-| `docs/preregistration_conserved_contribution_2026-06-05.md` | 2026-06-05 | **Yes** | PAPER | Pre-specifies the conserved-contribution / master-TF analysis (main Fig 2, Results §2, §5). |
+| `docs/preregistration_conserved_contribution_2026-06-05.md` | 2026-06-05 | **Yes** | PAPER | Pre-specifies the conserved-contribution / master-TF analysis (Fig 5, Results §2, §5). |
 | `docs/preregistration_aging_axis_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Aging-axis project (within-mouse aging as a directional centroid shift). **Not executed** — no output or script on disk. See "Aging/DILI check" below. |
 | `docs/preregistration_dilirank_hepatocyte_2026-03-16.md` | 2026-03-16 | **No** | BANKED | Hepatocyte-rigidity → drug-induced-liver-injury landmark test. **Executed** (`output/dilirank/`), returned a marginal/null result that did not survive the pre-specified covariate-falsification gate; correctly not reported as a positive finding. See below. |
 | `docs/preregistration_treeness_anticorrelation_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Treeness–rigidity mediation (neighborhood density). Treeness line; panels cut from this paper. |
@@ -50,7 +50,7 @@ code, and some of them cover analyses reported elsewhere — pointing here.
 
 **Question:** do the `aging_axis` or `dilirank_hepatocyte` preregistrations
 overlap the ten mechanistic-null tests reported for the per-type divergence
-ranking (Results §4; Table 1 T42–T51), and does the aging plan test
+ranking (Results §4; the ten nulls are reported in S1 Text §8), and does the aging plan test
 age-as-a-confound-on-the-cross-species-residual?
 
 **Answer — no eleventh null is needed:**
@@ -82,8 +82,9 @@ age-as-a-confound-on-the-cross-species-residual?
   triggering the plan's Hard Abort 3. Per its own reporting commitment it is a
   banked negative/marginal result, not reported as a finding. (Its Step-1
   sensitivity gate — L1000-landmark preservation of the ranking, ρ = 0.852 — is
-  the one component that *does* surface in the paper, as the L1000 robustness
-  check in Results §4 / Fig 4-family; the toxicity claim does not.)
+  checked by `reproduce/validate.py` and so is retained as validation tooling,
+  but its result is not reported anywhere in the manuscript body or SI; the
+  toxicity claim is not reported either.)
 
 Conclusion: §4's ten-null framing stands; aging, DILI, and the two treeness plans
 are scoped out here rather than in the manuscript body.
@@ -105,7 +106,7 @@ are scoped out here rather than in the manuscript body.
 | `07_bootstrap.py` | Bootstrap stability (Fig 1D) |
 | `08_loocv.py` | Leave-one-out CV (Fig 1E) |
 | `09_mantel_test.py` | Mantel pairwise-distance conservation |
-| `09_negative_control_v2.py`, `test_35type_human_control.py`, `49_build_figS7_matched_scale.py`, `polish_figS7.py` | Human-vs-human negative controls / matched-scale (Fig S7, Fig 3-family) |
+| `09_negative_control_v2.py`, `test_35type_human_control.py`, `49_build_figS7_matched_scale.py`, `polish_figS7.py` | Human-vs-human negative controls / matched-scale (S4 Fig, Fig 3-family) |
 | `16_sun2023_replication.py`, `pansci_replication.py`, `pansci_metadata_gate.py`, `33_cellhint_replication.py`, `14_t1a_replication.py`, `13_replication_inventory.py` | Direct replications (Fig 3A–C, replication inventory) |
 | `12_t1a_mca_download.py`, `13_t1a_hca_download.py`, `31_andrews_replication.py`, `15_hca_centroid_comparison.py` | Replication data acquisition + Andrews / MCA×HCA non-replications + within-human diagnostic (Fig S2F, §"config robust") |
 | `56_add_figs2_panel_f.py`, `patch_figs2_panel_f_values.py` | Replication-inventory panel (Fig S2F) |
@@ -114,13 +115,13 @@ are scoped out here rather than in the manuscript body.
 | `t3b_ellipsoid_alignment.py`, `layer3_permutation_test.py`, `test_layer1_layer2_correlation.py` | Two-layer decomposition (Fig 2-family: heatmap, compression, null, scatter) |
 | `t3b_ellipsoid_alignment_pansci.py` | Layer-2 PanSci cross-protocol test |
 | `generate_table_S6.py` | CPC1 driver genes (Table S6) |
-| `12_housekeeping_ratio.py`, `13_tf_complexity.py`, `12_niche_hypothesis.py`, `12_variance_diagnostic.py`, `16_interdonor_variance.py`, `19_ppi_centrality.py`, `t3e_step2_phastcons.py`, `t3e_step2_compute.py`, `t3e_step3b_enhancer.py`, `diagnostic_expression_vs_rigidity.py` | The ten mechanistic-null tests + expression diagnostic (Fig 4-family / Table 1 T42–T51) |
+| `12_housekeeping_ratio.py`, `13_tf_complexity.py`, `12_niche_hypothesis.py`, `12_variance_diagnostic.py`, `16_interdonor_variance.py`, `19_ppi_centrality.py`, `t3e_step2_phastcons.py`, `t3e_step2_compute.py`, `t3e_step3b_enhancer.py`, `diagnostic_expression_vs_rigidity.py` | The ten mechanistic-null tests + expression diagnostic (S1 Text §8) |
 | `16_ribosomal_confound_test.py` | Ribosomal-contribution sensitivity (also cited by evolutionary-ratio line) |
-| `35_l1000_random_baseline.py` | L1000 landmark-preservation of the ranking (Fig 4-family) |
+| `35_l1000_random_baseline.py` | L1000 landmark-preservation; validation tooling gated by `reproduce/validate.py`, not reported in the manuscript |
 | `confound_cellcount_rigidity.py` | Cell-count confound (Fig 4-family / old Fig 6B) |
 | `34_samap_35types.py`, `03_samap_validation.py` | SAMap correspondence vs residual (Fig S5) |
 | `cellmarker_35type_rerun.py`, `cellmarker_background_validated.py`, `hpa_35type_validation.py`, `52_overlay_figS6_pvalues.py`, `54_rebuild_figS6_matplotlib.py` | CellMarker / HPA identity-gene enrichment (Fig S6) |
-| `fetch_macaque_orthologs.py`, `nhp_ortholog_assessment.py`, `47_rerun_macaque_permutations_save_null.py`, `48_build_fig6_K12.py` | Macaque extension (Fig 5-family) |
+| `fetch_macaque_orthologs.py`, `nhp_ortholog_assessment.py`, `47_rerun_macaque_permutations_save_null.py`, `48_build_fig6_K12.py` | Macaque extension (S1 Text §7) |
 | `41_donor_split_analysis.py`, `42_donor_split_shared_pca.py`, `43_generate_fig2e_donor_split.py` | Donor-split within-species control (Fig 3-family) |
 | `08_cell_type_inventory.py` | 35-type matching inventory (Table S5) |
 | `create_table_S1.py`, `create_table_S2.py`, `table1_formatting.py`, `46_synthesis_pass_supplementary_table_edits.py`, `task_a_fix_s2_labels.py` | Table S1 / S2 / Table 1 build |
@@ -143,7 +144,7 @@ are scoped out here rather than in the manuscript body.
 
 | Script | Held-in-reserve analysis |
 |---|---|
-| `23_sensitivity_gate_l1000.py`, `24_dilirank_analysis.py` | DILI landmark preregistration (Step 1 gate + Steps 2–5). Step-1 fractal-geometry ρ surfaces in the paper as L1000 landmark preservation; the toxicity claim is banked (null under its own gate). |
+| `23_sensitivity_gate_l1000.py`, `24_dilirank_analysis.py` | DILI landmark preregistration (Step 1 gate + Steps 2–5). The Step-1 fractal-geometry ρ is checked by `reproduce/validate.py` but not reported in the manuscript; the toxicity claim is banked (null under its own gate). |
 | `v7_tost_equivalence.py` | TOST equivalence for the SAMap-vs-residual correlation; deployable if a reviewer asks whether the null correlation is a true null. |
 
 ### EXPLORATORY — scouting, feasibility, diagnostics (no reported number)
@@ -164,7 +165,7 @@ are scoped out here rather than in the manuscript body.
 
 | Directory | Category | Role |
 |---|---|---|
-| `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 2, §2, §5, Table S11) |
+| `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 5, §2, §5, Table S11) |
 | `independent_pca_sensitivity/` | PAPER | Independent-PCA sensitivity (Fig S1A–B) |
 | `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2) |
 | `bootstrap_rankings/` | PAPER | Bootstrap ranking CIs (Fig S3, Table S2) |
@@ -172,19 +173,20 @@ are scoped out here rather than in the manuscript body.
 | `mantel_test/` | PAPER | Mantel test |
 | `donor_split/` | PAPER | Donor-split control (Fig 3-family) |
 | `expanded_negative_controls/` | PAPER | Within-species tissue-pair controls (Fig S2E) |
-| `within_species_matched/` | PAPER | Matched-scale human-vs-human control (Fig S7) |
+| `within_species_matched/` | PAPER | Matched-scale human-vs-human control (S4 Fig) |
 | `census_replication/` | PAPER | Pan-Census replication (Fig S2F) |
 | `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4) |
 | `biological_predictors/` | PAPER | Biological-predictor correlates (Table S1, §4) |
-| `sensitivity_analyses/` | PAPER | Ribosomal/housekeeping exclusion, per-gene standardization, marker-null (Tables S7/S9/S10, Fig S8) |
-| `sensitivity/` | PAPER | Supporting sensitivity runs (layer2-no-ribosomal, MT/cell-cycle, parent–child ontology) |
-| `macaque/`, `matched_three_species/` | PAPER | Macaque extension + three-way ortholog intersection (Fig 5-family, §6) |
+| `sensitivity_analyses/` | PAPER | Ribosomal/housekeeping exclusion, per-gene standardization, marker-null (Tables S7/S9/S10, S5 Fig) |
+| `sensitivity/` | BANKED | Supporting sensitivity runs (layer2-no-ribosomal, MT/cell-cycle, parent–child ontology); completed but not referenced by the manuscript or `reproduce/validate.py` |
+| `macaque/` | PAPER | Macaque extension (underpowered 12-type human–macaque comparison, S1 Text §7) |
+| `matched_three_species/` | BANKED | Three-way ortholog intersection; NO-GO per its own `intersection_report.md` (8 types < 10-type threshold) |
 | `mouse_lemur/` | PAPER | Mouse-lemur extension (§1) |
 | `gene_conservation/` | PAPER | Gene-conservation-score construction (S1 Text supplementary methods) |
-| `validation/` | PAPER | Validation outputs feeding `reproduce/validate.py` |
+| `validation/` (i.e. `analysis/validation/`) | EXPLORATORY | HPA 35-type identity check (sole content `hpa/`); not read by `reproduce/validate.py` and not reported in the manuscript |
 | `evolutionary_ratio/` | OTHER PROJECT | Evolutionary-ratio (dN/dS) line |
 | `macaque_atlas_research/`, `third_species/` | EXPLORATORY | Macaque / third-species atlas surveys and feasibility reports |
-| `cross_reference/` | EXPLORATORY | Convergent-type / cross-reference bookkeeping |
+| `cross_reference/` | PAPER | Builds `master_ranking_table.csv`, the source behind Fig 4B (CI-width vs cross-atlas rank-shift, ρ = −0.41) and Table S1 |
 
 ---
 
@@ -192,12 +194,13 @@ are scoped out here rather than in the manuscript body.
 
 | Directory | Category | Role |
 |---|---|---|
-| `phase1_qc/`, `phase2/`, `phase3/`, `figures/`, `supplementary/`, `validation/`, `paper_audit/` | PAPER | Core pipeline outputs, figures, validation, audit |
+| `phase1_qc/`, `phase2/`, `phase3/`, `figures/`, `supplementary/`, `validation/` | PAPER | Core pipeline outputs, figures, and validation (this `validation/` is `output/validation/`, read by `reproduce/validate.py`) |
+| `paper_audit/` | EXPLORATORY | Internal numbers audit (`master_numbers.csv`); not consumed by any tool and not reported |
 | `phase1_samap/` | PAPER | SAMap (Fig S5) |
 | `mechanistic/` | PAPER | Mechanistic nulls + ellipsoid alignment (Fig 4-family) |
 | `layer3_permutation/`, `twolayer_pansci_replication/` | PAPER | Two-layer decomposition + PanSci cross-protocol |
 | `cellcount_confound/` | PAPER | Cell-count confound |
-| `landmark_sensitivity/` | PAPER | L1000 landmark preservation (Fig 4-family) |
+| `landmark_sensitivity/` | PAPER | L1000 landmark-preservation check; validation tooling gated by `reproduce/validate.py`, not reported in the manuscript |
 | `macaque_pipeline/` | PAPER | Macaque extension |
 | `t3g/` | PAPER | Drug-target-conservation null (mechanistic Null 10) |
 | `disease_replication/` | OTHER PROJECT | Disease / COVID axis |
