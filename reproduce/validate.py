@@ -289,6 +289,100 @@ CHECKS = [
         "tolerance": 0.001,
         "paper_ref": "Results section 2, Figure 2A (dip D = 0.007, p = 2.8e-5)",
     },
+
+    # ── Fig 2C: basal-ganglia two-layer replication, self-consistency (current paper) ──
+    # Structural checks over the vendored BG results; no manuscript values transcribed.
+    # (Checks 19/20 still carry an OLD "Figure 2C" that means Fig 5C — relabeled in the next commit.)
+    {
+        "name": "BG Human-Macaque: post-rotation compression (k=5, W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque.json",
+        "key": "W2_schemeB.layer2.k5.compression_ratio_post_over_pre",
+        "expected_below": 1.0,
+        "paper_ref": "Results section 2, Figure 2C",
+    },
+    {
+        "name": "BG Human-Macaque: post-rotation permutation p (k=5, W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque.json",
+        "key": "W2_schemeB.layer2.k5.p_post",
+        "expected_below": 0.00011,
+        "paper_ref": "Results section 2, Figure 2C",
+    },
+    {
+        "name": "BG Human-Macaque: identity-marker driver count (W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque.json",
+        "key": "W2_schemeB.rank1_class_counts.canonical identity marker",
+        "expected": 18,
+        "tolerance": 0,
+        "paper_ref": "Results section 2, Figure 2C (18/55)",
+    },
+    {
+        "name": "BG Human-Macaque: n_types",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque.json",
+        "key": "n_types",
+        "expected": 55,
+        "tolerance": 0,
+        "paper_ref": "Results section 2, Figure 2C (18/55)",
+    },
+    {
+        "name": "BG Human-Marmoset: post-rotation compression (k=5, W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Marmoset.json",
+        "key": "W2_schemeB.layer2.k5.compression_ratio_post_over_pre",
+        "expected_below": 1.0,
+        "paper_ref": "Results section 2, Figure 2C",
+    },
+    {
+        "name": "BG Human-Marmoset: post-rotation permutation p (k=5, W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Marmoset.json",
+        "key": "W2_schemeB.layer2.k5.p_post",
+        "expected_below": 0.00011,
+        "paper_ref": "Results section 2, Figure 2C",
+    },
+    {
+        "name": "BG Human-Marmoset: identity-marker driver count (W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Marmoset.json",
+        "key": "W2_schemeB.rank1_class_counts.canonical identity marker",
+        "expected": 7,
+        "tolerance": 0,
+        "paper_ref": "Results section 2, Figure 2C (7/52)",
+    },
+    {
+        "name": "BG Human-Marmoset: n_types",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Marmoset.json",
+        "key": "n_types",
+        "expected": 52,
+        "tolerance": 0,
+        "paper_ref": "Results section 2, Figure 2C (7/52)",
+    },
+    {
+        "name": "BG Macaque-Marmoset: post-rotation compression (k=5, W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Macaque_Marmoset.json",
+        "key": "W2_schemeB.layer2.k5.compression_ratio_post_over_pre",
+        "expected_below": 1.0,
+        "paper_ref": "Results section 2, Figure 2C",
+    },
+    {
+        "name": "BG Macaque-Marmoset: post-rotation permutation p (k=5, W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Macaque_Marmoset.json",
+        "key": "W2_schemeB.layer2.k5.p_post",
+        "expected_below": 0.00011,
+        "paper_ref": "Results section 2, Figure 2C",
+    },
+    {
+        "name": "BG Macaque-Marmoset: identity-marker driver count (W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Macaque_Marmoset.json",
+        "key": "W2_schemeB.rank1_class_counts.canonical identity marker",
+        "expected": 5,
+        "tolerance": 0,
+        "paper_ref": "Results section 2, Figure 2C (5/52)",
+    },
+    {
+        "name": "BG Macaque-Marmoset: n_types",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Macaque_Marmoset.json",
+        "key": "n_types",
+        "expected": 52,
+        "tolerance": 0,
+        "paper_ref": "Results section 2, Figure 2C (5/52)",
+    },
 ]
 
 
