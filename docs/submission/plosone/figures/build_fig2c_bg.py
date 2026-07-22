@@ -3,7 +3,7 @@
 Reads the deposited per-pair layer2_results JSONs and renders the compression
 (pre vs post-rotation Krzanowski S at k=5) with permutation-null markers, under
 both weightings. PLOS spec: Arial, 8-12 pt, RGB, <=19.05 cm wide."""
-import json, pathlib
+import csv, io, json, pathlib
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -18,10 +18,20 @@ plt.rcParams.update({"font.size": 8, "axes.linewidth": 0.6,
                      "xtick.major.width": 0.6, "ytick.major.width": 0.6,
                      "savefig.dpi": 600})
 
-BG = pathlib.Path.home()/ "cellwarp_plans/cellwarp-bg-test/analysis/bg/results"
-PAIRS = [("Human_Macaque","Human–Macaque","18/55"),
-         ("Human_Marmoset","Human–Marmoset","7/52"),
-         ("Macaque_Marmoset","Macaque–Marmoset","5/52")]
+BG = pathlib.Path(__file__).resolve().parent / "bg_results"   # vendored, repo-relative
+
+def marker_fraction(pair):
+    """n/N cell types whose rank-1 CPC1 driver is a canonical identity marker
+    (per-gene-standardized scheme B), derived from the vendored driver CSV."""
+    with open(BG/f"layer2_cpc1_drivers_{pair}_W2_schemeB.csv", newline="") as f:
+        rows = list(csv.DictReader(f))
+    numer = sum(1 for r in rows if r["rank1_class"] == "canonical identity marker")
+    return f"{numer}/{len(rows)}"
+
+PAIRS = [(k, lbl, marker_fraction(k)) for (k, lbl) in
+         [("Human_Macaque","Human–Macaque"),
+          ("Human_Marmoset","Human–Marmoset"),
+          ("Macaque_Marmoset","Macaque–Marmoset")]]
 SCHEMES = [("W0_unscaled","Unscaled"),("W2_schemeB","Per-gene standardized")]
 PRE, POST = "#4a7fb5", "#e08214"   # CVD-validated pair (ΔE 22 protan)
 
@@ -64,13 +74,19 @@ fig.text(0.5, 0.005, "All pairs, both weightings: post < pre at every k tested, 
          ha="center", fontsize=6.6, color="#333")
 fig.subplots_adjust(left=0.085, right=0.985, top=0.90, bottom=0.24, wspace=0.08)
 
-out = pathlib.Path.home()/ "cellwarp/docs/submission/plosone/figures"
+out = pathlib.Path(__file__).resolve().parent   # repo-relative (script's own dir)
 fig.savefig(out/"Fig2C_bg_replication.pdf")
 fig.savefig(out/"Fig2C_bg_replication.png", dpi=300)
-# PLOS-spec TIFF (RGB, LZW)
+# PLOS-spec TIFF (RGB, no alpha, LZW). matplotlib emits RGBA; flatten to RGB.
 try:
-    fig.savefig(out/"Fig2C_bg_replication.tiff", dpi=300, pil_kwargs={"compression":"tiff_lzw"})
-    print("wrote PDF + PNG + TIFF(LZW)")
+    from PIL import Image
+    _buf = io.BytesIO()
+    fig.savefig(_buf, format="tiff", dpi=300, pil_kwargs={"compression":"tiff_lzw"})
+    _buf.seek(0)
+    Image.open(_buf).convert("RGB").save(
+        out/"Fig2C_bg_replication.tiff", format="TIFF",
+        compression="tiff_lzw", dpi=(300, 300))
+    print("wrote PDF + PNG + TIFF(RGB, LZW)")
 except Exception as e:
     print("PDF+PNG written; TIFF skipped:", e)
 print("font:", plt.rcParams["font.family"])

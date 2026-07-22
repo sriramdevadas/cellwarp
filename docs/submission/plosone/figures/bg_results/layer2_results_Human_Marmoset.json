@@ -1,0 +1,342 @@
+{
+  "pair": [
+    "Human",
+    "Marmoset"
+  ],
+  "n_types": 52,
+  "per_type_n": [
+    {
+      "cell_type": "AMY-SLEA-BNST GABA",
+      "n_ref": 2199,
+      "n_tgt": 2183
+    },
+    {
+      "cell_type": "Astrocyte",
+      "n_ref": 136684,
+      "n_tgt": 26192
+    },
+    {
+      "cell_type": "BAM",
+      "n_ref": 3486,
+      "n_tgt": 416
+    },
+    {
+      "cell_type": "BF SKOR1 Glut",
+      "n_ref": 1907,
+      "n_tgt": 555
+    },
+    {
+      "cell_type": "COP",
+      "n_ref": 711,
+      "n_tgt": 421
+    },
+    {
+      "cell_type": "Endo",
+      "n_ref": 7671,
+      "n_tgt": 525
+    },
+    {
+      "cell_type": "Ependymal",
+      "n_ref": 11063,
+      "n_tgt": 1420
+    },
+    {
+      "cell_type": "GPe MEIS2-SOX6 GABA",
+      "n_ref": 4072,
+      "n_tgt": 316
+    },
+    {
+      "cell_type": "GPe SOX6-CTXND1 GABA",
+      "n_ref": 3329,
+      "n_tgt": 587
+    },
+    {
+      "cell_type": "GPe-NDB-SI LHX6-LHX8-GBX1 GABA",
+      "n_ref": 2927,
+      "n_tgt": 1500
+    },
+    {
+      "cell_type": "GPi Core",
+      "n_ref": 1993,
+      "n_tgt": 297
+    },
+    {
+      "cell_type": "GPi Shell",
+      "n_ref": 427,
+      "n_tgt": 131
+    },
+    {
+      "cell_type": "GPin-BF Cholinergic GABA",
+      "n_ref": 469,
+      "n_tgt": 340
+    },
+    {
+      "cell_type": "ImOligo",
+      "n_ref": 5146,
+      "n_tgt": 3151
+    },
+    {
+      "cell_type": "LAMP5-CXCL14 GABA",
+      "n_ref": 4536,
+      "n_tgt": 3068
+    },
+    {
+      "cell_type": "LAMP5-LHX6 GABA",
+      "n_ref": 1279,
+      "n_tgt": 3474
+    },
+    {
+      "cell_type": "Microglia",
+      "n_ref": 80593,
+      "n_tgt": 11261
+    },
+    {
+      "cell_type": "OB FRMD7 GABA",
+      "n_ref": 881,
+      "n_tgt": 288
+    },
+    {
+      "cell_type": "OPC",
+      "n_ref": 29344,
+      "n_tgt": 13692
+    },
+    {
+      "cell_type": "OT D1 ICj",
+      "n_ref": 2578,
+      "n_tgt": 1145
+    },
+    {
+      "cell_type": "Oligo OPALIN",
+      "n_ref": 145491,
+      "n_tgt": 65164
+    },
+    {
+      "cell_type": "Oligo PLEKHG1",
+      "n_ref": 56371,
+      "n_tgt": 9527
+    },
+    {
+      "cell_type": "Pericyte",
+      "n_ref": 5625,
+      "n_tgt": 361
+    },
+    {
+      "cell_type": "SN EBF2 GABA",
+      "n_ref": 483,
+      "n_tgt": 533
+    },
+    {
+      "cell_type": "SN SEMA5A GABA",
+      "n_ref": 393,
+      "n_tgt": 244
+    },
+    {
+      "cell_type": "SN SOX6 Dopa",
+      "n_ref": 2335,
+      "n_tgt": 688
+    },
+    {
+      "cell_type": "SN-VTR CALB1 Dopa",
+      "n_ref": 108,
+      "n_tgt": 940
+    },
+    {
+      "cell_type": "SN-VTR GAD2 Dopa",
+      "n_ref": 212,
+      "n_tgt": 476
+    },
+    {
+      "cell_type": "SN-VTR-HTH GATA3-TCF7L2 GABA",
+      "n_ref": 1951,
+      "n_tgt": 3504
+    },
+    {
+      "cell_type": "STH PVALB-PITX2 Glut",
+      "n_ref": 2406,
+      "n_tgt": 1472
+    },
+    {
+      "cell_type": "STR Cholinergic GABA",
+      "n_ref": 159,
+      "n_tgt": 245
+    },
+    {
+      "cell_type": "STR D1D2 Hybrid MSN",
+      "n_ref": 27505,
+      "n_tgt": 5946
+    },
+    {
+      "cell_type": "STR FS PTHLH-PVALB GABA",
+      "n_ref": 14721,
+      "n_tgt": 3864
+    },
+    {
+      "cell_type": "STR LYPD6-RSPO2 GABA",
+      "n_ref": 1731,
+      "n_tgt": 4173
+    },
+    {
+      "cell_type": "STR SST-ADARB2 GABA",
+      "n_ref": 279,
+      "n_tgt": 220
+    },
+    {
+      "cell_type": "STR SST-CHODL GABA",
+      "n_ref": 4345,
+      "n_tgt": 1716
+    },
+    {
+      "cell_type": "STR SST-RSPO2 GABA",
+      "n_ref": 2034,
+      "n_tgt": 5978
+    },
+    {
+      "cell_type": "STR TAC3-PLPP4 GABA",
+      "n_ref": 14340,
+      "n_tgt": 2663
+    },
+    {
+      "cell_type": "STR-BF TAC3-PLPP4-LHX8 GABA",
+      "n_ref": 2683,
+      "n_tgt": 712
+    },
+    {
+      "cell_type": "STRd Cholinergic GABA",
+      "n_ref": 258,
+      "n_tgt": 503
+    },
+    {
+      "cell_type": "STRd D1 Matrix MSN",
+      "n_ref": 122353,
+      "n_tgt": 31781
+    },
+    {
+      "cell_type": "STRd D1 Striosome MSN",
+      "n_ref": 36816,
+      "n_tgt": 6989
+    },
+    {
+      "cell_type": "STRd D2 Matrix MSN",
+      "n_ref": 131276,
+      "n_tgt": 30452
+    },
+    {
+      "cell_type": "STRd D2 StrioMat Hybrid MSN",
+      "n_ref": 7627,
+      "n_tgt": 1074
+    },
+    {
+      "cell_type": "STRd D2 Striosome MSN",
+      "n_ref": 31146,
+      "n_tgt": 5461
+    },
+    {
+      "cell_type": "STRv D1 MSN",
+      "n_ref": 38739,
+      "n_tgt": 12423
+    },
+    {
+      "cell_type": "STRv D1 NUDAP MSN",
+      "n_ref": 14982,
+      "n_tgt": 8444
+    },
+    {
+      "cell_type": "STRv D2 MSN",
+      "n_ref": 37591,
+      "n_tgt": 12145
+    },
+    {
+      "cell_type": "VIP GABA",
+      "n_ref": 7244,
+      "n_tgt": 7902
+    },
+    {
+      "cell_type": "VLMC",
+      "n_ref": 7486,
+      "n_tgt": 1204
+    },
+    {
+      "cell_type": "VTR-HTH Glut",
+      "n_ref": 2292,
+      "n_tgt": 6159
+    },
+    {
+      "cell_type": "ZI-HTH GABA",
+      "n_ref": 1966,
+      "n_tgt": 7836
+    }
+  ],
+  "W0_unscaled": {
+    "scheme": "W0_unscaled",
+    "k": 40,
+    "layer2": {
+      "k1": {
+        "S_pre": 0.8882495872197859,
+        "S_post": 0.46379170192068864,
+        "null_mean_pre": 0.8435624556733825,
+        "null_mean_post": 0.4501373867141636,
+        "p_pre": 9.999000099990002e-05,
+        "p_post": 9.999000099990002e-05,
+        "compression_ratio_post_over_pre": 0.5221411961162323
+      },
+      "k3": {
+        "S_pre": 0.7151051038898418,
+        "S_post": 0.41187100074031957,
+        "null_mean_pre": 0.5803100903939795,
+        "null_mean_post": 0.358644777576306,
+        "p_pre": 9.999000099990002e-05,
+        "p_post": 9.999000099990002e-05,
+        "compression_ratio_post_over_pre": 0.5759586926452228
+      },
+      "k5": {
+        "S_pre": 0.6874039273816114,
+        "S_post": 0.4307067129551005,
+        "null_mean_pre": 0.5271590714771994,
+        "null_mean_post": 0.3564555268194819,
+        "p_pre": 9.999000099990002e-05,
+        "p_post": 9.999000099990002e-05,
+        "compression_ratio_post_over_pre": 0.6265700497169173
+      }
+    },
+    "rank1_class_counts": {
+      "other": 52
+    }
+  },
+  "W2_schemeB": {
+    "scheme": "W2_schemeB",
+    "k": 49,
+    "layer2": {
+      "k1": {
+        "S_pre": 0.8518011596880434,
+        "S_post": 0.4471726482044174,
+        "null_mean_pre": 0.7256574399381284,
+        "null_mean_post": 0.39753173692315397,
+        "p_pre": 9.999000099990002e-05,
+        "p_post": 9.999000099990002e-05,
+        "compression_ratio_post_over_pre": 0.5249730446107707
+      },
+      "k3": {
+        "S_pre": 0.7132036299484052,
+        "S_post": 0.3607039095172563,
+        "null_mean_pre": 0.5147308669892499,
+        "null_mean_post": 0.28107282884288737,
+        "p_pre": 9.999000099990002e-05,
+        "p_post": 9.999000099990002e-05,
+        "compression_ratio_post_over_pre": 0.5057516456321884
+      },
+      "k5": {
+        "S_pre": 0.6832139029840401,
+        "S_post": 0.4055356022637694,
+        "null_mean_pre": 0.45620463248260346,
+        "null_mean_post": 0.29144151464130874,
+        "p_pre": 9.999000099990002e-05,
+        "p_post": 9.999000099990002e-05,
+        "compression_ratio_post_over_pre": 0.5935704769656053
+      }
+    },
+    "rank1_class_counts": {
+      "other": 45,
+      "canonical identity marker": 7
+    }
+  }
+}
