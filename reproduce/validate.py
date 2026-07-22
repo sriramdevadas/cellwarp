@@ -62,14 +62,14 @@ CHECKS = [
         "key": "procrustes.obs_null_ratio",
         "expected": 0.448,
         "tolerance": 0.005,
-        "paper_ref": "Figure 3C, Figure S4",
+        "paper_ref": "Figure 3, S2 Fig(F)",
     },
     {
         "name": "CellHint p-value",
         "file": "output/validation/cellhint_replication/cellhint_replication.json",
         "key": "procrustes.p_value",
         "expected_below": 0.001,
-        "paper_ref": "Figure 3C",
+        "paper_ref": "Figure 3",
     },
 
     # ── Smart-seq2 protocol sensitivity (Figure S2C-D) ──
@@ -82,24 +82,24 @@ CHECKS = [
         "paper_ref": "Figure S2C-D",
     },
 
-    # ── SAMap validation (Figure S5) ──
+    # ── SAMap validation (validation tooling; old Fig S5, cut) ──
     {
         "name": "SAMap-residual correlation rho",
         "file": "output/phase1_samap/samap_35types/samap_rigidity_correlation.json",
         "key": "spearman_rho",
         "expected": -0.247,
         "tolerance": 0.02,
-        "paper_ref": "Figure S5",
+        "paper_ref": "not in current paper (SAMap validation tooling; old Fig S5, cut)",
     },
 
-    # ── CellMarker (Figure S6) ──
+    # ── CellMarker (validation tooling; old Fig S6, cut) ──
     {
         "name": "CellMarker enrichment fold",
         "file": "output/validation/cellmarker_35type_rerun/cellmarker_35type_results.json",
         "key": "global_enrichment.enrichment",
         "expected": 4.49,
         "tolerance": 0.1,
-        "paper_ref": "Figure S6",
+        "paper_ref": "not in current paper (CellMarker validation tooling; old Fig S6, cut)",
     },
     {
         "name": "CellMarker enrichment p-value",
@@ -108,7 +108,7 @@ CHECKS = [
         # Tightened to a two-sided range that catches order-of-magnitude
         # drift in either direction. Pipeline value is ~2.10e-13.
         "expected_in_range": [1e-14, 1e-12],
-        "paper_ref": "Figure S6; Methods L309",
+        "paper_ref": "not in current paper (CellMarker validation tooling; old Fig S6, cut)",
     },
     {
         "name": "CellMarker expression-matched p-value",
@@ -116,7 +116,7 @@ CHECKS = [
         "key": "expression_matched.p_value",
         # Pipeline value is ~1.15e-12 (V2 selection).
         "expected_in_range": [1e-13, 1e-11],
-        "paper_ref": "Methods L310; Results L79",
+        "paper_ref": "not in current paper (CellMarker validation tooling; old Fig S6, cut)",
     },
 
     # ── Mechanistic null tests — housekeeping (Methods §Mechanistic null tests, row 1) ──
@@ -126,7 +126,7 @@ CHECKS = [
         "key": "human_correlation.spearman_rho",
         "expected": 0.167,
         "tolerance": 0.005,
-        "paper_ref": "Methods L357 (Mechanistic null tests, row 1)",
+        "paper_ref": "S1 Text §8 (mechanistic null 1: housekeeping ratio)",
     },
 
     # ── Treeness checks removed (analysis cut) ──
@@ -140,13 +140,13 @@ CHECKS = [
         "paper_ref": "Figure S2A-B",
     },
 
-    # ── L1000 random baseline (Figure 7A) ──
+    # ── L1000 random baseline (validation tooling; old Fig 7A, cut) ──
     {
         "name": "L1000 random baseline empirical p-value",
         "file": "output/figures/l1000_random_baseline_results.json",
         "key": "primary.empirical_p_value",
         "expected_below": 0.05,
-        "paper_ref": "Figure 7A",
+        "paper_ref": "not in current paper (L1000 validation tooling; old Fig 7A, cut)",
     },
     {
         "name": "L1000 observed rho",
@@ -154,24 +154,24 @@ CHECKS = [
         "key": "primary.observed_l1000_rho",
         "expected": 0.852,
         "tolerance": 0.02,
-        "paper_ref": "Figure 7A",
+        "paper_ref": "not in current paper (L1000 validation tooling; old Fig 7A, cut)",
     },
 
-    # ── Ellipsoid alignment (Figure 4) ──
+    # ── Ellipsoid alignment (two-layer covariance; Results section 2, Figure 2) ──
     {
         "name": "Ellipsoid eigenval-residual rho (35 types)",
         "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
         "key": "35type.eigenval_vs_rigidity.rho",
         "expected": 0.395,
         "tolerance": 0.02,
-        "paper_ref": "Figure 4",
+        "paper_ref": "Results section 2, Figure 2 (two-layer covariance)",
     },
     {
         "name": "Ellipsoid eigenval-residual p-value (35 types)",
         "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
         "key": "35type.eigenval_vs_rigidity.p",
         "expected_below": 0.05,
-        "paper_ref": "Figure 4",
+        "paper_ref": "Results section 2, Figure 2 (two-layer covariance)",
     },
 
     # ── Layer-1 housekeeping/ribosomal exclusion robustness ──
@@ -191,21 +191,21 @@ CHECKS = [
         "tolerance": 0.01,
         "paper_ref": "Methods: ribosomal/housekeeping exclusion robustness",
     },
-    # ── Conserved-contribution gene set (Results section 2, Figure 2) ──
+    # ── Conserved-contribution gene set (Results section 5, Figure 5) ──
     {
         "name": "Conserved-contribution: master-TF median C-percentile",
         "file": "analysis/conserved_contribution/gate_results.json",
         "key": "check3a.median_Crank",
         "expected": 0.94,
         "tolerance": 0.02,
-        "paper_ref": "Results section 2, Figure 2C",
+        "paper_ref": "Results section 5, Figure 5C",
     },
     {
         "name": "Conserved-contribution: master-TF positive-control p-value",
         "file": "analysis/conserved_contribution/gate_results.json",
         "key": "check3a.p_value",
         "expected_below": 0.01,
-        "paper_ref": "Results section 2, Figure 2C",
+        "paper_ref": "Results section 5, Figure 5C",
     },
     {
         "name": "Conserved-contribution: C vs expression Spearman",
@@ -213,7 +213,7 @@ CHECKS = [
         "key": "check2.spearman_C_vs_expr",
         "expected": 0.22,
         "tolerance": 0.03,
-        "paper_ref": "Results section 2, Figure 2B",
+        "paper_ref": "Results section 5, Figure 5B",
     },
     {
         "name": "Conserved-contribution: C vs specificity (Tau) Spearman",
@@ -221,7 +221,7 @@ CHECKS = [
         "key": "rho_C_tau",
         "expected": 0.06,
         "tolerance": 0.03,
-        "paper_ref": "Results section 2, Figure 2B",
+        "paper_ref": "Results section 5, Figure 5B",
     },
     {
         "name": "Conserved-contribution: donor-split cross-half C Spearman",
@@ -229,7 +229,7 @@ CHECKS = [
         "key": "donor_split_cap10000.cross_half_C_spearman_median",
         "expected": 0.80,
         "tolerance": 0.03,
-        "paper_ref": "Results section 2, Figure 2D",
+        "paper_ref": "Results section 5, Figure 5D",
     },
     {
         "name": "Conserved-contribution: cross-protocol C Spearman",
@@ -237,7 +237,7 @@ CHECKS = [
         "key": "cross_protocol.spearman_C10x_vs_CSS",
         "expected": 0.59,
         "tolerance": 0.03,
-        "paper_ref": "Results section 2",
+        "paper_ref": "Results section 5",
     },
     {
         "name": "Conserved-contribution: fresh-pull obs/null",
@@ -245,7 +245,7 @@ CHECKS = [
         "key": "validity.obs_null_full",
         "expected": 0.521,
         "tolerance": 0.01,
-        "paper_ref": "Results section 2 (fresh Census re-acquisition)",
+        "paper_ref": "Results section 5 (fresh Census re-acquisition)",
     },
 
     # ── Conserved-contribution geometry attribution (Results section 2, §10) ──
@@ -255,7 +255,7 @@ CHECKS = [
         "key": "secondary.conserved.ratio",
         "expected": 0.384,
         "tolerance": 0.005,
-        "paper_ref": "Results section 2 (geometry attribution); gate_results.json[secondary]",
+        "paper_ref": "Results section 5 (geometry attribution); gate_results.json[secondary]",
     },
     {
         "name": "Conserved-contribution: divergent-set obs/null (geometry attribution)",
@@ -263,7 +263,7 @@ CHECKS = [
         "key": "secondary.divergent.ratio",
         "expected": 0.709,
         "tolerance": 0.01,
-        "paper_ref": "Results section 2 (geometry attribution); gate_results.json[secondary]",
+        "paper_ref": "Results section 5 (geometry attribution); gate_results.json[secondary]",
     },
     {
         "name": "Conserved-contribution: expr-matched-random obs/null (geometry attribution)",
@@ -271,7 +271,7 @@ CHECKS = [
         "key": "secondary.matched_random_ratio_mean",
         "expected": 0.525,
         "tolerance": 0.02,
-        "paper_ref": "Results section 2 (geometry attribution; expr-matched random, 0.525 +/- 0.012)",
+        "paper_ref": "Results section 5 (geometry attribution; expr-matched random, 0.525 +/- 0.012)",
     },
     {
         "name": "Conserved-contribution: all-genes obs/null anchor (geometry attribution)",
@@ -279,7 +279,7 @@ CHECKS = [
         "key": "secondary.validity_all_genes_ratio",
         "expected": 0.522,
         "tolerance": 0.005,
-        "paper_ref": "Results section 2 (geometry attribution; all-genes anchor)",
+        "paper_ref": "Results section 5 (geometry attribution; all-genes anchor)",
     },
     {
         "name": "Conserved-contribution: Hartigan dip statistic D (broad continuum)",
@@ -287,12 +287,12 @@ CHECKS = [
         "key": "dip_D",
         "expected": 0.007,
         "tolerance": 0.001,
-        "paper_ref": "Results section 2, Figure 2A (dip D = 0.007, p = 2.8e-5)",
+        "paper_ref": "Results section 5, Figure 5A (dip D = 0.007, p = 2.8e-5)",
     },
 
     # ── Fig 2C: basal-ganglia two-layer replication, self-consistency (current paper) ──
     # Structural checks over the vendored BG results; no manuscript values transcribed.
-    # (Checks 19/20 still carry an OLD "Figure 2C" that means Fig 5C — relabeled in the next commit.)
+    # (The conserved-contribution checks above are Fig 5C, not this; "Figure 2C" here is the current basal-ganglia panel.)
     {
         "name": "BG Human-Macaque: post-rotation compression (k=5, W2)",
         "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque.json",
