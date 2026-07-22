@@ -103,8 +103,8 @@ are scoped out here rather than in the manuscript body.
 | `permutation_1M.py` | 1M-permutation headline null (Fig 1B) |
 | `permutation_1M_independent_pca.py` | Independent-PCA 1M null (Fig S1A) |
 | `test_lineage_stratified_permutation.py` | Lineage-stratified null (Fig 1C) |
-| `07_bootstrap.py` | Bootstrap stability (Fig 1D) |
-| `08_loocv.py` | Leave-one-out CV (Fig 1E) |
+| `07_bootstrap.py` | Configuration bootstrap stability (Methods; S1 Text §11, text-only — no figure) |
+| `08_loocv.py` | Leave-one-out CV (Methods; S1 Text §11, text-only — no figure) |
 | `09_mantel_test.py` | Mantel pairwise-distance conservation |
 | `09_negative_control_v2.py`, `test_35type_human_control.py`, `49_build_figS7_matched_scale.py`, `polish_figS7.py` | Human-vs-human negative controls / matched-scale (S4 Fig, Fig 3-family) |
 | `16_sun2023_replication.py`, `pansci_replication.py`, `pansci_metadata_gate.py`, `33_cellhint_replication.py`, `14_t1a_replication.py`, `13_replication_inventory.py` | Direct replications (Fig 3A–C, replication inventory) |
@@ -119,8 +119,8 @@ are scoped out here rather than in the manuscript body.
 | `16_ribosomal_confound_test.py` | Ribosomal-contribution sensitivity (also cited by evolutionary-ratio line) |
 | `35_l1000_random_baseline.py` | L1000 landmark-preservation; validation tooling gated by `reproduce/validate.py`, not reported in the manuscript |
 | `confound_cellcount_rigidity.py` | Cell-count confound (Fig 4-family / old Fig 6B) |
-| `34_samap_35types.py`, `03_samap_validation.py` | SAMap correspondence vs residual (Fig S5) |
-| `cellmarker_35type_rerun.py`, `cellmarker_background_validated.py`, `hpa_35type_validation.py`, `52_overlay_figS6_pvalues.py`, `54_rebuild_figS6_matplotlib.py` | CellMarker / HPA identity-gene enrichment (Fig S6) |
+| `34_samap_35types.py`, `03_samap_validation.py` | SAMap-vs-residual check: `34_samap_35types` is validation tooling gated by `reproduce/validate.py` (its figure, old Fig S5, is cut from the current paper; result not reported); `03_samap_validation` is its superseded 6-type predecessor |
+| `cellmarker_35type_rerun.py`, `cellmarker_background_validated.py`, `hpa_35type_validation.py`, `52_overlay_figS6_pvalues.py`, `54_rebuild_figS6_matplotlib.py` | `cellmarker_35type_rerun` is validation tooling gated by `reproduce/validate.py` (its figure, old Fig S6, is cut from the current paper; result not reported); the rest — CellMarker background variant, HPA identity check, and the cut-Fig-S6 rebuild scripts — are not gated and not reported |
 | `fetch_macaque_orthologs.py`, `nhp_ortholog_assessment.py`, `47_rerun_macaque_permutations_save_null.py`, `48_build_fig6_K12.py` | Macaque extension (S1 Text §7) |
 | `41_donor_split_analysis.py`, `42_donor_split_shared_pca.py`, `43_generate_fig2e_donor_split.py` | Donor-split within-species control (Fig 3-family) |
 | `08_cell_type_inventory.py` | 35-type matching inventory (Table S5) |
@@ -196,7 +196,7 @@ are scoped out here rather than in the manuscript body.
 |---|---|---|
 | `phase1_qc/`, `phase2/`, `phase3/`, `figures/`, `supplementary/`, `validation/` | PAPER | Core pipeline outputs, figures, and validation (this `validation/` is `output/validation/`, read by `reproduce/validate.py`) |
 | `paper_audit/` | EXPLORATORY | Internal numbers audit (`master_numbers.csv`); not consumed by any tool and not reported |
-| `phase1_samap/` | PAPER | SAMap (Fig S5) |
+| `phase1_samap/` | PAPER | SAMap-vs-residual check output; gated by `reproduce/validate.py` (its figure, old Fig S5, is cut from the current paper; not reported) |
 | `mechanistic/` | PAPER | Mechanistic nulls + ellipsoid alignment (Fig 4-family) |
 | `layer3_permutation/`, `twolayer_pansci_replication/` | PAPER | Two-layer decomposition + PanSci cross-protocol |
 | `cellcount_confound/` | PAPER | Cell-count confound |
