@@ -1,83 +1,114 @@
 # Figure and Table to Script Mapping
 
-Every display item in the CellWarp paper, mapped to the script that generates it.
-Figure and panel numbers follow the current manuscript after the S5-CW1b rebuild.
+Every display item in the current CellWarp paper (PLOS ONE submission: 5 main
+figures, S1-S5 Fig, and 11 supplementary tables S1-S7 and S9-S12), mapped to the
+script that produces the deposited file.
 
-## Main Figures
+The manuscript is `docs/submission/plosone/manuscript_combined.txt`; its figure
+and table legends are the authority for panel content. Old-to-new figure/table
+renumbering history (this paper descends from a 7-figure PCOMPBIOL draft) is
+recorded separately in `docs/submission/plosone/NUMBER_DIFF.md` and is out of
+scope here.
 
-| Display Item | Generating Script(s) | Depends On |
-|---|---|---|
-| Figure 1A (pipeline schematic) | scripts/generate_phase2_figures.py | None |
-| Figure 1B (1M null distribution) | scripts/generate_phase1_figures.py | scripts/permutation_1M.py |
-| Figure 1C (lineage-stratified null) | scripts/generate_phase1_figures.py | scripts/test_lineage_stratified_permutation.py |
-| Figure 1D (bootstrap stability) | scripts/generate_phase3_figures.py | scripts/07_bootstrap.py |
-| Figure 1E (LOOCV bar chart) | scripts/generate_phase3_figures.py | scripts/08_loocv.py |
-| Figure 2A (per-gene conservation C distribution; Hartigan dip) | analysis/conserved_contribution/make_figure7.py | analysis/conserved_contribution/run_gate.py, make_table_s11.py |
-| Figure 2B (C vs expression and Tau specificity) | analysis/conserved_contribution/make_figure7.py | analysis/conserved_contribution/run_gate.py, run_robustness.py |
-| Figure 2C (master-TF conservation enrichment vs matched backgrounds) | analysis/conserved_contribution/make_figure7.py | analysis/conserved_contribution/run_gate.py, highN_tf_pvalues.py |
-| Figure 2D (per-gene C donor-split reproducibility) | analysis/conserved_contribution/make_figure7.py | analysis/conserved_contribution/donor_stability run |
-| Figure 3A (Sun2023 null) | scripts/generate_phase3_figures.py | scripts/16_sun2023_replication.py |
-| Figure 3B (PanSci null) | scripts/generate_phase3_figures.py | scripts/pansci_replication.py |
-| Figure 3C (CellHint null) | scripts/generate_phase3_figures.py | scripts/33_cellhint_replication.py |
-| Figure 3D (replication summary) | scripts/generate_phase1_figures.py | All replication scripts |
-| Figure 3E (donor-split / human control) | scripts/generate_phase1_figures.py | scripts/test_35type_human_control.py |
-| Figure 4A (ellipsoid heatmap) | scripts/generate_phase3_figures.py | scripts/t3b_ellipsoid_alignment.py |
-| Figure 4B (pre vs post-rotation) | scripts/generate_phase3_figures.py | scripts/t3b_ellipsoid_alignment.py |
-| Figure 4C (layer null distributions) | scripts/generate_phase3_figures.py | scripts/layer3_permutation_test.py |
-| Figure 4D (layer scatter) | scripts/generate_phase3_figures.py | scripts/t3b_ellipsoid_alignment.py |
-| Figure 5A (three-species Procrustes) | scripts/generate_phase1_figures.py | Macaque pipeline (pre-computed) |
-| Figure 5B (no-immune sensitivity) | scripts/generate_phase1_figures.py | Macaque pipeline (pre-computed) |
-| Figure 5C (hepatocyte ranking) | scripts/generate_phase1_figures.py | Macaque pipeline + primary |
-| Figure 6A (divergence ranking) | scripts/generate_phase1_figures.py | scripts/08_scaled_procrustes.py |
-| Figure 6B (cell count confound) | scripts/generate_phase1_figures.py | scripts/confound_cellcount_rigidity.py |
-| Figure 7A (L1000 baseline) | scripts/generate_phase3_figures.py | scripts/35_l1000_random_baseline.py |
-| Figure 7B (mechanistic nulls forest) | scripts/generate_phase2_figures.py | Mechanistic null scripts (see below) |
-| Table 1 (unified statistical tests) | Compiled in manuscript from all scripts | All analysis scripts |
+## Main figures
 
-## Supplementary Figures
+The five main composites are assembled by
+`docs/submission/plosone/figures/build_main_figures.py` (PDF + PNG, 300 dpi) into
+`docs/submission/plosone/figures/`, and embedded into `CellWarp_PLOSONE_review.pdf`
+by `docs/submission/plosone/build_review_pdf.py`. Panels marked "embedded" are
+pre-rendered PNGs pulled in by the assembler; panels marked "built in
+build_main_figures.py" are drawn fresh from data at assembly time.
 
-| Display Item | Generating Script(s) | Depends On |
-|---|---|---|
-| Figure S1A-B (independent PCA) | scripts/generate_phase1_figures.py | analysis/independent_pca_sensitivity/run_independent_pca.py |
-| Figure S1C-F (simulation study) | analysis/simulation_study/simulation_figures.py | analysis/simulation_study/simulation_study.py |
-| Figure S2A-B (PCA k-sensitivity) | scripts/generate_phase3_figures.py | scripts/17_pca_sensitivity.py, scripts/18_pca_sensitivity_v2.py |
-| Figure S2C-D (Smart-seq2 protocol) | scripts/generate_phase3_figures.py | scripts/14_smartseq2_sensitivity.py |
-| Figure S2E (expanded negatives) | analysis/expanded_negative_controls/negative_control_figure.py | analysis/expanded_negative_controls/expanded_negative_controls.py |
-| Figure S2F (replication inventory) | scripts/56_add_figs2_panel_f.py | All replication outputs |
-| Figure S3A-B (bootstrap rankings) | scripts/composite_figS3.py | analysis/bootstrap_rankings/bootstrap_ranking_analysis.py |
-| Figure S4A-B (CellHint investigation) | scripts/generate_phase3_figures.py | analysis/cellhint_investigation/investigate_rank_reversal.py |
-| Figure S5A (SAMap heatmap) | scripts/generate_phase3_figures.py | scripts/34_samap_35types.py |
-| Figure S6A-B (CellMarker enrichment) | scripts/generate_phase1_figures.py | scripts/cellmarker_35type_rerun.py |
-| Figure S7 (matched-scale 6-type negative control) | scripts/test_35type_human_control.py | output/phase2/negative_control_v2/negctrl_v2_results.json |
-| Figure S8 (marker-similarity-stratified null) | analysis/sensitivity_analyses/markernull.py | (primary centroids; species-averaged gene-space) |
+### Fig 1 (configuration conserved) -> `Fig1_configuration_conserved.{pdf,png}`
 
-## Supplementary Tables
+| Panel | Content | Producing script | Depends on |
+|---|---|---|---|
+| 1A | Pipeline schematic | `scripts/generate_phase2_figures.py` (embedded `figures/panels/fig1a_pipeline_schematic.png`) | none |
+| 1B | 1M-permutation null (obs/null 0.52) | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig1b_null_1M.png`) | `scripts/permutation_1M.py` -> `output/phase2/scaled_35types/procrustes_results_35.json` |
+| 1C | Lineage-stratified null (0.67) | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig1c_lineage_stratified.png`) | `scripts/test_lineage_stratified_permutation.py` |
+| 1D | Human-mouse-lemur null (0.35, n=15) | built in `build_main_figures.py` (fresh; no panel file) | `analysis/mouse_lemur/null_distribution.npy` (see Known gaps: obs value hard-coded) |
 
-| Display Item | Generating Script(s) | Depends On |
-|---|---|---|
-| Table S1 (biological predictors + cross-atlas) | scripts/create_table_S1.py | analysis/biological_predictors/biological_predictors.py, analysis/ranking_replication/ranking_replication_analysis.py |
-| Table S2 (simulation + bootstrap CIs) | scripts/create_table_S2.py | analysis/simulation_study/simulation_study.py, analysis/bootstrap_rankings/bootstrap_ranking_analysis.py |
-| Table S3 (CellHint rank reversal) | analysis/cellhint_investigation/investigate_rank_reversal.py | scripts/33_cellhint_replication.py |
-| Table S4 (CellHint harmonization) | analysis/harmonized_replication/harmonized_replication.py | scripts/33_cellhint_replication.py |
-| Table S5 (35-type matching) | scripts/08_cell_type_inventory.py | scripts/02_qc_and_normalize.py |
-| Table S6 (CPC1 driver genes) | scripts/generate_table_S6.py | scripts/t3b_ellipsoid_alignment.py |
-| Table S7 (Layer-1 ribosomal/housekeeping exclusion) | analysis/sensitivity_analyses/layer1_exclusion.py | scripts/08_scaled_procrustes.py |
-| Table S8 (marker 1:1-ortholog retention vs residual) | analysis/sensitivity_analyses/ortholog_retention.py | scripts/cellmarker_35type_rerun.py, data/phase1/orthologs_human_mouse.csv |
-| Table S9 (per-gene standardization: Layer-1 + CPC1 Scheme A/B) | analysis/sensitivity_analyses/genestd_standardization.py | scripts/08_scaled_procrustes.py, scripts/t3b_ellipsoid_alignment.py |
-| Table S10 (marker-similarity-stratified null) | analysis/sensitivity_analyses/markernull.py | (primary centroids; species-averaged gene-space) |
-| Table S11 (per-gene cross-species conservation score C) | analysis/conserved_contribution/make_table_s11.py | analysis/conserved_contribution/run_gate.py |
+### Fig 2 (two layers + primate replication) -> `Fig2_two_layers_bg.{pdf,png}`
 
-## Mechanistic Null Scripts (Figure 7B)
+| Panel | Content | Producing script | Depends on |
+|---|---|---|---|
+| 2A | Per-cell-type Krzanowski S heatmap (k=1,3,5) | `scripts/generate_phase3_figures.py` (embedded `figures/panels/fig3a_ellipsoid_heatmap.png`) | `scripts/t3b_ellipsoid_alignment.py` -> `output/mechanistic/ellipsoid_alignment/` |
+| 2B | Aggregate S before/after centroid-optimal rotation | `scripts/generate_phase3_figures.py` (embedded `figures/panels/fig3b_pre_post.png`) | `scripts/t3b_ellipsoid_alignment.py` |
+| 2C | Basal-ganglia three-pair Layer-2 replication | `docs/submission/plosone/figures/build_fig2c_bg.py` (embedded `Fig2C_bg_replication.png`) | vendored `docs/submission/plosone/figures/bg_results/layer2_results_{pair}.json` + `layer2_cpc1_drivers_{pair}_W2_schemeB.csv` |
 
-| Test | Script |
-|---|---|
-| Housekeeping ratio | scripts/12_housekeeping_ratio.py |
-| TF complexity | scripts/13_tf_complexity.py |
-| Niche hypothesis | scripts/12_niche_hypothesis.py |
-| Variance diagnostic | scripts/12_variance_diagnostic.py |
-| Interdonor variance | scripts/16_interdonor_variance.py |
-| PPI centrality | scripts/19_ppi_centrality.py |
-| Chromatin conservation | scripts/t3e_step2_compute.py |
-| Enhancer conservation | scripts/t3e_step3b_enhancer.py |
-| Expression vs rigidity | scripts/diagnostic_expression_vs_rigidity.py |
-| Ribosomal confound | scripts/16_ribosomal_confound_test.py |
+`build_fig2c_bg.py` also writes the standalone `Fig2C_bg_replication.{pdf,tiff}`;
+the `.tiff` is the PLOS-spec deposit (RGB, LZW, 300 dpi). `reproduce/validate.py`
+carries twelve basal-ganglia self-consistency checks over the same `bg_results/`
+JSONs.
+
+### Fig 3 (configuration robust) -> `Fig3_configuration_robust.{pdf,png}`
+
+Single panel.
+
+| Panel | Content | Producing script | Depends on |
+|---|---|---|---|
+| (whole) | Replication obs/null bar chart | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig4d_replication_summary.png`) | all replication scripts: `scripts/16_sun2023_replication.py`, `scripts/pansci_replication.py`, `scripts/33_cellhint_replication.py`, `analysis/census_replication/`, plus the Andrews and MCA x HCA non-replications |
+
+### Fig 4 (per-type not resolvable) -> `Fig4_pertype_not_resolvable.{pdf,png}`
+
+Built fresh; no embedded panels.
+
+| Panel | Content | Producing script | Depends on |
+|---|---|---|---|
+| 4A | Within-atlas precision (bootstrap CI forest) | built in `build_main_figures.py` | `analysis/bootstrap_rankings/bootstrap_summary.csv` <- `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py` |
+| 4B | Within-atlas precision vs cross-atlas rank shift (rho = -0.41, n=20) | built in `build_main_figures.py` | `analysis/cross_reference/master_ranking_table.csv` <- `analysis/cross_reference/cross_reference_analysis.py` |
+| 4C | Simulation recovery ceiling (rho ~ 0.42) | built in `build_main_figures.py` | `analysis/simulation_study/simulation_results.json` <- `analysis/simulation_study/simulation_study.py` |
+
+### Fig 5 (conserved identity genes) -> `Fig5_conserved_identity_genes.{pdf,png}`
+
+A four-panel figure produced whole by `make_figure7.py`; `build_main_figures.py`
+wraps its PNG.
+
+| Panel | Content | Producing script | Depends on |
+|---|---|---|---|
+| 5A-5D | C distribution / Hartigan dip (A); C vs expression and specificity (B); master-TF enrichment vs matched backgrounds (C); donor-split reproducibility (D) | `analysis/conserved_contribution/make_figure7.py` -> `figures/main/fig7_conserved_contribution.{pdf,png}`; `build_main_figures.py` embeds the `.png` | `analysis/conserved_contribution/run_gate.py` (`gate_results.json`), `run_robustness.py` (`robustness_results.json`), `donor_stability/donor_stability_results.json`, `gene_conservation_core.csv`, `donor_stability/agg_*.npz` (see Known gaps) |
+
+## Supplementary figures (S1-S5 Fig)
+
+Deposited in `figures/submission/supplementary/`.
+
+| S Fig | Content | Producing script | Depends on |
+|---|---|---|---|
+| S1 Fig | Pipeline validation: independent PCA + simulation study | `scripts/build_submission_figures.py` (composites `figures/supplementary/figS1_independent_pca.pdf` + `figS7_simulation_study_polished.pdf`) | `analysis/independent_pca_sensitivity/run_independent_pca.py`; `analysis/simulation_study/simulation_figures.py` |
+| S2 Fig | Parameter, protocol, and negative-control sensitivity | `scripts/build_submission_figures.py` (panel labels) + `scripts/56_add_figs2_panel_f.py` (panel F) | `scripts/17_pca_sensitivity.py`, `scripts/18_pca_sensitivity_v2.py`, `scripts/14_smartseq2_sensitivity.py`, `analysis/expanded_negative_controls/expanded_negative_controls.py`, replication outputs |
+| S3 Fig | Bootstrap stability of per-type divergence rankings | `scripts/composite_figS3.py` (invoked by `build_submission_figures.py`) | `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py` |
+| S4 Fig | Matched-scale 6-type human-vs-human negative control | `scripts/49_build_figS7_matched_scale.py` (producer filename retains the old `figS7` stem) | `scripts/test_35type_human_control.py` -> `output/phase2/negative_control_v2/` |
+| S5 Fig | Marker-similarity-stratified null | `analysis/sensitivity_analyses/markernull.py` (producer writes `figure_S8_markernull.{pdf,png}` to `docs/supplementary_materials/`, not the deposited `figS5_markernull.pdf`; see Known gaps) | primary centroids; species-averaged gene-space |
+
+## Supplementary tables (S1-S7, S9-S12)
+
+The current paper has no S8 Table (the former ortholog-retention table was cut).
+Canonical sources live in `docs/supplementary_materials/`. For several tables an
+analysis script computes the values and the deposited CSV/XLSX is then written or
+edited in place by the materializer
+`scripts/46_synthesis_pass_supplementary_table_edits.py`; both are listed.
+
+| Table | Content | Content producer | Canonical writer -> file |
+|---|---|---|---|
+| S1 Table | Biological predictors, cross-atlas consistency, three-species summary | `analysis/biological_predictors/biological_predictors.py` + `analysis/ranking_replication/ranking_replication_analysis.py` (+ `scripts/create_table_S1.py`) | `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s1`) -> `table_S1.xlsx` |
+| S2 Table | Simulation parameters + bootstrap ranking CIs | `analysis/simulation_study/simulation_study.py` + `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py` (+ `scripts/create_table_S2.py`) | `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s2`) -> `table_S2.xlsx` |
+| S3 Table | CellHint rank-reversal analysis | `analysis/cellhint_investigation/investigate_rank_reversal.py` | `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s3`) -> `table_S3.csv` |
+| S4 Table | Progressive CellHint harmonization | `analysis/harmonized_replication/harmonized_replication.py` | `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s4`) -> `table_S4.csv` |
+| S5 Table | 35-type cell-type matching | `scripts/08_cell_type_inventory.py` -> `output/phase2/cell_type_inventory*.csv` | `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s5`) -> `table_S5.csv` |
+| S6 Table | CPC1 driver genes | `scripts/generate_table_S6.py` | self -> `Table_S6_CPC1_driver_genes.xlsx` |
+| S7 Table | Layer-1 coherence under ribosomal/housekeeping exclusion | `analysis/sensitivity_analyses/layer1_exclusion.py` (writes `layer1_exclusion_ranking_*.csv` in its analysis dir) | NO SCRIPTED WRITER of the canonical `table_S7_layer1_housekeeping_exclusion.csv` (see Known gaps) |
+| S9 Table | Per-gene standardization (2 CSVs) | `analysis/sensitivity_analyses/genestd_standardization.py` | self -> `table_S9_genestd_standardization.csv` + `table_S9_schemeB_CPC1_markers.csv` |
+| S10 Table | Marker-similarity-stratified permutation null | `analysis/sensitivity_analyses/markernull.py` | self -> `table_S10_markernull.csv` |
+| S11 Table | Per-gene cross-species conservation score C | `analysis/conserved_contribution/make_table_s11.py` (dep `run_gate.py`) | self -> `table_S11_gene_conservation.csv` |
+| S12 Table | Software environment and version-pinned dependencies | NO IN-REPO PRODUCER; hand-authored, source `requirements.txt` (see Known gaps) | hand-authored -> `table_S12_software_environment.csv` |
+
+## Known gaps
+
+- The three current-figure producers `docs/submission/plosone/figures/build_main_figures.py`, `docs/submission/plosone/figures/build_fig2c_bg.py`, and `analysis/conserved_contribution/make_figure7.py` are not invoked by `reproduce/run_all.sh`; the deposited main figures are assembled outside the full-reproduction pipeline.
+- Fig 5's assembly path (`build_main_figures.py`) embeds `figures/main/fig7_conserved_contribution.png`, i.e. it depends on an artifact under `figures/main/` (outside the `docs/submission/plosone/figures/` tree) that `make_figure7.py` writes.
+- `build_main_figures.py` (lines 39-49) hard-codes Fig 1D's observed distance (`obs = 21.765`) and its obs/null, p, and n label text, rather than reading them from `analysis/mouse_lemur/procrustes_results.json`.
+- `Fig5_conserved_identity_genes.pdf` is a raster wrap of a PNG, even though `make_figure7.py` also emits a native vector `figures/main/fig7_conserved_contribution.pdf`.
+- Fig 5D is not bit-reproducible from tracked data alone: `make_figure7.py` reads gitignored Census aggregates (`analysis/conserved_contribution/donor_stability/agg_*.npz`) for the donor-split recompute.
+- The canonical `table_S7_layer1_housekeeping_exclusion.csv` has no scripted writer (the analysis script writes only the per-variant ranking CSVs in its own directory); `table_S12_software_environment.csv` is hand-authored, its authoritative source being `requirements.txt`.
+- `analysis/sensitivity_analyses/markernull.py` writes its figure to `docs/supplementary_materials/figure_S8_markernull.{pdf,png}` (old stem and directory), not to the deposited `figures/submission/supplementary/figS5_markernull.pdf`.
+- `scripts/build_submission_packet.py` and `tests/` still pin the old 7-figure packet (Figure_1..7, Table_S8), which does not correspond to the current display items.
