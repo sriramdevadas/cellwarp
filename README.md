@@ -67,7 +67,7 @@ If you see `No matching distribution found for numpy…`, you're on the wrong Py
 
 **Requirements:** Python 3.12 (`>=3.12,<3.13`), ~6 GB disk (core), internet for initial data download.
 
-The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks 30 key statistics against the manuscript values, and the frozen submission manuscript text is pinned by `reproduce/MANUSCRIPT_MD5` (verify with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4).
+The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks 42 key statistics against the manuscript values, and the frozen submission manuscript text (`docs/submission/plosone/manuscript_combined.txt`) is pinned by `reproduce/MANUSCRIPT_MD5` (verify with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4).
 
 ## Reproduce in Docker
 
@@ -94,7 +94,7 @@ scripts/            Pipeline scripts (01-08 core, numbered analysis scripts)
 analysis/           Supplementary analysis directories
 reproduce/          Reproduction pipeline (run_all.sh, validate.py, config.py)
 tests/              Unit and integration tests
-docs/               Manuscript materials
+docs/               Manuscript materials (current PLOS ONE submission: docs/submission/plosone/)
 figures/            Paper figures
 data/               Downloaded data (gitignored)
 output/             Analysis outputs (gitignored)
@@ -125,8 +125,8 @@ regenerated.
 
 | Artifact | Path | Rows | Purpose |
 |---|---|---|---|
-| Pan-Census replication manifest | `data/replication/pan_census_manifest.csv` | 15 | Lists the 15 CELLxGENE Census datasets (9 mouse + 6 human) used in the pan-Census replication (Figure S2F). Schema: `dataset_id`, `species`, `collection_id`, `collection_name`, `dataset_title`, `dataset_version_id`, `dataset_total_cell_count`, `collection_doi`, `citation`, `census_version`. |
-| Tabula Microcebus metadata | `data/replication/tabula_microcebus_metadata.csv` | 1 | Records the CELLxGENE Discover deposit anchors for the Tabula Microcebus mouse lemur atlas (Ezran et al. 2025) used in the third-species Procrustes analysis (Figure 5). Schema: `dataset_id`, `species`, `collection_id`, `collection_name`, `dataset_title`, `dataset_total_cell_count`, `collection_doi`, `source`, `download_date`, `analysis_assay_filter`. Discover does not version-pin in the manner of Census, so download date is the reproducibility anchor. |
+| Pan-Census replication manifest | `data/replication/pan_census_manifest.csv` | 15 | Lists the 15 CELLxGENE Census datasets (9 mouse + 6 human) used in the pan-Census replication (S2 Fig, panel F). Schema: `dataset_id`, `species`, `collection_id`, `collection_name`, `dataset_title`, `dataset_version_id`, `dataset_total_cell_count`, `collection_doi`, `citation`, `census_version`. |
+| Tabula Microcebus metadata | `data/replication/tabula_microcebus_metadata.csv` | 1 | Records the CELLxGENE Discover deposit anchors for the Tabula Microcebus mouse lemur atlas (Ezran et al. 2025) used in the human–mouse lemur Procrustes comparison (Fig 1D). Schema: `dataset_id`, `species`, `collection_id`, `collection_name`, `dataset_title`, `dataset_total_cell_count`, `collection_doi`, `source`, `download_date`, `analysis_assay_filter`. Discover does not version-pin in the manner of Census, so download date is the reproducibility anchor. |
 
 This table will grow as additional manifest CSVs are deposited.
 
@@ -142,7 +142,7 @@ pip install -e ".[dev]"
 pytest tests/ -v
 ```
 
-69 tests covering Procrustes alignment, permutation calibration, and
+65 tests covering Procrustes alignment, permutation calibration, and
 end-to-end integration.
 
 ## Citation
@@ -159,7 +159,7 @@ If you use this work, please cite it according to the metadata in `CITATION.cff`
 **Reviewer entry-point:** [`CROSSWALK.md`](CROSSWALK.md) maps every Methods subsection,
 figure, and numerical claim to its generating code and output file.
 
-**AI use disclosure:** Generative AI tools (Claude, Anthropic) were used to assist with code development, literature search, and manuscript drafting. All AI-generated content was reviewed, verified, and revised by the author. The author takes full responsibility for the accuracy and integrity of the work. See `docs/declarations.txt` for the full disclosure statement and `docs/REPRODUCIBILITY_AUDIT_v2.md` for an independent reproducibility audit.
+**AI use disclosure:** Generative AI tools (Claude, Anthropic) were used to assist with code development, literature search, and manuscript drafting. All AI-generated content was reviewed, verified, and revised by the author. The author takes full responsibility for the accuracy and integrity of the work. See `docs/declarations.txt` for the full disclosure statement and `docs/REPRODUCIBILITY_AUDIT_v2.md` for a reproducibility audit of an earlier state of this repository (historical snapshot, 2026-04-06; the current reproduction path is the four gates described above).
 
 **Tracked files under `data/` and `output/`:** This repository tracks several files inside `data/` and `output/` directories despite those paths appearing in `.gitignore`. These tracked files (centroid CSVs, null distribution arrays, intermediate analysis results, etc.) are reproducibility anchors that travel with the deposit. Verify the tracked set with `git ls-files data/ output/`. If you need to delete and re-add one of these files, use `git add -f` to override the gitignore pattern.
 
