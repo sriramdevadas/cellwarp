@@ -128,7 +128,7 @@ are scoped out here rather than in the manuscript body.
 | `test_hvg_robustness.py` | HVG-only robustness check |
 | `generate_phase1_figures.py`, `generate_phase2_figures.py`, `generate_phase3_figures.py`, `composite_figS3.py`, `57_build_main_composites.py`, `build_submission_figures.py` | Figure generation / composition |
 | `v1_procrustes_validation.py`, `v2_loocv_validation.py`, `v3_cellmarker_validation.py`, `verify_procrustes_vs_scipy.py` | Independent re-implementations used as reproduce cross-checks |
-| `citation_audit.py`, `citation_renumber.py`, `fix_citations.py`, `convert_manuscript_to_docx.py`, `build_manuscript_pdf.py`, `assemble_supplementary_pdf.py`, `build_submission_packet.py`, `build_krt_docx.py`, `scripts/office/` (`validate.py`, `soffice.py`) | Manuscript / packet / PDF build tooling (`build_krt_docx.py` is a Cell-Systems-era key-resources-table builder, retained) |
+| `citation_audit.py`, `citation_renumber.py`, `fix_citations.py`, `convert_manuscript_to_docx.py`, `build_manuscript_pdf.py`, `assemble_supplementary_pdf.py`, `build_submission_packet.py`, `build_krt_docx.py`, `scripts/office/` (`validate.py`, `soffice.py`) | Manuscript / packet / PDF build tooling (`build_krt_docx.py` is a Cell-Systems-era key-resources-table builder, retired but retained; `assemble_supplementary_pdf.py` is a Cell-Systems-era combined-SI-PDF assembler, retired but retained -- it reads the parent manuscript and produces no tracked artifact) |
 
 ### OTHER PROJECT
 

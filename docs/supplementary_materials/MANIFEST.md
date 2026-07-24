@@ -1,26 +1,41 @@
 # Supplementary Materials Manifest
 
 **Target journal:** PLOS ONE
-**Updated:** 2026-06-11
+**Updated:** 2026-07-23
 
-Authoritative legends and "related to Figure N" cross-references for every supplementary
-figure (S1-S8) and table (S1-S12) are in the manuscript Supporting Information section
-(`docs/submission/manuscript_combined.txt`). This file is a directory manifest only;
-legends and figure references are not duplicated here, so nothing in it re-stales when the
-main figures are renumbered.
+Authoritative legends and "related to" cross-references for every supplementary
+figure and table are in the Supporting Information section of the current
+manuscript (`docs/submission/plosone/manuscript_combined.txt`). This file is a
+directory manifest only; legends and figure references are not duplicated here,
+so nothing in it re-stales when the main figures are renumbered.
 
 ## Supplementary items
-- 5 supplementary figures (S1-S5)
-- 12 supplementary tables (S1-S7, S9-S12; no S8)
+- 5 supplementary figures: S1-S5 Fig, deposited in `figures/submission/supplementary/`
+  (`figS1`-`figS5`).
+- 11 supplementary tables: S1-S7 Table and S9-S12 Table (no S8). These 11 items
+  span 12 files, because S9 Table is provided as two CSVs
+  (`table_S9_genestd_standardization.csv` + `table_S9_schemeB_CPC1_markers.csv`).
+  Item count 11, file count 12.
 
 ## Files in `docs/supplementary_materials/`
-- `table_S*.csv` and `table_S*.xlsx`: per-table data exports (CSV or XLSX per table); each table's legend is in the manuscript Supporting Information.
-- `figure_S8_markernull.pdf` / `.png`: standalone Figure S8 rendering (marker-similarity null).
+- `table_S*.csv` and `table_S*.xlsx`: per-table data exports (CSV or XLSX per
+  table); each table's legend is in the manuscript Supporting Information.
+- `figure_S8_markernull.pdf` / `.png`: legacy file, not a current SI item -- a
+  byte-identical copy of the deposited
+  `figures/submission/supplementary/figS5_markernull.pdf` (S5 Fig) under its old
+  "S8" name; see Legacy artifacts.
 - `supplementary_legends.md`: retired stub; authoritative legends are in the manuscript.
 - `MANIFEST.md`: this file.
 
-## Rebuilding the combined PDF
-`scripts/assemble_supplementary_pdf.py` regenerates `supplementary_materials.pdf` from the
-manuscript Supporting Information legends, the pre-rendered `figS1`-`figS8` PDFs in
-`figures/submission/supplementary/`, and vendored fonts. Figures S1-S8 are pre-rendered
-composites, not built at assemble time.
+No combined Supporting Information PDF is built or deposited; Supporting
+Information travels as the separate PLOS-named items listed above, and
+`scripts/assemble_supplementary_pdf.py` is retired.
+
+## Legacy artifacts (tracked, not current SI items)
+- `table_S8_marker_ortholog_retention.csv`: the S8 Table was cut from the current
+  paper.
+- `figure_S8_markernull.pdf` / `.png`: duplicate of the deposited `figS5_markernull`
+  under its old "S8" name.
+
+Both remain tracked because they are pinned by
+`scripts/build_submission_packet.py` and the packet consistency test.

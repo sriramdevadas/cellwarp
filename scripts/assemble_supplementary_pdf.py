@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# RETIRED: builds a combined Supporting Information PDF that is not part of the current PLOS ONE submission (SI ships as separate per-item files). Its legend parser reads the parent manuscript and expects the old "**Figure S1.**" format; the current manuscript uses "S1 Fig." Nothing in the repo invokes it and it produces no tracked artifact.
 """Assemble combined supplementary materials PDF for Cell Systems submission.
 
 Combines all supplementary figures (S1–S8), table legends (S1–S10), and
