@@ -201,7 +201,7 @@ Status legend:
 | PCA variance retained | 95.2% | `scripts/08_scaled_procrustes.py` | `output/validation/pca_sensitivity/pca_sensitivity_results.json` | `ref.variance_explained` |  | mapped |
 | primary obs/null | 0.522 | `scripts/08_scaled_procrustes.py` | `output/phase2/scaled_35types/procrustes_results_35.json` | computed: distance / null_median |  | validate.py (Global coherence obs/null (35 types)) |
 | range of central 95% null | 0.507–0.544 | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `null_distribution_summary.percentile_2_5/97_5` (computed ratio) |  | mapped |
-| primary p-value | < 10⁻⁶ | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `p_value` |  | validate.py (Global coherence p-value) |
+| primary p-value | < 10⁻⁶ | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `p_value` |  | validate.py (Global coherence p-value (1M primary)) |
 | permutations | 1,000,000 | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `n_permutations` |  | mapped |
 | lineage-strat obs/null | 0.668 | `scripts/test_lineage_stratified_permutation.py` | `output/validation/lineage_stratified/lineage_stratified_results.json` | `stratified_null.obs_null_ratio` |  | mapped |
 | lineage-strat p | 0.0001 | same | same | `stratified_null.p_value` |  | mapped |

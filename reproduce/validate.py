@@ -38,11 +38,18 @@ CHECKS = [
         "paper_ref": "Results section 1, Figure 1",
     },
     {
-        "name": "Global coherence p-value",
+        "name": "Global coherence p-value (10K run)",
         "file": "output/phase2/scaled_35types/procrustes_results_35.json",
         "key": "permutation_test.p_value",
         "expected_below": 0.001,
-        "paper_ref": "Results section 1",
+        "paper_ref": "Methods: replications and secondary tests use 10,000 permutations (floor p < 1e-4)",
+    },
+    {
+        "name": "Global coherence p-value (1M primary)",
+        "file": "analysis/permutation_1M/results_1M.json",
+        "key": "p_value",
+        "expected_below": 1e-6,
+        "paper_ref": "Results section 1, Figure 1B; Methods: primary test, 1,000,000 permutations",
     },
 
     # ── Independent PCA (Figure S1A-B) ──

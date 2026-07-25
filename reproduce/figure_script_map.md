@@ -24,7 +24,7 @@ build_main_figures.py" are drawn fresh from data at assembly time.
 | Panel | Content | Producing script | Depends on |
 |---|---|---|---|
 | 1A | Pipeline schematic | `scripts/generate_phase2_figures.py` (embedded `figures/panels/fig1a_pipeline_schematic.png`) | none |
-| 1B | 1M-permutation null (obs/null 0.52) | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig1b_null_1M.png`) | `scripts/permutation_1M.py` -> `output/phase2/scaled_35types/procrustes_results_35.json` |
+| 1B | 1M-permutation null (obs/null 0.52) | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig1b_null_1M.png`) | `scripts/permutation_1M.py` -> `analysis/permutation_1M/results_1M.json` + `null_distribution_1M.npy` |
 | 1C | Lineage-stratified null (0.67) | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig1c_lineage_stratified.png`) | `scripts/test_lineage_stratified_permutation.py` |
 | 1D | Human-mouse-lemur null (0.35, n=15) | built in `build_main_figures.py` (fresh; no panel file) | `analysis/mouse_lemur/null_distribution.npy` (see Known gaps: obs value hard-coded) |
 
