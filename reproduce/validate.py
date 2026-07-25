@@ -465,7 +465,7 @@ def run_checks():
 
         if "expected_below" in check:
             ok = value < check["expected_below"]
-            detail = f"got {value:.2e}, need < {check['expected_below']:.2e}"
+            detail = f"got {value:.5e}, need < {check['expected_below']:.5e}"
         elif "expected_in_range" in check:
             low, high = check["expected_in_range"]
             ok = low <= value <= high
