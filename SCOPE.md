@@ -12,8 +12,7 @@ grounds, not selectively suppressed.
 ## Categories
 
 - **PAPER** — produces a display item, a reported statistic, or is required
-  pipeline / build / validation tooling for the PLOS ONE manuscript. Every
-  number checked by `reproduce/validate.py` traces to a PAPER artifact.
+  pipeline / build / validation tooling for the PLOS ONE manuscript.
 - **BANKED** — a completed, pre-specified analysis held in reserve. Not reported
   in this paper, but executed and deployable if a reviewer raises the
   corresponding point.
@@ -212,7 +211,9 @@ are scoped out here rather than in the manuscript body.
 
 ---
 
-*Every statistic checked by `reproduce/validate.py` (30/30) resolves to a PAPER
-artifact above. BANKED, OTHER PROJECT, and EXPLORATORY items make no claim in the
+*Every statistic checked by `reproduce/validate.py` resolves either to a PAPER
+artifact above or to the vendored basal-ganglia inputs in
+`docs/submission/plosone/figures/bg_results/`, which sit outside the three trees
+classified here. BANKED, OTHER PROJECT, and EXPLORATORY items make no claim in the
 PLOS ONE manuscript; they are catalogued here so the reported set is legible as a
 principled subset rather than a selection.*
