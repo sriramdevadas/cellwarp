@@ -10,75 +10,100 @@ SECTION 1 — DATA AVAILABILITY STATEMENT
 Data Availability
 
 All single-cell RNA-sequencing datasets analyzed in this study are publicly
-available. No new data were generated. Local fetch instructions, accession
-numbers, and required on-disk layouts for the heavy off-Census datasets
-(Sun et al. 2023, PanSci, UCSC phastCons, ENCODE H3K27ac + Lara-Astiaso
-mouse bigWig, macaque atlases, DILIrank/LINCS) are documented in
-DATA_SOURCES.md at the repository root; the summary below records the
-canonical accessions for the manuscript.
+available. No new data were generated. Fetch instructions, accession numbers,
+and required on-disk layouts for the datasets not obtained through CELLxGENE
+are documented in DATA_SOURCES.md at the repository root; the summary below
+records the canonical accessions for the manuscript.
+
+Deposits:
+- Analysis code, the archived Ensembl/BioMart ortholog tables, and the pinned
+  dependency manifest: Zenodo, MIT License,
+  https://doi.org/10.5281/zenodo.20735612; mirrored at
+  https://github.com/sriramdevadas/cellwarp.
+- Original analysis outputs: Zenodo, CC0 1.0,
+  https://doi.org/10.5281/zenodo.20735640.
+- Self-contained basal-ganglia primate-replication deposit, an independent
+  reproduction of the Fig 2 two-layer decomposition from the source h5ad with
+  the CellWarp method pinned as a versioned dependency: Zenodo, DOI
+  [BG_DEPOSIT_DOI - pending mint].
 
 CELLxGENE Census version pinning:
-All Census-derived data are fetched at Census release "2025-11-08", pinned
-explicitly at every cellxgene_census.open_soma() call site in scripts/,
-analysis/, and src/cellwarp/. The cellxgene-census Python client is pinned
-to v1.17.0 in environment.yml and pyproject.toml. Manifest-level uniformity
-of the resolved Census version is asserted by
-tests/test_pan_census_manifest.py::test_census_version_uniform, so any
-re-run that drifts off "2025-11-08" fails the test gate.
+Census-derived data are fetched at Census release "2025-11-08", pinned
+explicitly at every cellxgene_census.open_soma() call site under scripts/ and
+analysis/; the src/cellwarp/ library receives an already-opened handle and
+opens no connection itself. The cellxgene-census client is pinned to v1.17.0
+in environment.yml, requirements.txt, and the [lock] extra of pyproject.toml,
+which is the extra the documented reproduction path installs; the [reproduce]
+extra specifies a >=1.17 floor rather than an exact pin.
+tests/test_pan_census_manifest.py::test_census_version_uniform asserts that
+the archived pan-Census manifest records "2025-11-08" uniformly; it validates
+that manifest, not the version resolved by a fresh run.
 
-Primary datasets:
-- Tabula Sapiens (TSP1): CZ CELLxGENE Census (version 2025-11-08);
-  original deposit figshare doi:10.6084/m9.figshare.14267219.
-- Tabula Muris Senis (TMS): CZ CELLxGENE Census (version 2025-11-08);
+Primary atlases:
+- Tabula Sapiens (human): CZ CELLxGENE Census (version 2025-11-08); original
+  deposit figshare doi:10.6084/m9.figshare.14267219.
+- Tabula Muris Senis (mouse): CZ CELLxGENE Census (version 2025-11-08);
   original deposit figshare doi:10.6084/m9.figshare.12654728.
-- Tabula Microcebus: CZ CELLxGENE Census (version 2025-11-08).
+- Tabula Microcebus (mouse lemur): CZ CELLxGENE Discover, downloaded
+  2026-04-05. Discover does not version-pin, so the download date is the
+  reproducibility anchor; the collection and dataset identifiers are recorded
+  in DATA_SOURCES.md and in data/replication/tabula_microcebus_metadata.csv.
+- Primate basal ganglia (human, macaque, marmoset; Human and Mammalian Brain
+  Atlas consortium): Allen Brain Cell Atlas,
+  https://brain-map.org/consortia/hmba.
 
-Replication datasets:
-- Sun et al. (2023): OMIX002605 / GSA CRA007207
-  (fetch and layout: DATA_SOURCES.md, data/replication/sun2023/).
-- PanSci (Zhang et al., 2025): GEO GSE247719
-  (DATA_SOURCES.md, data/replication/pansci/).
+Replication and comparison datasets:
+- Sun et al. (2023): OMIX002605 / GSA CRA007207.
+- PanSci (Zhang et al., 2025): GEO GSE247719.
 - CellHint Human (Xu et al., 2023): CZ CELLxGENE Census (version 2025-11-08).
-
-Macaque datasets:
-- RIRA (Mahyari et al., 2025): GEO GSE277821
-  (DATA_SOURCES.md, data/macaque/rira/).
-- Qu et al. (2022): GEO GSE196792
-  (DATA_SOURCES.md, data/macaque/qu_2022/).
-
-Non-replicating datasets (reported for transparency):
+- Qu et al. (2022), Macaca fascicularis: GEO GSE196792; author-provided
+  cell-type assignments from Zenodo doi:10.5281/zenodo.5881495.
 - Andrews et al. (2024): GEO GSE240429.
-- Mouse Cell Atlas (MCA): accessed via CZ CELLxGENE Census (version 2025-11-08).
+- Mouse Cell Atlas (Han et al., 2018): GEO GSE108097.
+- Pooled human comparison set: CZ CELLxGENE Census query (version 2025-11-08;
+  adult, normal, primary Homo sapiens, excluding Tabula Sapiens). The
+  15-dataset UUID manifest is archived with the code as
+  data/replication/pan_census_manifest.csv.
 
-Disease deformation data:
-- Cancer (colon adenocarcinoma) and COVID-19 transcriptomic data:
-  CZ CELLxGENE Census (version 2025-11-08).
+Reference tables and databases supporting the reported analyses:
+- Ensembl BioMart. Human-mouse 1:1 orthologs, release 115, accessed
+  2026-03-12; human-macaque orthologs, release 115, accessed 2026-03-15;
+  human-mouse lemur 1:1 orthologs by live pybiomart query, release not pinned
+  in code (commit-dated 2026-04-05). All three tables are archived in the code
+  deposit and are canonical for reproduction, since BioMart returns can shift
+  across releases.
+- CellMarker 2.0 (http://bio-bigdata.hrbmu.edu.cn/CellMarker/, downloaded
+  2026-03-16). The raw database is not redistributed; the derived subset of
+  experimentally-validated human marker entries used here is archived in the
+  code deposit as data/validation/cellmarker/cellmarker_human_filtered.csv,
+  and the filtering criteria are in Materials and Methods. It is an input to
+  the conserved-contribution gate reported in Results section 5 (Fig 5).
+- MSigDB, supplying the niche-adaptation gene sets and the housekeeping gene
+  set: https://www.gsea-msigdb.org/gsea/msigdb/
+- STRING v12.0, protein-protein interaction network centrality:
+  https://string-db.org/
+- DoRothEA, transcription-factor network complexity.
+- UCSC phastCons promoter conservation, placental 20-way primary and 100-way
+  vertebrate sensitivity: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/
+- ENCODE H3K27ac ChIP-seq for six immune cell types, and Lara-Astiaso et al.
+  (2014) mouse bigWig: https://www.encodeproject.org/ and GEO
+  GSM1441277-GSM1441283.
+- ChEMBL and DrugBank, drug-target conservation (S1 Text, mechanistic null 10,
+  an exploratory and non-significant test). The specific database releases
+  were not recorded and the derived target/mechanism tables are not retained
+  in this repository, so that input is not reconstructible from the deposit;
+  the reported statistic is available as
+  output/t3g/primary_correlation_results.json.
 
-T3-E sensitivity tracks:
-- UCSC phastCons (placental 20-way primary; 100-way vertebrate sensitivity):
-  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/
-  (DATA_SOURCES.md, data/ucsc/).
-- ENCODE H3K27ac ChIP-seq (six immune cell types) and Lara-Astiaso 2014
-  mouse bigWig: https://www.encodeproject.org/ + GEO GSM1441277-GSM1441283
-  (DATA_SOURCES.md, data/h3k27ac/).
-
-DILI analysis:
-- L1000 LINCS Phase I Level 2: GEO GSE92742
-  (DATA_SOURCES.md, data/dilirank/).
-- DILIrank v2 database: National Center for Toxicological Research (NCTR), FDA
-  (DATA_SOURCES.md, data/dilirank/).
-
-External databases:
-- CellMarker 2.0: http://bio-bigdata.hrbmu.edu.cn/CellMarker/ (downloaded 2026-03-16).
-- Ensembl BioMart release 115 (GRCh38.p14; accessed 12 March 2026); the full
-  ortholog table is archived in the code repository.
-- STRING v12.0: https://string-db.org/
-- MSigDB: https://www.gsea-msigdb.org/gsea/msigdb/
-- L1000 landmark gene list (Subramanian et al., 2017).
-
-The original analysis outputs are archived at Zenodo
-(https://doi.org/10.5281/zenodo.20735640, CC0 1.0) and listed in the Key
-Resources Table.
+Analyses this paper does not report:
+The repository holds analyses beyond those reported here, and their inputs are
+documented in DATA_SOURCES.md: DILIrank v2 (FDA NCTR) with LINCS L1000 Phase I
+Level 2 (GEO GSE92742); the cancer and COVID-19 disease-deformation
+comparisons; and the Rhesus Immune-Cell Reference Atlas (RIRA), whose
+combination with Qu et al. used asymmetric cross-atlas preprocessing and was
+deprecated in favour of the single-source Qu design reported here. SCOPE.md
+records which of the repository's analyses this paper reports and which it
+does not.
 
 ================================================================
 SECTION 2 — CODE AVAILABILITY STATEMENT
@@ -92,9 +117,9 @@ permutation testing, bootstrap resampling, leave-one-out cross-validation,
 mechanistic null tests, disease deformation analyses, and figure generation —
 is archived at Zenodo (https://doi.org/10.5281/zenodo.20735612, MIT License)
 and maintained in the project's public GitHub repository
-(https://github.com/sriramdevadas/cellwarp); the DOI is listed in the Key
-Resources Table. The repository also contains the archived BioMart ortholog
-table and the pre-registration document for the DILI analysis.
+(https://github.com/sriramdevadas/cellwarp). The repository also contains the
+archived BioMart ortholog tables and the pre-registration document for the
+DILI analysis.
 
 ================================================================
 SECTION 3 — DECLARATION OF INTERESTS
@@ -137,7 +162,7 @@ evaluated, and a clear statement of which aspects of the work were affected;
 AI tools cannot be listed as authors.)
 
 In preparing this work, the author used Claude (a large language model
-developed by Anthropic; models in the Claude 3.5-Opus family) to write and
+developed by Anthropic) to write and
 generate analysis code, to assist with data analysis, and to draft and edit
 manuscript text. The author evaluated validity by reading and reviewing all
 AI-generated code, running the accompanying automated test and validation
