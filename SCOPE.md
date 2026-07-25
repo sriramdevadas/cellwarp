@@ -152,13 +152,8 @@ are scoped out here rather than in the manuscript body.
 
 | Script | Note |
 |---|---|
-| `17_go_stability_check.py` | GO-enrichment stability scouting (GO panels not in paper) |
-| `08_negctrl_diagnostic.py`, `test_lever_arm_artifact.py`, `test_annotation_granularity.py`, `hepatocyte_zonation_diagnostic.py`, `t3c_tissue_stratified_rigidity.py` | Diagnostics informing caveats; no standalone claim |
-| `13_progenitor_diagnostics.py`, `15_hsc_10x_validation.py` | Progenitor / HSC scouting |
-| `30_fourth_replication_candidates.py`, `30b_candidate_deep_dive.py`, `30c_hepatocyte_source_scout.py`, `40_donor_split_feasibility.py` | Replication / donor-split candidate scouting |
-| `t1a_hca_feasibility.py`, `t1a_mca_feasibility.py`, `t1a_hca_curated_set.py`, `t1a_hca_curated_nohcl.py`, `32_ts2_verification.py`, `17_sun2023_expanded.py`, `18_sun2023_issue092_diagnosis.py` | Atlas feasibility / verification checks |
-| `20_encode_feasibility.py` | ENCODE feasibility for the enhancer null (metadata only) |
-| `phase1_review.py`, `phase3_extract_catalogs.R`, `phase3_fgsea_worker.R` | Review / fgsea worker scaffolding |
+| `t1a_mca_feasibility.py`, `17_sun2023_expanded.py`, `18_sun2023_issue092_diagnosis.py` | Atlas feasibility / verification checks |
+| `phase3_extract_catalogs.R` | MSigDB catalog extraction for the phase3 GSEA step; the `.gmt` catalogs it writes are not redistributed (see `DATA_SOURCES.md`) |
 
 ---
 
@@ -209,7 +204,6 @@ are scoped out here rather than in the manuscript body.
 | `liang_wagner/` | OTHER PROJECT | Treeness line |
 | `ontology_design/` | OTHER PROJECT | 100-type ontology expansion (future work) |
 | `dilirank/` | BANKED | DILI landmark test (null under its own gate) |
-| `diagnostics/` | EXPLORATORY | Lever-arm and related diagnostics |
 
 ---
 

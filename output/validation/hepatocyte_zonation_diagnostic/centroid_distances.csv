@@ -1,4 +1,0 @@
-comparison,distance,interpretation
-Tabula human vs Tabula mouse,48.81750883435882,aggregate cross-species residual
-Tabula human vs Sun2023 mouse,45.176894017230175,T3-C tissue-matched distance (rank 28)
-Sun2023 mouse vs Tabula mouse,41.283282171047254,inter-mouse centroid divergence (artifact check)
