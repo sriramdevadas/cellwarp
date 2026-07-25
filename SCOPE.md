@@ -128,6 +128,8 @@ are scoped out here rather than in the manuscript body.
 | `generate_phase1_figures.py`, `generate_phase2_figures.py`, `generate_phase3_figures.py`, `composite_figS3.py`, `57_build_main_composites.py`, `build_submission_figures.py` | Figure generation / composition |
 | `v1_procrustes_validation.py`, `v2_loocv_validation.py`, `v3_cellmarker_validation.py`, `verify_procrustes_vs_scipy.py` | Independent re-implementations used as reproduce cross-checks |
 | `citation_audit.py`, `citation_renumber.py`, `fix_citations.py`, `convert_manuscript_to_docx.py`, `build_manuscript_pdf.py`, `assemble_supplementary_pdf.py`, `build_submission_packet.py`, `build_krt_docx.py`, `scripts/office/` (`validate.py`, `soffice.py`) | Manuscript / packet / PDF build tooling (`build_krt_docx.py` is a Cell-Systems-era key-resources-table builder, retired but retained; `assemble_supplementary_pdf.py` is a Cell-Systems-era combined-SI-PDF assembler, retired but retained -- it reads the parent manuscript and produces no tracked artifact) |
+| `06_go_enrichment.py` | GO enrichment of Procrustes residuals; TIER 1 core-pipeline step, invoked unguarded at `reproduce/run_all.sh:73`, writing the 15 tracked files in `output/phase3/go_enrichment/` via `src/cellwarp/enrichment.py` helpers (the GO panels themselves are not in the paper) |
+| `12_progenitor_deep_dive.py` | Sole producer of `output/phase2/progenitor_analysis/progenitor_specificity_scores.csv`, read by `12_niche_hypothesis.py` (mechanistic null 3, S1 Text §8); not invoked by `reproduce/run_all.sh`, so the tracked CSV is the deposited copy of that input |
 
 ### OTHER PROJECT
 
@@ -150,9 +152,9 @@ are scoped out here rather than in the manuscript body.
 
 | Script | Note |
 |---|---|
-| `06_go_enrichment.py`, `17_go_stability_check.py` | GO-enrichment scouting (GO panels not in paper) |
+| `17_go_stability_check.py` | GO-enrichment stability scouting (GO panels not in paper) |
 | `08_negctrl_diagnostic.py`, `test_lever_arm_artifact.py`, `test_annotation_granularity.py`, `hepatocyte_zonation_diagnostic.py`, `t3c_tissue_stratified_rigidity.py` | Diagnostics informing caveats; no standalone claim |
-| `12_progenitor_deep_dive.py`, `13_progenitor_diagnostics.py`, `15_hsc_10x_validation.py` | Progenitor / HSC scouting |
+| `13_progenitor_diagnostics.py`, `15_hsc_10x_validation.py` | Progenitor / HSC scouting |
 | `30_fourth_replication_candidates.py`, `30b_candidate_deep_dive.py`, `30c_hepatocyte_source_scout.py`, `40_donor_split_feasibility.py` | Replication / donor-split candidate scouting |
 | `t1a_hca_feasibility.py`, `t1a_mca_feasibility.py`, `t1a_hca_curated_set.py`, `t1a_hca_curated_nohcl.py`, `32_ts2_verification.py`, `17_sun2023_expanded.py`, `18_sun2023_issue092_diagnosis.py` | Atlas feasibility / verification checks |
 | `20_encode_feasibility.py` | ENCODE feasibility for the enhancer null (metadata only) |
