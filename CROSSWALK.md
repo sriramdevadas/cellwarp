@@ -27,11 +27,11 @@ Quick-look statistics about this CROSSWALK (re-derived from the current sections
 - Numerical claims indexed: 279
 - Status breakdown: validate.py 33, mapped 226, computed 9, anchor 6, intermediate 5
 
-Verification. `reproduce/validate.py` programmatically asserts 42 statistics
-against their persisted output files; 33 of those correspond to claim rows in
-Section 3 (Status = validate.py), and the other 9 assert values outside Section
-3's current scope (6 for the cut SAMap / CellMarker / L1000 analyses, retained in
-validate.py as regression guards; 3 with no Section-3 counterpart). Every
+Verification. `reproduce/validate.py` programmatically asserts its checks
+against their persisted output files; most correspond to claim rows in Section
+3 (Status = validate.py), and the rest assert values outside Section 3's
+current scope -- regression guards retained for the cut SAMap / CellMarker /
+L1000 analyses, plus a few with no Section-3 counterpart. Every
 remaining Section-3 value carries a Status recording how far it is established:
 mapped to its generating script and output file with the path resolved, computed
 arithmetically from other cited values, anchored to a source publication, or an
@@ -183,7 +183,7 @@ destination. Old-to-new figure/section renumbering history is in
 
 Status legend:
 - **validate.py (<check name>)** -- value asserted by `reproduce/validate.py` (the named check).
-- **mapped** -- value present in the deposit and reproducible from the cited output; not one of validate.py's 42 automated checks.
+- **mapped** -- value present in the deposit and reproducible from the cited output; not one of validate.py's automated checks.
 - **computed** -- derived arithmetically from other rows or cited values; not separately persisted.
 - **anchor** -- anchored to a source publication, not produced by this pipeline.
 - **intermediate** -- an intermediate count in data acquisition, not persisted as a single artifact.

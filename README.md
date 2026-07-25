@@ -67,7 +67,7 @@ If you see `No matching distribution found for numpy…`, you're on the wrong Py
 
 **Requirements:** Python 3.12 (`>=3.12,<3.13`), ~6 GB disk (core), internet for initial data download.
 
-The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks 42 key statistics against the manuscript values, and the frozen submission manuscript text (`docs/submission/plosone/manuscript_combined.txt`) is pinned by `reproduce/MANUSCRIPT_MD5` (verify with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4).
+The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission manuscript text (`docs/submission/plosone/manuscript_combined.txt`) is pinned by `reproduce/MANUSCRIPT_MD5` (verify with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4).
 
 ## Reproduce in Docker
 
