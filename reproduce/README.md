@@ -3,7 +3,8 @@
 ## Requirements
 - Python 3.12 (the project pins `>=3.12,<3.13`)
 - ~6 GB disk space for core data (Tier 1, downloaded automatically)
-- ~15 GB additional disk space for supplementary data (Tier 2)
+- additional disk space for the optional Tier-2 datasets: see
+  [DATA_SOURCES.md](../DATA_SOURCES.md) for per-dataset sizes
 - Estimated runtime: ~4 hours total (~1 hour core + ~3 hours supplementary)
 - Internet connection required for initial data download
 
@@ -49,8 +50,9 @@ pip install -e ".[lock]"
 bash reproduce/run_all.sh
 
 # Or run just the core pipeline (Tier 1 only):
-# Stop run_all.sh after "TIER 1 COMPLETE" with Ctrl+C,
-# or run the 8 core scripts individually (see below).
+# Stop run_all.sh after "TIER 1 COMPLETE" with Ctrl+C, or run the eight
+# Tier-1 steps individually -- they are the [1/8]..[8/8] steps at the top
+# of reproduce/run_all.sh.
 ```
 
 > **Slim-image note:** the full `.[lock]` install (and `cellwarp[samap]`)
@@ -61,23 +63,35 @@ bash reproduce/run_all.sh
 
 ## What each tier does
 
-**Tier 1 -- Core pipeline (main result):**
-Downloads primary human/mouse atlas data from CELLxGENE Census, runs QC
-and normalization, identifies qualifying cell types, executes 35-type
-Procrustes analysis with 10,000 permutations, and generates main results.
+**Tier 1 -- Core pipeline (main result):** eight steps, banners `[1/8]`
+through `[8/8]`. Downloads primary human/mouse atlas data from CELLxGENE
+Census, runs QC and normalization, identifies qualifying cell types, then runs
+the 35-type Procrustes analysis at 10,000 permutations (step 4) followed by a
+separate 1,000,000-permutation test on the same comparison (step 5), and
+finishes with GO enrichment, bootstrap robustness, and LOOCV.
 
-**Tier 2 -- Supplementary analyses:**
-Runs all supplementary analyses: independent PCA sensitivity check,
-simulation study, parameter and protocol sensitivity, expanded negative
-controls, bootstrap ranking stability, CellHint investigation, SAMap
-validation, CellMarker validation, biological predictors, cross-atlas
-replication, disease deformation, and CPC1 driver gene extraction.
+**Tier 2 -- Supplementary analyses:** everything after `TIER 1 COMPLETE`.
+Independent PCA sensitivity, simulation study, parameter and protocol
+sensitivity, expanded negative controls, bootstrap ranking stability, CellHint
+investigation, SAMap validation, CellMarker validation, biological predictors,
+cross-atlas replication, disease deformation, and CPC1 driver gene extraction.
+`reproduce/run_all.sh` is the authority for what runs and in what order. Some
+of these belong to analyses this repository holds but the paper does not
+report; `SCOPE.md` classifies every script, analysis directory, and output
+directory on that boundary.
+
+Steps whose optional inputs are absent are skipped by the `require_data` guard
+where one is present; not every step is guarded, so a standalone Tier-2 run on
+a fresh clone can error rather than skip. Run Tier 1 first -- several Tier-2
+steps read intermediates it produces.
 
 ## Validation
 
-After the pipeline completes, `reproduce/validate.py` automatically
-compares all key output statistics against values reported in the
-manuscript and prints a pass/fail summary.
+After the pipeline completes, `reproduce/validate.py` reads the tracked
+output artifacts and checks each recorded statistic against its expected
+value, then prints a pass/fail summary. Each check carries a `paper_ref`
+naming where the value appears; some are retained tooling for analyses the
+current paper does not report.
 
 ## Figure-to-script mapping
 
@@ -87,12 +101,16 @@ script generates each figure and table in the paper.
 ## SAMap validation (optional, requires PyTorch)
 
 SAMap has heavy dependencies (including PyTorch) and is excluded from
-the default install. To run the SAMap validation (Figure S5):
+the default install. To enable the SAMap step:
 
 ```bash
 pip install cellwarp[samap]
 # SAMap step will then run automatically in reproduce/run_all.sh
 ```
+
+`run_all.sh` gates that step on an `import samap` probe and skips with a
+message when the package is absent, so install into the same environment you
+run `run_all.sh` from.
 
 ## Seed and determinism
 
