@@ -2,12 +2,12 @@
 
 Every headline/validated number in the manuscript, checked against the code for
 this re-assembly. The underlying analyses are unchanged: `reproduce/validate.py`
-stays **30/30 green** and the values below trace to tracked artifacts. This file
+stays green and the values below trace to tracked artifacts. This file
 records (A) the `[VERIFY]` values confirmed against code, (B) numbers newly added
 in this draft (the basal-ganglia three-pair replication, Fig 2), (C) numbers
 **corrected or flagged** where the frozen draft disagreed with the code, and (D)
-presentational renumbering. The `MANUSCRIPT_MD5` gate is decoupled during the
-rewrite and re-pinned at the end (independent of this number check).
+presentational renumbering. The `MANUSCRIPT_MD5` gate pins
+`docs/submission/plosone/manuscript_combined.txt` (independent of this number check).
 
 Rounding note: several abstract/Results values are intentionally reported to
 2 significant figures (0.522→"0.52", 0.668→"0.67", 0.346→"0.35"). That rounding
@@ -55,7 +55,8 @@ is deliberate and is **not** a changed number.
 ## B. New numbers in this draft — basal-ganglia (HMBA) three-pair Layer-2 replication (Fig 2)
 
 Not present in the PCOMPBIOL submission; added as the paper's positive-result
-figure. Source: `~/cellwarp_plans/cellwarp-bg-test/analysis/bg/results/layer2_results_{pair}.json`.
+figure. Source: `docs/submission/plosone/figures/bg_results/layer2_results_{pair}.json`,
+vendored into this repository and gated by `reproduce/validate.py`.
 Compression = post-rotation S / pre-rotation S at k=5 (< 1 ⇒ centroid-optimal
 alignment compresses the covariance axis). Both weightings shown (W0 unscaled;
 W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
@@ -148,5 +149,5 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
 
 *Bottom line: no validated or headline statistic changed value. One factual
 correction (mouse-lemur 90→75 Myr, restoring the submission's value and matching
-the code). One minor wording flag (cells-per-type floor) awaiting confirmation.
+the code). One wording change (cells-per-type floor), applied (§C2).
 All new numbers are additive (BG three-pair Layer-2 replication).*
