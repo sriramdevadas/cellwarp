@@ -346,3 +346,9 @@ Per-gene table for the 16,959 human–mouse 1:1 orthologs (15,940 with a defined
 
 S12 Table. Software environment and version-pinned dependencies.
 Version-pinned key software packages used across all analyses (Python and 16 libraries); the authoritative manifest is archived as requirements.txt with the analysis code. Provided as a CSV supplementary table.
+
+S1 Text. Supplementary Methods.
+Extended methods and sensitivity analyses supporting the main text: artifact-ruling controls for the configuration result, stratified and derangement nulls, normalization and gene-exclusion sensitivity, the replication inventory, the macaque extension, the ten mechanistic null tests for the per-type ranking, the donor-split control, bootstrap and leave-one-out cross-validation, the per-gene conservation score and master-TF enrichment, and the software environment.
+
+S2 Text. Cross-protocol length bias: why the whole-cell versus single-nucleus comparison is uninformative for the covariance layer.
+Substantiates the Results section 2 statement that comparing whole-cell to single-nucleus data confounds biology with assay: in nuclear data the leading within-type covariance axis tracks transcript length rather than cell identity, which is why the same-protocol primate replication rather than the protocol switch is the informative test of the covariance layer.
