@@ -119,7 +119,16 @@ Note: This dataset is not exercised by reproduce/run_all.sh; analysis is
 optional and the pipeline skips gracefully if files are absent.
 
 ## CellMarker (retained derived subset: data/validation/cellmarker/cellmarker_human_filtered.csv)
-The repository retains only a small derived subset, cellmarker_human_filtered.csv (columns: gene_symbol, cell_type), used by the CellMarker enrichment (Fig S6A-B), ortholog-retention (Table S8), and the conserved-contribution gate. It contains the experimentally-validated human marker entries (flow cytometry, immunohistochemistry, in-situ hybridization) drawn from CellMarker 2.0; see Materials and Methods for the exact filtering criteria. The raw CellMarker database is not redistributed here; obtain it from CellMarker 2.0 (http://bio-bigdata.hrbmu.edu.cn/CellMarker/, downloaded 2026-03-16) and apply the same filter to regenerate. Reference: Hu et al., CellMarker 2.0, Nucleic Acids Research, 2023.
+The repository retains only a small derived subset, cellmarker_human_filtered.csv (columns: gene_symbol, cell_type). It contains the experimentally-validated human marker entries (flow cytometry, immunohistochemistry, in-situ hybridization) drawn from CellMarker 2.0; see Materials and Methods for the exact filtering criteria.
+
+This subset is an input to the conserved-contribution gate reported in Results section 5 (Fig 5), where it supplies the marker reference set for the enrichment test. It is additionally read by retained validation tooling for analyses the current paper does not report; SCOPE.md records that boundary.
+
+The raw CellMarker database is not redistributed here; obtain it from CellMarker 2.0 (http://bio-bigdata.hrbmu.edu.cn/CellMarker/, downloaded 2026-03-16) and apply the same filter to regenerate. Reference: Hu et al., CellMarker 2.0, Nucleic Acids Research, 2023.
+
+## ChEMBL / DrugBank drug-target annotations (not retained, not reconstructible)
+Mechanistic null 10 in S1 Text — drug-target conservation against per-type divergence, reported as an exploratory and non-significant test — used drug-target and mechanism tables derived from ChEMBL and DrugBank. Those derived tables were removed from the tree and are not redistributed, and no database release, version, accession or download date was recorded anywhere in the repository, so this input cannot be reconstructed from the deposit. The reported statistic is available as output/t3g/primary_correlation_results.json, which retains the derived counts (446 drug-target genes, 420 of them inside the 16,959-gene ortholog set); those counts are not sufficient to identify a release. Re-running the test requires a fresh derivation against a newly recorded ChEMBL and DrugBank release. Literature references: Mendez et al., ChEMBL, Nucleic Acids Research, 2019; Wishart et al., DrugBank 5.0, Nucleic Acids Research, 2018 — these are the database papers, not the releases used.
+
+The DILI analysis under data/dilirank/ separately uses DrugBank-sourced CYP450 substrate annotations obtained from a curated Figshare dataset; that is a different input, it is recorded in the analysis output, and it is unaffected by the gap above.
 
 ## Mouse Cell Atlas (MCA) cell assignments
 Source: figshare 5435866 (MCA_CellAssignments.csv). Used only by the T1a Mouse-Cell-Atlas
