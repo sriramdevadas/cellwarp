@@ -1,6 +1,9 @@
 # Large Data Sources — Not in Git
-These directories are excluded from git due to size.
-Reproduce from the accession numbers below.
+These directories are excluded from git due to size. Some are downloaded
+programmatically by the scripts that use them; others must be fetched by hand
+from the sources below. Inputs obtained through CZ CELLxGENE Census are not
+listed here; the Census release they are pinned to is recorded in
+docs/declarations.txt and in README.md.
 
 ## data/replication/sun2023/ (1.6GB)
 Source: OMIX002605 (CNCB; https://ngdc.cncb.ac.cn/omix/release/OMIX002605)
@@ -100,11 +103,34 @@ ENCSR000AUP (B cell), ENCSR120WKZ (CD4+ T), ENCSR267YXV (Neutrophil).
 Mouse (Lara-Astiaso 2014 bigWig, mm9): downloaded programmatically from
 GEO supplementary files for samples GSM1441277–GSM1441283.
 Required path: data/h3k27ac/{human,mouse}/<celltype>_*.{bed.gz,bigWig}
-Sentinel: data/h3k27ac/SENTINEL_FETCHED is created when the script
-finishes downloading. Run scripts/t3e_step3b_enhancer.py to fetch.
+Fetch by running scripts/t3e_step3b_enhancer.py directly. Note that
+reproduce/run_all.sh gates that step on a sentinel file
+(data/h3k27ac/SENTINEL_FETCHED) that no script in this repository writes, so
+the step always skips under run_all.sh; running the script directly is
+unaffected.
 
-## data/option_a/ (584MB)
-Source: See scripts for provenance
+## data/annotations/ (UCSC refGene)
+Source: UCSC Genome Browser refGene tables, used for transcription-start-site
+coordinates in the T3-E enhancer analysis (S1 Text mechanistic null 9).
+Downloaded programmatically by scripts/t3e_step3b_enhancer.py from
+https://hgdownload.soe.ucsc.edu/goldenPath/{hg38,mm10}/database/refGene.txt.gz
+Required path: data/annotations/{hg38,mm10}_refGene.txt.gz
+Release note: that URL is a rolling UCSC path serving the current table, and
+the download is not md5-verified or date-stamped, so no refGene release is
+recorded. The reported statistic is re-derivable in kind but not
+byte-reproducibly; a re-run may pick up newer TSS coordinates. By contrast the
+phastCons download under data/ucsc/ is logged with date and verified md5 in
+output/validation/t3e_chromatin/download_log.txt.
+
+## data/string/ (STRING v12.0)
+Source: STRING v12.0 human protein-protein interaction network (taxon 9606),
+used for the PPI network-centrality analysis (S1 Text mechanistic null 7).
+Downloaded programmatically by scripts/19_ppi_centrality.py, which skips the
+download if the files are already present:
+  https://stringdb-downloads.org/download/protein.links.v12.0/9606.protein.links.v12.0.txt.gz
+  https://stringdb-downloads.org/download/protein.info.v12.0/9606.protein.info.v12.0.txt.gz
+Required path: data/string/9606.protein.{links,info}.v12.0.txt.gz
+The v12.0 release is pinned in the download URLs and in the on-disk filenames.
 
 ## data/dilirank/ (9.9GB)
 Required files (place at data/dilirank/<filename>):
@@ -137,7 +163,7 @@ Reconstitute by running scripts/12_t1a_mca_download.py, which downloads the file
 data/replication/.
 
 ## MSigDB gene-set catalogs (data/phase3/catalogs/*.gmt)
-Source: MSigDB via the R package msigdbr 26.1.0 (MSigDB release 2026.1.Hs). The .gmt catalogs (c2_reactome, c5_gobp, hallmark) are not redistributed here; regenerate them by running phase3_extract_catalogs.R with msigdbr 26.1.0 installed, which produces deterministic output for that pinned version. These catalogs feed the phase3 GSEA/fgsea step; the figure build in reproduce/run_all.sh reads the deposited phase3 outputs and does not require the .gmt.
+Source: MSigDB via the R package msigdbr 26.1.0 (MSigDB release 2026.1.Hs). The .gmt catalogs (c2_reactome, c5_gobp, hallmark) are not redistributed here; regenerate them by running phase3_extract_catalogs.R with msigdbr 26.1.0 installed, which produces deterministic output for that pinned version. The fgsea step these catalogs were written for is not implemented in this repository and no GSEA result is deposited; the figure build in reproduce/run_all.sh reads the deposited phase3 outputs and requires no .gmt.
 
 ## Macaque atlas QC tables (NHPCA; feasibility scouting; not redistributed)
 During early non-human-primate feasibility scouting, sample- and cluster-level QC

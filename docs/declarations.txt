@@ -95,14 +95,13 @@ Reference tables and databases supporting the reported analyses:
   output/t3g/primary_correlation_results.json. See DATA_SOURCES.md.
 
 Analyses this paper does not report:
-The repository holds analyses beyond those reported here, and their inputs are
-documented in DATA_SOURCES.md: DILIrank v2 (FDA NCTR) with LINCS L1000 Phase I
-Level 2 (GEO GSE92742); the cancer and COVID-19 disease-deformation
-comparisons; and the Rhesus Immune-Cell Reference Atlas (RIRA), whose
+The repository holds analyses and code beyond those reported here; SCOPE.md
+records what this paper reports and what it does not. Where an unreported
+analysis requires a manual data fetch, its inputs are documented in
+DATA_SOURCES.md: DILIrank v2 (FDA NCTR) with LINCS L1000 Phase I Level 2 (GEO
+GSE92742); and the Rhesus Immune-Cell Reference Atlas (RIRA), whose
 combination with Qu et al. used asymmetric cross-atlas preprocessing and was
-deprecated in favour of the single-source Qu design reported here. SCOPE.md
-records which of the repository's analyses this paper reports and which it
-does not.
+deprecated in favour of the single-source Qu design reported here.
 
 ================================================================
 SECTION 2 — CODE AVAILABILITY STATEMENT
