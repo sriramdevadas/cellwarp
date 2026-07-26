@@ -1,3 +1,11 @@
+> **Status: historical record, not a current claim.** The runs below were executed between
+> 2026-05-06 and 2026-05-09 against an earlier development HEAD. They remain the deposit's
+> evidence that the pipeline executes end-to-end on the three canonical install paths, and
+> nothing since has changed that. What has moved is the gate counts: `reproduce/validate.py`
+> and the test suite have both grown since these runs, so every pass count recorded below is
+> the count at that time, not the count at HEAD. Nothing here has been re-executed against
+> the current tree.
+
 # Cross-Environment Validation
 
 This file records the environments in which the cellwarp pipeline has been

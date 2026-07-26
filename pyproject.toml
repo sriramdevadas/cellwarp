@@ -57,7 +57,7 @@ dev = [
     "pyyaml>=6.0",
 ]
 lock = [
-    # Exact pins for manuscript reproducibility - matches the venv that produced the published Procrustes results.
+    # Exact pins for manuscript reproducibility, taken from the freeze in requirements.txt.
     # See manuscript Methods (Software & reproducibility) and Data and Code Availability.
     "numpy==2.4.3",
     "scipy==1.17.1",

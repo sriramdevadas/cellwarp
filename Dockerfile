@@ -2,8 +2,9 @@
 #
 # Ubuntu 22.04 ships Python 3.10; this project pins Python >=3.12,<3.13, so the
 # image installs 3.12 from the deadsnakes PPA. The four reproduction gates run
-# as a build step, so a successful `docker build` itself certifies that the
-# deposit reproduces.
+# as a build step, so a successful `docker build` certifies that all four gates
+# pass -- they check recorded values and file integrity, not fresh computation.
+# `docker run` additionally recomputes the headline from the deposited centroids.
 #
 #   docker build -t cellwarp .          # build + in-build gate certification
 #   docker run  --rm cellwarp           # re-run the four gates + no-download fast-path
@@ -56,7 +57,10 @@ ENV PATH="/cellwarp/.venv/bin:${PATH}"
 # Bake the deposit source in (the .dockerignore keeps .git and local cruft out).
 COPY . /cellwarp
 
-# Install strictly via the existing pyproject pins (wheels; ~1 min, no compiler).
+# Install the core dependencies plus [dev] for the test gate -- the bounded ranges
+# from [project.dependencies], not the exact [lock] pins: [lock] pulls samap ->
+# hnswlib, which builds from source and needs a compiler this image does not carry.
+# The gates and the fast-path require no exact pins (wheels; ~1 min, no compiler).
 RUN .venv/bin/pip install --upgrade pip \
     && .venv/bin/pip install -e ".[dev]"
 
