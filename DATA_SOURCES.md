@@ -156,6 +156,11 @@ Mechanistic null 10 in S1 Text — drug-target conservation against per-type div
 
 The DILI analysis under data/dilirank/ separately uses DrugBank-sourced CYP450 substrate annotations obtained from a curated Figshare dataset; that is a different input, it is recorded in the analysis output, and it is unaffected by the gap above.
 
+## DoRothEA transcription-factor regulon (queried at run time; no local copy)
+Source: DoRothEA, accessed through the OmniPath web service. scripts/13_tf_complexity.py:226 calls decoupler's accessor as dc.op.dorothea(organism="human", levels=["A","B","C"]), which issues an HTTP request to https://omnipathdb.org/interactions/ and parses the response in memory. Nothing is written to disk, so there is no required path and no archived copy travels with the deposit.
+
+Release note: the decoupler client is pinned to v2.1.4 in environment.yml, requirements.txt, reproduce/environment_ground_truth.txt and the [lock] extra of pyproject.toml (the [reproduce] extra gives a >=2.1 floor). The client pin does not pin the data: decoupler 2.1.4's accessor accepts organism, levels, dict_weights, license and verbose, and exposes no release, version or date parameter, so a re-run returns whatever OmniPath serves at that time. The call also leaves the accessor's license parameter at its default of academic, which is itself a query parameter affecting the returned set. The deposited output/phase2/mechanistic/tf_complexity/tf_complexity_results.json records the query levels (A, B, C) and the resulting counts (32,286 TF-target pairs across 429 TFs; 30,635 pairs across 419 TFs after restriction to the ortholog space); those are a fingerprint of the run, not a release identifier. Mechanistic null 2 (S1 Text) is therefore reproducible in kind but not byte-for-byte.
+
 ## Mouse Cell Atlas (MCA) cell assignments
 Source: figshare 5435866 (MCA_CellAssignments.csv). Used only by the T1a Mouse-Cell-Atlas
 feasibility check (scripts/t1a_mca_feasibility.py), which is not a manuscript figure.

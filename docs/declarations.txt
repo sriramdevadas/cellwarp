@@ -82,9 +82,14 @@ Reference tables and databases supporting the reported analyses:
   set: https://www.gsea-msigdb.org/gsea/msigdb/
 - STRING v12.0, protein-protein interaction network centrality:
   https://string-db.org/
-- DoRothEA, transcription-factor network complexity.
-- UCSC phastCons promoter conservation, placental 20-way primary and 100-way
-  vertebrate sensitivity: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/
+- DoRothEA (confidence levels A-C), transcription-factor network complexity:
+  https://omnipathdb.org. Queried at run time by decoupler (pinned to v2.1.4);
+  the query takes no release parameter and retains no local copy, so the
+  regulon itself is not version-pinned.
+- UCSC Genome Browser: phastCons promoter conservation (placental 20-way
+  primary, 100-way vertebrate sensitivity) and refGene TSS annotations for
+  hg38 and mm10: https://hgdownload.soe.ucsc.edu/goldenPath/. The refGene
+  tables come from a rolling path and no release is recorded.
 - ENCODE H3K27ac ChIP-seq for six immune cell types, and Lara-Astiaso et al.
   (2014) mouse bigWig: https://www.encodeproject.org/ and GEO
   GSM1441277-GSM1441283.
