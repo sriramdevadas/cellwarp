@@ -21,7 +21,7 @@ Contents:
 - The CODE record is a superset of the DATA record; the DATA record re-publishes the original outputs as a standalone CC0 dataset.
 
 Metadata (manual entry; reference .zenodo.json for full content):
-- Creators: Sriram Devadas; ORCID 0009-0002-4571-1116; affiliation Independent Researcher.
+- Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher.
 - Employer is never named anywhere - Independent Researcher only.
 - Title / description: as in .zenodo.json (confirm .zenodo.json is current at freeze).
 
@@ -37,7 +37,7 @@ Metadata (manual entry at upload):
 - Title (FINAL): "CellWarp: original analysis outputs (Class-O)"
 - Upload type: Dataset
 - License: CC0 1.0 Universal
-- Creators: Sriram Devadas; ORCID 0009-0002-4571-1116; affiliation Independent Researcher.
+- Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher.
 - Description (FINAL): Original analysis outputs from the CellWarp cross-species transcriptomic-geometry study. Contains computed outputs only: all tracked files under output/, all figures under figures/, and the data-type result files under analysis/ (.csv/.json/.npy/.png/.tsv/.npz). Raw third-party atlases (Class-R) and derived intermediates (Class-D centroids) are not included and are regenerable - see the dropped-classes regeneration map below and DATA_SOURCES.md. The code that produced these outputs, plus the input reference tables, is deposited separately under DOI 10.5281/zenodo.20735612 (MIT).
 
 Contents (Class-O original analysis outputs), as built (761 files):

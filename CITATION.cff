@@ -8,17 +8,17 @@ authors:
     given-names: "Sriram"
     email: "sriram@sriramdevadas.com"
     affiliation: "Independent Researcher, Acton, MA, USA"
-    orcid: "https://orcid.org/0009-0002-4571-1116"
+    orcid: "https://orcid.org/0009-0002-9180-1390"
 version: "0.1.0"
 date-released: 2026-04-30
 license: "MIT"
 repository-code: "https://github.com/sriramdevadas/cellwarp"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.20735612"
+    value: "10.5281/zenodo.20735611"
     description: "Archived analysis code (Zenodo)"
   - type: doi
-    value: "10.5281/zenodo.20735640"
+    value: "10.5281/zenodo.20735639"
     description: "Archived dataset (Zenodo)"
 keywords:
   - "Procrustes analysis"
@@ -35,6 +35,6 @@ preferred-citation:
       given-names: "Sriram"
       email: "sriram@sriramdevadas.com"
       affiliation: "Independent Researcher, Acton, MA, USA"
-      orcid: "https://orcid.org/0009-0002-4571-1116"
+      orcid: "https://orcid.org/0009-0002-9180-1390"
   year: 2026
   notes: "Manuscript in preparation."

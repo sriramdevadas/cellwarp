@@ -147,7 +147,7 @@ end-to-end integration.
 
 ## Citation
 
-If you use this work, please cite it according to the metadata in `CITATION.cff` (machine-readable Citation File Format) at the repository root. The analysis code is archived at Zenodo: https://doi.org/10.5281/zenodo.20735612 (MIT License). The analysis outputs are archived at Zenodo: https://doi.org/10.5281/zenodo.20735640 (CC0 1.0). A formal manuscript citation will be added to this section after journal acceptance.
+If you use this work, please cite it according to the metadata in `CITATION.cff` (machine-readable Citation File Format) at the repository root. The analysis code is archived at Zenodo: https://doi.org/10.5281/zenodo.20735611 (MIT License). The analysis outputs are archived at Zenodo: https://doi.org/10.5281/zenodo.20735639 (CC0 1.0). A formal manuscript citation will be added to this section after journal acceptance.
 
 ## Key References
 

@@ -18,10 +18,10 @@ records the canonical accessions for the manuscript.
 Deposits:
 - Analysis code, the archived Ensembl/BioMart ortholog tables, and the pinned
   dependency manifest: Zenodo, MIT License,
-  https://doi.org/10.5281/zenodo.20735612; mirrored at
+  https://doi.org/10.5281/zenodo.20735611; mirrored at
   https://github.com/sriramdevadas/cellwarp.
 - Original analysis outputs: Zenodo, CC0 1.0,
-  https://doi.org/10.5281/zenodo.20735640.
+  https://doi.org/10.5281/zenodo.20735639.
 - Self-contained basal-ganglia primate-replication deposit, an independent
   reproduction of the Fig 2 two-layer decomposition from the source h5ad with
   the CellWarp method pinned as a versioned dependency: Zenodo, DOI
@@ -118,7 +118,7 @@ All original analysis code for the CellWarp framework — including data
 acquisition, quality control, ortholog mapping, Procrustes superimposition,
 permutation testing, bootstrap resampling, leave-one-out cross-validation,
 mechanistic null tests, disease deformation analyses, and figure generation —
-is archived at Zenodo (https://doi.org/10.5281/zenodo.20735612, MIT License)
+is archived at Zenodo (https://doi.org/10.5281/zenodo.20735611, MIT License)
 and maintained in the project's public GitHub repository
 (https://github.com/sriramdevadas/cellwarp). The repository also contains the
 archived BioMart ortholog tables and the pre-registration document for the
