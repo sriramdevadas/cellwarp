@@ -1,12 +1,12 @@
 # DEPOSIT_MANIFEST
 
-Status: FINAL - as-built deposit manifest. Counts and scope reflect the public repository root that the two Zenodo archives are built from. Both records are reserved drafts (DOIs minted, not yet published); publish at acceptance.
+Status: as-built record of version 1 of each Zenodo record, plus the procedure for the next version. Both records are published and openly accessible: CODE 10.5281/zenodo.20735612 and DATA 10.5281/zenodo.20735640, published 2026-06-17, built from commit 4fca942 (1,100 tracked files). Every count in this document describes those v1 archives, not the current HEAD. The manuscript cites the concept DOIs 10.5281/zenodo.20735611 and 10.5281/zenodo.20735639, which resolve to the newest version, so a v2 published from the submission tree requires no change to submitted text.
 
 ## Purpose
 
 Persist the Class-O / Class-D / Class-R deposit scheme so the Zenodo upload is a checklist rather than a re-derivation. This document is the single source of truth for what goes in each Zenodo record, what is deliberately dropped, and how dropped material is regenerated. It reflects the as-built archives: the CODE record is the full tracked repository snapshot; the DATA record is the curated original-output selection.
 
-Two Zenodo records, both reserved as drafts (DOIs minted, not published). Do NOT delete either draft - the reserved DOI is lost if the draft is deleted. Do NOT publish until acceptance. At upload, set the CODE-to-DATA and DATA-to-CODE cross-links (each record's "related identifiers" pointing at the other's DOI).
+Two Zenodo records, each published at version 1. Published records are permanent, so the next deposit is a new version of the same record rather than a fresh one; that preserves the concept DOIs the manuscript cites. At the v2 upload, set the CODE-to-DATA and DATA-to-CODE cross-links using the concept DOIs, and give the DATA record the GitHub related identifier it currently lacks.
 
 ## CODE record
 
@@ -21,7 +21,7 @@ Contents:
 - The CODE record is a superset of the DATA record; the DATA record re-publishes the original outputs as a standalone CC0 dataset.
 
 Metadata (manual entry; reference .zenodo.json for full content):
-- Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher.
+- Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher, Acton, MA, USA.
 - Employer is never named anywhere - Independent Researcher only.
 - Title / description: as in .zenodo.json (confirm .zenodo.json is current at freeze).
 
@@ -37,7 +37,7 @@ Metadata (manual entry at upload):
 - Title (FINAL): "CellWarp: original analysis outputs (Class-O)"
 - Upload type: Dataset
 - License: CC0 1.0 Universal
-- Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher.
+- Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher, Acton, MA, USA.
 - Description (FINAL): Original analysis outputs from the CellWarp cross-species transcriptomic-geometry study. Contains computed outputs only: all tracked files under output/, all figures under figures/, and the data-type result files under analysis/ (.csv/.json/.npy/.png/.tsv/.npz). Raw third-party atlases (Class-R) and derived intermediates (Class-D centroids) are not included and are regenerable - see the dropped-classes regeneration map below and DATA_SOURCES.md. The code that produced these outputs, plus the input reference tables, is deposited separately under DOI 10.5281/zenodo.20735612 (MIT).
 
 Contents (Class-O original analysis outputs), as built (761 files):
@@ -57,7 +57,7 @@ Class-D (derived intermediates) - NOT deposited in the DATA record:
 - Regenerate by re-running the released pipeline against the re-downloaded raw inputs.
 
 Removed third-party material (referenced by accession, not redistributed):
-- d53 removals: ChEMBL target/mechanism tables, tms_facs metadata, raw CellMarker human/mouse tables, Mouse Cell Atlas (MCA) cell assignments, and MSigDB .gmt catalogs - removed from the tree; see DATA_SOURCES.md for accessions. (The small derived subset data/validation/cellmarker/cellmarker_human_filtered.csv is retained in the CODE record; see DATA_SOURCES.md.)
+- d53 removals: ChEMBL target/mechanism tables, tms_facs metadata, raw CellMarker human/mouse tables, Mouse Cell Atlas (MCA) cell assignments, and MSigDB .gmt catalogs - removed from the tree. Where a release or accession was recorded, DATA_SOURCES.md carries it: CellMarker, MCA and MSigDB each have one. ChEMBL and DrugBank do not: DATA_SOURCES.md records that no release, version, accession or download date was captured, so that input is not reconstructible from the deposit. (The small derived subset data/validation/cellmarker/cellmarker_human_filtered.csv is retained in the CODE record; see DATA_SOURCES.md.)
 - d58 removals: macaque whole-body atlas QC tables (NHPCA, Han et al. 2022, CNGB CNP0001469) - examined during NHP feasibility scouting, never used by any analysis; removed from the tree and referenced by accession in DATA_SOURCES.md. Also removed: data/phase1/orthologs_human_zebrafish.csv, an unused BioMart orphan (regenerable from Ensembl BioMart).
 
 Per-source regeneration (accessions from DATA_SOURCES.md):
@@ -81,10 +81,10 @@ Corroborating:
 
 ## Snapshot procedure (at acceptance)
 
-Source: the single parentless root commit on origin/main (the public repository root; third-party-free history). The working tree is clean at that root; the two archives below are built directly from `git ls-files` at that commit.
+Source for v1, as built: commit 4fca942, the tip of origin/main, recorded in both archive filenames; `git ls-tree -r 4fca942` is 1,100 files. Source for v2: the submission tree at the commit tagged for release. Derive the v2 counts at build time rather than copying the v1 figures recorded above.
 
 Steps:
-1. CODE archive: a zip of exactly `git ls-files` at the root (1,100 files). DATA archive: the selection above (761 files: all output/ minus the 5 .gitkeep, all figures/, and the 105 analysis/ data-type files minus the ortholog reference table).
-2. Upload each set to its reserved Zenodo draft (CODE -> 20735612, DATA -> 20735640).
+1. CODE archive: a zip of exactly `git ls-files` at the release commit. DATA archive: the selection above - all output/ minus the .gitkeep placeholders, all figures/, and the analysis/ data-type files minus the ortholog reference table. Record both counts at build time; the figures given above are version 1 only.
+2. Upload each set as a NEW VERSION of its existing record (CODE 20735612, DATA 20735640), so the concept DOIs 20735611 and 20735639 resolve to it.
 3. Enter metadata manually (CODE: from .zenodo.json; DATA: from this manifest) and set the CODE-to-DATA / DATA-to-CODE related-identifier cross-links.
-4. Publish both records at acceptance. Until then: keep drafts reserved, unpublished, undeleted.
+4. Publish both new versions at acceptance. Version 1 of each record stays published and is the deposit for the earlier submission.
