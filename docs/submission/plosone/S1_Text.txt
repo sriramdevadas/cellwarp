@@ -1,6 +1,6 @@
 S1 Text. Supplementary Methods.
 
-This document assembles the extended methods and sensitivity analyses that support the main-text findings. Nothing is deleted relative to the analyses on which the paper rests; the lean core Methods carry the primary pipeline, and this text carries the controls, replication inventory, and secondary analyses. Every statistic below traces to a tracked artifact in the deposited code and outputs; the reproduce/validate.py harness checks a 30-item subset against those files.
+This document assembles the extended methods and sensitivity analyses that support the main-text findings. Nothing is deleted relative to the analyses on which the paper rests; the lean core Methods carry the primary pipeline, and this text carries the controls, replication inventory, and secondary analyses. Every statistic below traces to a tracked artifact in the deposited code and outputs; the reproduce/validate.py harness checks a subset of them against those files.
 
 1. Independent-PCA sensitivity (artifact-ruling control for the configuration result)
 
