@@ -41,6 +41,7 @@ from pathlib import Path
 try:
     from docx import Document
     from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.opc.constants import RELATIONSHIP_TYPE
     from docx.oxml import OxmlElement
     from docx.oxml.ns import qn
     from docx.shared import Inches, Pt, RGBColor
@@ -103,12 +104,13 @@ FIG_CAPTION = re.compile(r"^Fig \d+\. ")
 SI_CAPTION = re.compile(r"^S\d+ (Fig|Table|Text)\. ")
 NUMBERED = re.compile(r"^(\d+)\. ")
 
-# Caption label and legend go into one paragraph. The join is empty because the
-# round-trip gate is a character-identity check: any separator inserted here
-# would also have to be inserted on the source side, and the DOCX would then no
-# longer prove that nothing was added. Setting this to " " raises the joined
-# character count from 77317 to 77340 and the identity check fails.
-CAPTION_JOIN = ""
+# A caption's label, title and legend go into one paragraph, with the title
+# separated from its legend by this join. The round-trip gate is a character
+# identity check, so the source side of the comparison inserts the same join at
+# the same caption boundaries and nowhere else; reconstruct_source_lines() cuts
+# every caption paragraph back apart to prove it. The joined counts below are a
+# verification device rather than a requirement, so they move with the format.
+CAPTION_JOIN = " "
 
 HANDLER_COUNTS = {
     "title": 6,
@@ -119,8 +121,18 @@ HANDLER_COUNTS = {
     "body": 49,
 }
 EXPECTED_CONTENT_LINES = 144
-EXPECTED_JOINED_CHARS = 77317
-EXPECTED_JOINED_WORDS = 11040
+EXPECTED_CAPTION_BOUNDARIES = 23  # 5 figure + 18 supporting information
+# The 144 content lines joined with nothing between them: a property of the
+# source alone, so it does not move when CAPTION_JOIN does.
+EXPECTED_RAW_JOINED_CHARS = 77317
+# The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
+EXPECTED_JOINED_CHARS = 77340
+EXPECTED_JOINED_WORDS = 11063
+# ASCII T in the extracted text of the 121 content paragraphs: 223 in the source
+# content lines plus 5 substituted from U+1D40. Content lines only. The eight
+# emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
+# at all, because TITLE is rendered as a title page rather than as a heading.
+EXPECTED_ASCII_T = 228
 EXPECTED_REFERENCES = 29
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 18
@@ -486,6 +498,9 @@ def validate_captions(plan):
     require(len(sis) == EXPECTED_SI_CAPTIONS,
             "expected %d supporting-information captions, found %d"
             % (EXPECTED_SI_CAPTIONS, len(sis)))
+    require(len(figs) + len(sis) == EXPECTED_CAPTION_BOUNDARIES,
+            "expected %d caption boundaries to receive CAPTION_JOIN, found %d"
+            % (EXPECTED_CAPTION_BOUNDARIES, len(figs) + len(sis)))
 
 
 def validate_references(plan):
@@ -630,8 +645,27 @@ def configure_section(section):
     sect_pr.insert_element_before(line_numbers, *LNNUMTYPE_SUCCESSORS)
 
 
+def strip_package_thumbnail(document):
+    """Drop docProps/thumbnail.jpeg and its package relationship.
+
+    python-docx's default template ships a thumbnail of a blank page, which then
+    rides along in a file going to a journal. Deleting the zip entry alone would
+    leave a dangling relationship in _rels/.rels and an invalid package, so the
+    relationship is what gets removed: the serializer reaches parts by walking
+    the relationship graph, so the part goes with it and the jpeg default drops
+    out of [Content_Types].xml.
+    """
+    rels = document.part.package.rels
+    dropped = [rid for rid, rel in rels.items()
+               if rel.reltype == RELATIONSHIP_TYPE.THUMBNAIL]
+    for rid in dropped:
+        del rels[rid]
+    return dropped
+
+
 def build_document(plan):
     document = Document()
+    strip_package_thumbnail(document)
     configure_styles(document)
     configure_section(document.sections[0])
 
@@ -680,8 +714,61 @@ def local_name(tag):
     return tag.rpartition("}")[2]
 
 
-def verify(path, plan, source_joined):
+def reconstruct_source_lines(content_texts, plan, lines, content):
+    """Cut every caption paragraph back apart at its known boundary.
+
+    The paragraph-level check proves each paragraph matches the plan. This
+    proves the plan matches the source: splitting the 23 caption paragraphs at
+    the length of their caption line has to return the 144 source lines exactly,
+    which is only true if CAPTION_JOIN went in at those 23 boundaries and at no
+    other point in the document.
+    """
+    rebuilt = []
+    boundaries = 0
+    for text, (kind, _, _, source) in zip(
+            content_texts, [entry for entry in plan if entry[0] != "h1"]):
+        if kind != "caption":
+            rebuilt.append(text)
+            continue
+        head = substitute(lines[source[0] - 1])
+        tail = substitute(lines[source[1] - 1])
+        cut = len(head)
+        require(text[:cut] == head,
+                "caption paragraph from line %d does not start with its caption "
+                "line:\n  expected: %r\n  found:    %r" % (source[0], head, text[:cut]))
+        require(text[cut:cut + len(CAPTION_JOIN)] == CAPTION_JOIN,
+                "caption from line %d is not followed by CAPTION_JOIN %r, but by %r"
+                % (source[0], CAPTION_JOIN, text[cut:cut + len(CAPTION_JOIN)]))
+        require(text[cut + len(CAPTION_JOIN):] == tail,
+                "legend from line %d does not follow the join:\n"
+                "  expected: %r\n  found:    %r"
+                % (source[1], tail, text[cut + len(CAPTION_JOIN):]))
+        rebuilt.extend([head, tail])
+        boundaries += 1
+    require(boundaries == EXPECTED_CAPTION_BOUNDARIES,
+            "CAPTION_JOIN was inserted at %d boundaries, expected %d"
+            % (boundaries, EXPECTED_CAPTION_BOUNDARIES))
+    expected = [substitute(lines[index]) for index in content]
+    require(rebuilt == expected,
+            "the document does not cut back apart into the %d source lines "
+            "(%d reconstructed)" % (len(expected), len(rebuilt)))
+    return boundaries
+
+
+def verify(path, plan, lines, content):
     """Re-open the written DOCX and check it against the source."""
+    raw_joined = "".join(lines[index] for index in content)
+    require(len(raw_joined) == EXPECTED_RAW_JOINED_CHARS,
+            "the %d source content lines join to %d characters, expected %d"
+            % (len(content), len(raw_joined), EXPECTED_RAW_JOINED_CHARS))
+    source_joined = "".join(text for kind, text, _, _ in plan if kind != "h1")
+    require(len(source_joined)
+            == EXPECTED_RAW_JOINED_CHARS
+            + EXPECTED_CAPTION_BOUNDARIES * len(CAPTION_JOIN),
+            "the source side joins to %d characters, expected %d plus %d joins of %r"
+            % (len(source_joined), EXPECTED_RAW_JOINED_CHARS,
+               EXPECTED_CAPTION_BOUNDARIES, CAPTION_JOIN))
+
     document = Document(str(path))
     paragraphs = document.paragraphs
     styles = [p.style.name for p in paragraphs]
@@ -724,6 +811,11 @@ def verify(path, plan, source_joined):
     require(len(joined.split()) == EXPECTED_JOINED_WORDS,
             "joined word count is %d, expected %d"
             % (len(joined.split()), EXPECTED_JOINED_WORDS))
+    boundaries = reconstruct_source_lines(content_texts, plan, lines, content)
+
+    require(joined.count("T") == EXPECTED_ASCII_T,
+            "ASCII T count in the content paragraphs is %d, expected %d"
+            % (joined.count("T"), EXPECTED_ASCII_T))
 
     for char in SUPERSCRIPT:
         require(joined.count(char) == 0,
@@ -783,6 +875,8 @@ def verify(path, plan, source_joined):
         "italic_runs": italic_runs,
         "superscript_runs": len(superscript_runs),
         "superscript_chars": superscript_chars,
+        "caption_boundaries": boundaries,
+        "raw_joined_chars": len(raw_joined),
         "xml": verify_xml(path, len(paragraphs), len(superscript_runs)),
     }
 
@@ -795,6 +889,16 @@ def verify_xml(path, paragraph_count, superscript_run_count):
         footers = [n for n in names if re.fullmatch(r"word/footer\d*\.xml", n)]
         require(footers, "no footer part in the package: %s" % names)
         footer_xml = "".join(archive.read(n).decode("utf-8") for n in footers)
+        package_rels = archive.read("_rels/.rels").decode("utf-8")
+        content_types = archive.read("[Content_Types].xml").decode("utf-8")
+
+    thumbnails = [n for n in names if "thumbnail" in n.lower()]
+    require(not thumbnails, "the package still carries a thumbnail part: %s" % thumbnails)
+    require("thumbnail" not in package_rels.lower(),
+            "_rels/.rels still references a thumbnail, which would leave the "
+            "package invalid once the part is gone")
+    require("jpeg" not in content_types.lower(),
+            "[Content_Types].xml still declares a jpeg, but no image part remains")
 
     require("w:footnoteReference" not in document_xml,
             "the document contains footnote references")
@@ -847,6 +951,8 @@ def verify_xml(path, paragraph_count, superscript_run_count):
         "double_spaced": spaced,
         "vert_align": vert_align,
         "parts": len(names),
+        "thumbnail_parts": len(thumbnails),
+        "thumbnail_rels": package_rels.lower().count("thumbnail"),
     }
 
 
@@ -877,9 +983,13 @@ def print_report(path, digest, handler, report):
     print()
     print("ROUND TRIP")
     print("  source content lines                %d" % EXPECTED_CONTENT_LINES)
+    print("  source lines joined bare            %d" % report["raw_joined_chars"])
+    print("  caption boundaries taking %-9r %d"
+          % (CAPTION_JOIN, report["caption_boundaries"]))
     print("  joined characters                   %d" % report["joined_chars"])
     print("  joined words                        %d" % report["joined_words"])
     print("  character-identical                 %s" % report["identical"])
+    print("  cuts back apart into source lines   %d" % EXPECTED_CONTENT_LINES)
     print("  joined incl. Heading 1 paragraphs   %d" % report["joined_with_headings"])
     print()
     print("CODE POINTS in the extracted text")
@@ -910,6 +1020,9 @@ def print_report(path, digest, handler, report):
           % (report["bold_runs"], report["fig_labels"], report["si_labels"]))
     print("  italic runs                         %d  %s"
           % (len(report["italic_runs"]), ", ".join(report["italic_runs"])))
+    print("  package parts                       %d" % xml["parts"])
+    print("  thumbnail parts / relationships     %d / %d"
+          % (xml["thumbnail_parts"], xml["thumbnail_rels"]))
     print()
     print("OK  %s" % path)
 
@@ -924,20 +1037,35 @@ def parse_args(argv):
     return parser.parse_args(argv)
 
 
+def check_constants():
+    """The joined constants have to stay consistent with the caption format."""
+    require(EXPECTED_JOINED_CHARS
+            == EXPECTED_RAW_JOINED_CHARS
+            + EXPECTED_CAPTION_BOUNDARIES * len(CAPTION_JOIN),
+            "EXPECTED_JOINED_CHARS is %d, but %d source characters plus %d joins "
+            "of %r is %d. Changing CAPTION_JOIN moves this constant, and "
+            "EXPECTED_JOINED_WORDS with it."
+            % (EXPECTED_JOINED_CHARS, EXPECTED_RAW_JOINED_CHARS,
+               EXPECTED_CAPTION_BOUNDARIES, CAPTION_JOIN,
+               EXPECTED_RAW_JOINED_CHARS
+               + EXPECTED_CAPTION_BOUNDARIES * len(CAPTION_JOIN)))
+    require(EXPECTED_CAPTION_BOUNDARIES == EXPECTED_FIG_CAPTIONS + EXPECTED_SI_CAPTIONS,
+            "EXPECTED_CAPTION_BOUNDARIES is %d, but there are %d figure and %d "
+            "supporting-information captions"
+            % (EXPECTED_CAPTION_BOUNDARIES, EXPECTED_FIG_CAPTIONS, EXPECTED_SI_CAPTIONS))
+
+
 def main(argv=None):
     args = parse_args(argv)
     try:
+        check_constants()
         lines, digest = load_source()
         section_of, content = split_sections(lines)
         plan, handler = classify(lines, section_of, content)
-        source_joined = "".join(lines[i] for i in content)
-        require(len(source_joined) == EXPECTED_JOINED_CHARS,
-                "source content joins to %d characters, expected %d"
-                % (len(source_joined), EXPECTED_JOINED_CHARS))
         document = build_document(plan)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         document.save(str(args.output))
-        report = verify(args.output, plan, source_joined)
+        report = verify(args.output, plan, lines, content)
     except BuildError as error:
         sys.exit("ERROR: %s" % error)
     print_report(args.output, digest, handler, report)
