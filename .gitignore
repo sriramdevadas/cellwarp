@@ -198,3 +198,8 @@ cover_letter*.txt
 
 # Suggested-reviewers list: editor correspondence and third-party names; kept local for the PLOS form, never tracked or shipped
 suggested_reviewers*.txt
+
+# PLOS ONE submission DOCX: a build artifact of
+# docs/submission/plosone/build_manuscript_docx.py, regenerated on demand.
+# A DOCX carries creation timestamps, so it cannot be pinned to a stable hash.
+docs/submission/plosone/*.docx

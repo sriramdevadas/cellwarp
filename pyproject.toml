@@ -47,6 +47,7 @@ reproduce = [
     "openpyxl>=3.1",
     "requests>=2.31",
     "pymupdf>=1.23",
+    "python-docx>=1.1",
 ]
 samap = [
     "samap>=1.0.14",
