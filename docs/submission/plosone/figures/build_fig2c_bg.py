@@ -62,15 +62,18 @@ for ax, (skey, sname) in zip(axes, SCHEMES):
     if skey=="W2_schemeB":
         for i,(pkey,plabel,mk) in enumerate(PAIRS):
             ax.text(i, 0.875, mk, ha="center", va="bottom", fontsize=7.0, color=POST, style="italic")
-        ax.text(0.5, -0.32, "italic n/N = canonical identity-marker rank-1 CPC1 drivers (per-gene standardized)",
-                transform=ax.transAxes, ha="center", fontsize=6.0, color=POST, style="italic")
+        # figure-level so the two footnotes stack as two centred lines: this one
+        # sat on almost the same baseline as the all-pairs note below, offset to
+        # its right, and the pair read as one crowded line.
+        fig.text(0.5, 0.078, "italic n/N = canonical identity-marker rank-1 CPC1 drivers (per-gene standardized)",
+                 ha="center", fontsize=6.0, color=POST, style="italic")
 axes[0].set_ylabel("Krzanowski subspace similarity  S (k = 5)", fontsize=8)
 # legend + shared note
 leg = [Patch(fc=PRE, label="Pre-rotation S"),
        Patch(fc=POST, label="Post-rotation S (centroid-optimal)"),
        plt.Line2D([0],[0], marker="D", mfc="white", mec="#444", ms=4, ls="none", label="Permutation null (mean)")]
 axes[1].legend(handles=leg, fontsize=6.6, frameon=False, loc="upper right", handlelength=1.2)
-fig.text(0.5, 0.005, "All pairs, both weightings: post < pre at every k tested, each above its null (all p ≤ 0.0001).",
+fig.text(0.5, 0.031, "All pairs, both weightings: post < pre at every k tested, each above its null (all p ≤ 0.0001).",
          ha="center", fontsize=6.6, color="#333")
 fig.subplots_adjust(left=0.085, right=0.985, top=0.90, bottom=0.24, wspace=0.08)
 

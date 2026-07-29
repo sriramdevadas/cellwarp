@@ -37,6 +37,10 @@ axB=fig.add_subplot(gs[1,0]); place(axB,P/"fig1b_null_1M.png","B")
 axC=fig.add_subplot(gs[1,1]); place(axC,P/"fig1c_lineage_stratified.png","C")
 # 1D fresh: mouse-lemur null
 axD=fig.add_subplot(gs[1,2])
+# imshow shrinks B and C to their image aspect; D is a plotted axes and so filled
+# the whole cell at 1.95x their height, and its ticks, y-label and letter bled
+# left into C. Give D B/C's box and shift it into the unused right margin.
+axD.set_position([0.7010,0.2433,0.2392,0.2761])
 null=np.load(ROOT/"analysis/mouse_lemur/null_distribution.npy"); obs=21.765
 axD.hist(null,bins=40,color="#9bb8d3",edgecolor="white",linewidth=0.3)
 axD.axvline(obs,color=RED,lw=1.6)
@@ -74,8 +78,10 @@ a.plot(bs2["original_rank"],y,"o",ms=2.4,color="#26456e")
 a.set_ylim(-1,len(bs2)); a.invert_yaxis()
 a.set_xlabel("divergence rank (1 = most divergent)",fontsize=7.5)
 a.set_ylabel("cell type (ranked)",fontsize=7.5)
-a.text(0.96,0.04,"median 95% CI width = 3 ranks\nall 35 types stable",transform=a.transAxes,
-       ha="right",va="bottom",fontsize=6.6)
+# the ranks run top-left to bottom-right, so the block sat on the last few CI
+# bars at lower right; the upper-right quadrant is empty.
+a.text(0.96,0.96,"median 95% CI width = 3 ranks\nall 35 types stable",transform=a.transAxes,
+       ha="right",va="top",fontsize=6.6)
 a.set_yticks([]); a.tick_params(labelsize=7,length=2.5); a.spines[["top","right"]].set_visible(False)
 a.set_title("Within-atlas precision",fontsize=8); letter(a,"A",x=-0.10)
 # 4B inversion: ci_width vs cross-atlas mean_rank_shift (master_ranking_table = the
