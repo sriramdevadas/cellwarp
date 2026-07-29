@@ -68,6 +68,17 @@ wraps its PNG.
 |---|---|---|---|
 | 5A-5D | C distribution / Hartigan dip (A); C vs expression and specificity (B); master-TF enrichment vs matched backgrounds (C); donor-split reproducibility (D) | `analysis/conserved_contribution/make_figure7.py` -> `figures/main/fig7_conserved_contribution.{pdf,png}`; `build_main_figures.py` embeds the `.png` | `analysis/conserved_contribution/run_gate.py` (`gate_results.json`), `run_robustness.py` (`robustness_results.json`), `donor_stability/donor_stability_results.json`, `gene_conservation_core.csv`, `donor_stability/agg_*.npz` (see Known gaps) |
 
+## Submission TIFFs
+
+`docs/submission/plosone/figures/build_submission_tiffs.py` rasterises the five
+main-figure PDFs above to `Fig1.tif` through `Fig5.tif` in the same directory, at
+300 dpi, RGB, LZW, alpha composited on white. It reads only the `.pdf` and its
+sibling `.png` (the PNG is an independently rasterised copy, used to check the
+flatten) and regenerates nothing: an explicit table of expected pixel dimensions
+aborts the build if a figure has changed size. The `.tif` files are the artifacts
+uploaded to PLOS, whose file names must match the in-text citations; the `.pdf`
+and `.png` remain the deposited figures.
+
 ## Supplementary figures (S1-S5 Fig)
 
 Deposited in `figures/submission/supplementary/`.
@@ -106,7 +117,7 @@ edited in place by the materializer
 
 - The three current-figure producers `docs/submission/plosone/figures/build_main_figures.py`, `docs/submission/plosone/figures/build_fig2c_bg.py`, and `analysis/conserved_contribution/make_figure7.py` are not invoked by `reproduce/run_all.sh`; the deposited main figures are assembled outside the full-reproduction pipeline.
 - Fig 5's assembly path (`build_main_figures.py`) embeds `figures/main/fig7_conserved_contribution.png`, i.e. it depends on an artifact under `figures/main/` (outside the `docs/submission/plosone/figures/` tree) that `make_figure7.py` writes.
-- `build_main_figures.py` (lines 39-49) hard-codes Fig 1D's observed distance (`obs = 21.765`) and its obs/null, p, and n label text, rather than reading them from `analysis/mouse_lemur/procrustes_results.json`.
+- `build_main_figures.py` hard-codes Fig 1D's observed distance (the `obs` constant in its `axD` block) and the `obs/null 0.35 / p < 0.0001 / n = 15` label text and `~75 Mya` title, rather than reading them from `analysis/mouse_lemur/procrustes_results.json`. Every one of those six values has been checked against that JSON and they agree, so this is a maintainability gap and not a correctness one: the panel is not showing a wrong number, but an edit to the JSON would not reach the figure.
 - `Fig5_conserved_identity_genes.pdf` is a raster wrap of a PNG, even though `make_figure7.py` also emits a native vector `figures/main/fig7_conserved_contribution.pdf`.
 - Fig 5D is not bit-reproducible from tracked data alone: `make_figure7.py` reads gitignored Census aggregates (`analysis/conserved_contribution/donor_stability/agg_*.npz`) for the donor-split recompute.
 - The canonical `table_S7_layer1_housekeeping_exclusion.csv` has no scripted writer (the analysis script writes only the per-variant ranking CSVs in its own directory); `table_S12_software_environment.csv` is hand-authored, its authoritative source being `requirements.txt`.

@@ -22,7 +22,7 @@ Contents:
 
 Metadata (manual entry; reference .zenodo.json for full content):
 - Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher, Acton, MA, USA.
-- Employer is never named anywhere - Independent Researcher only.
+- Affiliation is "Independent Researcher" everywhere. This work was conducted independently, without institutional funding, resources or involvement, and that affiliation should be used in every deposit and metadata record.
 - Title / description: as in .zenodo.json (confirm .zenodo.json is current at freeze).
 
 ## DATA record

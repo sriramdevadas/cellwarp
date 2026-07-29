@@ -65,6 +65,8 @@ bash reproduce/run_all.sh
 
 If you see `No matching distribution found for numpy…`, you're on the wrong Python: that error means an interpreter older than 3.12; use 3.12.
 
+The pin is two-sided, so a **newer** Python fails too, with a different message: `Package 'cellwarp' requires a different Python`. Homebrew now installs 3.14 by default, so on a fresh machine you are likelier to hit the ceiling than the floor. Measured with `pip install --dry-run`: exit 0 on 3.12.13, exit 1 on 3.14.3. There is no 3.13+ fallback, so install 3.12 explicitly (`brew install python@3.12` on macOS, the deadsnakes PPA on Ubuntu) and create the venv with `python3.12` as shown above.
+
 **Requirements:** Python 3.12 (`>=3.12,<3.13`), ~6 GB disk (core), internet for initial data download.
 
 The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission manuscript text (`docs/submission/plosone/manuscript_combined.txt`) is pinned by `reproduce/MANUSCRIPT_MD5` (verify with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4).

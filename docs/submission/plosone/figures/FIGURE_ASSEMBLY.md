@@ -73,9 +73,11 @@ Make legible and self-explanatory (this is the paper's boundary result).
 
 ## Legend text
 
-Findings-first legends for all five figures are drafted in the manuscript
-(`manuscript_combined.txt`, FIGURE LEGENDS). The first sentence of each states the
-finding, not "Panel A shows…".
+Findings-first legends for all five figures live inline in the manuscript
+(`manuscript_combined.txt`), each immediately after the paragraph that first cites
+it, with the caption title on its own line above the legend body. There is no
+separate FIGURE LEGENDS section. The first sentence of each states the finding,
+not "Panel A shows…".
 
 ## Remaining to finish figures
 

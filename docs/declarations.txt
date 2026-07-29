@@ -149,8 +149,17 @@ SECTION 5 — FUNDING
 
 Funding
 
-This research received no specific grant funding from any agency.
-The author conducted this work using personal resources.
+(This text is for the submission system's Financial Disclosure field and
+does not appear in the manuscript. PLOS prohibits a funding statement in
+the manuscript body, so the FUNDING section was removed from
+manuscript_combined.txt; it is staged here and nowhere else. The first
+sentence is PLOS's prescribed wording for unfunded work and should be
+entered verbatim, so the statement is not paraphrased into something the
+journal has to query.)
+
+The author(s) received no specific funding for this work. The author
+conducted this work independently, using personal time and personal
+computational resources.
 
 ================================================================
 SECTION 6 — USE OF GENERATIVE AI (PLOS requirement)
