@@ -30,8 +30,17 @@ def save(fig,name):
     print("wrote",name)
 
 # ---------- FIG 1 : configuration conserved ----------
-fig=plt.figure(figsize=(7.4,4.8))
-gs=fig.add_gridspec(2,3,height_ratios=[0.5,1.3],hspace=0.05,wspace=0.12)
+# Shrinking D left 257 px of white at the foot, where D's x-label used to reach.
+# Trim the canvas back to a 65 px bottom margin and rescale every vertical
+# fraction by _VS, so all four panels keep their pixel size and their distance
+# from the top. Row 2's cell is taller than the panels it holds (B and C sit
+# centred in it, D is placed explicitly), so its unused lower part now falls past
+# the trimmed foot; nothing is drawn there. Width is unchanged at 2220 px.
+FIGH=4.16; _VS=4.8/FIGH                     # 1248 px at 300 dpi, was 1440
+fig=plt.figure(figsize=(7.4,FIGH))
+_t,_b=plt.rcParams["figure.subplot.top"],plt.rcParams["figure.subplot.bottom"]
+gs=fig.add_gridspec(2,3,height_ratios=[0.5,1.3],hspace=0.05,wspace=0.12,
+                    top=1-(1-_t)*_VS,bottom=1-(1-_b)*_VS)
 axA=fig.add_subplot(gs[0,:]); place(axA,P/"fig1a_pipeline_schematic.png","A")
 axB=fig.add_subplot(gs[1,0]); place(axB,P/"fig1b_null_1M.png","B")
 axC=fig.add_subplot(gs[1,1]); place(axC,P/"fig1c_lineage_stratified.png","C")
@@ -40,10 +49,15 @@ axD=fig.add_subplot(gs[1,2])
 # imshow shrinks B and C to their image aspect; D is a plotted axes and so filled
 # the whole cell at 1.95x their height, and its ticks, y-label and letter bled
 # left into C. Give D B/C's box and shift it into the unused right margin.
-axD.set_position([0.7010,0.2433,0.2392,0.2761])
+axD.set_position([0.7010,1-(1-0.2433)*_VS,0.2392,0.2761*_VS])
 null=np.load(ROOT/"analysis/mouse_lemur/null_distribution.npy"); obs=21.765
-axD.hist(null,bins=40,color="#9bb8d3",edgecolor="white",linewidth=0.3)
+cnt,_,_=axD.hist(null,bins=40,color="#9bb8d3",edgecolor="white",linewidth=0.3)
 axD.axvline(obs,color=RED,lw=1.6)
+# the obs/null block occupies the top ~26% of the panel and the tallest bar ran
+# up into it. Cap the bars at 68% of the axis and round to a whole tick, so the
+# headroom follows the data instead of a fixed number. Set before the annotate
+# below, which places "observed" at 0.5 and 0.7 of whatever the y-limit is.
+axD.set_ylim(0,np.ceil(cnt.max()/0.68/100)*100)
 axD.annotate(f"observed\n{obs:.1f}",xy=(obs,axD.get_ylim()[1]*0.5),xytext=(obs+7,axD.get_ylim()[1]*0.7),
              fontsize=7,color=RED,arrowprops=dict(arrowstyle="->",color=RED,lw=0.7))
 axD.text(0.97,0.95,"obs/null 0.35\np < 0.0001\nn = 15",transform=axD.transAxes,ha="right",va="top",fontsize=7)

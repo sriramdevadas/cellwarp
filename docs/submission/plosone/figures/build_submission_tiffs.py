@@ -44,7 +44,7 @@ HERE = Path(__file__).resolve().parent
 # (output name, source stem, expected width px, expected height px at 300 dpi).
 # A citation of "Fig N" in the manuscript must resolve to the file "FigN.tif".
 FIGURES = (
-    ("Fig1.tif", "Fig1_configuration_conserved", 2220, 1440),
+    ("Fig1.tif", "Fig1_configuration_conserved", 2220, 1248),
     ("Fig2.tif", "Fig2_two_layers_bg", 2220, 1860),
     ("Fig3.tif", "Fig3_configuration_robust", 2220, 900),
     ("Fig4.tif", "Fig4_pertype_not_resolvable", 2220, 960),
