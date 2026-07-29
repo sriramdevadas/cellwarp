@@ -15,7 +15,7 @@ Three sections:
    with the primary generating script(s) and output.
 2. **Figures and tables → code** -- one entry per current main- and
    supplementary-figure panel and supplementary table, with generating script
-   and dependencies. Mirrors `reproduce/figure_script_map.md`.
+   and dependencies.
 3. **Numerical claims → code** -- the numerical values behind the reportable
    claims in the manuscript and Supporting Information, with the generating
    script, output file, key or column, and a Status showing how far each is
@@ -86,8 +86,10 @@ current paper and are omitted.
 
 Every display item in the current CellWarp paper, mapped to the script that
 generates it and its dependencies. Figure and panel numbers follow the current
-manuscript (`docs/submission/plosone/manuscript_combined.txt`); this section
-mirrors `reproduce/figure_script_map.md`. Old-to-new renumbering (this paper
+manuscript (`docs/submission/plosone/manuscript_combined.txt`).
+`reproduce/figure_script_map.md` is the authority for how each display item is
+produced; this section covers the same ground from the manuscript's side and does
+not undertake to track it line for line. Old-to-new renumbering (this paper
 descends from a 7-figure PCOMPBIOL draft) is recorded in
 `docs/submission/plosone/NUMBER_DIFF.md` and is out of scope here.
 
@@ -158,16 +160,14 @@ content producer and the canonical file are listed.
 
 ### Known gaps
 
-Mirrors the "Known gaps" in `reproduce/figure_script_map.md`, item-for-item.
+The gaps in how figures and tables are produced are listed once, in the "Known
+gaps" section of `reproduce/figure_script_map.md`, which is the authority for that
+ground. The "(see Known gaps)" notes in the tables above refer to it.
 
-- The three current-figure producers `docs/submission/plosone/figures/build_main_figures.py`, `docs/submission/plosone/figures/build_fig2c_bg.py`, and `analysis/conserved_contribution/make_figure7.py` are not invoked by `reproduce/run_all.sh`; the deposited main figures are assembled outside the full-reproduction pipeline.
-- Fig 5's assembly path (`build_main_figures.py`) embeds `figures/main/fig7_conserved_contribution.png`, i.e. it depends on an artifact under `figures/main/` (outside the `docs/submission/plosone/figures/` tree) that `make_figure7.py` writes.
-- `build_main_figures.py` (lines 39-49) hard-codes Fig 1D's observed distance (`obs = 21.765`) and its obs/null, p, and n label text, rather than reading them from `analysis/mouse_lemur/procrustes_results.json`.
-- `Fig5_conserved_identity_genes.pdf` is a raster wrap of a PNG, even though `make_figure7.py` also emits a native vector `figures/main/fig7_conserved_contribution.pdf`.
-- Fig 5D is not bit-reproducible from tracked data alone: `make_figure7.py` reads gitignored Census aggregates (`analysis/conserved_contribution/donor_stability/agg_*.npz`) for the donor-split recompute.
-- The canonical `table_S7_layer1_housekeeping_exclusion.csv` has no scripted writer (the analysis script writes only the per-variant ranking CSVs in its own directory); `table_S12_software_environment.csv` is hand-authored, its authoritative source being `requirements.txt`.
-- `analysis/sensitivity_analyses/markernull.py` writes its figure to `docs/supplementary_materials/figure_S8_markernull.{pdf,png}` (old stem and directory), not to the deposited `figures/submission/supplementary/figS5_markernull.pdf`.
-- `scripts/build_submission_packet.py` and `tests/` still pin the old 7-figure packet (Figure_1..7, Table_S8), which does not correspond to the current display items.
+They used to be restated here as well. The restatement has been removed rather
+than resynchronised: it had already drifted from the original by the time anyone
+noticed, which is what a second copy eventually does. One list is easier to keep
+true than two that promise to agree.
 
 ---
 

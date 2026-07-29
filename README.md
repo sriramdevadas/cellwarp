@@ -18,7 +18,7 @@ source .venv/bin/activate          # or call .venv/bin/python directly (the gate
 pip install -e ".[dev]"
 ```
 
-If `pip install` fails with `No matching distribution found for numpy…`, you're on the wrong Python (older than 3.12); use 3.12.
+If `pip install` fails, you're on the wrong Python. The pin is two-sided, so newer interpreters are rejected as well as older ones: 3.11 and below give `No matching distribution found for numpy…`, and 3.13 and above give `Package 'cellwarp' requires a different Python`. Use 3.12; [Setup](#setup-requires-python-312) has the detail.
 
 Once installed, use the library on the deposited centroids:
 

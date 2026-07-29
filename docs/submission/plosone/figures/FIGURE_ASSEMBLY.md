@@ -1,3 +1,13 @@
+> **Status: historical record, not a description of the built state.** This was the working
+> plan for the figure-assembly pass, and it is retained as the record of that pass.
+> `reproduce/figure_script_map.md` is the current authority for how each figure and table is
+> produced. Two statements below no longer match the producers: the panel tables cite `.pdf`
+> sources where `build_main_figures.py` reads the `.png` siblings, and the Fig 1D row says the
+> panel is built from `analysis/mouse_lemur/procrustes_results.json` where the producer reads
+> `null_distribution.npy` and hard-codes the statistics. The "Remaining to finish figures"
+> list is the plan as it stood, not a live checklist. Nothing below has been corrected or
+> ticked off: a record edited to look current stops being a record.
+
 # Figure assembly — PLOS ONE (five consolidated main figures)
 
 Maps each of the five new main figures to its source panels, flags panels that

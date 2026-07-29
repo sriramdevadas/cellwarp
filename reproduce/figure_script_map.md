@@ -14,10 +14,15 @@ scope here.
 
 The five main composites are assembled by
 `docs/submission/plosone/figures/build_main_figures.py` (PDF + PNG, 300 dpi) into
-`docs/submission/plosone/figures/`, and embedded into `CellWarp_PLOSONE_review.pdf`
-by `docs/submission/plosone/build_review_pdf.py`. Panels marked "embedded" are
+`docs/submission/plosone/figures/`, which holds the deposited figures; the TIFFs
+uploaded to PLOS are rasterised from those PDFs (see Submission TIFFs below). The
+manuscript is the authority for their legends. Panels marked "embedded" are
 pre-rendered PNGs pulled in by the assembler; panels marked "built in
 build_main_figures.py" are drawn fresh from data at assembly time.
+
+`docs/submission/plosone/build_review_pdf.py` concatenates the manuscript text and
+these five figure PDFs into an internal-review PDF. That output is deliberately
+not tracked, so any copy on disk is stale unless it has just been rebuilt.
 
 ### Fig 1 (configuration conserved) -> `Fig1_configuration_conserved.{pdf,png}`
 
