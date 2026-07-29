@@ -203,3 +203,10 @@ suggested_reviewers*.txt
 # docs/submission/plosone/build_manuscript_docx.py, regenerated on demand.
 # A DOCX carries creation timestamps, so it cannot be pinned to a stable hash.
 docs/submission/plosone/*.docx
+
+# Internal-review PDF: a build artifact of
+# docs/submission/plosone/build_review_pdf.py, regenerated on demand. It is a
+# third rendering of manuscript_combined.txt plus the five figure PDFs, all of
+# which are tracked, and no gate reads it, so it went stale unnoticed. The
+# pattern is anchored here and does not reach the figure PDFs one level down.
+docs/submission/plosone/*.pdf

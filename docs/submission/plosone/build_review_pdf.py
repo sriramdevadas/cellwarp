@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Assemble the internal-review PDF: manuscript text (paginated) + the five main
 figures. No LaTeX/LibreOffice needed — text pages via matplotlib, figures appended
-with pdfunite. Review-artifact quality (monospace text); not the typeset submission."""
+with pdfunite. Review-artifact quality (monospace text); not the typeset submission.
+
+Its output is deliberately untracked and is stale unless you rebuild it here."""
 import subprocess, textwrap, pathlib, shutil
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
