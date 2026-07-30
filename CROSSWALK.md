@@ -21,11 +21,16 @@ Three sections:
    script, output file, key or column, and a Status showing how far each is
    established.
 
-Quick-look statistics about this CROSSWALK (re-derived from the current sections):
-- Methods subsections covered: 9
-- Figure / table display items covered: 5 main figures + 5 supporting figures + 11 supplementary tables (35 panel/table rows in Section 2: 15 main-figure panel rows, 9 supplementary-figure panel rows, 11 tables)
-- Numerical claims indexed: 291
-- Status breakdown: validate.py 39, mapped 232, computed 9, anchor 6, intermediate 5
+Coverage: every Methods subsection; every main- and supporting-figure panel and
+every supplementary table (the 5 main figures, 5 supporting figures and 11
+supplementary tables the manuscript lists, which is where those three figures
+should be checked); and the numerical claims in the manuscript and Supporting
+Information.
+
+Row and status counts are deliberately not stated here. A count in prose that no
+gate reads goes stale the next time a row is added, silently, which is what
+happened to the ones this block used to carry. For the number of claims currently
+gated, run `reproduce/validate.py`, which reports it.
 
 Verification. `reproduce/validate.py` programmatically asserts its checks
 against their persisted output files; most correspond to claim rows in Section
