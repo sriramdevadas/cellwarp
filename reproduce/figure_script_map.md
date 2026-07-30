@@ -118,6 +118,19 @@ edited in place by the materializer
 | S11 Table | Per-gene cross-species conservation score C | `analysis/conserved_contribution/make_table_s11.py` (dep `run_gate.py`) | self -> `table_S11_gene_conservation.csv` |
 | S12 Table | Software environment and version-pinned dependencies | NO IN-REPO PRODUCER; hand-authored, source `requirements.txt` (see Known gaps) | hand-authored -> `table_S12_software_environment.csv` |
 
+## Supporting-information controls with no display item
+
+S1 Text §10 reports a control that produces neither a figure nor a table, so it has no row
+above; its numbers are quoted in the text alone.
+
+| Item | Content | Producing script | Depends on |
+|---|---|---|---|
+| S1 Text §10 | Selection/derangement circularity control: real conserved obs/null 0.384 against a derangement sigma-null 0.991 +- 0.021 (z = -29.5) and a label-shuffle cross-check 0.983 +- 0.024 (z = -25.3), N = 1,000 draws each | `analysis/selection_null/selection_null.py` (baseline lock: `repro_baseline.py`) | `output/phase2/scaled_35types/centroids_{human,mouse}_35.csv` via `analysis/conserved_contribution/gate_lib.py`; unmodified `src/cellwarp/procrustes.py` -> `analysis/selection_null/outputs/selection_null_summary_{derangement,labelshuffle}.json`, `sigma_null_draws_*.csv`, `sigma_perms_*.npy` |
+
+The wrapper imports the published pipeline and only re-selects its inputs. It is deterministic:
+re-run against this tree it returns both draw CSVs and both sigma arrays byte-identical, and both
+summary JSONs identical apart from `runtime_sec`. See `analysis/selection_null/README.md`.
+
 ## Known gaps
 
 - The three current-figure producers `docs/submission/plosone/figures/build_main_figures.py`, `docs/submission/plosone/figures/build_fig2c_bg.py`, and `analysis/conserved_contribution/make_figure7.py` are not invoked by `reproduce/run_all.sh`; the deposited main figures are assembled outside the full-reproduction pipeline.

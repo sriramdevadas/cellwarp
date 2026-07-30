@@ -301,6 +301,27 @@ Status legend:
 | cross-protocol C Spearman (10x vs Smart-seq2) | 0.59 | (donor-stability run) | `donor_stability/donor_stability_results.json` | `cross_protocol.spearman_C10x_vs_CSS` |  | validate.py (Conserved-contribution: cross-protocol C Spearman) |
 | fresh-pull obs/null (Census re-acquisition) | 0.521 | (donor-stability run) | `donor_stability/donor_stability_results.json` | `validity.obs_null_full` |  | validate.py (Conserved-contribution: fresh-pull obs/null) |
 
+#### Selection/derangement circularity control (→ S1 Text §10)
+
+Tests whether selecting genes on the conservation score C manufactures the conserved-gene
+geometry. The wrapper imports the published pipeline unmodified and only re-selects its inputs;
+per draw it deranges the 35 mouse centroid rows, recomputes C, re-selects the top quartile, and
+re-runs the obs/null. Pre-registered PASS conditions are stated in the script and echoed into
+each summary under `preregistered_criteria_SURFACED_not_declared`.
+
+| Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
+|---|---|---|---|---|---|---|
+| real conserved obs/null (reproduced from scratch) | 0.384 | `analysis/selection_null/selection_null.py` | `analysis/selection_null/outputs/selection_null_summary_derangement.json` | `real.conserved_obs_null` | `selection_null.obs_null_ratio` | mapped |
+| full-space obs/null (reproduced from scratch) | 0.522 | same | same | `real.full_space_obs_null` | same | mapped |
+| derangement sigma-null mean ± sd | 0.991 ± 0.021 | same | same | `sigma_null.mean`, `sigma_null.sd` | `selection_null.make_draws` (mode=derangement) | mapped |
+| derangement sigma-null 1st percentile | 0.927 | same | same | `sigma_null.p01` |  | mapped |
+| derangement z, draws ≤ real | −29.5, 0 of 1000 | same | same | `real_position.z`, `n_draws_at_or_below_real` |  | mapped |
+| label-shuffle sigma-null mean ± sd | 0.983 ± 0.024 | same | `selection_null_summary_labelshuffle.json` | `sigma_null.mean`, `sigma_null.sd` | `make_draws` (mode=labelshuffle) | mapped |
+| label-shuffle z, draws ≤ real | −25.3, 0 of 1000 | same | same | `real_position.z`, `n_draws_at_or_below_real` |  | mapped |
+| conserved quartile size (every draw) | 3,985 of 15,940 valid | same | both summaries | `substrate.n_conserved_quartile`, `sigma_null.n_conserved_per_draw` |  | mapped |
+| Q75 of C collapses under derangement | 0.59 → 0.08 | same | `sigma_null_draws_derangement.csv` | `substrate.Q75_real`; per-draw `q75` column |  | mapped |
+| both pre-registered PASS conditions met | true, both modes | same | both summaries | `preregistered_criteria_SURFACED_not_declared.real_below_1st_percentile`, `.z_le_minus3` |  | mapped |
+
 ### Two-layer decomposition: centroid position and within-type covariance -- Results §2 (Fig 2)
 
 

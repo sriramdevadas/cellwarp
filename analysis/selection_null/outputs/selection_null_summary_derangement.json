@@ -1,0 +1,50 @@
+{
+  "design": "correspondence-permutation, selection-propagated (pre-registered 2026-06-28)",
+  "mode": "derangement",
+  "n_draws": 1000,
+  "n_perm_inner": 2000,
+  "seed_sigma": 12345,
+  "seed_inner_pipeline": 42,
+  "substrate": {
+    "types": 35,
+    "genes_total": 16959,
+    "valid_C": 15940,
+    "n_conserved_quartile": 3985,
+    "Q75_real": 0.5918600112339997
+  },
+  "real": {
+    "conserved_obs_null": 0.3843485462268774,
+    "full_space_obs_null": 0.5219499995549418,
+    "published_conserved": 0.384,
+    "published_full_space": 0.522,
+    "conserved_distance": 32.42468284570172,
+    "conserved_null_median": 84.3627045399613
+  },
+  "sigma_null": {
+    "mean": 0.990721972931545,
+    "sd": 0.02056337128953058,
+    "p01": 0.9273471402972179,
+    "p05": 0.957187311280511,
+    "median": 0.9930714073828915,
+    "min": 0.8848180743822153,
+    "max": 1.0416801789010126,
+    "n_conserved_per_draw": {
+      "min": 3985,
+      "max": 3985
+    }
+  },
+  "real_position": {
+    "z": -29.488035700322648,
+    "empirical_percentile": 0.0,
+    "n_draws_at_or_below_real": 0
+  },
+  "preregistered_criteria_SURFACED_not_declared": {
+    "PASS_if": "real conserved obs/null < sigma-null 1st percentile (equivalently z <= -3)",
+    "FAIL_if": "real falls within / near the sigma-null distribution",
+    "real_below_1st_percentile": true,
+    "z_le_minus3": true,
+    "diagnostic_sigma_null_center_vs_full_space_0p522": 0.46877197337660315,
+    "note": "Engineer surfaces; advisor adjudicates the margin. No verdict declared here."
+  },
+  "runtime_sec": 52.2
+}
