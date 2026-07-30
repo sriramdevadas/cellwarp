@@ -69,7 +69,7 @@ The pin is two-sided, so a **newer** Python fails too, with a different message:
 
 **Requirements:** Python 3.12 (`>=3.12,<3.13`), ~6 GB disk (core), internet for initial data download.
 
-The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission manuscript text (`docs/submission/plosone/manuscript_combined.txt`) is pinned by `reproduce/MANUSCRIPT_MD5` (verify with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4).
+The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission text is pinned by `reproduce/MANUSCRIPT_MD5`: the manuscript (`docs/submission/plosone/manuscript_combined.txt`) and both supporting-information texts (`S1_Text.txt`, `S2_Text.txt`), verified with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4.
 
 ## Reproduce in Docker
 
@@ -84,7 +84,7 @@ docker run  --rm cellwarp         # re-runs the 4 gates + the no-download fast-p
 
 The image targets `linux/amd64` (deadsnakes ships Python 3.12 for Ubuntu 22.04 on amd64 only, so the platform is pinned for a reproducible build). On x86-64 hosts it builds natively; on Apple Silicon / ARM it builds under emulation automatically (no extra flags); `docker build`/`docker run` work exactly as written. The gates are arch-robust (md5 and packet checks are arch-independent; numeric checks carry tolerance).
 
-**Scope:** the image reproduces the four gates (`reproduce/validate.py`, `pytest`, `build_submission_packet.py --verify`, `md5sum -c reproduce/MANUSCRIPT_MD5`) and the no-download fast-path (`obs/null ≈ 0.522` from deposited centroids). The **full paper reproduction**, which runs all analyses plus the external CELLxGENE Census atlas download via `reproduce/run_all.sh` (see [DATA_SOURCES.md](DATA_SOURCES.md)), is the native-host path only (see [Reproducing the Paper](#reproducing-the-paper)); there is no full-pipeline Docker route.
+**Scope:** the image reproduces the four gates (`reproduce/validate.py`, `pytest`, `build_submission_packet.py --verify`, `md5sum -c reproduce/MANUSCRIPT_MD5` over the manuscript and both SI texts) and the no-download fast-path (`obs/null ≈ 0.522` from deposited centroids). The **full paper reproduction**, which runs all analyses plus the external CELLxGENE Census atlas download via `reproduce/run_all.sh` (see [DATA_SOURCES.md](DATA_SOURCES.md)), is the native-host path only (see [Reproducing the Paper](#reproducing-the-paper)); there is no full-pipeline Docker route.
 
 See [reproduce/README.md](reproduce/README.md) for detailed instructions.
 

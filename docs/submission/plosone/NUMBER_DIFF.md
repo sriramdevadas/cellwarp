@@ -7,7 +7,8 @@ records (A) the `[VERIFY]` values confirmed against code, (B) numbers newly adde
 in this draft (the basal-ganglia three-pair replication, Fig 2), (C) numbers
 **corrected or flagged** where the frozen draft disagreed with the code, and (D)
 presentational renumbering. The `MANUSCRIPT_MD5` gate pins
-`docs/submission/plosone/manuscript_combined.txt` (independent of this number check).
+`docs/submission/plosone/manuscript_combined.txt` and both supporting-information texts,
+`S1_Text.txt` and `S2_Text.txt` (independent of this number check).
 
 Rounding note: several abstract/Results values are intentionally reported to
 2 significant figures (0.522→"0.52", 0.668→"0.67", 0.346→"0.35"). That rounding
