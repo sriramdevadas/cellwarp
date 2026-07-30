@@ -41,7 +41,7 @@ This is the full reproduction (every analysis plus the CELLxGENE Census atlas do
 
 ### Setup (requires Python 3.12)
 
-This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04 (3.10) and macOS (system Python) is too old, and the install **will fail** against it. Get 3.12 first if needed, then create the venv with 3.12 and install, kept as one contiguous block so the `pip install` line never runs against the wrong interpreter:
+This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04 (3.10) and macOS (system Python) is too old, and a current Homebrew default (3.14) is too new; the install **will fail** against either. Get 3.12 first if needed, then create the venv with 3.12 and install, kept as one contiguous block so the `pip install` line never runs against the wrong interpreter:
 
 ```bash
 git clone https://github.com/sriramdevadas/cellwarp.git

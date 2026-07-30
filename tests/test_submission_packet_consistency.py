@@ -26,7 +26,16 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # Each entry: packet_relpath -> canonical_relpath
 # Canonical is the source of truth; packet is a copy that must match.
-# Keep in sync with scripts/build_submission_packet.py MATERIALIZATION_RULES.
+# NOT in sync with scripts/build_submission_packet.py MATERIALIZATION_RULES, and
+# deliberately not resynchronised. That manifest holds 30 (canonical, mirror)
+# pairs; this map holds 26. The four omitted are its Group E rules:
+#   Figure_S5.pdf                     <- figures/submission/supplementary/figS5_markernull.pdf
+#   Table_S9.csv                      <- docs/supplementary_materials/table_S9_genestd_standardization.csv
+#   Table_S9_schemeB_CPC1_markers.csv <- docs/supplementary_materials/table_S9_schemeB_CPC1_markers.csv
+#   Table_S10.csv                     <- docs/supplementary_materials/table_S10_markernull.csv
+# This map is a strict subset: nothing here contradicts the manifest. The packet
+# pins the superseded 7-figure layout and is retained, not maintained, so the
+# stricter check is build_submission_packet.py --verify, which covers all 30.
 PACKET_CANONICAL_MAP = {
     "docs/submission/figures_for_review/Figure_1.pdf":
         "figures/main/fig1_global_coherence.pdf",

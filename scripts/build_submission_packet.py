@@ -27,7 +27,15 @@ Manifest: 30 rules covering 30 pairs.
 Idempotency: rerunning produces no diff after a clean run.
 
 Consistency test: tests/test_submission_packet_consistency.py parametrizes
-over the same manifest; this script and that test must stay in sync.
+over the same manifest. The two lists are NOT in sync and are not being
+resynchronised: this manifest holds 30 (canonical, mirror) pairs, the test's
+PACKET_CANONICAL_MAP holds 26. The four the test does not cover are exactly
+the Group E rules below (Figure_S5.pdf, Table_S9.csv,
+Table_S9_schemeB_CPC1_markers.csv, Table_S10.csv). Nothing in the test
+contradicts this manifest; it is a strict subset, so --verify is the stricter
+check and covers all 30. The packet itself pins the superseded 7-figure
+layout (Figure_1..7, Table_S8) and is retained deliberately, not maintained
+against the current display items.
 
 CLI:
     python scripts/build_submission_packet.py            # default --verify
@@ -51,7 +59,8 @@ PROJECT = Path(__file__).resolve().parent.parent
 
 
 # Manifest: list of (canonical_relpath, [mirror_relpath, ...]).
-# Keep in sync with tests/test_submission_packet_consistency.py.
+# NOT in sync with tests/test_submission_packet_consistency.py: the test covers
+# 26 of these 30 pairs, omitting the four Group E rules. See the module docstring.
 MATERIALIZATION_RULES: List[dict] = [
     # ─── Group A: Main figures ───
     {"canonical": "figures/main/fig1_global_coherence.pdf",

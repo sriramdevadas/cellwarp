@@ -1,6 +1,7 @@
 """
 Test that data/replication/tabula_microcebus_metadata.csv stays in sync
-with manuscript L424 (the Tabula Microcebus KRT row) and with the
+with the Tabula Microcebus deposit anchors in the manuscript's Data
+and code availability statement, and with the
 analysis/mouse_lemur/feasibility_check.md artifact.
 
 The manuscript is the canonical source-of-truth for deposit anchors
@@ -108,8 +109,9 @@ def test_species_is_microcebus_murinus() -> None:
 
 def test_source_is_cellxgene_discover() -> None:
     """
-    Per manuscript L413, Tabula Microcebus is accessed via CELLxGENE
-    Discover (not Census). source column must reflect this.
+    Per the manuscript's primary-datasets paragraph, Tabula Microcebus is
+    accessed via CELLxGENE Discover (not Census). source column must reflect
+    this.
     """
     df = pd.read_csv(MANIFEST)
     assert df.iloc[0]["source"] == "CELLxGENE Discover", (
@@ -119,7 +121,8 @@ def test_source_is_cellxgene_discover() -> None:
 
 def test_assay_filter_matches_manuscript() -> None:
     """
-    Per manuscript L389-390, the analysis filtered to 10x 3' v2.
+    Per the manuscript's mouse-lemur Methods paragraph, the analysis
+    filtered to 10x 3' v2.
     The manifest's analysis_assay_filter must match what the
     manuscript says was used.
     """

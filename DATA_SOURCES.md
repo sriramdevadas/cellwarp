@@ -11,13 +11,13 @@ GSA mirror: CRA007207
 Format: .tar.gz Cell Ranger filtered matrices
 Protocol: 10x Chromium 3' v3, 8 young (YC) tissues
 Required path: data/replication/sun2023/<tissue>/filtered_feature_bc_matrix/
-Used by: scripts/02_replication_sun2023.py
+Used by: scripts/16_sun2023_replication.py
 
 ## data/replication/pansci/ (13GB)
 Source: GEO GSE247719 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE247719)
 Format: h5ad
 Required path: data/replication/pansci/pansci.h5ad
-Used by: scripts/05_replication_pansci.py
+Used by: scripts/pansci_replication.py
 
 ## data/mouse_lemur/
 
