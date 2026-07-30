@@ -297,6 +297,63 @@ CHECKS = [
         "paper_ref": "Results section 5, Figure 5A (dip D = 0.007, p = 2.8e-5)",
     },
 
+    # ── S1 Text §10: selection/derangement circularity control ──
+    # Gates the two pre-registered PASS conditions by their numeric backing, since the
+    # conditions themselves are stored as booleans: condition 1 is "real below the
+    # sigma-null 1st percentile" (the real value 0.384 is already gated above from
+    # gate_results.json; the threshold is gated here), condition 2 is "z <= -3".
+    # Tolerances are set to catch a broken control, not to pin this host: a control that
+    # stopped destroying the correspondence would collapse the sigma-null from ~0.99
+    # toward the full-space 0.52, which is ~47x the 0.01 band used here.
+    {
+        "name": "Selection null: derangement sigma-null mean",
+        "file": "analysis/selection_null/outputs/selection_null_summary_derangement.json",
+        "key": "sigma_null.mean",
+        "expected": 0.991,
+        "tolerance": 0.01,
+        "paper_ref": "S1 Text §10 (derangement sigma-null 0.991 ± 0.021)",
+    },
+    {
+        "name": "Selection null: derangement sigma-null 1st percentile",
+        "file": "analysis/selection_null/outputs/selection_null_summary_derangement.json",
+        "key": "sigma_null.p01",
+        "expected": 0.927,
+        "tolerance": 0.01,
+        "paper_ref": "S1 Text §10 (pre-registered PASS condition 1: real below the 1st percentile)",
+    },
+    {
+        "name": "Selection null: derangement z (real vs sigma-null)",
+        "file": "analysis/selection_null/outputs/selection_null_summary_derangement.json",
+        "key": "real_position.z",
+        "expected": -29.5,
+        "tolerance": 0.5,
+        "paper_ref": "S1 Text §10 (pre-registered PASS condition 2: z <= -3; reported z = -29.5)",
+    },
+    {
+        "name": "Selection null: derangement draws at or below real",
+        "file": "analysis/selection_null/outputs/selection_null_summary_derangement.json",
+        "key": "real_position.n_draws_at_or_below_real",
+        "expected": 0,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §10 (0 of 1,000 draws at or below the real value)",
+    },
+    {
+        "name": "Selection null: label-shuffle sigma-null mean",
+        "file": "analysis/selection_null/outputs/selection_null_summary_labelshuffle.json",
+        "key": "sigma_null.mean",
+        "expected": 0.983,
+        "tolerance": 0.01,
+        "paper_ref": "S1 Text §10 (label-shuffle cross-check sigma-null 0.983 ± 0.024)",
+    },
+    {
+        "name": "Selection null: label-shuffle z (real vs sigma-null)",
+        "file": "analysis/selection_null/outputs/selection_null_summary_labelshuffle.json",
+        "key": "real_position.z",
+        "expected": -25.3,
+        "tolerance": 0.5,
+        "paper_ref": "S1 Text §10 (label-shuffle cross-check z = -25.3)",
+    },
+
     # ── Fig 2C: basal-ganglia two-layer replication, self-consistency (current paper) ──
     # Structural checks over the vendored BG results; no manuscript values transcribed.
     # (The conserved-contribution checks above are Fig 5C, not this; "Figure 2C" here is the current basal-ganglia panel.)

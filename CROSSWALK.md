@@ -24,8 +24,8 @@ Three sections:
 Quick-look statistics about this CROSSWALK (re-derived from the current sections):
 - Methods subsections covered: 9
 - Figure / table display items covered: 5 main figures + 5 supporting figures + 11 supplementary tables (35 panel/table rows in Section 2: 15 main-figure panel rows, 9 supplementary-figure panel rows, 11 tables)
-- Numerical claims indexed: 279
-- Status breakdown: validate.py 33, mapped 226, computed 9, anchor 6, intermediate 5
+- Numerical claims indexed: 291
+- Status breakdown: validate.py 39, mapped 232, computed 9, anchor 6, intermediate 5
 
 Verification. `reproduce/validate.py` programmatically asserts its checks
 against their persisted output files; most correspond to claim rows in Section
@@ -307,20 +307,26 @@ Tests whether selecting genes on the conservation score C manufactures the conse
 geometry. The wrapper imports the published pipeline unmodified and only re-selects its inputs;
 per draw it deranges the 35 mouse centroid rows, recomputes C, re-selects the top quartile, and
 re-runs the obs/null. Pre-registered PASS conditions are stated in the script and echoed into
-each summary under `preregistered_criteria_SURFACED_not_declared`.
+each summary under `preregistered_criteria_SURFACED_not_declared`. Six of the values below are
+gated by `reproduce/validate.py`, which reads the deposited summaries. The conditions themselves
+are stored as booleans and the harness compares numbers, so what is gated is their numeric
+backing: the 1st percentile that condition 1 compares against (the real 0.384 it compares is
+already gated from `gate_results.json`, above), and the z that condition 2 bounds.
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
-| real conserved obs/null (reproduced from scratch) | 0.384 | `analysis/selection_null/selection_null.py` | `analysis/selection_null/outputs/selection_null_summary_derangement.json` | `real.conserved_obs_null` | `selection_null.obs_null_ratio` | mapped |
+| real conserved obs/null (reproduced from scratch) | 0.384 | `analysis/selection_null/selection_null.py` | `analysis/selection_null/outputs/selection_null_summary_derangement.json` | `real.conserved_obs_null` | `selection_null.obs_null_ratio` | mapped (same quantity gated from `gate_results.json`) |
 | full-space obs/null (reproduced from scratch) | 0.522 | same | same | `real.full_space_obs_null` | same | mapped |
-| derangement sigma-null mean ± sd | 0.991 ± 0.021 | same | same | `sigma_null.mean`, `sigma_null.sd` | `selection_null.make_draws` (mode=derangement) | mapped |
-| derangement sigma-null 1st percentile | 0.927 | same | same | `sigma_null.p01` |  | mapped |
-| derangement z, draws ≤ real | −29.5, 0 of 1000 | same | same | `real_position.z`, `n_draws_at_or_below_real` |  | mapped |
-| label-shuffle sigma-null mean ± sd | 0.983 ± 0.024 | same | `selection_null_summary_labelshuffle.json` | `sigma_null.mean`, `sigma_null.sd` | `make_draws` (mode=labelshuffle) | mapped |
-| label-shuffle z, draws ≤ real | −25.3, 0 of 1000 | same | same | `real_position.z`, `n_draws_at_or_below_real` |  | mapped |
+| derangement sigma-null mean (± sd) | 0.991 ± 0.021 | same | same | `sigma_null.mean`, `sigma_null.sd` | `selection_null.make_draws` (mode=derangement) | validate.py (Selection null: derangement sigma-null mean) |
+| derangement sigma-null 1st percentile | 0.927 | same | same | `sigma_null.p01` |  | validate.py (Selection null: derangement sigma-null 1st percentile) |
+| derangement z | −29.5 | same | same | `real_position.z` |  | validate.py (Selection null: derangement z (real vs sigma-null)) |
+| derangement draws at or below real | 0 of 1000 | same | same | `real_position.n_draws_at_or_below_real` |  | validate.py (Selection null: derangement draws at or below real) |
+| label-shuffle sigma-null mean (± sd) | 0.983 ± 0.024 | same | `selection_null_summary_labelshuffle.json` | `sigma_null.mean`, `sigma_null.sd` | `make_draws` (mode=labelshuffle) | validate.py (Selection null: label-shuffle sigma-null mean) |
+| label-shuffle z | −25.3 | same | same | `real_position.z` |  | validate.py (Selection null: label-shuffle z (real vs sigma-null)) |
+| label-shuffle draws at or below real | 0 of 1000 | same | same | `real_position.n_draws_at_or_below_real` |  | mapped |
 | conserved quartile size (every draw) | 3,985 of 15,940 valid | same | both summaries | `substrate.n_conserved_quartile`, `sigma_null.n_conserved_per_draw` |  | mapped |
-| Q75 of C collapses under derangement | 0.59 → 0.08 | same | `sigma_null_draws_derangement.csv` | `substrate.Q75_real`; per-draw `q75` column |  | mapped |
-| both pre-registered PASS conditions met | true, both modes | same | both summaries | `preregistered_criteria_SURFACED_not_declared.real_below_1st_percentile`, `.z_le_minus3` |  | mapped |
+| Q75 of C collapses under derangement | 0.59 → 0.08 | same | `sigma_null_draws_derangement.csv` | `substrate.Q75_real`; per-draw `q75` column |  | mapped (collapsed value is CSV-only; see Known gaps) |
+| both pre-registered PASS conditions met | true, both modes | same | both summaries | `preregistered_criteria_SURFACED_not_declared.real_below_1st_percentile`, `.z_le_minus3` |  | mapped (numeric backing gated above) |
 
 ### Two-layer decomposition: centroid position and within-type covariance -- Results §2 (Fig 2)
 

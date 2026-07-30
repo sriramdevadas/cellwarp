@@ -131,6 +131,13 @@ The wrapper imports the published pipeline and only re-selects its inputs. It is
 re-run against this tree it returns both draw CSVs and both sigma arrays byte-identical, and both
 summary JSONs identical apart from `runtime_sec`. See `analysis/selection_null/README.md`.
 
+`reproduce/validate.py` gates six of these values by reading the two deposited summaries: both
+sigma-null means, the derangement 1st percentile, both z values, and the derangement count of
+draws at or below the real value. The two pre-registered conditions are stored as booleans while
+the harness compares numbers, so what is checked is the numeric backing of each: the threshold
+condition 1 compares against, and the z condition 2 bounds. The real 0.384 that condition 1
+compares is already gated from `gate_results.json`.
+
 ## Known gaps
 
 - The three current-figure producers `docs/submission/plosone/figures/build_main_figures.py`, `docs/submission/plosone/figures/build_fig2c_bg.py`, and `analysis/conserved_contribution/make_figure7.py` are not invoked by `reproduce/run_all.sh`; the deposited main figures are assembled outside the full-reproduction pipeline.
@@ -141,3 +148,4 @@ summary JSONs identical apart from `runtime_sec`. See `analysis/selection_null/R
 - The canonical `table_S7_layer1_housekeeping_exclusion.csv` has no scripted writer (the analysis script writes only the per-variant ranking CSVs in its own directory); `table_S12_software_environment.csv` is hand-authored, its authoritative source being `requirements.txt`.
 - `analysis/sensitivity_analyses/markernull.py` writes its figure to `docs/supplementary_materials/figure_S8_markernull.{pdf,png}` (old stem and directory), not to the deposited `figures/submission/supplementary/figS5_markernull.pdf`.
 - `scripts/build_submission_packet.py` and `tests/` still pin the old 7-figure packet (Figure_1..7, Table_S8), which does not correspond to the current display items.
+- `reproduce/validate.py` has a `.csv` branch in `load_value`, but it hands `{"df": DataFrame}` to `_resolve_key`, which can only navigate dicts and lists; any key raises. No check uses it, so it is unreachable code. This is why the S1 Text §10 mechanism figure (Q75 of C collapsing to ~0.078 under derangement) is not gated: that value lives only in the per-draw CSV, while the deposited summaries carry the real Q75 alone.
