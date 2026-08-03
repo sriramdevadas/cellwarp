@@ -447,6 +447,61 @@ CHECKS = [
         "tolerance": 0,
         "paper_ref": "Results section 2, Figure 2C (5/52)",
     },
+
+    # ── Simulation study: rank-recovery ceiling (Fig 4C, Methods) ──
+    # The deposited RECOVERY_SIGNALS grid does not contain the calibrated signal,
+    # so the grid values and the calibrated-signal value are gated separately.
+    # Both are deterministic, hence the tight tolerances.
+    {
+        "name": "Simulation: calibrated signal strength",
+        "file": "analysis/simulation_study/simulation_results.json",
+        "key": "calibration.estimated_real_signal",
+        "expected": 3.683,
+        "tolerance": 0.001,
+        "paper_ref": "Methods, Simulation study (calibrated signal ~ 3.68)",
+    },
+    {
+        "name": "Simulation: grid median recovery rho, signal 3.0, 200 cells",
+        "file": "analysis/simulation_study/simulation_results.json",
+        "key": "ranking_recovery.17.median_rho",
+        "expected": 0.4224,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 4C (plotted curve, signal 3.0); Methods, Simulation study",
+    },
+    {
+        "name": "Simulation: grid median recovery rho, signal 5.0, 200 cells",
+        "file": "analysis/simulation_study/simulation_results.json",
+        "key": "ranking_recovery.21.median_rho",
+        "expected": 0.4293,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 4C (plotted curve, signal 5.0); Methods, Simulation study",
+    },
+    {
+        "name": "Simulation sweep: median recovery rho at the calibrated signal, 200 cells",
+        "file": "analysis/simulation_study/sweep_spread_results.json",
+        "key": "sweep.3.recovery.1.median_rho",
+        "expected": 0.4494,
+        "tolerance": 0.001,
+        "paper_ref": "Results section 8 and Methods, Simulation study: rank-recovery "
+                     "ceiling at the calibrated signal (deposited spread, sigma = 1.0)",
+    },
+    {
+        "name": "Simulation sweep: spread-range upper endpoint (25x spread, 200 cells)",
+        "file": "analysis/simulation_study/sweep_spread_results.json",
+        "key": "sweep.2.recovery.1.median_rho",
+        "expected": 0.4955,
+        "tolerance": 0.001,
+        "paper_ref": "Results section 8 and Methods, Simulation study: upper endpoint of the "
+                     "planted-spread ceiling range (lower endpoint is the calibrated-signal check above)",
+    },
+    {
+        "name": "Simulation sweep: zero-spread negative control near zero",
+        "file": "analysis/simulation_study/sweep_spread_results.json",
+        "key": "sweep.0.recovery.1.median_rho",
+        "expected_below": 0.05,
+        "paper_ref": "No manuscript value; guards the recovery metric. With no planted "
+                     "divergence there is no ranking to recover (observed 0.0059)",
+    },
 ]
 
 

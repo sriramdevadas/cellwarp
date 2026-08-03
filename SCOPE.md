@@ -163,7 +163,7 @@ are scoped out here rather than in the manuscript body.
 |---|---|---|
 | `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 5, §2, §5, Table S11) |
 | `independent_pca_sensitivity/` | PAPER | Independent-PCA sensitivity (Fig S1A–B) |
-| `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2) |
+| `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2). Includes `sweep_spread.py`, which evaluates rank recovery at the calibrated signal — absent from the deposited `RECOVERY_SIGNALS` grid — and sweeps the planted spread with re-calibration at each point; gated by `reproduce/validate.py` |
 | `bootstrap_rankings/` | PAPER | Bootstrap ranking CIs (Fig S3, Table S2) |
 | `permutation_1M/` | PAPER | 1M headline null (Fig 1B) |
 | `mantel_test/` | PAPER | Mantel test |

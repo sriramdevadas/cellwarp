@@ -120,12 +120,13 @@ edited in place by the materializer
 
 ## Supporting-information controls with no display item
 
-S1 Text §10 reports a control that produces neither a figure nor a table, so it has no row
-above; its numbers are quoted in the text alone.
+Two analyses produce neither a figure nor a table, so they have no row above; their numbers are
+quoted in the text alone.
 
 | Item | Content | Producing script | Depends on |
 |---|---|---|---|
 | S1 Text §10 | Selection/derangement circularity control: real conserved obs/null 0.384 against a derangement sigma-null 0.991 +- 0.021 (z = -29.5) and a label-shuffle cross-check 0.983 +- 0.024 (z = -25.3), N = 1,000 draws each | `analysis/selection_null/selection_null.py` (baseline lock: `repro_baseline.py`) | `output/phase2/scaled_35types/centroids_{human,mouse}_35.csv` via `analysis/conserved_contribution/gate_lib.py`; unmodified `src/cellwarp/procrustes.py` -> `analysis/selection_null/outputs/selection_null_summary_{derangement,labelshuffle}.json`, `sigma_null_draws_*.csv`, `sigma_perms_*.npy` |
+| Results §8, Methods (Simulation study) | Planted-spread sweep: rank-recovery ceiling at the calibrated signal 3.683416443528231 (median rho 0.4494 at 200 cells, deposited spread sigma = 1.0), and the ceiling across a swept planted spread (0.4494 at the deposited ~65x spread up to 0.4955 at 25x), each spread point re-calibrated so obs/null stays at 0.522; zero-spread negative control 0.0059 | `analysis/simulation_study/sweep_spread.py` | `analysis/simulation_study/simulation_study.py`, exec'd unmodified for `run_single()` and `calibrate()` (its `main()` is `__name__`-guarded) -> `analysis/simulation_study/sweep_spread_results.json` |
 
 The wrapper imports the published pipeline and only re-selects its inputs. It is deterministic:
 re-run against this tree it returns both draw CSVs and both sigma arrays byte-identical, and both
@@ -137,6 +138,20 @@ draws at or below the real value. The two pre-registered conditions are stored a
 the harness compares numbers, so what is checked is the numeric backing of each: the threshold
 condition 1 compares against, and the z condition 2 bounds. The real 0.384 that condition 1
 compares is already gated from `gate_results.json`.
+
+The spread sweep exists because the deposited `RECOVERY_SIGNALS` grid does not contain the
+calibrated signal: `simulation_study.py` calibrates to 3.683416443528231, records it rounded as
+`calibration.estimated_real_signal` and runs the stability experiment there, but evaluates
+ranking recovery only at 3.0 and 5.0. The sweep seeds identically to that grid
+(`rep + 30_000 + n_cells * 100`), so its draws are paired with it rather than independent. It is
+deterministic: re-run from the repository it reproduces the earlier run on all 246 leaf values,
+differing only in the wall-clock `sec` fields, which are kept as a record. Wall time about 480 s.
+
+`reproduce/validate.py` gates six simulation values: the calibrated signal and the two grid
+medians Fig 4C plots, from `simulation_results.json`; and from `sweep_spread_results.json` the
+calibrated-signal median, the upper endpoint of the swept-spread range, and the zero-spread
+negative control, which must stay near zero and would catch a change that broke the recovery
+metric.
 
 ## Known gaps
 
