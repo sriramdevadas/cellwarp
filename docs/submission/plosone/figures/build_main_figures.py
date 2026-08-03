@@ -112,14 +112,24 @@ b.text(0.96,0.95,f"Spearman ρ = {rho:.2f}\n(n = {len(mg)})",transform=b.transAx
 b.set_xlabel("within-atlas 95% CI width",fontsize=7.5); b.set_ylabel("cross-atlas mean rank shift",fontsize=7.5)
 b.tick_params(labelsize=7,length=2.5); b.spines[["top","right"]].set_visible(False)
 b.set_title("Precision vs reproducibility",fontsize=8); letter(b,"B")
-# 4C recovery ceiling
+# 4C recovery ceiling. The deposited grid does not evaluate at the calibrated
+# signal, so the calibrated curve and the ceiling line come from the sweep, and
+# every number below is read from an artifact rather than written in here.
 rr=json.load(open(ROOT/"analysis/simulation_study/simulation_results.json"))["ranking_recovery"]
+sw=json.load(open(ROOT/"analysis/simulation_study/sweep_spread_results.json"))["sweep"]
+cal=[s for s in sw if s["sigma"]==1.0][0]          # the deposited planted spread
+cal_sig=cal["calibrated_signal"]
+ceiling=[r for r in cal["recovery"] if r["n_cells"]==200][0]["median_rho"]
 c=fig.add_subplot(gs[0,2])
-for sig,col,lab in [(3.0,BLUE,"signal ≈ data (3.0)"),(5.0,"#9bb8d3","signal 5.0")]:
+for sig,col,lab in [(3.0,"#9bb8d3","signal 3.0"),(5.0,GREY,"signal 5.0")]:
     pts=sorted((r["n_cells_per_type"],r["median_rho"]) for r in rr if r["signal_strength"]==sig)
     xs=[p[0] for p in pts]; ys=[p[1] for p in pts]
     c.plot(xs,ys,"o-",color=col,ms=4,lw=1.2,label=lab)
-c.axhline(0.42,color=RED,lw=1,ls=":"); c.text(2000,0.435,"ceiling ρ ≈ 0.42",color=RED,ha="right",fontsize=6.6)
+pts=sorted((r["n_cells"],r["median_rho"]) for r in cal["recovery"])
+c.plot([p[0] for p in pts],[p[1] for p in pts],"o-",color=BLUE,ms=4,lw=1.4,
+       label=f"calibrated signal {cal_sig:.2f}",zorder=3)
+c.axhline(ceiling,color=RED,lw=1,ls=":")
+c.text(2000,ceiling+0.015,f"ceiling ρ ≈ {ceiling:.2f}",color=RED,ha="right",fontsize=6.6)
 c.set_xscale("log"); c.set_xticks([50,200,500,2000]); c.set_xticklabels([50,200,500,2000])
 c.set_ylim(0,0.75); c.set_xlabel("cells sampled per type",fontsize=7.5); c.set_ylabel("recovery ρ (true vs estimated)",fontsize=7.5)
 c.legend(fontsize=6.2,frameon=False,loc="upper left"); c.tick_params(labelsize=7,length=2.5)
