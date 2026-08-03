@@ -677,6 +677,276 @@ CHECKS = [
         "tolerance": 0.001,
         "paper_ref": "S1 Text §2 (p = 0.44). See the note on the preceding check",
     },
+
+    # ── Layer 2: aggregate Krzanowski S, observed (Results §2, Fig 2B, Methods) ──
+    # These six are the panel's own numbers and the paper's second headline result.
+    # Nothing read them before this group: validate.py opened summary_stats.json
+    # only for eigenval_vs_rigidity, and never opened permutation_results.json.
+    {
+        "name": "Layer 2 (35 types): observed S pre-rotation, k=1",
+        "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+        "key": "35type.mean_alignment.k=1.pre",
+        "expected": 0.1291,
+        "tolerance": 0.001,
+        "paper_ref": "Methods, two-layer decomposition (0.129 before rotation at k = 1); Fig 2B",
+    },
+    {
+        "name": "Layer 2 (35 types): observed S post-rotation, k=1",
+        "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+        "key": "35type.mean_alignment.k=1.post",
+        "expected": 0.0256,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2 and Methods (0.026 after rotation at k = 1); Fig 2B",
+    },
+    {
+        "name": "Layer 2 (35 types): observed S pre-rotation, k=3",
+        "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+        "key": "35type.mean_alignment.k=3.pre",
+        "expected": 0.3850,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 2B bar label (0.385)",
+    },
+    {
+        "name": "Layer 2 (35 types): observed S post-rotation, k=3",
+        "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+        "key": "35type.mean_alignment.k=3.post",
+        "expected": 0.1671,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 2B bar label (0.167)",
+    },
+    {
+        "name": "Layer 2 (35 types): observed S pre-rotation, k=5",
+        "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+        "key": "35type.mean_alignment.k=5.pre",
+        "expected": 0.4826,
+        "tolerance": 0.001,
+        "paper_ref": "Abstract, Results §2, Fig 2 caption, Methods (S = 0.483 at k = 5)",
+    },
+    {
+        "name": "Layer 2 (35 types): observed S post-rotation, k=5",
+        "file": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+        "key": "35type.mean_alignment.k=5.post",
+        "expected": 0.2295,
+        "tolerance": 0.001,
+        "paper_ref": "Abstract, Results §2, Fig 2 caption, Methods (S drops to 0.230 at k = 5)",
+    },
+
+    # ── Layer 2: permutation nulls and p-values (Results §2, Fig 2 caption, Methods) ──
+    # The k=1 pair is a two-sided control in the same sense as the marker-null
+    # K=14/K=15 pair: the paper claims Layer 2 is significant at k=3 and k=5 and
+    # NOT at k=1, so one check requires significance and its partner requires the
+    # absence of it. The 0.119246 null is the value that was written into Methods
+    # as 0.115 from memory and corrected in cf089eb5; nothing has gated it until now.
+    {
+        "name": "Layer 2: permutation null mean, pre-rotation k=1",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_pre.k=1.null_mean",
+        "expected": 0.1192,
+        "tolerance": 0.001,
+        "paper_ref": "Methods (0.129 against a null of 0.119 before rotation)",
+    },
+    {
+        "name": "Layer 2: pre-rotation k=1 is NOT significant",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_pre.k=1.p_value",
+        "expected_in_range": [0.05, 1.0],
+        "paper_ref": "Methods (significant at k = 5 and k = 3, but not k = 1). Must FAIL to "
+                     "pass; partner to the k=3 and k=5 floor checks below",
+    },
+    {
+        "name": "Layer 2: pre-rotation k=3 permutation p at the floor",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_pre.k=3.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "Results §2 (the agreement is significant at k = 3 and k = 5)",
+    },
+    {
+        "name": "Layer 2: permutation null mean, pre-rotation k=5",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_pre.k=5.null_mean",
+        "expected": 0.3749,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 2 caption and Methods (S = 0.483 vs null 0.375)",
+    },
+    {
+        "name": "Layer 2: pre-rotation k=5 permutation p at the floor",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_pre.k=5.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "Methods (Layer 2 significant at k = 5, p < 1e-4)",
+    },
+    {
+        "name": "Layer 2: permutation null mean, post-rotation k=1",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_post.k=1.null_mean",
+        "expected": 0.0296,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2 and Methods (0.026 against 0.030 after rotation)",
+    },
+    {
+        "name": "Layer 2: post-rotation k=1 p-value",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_post.k=1.p_value",
+        "expected": 0.7651,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2, Fig 2 caption and Methods (p = 0.77; the post-rotation "
+                     "point estimate falls just below its null)",
+    },
+    {
+        "name": "Layer 2: post-rotation k=3 permutation p at the floor",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_post.k=3.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "Results §2 (significant at k = 3 and k = 5 after rotation)",
+    },
+    {
+        "name": "Layer 2: permutation null mean, post-rotation k=5",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_post.k=5.null_mean",
+        "expected": 0.1801,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2, Fig 2 caption and Methods (well above its null, 0.180)",
+    },
+    {
+        "name": "Layer 2: post-rotation k=5 permutation p at the floor",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "key": "35type.label_shuffle_post.k=5.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "Results §2, Fig 2 caption and Methods (p < 1e-4 after rotation)",
+    },
+    {
+        "name": "Layer 2: ratio to null, pre-rotation k=5",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "compute": "obs_null",
+        "key_distance": "35type.label_shuffle_pre.k=5.observed",
+        "key_null_median": "35type.label_shuffle_pre.k=5.null_mean",
+        "expected": 1.2873,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2 and Fig 2 caption (1.29 before rotation). NOTE the harness "
+                     "field is named key_null_median but the paper's ratio is to the null "
+                     "MEAN, which is what is resolved here. This is the quantity that was "
+                     "written as 1.28 by dividing the rounded display values",
+    },
+    {
+        "name": "Layer 2: ratio to null, post-rotation k=5",
+        "file": "output/mechanistic/ellipsoid_alignment/permutation_results.json",
+        "compute": "obs_null",
+        "key_distance": "35type.label_shuffle_post.k=5.observed",
+        "key_null_median": "35type.label_shuffle_post.k=5.null_mean",
+        "expected": 1.2746,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2 and Fig 2 caption (1.27 after rotation). See the note on "
+                     "the preceding check",
+    },
+
+    # ── Lineage-stratified null (Results §1, Fig 1B/1C, Methods, S1 Text §2) ──
+    {
+        "name": "Lineage-stratified null: obs/null",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "stratified_null.obs_null_ratio",
+        "expected": 0.6683,
+        "tolerance": 0.001,
+        "paper_ref": "Results §1 and Methods (obs/null 0.668); Fig 1C caption (0.67); "
+                     "S1 Text §2; Table 1 T02",
+    },
+    {
+        "name": "Lineage-stratified null: permutation p at the floor",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "stratified_null.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "Results §1, Fig 1C caption, Methods, S1 Text §2 (p < 1e-4)",
+    },
+    {
+        "name": "Lineage-stratified null: how much tighter than the global null",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "distribution_comparison.pct_tighter",
+        "expected": 21.8614,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (the within-lineage null is 21.9 percent tighter than the "
+                     "global null)",
+    },
+    {
+        "name": "Observed human-mouse Procrustes distance",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "observed_procrustes_distance",
+        "expected": 61.1530,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 1B caption (observed distance 61.15) and Methods (observed "
+                     "distance 61.15; nearest null 98.88)",
+    },
+    {
+        "name": "Canonical headline obs/null, full precision (cross-artifact anchor)",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "global_null.obs_null_ratio",
+        "expected": 0.5222043226858066,
+        "tolerance": 1e-9,
+        "paper_ref": "Results §1 (0.52). This file, markernull_results.json's K=1 anchor and "
+                     "the matched-n baselines producer all carry this identical value, so it "
+                     "is the canonical form. t1a_results.json's tabula_35_obs_null is "
+                     "0.5222043484, 2.6e-8 away, and must NOT be used for the 35-type value",
+    },
+
+    # ── Planted-spread description (Methods, Simulation study) ──
+    # Deterministic: measure_range() draws under RandomState(0) over 20,000 draws.
+    {
+        "name": "Simulation: planted spread, median max/min ratio",
+        "file": "analysis/simulation_study/sweep_spread_results.json",
+        "key": "deposited.max_min_median",
+        "expected": 65.0130,
+        "tolerance": 0.001,
+        "paper_ref": "Methods, Simulation study (a 65-fold ratio between the largest and "
+                     "smallest planted divergence)",
+    },
+    {
+        "name": "Simulation: planted spread, median 95th/5th percentile ratio",
+        "file": "analysis/simulation_study/sweep_spread_results.json",
+        "key": "deposited.p95_p5_median",
+        "expected": 20.5899,
+        "tolerance": 0.001,
+        "paper_ref": "Methods, Simulation study (20.6-fold between the 5th and 95th "
+                     "percentiles)",
+    },
+
+    # ── Matched-scale 6-type controls (Results §4, S4 Fig; Table 1 T16/T17) ──
+    # The two arms live in separate files with identical structure. The 35-type
+    # value in t1a_results.json is deliberately not used; see the anchor above.
+    {
+        "name": "Matched-scale: human-mouse 6-type obs/null",
+        "file": "output/phase2/procrustes_results.json",
+        "compute": "obs_null",
+        "key_distance": "procrustes.distance",
+        "key_null_median": "permutation_test.null_distribution_summary.median",
+        "expected": 0.3166,
+        "tolerance": 0.001,
+        "paper_ref": "Results §4 and S4 Fig caption (obs/null = 0.317); Table 1 T17",
+    },
+    {
+        "name": "Matched-scale: human-mouse 6-type permutation p",
+        "file": "output/phase2/procrustes_results.json",
+        "key": "permutation_test.p_value",
+        "expected": 0.0035,
+        "tolerance": 0.001,
+        "paper_ref": "S4 Fig caption (p = 0.0035); Table 1 T17",
+    },
+    {
+        "name": "Matched-scale: human-human 6-type obs/null",
+        "file": "output/phase2/negative_control_v2/negctrl_v2_results.json",
+        "compute": "obs_null",
+        "key_distance": "procrustes.distance",
+        "key_null_median": "permutation_test.null_distribution_summary.median",
+        "expected": 0.6066,
+        "tolerance": 0.001,
+        "paper_ref": "Results §4, S4 Fig caption and S1 Text §9 (obs/null = 0.607); "
+                     "Table 1 T16",
+    },
+    {
+        "name": "Matched-scale: human-human 6-type permutation p",
+        "file": "output/phase2/negative_control_v2/negctrl_v2_results.json",
+        "key": "permutation_test.p_value",
+        "expected": 0.0088,
+        "tolerance": 0.001,
+        "paper_ref": "S4 Fig caption (p = 0.0088); Table 1 T16",
+    },
 ]
 
 
