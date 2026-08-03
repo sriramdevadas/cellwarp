@@ -124,15 +124,15 @@ EXPECTED_CONTENT_LINES = 144
 EXPECTED_CAPTION_BOUNDARIES = 23  # 5 figure + 18 supporting information
 # The 144 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 88171
+EXPECTED_RAW_JOINED_CHARS = 88909
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 88194
-EXPECTED_JOINED_WORDS = 12777
+EXPECTED_JOINED_CHARS = 88932
+EXPECTED_JOINED_WORDS = 12903
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 258
+EXPECTED_ASCII_T = 259
 EXPECTED_REFERENCES = 29
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 18
@@ -173,15 +173,15 @@ LITERAL_EXPECTED = {
     "\u0107": 1,   # LATIN SMALL LETTER C WITH ACUTE
     "\u03a3": 1,   # GREEK CAPITAL LETTER SIGMA
     "\u03b1": 1,   # GREEK SMALL LETTER ALPHA
-    "\u03c1": 40,  # GREEK SMALL LETTER RHO
-    "\u2013": 76,  # EN DASH
+    "\u03c1": 41,  # GREEK SMALL LETTER RHO
+    "\u2013": 74,  # EN DASH
     "\u2014": 1,   # EM DASH
     "\u2016": 2,   # DOUBLE VERTICAL LINE
     "\u2032": 3,   # PRIME
     "\u2192": 8,   # RIGHTWARDS ARROW
     "\u2208": 4,   # ELEMENT OF
     "\u2212": 16,  # MINUS SIGN (59 in the output: 16 literal + 43 substituted)
-    "\u2248": 12,  # ALMOST EQUAL TO
+    "\u2248": 13,  # ALMOST EQUAL TO
     "\u2264": 11,  # LESS-THAN OR EQUAL TO
     "\u2265": 5,   # GREATER-THAN OR EQUAL TO
 }
