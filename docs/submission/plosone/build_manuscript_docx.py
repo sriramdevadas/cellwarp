@@ -124,15 +124,15 @@ EXPECTED_CONTENT_LINES = 144
 EXPECTED_CAPTION_BOUNDARIES = 23  # 5 figure + 18 supporting information
 # The 144 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 77317
+EXPECTED_RAW_JOINED_CHARS = 88167
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 77340
-EXPECTED_JOINED_WORDS = 11063
-# ASCII T in the extracted text of the 121 content paragraphs: 223 in the source
+EXPECTED_JOINED_CHARS = 88190
+EXPECTED_JOINED_WORDS = 12777
+# ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 228
+EXPECTED_ASCII_T = 258
 EXPECTED_REFERENCES = 29
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 18
@@ -157,10 +157,10 @@ SUPERSCRIPT = {
 SUPERSCRIPT_EXPECTED = {
     "\u00b9": 1,
     "\u00b2": 2,
-    "\u2074": 32,
-    "\u2075": 1,
+    "\u2074": 33,
+    "\u2075": 2,
     "\u2076": 9,
-    "\u207b": 41,
+    "\u207b": 43,
     "\u1d40": 5,
 }
 SUPER_MINUS = "\u207b"
@@ -174,26 +174,29 @@ LITERAL_EXPECTED = {
     "\u03a3": 1,   # GREEK CAPITAL LETTER SIGMA
     "\u03b1": 1,   # GREEK SMALL LETTER ALPHA
     "\u03c1": 40,  # GREEK SMALL LETTER RHO
-    "\u2013": 73,  # EN DASH
+    "\u2013": 76,  # EN DASH
     "\u2014": 1,   # EM DASH
     "\u2016": 2,   # DOUBLE VERTICAL LINE
-    "\u2032": 1,   # PRIME
+    "\u2032": 3,   # PRIME
     "\u2192": 8,   # RIGHTWARDS ARROW
     "\u2208": 4,   # ELEMENT OF
-    "\u2212": 15,  # MINUS SIGN (56 in the output: 15 literal + 41 substituted)
-    "\u2248": 15,  # ALMOST EQUAL TO
+    "\u2212": 16,  # MINUS SIGN (59 in the output: 16 literal + 43 substituted)
+    "\u2248": 12,  # ALMOST EQUAL TO
     "\u2264": 11,  # LESS-THAN OR EQUAL TO
     "\u2265": 5,   # GREATER-THAN OR EQUAL TO
 }
 
 # Species binomials to italicize, with the number of occurrences expected.
-BINOMIALS = {"Homo sapiens": 1, "Microcebus murinus": 1}
+BINOMIALS = {"Homo sapiens": 1, "Microcebus murinus": 1,
+             "Macaca mulatta": 4, "Macaca nemestrina": 1}
 
 # Binomial-shaped pairs whose leading word is a genus but which are not species
 # names, so they stay roman. Tabula Microcebus is the name of an atlas, and in
 # "the Tabula Sapiens, Tabula Muris Senis, and Tabula Microcebus consortia" the
 # genus word is followed by an English noun.
-NOT_A_BINOMIAL = ("Microcebus consortia",)
+# "Macaca species" is the same shape: Macaca is a genus, but "species" is an
+# English noun, not an epithet (the basal-ganglia macaque arm pools two species).
+NOT_A_BINOMIAL = ("Microcebus consortia", "Macaca species")
 
 # Coverage guard. Any "Capitalized lowercase" pair whose leading word is not
 # classified below aborts the build, so a binomial introduced by a later edit
@@ -202,23 +205,32 @@ NOT_A_BINOMIAL = ("Microcebus consortia",)
 # word and the line.
 NOT_A_GENUS = (
     "Across", "After", "All", "An", "And", "At", "Atlas", "Automatic", "Base",
-    "Because", "Beyond", "Biological", "Bootstrap", "Both", "But", "Cell",
+    "Because", "Beyond", "Biological", "Bonferroni", "Bootstrap", "Both",
+    "But", "Cell", "Cells",
     "Census", "Chromium", "Coherence", "Columns", "Combined", "Comparative",
     "Confidence", "Conserved", "Continuity", "Corresponding", "Count", "Data",
-    "Dated", "Dimensionality", "Dots", "Each", "Ellipsoid", "Ensembl",
-    "Ethics", "Euclidean", "Expanded", "Extended", "For", "Four", "Full",
+    "Dated", "Dimensionality", "Dots", "Dropping", "Each", "Ellipsoid",
+    "Ensembl",
+    "Ethics", "Euclidean", "Excluding", "Expanded", "Extended", "For", "Four",
+    "Full",
     "Gaussian", "Gene", "Genes", "Geometric", "Global", "Hartigan", "Having",
-    "How", "Human", "In", "It", "Italic", "Its", "Krzanowski", "Like", "Lower",
-    "Mantel", "Mapping", "Marker", "Materials", "Metazoa", "Negative",
-    "Neither", "No", "None", "Ontology", "Original", "Pearson", "Permutation",
+    "How", "Human", "In", "Intermediate", "It", "Italic", "Its", "Krzanowski",
+    "Like", "Lower",
+    "Mantel", "Mapping", "Marker", "Marmoset", "Materials", "Metazoa", "Most",
+    "Myr", "Negative",
+    "Neither", "No", "None", "Of", "Ontology", "Original", "Pearson",
+    "Permutation",
     "Pipeline", "Plotting", "Position", "Precision", "Primary", "Primate",
     "Procrustes", "Progressive", "Protocol", "Python", "Random", "Rank",
-    "Rankings", "Replication", "Reporting", "Representing", "Restricting",
+    "Rankings", "Replacing", "Replication", "Reporting", "Representing",
+    "Restricting",
     "Results", "Robustness", "Same", "Sapiens", "Scatter", "Senis", "Short",
     "Significance", "Simulation", "Software", "Source", "Spearman",
-    "Splitting", "Substantiates", "Synthetic", "Taken", "Tau", "Text", "That",
+    "Splitting", "Substantiates", "Synthetic", "Table", "Taken", "Tau", "Text",
+    "That",
     "The", "This", "Three", "To", "Toward", "Treating", "Two", "Under",
-    "Variance", "Wasserstein", "We", "Were", "Whether", "Within", "Zenodo",
+    "Variance", "Wasserstein", "We", "Were", "What", "Whether", "Within",
+    "Zenodo",
 )
 BINOMIAL_SHAPE = re.compile(r"\b[A-Z][a-z]+ [a-z]{3,}\b")
 
@@ -848,9 +860,13 @@ def verify(path, plan, lines, content):
     require(len(si_labels) == EXPECTED_SI_CAPTIONS,
             "expected %d bold supporting-information labels, found %d"
             % (EXPECTED_SI_CAPTIONS, len(si_labels)))
-    require(sorted(italic_runs) == sorted(BINOMIALS),
+    # One italic run per OCCURRENCE, so compare against BINOMIALS expanded by its
+    # declared counts. Comparing against sorted(BINOMIALS) was correct only while
+    # every binomial occurred exactly once.
+    expected_italics = sorted(name for name, n in BINOMIALS.items() for _ in range(n))
+    require(sorted(italic_runs) == expected_italics,
             "italic runs are %s, expected %s"
-            % (sorted(italic_runs), sorted(BINOMIALS)))
+            % (sorted(italic_runs), expected_italics))
     superscript_chars = sum(len(t) for t in superscript_runs)
     require(superscript_chars == sum(SUPERSCRIPT_EXPECTED.values()),
             "superscript runs carry %d characters, expected %d"
