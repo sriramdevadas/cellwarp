@@ -947,6 +947,76 @@ CHECKS = [
         "tolerance": 0.001,
         "paper_ref": "S4 Fig caption (p = 0.0088); Table 1 T16",
     },
+
+    # ── Lineage blocks: the strata the lineage-stratified null permutes within ──
+    # S1 Text §2 states these five sizes as facts and rests the conservativeness
+    # argument on the two singletons. They are gated on their own account rather
+    # than through the ratio above: a re-run that changed a block would move
+    # obs_null_ratio, but metadata edited WITHOUT a re-run - a rename, a recount -
+    # would leave S1 wrong while every gated statistic sat still.
+    {
+        "name": "Lineage block size: immune/hematopoietic",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "lineage_blocks.immune_hematopoietic.n_types",
+        "expected": 18,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (immune/hematopoietic 18 types); S1 Text §2 also rests the "
+                     "discriminative-power claim on this being the largest block",
+    },
+    {
+        "name": "Lineage block size: epithelial",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "lineage_blocks.epithelial.n_types",
+        "expected": 8,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (epithelial 8)",
+    },
+    {
+        "name": "Lineage block size: stromal/mesenchymal",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "lineage_blocks.stromal_mesenchymal.n_types",
+        "expected": 7,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (stromal/mesenchymal 7)",
+    },
+    {
+        "name": "Lineage block size: endothelial (singleton)",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "lineage_blocks.endothelial.n_types",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (endothelial 1). The singleton count is load-bearing: "
+                     "singletons stay matched under all permutations, which is why S1 "
+                     "calls the stratified null more conservative",
+    },
+    {
+        "name": "Lineage block size: metabolic/parenchymal (singleton)",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "lineage_blocks.metabolic_parenchymal.n_types",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (metabolic/parenchymal 1). See the note on the preceding "
+                     "check",
+    },
+    {
+        "name": "Lineage-stratified null: landmark count",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "n_cell_types",
+        "expected": 35,
+        "tolerance": 0,
+        "paper_ref": "Results §1 and throughout (35 matched cell types). Gated here beside "
+                     "the block sizes, which must sum to it",
+    },
+    {
+        "name": "Lineage-stratified null: permutation count",
+        "file": "output/validation/lineage_stratified/lineage_stratified_results.json",
+        "key": "n_permutations",
+        "expected": 10000,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (10,000 iterations); Methods (replications, extensions and "
+                     "secondary tests used 10,000 permutations, floor p < 1e-4). The floor "
+                     "the p-value check above compares against is a function of this",
+    },
 ]
 
 
