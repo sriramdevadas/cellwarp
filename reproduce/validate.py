@@ -502,6 +502,181 @@ CHECKS = [
         "paper_ref": "No manuscript value; guards the recovery metric. With no planted "
                      "divergence there is no ranking to recover (observed 0.0059)",
     },
+
+    # ── Parent-and-child landmark sensitivity (S1 Text §2; Results §1) ──
+    # Ontology parent labels sit alongside their own child types among the 35
+    # landmarks. Both reduced sets clear the permutation floor. n_types is gated
+    # beside each ratio because obs/null is not comparable across landmark counts,
+    # so the ratio alone would gate half a claim.
+    {
+        "name": "Parent-child variant A (drop parents): obs/null at 30 types",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_A_drop_parents.obs_null_ratio",
+        "expected": 0.5210,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (obs/null = 0.521 on the remaining 30 types); "
+                     "Results §1 (0.52 at 30 types)",
+    },
+    {
+        "name": "Parent-child variant A: landmark count",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_A_drop_parents.n_types",
+        "expected": 30,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (dropping the five parent labels whose children "
+                     "are also present leaves 30 types)",
+    },
+    {
+        "name": "Parent-child variant A: permutation p at the floor",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_A_drop_parents.p_value_permutation",
+        "expected_below": 0.00011,
+        "paper_ref": "S1 Text §2 and Results §1 (each p < 1e-4; 10,000 permutations)",
+    },
+    {
+        "name": "Parent-child variant A: ranking rho vs the primary subset",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_A_drop_parents.ranking_spearman_vs_primary_subset.rho",
+        "expected": 0.9359,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (ranking Spearman 0.936 against the full set)",
+    },
+    {
+        "name": "Parent-child variant B (drop children): obs/null at 26 types",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_B_drop_children.obs_null_ratio",
+        "expected": 0.5441,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (obs/null = 0.544 on 26 types); Results §1 (0.54 at 26)",
+    },
+    {
+        "name": "Parent-child variant B: landmark count",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_B_drop_children.n_types",
+        "expected": 26,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (dropping the nine children instead leaves 26 types)",
+    },
+    {
+        "name": "Parent-child variant B: permutation p at the floor",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_B_drop_children.p_value_permutation",
+        "expected_below": 0.00011,
+        "paper_ref": "S1 Text §2 and Results §1 (each p < 1e-4; 10,000 permutations)",
+    },
+    {
+        "name": "Parent-child variant B: ranking rho vs the primary subset",
+        "file": "analysis/sensitivity/parent_child/results.json",
+        "key": "variant_B_drop_children.ranking_spearman_vs_primary_subset.rho",
+        "expected": 0.9111,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (ranking Spearman 0.911 against the full set)",
+    },
+
+    # ── Marker-similarity-stratified null (S1 Text §2; Results §1; S10 Table, S5 Fig) ──
+    # S10 Table publishes the 100,000-permutation columns, so the sweep and its
+    # p-values are gated on obs_null_100k / p_100k. The K=1 anchor is the one
+    # exception and reads the 10k field deliberately: see its own paper_ref.
+    {
+        "name": "Marker-null K=1 degenerate anchor recovers the primary (negative control)",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "anchors.k1.obs_null_10k",
+        "expected": 0.5222043226858066,
+        "tolerance": 1e-9,
+        "paper_ref": "Negative control, not a manuscript value. At K=1 the single group "
+                     "holds all 35 types, so the restricted null IS the unrestricted null "
+                     "and this must reproduce the primary bit-for-bit. Reads the 10k field "
+                     "because the primary was run at 10,000 permutations; the 100k value "
+                     "(0.5222677) is correctly different. The tight tolerance is the point: "
+                     "a loose one would gate nothing here",
+    },
+    {
+        "name": "Marker-null Ward K=5: obs/null",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.5.obs_null_100k",
+        "expected": 0.7208,
+        "tolerance": 0.001,
+        "paper_ref": "Results §1 (0.72 at five groups); S1 Text §2 (0.72 at K = 5); S10 Table",
+    },
+    {
+        "name": "Marker-null Ward K=8: obs/null",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.8.obs_null_100k",
+        "expected": 0.8074,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (0.81 at K = 8); S10 Table",
+    },
+    {
+        "name": "Marker-null Ward K=10: obs/null",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.10.obs_null_100k",
+        "expected": 0.9033,
+        "tolerance": 0.001,
+        "paper_ref": "Results §1 (0.90 at ten); S1 Text §2 (0.90 at K = 10); S10 Table",
+    },
+    {
+        "name": "Marker-null Ward K=15: obs/null",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.15.obs_null_100k",
+        "expected": 0.9631,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (0.96 at K = 15); S10 Table",
+    },
+    {
+        "name": "Marker-null Ward K=14: still clears p = 0.05",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.14.p_100k",
+        "expected_below": 0.05,
+        "paper_ref": "S1 Text §2 (the observed configuration outperforms the finer null "
+                     "through K = 14). Paired with the K=15 check below: together they "
+                     "gate the crossover from both sides, so neither can pass vacuously",
+    },
+    {
+        "name": "Marker-null Ward K=15: no longer clears p = 0.05",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.15.p_100k",
+        "expected_in_range": [0.05, 1.0],
+        "paper_ref": "Results §1 (not significant at fifteen); S1 Text §2 (no longer clears "
+                     "p = 0.05 at K = 15). The one check in this file that must FAIL to pass",
+    },
+    {
+        "name": "Marker-null K=15: non-singleton group count",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.15.n_nonsingleton",
+        "expected": 9,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §2 (the nine non-singleton groups at K = 15; the six "
+                     "singletons S1 also cites are 15 minus this count); S10 Table",
+    },
+    {
+        "name": "Marker-null K=15: log10 within-group permutation space",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "ward_sweep.15.log10_permspace",
+        "expected": 9.0771,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (about 1.2 billion within-group permutations against the "
+                     "100,000 drawn; 10^9.0771 = 1.194e9). This is the evidence that the "
+                     "K=15 null is not exhausted, so the loss of signal there is real",
+    },
+    {
+        "name": "Marker-null: per-type residual vs marker-distinctness rho",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "monotonicity.spearman_rho",
+        "expected": -0.1361,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (the per-type residual is independent of "
+                     "marker-distinctness, Spearman rho = -0.14). NOTE the key name: this "
+                     "block is the n = 35 per-type correlation, not a monotonicity test "
+                     "over K. Its stored p implies df = 33, which is the check on that",
+    },
+    {
+        "name": "Marker-null: per-type residual vs marker-distinctness p",
+        "file": "analysis/sensitivity_analyses/markernull_results.json",
+        "key": "monotonicity.spearman_p",
+        "expected": 0.4355,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §2 (p = 0.44). See the note on the preceding check",
+    },
 ]
 
 
