@@ -77,7 +77,9 @@ Corroborating:
 - analysis/census_replication/census_datasets_full.csv   (1,845 rows)
 - data/replication/pan_census_manifest.csv               (15 rows)
 - data/replication/tabula_microcebus_metadata.csv        (1 row)
-- docs/submission/manuscript_combined.txt
+- docs/submission/manuscript_combined.txt                (in the v1 CODE archive; since
+  retired from the repository. Retrievable via `git show`. Its Tabula Microcebus deposit
+  anchors are carried by DATA_SOURCES.md, which is the primary source above.)
 
 ## Snapshot procedure (at acceptance)
 
