@@ -129,7 +129,7 @@ def test_packet_matches_canonical(packet_rel: str, canonical_rel: str) -> None:
 # (Table-1 producer scripts archived in R21; see scripts/archive/README.md).
 # 5b follow-up: scripts/44b_k53_table1_update.py will close the reproducibility
 # gap and re-establish a canonical→mirror chain at that point.
-TABLE_1_LOCK_MD5 = "61e6988f058987dbb0118b20dde16bfd"  # D28 re-lock: T11 corrected-p cell "significant" -> "direction-robust (100/100; resampling)" (Review 6 Minor 1); prior D22 lock d375352f (reconcile T34/T35 to manuscript Table 1: 500-gene identity-set labels + n + caption note); reproducible byte-for-byte via scripts/table1_formatting.py
+TABLE_1_LOCK_MD5 = "b446569a11f5f473bea9949312e6515c"  # D55 re-lock: repair the Figure/Table column against the five-figure paper (38 of 61 rows), T64 ceiling 0.42 -> 0.45 with the calibrated-signal qualifier, T52 n 34 -> 35 from output/t3g/primary_correlation_results.json, and one footnote sentence stating that the nine excluded IDs are the em-dash rows in the Bonferroni column; the column is now also validated by tests/test_table1_callouts.py, which derives the valid display items from the manuscript rather than freezing a list. Prior D28 lock 61e6988f (T11 corrected-p cell "significant" -> "direction-robust (100/100; resampling)", Review 6 Minor 1); prior D22 lock d375352f (reconcile T34/T35 to manuscript Table 1). Reproducible byte-for-byte via scripts/table1_formatting.py
 
 
 def test_table_1_lock_md5() -> None:

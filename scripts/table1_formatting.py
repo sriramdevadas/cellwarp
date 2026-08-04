@@ -105,6 +105,26 @@ def main():
             _fv = _fv.replace(_anchor, _t3435 + _anchor, 1)
             ws.cell(footnote_row, COL["id"]).value = _fv
 
+    # ---- D55: state the counting rule on the sheet itself (idempotent) ----
+    # k = 52 was derivable only from the footnote arithmetic. The Bonferroni column
+    # already marks the nine exclusions with an em-dash, exactly and only those nine,
+    # so the rule needs stating rather than encoding. The second sentence names the
+    # one row that does not look like it follows the rule: T11 is inside the family
+    # but reports a resampling CI, so it carries no corrected p. T11's cell is
+    # correct as it stands and is not edited.
+    if footnote_row:
+        _fv = ws.cell(footnote_row, COL["id"]).value
+        if "carrying an em-dash in the Bonferroni" not in _fv:
+            _rule = (
+                " The nine excluded IDs are the rows carrying an em-dash in the "
+                "Bonferroni p column. T11 is inside the family of 52 but reports a "
+                "resampling confidence interval rather than a p-value, so it carries "
+                "no corrected p; its direction robustness is given in that column "
+                "instead.")
+            _anchor = "the inventory totals 61 tests."
+            _fv = _fv.replace(_anchor, _anchor + _rule, 1)
+            ws.cell(footnote_row, COL["id"]).value = _fv
+
     # ---- D28: Minor 1 — T11 corrected-p (Bonferroni, col I) label (idempotent) ----
     # The donor-split delta (+0.159) is framed in the body / Methods / Fig 3E caption
     # / Limitations as direction-robustness (100/100 resampling splits), not a
@@ -112,14 +132,60 @@ def main():
     # the manuscript Table 1 source row. Column I (9) = "Bonferroni p (k=52)".
     ws.cell(rowmap["T11"], 9).value = "direction-robust (100/100; resampling)"
 
-    # ---- E.2: figure-column renumber (D3 main-figure map; idempotent) ----
-    FIG_SET = {"T12": "Fig 5A", "T14": "Fig 5B", "T15": "Fig 5C", "T30": "Fig 4C",
-               "T31": "Fig 4D", "T36": "Fig 6B", "T37": "Fig 6B", "T38": "Fig 7A",
-               "T39": "Fig 7A", "T42": "Fig 7B", "T43": "Fig 7B", "T44": "Fig 7B",
-               "T45": "Fig 7B", "T46": "Fig 7B", "T47": "Fig 7B", "T48": "Fig 7B",
-               "T49": "Fig 7B", "T50": "Fig 7B", "T51": "Fig 7B"}
+    # ---- D55: figure-column repair against the five-figure paper (idempotent) ----
+    # This map replaces the D3 seven-figure map. That map named Fig 6B, Fig 7A and
+    # Fig 7B, none of which exists in the re-assembled paper, and it pointed several
+    # rows at panels that do exist but now show something else -- Fig 4C is the
+    # recovery ceiling, not Layer 2. Thirty-eight of the sixty-one rows move.
+    #
+    # EM_DASH means "no display item", which is the truthful entry for a test whose
+    # result appears in no submitted text. Eight rows take it. Six of those eight are
+    # Confirmatory and stay inside k = 52: a multiple-comparison family counts tests
+    # performed, not tests reported.
+    EM_DASH = "—"
+    FIG_SET = {
+        # text-only results: bootstrap CV and LOOCV (S1 §11), donor split (S1 §9),
+        # macaque (S1 §7), the ten mechanistic nulls (S1 §8)
+        "T03": "S1 Text", "T04": "S1 Text",
+        "T09": "S1 Text", "T10": "S1 Text", "T11": "S1 Text",
+        "T12": "S1 Text", "T14": "S1 Text", "T15": "S1 Text",
+        "T42": "S1 Text", "T43": "S1 Text", "T44": "S1 Text", "T45": "S1 Text",
+        "T46": "S1 Text", "T47": "S1 Text", "T48": "S1 Text", "T49": "S1 Text",
+        "T50": "S1 Text", "T51": "S1 Text",
+        # missing callouts the current display items do carry
+        "T13": "Fig 1D",      # the human-mouse-lemur null IS Fig 1D
+        "T60": "Fig S2C", "T61": "Fig S2C",   # S2 Fig C reports both by name
+        "T66": "S2 Text",     # S2 Text reports S = 0.402 against null 0.360
+        # panels that moved under the seven-to-five renumbering
+        "T16": "Fig S4", "T17": "Fig S4",     # matched-scale; no S7 Fig exists
+        "T19": "Fig 3", "T20": "Fig 3", "T21": "Fig 3",   # Fig 3 is one panel
+        "T30": "Fig 2B",      # Layer 2 pre/post rotation
+        # results that live in a table rather than a figure
+        "T27": "Table S4",    # S4 Table carries rho -0.139, p 0.621, n 15
+        "T58": "Table S3",    # S3 Table carries rho -0.526, p 0.044, n 15
+        # no display item: the result appears in no submitted text
+        "T31": EM_DASH, "T34": EM_DASH, "T35": EM_DASH, "T36": EM_DASH,
+        "T37": EM_DASH, "T38": EM_DASH, "T39": EM_DASH, "T53": EM_DASH,
+    }
     for tid, val in FIG_SET.items():
         ws.cell(rowmap[tid], COL["fig"]).value = val
+
+    # ---- D55: T64 ranking recovery ceiling, superseded by commit 4615491 ----
+    # 0.42 contradicted S1 Fig D's own caption, which reads "peaks at rho ~ 0.45 in
+    # the calibrated-signal regime". The description names the regime because 0.42
+    # remains correct for the deposited grid at signal 3.0 and the two must be
+    # distinguishable. The Fig S1D callout is correct and does not change.
+    ws.cell(rowmap["T64"], COL["value"]).value = 0.45
+    ws.cell(rowmap["T64"], COL["desc"]).value = (
+        "Ranking recovery ceiling (calibrated signal)")
+
+    # ---- D55: T52 n, resolved from the producer ----
+    # output/t3g/primary_correlation_results.json carries both drug-target tests.
+    # T51 is primary_correlation (conservation ratio), n = 34, defined only for the
+    # 34 types that have drug targets. T52 is density_correlation (drug-target
+    # density), n = 35, defined for all types because a density may be zero. The
+    # sheet had propagated T51 n to T52.
+    ws.cell(rowmap["T52"], COL["n"]).value = 35
 
     # ---- Stage-5.5 C: presentation formatting (reproducible cell sizing) ----
     # Column widths so the Description / Status / Category cells are not clipped.
