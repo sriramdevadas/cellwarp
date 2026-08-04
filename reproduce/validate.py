@@ -1017,6 +1017,137 @@ CHECKS = [
                      "secondary tests used 10,000 permutations, floor p < 1e-4). The floor "
                      "the p-value check above compares against is a function of this",
     },
+
+    # ── Layer 2 under ribosomal-protein exclusion (S1 Text §4; Results §2; Methods) ──
+    # The producer is analysis/sensitivity/layer2_no_ribosomal/run.py. SCOPE.md still
+    # classifies this directory as BANKED and "not referenced by the manuscript" --
+    # that row is false and its rewrite is queued separately.
+    #
+    # DO NOT gate anything from this file's primary_comparison block: it holds
+    # ROUNDED copies of the primary Layer-2 values (0.483 / 0.375 / 0.23 / 0.18) and
+    # two p-values stored as the string '<1e-4'. A check against a rounded copy passes
+    # at any tolerance the rounding permits and detects nothing.
+    {
+        "name": "Ribosomal-excluded Layer 2: pre-rotation S, k=5",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_pre_rotation.5.observed_S",
+        "expected": 0.4455,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §4 (after ribosomal exclusion, pre-rotation S = 0.446)",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: pre-rotation null mean, k=5",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_pre_rotation.5.null_mean",
+        "expected": 0.3287,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §4 (null 0.329)",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: pre-rotation p at the floor, k=5",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_pre_rotation.5.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "S1 Text §4 (both p < 1e-4)",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: post-rotation S, k=5",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_post_rotation.5.observed_S",
+        "expected": 0.2345,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §4 and Methods (excluding ribosomal-protein genes entirely "
+                     "leaves the compression significant, post-rotation S = 0.234)",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: post-rotation null mean, k=5",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_post_rotation.5.null_mean",
+        "expected": 0.1800,
+        "tolerance": 0.001,
+        "paper_ref": "S1 Text §4 and Methods (vs null 0.180)",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: post-rotation p at the floor, k=5",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_post_rotation.5.p_value",
+        "expected_below": 0.00011,
+        "paper_ref": "S1 Text §4 and Methods (p < 1e-4)",
+    },
+
+    # ── The k=1 claim: exclusion moves it ABOVE its null (Results §2) ──
+    # Results §2 says the post-rotation k=1 value sits slightly BELOW its null in the
+    # primary (0.026 against 0.030), and that excluding ribosomal-protein genes moves
+    # k=1 above its null. Four checks gate that reversal by its two point estimates
+    # and their two nulls, so the claim is covered whichever rotation it refers to.
+    # The two p-value checks that follow are the two-sided partner: the reversal is a
+    # point-estimate claim, NOT a significance claim, and the paper does not make one.
+    {
+        "name": "Ribosomal-excluded Layer 2: pre-rotation S, k=1",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_pre_rotation.1.observed_S",
+        "expected": 0.0636,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2 (excluding ribosomal-protein genes moves k = 1 above its "
+                     "null); this is the observed side of that comparison, pre-rotation",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: pre-rotation null mean, k=1",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_pre_rotation.1.null_mean",
+        "expected": 0.0490,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2; the null side of the same comparison. Observed 0.0636 "
+                     "exceeds this, which is the claim",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: post-rotation S, k=1",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_post_rotation.1.observed_S",
+        "expected": 0.0487,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2; post-rotation side. In the primary this value sits BELOW "
+                     "its null (0.026 against 0.030); here it sits above",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: post-rotation null mean, k=1",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_post_rotation.1.null_mean",
+        "expected": 0.0393,
+        "tolerance": 0.001,
+        "paper_ref": "Results §2; the null side. Observed 0.0487 exceeds this, completing "
+                     "the reversal the sentence asserts",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: pre-rotation k=1 is NOT significant",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_pre_rotation.1.p_value",
+        "expected_in_range": [0.05, 1.0],
+        "paper_ref": "No manuscript value. Results §2 claims only that k = 1 moves above its "
+                     "null, not that it becomes significant. This check exists so that a "
+                     "future run which made it significant would fail rather than quietly "
+                     "strengthen a claim the paper does not make. Must FAIL to pass",
+    },
+    {
+        "name": "Ribosomal-excluded Layer 2: post-rotation k=1 is NOT significant",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "krzanowski_post_rotation.1.p_value",
+        "expected_in_range": [0.05, 1.0],
+        "paper_ref": "See the preceding check. Must FAIL to pass",
+    },
+
+    # ── Structural control on the exclusion itself ──
+    {
+        "name": "Ribosomal exclusion actually removed the ribosomal drivers",
+        "file": "analysis/sensitivity/layer2_no_ribosomal/results.json",
+        "key": "cpc1_summary.n_new_top1_still_ribosomal",
+        "expected": 0,
+        "tolerance": 0,
+        "paper_ref": "No manuscript value; a structural control. After excluding the "
+                     "ribosomal-protein genes, no type can retain a ribosomal rank-1 CPC1 "
+                     "driver. Trivially true when the filter ran, and false when it did "
+                     "not, which is exactly what makes it worth checking",
+    },
 ]
 
 
