@@ -47,19 +47,20 @@ ID_COL = 1
 # cannot masquerade as a caption.
 CAPTION_RE = re.compile(r"^(Fig \d+|S\d+ (?:Fig|Table|Text))\.")
 
-# Two differences between how the sheet writes a reference and how the manuscript
-# captions it, neither of them an error:
+# One difference between how the sheet writes a reference and how the manuscript
+# captions it, and it is not an error:
 #
 #   panel letters   the sheet cites a panel, the manuscript captions the whole
-#                   figure -- "Fig 2B" and "Fig S2C" against "Fig 2" and "S2 Fig"
-#   word order      the sheet writes "Fig S4" and "Table S3", the manuscript
-#                   writes "S4 Fig" and "S3 Table"
+#                   figure -- "Fig 2B" and "S2 Fig C" against "Fig 2" and "S2 Fig"
 #
-# Both resolve to the same display item. Normalising the sheet's word order to the
-# manuscript's is a separate, cosmetic change across all 61 cells and is not this
-# test's job; recognising it is.
-MAIN_FIG_RE = re.compile(r"^(Fig \d+)[A-Z]?$")            # Fig 2, Fig 2B
-SUPP_RE = re.compile(r"^(Fig|Table|Text) S(\d+)[A-Z]?$")  # Fig S4, Fig S2C, Table S3
+# The sheet now writes supplementary items number first, as the manuscript does.
+# The inverted form ("Fig S4", "Table S3") is still recognised, because a workbook
+# is hand-maintained and the older form may reappear in an edit; accepting both
+# costs nothing and rejecting a correct reference on word order alone would be a
+# false failure.
+MAIN_FIG_RE = re.compile(r"^(Fig \d+)[A-Z]?$")               # Fig 2, Fig 2B
+SUPP_RE = re.compile(r"^S(\d+) (Fig|Table|Text)(?: [A-Z])?$")  # S2 Fig, S2 Fig C, S4 Table
+LEGACY_SUPP_RE = re.compile(r"^(Fig|Table|Text) S(\d+)[A-Z]?$")  # Fig S4, Fig S2C
 
 EM_DASH = "—"
 
@@ -92,9 +93,12 @@ def _normalise(cell: str) -> str:
     if main:                    # "Fig 2" -> "Fig 2";  "Fig 2B" -> "Fig 2"
         return main.group(1)
     supp = SUPP_RE.match(cell)
-    if supp:                    # "Fig S4" -> "S4 Fig";  "Fig S2C" -> "S2 Fig"
-        return "S%s %s" % (supp.group(2), supp.group(1))
-    return cell                 # "S1 Text" is already the manuscript's form
+    if supp:                    # "S2 Fig" -> "S2 Fig";  "S2 Fig C" -> "S2 Fig"
+        return "S%s %s" % (supp.group(1), supp.group(2))
+    legacy = LEGACY_SUPP_RE.match(cell)
+    if legacy:                  # "Fig S4" -> "S4 Fig";  "Fig S2C" -> "S2 Fig"
+        return "S%s %s" % (legacy.group(2), legacy.group(1))
+    return cell
 
 
 def test_manuscript_captions_parse() -> None:

@@ -62,7 +62,9 @@ def main():
     ws.cell(rowmap["T59"], COL["value"]).value = -0.410
     ws.cell(rowmap["T59"], COL["rawp"]).value = 0.073
     # ---- C2: T59 panel ref ----
-    ws.cell(rowmap["T59"], COL["fig"]).value = "Fig S3B"
+    # Superseded by the D56 entry in FIG_SET below, which normalises this to the
+    # manuscript's number-first order ("S3 Fig B"). Kept as the changelog record of
+    # the panel correction; the assignment itself is now made once, in FIG_SET.
     # ---- C3: T53 SAMap sign ----
     ws.cell(rowmap["T53"], COL["value"]).value = -0.247
     # ---- C5: T44 test method ----
@@ -154,18 +156,35 @@ def main():
         "T50": "S1 Text", "T51": "S1 Text",
         # missing callouts the current display items do carry
         "T13": "Fig 1D",      # the human-mouse-lemur null IS Fig 1D
-        "T60": "Fig S2C", "T61": "Fig S2C",   # S2 Fig C reports both by name
         "T66": "S2 Text",     # S2 Text reports S = 0.402 against null 0.360
         # panels that moved under the seven-to-five renumbering
-        "T16": "Fig S4", "T17": "Fig S4",     # matched-scale; no S7 Fig exists
         "T19": "Fig 3", "T20": "Fig 3", "T21": "Fig 3",   # Fig 3 is one panel
         "T30": "Fig 2B",      # Layer 2 pre/post rotation
-        # results that live in a table rather than a figure
-        "T27": "Table S4",    # S4 Table carries rho -0.139, p 0.621, n 15
-        "T58": "Table S3",    # S3 Table carries rho -0.526, p 0.044, n 15
         # no display item: the result appears in no submitted text
         "T31": EM_DASH, "T34": EM_DASH, "T35": EM_DASH, "T36": EM_DASH,
         "T37": EM_DASH, "T38": EM_DASH, "T39": EM_DASH, "T53": EM_DASH,
+
+        # ---- D56: supplementary references, number first ----
+        # The submitted manuscript and both supporting texts write supplementary
+        # display items number first -- S1 Fig, S1 Table -- in 52 places between
+        # them, and never write Fig S1 or Table S1 anywhere. Table 1 used the
+        # inverted form in these eighteen cells, so a reader following a callout
+        # had to translate it. Main-figure references already matched (the
+        # manuscript writes Fig 4C) and are untouched above.
+        #
+        # Panel letters are kept rather than dropped. The submitted texts use them
+        # nowhere in prose, but a table column exists to carry that precision, and
+        # S1 Fig A follows the number-first order the texts do use.
+        "T05": "S1 Fig A", "T06": "S1 Fig B",
+        "T63": "S1 Fig F", "T64": "S1 Fig D", "T65": "S1 Fig E",
+        "T18": "S2 Fig E",
+        "T22": "S2 Fig F", "T23": "S2 Fig F", "T24": "S2 Fig F",
+        "T60": "S2 Fig C", "T61": "S2 Fig C", "T62": "S2 Fig C",
+        "T59": "S3 Fig B",
+        "T16": "S4 Fig", "T17": "S4 Fig",     # matched-scale; no S7 Fig exists
+        "T40": "S1 Table",
+        "T58": "S3 Table",    # S3 Table carries rho -0.526, p 0.044, n 15
+        "T27": "S4 Table",    # S4 Table carries rho -0.139, p 0.621, n 15
     }
     for tid, val in FIG_SET.items():
         ws.cell(rowmap[tid], COL["fig"]).value = val
