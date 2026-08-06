@@ -12,10 +12,17 @@ so nothing in it re-stales when the main figures are renumbered.
 ## Supplementary items
 - 5 supplementary figures: S1-S5 Fig, deposited in `figures/submission/supplementary/`
   (`figS1`-`figS5`).
-- 11 supplementary tables: S1-S7 Table and S9-S12 Table (no S8). These 11 items
-  span 12 files, because S9 Table is provided as two CSVs
+- 12 supplementary tables: S1-S7 Table and S9-S13 Table (no S8). These 12 items
+  span 13 files, because S9 Table is provided as two CSVs
   (`table_S9_genestd_standardization.csv` + `table_S9_schemeB_CPC1_markers.csv`).
-  Item count 11, file count 12.
+  Item count 12, file count 13.
+  S13 Table is the inventory of statistical tests and the multiple-comparison
+  family (`table_S13_test_inventory.xlsx`). It moved here from
+  `docs/submission/figures_for_review/`, the retired packet's output directory,
+  where it had been the only item not designated by this manifest. It is the one
+  supplementary item with no from-scratch producer; `scripts/table1_formatting.py`
+  applies its edits in place and reproduces it byte-for-byte, and
+  `tests/test_submission_packet_consistency.py::test_table_1_lock_md5` pins it.
 
 ## Files in `docs/supplementary_materials/`
 - `table_S*.csv` and `table_S*.xlsx`: per-table data exports (CSV or XLSX per

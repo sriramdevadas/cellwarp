@@ -2,7 +2,7 @@
 """
 Stage-3a Table 1 integrity + de-rigidify (reproducible synthesis pass).
 
-Table_1.xlsx (docs/submission/figures_for_review/Table_1.xlsx) is the tracked
+S13 Table (docs/supplementary_materials/table_S13_test_inventory.xlsx) is the tracked
 artifact; it has no from-scratch repro-pipeline producer (the historical builders
 live in the gitignored scripts/archive/). This tracked pass applies the Stage-3a
 edits in place, idempotently, so the result is reproducible from tracked code.
@@ -30,7 +30,7 @@ from pathlib import Path
 import re
 import openpyxl
 
-XLSX = Path(__file__).resolve().parent.parent / "docs/submission/figures_for_review/Table_1.xlsx"
+XLSX = Path(__file__).resolve().parent.parent / "docs/supplementary_materials/table_S13_test_inventory.xlsx"
 COL = {"id": 1, "desc": 3, "testtype": 4, "n": 5, "value": 7, "rawp": 8, "fig": 11}
 
 

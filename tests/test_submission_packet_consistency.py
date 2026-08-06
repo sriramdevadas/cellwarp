@@ -136,7 +136,7 @@ def test_table_1_lock_md5() -> None:
     """Lock md5 of Table_1.xlsx pending 5b authoring of 44b script.
     Pinned R20 close value; protects against silent drift while no in-repo
     producer materializes this canonical."""
-    path = REPO_ROOT / "docs/submission/figures_for_review/Table_1.xlsx"
+    path = REPO_ROOT / "docs/supplementary_materials/table_S13_test_inventory.xlsx"
     assert path.exists(), f"Table_1.xlsx missing at {path}"
     digest = _md5(path)
     assert digest == TABLE_1_LOCK_MD5, (

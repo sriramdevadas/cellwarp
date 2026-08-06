@@ -35,7 +35,7 @@ import openpyxl
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-TABLE_1 = REPO_ROOT / "docs/submission/figures_for_review/Table_1.xlsx"
+TABLE_1 = REPO_ROOT / "docs/supplementary_materials/table_S13_test_inventory.xlsx"
 MANUSCRIPT = REPO_ROOT / "docs/submission/plosone/manuscript_combined.txt"
 
 SHEET = "Table 1"
@@ -111,7 +111,7 @@ def test_manuscript_captions_parse() -> None:
     figs = {n for n in names if n.startswith("Fig ")}
     sis = names - figs
     assert len(figs) == 5, f"expected 5 main-figure captions, parsed {len(figs)}: {sorted(figs)}"
-    assert len(sis) == 18, f"expected 18 supporting-information captions, parsed {len(sis)}"
+    assert len(sis) == 19, f"expected 19 supporting-information captions, parsed {len(sis)}"
 
 
 def test_table_1_has_rows() -> None:
