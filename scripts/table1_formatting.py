@@ -37,6 +37,70 @@ COL = {"id": 1, "desc": 3, "testtype": 4, "n": 5, "value": 7, "rawp": 8, "fig": 
 def main():
     wb = openpyxl.load_workbook(XLSX)
     ws = wb["Table 1"]
+
+    # ---- D57: append the three tests the paper reports but the sheet omitted ----
+    # Runs before the row scan below, so everything downstream sees 64 rows.
+    #
+    # openpyxl.insert_rows moves cell VALUES and nothing else: merged ranges stay
+    # where they were, row heights stay with their old row numbers, and new rows
+    # carry no fill. Heights and the footnote merge are re-derived at the end of
+    # this script from a fresh scan, so they repair themselves; the stale merge and
+    # the missing fills do not, and are handled explicitly here.
+    #
+    # Appended rather than placed with their topical neighbours. The sheet is an
+    # inventory indexed by identifier, its numbering is already non-contiguous, and
+    # inserting mid-table would shift every row below for a presentational gain.
+    # T67-T69 rather than the five vacant IDs, because the footnote explains those
+    # five as cut analyses and reusing one would make that sentence false.
+    NEW_ROWS = [
+        # T67: the marker-similarity sweep contributes ONE row, at the crossover.
+        # Its sixteen K values are one analysis at increasing granularity, not
+        # sixteen independent tests; entering all of them would inflate k by fifteen
+        # for the single claim Results section 1 makes ("not significant at fifteen").
+        # Values: analysis/sensitivity_analyses/markernull_results.json,
+        # ward_sweep.15.obs_null_100k = 0.9630918055960713, p_100k = 0.08586914130858692
+        ("T67", "Global coherence",
+         "Marker-similarity-stratified null (Ward K = 15)",
+         "Label permutation (stratified)", 35, "obs/null", 0.963, 0.0859,
+         None, "Confirmatory", "S5 Fig A"),
+        # T68: the same file's monotonicity block, whose key name does not describe
+        # what it holds -- it is the n = 35 per-type correlation, not a monotonicity
+        # test over K. spearman_rho = -0.13613445378151262, spearman_p = 0.435524194238914
+        ("T68", "Ranking validation",
+         "Per-type residual vs marker-distinctness",
+         "Spearman", 35, "ρ", -0.136, 0.4355,
+         None, "Exploratory", "S5 Fig B"),
+        # T69: the pre-rotation arm of the test whose post-rotation arm is T66.
+        # output/twolayer_pansci_replication/pansci_layer2_summary.json,
+        # layer2_pre_rotation.k5.S = 0.39642953872680664, p = 9.999000099990002e-05
+        ("T69", "Two-layer",
+         "Layer 2 PanSci replication (Krzanowski S, k=5, pre-rotation)",
+         "Label permutation", 16, "Krzanowski S", 0.396, 0.0001,
+         None, "Confirmatory", "S2 Text"),
+    ]
+    _have = {str(ws.cell(r, COL["id"]).value or "").strip()
+             for r in range(1, ws.max_row + 1)}
+    if NEW_ROWS[0][0] not in _have:
+        _last_t = max(r for r in range(1, ws.max_row + 1)
+                      if re.match(r"T\d+$", str(ws.cell(r, COL["id"]).value or "").strip()))
+        _template = _last_t                      # T66, for its fill
+        _fills = [ws.cell(_template, c)._style for c in range(1, 12)]
+        _stale = [str(m) for m in ws.merged_cells.ranges]
+        for _m in _stale:
+            ws.unmerge_cells(_m)
+        ws.insert_rows(_last_t + 1, len(NEW_ROWS))
+        for _i, _row in enumerate(NEW_ROWS):
+            _r = _last_t + 1 + _i
+            for _c, _v in enumerate(_row, start=1):
+                ws.cell(_r, _c).value = _v
+                ws.cell(_r, _c)._style = _fills[_c - 1]
+        # Re-merge at the shifted positions. The footnote is found by content, and
+        # the second range trailed it by the same offset, so both move together.
+        for _m in _stale:
+            _rng = openpyxl.utils.cell.range_boundaries(_m)
+            ws.merge_cells(start_row=_rng[1] + len(NEW_ROWS), start_column=_rng[0],
+                           end_row=_rng[3] + len(NEW_ROWS), end_column=_rng[2])
+
     rowmap = {}
     footnote_row = None
     for r in range(1, ws.max_row + 1):
@@ -205,6 +269,96 @@ def main():
     # density), n = 35, defined for all types because a density may be zero. The
     # sheet had propagated T51 n to T52.
     ws.cell(rowmap["T52"], COL["n"]).value = 35
+
+    # ---- D57: k = 52 -> 55, header and the whole corrected-p column ----
+    # Adding three in-family rows recomputes EVERY corrected p, not just the new
+    # ones. No row changes verdict: no in-family raw p falls in the band between
+    # 0.05/55 and 0.05/52, and the nearest values are two orders of magnitude away
+    # on either side.
+    #
+    # Three classes, not one. A bare float(raw) * k raises on the four rows whose
+    # raw p is prose.
+    #   numeric      multiply, cap at 1, following the sheet's existing convention
+    #   bounded <x   multiply the bound, keep the prefix, as T01 already does
+    #   prose        leave untouched; the correction factor does not apply
+    K_NEW = 55
+    BONF_COL = 9
+    EM_DASH_BONF = "—"      # marks the nine excluded rows; must stay at nine
+    _hdr = ws.cell(1, BONF_COL).value
+    ws.cell(1, BONF_COL).value = _hdr.replace("k=52", "k=%d" % K_NEW)
+
+    # The sheet's existing convention is the EXACT product, not a rounded one:
+    # 0.0043 x 52 is stored as 0.2236 and 2.1e-13 x 52 as 1.092e-11. Multiplying in
+    # binary floating point would store 0.013 x 52 as 0.6759999999999999, so the
+    # arithmetic is done in Decimal from the raw cell's own digits, which reproduces
+    # the convention exactly and leaves no noise to clean up afterwards.
+    from decimal import Decimal
+
+    def _product(raw_text):
+        return Decimal(raw_text) * K_NEW
+
+    def _fmt(d):
+        """Capped at 1, else the exact product with the sheet's exponent style."""
+        if d > 1:
+            return 1
+        s = format(d.normalize(), "f") if Decimal("1e-4") <= abs(d) else None
+        if s is not None:
+            return float(s)
+        # small values keep scientific notation, exponent written without a
+        # leading zero, as the sheet already writes 5.2e-5 and 1.092e-11
+        return float(d)
+
+    _excluded = {"T03", "T04", "T09", "T10", "T18", "T62", "T63", "T64", "T65"}
+    _counts = {"numeric": 0, "bounded": 0, "prose": 0, "excluded": 0}
+    for _tid, _r in rowmap.items():
+        _cell = ws.cell(_r, BONF_COL)
+        _cur = str(_cell.value).strip()
+        if _cur == EM_DASH_BONF:
+            _counts["excluded"] += 1
+            continue
+        _raw = str(ws.cell(_r, COL["rawp"]).value).strip()
+        _m = re.fullmatch(r"<\s*([\d.eE+-]+)", _raw)
+        if _m:
+            _p = _product(_m.group(1))
+            # "< 5.2e-5", not "< 5.2e-05": strip the exponent's leading zero so the
+            # new bounds read as the existing ones do.
+            _cell.value = "< %s" % ("%g" % float(_p)).replace("e-0", "e-")
+            _counts["bounded"] += 1
+            continue
+        try:
+            _p = _product(_raw)
+        except Exception:
+            _counts["prose"] += 1          # T11, T44, T47, T48: leave as-is
+            continue
+        _cell.value = _fmt(_p)
+        _counts["numeric"] += 1
+    print("  Bonferroni recompute at k=%d: %s" % (K_NEW, _counts))
+
+    # ---- D57: the footnote, restated for 64 tests and a family of 55 ----
+    # The D55 sentence said "the family of 52" and "totals 61 tests". Both move.
+    #
+    # It also named T11 as the row inside the family carrying no corrected p, and
+    # that remains exactly right: T11's corrected-p cell is the only prose one in
+    # the sheet. Three further rows (T44, T47, T48) have a non-numeric RAW p but do
+    # carry a corrected p of 1, so they are not exceptions to the counting rule.
+    # The sentence gains a clause distinguishing the two situations, because the
+    # difference is invisible from the corrected-p column alone.
+    if footnote_row:
+        _fv = ws.cell(footnote_row, COL["id"]).value
+        _fv = _fv.replace("k = 52 = 61 − 9", "k = 55 = 64 − 9")
+        _fv = _fv.replace("k = 52 principal inferential tests",
+                          "k = 55 principal inferential tests")
+        _fv = _fv.replace("the inventory totals 61 tests.",
+                          "the inventory totals 64 tests.")
+        _fv = _fv.replace("T11 is inside the family of 52 but",
+                          "T11 is inside the family of 55 but")
+        _sub = (" T44, T47 and T48 also report a raw p as a range or a bound over "
+                "several sub-tests rather than as a single value, but each is "
+                "corrected and capped like any other in-family row.")
+        if "T44, T47 and T48 also report" not in _fv:
+            _anchor = "given in that column instead."
+            _fv = _fv.replace(_anchor, _anchor + _sub, 1)
+        ws.cell(footnote_row, COL["id"]).value = _fv
 
     # ---- Stage-5.5 C: presentation formatting (reproducible cell sizing) ----
     # Column widths so the Description / Status / Category cells are not clipped.

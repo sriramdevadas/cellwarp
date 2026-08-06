@@ -117,7 +117,7 @@ def test_manuscript_captions_parse() -> None:
 def test_table_1_has_rows() -> None:
     """Guard the guard: an empty sheet would pass every per-row check."""
     rows = _sheet_rows()
-    assert len(rows) == 61, f"expected 61 numbered test rows, found {len(rows)}"
+    assert len(rows) == 64, f"expected 64 numbered test rows, found {len(rows)}"
 
 
 @pytest.mark.parametrize("tid,cell", _sheet_rows(), ids=lambda v: v if isinstance(v, str) else str(v))
