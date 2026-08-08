@@ -59,7 +59,7 @@ CHECKS = [
         "key": "permutation_test.obs_null_ratio",
         "expected": 0.473,
         "tolerance": 0.005,
-        "paper_ref": "Figure S1A",
+        "paper_ref": "S1 Fig A",
     },
 
     # ── CellHint replication (Figure 3C) ──
@@ -86,7 +86,7 @@ CHECKS = [
         "key": "procrustes_10x_only.obs_null_ratio",
         "expected": 0.508,
         "tolerance": 0.01,
-        "paper_ref": "Figure S2C-D",
+        "paper_ref": "S2 Fig C-D",
     },
 
     # ── SAMap validation (validation tooling; old Fig S5, cut) ──
@@ -144,7 +144,7 @@ CHECKS = [
         "file": "output/validation/pca_sensitivity/pca_sensitivity_results.json",
         "key": "10.p_value",
         "expected_below": 0.001,
-        "paper_ref": "Figure S2A-B",
+        "paper_ref": "S2 Fig A-B",
     },
 
     # ── L1000 random baseline (validation tooling; old Fig 7A, cut) ──
@@ -298,7 +298,7 @@ CHECKS = [
     },
 
     # ── S1 Text §10: selection/derangement circularity control ──
-    # Gates the two pre-registered PASS conditions by their numeric backing, since the
+    # Gates the two pre-specified PASS conditions by their numeric backing, since the
     # conditions themselves are stored as booleans: condition 1 is "real below the
     # sigma-null 1st percentile" (the real value 0.384 is already gated above from
     # gate_results.json; the threshold is gated here), condition 2 is "z <= -3".
@@ -319,7 +319,7 @@ CHECKS = [
         "key": "sigma_null.p01",
         "expected": 0.927,
         "tolerance": 0.01,
-        "paper_ref": "S1 Text §10 (pre-registered PASS condition 1: real below the 1st percentile)",
+        "paper_ref": "S1 Text §10 (pre-specified PASS condition 1: real below the 1st percentile)",
     },
     {
         "name": "Selection null: derangement z (real vs sigma-null)",
@@ -327,7 +327,7 @@ CHECKS = [
         "key": "real_position.z",
         "expected": -29.5,
         "tolerance": 0.5,
-        "paper_ref": "S1 Text §10 (pre-registered PASS condition 2: z <= -3; reported z = -29.5)",
+        "paper_ref": "S1 Text §10 (pre-specified PASS condition 2: z <= -3; reported z = -29.5)",
     },
     {
         "name": "Selection null: derangement draws at or below real",
@@ -918,7 +918,7 @@ CHECKS = [
         "key_null_median": "permutation_test.null_distribution_summary.median",
         "expected": 0.3166,
         "tolerance": 0.001,
-        "paper_ref": "Results §4 and S4 Fig caption (obs/null = 0.317); Table 1 T17",
+        "paper_ref": "Results §4 and S4 Fig caption (obs/null = 0.317); S13 Table T17",
     },
     {
         "name": "Matched-scale: human-mouse 6-type permutation p",
@@ -926,7 +926,7 @@ CHECKS = [
         "key": "permutation_test.p_value",
         "expected": 0.0035,
         "tolerance": 0.001,
-        "paper_ref": "S4 Fig caption (p = 0.0035); Table 1 T17",
+        "paper_ref": "S4 Fig caption (p = 0.0035); S13 Table T17",
     },
     {
         "name": "Matched-scale: human-human 6-type obs/null",
@@ -945,7 +945,7 @@ CHECKS = [
         "key": "permutation_test.p_value",
         "expected": 0.0088,
         "tolerance": 0.001,
-        "paper_ref": "S4 Fig caption (p = 0.0088); Table 1 T16",
+        "paper_ref": "S4 Fig caption (p = 0.0088); S13 Table T16",
     },
 
     # ── Lineage blocks: the strata the lineage-stratified null permutes within ──
