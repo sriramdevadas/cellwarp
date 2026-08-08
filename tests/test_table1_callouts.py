@@ -38,7 +38,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 TABLE_1 = REPO_ROOT / "docs/supplementary_materials/table_S13_test_inventory.xlsx"
 MANUSCRIPT = REPO_ROOT / "docs/submission/plosone/manuscript_combined.txt"
 
-SHEET = "Table 1"
+SHEET = "S13 Table"   # D67: tab renamed from "Table 1" to match the caption
 FIG_COL = 11  # "Figure/Table"
 ID_COL = 1
 

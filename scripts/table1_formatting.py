@@ -33,11 +33,20 @@ import openpyxl
 XLSX = Path(__file__).resolve().parent.parent / "docs/supplementary_materials/table_S13_test_inventory.xlsx"
 COL = {"id": 1, "desc": 3, "testtype": 4, "n": 5, "value": 7, "rawp": 8,
        "status": 10, "fig": 11}
+SHEET_NAME = "S13 Table"        # matches the manuscript caption and the file name
+SHEET_NAME_LEGACY = "Table 1"   # pre-D67 tab name, still what an unmigrated copy carries
 
 
 def main():
     wb = openpyxl.load_workbook(XLSX)
-    ws = wb["Table 1"]
+    # ---- D67: the worksheet is named for the display item it is ----
+    # The file, the manuscript caption (manuscript_combined.txt:330 "S13 Table."),
+    # the legend and this script's own docstring all say S13 Table; the sheet tab
+    # said "Table 1", which is the first thing a reader opening the workbook sees.
+    # Keyed on the old name so this runs against the current tracked workbook, and
+    # a fixed point once renamed.
+    ws = wb[SHEET_NAME] if SHEET_NAME in wb.sheetnames else wb[SHEET_NAME_LEGACY]
+    ws.title = SHEET_NAME
 
     # ---- D57: append the three tests the paper reports but the sheet omitted ----
     # Runs before the row scan below, so everything downstream sees 64 rows.
@@ -490,7 +499,7 @@ def main():
 
     # ---- verify ----
     wb2 = openpyxl.load_workbook(XLSX)
-    w = wb2["Table 1"]
+    w = wb2[SHEET_NAME]
     rig = sum(1 for r in range(1, w.max_row + 1)
               if w.cell(r, COL["desc"]).value and "rigidity" in str(w.cell(r, COL["desc"]).value).lower())
     print(f"  de-rigidified {derig} descriptions; remaining 'rigidity' in descriptions: {rig}")
