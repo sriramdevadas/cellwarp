@@ -26,7 +26,11 @@ def letter(ax,l,x=-0.16,y=1.04):
     ax.text(x,y,l,transform=ax.transAxes,fontsize=12,fontweight="bold",va="bottom",ha="right")
 
 def save(fig,name):
-    fig.savefig(OUT/f"{name}.pdf"); fig.savefig(OUT/f"{name}.png",dpi=300); plt.close(fig)
+    # PDF only: suppress the embedded /CreationDate so re-running this script in one
+    # environment reproduces the PDFs byte-for-byte. The PNG writer emits no
+    # timestamp. Applied in this writer, which is the one the five deposited main
+    # figures go through -- NOT figure_style.save_figure, which the panels use.
+    fig.savefig(OUT/f"{name}.pdf", metadata={"CreationDate": None}); fig.savefig(OUT/f"{name}.png",dpi=300); plt.close(fig)
     print("wrote",name)
 
 # ---------- FIG 1 : configuration conserved ----------

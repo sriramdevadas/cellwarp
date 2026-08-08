@@ -148,40 +148,56 @@ def fig3a_ellipsoid_heatmap():
 def fig3b_pre_post():
     """Bar chart comparing pre- and post-rotation ellipsoid alignment."""
     print("  Fig 3B: Pre vs post rotation...")
-    with open(BASE / 'output/mechanistic/ellipsoid_alignment/summary_stats.json') as f:
-        stats = json.load(f)
+    # Reads permutation_results.json, not summary_stats.json. The observed values
+    # are identical in both, checked to full precision at all six bars, but only
+    # this file carries the null and the p-value, so the panel could not show its
+    # own evidence while reading the other one. summary_stats.json is NOT retired:
+    # its 35type.eigenval_vs_rigidity is gated by reproduce/validate.py.
+    with open(BASE / 'output/mechanistic/ellipsoid_alignment/permutation_results.json') as f:
+        perm = json.load(f)['35type']
 
-    s35 = stats['35type']['mean_alignment']
     ks = ['k=1', 'k=3', 'k=5']
+    pre = [perm['label_shuffle_pre'][k] for k in ks]
+    post = [perm['label_shuffle_post'][k] for k in ks]
+
+    # 1e-4 is the floor of a 10,000-permutation test, not a measurement, so it is
+    # shown as a bound; the prose uses that form throughout. Above the floor the
+    # shared format_p applies.
+    def p_label(p):
+        return 'p < 10$^{-4}$' if p <= 1e-4 else format_p(p)
 
     fig, ax = plt.subplots(figsize=(COL1, COL1 * 0.65))
     x = np.arange(len(ks))
     w = 0.35
 
-    pre_vals = [s35[k]['pre'] for k in ks]
-    post_vals = [s35[k]['post'] for k in ks]
+    pre_vals = [d['observed'] for d in pre]
+    post_vals = [d['observed'] for d in post]
 
     ax.bar(x - w/2, pre_vals, w, color=C_BLUE, edgecolor='white',
            linewidth=0.3, label='Pre-rotation', zorder=3)
     ax.bar(x + w/2, post_vals, w, color=C_ORANGE, edgecolor='white',
            linewidth=0.3, label='Post-rotation', zorder=3)
 
-    # Value labels above each bar
-    for i, (pre, post) in enumerate(zip(pre_vals, post_vals)):
-        ax.text(i - w/2, pre + 0.01, f'{pre:.3f}',
-                ha='center', va='bottom', fontsize=5.0, color=C_DARKGRAY)
-        ax.text(i + w/2, post + 0.01, f'{post:.3f}',
-                ha='center', va='bottom', fontsize=5.0, color=C_DARKGRAY)
+    # The permutation null on every bar, and the p-value above it. Without both,
+    # a reader reads bar-above-marker as success: at k=1 the post-rotation bar
+    # sits below its null, and the two bars that clear theirs by 6.9 and 10.7 SD
+    # look only modestly above them on this axis.
+    for i, (a, b) in enumerate(zip(pre, post)):
+        for off, d in ((-w/2, a), (w/2, b)):
+            ax.plot([i + off - w*0.42, i + off + w*0.42], [d['null_mean']] * 2,
+                    color=C_DARKGRAY, lw=1.0, zorder=5,
+                    label='Label-shuffle null' if (i == 0 and off < 0) else None)
+            v = d['observed']
+            ax.text(i + off, v + 0.01, f'{v:.3f}',
+                    ha='center', va='bottom', fontsize=5.0, color=C_DARKGRAY)
+            ax.text(i + off, v + 0.045, p_label(d['p_value']),
+                    ha='center', va='bottom', fontsize=4.6, color=C_DARKGRAY)
 
     ax.set_xticks(x)
     ax.set_xticklabels(ks, fontsize=FONT_SIZE_TICK)
     ax.set_ylabel('Krzanowski subspace similarity (S)', fontsize=FONT_SIZE_LABEL)
     ax.set_ylim(0, 0.6)
-    ax.legend(fontsize=FONT_SIZE_LEGEND, frameon=False)
-
-    # Annotation for k=5 drop — place above bars in upper-right empty space
-    ax.annotate(f'S drops\n0.483 → 0.230', xy=(2, 0.55),
-                fontsize=FONT_SIZE_ANNOT, ha='center', va='bottom', color=C_DARKGRAY)
+    ax.legend(fontsize=FONT_SIZE_LEGEND - 1.2, frameon=False)
 
     clean_spine(ax)
     save_figure(fig, PANELS / 'fig3b_pre_post')

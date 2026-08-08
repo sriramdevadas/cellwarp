@@ -245,10 +245,17 @@ def save_figure(fig, path_stem, tight=True):
             fig.tight_layout()
         except Exception:
             pass
+    # pad_inches 0.05 was too tight to survive a rebuild. matplotlib computes the
+    # tight bbox from *measured* text extents; when the FreeType a figure is
+    # rebuilt under measures a rotated axis label slightly narrower than it draws
+    # it, the label's tail falls outside the box and is cropped -- fig3b_pre_post's
+    # y-label lost its closing parenthesis exactly this way. A larger pad absorbs
+    # the mismatch. Changing this rewrites nothing on its own; it changes what the
+    # next rebuild of a panel produces, and no gate rebuilds panels.
     fig.savefig(str(path) + '.pdf', format='pdf', dpi=DPI,
-                bbox_inches='tight', pad_inches=0.05)
+                bbox_inches='tight', pad_inches=0.12)
     fig.savefig(str(path) + '.png', format='png', dpi=DPI,
-                bbox_inches='tight', pad_inches=0.05)
+                bbox_inches='tight', pad_inches=0.12)
     plt.close(fig)
     print(f"  Saved: {path}.pdf and {path}.png")
 
