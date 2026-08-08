@@ -1023,7 +1023,7 @@ def build_document(input_path: str, output_path: str):
     # Neutralize document properties for the public/submission artifact: set a
     # single human author and clear the tool-generated description so no library
     # name, machine user, or institutional identity is stamped into the .docx
-    # (and, downstream, the docx2pdf-converted .pdf). No FMI / employer / non-
+    # (and, downstream, the docx2pdf-converted .pdf). No employer / non-
     # Sriram identity is ever written.
     cp = doc.core_properties
     cp.author = "Sriram Devadas"
