@@ -161,12 +161,29 @@ def main():
         ws.cell(rowmap[_tid], COL["n"]).value = "500 genes"
     if footnote_row:
         _fv = ws.cell(footnote_row, COL["id"]).value
-        if "T34/T35:" not in _fv:
-            _t3435 = (
-                "T34/T35: the inventoried fold-enrichments are for the overall 500-gene "
-                "identity set; the per-type top-50 centroid-deviation test on the 6 validation "
-                "types is reported as a pass-rate (5 of 6 under CellMarker, 6 of 6 under the "
-                "held-out HPA reference; Figure S6, Methods), not as a single inventory p-value. ")
+        # D61: the sentence is keyed on the SUPERSEDED text, not on the "T34/T35:"
+        # sentinel. The tracked footnote already satisfies that sentinel, so editing
+        # the literal under the old guard would have changed nothing while leaving
+        # every gate green -- a silent no-op reporting success.
+        _t3435 = (
+            "T34/T35: the inventoried fold-enrichments are for the overall 500-gene "
+            "identity set; the per-type top-50 centroid-deviation test on the 6 validation "
+            "types is a pass-rate rather than a single inventory p-value, and is not "
+            "reported in this paper. ")
+        # D61: the superseded sentence said the pass-rate "is reported as", gave two
+        # numbers for it, and cited Figure S6 -- a display item cut from the paper
+        # (reproduce/validate.py annotates its three CellMarker checks "old Fig S6,
+        # cut"). The result appears in none of the three submitted texts, so S13 was
+        # the only place in the submission carrying those numbers.
+        _t3435_d22 = (
+            "T34/T35: the inventoried fold-enrichments are for the overall 500-gene "
+            "identity set; the per-type top-50 centroid-deviation test on the 6 validation "
+            "types is reported as a pass-rate (5 of 6 under CellMarker, 6 of 6 under the "
+            "held-out HPA reference; Figure S6, Methods), not as a single inventory p-value. ")
+        if _t3435_d22 in _fv:
+            _fv = _fv.replace(_t3435_d22, _t3435, 1)
+            ws.cell(footnote_row, COL["id"]).value = _fv
+        elif "T34/T35:" not in _fv:
             _anchor = "T29, T54, and the T55-T57 treeness tests"
             _fv = _fv.replace(_anchor, _t3435 + _anchor, 1)
             ws.cell(footnote_row, COL["id"]).value = _fv
@@ -358,6 +375,18 @@ def main():
         if "T44, T47 and T48 also report" not in _fv:
             _anchor = "given in that column instead."
             _fv = _fv.replace(_anchor, _anchor + _sub, 1)
+        ws.cell(footnote_row, COL["id"]).value = _fv
+
+    # ---- D61: the last inverted supplementary reference in the workbook ----
+    # D56 normalised the 18 references in column K to the number-first order the
+    # submitted texts use; LEGACY_SUPP_RE is anchored to a whole cell, so it could
+    # not reach a reference embedded in footnote prose. This one is the remainder.
+    # No block of this script has ever authored the sentence -- it is inherited
+    # workbook content -- so it needs its own edit rather than a corrected literal.
+    if footnote_row:
+        _fv = ws.cell(footnote_row, COL["id"]).value
+        _fv = _fv.replace("documented in Table S4 rather than",
+                          "documented in S4 Table rather than")
         ws.cell(footnote_row, COL["id"]).value = _fv
 
     # ---- Stage-5.5 C: presentation formatting (reproducible cell sizing) ----
