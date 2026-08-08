@@ -206,8 +206,15 @@ def main() -> None:
 
     results = []
 
-    # Suppress numpy overflow warnings from high-dimensional det() computation
-    # (ISSUE-022: 33-dim determinant overflows float64, sign is still correct)
+    # Suppress spurious RuntimeWarnings from np.linalg.det inside procrustes_align.
+    # (ISSUE-022) Nothing overflows. det() receives V @ U.T from an SVD: a 33x33
+    # orthogonal matrix, condition number 1, determinant +/-1 -- measured
+    # 1.0000000000000058, some 308 orders below the float64 ceiling. The warnings
+    # are FPU status flags raised inside the LAPACK routine and are backend
+    # specific: three fire under an Accelerate-backed numpy (divide by zero,
+    # overflow, invalid) and none at all under an OpenBLAS-backed one, on the same
+    # input with the same result. The value and its sign are correct either way,
+    # which is what makes suppressing them safe.
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", category=RuntimeWarning)
 
