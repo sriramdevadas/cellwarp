@@ -177,7 +177,7 @@ Sixty-four tests were performed in total. Fifty-five of them constitute the prin
 
 Dated internal analysis plans were committed to the repository before the corresponding statistics were computed. Separately, "pre-specified" throughout this paper denotes a design or threshold decision fixed before the corresponding result was observed; the deposited plans document a subset of these. No analysis was registered with an external public pre-registration registry; some of the deposited plans cover analyses reported elsewhere or held in reserve rather than in this paper, and the full classification of every script, analysis, and plan (paper, banked, other-project, exploratory) is provided in the repository as SCOPE.md.
 
-Analysis code was run under Python 3.12.12 with a global random seed of 42, using numpy 2.4.3, scipy 1.17.1, scikit-learn 1.8.0, statsmodels 0.14.6, scanpy 1.12, anndata 0.12.10 and pandas 2.3.3; the complete pinned environment is given in S12 Table. Code and archived outputs are identified under Data and code availability.
+Analysis code was run under Python 3.12.12 with a global random seed of 42, using numpy 2.4.3, scipy 1.17.1, scikit-learn 1.8.0, statsmodels 0.14.6, scanpy 1.12, anndata 0.12.10 and pandas 2.3.3; package versions are given in S12 Table, and the pinned dependency manifests are deposited with the code. Code and archived outputs are identified under Data and code availability.
 
 Conserved-contribution and identity-gene analysis
 
