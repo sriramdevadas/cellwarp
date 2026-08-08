@@ -177,7 +177,7 @@ def main():
                          obs_null=round(sweep[K]["obs_null_100k"], 3),
                          p_100k=f"{sweep[K]['p_100k']:.1e}",
                          n_nonsingleton_groups=sweep[K]["n_nonsingleton"],
-                         note=("beats null" if sweep[K]["p_100k"] < 0.05 else "n.s. (null degenerate)")))
+                         note=("beats null" if sweep[K]["p_100k"] < 0.05 else "n.s.")))
     rows.append(dict(partition="Marker-similarity K=15 (correlation linkage)",
                      obs_null=round(corr[15]["obs_null_100k"], 3), p_100k=f"{corr[15]['p_100k']:.1e}",
                      n_nonsingleton_groups="-", note="robustness: beats null even at K=15"))
@@ -202,7 +202,7 @@ def main():
     ax1.scatter([1], [ratios[0]], s=70, facecolors="none", edgecolors="green", lw=1.5, zorder=5, label="K=1 = unrestricted (0.522)")
     if crossover:
         ax1.axvline(crossover - 0.5, ls="--", c="#c0392b", lw=1.0)
-        ax1.text(crossover - 0.4, 0.56, f"p≥0.05 at K={crossover}\n(null degenerate)", fontsize=7, color="#c0392b", va="bottom")
+        ax1.text(crossover - 0.4, 0.56, f"p≥0.05 at K={crossover}", fontsize=7, color="#c0392b", va="bottom")
     ax1.set_xlabel("cluster granularity K (marker-similarity groups)")
     ax1.set_ylabel("obs/null (lower = stronger; blue p<0.05, red n.s.)")
     ax1.set_title("A  Coherence vs marker-similarity-null granularity", fontsize=9, loc="left")
@@ -213,8 +213,14 @@ def main():
     ax2.set_ylabel("Procrustes residual (per type)")
     ax2.set_title(f"B  Per-type residual vs marker-distinctness\nSpearman ρ={rho:+.3f}, p={prho:.2f}, n=35", fontsize=9, loc="left")
     fig.tight_layout()
-    fig.savefig(SUPP / "figure_S8_markernull.pdf")
-    fig.savefig(SUPP / "figure_S8_markernull.png", dpi=200)
+    # Suppress the embedded /CreationDate so that re-running the unchanged script
+    # in one environment reproduces the figure byte-for-byte. Only the PDF carries
+    # a timestamp; the PNG writer emits none, and takes the argument harmlessly.
+    # Across environments the bytes still move with whichever FreeType matplotlib
+    # links, and with its version string -- see reproduce/figure_script_map.md.
+    fig.savefig(SUPP / "figure_S8_markernull.pdf", metadata={"CreationDate": None})
+    fig.savefig(SUPP / "figure_S8_markernull.png", dpi=200,
+                metadata={"CreationDate": None})
     plt.close(fig)
 
     print("\n" + "=" * 78)
