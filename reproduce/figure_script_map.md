@@ -203,6 +203,20 @@ were run in, because the conda environment would have re-rendered the whole pane
 - `Fig5_conserved_identity_genes.pdf` is a raster wrap of a PNG, even though `make_figure7.py` also emits a native vector `figures/main/fig7_conserved_contribution.pdf`.
 - Fig 5D is not bit-reproducible from tracked data alone: `make_figure7.py` reads gitignored Census aggregates (`analysis/conserved_contribution/donor_stability/agg_*.npz`) for the donor-split recompute.
 - The canonical `table_S7_layer1_housekeeping_exclusion.csv` has no scripted writer (the analysis script writes only the per-variant ranking CSVs in its own directory); `table_S12_software_environment.csv` is hand-authored, its authoritative source being `requirements.txt`.
+- **S2 Fig is a three-stage chain and the stages must run in order.**
+  (1) `analysis/expanded_negative_controls/negative_control_figure.py` writes
+  `figures/supplementary/negative_control_distributions.pdf`, which is panel E;
+  (2) `scripts/build_submission_figures.py` composites panels A-E from that file plus
+  the panel PNGs; (3) `scripts/56_add_figs2_panel_f.py` appends panel F, reading and
+  rewriting the same deposited path. Stage 3 is now invoked by stage 2, and stage 3
+  asserts on entry that its input carries exactly A-E, so it cannot append panel F
+  twice. **Stage 1 is not chained and must be current before stage 2 runs.** It is in
+  `reproduce/run_all.sh` at line 107, but its output is tracked, so a stale copy is
+  what actually gets embedded: until D66 that tracked copy still carried a
+  Cell Press house-style phrase that its own producer had already corrected, and
+  rebuilding the chain would have put the phrase back into a submitted figure. If
+  stage 1's wording ever changes, re-run it and commit its output before rebuilding
+  S2 Fig.
 - `analysis/sensitivity_analyses/markernull.py` writes its figure to `docs/supplementary_materials/figure_S8_markernull.{pdf,png}` (old stem and directory), not to the deposited `figures/submission/supplementary/figS5_markernull.pdf`. **That hop is copied by hand and enforced by nothing.** `figure_S8_markernull` occurs zero times in `scripts/build_submission_packet.py` and zero times in `tests/test_submission_packet_consistency.py`; `figS5_markernull.pdf` appears in the packet manifest only as a Group E *canonical*, whose mirror `Figure_S5.pdf` is then checked. So `--verify` confirms the deposited figure matches its packet copy while never checking that either matches what the producer wrote, and a producer re-run that is not hand-copied forward leaves the deposited S5 Fig stale with all four gates green. There is no deposited `.png` for S5 Fig; the PDF is the only deposited artifact.
 - S5 Fig's panel geometry is a function of the length of the crossover annotation in panel A. `fig.tight_layout()` runs after that text is drawn and counts it in the tight bounding box, and the text overhangs panel A's right edge, so any edit changing the width of its widest line re-lays out the figure. Measured when the parenthetical was removed: panel A's axes box went `x1 = 0.464464` to `0.467754` (`x0` unchanged, so it is purely the overhang), `tight_layout` re-solved the whole 1x2 grid, and 70,064 of 1,520,000 PNG pixels moved (4.61%) -- 30,917 in panel A and 39,147 in panel B, which was not edited at all. No plotted value changes and no mark-producing operator appears or disappears (507 before and after); only coordinates transform. Expect this from any future edit to that annotation.
 - `scripts/build_submission_packet.py` and `tests/` still pin the old 7-figure packet (Figure_1..7, Table_S8), which does not correspond to the current display items.

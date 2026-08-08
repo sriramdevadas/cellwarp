@@ -307,8 +307,30 @@ def assemble_combined_pdf():
 
     src = fitz.open(str(EXISTING_PDF))
     src_page = src[0]
+
+    # Entry assertion: this script reads and rewrites the same path it appends to,
+    # so it is only correct on an A-E base. Run standalone against its own output it
+    # would append panel F a second time -- the hazard this script's sibling
+    # scripts/patch_figs2_panel_f_values.py documents in its docstring, and the
+    # reason that patch used text surgery rather than a chain rebuild. Asserting the
+    # input shape here is also the idempotency guard the chain previously lacked.
+    _labels = sorted({
+        s["text"].strip()
+        for b in src_page.get_text("dict")["blocks"] if b["type"] == 0
+        for l in b["lines"] for s in l["spans"]
+        if len(s["text"].strip()) == 1 and s["text"].strip().isalpha()
+        and s["text"].strip().isupper() and s["size"] >= 8.0
+        and "bold" in s["font"].lower()
+    })
+    assert _labels == list("ABCDE"), (
+        f"{EXISTING_PDF.name} carries panel labels {_labels}, expected "
+        f"['A','B','C','D','E']. This script appends panel F to an A-E base; "
+        f"running it against its own output would duplicate panel F. Rebuild the "
+        f"A-E base with scripts/build_submission_figures.py first."
+    )
+
     src_w, src_h = src_page.rect.width, src_page.rect.height
-    print(f"  Existing FigS2 page: {src_w:.1f} × {src_h:.1f} pts")
+    print(f"  Existing FigS2 page: {src_w:.1f} × {src_h:.1f} pts (panels {''.join(_labels)})")
 
     pf_doc = fitz.open(str(TMP_PANEL_F))
     pf_page = pf_doc[0]

@@ -7,7 +7,8 @@ Task B: Assemble composite S1 and build S3.
 
 Output directory: figures/submission/supplementary/
   figS1_pipeline_validation.pdf          — composite of S1+S7 (panels A–F)
-  figS2_parameter_protocol_sensitivity.pdf — fixed labels (panels A–E)
+  figS2_parameter_protocol_sensitivity.pdf — fixed labels (panels A–E), then
+      panel F appended by the chained scripts/56_add_figs2_panel_f.py (A–F)
   figS3_bootstrap_rankings.pdf            — 4-panel composite (panels A–B)
 
 This script writes only those three. The renumbered S4/S5 keepers
@@ -139,6 +140,26 @@ neg_doc.close()
 print(f"  Saved: {s2_out} ({os.path.getsize(s2_out):,} bytes)")
 
 
+# ── S2 panel F: chained, not left to a human ─────────────────────
+# The A-E composite above is NOT the deposited figure. Panel F is appended by
+# scripts/56_add_figs2_panel_f.py, which reads and rewrites this same path, and
+# S2 Fig F is the callout for S13 rows T22, T23 and T24. Left unchained, this
+# script wrote a five-panel figS2, its own VERIFICATION block below certified
+# that as correct, and re-running it silently reverted the deposited figure to
+# five panels. Chained here the way S3's second stage already is.
+#
+# The stage BEFORE this one matters too: panel E embeds
+# figures/supplementary/negative_control_distributions.pdf, so
+# analysis/expanded_negative_controls/negative_control_figure.py must have been
+# run against current wording first. See reproduce/figure_script_map.md.
+print("\n--- S2: append panel F via 56_add_figs2_panel_f.py ---")
+import subprocess
+panel_f_script = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                              "56_add_figs2_panel_f.py")
+subprocess.run([sys.executable, panel_f_script], check=True)
+print(f"  Saved: {s2_out} ({os.path.getsize(s2_out):,} bytes, panels A-F)")
+
+
 # ═══════════════════════════════════════════════════════════════════
 # TASK B — Composite S1 and renaming
 # ═══════════════════════════════════════════════════════════════════
@@ -268,7 +289,10 @@ print("=" * 60)
 
 expected = {
     "figS1_pipeline_validation.pdf": {"panels": 6, "labels": "ABCDEF"},
-    "figS2_parameter_protocol_sensitivity.pdf": {"panels": 5, "labels": "ABCDE"},
+    # Six, not five: panel F is appended by the chained stage above. This entry
+    # read "ABCDE" until D66, so the check certified a figS2 missing the panel
+    # that S13 rows T22, T23 and T24 cite.
+    "figS2_parameter_protocol_sensitivity.pdf": {"panels": 6, "labels": "ABCDEF"},
     "figS3_bootstrap_rankings.pdf": {"panels": 2, "labels": "AB"},
 }
 
