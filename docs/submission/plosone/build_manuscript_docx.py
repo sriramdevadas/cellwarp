@@ -81,7 +81,7 @@ SECTIONS = (
 # Results heading 2 without retyping 104 characters.
 TITLE_LINES = (6, 8, 10, 11, 12, 14)
 RESULTS_HEADING_LINES = (47, 61, 77, 89, 101)
-METHODS_HEADING_LINES = (132, 138, 146, 154, 160, 168, 172, 182, 186)
+METHODS_HEADING_LINES = (132, 138, 146, 154, 160, 168, 172, 182, 192, 196)
 
 # Belt and braces: the Methods sub-headings are short enough to state in full.
 METHODS_HEADINGS = (
@@ -91,6 +91,7 @@ METHODS_HEADINGS = (
     "The two-layer decomposition",
     "Primate replication (basal ganglia)",
     "Simulation",
+    "Statistical analysis",
     "Conserved-contribution and identity-gene analysis",
     "Data and code availability",
     "Use of generative AI",
@@ -114,25 +115,25 @@ CAPTION_JOIN = " "
 
 HANDLER_COUNTS = {
     "title": 6,
-    "h2": 14,
+    "h2": 15,
     "caption": 24,
     "legend": 24,
     "reference": 36,
-    "body": 49,
+    "body": 53,
 }
-EXPECTED_CONTENT_LINES = 153
+EXPECTED_CONTENT_LINES = 158
 EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 91675
+EXPECTED_RAW_JOINED_CHARS = 92803
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 91699
-EXPECTED_JOINED_WORDS = 13283
+EXPECTED_JOINED_CHARS = 92827
+EXPECTED_JOINED_WORDS = 13443
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 270
+EXPECTED_ASCII_T = 275
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 19
@@ -210,7 +211,8 @@ NOT_A_GENUS = (
     "Because", "Benchmark", "Beyond", "Biological", "Bonferroni", "Bootstrap",
     "Both", "But", "Cell", "Cells", "Census", "Chromium", "Coherence",
     "Columns", "Combined", "Comparative", "Confidence", "Conserved",
-    "Continuity", "Controlling", "Corresponding", "Count", "Data", "Dated",
+    "Analysis", "Code", "Continuity", "Controlling", "Correlations",
+    "Corresponding", "Count", "Data", "Dated", "Statistical",
     "Dimensionality", "Dots", "Dropping", "Each", "Ellipsoid", "Ensembl",
     "Ethics", "Euclidean", "Every", "Evolutionarily", "Excluding", "Expanded",
     "Extended", "For", "Four", "Full", "Gaussian", "Gene", "Genes",

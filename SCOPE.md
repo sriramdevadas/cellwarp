@@ -40,7 +40,7 @@ is on the record rather than inferred.
 | `docs/preregistration_treeness_anticorrelation_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Treeness–rigidity mediation (neighborhood density). Treeness line; panels cut from this paper. |
 | `docs/preregistration_treeness_h2_concentration_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Treeness–rigidity mediation (gene-program concentration). Post-hoc exploratory; treeness line. |
 
-The manuscript's disclosure sentence (Methods, Ethics statement)
+The manuscript's disclosure sentence (Methods, Statistical analysis)
 is written to reflect this: no analysis was registered with an *external* public
 registry (e.g. OSF), but dated internal pre-specifications were deposited with the
 code, and some of them cover analyses reported elsewhere — pointing here.
