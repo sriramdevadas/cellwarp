@@ -31,3 +31,10 @@ openpyxl==3.1.5
 requests==2.32.5
 samap==1.0.14
 torch==2.10.0
+
+## FreeType (figure rasterisation only)
+matplotlib links its vendored FreeType 2.6.1 in this .venv, which is what makes the
+deposited figure files reproducible. A conda environment satisfying the pins above may
+link a system FreeType instead; text extents then measure differently and the figure
+bytes move, while every gated value stays put. See "Figure rasterisation and
+reproducibility" in reproduce/figure_script_map.md.

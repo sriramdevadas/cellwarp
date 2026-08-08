@@ -153,6 +153,48 @@ calibrated-signal median, the upper endpoint of the swept-spread range, and the 
 negative control, which must stay near zero and would catch a change that broke the recovery
 metric.
 
+## Figure rasterisation and reproducibility
+
+Nothing in this section touches a gated value. Every number `reproduce/validate.py`
+checks, and every JSON, CSV, `.npy` and table workbook, is unaffected; all four gates
+pass under either interpreter described below. What follows concerns only the bytes of
+the deposited figure files.
+
+Figure rendering depends on which FreeType matplotlib links, because measured text
+extents set both `tight_layout` geometry and glyph rasterisation:
+
+- The documented install path (`reproduce/README.md`: `python3.12 -m venv .venv`, then
+  `.venv/bin/python`) and the Docker image use a matplotlib wheel linking its
+  **vendored FreeType 2.6.1**. That is the environment
+  `reproduce/environment_ground_truth.txt` was recorded from, and it reproduces the
+  deposited figures' rendering. Rebuilding S4 Fig there returns an identical MediaBox,
+  a PDF differing from the deposited file in 10 bytes and a PNG differing in 5 -- the
+  embedded creation timestamp, and the matplotlib version string carried in `/Creator`,
+  `/Producer` and the PNG `Software` chunk, which has since moved 3.10.8 to 3.10.9.
+  Rebuilding S5 Fig there differs in those same 5 PNG bytes.
+- A conda environment built from `environment.yml` may resolve matplotlib against a
+  **system FreeType** instead (2.14.3 as measured here). The version pins above are all
+  satisfied and text still measures differently. Rebuilding S4 Fig there moves the tight
+  bounding box -- MediaBox `301.3628047521` becomes `301.0692252066` -- and the PDF
+  differs from the deposited file in 56,694 bytes; `figure_S8_markernull.png` differs in
+  30,705 of its 1,520,000 pixels (2.02%), spread over the whole panel, because every text
+  element is re-rasterised. Nothing plotted moves and no gate fails.
+
+So the deposited figures regenerate in kind under either path and byte-for-byte only
+under the first -- the same distinction `DATA_SOURCES.md` draws for the UCSC refGene
+tables and the DoRothEA regulon. A reader who rebuilds a figure and gets a different
+file should read `matplotlib.ft2font.__freetype_version__` before looking for a
+substantive cause.
+
+Timestamps are suppressed only where a producer has been changed to do it:
+`scripts/49_build_figS7_matched_scale.py` passes `metadata={"CreationDate": None}` to its
+PDF `savefig`, so repeated runs in one environment are byte-identical. The other figure
+producers still embed a creation timestamp and differ run to run for that reason alone.
+
+Which interpreter built what: commit `d9a3183` rebuilt S4 Fig under the
+vendored-FreeType interpreter deliberately, not under the conda environment its gates
+were run in, because the conda environment would have re-rendered the whole panel.
+
 ## Known gaps
 
 - The three current-figure producers `docs/submission/plosone/figures/build_main_figures.py`, `docs/submission/plosone/figures/build_fig2c_bg.py`, and `analysis/conserved_contribution/make_figure7.py` are not invoked by `reproduce/run_all.sh`; the deposited main figures are assembled outside the full-reproduction pipeline.

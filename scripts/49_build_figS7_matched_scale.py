@@ -148,8 +148,10 @@ def main():
     base = OUT_SUPP / "figS4_matched_scale_control"
     base.parent.mkdir(parents=True, exist_ok=True)
     # PDF only: suppress the embedded /CreationDate so that re-running the
-    # unchanged script reproduces the PDF byte-for-byte. The PNG writer emits
-    # no timestamp (Software + dpi only), so it needs no equivalent.
+    # unchanged script in one environment reproduces the PDF byte-for-byte. The
+    # PNG writer emits no timestamp (Software + dpi only), so it needs no
+    # equivalent. Across environments the bytes still move with whichever
+    # FreeType matplotlib links -- see reproduce/figure_script_map.md.
     for ext, meta in (("pdf", {"CreationDate": None}), ("png", None)):
         fig.savefig(f"{base}.{ext}", dpi=300, bbox_inches="tight", metadata=meta)
     print(f"  wrote: {base.name}.{{pdf,png}}")
