@@ -125,10 +125,10 @@ EXPECTED_CONTENT_LINES = 158
 EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 92866
+EXPECTED_RAW_JOINED_CHARS = 92738
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 92890
-EXPECTED_JOINED_WORDS = 13452
+EXPECTED_JOINED_CHARS = 92762
+EXPECTED_JOINED_WORDS = 13420
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
@@ -158,10 +158,10 @@ SUPERSCRIPT = {
 SUPERSCRIPT_EXPECTED = {
     "\u00b9": 1,
     "\u00b2": 2,
-    "\u2074": 33,
+    "\u2074": 32,
     "\u2075": 2,
     "\u2076": 9,
-    "\u207b": 43,
+    "\u207b": 42,
     "\u1d40": 5,
 }
 SUPER_MINUS = "\u207b"
@@ -183,7 +183,7 @@ LITERAL_EXPECTED = {
     "\u2032": 1,   # PRIME (was 3; two were the 3' v3 / 5' v2 sub-split, dropped)
     "\u2192": 8,   # RIGHTWARDS ARROW
     "\u2208": 4,   # ELEMENT OF
-    "\u2212": 16,  # MINUS SIGN (59 in the output: 16 literal + 43 substituted)
+    "\u2212": 16,  # MINUS SIGN (58 in the output: 16 literal + 42 substituted)
     "\u2248": 13,  # ALMOST EQUAL TO
     "\u2264": 11,  # LESS-THAN OR EQUAL TO
     "\u2265": 5,   # GREATER-THAN OR EQUAL TO
