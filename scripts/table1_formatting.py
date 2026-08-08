@@ -31,7 +31,8 @@ import re
 import openpyxl
 
 XLSX = Path(__file__).resolve().parent.parent / "docs/supplementary_materials/table_S13_test_inventory.xlsx"
-COL = {"id": 1, "desc": 3, "testtype": 4, "n": 5, "value": 7, "rawp": 8, "fig": 11}
+COL = {"id": 1, "desc": 3, "testtype": 4, "n": 5, "value": 7, "rawp": 8,
+       "status": 10, "fig": 11}
 
 
 def main():
@@ -135,6 +136,26 @@ def main():
     tt = ws.cell(rowmap["T44"], COL["testtype"]).value
     if tt and "spearman" in str(tt).lower():
         ws.cell(rowmap["T44"], COL["testtype"]).value = "Fisher's exact + FDR"
+
+    # ---- D61: mechanistic nulls 1-6 are pre-specified, so Confirmatory ----
+    # S1_Text.txt:60 states the design status of the ten mechanistic nulls: "nulls
+    # 1-6 pre-specified as confound diagnostics; 7-9 designed sequentially with
+    # rho < 0.35 closure thresholds locked before invocation; 10 exploratory." The
+    # footnote's own definition is Confirmatory = pre-specified or direct
+    # replication, so the six pre-specified nulls belong there; all six said
+    # Exploratory.
+    #
+    # T48-T50 (nulls 7-9) stay Exploratory deliberately. Locking a closure
+    # threshold before invocation pre-commits the decision rule, not the
+    # hypothesis, and a hypothesis designed after the previous result was seen is
+    # not pre-specified whatever the discipline of its thresholds. They are
+    # pre-registered in their analysis and post-hoc in their existence. T51
+    # (null 10) is called exploratory by S1 Text itself.
+    #
+    # k does not move: family membership is set by the em-dash in the Bonferroni
+    # column, and none of T42-T47 is among the nine excluded IDs.
+    for _tid in ("T42", "T43", "T44", "T45", "T46", "T47"):
+        ws.cell(rowmap[_tid], COL["status"]).value = "Confirmatory"
 
     # ---- C6: exclusion-principle footnote wording ----
     if footnote_row:
@@ -388,6 +409,28 @@ def main():
         _fv = _fv.replace("documented in Table S4 rather than",
                           "documented in S4 Table rather than")
         ws.cell(footnote_row, COL["id"]).value = _fv
+
+    # ---- D61: derive the row fill from Status instead of writing it alongside ----
+    # The footnote states the rule -- "Green rows = confirmatory; yellow rows =
+    # exploratory or diagnostic" -- and the sheet obeyed it for 63 of 64 rows. T68
+    # was the exception, green on an Exploratory row: when D57 appended T67-T69 it
+    # copied the template row's style, and green happened to be right for T67 and
+    # T69 and wrong for T68. A hand-maintained convention that agrees 63 times out
+    # of 64 is worth deriving rather than repairing, so it is derived here and no
+    # row's fill can contradict its Status again.
+    #
+    # The assert is the point of the block as much as the fill is: an unrecognised
+    # Status would otherwise fall through to yellow silently.
+    from openpyxl.styles import PatternFill
+    _GREEN = PatternFill("solid", fgColor="00E2EFDA", bgColor="00000000")
+    _YELLOW = PatternFill("solid", fgColor="00FFF2CC", bgColor="00000000")
+    for _tid, _r in rowmap.items():
+        _st = str(ws.cell(_r, COL["status"]).value or "")
+        assert _st.startswith(("Confirmatory", "Exploratory", "Diagnostic")), \
+            f"{_tid}: unrecognised Status {_st!r}; fill cannot be derived"
+        _fill = _GREEN if _st.startswith("Confirmatory") else _YELLOW
+        for _c in range(1, 12):
+            ws.cell(_r, _c).fill = _fill
 
     # ---- Stage-5.5 C: presentation formatting (reproducible cell sizing) ----
     # Column widths so the Description / Status / Category cells are not clipped.
