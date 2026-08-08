@@ -93,12 +93,32 @@ def _donor_split_CA_CB(split=0, cap=10000):
 
 try:
     _cA, _cB = _donor_split_CA_CB(split=0)
-    donor_split_C_A = core["gene_id"].map(_cA)
-    donor_split_C_B = core["gene_id"].map(_cB)
-except FileNotFoundError:
-    donor_split_C_A = pd.Series(np.nan, index=core.index)
-    donor_split_C_B = pd.Series(np.nan, index=core.index)
-    print("WARNING: donor_stability aggregates absent; donor_split_C_A/_B left NaN")
+except FileNotFoundError as _exc:
+    # D67: this used to fall back to an all-NaN pair and carry on to exit 0. The
+    # result was an S11 Table that looked built -- 16,959 rows, every other column
+    # populated -- with both donor-split columns empty and nothing but a stdout
+    # warning to say so. On a fresh clone the aggregates are always absent
+    # (donor_stability/agg_*.npz and the agg_*_groups.csv beside them are
+    # untracked), so that path was the one a reader would actually take.
+    #
+    # No fallback: the deposited table has these columns populated (15,959 and
+    # 15,928 non-null of 16,959), so an absent aggregate means this run cannot
+    # reproduce the deposited artifact, and it should say so rather than emit a
+    # gutted one.
+    raise SystemExit(
+        "ERROR: cannot compute donor_split_C_A / donor_split_C_B.\n"
+        "  missing: %s\n"
+        "  wanted under: %s\n"
+        "    agg_human_cap10000.npz, agg_mouse_cap10000.npz,\n"
+        "    agg_human_cap10000_groups.csv, agg_mouse_cap10000_groups.csv\n"
+        "  These aggregates are untracked, so a fresh clone does not carry them.\n"
+        "  Regenerate them with donor_stability/run_donor_stability.py before\n"
+        "  building S11 Table. Refusing to write the table with both donor-split\n"
+        "  columns empty."
+        % (getattr(_exc, "filename", None) or _exc, DONOR)
+    ) from _exc
+donor_split_C_A = core["gene_id"].map(_cA)
+donor_split_C_B = core["gene_id"].map(_cB)
 
 out = pd.DataFrame({
     "gene_id": core["gene_id"],
