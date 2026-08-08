@@ -99,7 +99,7 @@ python3 scripts/permutation_1M_independent_pca.py
 echo "[S3] Lineage-stratified permutation test (Figure 1C)..."
 python3 scripts/test_lineage_stratified_permutation.py
 
-echo "[S4] Human-vs-human negative control (Figure 3E)..."
+echo "[S4] Human-vs-human negative control (S4 Fig)..."
 python3 scripts/test_35type_human_control.py
 
 echo "[S5] Expanded negative controls (Figure S2E)..."
@@ -239,7 +239,10 @@ python3 scripts/generate_phase2_figures.py
 python3 scripts/generate_phase3_figures.py
 python3 scripts/composite_figS3.py
 
-echo "[S32] Assembling main figures..."
+# The deposited figures are assembled outside this pipeline. None of the eight
+# producers that write them is invoked here, so this step deliberately runs
+# nothing and says so; the previous line claimed the assembly it did not do.
+echo "[S32] Deposited figures are NOT rebuilt by this pipeline (see reproduce/figure_script_map.md, Known gaps)."
 
 echo ""
 echo "TIER 2 COMPLETE"
