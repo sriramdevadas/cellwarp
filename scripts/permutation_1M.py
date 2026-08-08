@@ -34,8 +34,12 @@ RANDOM_SEED = 42
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "analysis" / "permutation_1M"
 
-# Suppress overflow warnings from det() on 33×33 matrices (harmless —
-# we only need the sign, which is correctly computed from the SVD)
+# Suppress the RuntimeWarnings numpy emits from det() on the 33x33 rotation
+# matrix. Nothing overflows: it is orthogonal, so its determinant is ±1
+# (measured 1.0000000000000058). The warnings are FPU status flags raised
+# inside the LAPACK routine and are backend-dependent -- three under an
+# Accelerate-backed numpy, none under an OpenBLAS-backed one. The sign is
+# correct under both, which is what makes suppressing them safe.
 warnings.filterwarnings("ignore", message=".*encountered in det.*")
 
 
@@ -45,8 +49,9 @@ warnings.filterwarnings("ignore", message=".*encountered in det.*")
 def _procrustes_distance(X: np.ndarray, Y: np.ndarray) -> float:
     """Procrustes distance without reflection, no printing.
 
-    Uses sign from SVD of V @ U.T to avoid overflow in np.linalg.det
-    for high-dimensional matrices.
+    Takes the reflection sign from V @ U.T. That matrix is orthogonal, so its
+    determinant is ±1 at any k and np.linalg.det does not overflow on it; the
+    finite-check below is belt-and-braces, not a workaround.
     """
     n, k = X.shape
     X_c = X - X.mean(axis=0)
@@ -56,10 +61,10 @@ def _procrustes_distance(X: np.ndarray, Y: np.ndarray) -> float:
     U, sigma, Vt = svd(M)
     V = Vt.T
 
-    # Determine sign of det(V @ U.T) via SVD to avoid overflow on large k
-    # det(V @ U.T) = det(V) * det(U.T) = product of all singular value signs
-    # But since U, V are from SVD they are orthogonal, det = ±1
-    # Safest: compute det directly but handle overflow by falling back to sign
+    # Reflection sign of V @ U.T. U and V come from an SVD, so V @ U.T is
+    # orthogonal and det = ±1 at any k -- there is no overflow to avoid.
+    # det() is computed directly; the isfinite branch is a guard that has not
+    # been observed to trigger, kept rather than removed.
     VUt = V @ U.T
     det_val = np.linalg.det(VUt)
     if np.isfinite(det_val):

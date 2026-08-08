@@ -41,7 +41,12 @@ from scipy.linalg import lu_factor as _lu_factor
 from scipy.stats import spearmanr
 from sklearn.decomposition import PCA
 
-# Suppress det overflow warnings from numpy (affects large orthogonal matrices)
+# Suppress the RuntimeWarnings numpy emits from det() on orthogonal matrices.
+# Nothing overflows: these are FPU status flags raised inside the LAPACK routine,
+# and they are backend-dependent -- three fire under an Accelerate-backed numpy
+# (divide by zero, overflow, invalid) and none under an OpenBLAS-backed one, on
+# the same input with the same result. See scripts/07_bootstrap.py for the
+# measurement.
 warnings.filterwarnings("ignore", message=".*encountered in det.*",
                         category=RuntimeWarning)
 
@@ -164,11 +169,17 @@ def add_centroid_noise(true_centroids, n_cells, rng):
 
 
 def _det_sign(Q):
-    """Sign of det(Q) via LU factorization — O(k³/3), no overflow.
+    """Sign of det(Q) via LU factorization — O(k³/3).
 
-    Standard np.linalg.det overflows for k > ~30 (products exceed float64).
-    LU factorization gives det = product(diag(LU)) × (-1)^(n_pivots).
-    We only need the SIGN, so we count negatives + pivots mod 2.
+    LU factorization gives det = product(diag(LU)) × (-1)^(n_pivots). We only
+    need the SIGN, so we count negatives + pivots mod 2.
+
+    This helper was written to avoid an overflow in np.linalg.det that does not
+    occur. Q here is V @ U.T from an SVD: orthogonal, condition number 1, and
+    determinant ±1 — measured 1.0000000000000058 on the primary configuration,
+    some 308 orders of magnitude below the float64 ceiling. np.linalg.det would
+    return the same sign. The helper is kept because it is correct and cheap,
+    not because det() cannot be trusted here.
     """
     lu, piv = _lu_factor(Q)
     n_neg_diag = int(np.sum(np.diag(lu) < 0))
@@ -310,8 +321,9 @@ def verify_implementation():
     """Check that our Procrustes distance matches src/procrustes.py.
 
     Uses low-dimensional test case (k=5) where both det() and our eigenvalue
-    approach agree. Our eigenvalue-based reflection detection is preferred for
-    the high-k PCA spaces used in the simulation (k > 30 overflows det()).
+    approach agree. The eigenvalue-based reflection detection is used throughout
+    for consistency, not because det() fails at high k: the matrix is orthogonal
+    at every k, so its determinant is ±1 and never approaches overflow.
     """
     try:
         from cellwarp.procrustes import _procrustes_distance

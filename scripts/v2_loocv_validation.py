@@ -114,7 +114,8 @@ def run_loocv(
 
     results = []
 
-    # Suppress numpy overflow warnings from high-dimensional det()
+    # Suppress the RuntimeWarnings from det() on the orthogonal rotation matrix.
+    # Nothing overflows -- det = ±1; see scripts/07_bootstrap.py.
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", category=RuntimeWarning)
 

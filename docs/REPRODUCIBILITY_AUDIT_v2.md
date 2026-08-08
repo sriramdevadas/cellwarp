@@ -165,7 +165,7 @@ The implicit PCA seed in `src/qc.py` is a minor concern – Scanpy's ARPACK solv
 
 The Procrustes distance function is implemented in three places:
 1. `src/procrustes.py` – canonical module
-2. `scripts/permutation_1M.py` – standalone copy with overflow-safe determinant handling
+2. `scripts/permutation_1M.py` – standalone copy with its own determinant-sign handling (written as overflow-safe; the matrix is orthogonal, so no overflow arises)
 3. `scripts/permutation_1M_independent_pca.py` – another standalone copy
 
 The standalone copies include defensive numerical handling (`np.clip` on determinants) that the canonical module does not. If these diverge, results could differ silently. The 1M scripts also contain hardcoded assertions against expected observed distances (`~61.153` and `~52.716`), which provide a correctness check but make the scripts brittle to upstream changes.
@@ -404,4 +404,4 @@ Scripts that call `open_soma()` **without** version pin:
 | `scripts/permutation_1M.py` | `np.clip()` overflow-safe | Standalone; hardcoded assertion on expected distance |
 | `scripts/permutation_1M_independent_pca.py` | `np.clip()` overflow-safe | Standalone; hardcoded assertion on expected distance |
 
-The overflow-safe handling in the 1M scripts is a defensive improvement not present in the canonical module. While unlikely to cause divergence in practice (overflow would require near-singular matrices), this is an inconsistency worth resolving.
+The overflow-safe handling in the 1M scripts is a defensive improvement not present in the canonical module. It cannot cause divergence: the matrix whose determinant is taken is V @ U.T from an SVD, which is orthogonal at any k, so its determinant is ±1 and no overflow arises in either implementation. The inconsistency is stylistic rather than numerical.

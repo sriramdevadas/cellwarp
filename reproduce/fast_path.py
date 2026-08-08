@@ -25,8 +25,10 @@ from pathlib import Path
 
 import numpy as np
 
-# Suppress harmless det() overflow warnings on 33x33 matrices: the rotation sign
-# is computed correctly from the SVD (matches scripts/permutation_1M.py).
+# Suppress the harmless det() RuntimeWarnings on the 33x33 rotation matrix. It is
+# orthogonal, so its determinant is ±1 and nothing overflows; the warnings are
+# backend-dependent FPU status flags and the sign is correct regardless
+# (matches scripts/permutation_1M.py).
 warnings.filterwarnings("ignore", message=".*encountered in det.*")
 
 REPO_ROOT = Path(__file__).resolve().parent.parent

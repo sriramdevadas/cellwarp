@@ -41,8 +41,9 @@ OUTPUT_DIR = INPUT_DIR  # update in place
 def _procrustes_distance(X: np.ndarray, Y: np.ndarray) -> float:
     """Procrustes distance without reflection, no printing.
 
-    Uses sign from SVD of V @ U.T to avoid overflow in np.linalg.det
-    for high-dimensional matrices.
+    Takes the reflection sign from V @ U.T. That matrix is orthogonal, so its
+    determinant is ±1 at any k and np.linalg.det does not overflow on it; the
+    finite-check below is belt-and-braces, not a workaround.
     """
     n, k = X.shape
     X_c = X - X.mean(axis=0)
@@ -52,7 +53,8 @@ def _procrustes_distance(X: np.ndarray, Y: np.ndarray) -> float:
     U, sigma, Vt = svd(M)
     V = Vt.T
 
-    # Determine sign of det(V @ U.T) via SVD to avoid overflow on large k
+    # Reflection sign of V @ U.T. Orthogonal, so det = ±1 at any k; there is
+    # no overflow to avoid and the isfinite branch below is a guard.
     VUt = V @ U.T
     det_val = np.linalg.det(VUt)
     if np.isfinite(det_val):

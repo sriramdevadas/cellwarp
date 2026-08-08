@@ -60,8 +60,11 @@ from cellwarp.procrustes import (  # noqa: E402  (unmodified pipeline)
     pca_reduce_centroids, procrustes_align, permutation_test,
 )
 
-# det() on near-singular kxk matrices inside the *published* pipeline emits benign
-# RuntimeWarnings (np.sign handles the inf/nan sign); results match the deposit exactly.
+# det() inside the *published* pipeline emits benign RuntimeWarnings. The matrix is
+# not near-singular: it is V @ U.T from an SVD, orthogonal, condition number 1,
+# determinant ±1. The warnings are FPU status flags raised inside the LAPACK routine
+# and are backend-dependent (three under Accelerate, none under OpenBLAS); the value
+# and its sign are correct under both. Results match the deposit exactly.
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # ---------------------------------------------------------------------------
