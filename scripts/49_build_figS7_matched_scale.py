@@ -8,7 +8,7 @@ After Part 4A:
   violin of each null distribution rescaled to obs/null (centered at 1.0)
   observed points marked for both analyses
   p-values: H×M 0.0035, H×H 0.0088; 1.92-fold ratio
-  protocol-confounded annotation pointing to Fig 3E for the protocol-
+  protocol-confounded annotation pointing to S1 Text for the protocol-
     controlled donor-split result.
 
 Source nulls:
@@ -138,7 +138,7 @@ def main():
     # Banner annotation
     ax.text(0.5, 0.03,
             "Protocol-confounded (different atlases);\n"
-            "see Fig 3E for protocol-controlled donor-split result",
+            "see S1 Text for the protocol-controlled donor-split result",
             transform=ax.transAxes, ha="center", va="bottom", fontsize=7,
             color=C_GRAY, style="italic")
 
@@ -147,8 +147,11 @@ def main():
     # materialized by scripts/build_submission_packet.py (R21 build script).
     base = OUT_SUPP / "figS4_matched_scale_control"
     base.parent.mkdir(parents=True, exist_ok=True)
-    for ext in ("pdf", "png"):
-        fig.savefig(f"{base}.{ext}", dpi=300, bbox_inches="tight")
+    # PDF only: suppress the embedded /CreationDate so that re-running the
+    # unchanged script reproduces the PDF byte-for-byte. The PNG writer emits
+    # no timestamp (Software + dpi only), so it needs no equivalent.
+    for ext, meta in (("pdf", {"CreationDate": None}), ("png", None)):
+        fig.savefig(f"{base}.{ext}", dpi=300, bbox_inches="tight", metadata=meta)
     print(f"  wrote: {base.name}.{{pdf,png}}")
     plt.close(fig)
 
