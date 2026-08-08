@@ -73,7 +73,7 @@ leg = [Patch(fc=PRE, label="Pre-rotation S"),
        Patch(fc=POST, label="Post-rotation S (centroid-optimal)"),
        plt.Line2D([0],[0], marker="D", mfc="white", mec="#444", ms=4, ls="none", label="Permutation null (mean)")]
 axes[1].legend(handles=leg, fontsize=6.6, frameon=False, loc="upper right", handlelength=1.2)
-fig.text(0.5, 0.031, "All pairs, both weightings: post < pre at every k tested, each above its null (all p ≤ 0.0001).",
+fig.text(0.5, 0.031, "All pairs, both weightings: post < pre at every k tested, each above its null (all p < 10$^{-4}$).",
          ha="center", fontsize=6.6, color="#333")
 fig.subplots_adjust(left=0.085, right=0.985, top=0.90, bottom=0.24, wspace=0.08)
 
