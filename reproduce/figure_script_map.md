@@ -62,7 +62,7 @@ Built fresh; no embedded panels.
 |---|---|---|---|
 | 4A | Within-atlas precision (bootstrap CI forest) | built in `build_main_figures.py` | `analysis/bootstrap_rankings/bootstrap_summary.csv` <- `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py` |
 | 4B | Within-atlas precision vs cross-atlas rank shift (rho = -0.41, n=20) | built in `build_main_figures.py` | `analysis/cross_reference/master_ranking_table.csv` <- `analysis/cross_reference/cross_reference_analysis.py` |
-| 4C | Simulation recovery ceiling (rho ~ 0.42) | built in `build_main_figures.py` | `analysis/simulation_study/simulation_results.json` <- `analysis/simulation_study/simulation_study.py` |
+| 4C | Simulation recovery ceiling (rho ~ 0.45 at the calibrated signal) | built in `build_main_figures.py` | `analysis/simulation_study/simulation_results.json` for the deposited grid, and `analysis/simulation_study/sweep_spread_results.json` for the calibrated curve and the ceiling line the panel draws <- `simulation_study.py` and `sweep_spread.py` |
 
 ### Fig 5 (conserved identity genes) -> `Fig5_conserved_identity_genes.{pdf,png}`
 
@@ -120,13 +120,15 @@ edited in place by the materializer
 
 ## Supporting-information controls with no display item
 
-Two analyses produce neither a figure nor a table, so they have no row above; their numbers are
+Three analyses produce neither a figure nor a table, so they have no row above; their numbers are
 quoted in the text alone.
 
 | Item | Content | Producing script | Depends on |
 |---|---|---|---|
 | S1 Text §10 | Selection/derangement circularity control: real conserved obs/null 0.384 against a derangement sigma-null 0.991 +- 0.021 (z = -29.5) and a label-shuffle cross-check 0.983 +- 0.024 (z = -25.3), N = 1,000 draws each | `analysis/selection_null/selection_null.py` (baseline lock: `repro_baseline.py`) | `output/phase2/scaled_35types/centroids_{human,mouse}_35.csv` via `analysis/conserved_contribution/gate_lib.py`; unmodified `src/cellwarp/procrustes.py` -> `analysis/selection_null/outputs/selection_null_summary_{derangement,labelshuffle}.json`, `sigma_null_draws_*.csv`, `sigma_perms_*.npy` |
 | Results §8, Methods (Simulation study) | Planted-spread sweep: rank-recovery ceiling at the calibrated signal 3.683416443528231 (median rho 0.4494 at 200 cells, deposited spread sigma = 1.0), and the ceiling across a swept planted spread (0.4494 at the deposited ~65x spread up to 0.4955 at 25x), each spread point re-calibrated so obs/null stays at 0.522; zero-spread negative control 0.0059 | `analysis/simulation_study/sweep_spread.py` | `analysis/simulation_study/simulation_study.py`, exec'd unmodified for `run_single()` and `calibrate()` (its `main()` is `__name__`-guarded) -> `analysis/simulation_study/sweep_spread_results.json` |
+
+| S1 Text §2, Results §1 | Parent-and-child landmark sensitivity: re-running the primary with the broader term of each parent/child pair dropped (variant A, 30 landmarks, obs/null 0.5210) and with the more specific term dropped (variant B, 26 landmarks, obs/null 0.5441), both at the permutation floor, with rankings agreeing with the primary subset at rho 0.9359 and 0.9111 | `analysis/sensitivity/parent_child/run.py` | `output/phase2/scaled_35types/` centroids; writes `results.json` and `summary.csv`, neither of which is a deposited display item |
 
 The wrapper imports the published pipeline and only re-selects its inputs. It is deterministic:
 re-run against this tree it returns both draw CSVs and both sigma arrays byte-identical, and both
