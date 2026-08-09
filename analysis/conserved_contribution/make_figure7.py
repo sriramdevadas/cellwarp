@@ -18,6 +18,7 @@ Sources (all verified, produced in-place against the deposit's tracked inputs):
 """
 from __future__ import annotations
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -55,6 +56,7 @@ Tau = np.array([np.sum(1 - Hc[:, j] / Hc[:, j].max()) / (Hc.shape[0] - 1)
 gate = json.load(open(HERE / "gate_results.json"))
 rob = json.load(open(HERE / "robustness_results.json"))
 don = json.load(open(DONOR / "donor_stability_results.json"))
+highn = json.load(open(HERE / "highN_tf_pvalues.json"))
 
 q75 = gate["thresholds"]["q75"]
 q25 = gate["thresholds"]["q25"]
@@ -221,7 +223,20 @@ axC.text(tf_obs_median - 0.015, 1.30 * top, f"{tf_obs_median:.2f}", color=fs.C_O
 axC.set_xlim(0, 1)
 axC.set_xlabel("$C$ percentile rank")
 axC.set_ylabel("Density (matched-null medians)")
-axC.set_title(f"{len(tf_pos)} master TFs vs matched backgrounds · $p < 10^{{-6}}$ vs both",
+# The bound and the "vs both" were literals. Both are now derived from the
+# high-N re-run, which reproduce/validate.py gates. The bound is set by the
+# draw count -- the tightest a (0+1)/(n+1) floor can support -- and the arms
+# are then counted against it, so the title reports how many actually clear
+# the bound rather than asserting that both do.
+_arms = [highn["expression_matched"], highn["joint_expr_tau_matched"]]
+_floor = 1.0 / (min(a["n_draws"] for a in _arms) + 1)
+_exp = math.ceil(math.log10(_floor))
+if 10.0 ** _exp <= _floor:              # floor sits exactly on a power of ten
+    _exp += 1
+_clear = sum(1 for a in _arms if a["p_empirical"] < 10.0 ** _exp)
+_vs = "vs both" if _clear == len(_arms) else f"vs {_clear} of {len(_arms)}"
+axC.set_title(f"{len(tf_pos)} master TFs vs matched backgrounds · "
+              f"$p < 10^{{{_exp}}}$ {_vs}",
               fontsize=7, pad=4)
 axC.legend(loc="upper left", fontsize=6, frameon=False)
 fs.add_panel_label(axC, "C", x=-0.13, y=1.18)
