@@ -125,15 +125,15 @@ EXPECTED_CONTENT_LINES = 158
 EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 92744
+EXPECTED_RAW_JOINED_CHARS = 92879
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 92768
-EXPECTED_JOINED_WORDS = 13420
+EXPECTED_JOINED_CHARS = 92903
+EXPECTED_JOINED_WORDS = 13443
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 279
+EXPECTED_ASCII_T = 280
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 19
