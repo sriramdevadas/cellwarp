@@ -420,6 +420,48 @@ CHECKS = [
         "tolerance": 0,
         "paper_ref": "Results section 2, Figure 2C (18/55)",
     },
+    # ── The Macaca-restricted arms of the same replication (Methods; S1 Text) ──
+    # The macaque arm pools two Macaca species at genus level. Restricting it to the
+    # six M. mulatta donors and recomputing raises these fractions; both are stated in
+    # Methods and S1 Text, so both are gated as the pooled ones are, numerator and
+    # denominator. The producers and the full outputs live in the basal-ganglia record;
+    # these two results files are vendored here exactly as the pooled three are.
+    {
+        "name": "BG Human-Macaque (M. mulatta restricted): identity-marker driver count (W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque_mulatta.json",
+        "key": "W2_schemeB.rank1_class_counts.canonical identity marker",
+        "expected": 25,
+        "tolerance": 0,
+        "paper_ref": "Methods and S1 Text (25 of 54)",
+    },
+    {
+        "name": "BG Human-Macaque (M. mulatta restricted): n_types",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Macaque_mulatta.json",
+        "key": "n_types",
+        "expected": 54,
+        "tolerance": 0,
+        "paper_ref": "Methods and S1 Text (25 of 54; one sparsely sampled type falls "
+                     "below the 100-cell inclusion threshold under restriction, so the "
+                     "denominator is 54 against the pooled 55)",
+    },
+    {
+        "name": "BG Macaque-Marmoset (M. mulatta restricted): identity-marker driver count (W2)",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Macaque_Marmoset_mulatta.json",
+        "key": "W2_schemeB.rank1_class_counts.canonical identity marker",
+        "expected": 8,
+        "tolerance": 0,
+        "paper_ref": "Methods and S1 Text (8 of 51)",
+    },
+    {
+        "name": "BG Macaque-Marmoset (M. mulatta restricted): n_types",
+        "file": "docs/submission/plosone/figures/bg_results/layer2_results_Macaque_Marmoset_mulatta.json",
+        "key": "n_types",
+        "expected": 51,
+        "tolerance": 0,
+        "paper_ref": "Methods and S1 Text (8 of 51; same threshold effect, 51 against "
+                     "the pooled 52)",
+    },
+
     {
         "name": "BG Human-Marmoset: post-rotation compression (k=5, W2)",
         "file": "docs/submission/plosone/figures/bg_results/layer2_results_Human_Marmoset.json",
