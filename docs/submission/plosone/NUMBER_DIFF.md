@@ -22,25 +22,25 @@ is deliberate and is **not** a changed number.
 |---|---|---|---|
 | Global config obs/null **0.52** (35 types) | 0.5222 | `output/phase2/scaled_35types/procrustes_results_35.json` | ✔ |
 | Global config p **< 10⁻⁶** (1M perms) | permutation floor at 10⁶ | same | ✔ |
-| Lineage-stratified obs/null **0.67** | 0.6683 | `output/validation/lineage_stratified/lineage_stratified_results.json` (`stratified_null`) | (Table 1 T02) |
+| Lineage-stratified obs/null **0.67** | 0.6683 | `output/validation/lineage_stratified/lineage_stratified_results.json` (`stratified_null`) | (S13 T02) |
 | Lineage-stratified p **< 10⁻⁴** | 9.999e-05 | same | — |
-| Mouse-lemur obs/null **0.35** | 0.346 | `analysis/mouse_lemur/procrustes_results.json` | (Table 1 T13) |
+| Mouse-lemur obs/null **0.35** | 0.346 | `analysis/mouse_lemur/procrustes_results.json` | (S13 T13) |
 | Mouse-lemur p **< 10⁻⁴** | 9.999e-05 | same | — |
 | Independent-PCA obs/null 0.473 | 0.473 | `analysis/independent_pca_sensitivity/independent_pca_results.json` | ✔ |
 | Primary Layer-2 S **0.483 → 0.230** at k=5 | pre 0.4826, post 0.2295 | `output/mechanistic/ellipsoid_alignment/summary_stats.json` (`35type.mean_alignment.k=5`) | — |
 | Layer-2 post-rotation p **< 10⁻⁴** (S=0.230) | 1e-4 | `output/mechanistic/ellipsoid_alignment/permutation_results.json` (T30) | — |
-| Sun2023 obs/null 0.554, p<10⁻⁴ | 0.554 | Table 1 T19 | — |
-| PanSci obs/null 0.552, p<10⁻⁴ | 0.552 | Table 1 T20 | — |
+| Sun2023 obs/null 0.554, p<10⁻⁴ | 0.554 | `output/validation/sun2023_replication_expanded/sun2023_expanded.json` (`procrustes.obs_null_ratio`) | (S13 T19) |
+| PanSci obs/null 0.552, p<10⁻⁴ | 0.552 | `output/validation/pansci_replication/pansci_replication.json` (`procrustes.obs_null_ratio`) | (S13 T20) |
 | CellHint obs/null **0.448**, p<10⁻⁴ | 0.448 | `output/validation/cellhint_replication/cellhint_replication.json` | ✔ |
-| Pan-Census obs/null **0.811** (n=22) | 0.811 | `analysis/census_replication/replication_results.json` | (Table 1 T22) |
-| Andrews obs/null 0.797, p=0.116 (n=6) | 0.797 | Table 1 T23 | — |
-| MCA×HCA obs/null 1.003, p=0.542 (n=17) | 1.003 | Table 1 T24 | — |
+| Pan-Census obs/null **0.811** (n=22) | 0.811 | `analysis/census_replication/replication_results.json` | (S13 T22) |
+| Andrews obs/null 0.797, p=0.116 (n=6) | 0.797 | `output/validation/andrews_replication/andrews_replication_results.json` (`obs_null_ratio`) | (S13 T23) |
+| MCA×HCA obs/null 1.003, p=0.542 (n=17) | 1.003 | `output/validation/t1a_replication/t1a_results.json` (`t1a_procrustes.obs_null_ratio`) | (S13 T24) |
 | Within-human HCA×TS **0.728, p=0.003** (n=6) | 0.7281 / 0.00300 | `output/validation/hca_centroid_comparison/hca_centroid_comparison.json` | — |
-| Macaque obs/null 0.810, raw p=0.0043; corrected p≈0.22 (NS) | 0.810 / 0.0043 / 0.2236 | Table 1 T12; `output/macaque_pipeline/` | — |
+| Macaque obs/null 0.810, raw p=0.0043; corrected p≈0.22 (NS) | 0.810 / 0.0043 / 0.2236 | `output/macaque_pipeline/reconstruction_qu12_results.json` (`permutation_test.obs_null_ratio_median`) | (S13 T12) |
 | Bootstrap test–retest ρ **0.99** | 0.994 | `analysis/simulation_study/simulation_results.json` (T65) | — |
-| Cross-atlas ranking ρ **≈0.15** | Sun 0.146, PanSci 0.194 | Table 1 T25/T26 | — |
-| Within/cross inversion ρ (qualitative) | −0.410 | Table 1 T59 | — |
-| Simulation recovery ceiling ρ **≈0.42** | 0.42 | `analysis/simulation_study/…` (T64) | — |
+| Cross-atlas ranking ρ **≈0.15** | Sun 0.146, PanSci 0.194 | `sun2023_expanded.json` and `pansci_replication.json`, both (`rigidity_ranking.rho`) | (S13 T25/T26) |
+| Within/cross inversion ρ (qualitative) | −0.410 | `analysis/cross_reference/master_ranking_table.csv` (`bootstrap_CI_width` vs `mean_rank_shift`, n = 20) | (S13 T59) |
+| Simulation recovery ceiling ρ **≈0.45** | 0.4494 | `analysis/simulation_study/sweep_spread_results.json` (`sweep.3.recovery.1.median_rho`) | ✔ |
 | Matched-scale reversal 0.607 (H-H) vs 0.317 (H-M) | 0.607 / 0.317 | `output/phase2/negative_control_v2/negctrl_v2_results.json` (T16/T17) | — |
 | Donor-split delta **+0.159**, 100/100 | median +0.1588, pct_positive 1.0 | `analysis/donor_split/donor_split_shared_pca_results.json` | — |
 | Donor-split within/cross obs/null 0.375 / 0.527 | 0.3751 / 0.5273 | same | — |
@@ -49,7 +49,13 @@ is deliberate and is **not** a changed number.
 | Divergent-set 0.709; expr-matched-random 0.525±0.012 | 0.709 / 0.525 | same (`secondary`) | ✔ |
 | Master-TF median percentile **0.94** vs **0.54** (expr) / **0.76** (joint) | 0.94 / 0.54 / 0.76 | `analysis/conserved_contribution/gate_results.json`, Methods | ✔ (0.94) |
 
-**All A-values reproduce.** None changed vs the PCOMPBIOL submission.
+**All A-values reproduce against the artifacts named above.** One did not when this section was
+last written: the simulation recovery ceiling was carried at 0.42 after the value was corrected to
+0.4494, so the row asserted a check that no longer held. It is corrected here and is now gated.
+Seven rows also cited the test inventory as their source artifact, which is circular -- the
+inventory is downstream of these analyses, not their origin -- and they now name the artifact each
+value is actually read from, keeping the inventory reference as a cross-reference in the last
+column. The inventory is S13 Table; "Table 1" was its number before the renumber.
 
 ---
 
