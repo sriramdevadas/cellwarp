@@ -105,8 +105,17 @@ a.set_xlabel("divergence rank (1 = most divergent)",fontsize=7.5)
 a.set_ylabel("cell type (ranked)",fontsize=7.5)
 # the ranks run top-left to bottom-right, so the block sat on the last few CI
 # bars at lower right; the upper-right quadrant is empty.
-a.text(0.96,0.96,"median 95% CI width = 3 ranks\nall 35 types stable",transform=a.transAxes,
-       ha="right",va="top",fontsize=6.6)
+# Both claims are derived from the frame loaded above rather than restated.
+# The second is a universal, so it is computed as a predicate over the
+# category column: if any type were not classified STABLE the annotation
+# reports the count instead, so the panel cannot assert something the data
+# does not support. "Stable" is the classification bootstrap_ranking_analysis
+# writes, not a threshold applied here.
+_stable=int(bs2["category"].str.startswith("STABLE").sum()); _total=len(bs2)
+_stability=(f"all {_total} types stable" if _stable==_total
+            else f"{_stable} of {_total} types stable")
+a.text(0.96,0.96,f"median 95% CI width = {bs2['ci_width'].median():g} ranks\n{_stability}",
+       transform=a.transAxes,ha="right",va="top",fontsize=6.6)
 a.set_yticks([]); a.tick_params(labelsize=7,length=2.5); a.spines[["top","right"]].set_visible(False)
 a.set_title("Within-atlas precision",fontsize=8); letter(a,"A",x=-0.10)
 # 4B inversion: ci_width vs cross-atlas mean_rank_shift (master_ranking_table = the
