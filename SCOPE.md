@@ -161,17 +161,17 @@ are scoped out here rather than in the manuscript body.
 
 | Directory | Category | Role |
 |---|---|---|
-| `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 5, §2, §5, Table S11) |
+| `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 5, §2, §5, Table S11). Includes four out-of-sample controls behind S1 Text's answer to the selection-circularity objection: `block1_form_a.py` (C retention across donor halves), `block3_form_b.py` (the same split tested on the geometry rather than on C), `item1_retention.py` (the paired retention ratio formed per case), and `block2_w3_tfcensus.py` (master-TF enrichment repeated against a full TF census). `block3_form_b.py` and `block2_w3_tfcensus.py` each read one input that is not deposited; their headers say which |
 | `independent_pca_sensitivity/` | PAPER | Independent-PCA sensitivity (Fig S1A–B) |
-| `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2). Includes `sweep_spread.py`, which evaluates rank recovery at the calibrated signal — absent from the deposited `RECOVERY_SIGNALS` grid — and sweeps the planted spread with re-calibration at each point; gated by `reproduce/validate.py` |
+| `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2). Includes `sweep_spread.py`, which evaluates rank recovery at the calibrated signal — absent from the deposited `RECOVERY_SIGNALS` grid — and sweeps the planted spread with re-calibration at each point; gated by `reproduce/validate.py`. Also includes `paired_signal.py` and `paired_spread.py`, which report the same recovery per replicate rather than pooled, so the signal and spread points are paired across the same drawn configurations |
 | `bootstrap_rankings/` | PAPER | Bootstrap ranking CIs (Fig S3, Table S2) |
 | `permutation_1M/` | PAPER | 1M headline null (Fig 1B) |
 | `mantel_test/` | PAPER | Mantel test |
 | `donor_split/` | PAPER | Donor-split control (Fig 3-family) |
 | `expanded_negative_controls/` | PAPER | Within-species tissue-pair controls (Fig S2E) |
 | `within_species_matched/` | PAPER | Matched-scale human-vs-human control (S4 Fig) |
-| `census_replication/` | PAPER | Pan-Census replication (Fig S2F) |
-| `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4) |
+| `census_replication/` | PAPER | Pan-Census replication (Fig S2F). Includes `item2_assay_composition.py`, which settles the assay composition of the primary human atlas that the deposited mouse-only protocol breakdown cannot; it requires the optional Census extra and the network |
+| `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4). `ranking_replication/` also holds `block2_matched_n.py`, which builds the matched-n primary baseline each replication is read against, and `task2_residual_mechanism.py`, which tests whether the replicated types are the more conserved ones — the mechanism Results asserts but does not quantify |
 | `biological_predictors/` | PAPER | Biological-predictor correlates (Table S1, §4) |
 | `sensitivity_analyses/` | PAPER | Ribosomal/housekeeping exclusion, per-gene standardization, marker-null (Tables S7/S9/S10, S5 Fig) |
 | `sensitivity/` | BANKED | Supporting sensitivity runs (layer2-no-ribosomal, MT/cell-cycle, parent–child ontology); completed but not referenced by the manuscript or `reproduce/validate.py` |
