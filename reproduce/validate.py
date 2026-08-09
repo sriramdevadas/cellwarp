@@ -212,7 +212,40 @@ CHECKS = [
         "file": "analysis/conserved_contribution/gate_results.json",
         "key": "check3a.p_value",
         "expected_below": 0.01,
-        "paper_ref": "Results section 5, Figure 5C",
+        "paper_ref": "Results section 5, Figure 5C. Note this is the 1,000-draw "
+                     "run, whose floor is 1/1001; the 10^-6 bound Figure 5C "
+                     "states comes from the high-N re-run gated just below",
+    },
+
+    # ── Fig 5C's stated bound: the 1,000,000-draw re-run ──
+    # make_figure7.py recomputes the medians and the rug from source and states
+    # "p < 10^-6 vs both" as a literal; this file is the only record of the
+    # computation behind that literal, and it was ungated. The bound is checked
+    # rather than the value because the p is the (0+1)/(n+1) draw floor.
+    {
+        "name": "Fig 5C: master TFs vs expression-matched null, p below the stated bound",
+        "file": "analysis/conserved_contribution/highN_tf_pvalues.json",
+        "key": "expression_matched.p_empirical",
+        "expected_below": 1e-6,
+        "paper_ref": "Figure 5C title (p < 10^-6, first of the two arms)",
+    },
+    {
+        "name": "Fig 5C: master TFs vs expression+Tau-matched null, p below the stated bound",
+        "file": "analysis/conserved_contribution/highN_tf_pvalues.json",
+        "key": "joint_expr_tau_matched.p_empirical",
+        "expected_below": 1e-6,
+        "paper_ref": "Figure 5C title. This is the second arm, and it is what "
+                     "makes the drawn claim 'vs both' rather than 'vs one'",
+    },
+    {
+        "name": "Fig 5C: testable master TFs",
+        "file": "analysis/conserved_contribution/highN_tf_pvalues.json",
+        "key": "n_testable_tfs",
+        "expected": 73,
+        "tolerance": 0,
+        "paper_ref": "Figure 5C title (73 master TFs). The panel counts these "
+                     "itself from the ortholog table, so this is a second "
+                     "record of the same number rather than its only source",
     },
     {
         "name": "Conserved-contribution: C vs expression Spearman",
