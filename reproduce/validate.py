@@ -886,6 +886,49 @@ CHECKS = [
                      "0.5222043484, 2.6e-8 away, and must NOT be used for the 35-type value",
     },
 
+    # ── Mouse-lemur replication (Results §1, Fig 1D; Table 1 T13) ──
+    # Fig 1D is drawn by docs/submission/plosone/figures/build_main_figures.py,
+    # which reads only null_distribution.npy from this directory and states the
+    # rest as text. These four checks put the stated values under Gate 1 so the
+    # panel can read them instead.
+    {
+        "name": "Mouse lemur: obs/null",
+        "file": "analysis/mouse_lemur/procrustes_results.json",
+        "key": "permutation_test.obs_null_ratio",
+        "expected": 0.3463,
+        "tolerance": 0.001,
+        "paper_ref": "Results §1 and Fig 1D caption (obs/null 0.35); Table 1 T13",
+    },
+    {
+        "name": "Mouse lemur: permutation p below the stated bound",
+        "file": "analysis/mouse_lemur/procrustes_results.json",
+        "key": "permutation_test.p_value",
+        "expected_below": 0.0001,
+        "paper_ref": "Results §1 and Fig 1D caption (p < 10^-4). Phrased as a bound "
+                     "rather than a value because the stored p is the (0+1)/(n+1) "
+                     "permutation floor, which is strictly below 1e-4, and the "
+                     "claim the paper makes is the bound",
+    },
+    {
+        "name": "Mouse lemur: matched cell types",
+        "file": "analysis/mouse_lemur/procrustes_results.json",
+        "key": "n_types",
+        "expected": 15,
+        "tolerance": 0,
+        "paper_ref": "Fig 1D caption (n = 15)",
+    },
+    {
+        "name": "Mouse lemur: divergence time",
+        "file": "analysis/mouse_lemur/procrustes_results.json",
+        "key": "divergence_mya",
+        "expected": 75,
+        "tolerance": 0,
+        "paper_ref": "Fig 1D panel title (~75 Mya), Fig 1 caption (~75 Myr) and "
+                     "Results §1 (roughly 75 million years). NUMBER_DIFF.md C1 "
+                     "records a draft that said 90 and was corrected against this "
+                     "file, so the number is gated rather than left to drift back",
+    },
+
     # ── Planted-spread description (Methods, Simulation study) ──
     # Deterministic: measure_range() draws under RandomState(0) over 20,000 draws.
     {
