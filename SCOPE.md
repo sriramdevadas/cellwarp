@@ -33,7 +33,7 @@ is on the record rather than inferred.
 
 | Preregistration file | Date | In paper? | Category | Disposition |
 |---|---|---|---|---|
-| `docs/submission/figures_for_review/Supplementary_Preregistration.md` | — | **Yes** | PAPER | The deposited pre-specification of record (submitted as supplementary). |
+| `docs/submission/figures_for_review/Supplementary_Preregistration.md` | — | **Yes** | PAPER | The deposited pre-specification of record, mirrored into the review-packet directory from `docs/preregistration_conserved_contribution_2026-06-05.md` by `scripts/build_submission_packet.py`. |
 | `docs/preregistration_conserved_contribution_2026-06-05.md` | 2026-06-05 | **Yes** | PAPER | Pre-specifies the conserved-contribution / master-TF analysis (Fig 5, Results §2, §5). |
 | `docs/preregistration_aging_axis_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Aging-axis project (within-mouse aging as a directional centroid shift). **Not executed** — no output or script on disk. See "Aging/DILI check" below. |
 | `docs/preregistration_dilirank_hepatocyte_2026-03-16.md` | 2026-03-16 | **No** | BANKED | Hepatocyte-rigidity → drug-induced-liver-injury landmark test. **Executed** (`output/dilirank/`), returned a marginal/null result that did not survive the pre-specified covariate-falsification gate; correctly not reported as a positive finding. See below. |
@@ -123,7 +123,8 @@ are scoped out here rather than in the manuscript body.
 | `fetch_macaque_orthologs.py`, `nhp_ortholog_assessment.py`, `47_rerun_macaque_permutations_save_null.py`, `48_build_fig6_K12.py` | Macaque extension (S1 Text §7) |
 | `41_donor_split_analysis.py`, `42_donor_split_shared_pca.py`, `43_generate_fig2e_donor_split.py` | Donor-split within-species control (Fig 3-family) |
 | `08_cell_type_inventory.py` | 35-type matching inventory (Table S5) |
-| `create_table_S1.py`, `create_table_S2.py`, `table1_formatting.py`, `46_synthesis_pass_supplementary_table_edits.py`, `task_a_fix_s2_labels.py` | Table S1 / S2 / Table 1 build |
+| `create_table_S1.py`, `create_table_S2.py`, `46_synthesis_pass_supplementary_table_edits.py`, `task_a_fix_s2_labels.py` | Table S1 / S2 build and supplementary-table edits |
+| `table1_formatting.py` | Edits S13 Table (`docs/supplementary_materials/table_S13_test_inventory.xlsx`) in place and idempotently. Not a builder: S13 has no from-scratch producer in the tree, so this pass is what makes the tracked artifact reproducible from tracked code. Its lock is `TABLE_1_LOCK_MD5`, named for the table's former number |
 | `test_hvg_robustness.py` | HVG-only robustness check |
 | `generate_phase1_figures.py`, `generate_phase2_figures.py`, `generate_phase3_figures.py`, `composite_figS3.py`, `57_build_main_composites.py`, `build_submission_figures.py` | Figure generation / composition |
 | `v1_procrustes_validation.py`, `v2_loocv_validation.py`, `v3_cellmarker_validation.py`, `verify_procrustes_vs_scipy.py` | Independent re-implementations used as reproduce cross-checks |
@@ -174,7 +175,9 @@ are scoped out here rather than in the manuscript body.
 | `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4). `ranking_replication/` also holds `block2_matched_n.py`, which builds the matched-n primary baseline each replication is read against, and `task2_residual_mechanism.py`, which tests whether the replicated types are the more conserved ones — the mechanism Results asserts but does not quantify |
 | `biological_predictors/` | PAPER | Biological-predictor correlates (Table S1, §4) |
 | `sensitivity_analyses/` | PAPER | Ribosomal/housekeeping exclusion, per-gene standardization, marker-null (Tables S7/S9/S10, S5 Fig) |
-| `sensitivity/` | BANKED | Supporting sensitivity runs (layer2-no-ribosomal, MT/cell-cycle, parent–child ontology); completed but not referenced by the manuscript or `reproduce/validate.py` |
+| `sensitivity/layer2_no_ribosomal/` | PAPER | Layer 2 under ribosomal-protein exclusion (S1 Text §4; Results §2; Methods), gated by `reproduce/validate.py` |
+| `sensitivity/parent_child/` | PAPER | Parent-and-child landmark sensitivity (S1 Text §2; Results §1), gated by `reproduce/validate.py` |
+| `sensitivity/mt_cellcycle/`, `sensitivity/mt_cellcycle_bilateral/` | BANKED | MT / cell-cycle sensitivity; completed but not referenced by the manuscript or `reproduce/validate.py` |
 | `macaque/` | PAPER | Macaque extension (underpowered 12-type human–macaque comparison, S1 Text §7) |
 | `matched_three_species/` | BANKED | Three-way ortholog intersection; NO-GO per its own `intersection_report.md` (8 types < 10-type threshold) |
 | `mouse_lemur/` | PAPER | Mouse-lemur extension (§1) |
