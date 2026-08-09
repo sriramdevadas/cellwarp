@@ -185,7 +185,7 @@ LITERAL_EXPECTED = {
     "\u2208": 4,   # ELEMENT OF
     "\u2212": 16,  # MINUS SIGN (58 in the output: 16 literal + 42 substituted)
     "\u2248": 13,  # ALMOST EQUAL TO
-    "\u2264": 11,  # LESS-THAN OR EQUAL TO
+    "\u2264": 10,  # LESS-THAN OR EQUAL TO
     "\u2265": 5,   # GREATER-THAN OR EQUAL TO
 }
 
