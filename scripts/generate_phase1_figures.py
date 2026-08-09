@@ -392,11 +392,17 @@ def fig4d_replication_summary():
     print("Generating Fig 4D: Replication summary (all 7 datasets)...")
 
     def _fmt_p(p):
-        """Uniform short-exponent style with consistent '<' operator."""
-        if p < 1e-6:
-            return 'p < 1e−6'
+        """Bound form at a permutation floor, value form otherwise.
+
+        Delegates the bound to the module-level _p_bound so this panel draws
+        the same notation as Fig 1 and Fig 2 rather than the '1e-6' dialect it
+        used before. The two hand-written branches it replaces chose between a
+        fixed 1e-6 and a fixed 1e-4; _p_bound derives whichever power of ten
+        the value actually sits below, which is the same answer for every p
+        this panel receives and stays correct if one moves.
+        """
         if p <= 1e-4:
-            return 'p < 1e−4'
+            return _p_bound(p)
         return f'p = {p:.2g}'
 
     # Load all replication results from source JSONs (no hardcoding for

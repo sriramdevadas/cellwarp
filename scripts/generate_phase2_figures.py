@@ -117,7 +117,7 @@ def fig1a_pipeline_schematic():
     # so it visually attaches to the schematic instead of floating).
     ax.text(5.0, 0.55,
             'Permutation test: shuffle cell type labels \u2192 null distribution \u2192 '
-            'p < 1e-6 (1M permutations)',
+            'p < 10$^{-6}$ (1M permutations)',
             ha='center', va='center', fontsize=6, fontfamily=FONT_FAMILY,
             color=C_DARKGRAY, style='italic')
 
