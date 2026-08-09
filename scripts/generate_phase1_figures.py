@@ -25,6 +25,7 @@ observed-to-null ratios, Fisher's exact tests.
 
 import sys
 import json
+import math
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -55,6 +56,23 @@ PANELS.mkdir(parents=True, exist_ok=True)
 # ===================================================================
 # Fig 1B: 1M permutation null distribution
 # ===================================================================
+def _p_bound(p):
+    """Render a permutation p as the tightest power-of-ten bound above it.
+
+    A permutation p at the (k+1)/(n+1) floor is a bound, not a measurement,
+    and a fixed-decimal format rounds it up into an assertion of equality:
+    9.999e-05 through '%.4f' reads 'p = 0.0001' for a value that is strictly
+    below 1e-4. This returns the bound the value actually satisfies, in the
+    form the prose and the Fig 2 panels use (generate_phase3_figures.p_label,
+    build_fig2c_bg.py). figure_style.format_p is left alone: it is shared with
+    panels outside this figure.
+    """
+    exp = math.ceil(math.log10(p))
+    if 10.0 ** exp <= p:            # p sits exactly on a power of ten
+        exp += 1
+    return f'p < 10$^{{{exp}}}$'
+
+
 def fig1b_null_distribution():
     """Plot 1M null distribution histogram with observed distance marked."""
     print("Generating Fig 1B: 1M null distribution...")
@@ -65,7 +83,7 @@ def fig1b_null_distribution():
 
     obs_dist = results['observed_procrustes_distance']
     obs_null = results['obs_null_ratio']
-    p_str = 'p < 1e-6'
+    p_str = _p_bound(results['p_value'])
 
     fig, ax = plt.subplots(figsize=(COL1, COL1 * 0.75))
 
@@ -147,7 +165,7 @@ def fig1c_lineage_stratified():
     # so the previous (0.62, 0.97) center-top position clipped its left edge.
     ax.text(0.06, 0.78,
             f'Within-lineage:\nobs/null = {strat["obs_null_ratio"]:.3f}\n'
-            f'p = {strat["p_value"]:.4f}\n\n'
+            f'{_p_bound(strat["p_value"])}\n\n'
             f'Global:\nobs/null = {_global_obs_null:.3f}',
             transform=ax.transAxes, fontsize=FONT_SIZE_ANNOT,
             ha='left', va='top', color=C_DARKGRAY, zorder=10,

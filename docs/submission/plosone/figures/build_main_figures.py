@@ -3,7 +3,7 @@
 Reuses existing high-res panels where they exist; builds Fig 1D (mouse-lemur null)
 and Fig 4A/B/C (forest, inversion, recovery ceiling) fresh from tracked data.
 Outputs PDF + PNG (300 dpi) per figure. Arial, RGB; review-artifact quality."""
-import pathlib, json
+import pathlib, json, math
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt, matplotlib.image as mpimg
@@ -54,7 +54,14 @@ axD=fig.add_subplot(gs[1,2])
 # the whole cell at 1.95x their height, and its ticks, y-label and letter bled
 # left into C. Give D B/C's box and shift it into the unused right margin.
 axD.set_position([0.7010,1-(1-0.2433)*_VS,0.2392,0.2761*_VS])
-null=np.load(ROOT/"analysis/mouse_lemur/null_distribution.npy"); obs=21.765
+# Every number this panel states comes from the results JSON, which Gate 1 now
+# reads (reproduce/validate.py, the four "Mouse lemur:" checks). The p is the
+# (0+1)/(n+1) permutation floor, so it is drawn as the bound it satisfies: a
+# fixed-decimal format would round it up into an assertion of equality.
+_lem=json.load(open(ROOT/"analysis/mouse_lemur/procrustes_results.json")); _lemp=_lem["permutation_test"]
+_pexp=math.ceil(math.log10(_lemp["p_value"]))
+if 10.0**_pexp<=_lemp["p_value"]: _pexp+=1
+null=np.load(ROOT/"analysis/mouse_lemur/null_distribution.npy"); obs=_lem["procrustes"]["distance"]
 cnt,_,_=axD.hist(null,bins=40,color="#9bb8d3",edgecolor="white",linewidth=0.3)
 axD.axvline(obs,color=RED,lw=1.6)
 # the obs/null block occupies the top ~26% of the panel and the tallest bar ran
@@ -64,8 +71,8 @@ axD.axvline(obs,color=RED,lw=1.6)
 axD.set_ylim(0,np.ceil(cnt.max()/0.68/100)*100)
 axD.annotate(f"observed\n{obs:.1f}",xy=(obs,axD.get_ylim()[1]*0.5),xytext=(obs+7,axD.get_ylim()[1]*0.7),
              fontsize=7,color=RED,arrowprops=dict(arrowstyle="->",color=RED,lw=0.7))
-axD.text(0.97,0.95,"obs/null 0.35\np < 0.0001\nn = 15",transform=axD.transAxes,ha="right",va="top",fontsize=7)
-axD.set_title("Human–mouse lemur (~75 Mya)",fontsize=8)
+axD.text(0.97,0.95,f"obs/null {_lemp['obs_null_ratio']:.2f}\np < 10$^{{{_pexp}}}$\nn = {_lem['n_types']}",transform=axD.transAxes,ha="right",va="top",fontsize=7)
+axD.set_title(f"Human–mouse lemur (~{_lem['divergence_mya']:.0f} Mya)",fontsize=8)
 axD.set_xlabel("Procrustes distance",fontsize=8); axD.set_ylabel("permutations",fontsize=8)
 axD.spines[["top","right"]].set_visible(False); axD.tick_params(labelsize=7,length=2.5)
 letter(axD,"D",x=-0.22)
