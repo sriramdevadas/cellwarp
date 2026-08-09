@@ -7,16 +7,22 @@ After Part 4A:
   dashed reference line at obs/null = 1.0 ('permutation null')
   violin of each null distribution rescaled to obs/null (centered at 1.0)
   observed points marked for both analyses
-  p-values: H×M 0.0035, H×H 0.0088; 1.92-fold ratio
+  obs/null ratio and permutation p annotated on each arm, and the fold
+    difference between the two ratios
   protocol-confounded annotation pointing to S1 Text for the protocol-
     controlled donor-split result.
 
-Source nulls:
-  H×M 6-type: output/phase2/null_distribution.npy (d=12.427, null_median=39.258)
-  H×H 6-type v2: output/phase2/negative_control_v2/null_distribution_negctrl_v2.npy
-                 (d=24.009, null_median=39.576)
+Sources. Each arm's observed distance, null median and permutation p are read
+from its own results JSON; the null distribution the violin draws is the .npy
+beside it. Nothing is restated here.
+
+  H×M 6-type: output/phase2/procrustes_results.json
+              + output/phase2/null_distribution.npy
+  H×H 6-type v2: output/phase2/negative_control_v2/negctrl_v2_results.json
+              + output/phase2/negative_control_v2/null_distribution_negctrl_v2.npy
 """
 from __future__ import annotations
+import json
 from pathlib import Path
 
 import matplotlib
@@ -26,18 +32,41 @@ import matplotlib.font_manager as fm
 import numpy as np
 
 PROJECT = Path(__file__).resolve().parent.parent
+RESULTS_HM = PROJECT / "output/phase2/procrustes_results.json"
 NULL_HM = PROJECT / "output/phase2/null_distribution.npy"
+RESULTS_HH = PROJECT / "output/phase2/negative_control_v2/negctrl_v2_results.json"
 NULL_HH = PROJECT / "output/phase2/negative_control_v2/null_distribution_negctrl_v2.npy"
 OUT_SUPP = PROJECT / "figures/submission/supplementary"
 OUT_LEGACY = PROJECT / "figures/supplementary"
 
-# Observed values from source JSONs
-HM_DIST = 12.427310325548715
-HM_NULL_MED = 39.25758219423939
-HH_DIST = 24.008688408425147
-HH_NULL_MED = 39.576332731611004
-HM_P = 0.0035
-HH_P = 0.0088
+
+def load_arm(results, null_path):
+    """Read one arm's observed distance, null median and permutation p.
+
+    The two fields are the ones reproduce/validate.py gates the arm on: it
+    checks procrustes.distance / null_distribution_summary.median against the
+    obs/null ratio the caption states. Reading them here rather than restating
+    them means a re-run that moved either number moves the panel too, instead
+    of leaving the panel asserting the old value.
+
+    The violin is drawn from the .npy, so the median that normalizes it must be
+    the median of that array. That is not guaranteed by anything else in the
+    tree -- no gate loads the .npy -- so it is checked rather than assumed.
+    """
+    with open(results) as f:
+        res = json.load(f)
+    dist = res["procrustes"]["distance"]
+    med = res["permutation_test"]["null_distribution_summary"]["median"]
+    p = res["permutation_test"]["p_value"]
+    null = np.load(null_path)
+    if float(np.median(null)) != med:
+        raise SystemExit(
+            f"{results.name}: null_distribution_summary.median is {med!r}, but "
+            f"the median of {null_path.name} is {float(np.median(null))!r}. The "
+            "violin and the ratio it is centered on come from different data; "
+            "re-run the analysis rather than plotting this."
+        )
+    return dist, med, p, null
 
 for font in ["Arial", "Helvetica", "DejaVu Sans"]:
     try:
@@ -66,13 +95,13 @@ def main():
     OUT_SUPP.mkdir(parents=True, exist_ok=True)
     OUT_LEGACY.mkdir(parents=True, exist_ok=True)
 
-    hm_null = np.load(NULL_HM)
-    hh_null = np.load(NULL_HH)
+    hm_dist, hm_med, hm_p, hm_null = load_arm(RESULTS_HM, NULL_HM)
+    hh_dist, hh_med, hh_p, hh_null = load_arm(RESULTS_HH, NULL_HH)
     # Express each null distribution as obs/null ratio (null / own null_median)
-    hm_norm = hm_null / HM_NULL_MED
-    hh_norm = hh_null / HH_NULL_MED
-    hm_obs = HM_DIST / HM_NULL_MED
-    hh_obs = HH_DIST / HH_NULL_MED
+    hm_norm = hm_null / hm_med
+    hh_norm = hh_null / hh_med
+    hm_obs = hm_dist / hm_med
+    hh_obs = hh_dist / hh_med
     fold = hh_obs / hm_obs
 
     fig, ax = plt.subplots(figsize=(4.2, 3.7))
@@ -103,11 +132,13 @@ def main():
 
     # Observed annotations — both placed to the RIGHT of their markers,
     # mirroring layouts so the H×M label clears the y-axis tick column.
-    ax.annotate(f"obs/null = {hm_obs:.3f}\n$p = {HM_P}$",
+    # The stored p is the (k+1)/(n+1) permutation estimate, so it carries more
+    # digits than the caption quotes; 4 dp is the caption's precision.
+    ax.annotate(f"obs/null = {hm_obs:.3f}\n$p = {hm_p:.4f}$",
                 xy=(0, hm_obs), xytext=(0 + 0.35, hm_obs - 0.04),
                 ha="left", va="top", fontsize=7.5, color=C_BLUE, fontweight="bold",
                 arrowprops=dict(arrowstyle="-", color=C_BLUE, lw=0.5))
-    ax.annotate(f"obs/null = {hh_obs:.3f}\n$p = {HH_P}$",
+    ax.annotate(f"obs/null = {hh_obs:.3f}\n$p = {hh_p:.4f}$",
                 xy=(1, hh_obs), xytext=(1 + 0.35, hh_obs + 0.04),
                 ha="left", va="bottom", fontsize=7.5, color=C_ORANGE, fontweight="bold",
                 arrowprops=dict(arrowstyle="-", color=C_ORANGE, lw=0.5))
