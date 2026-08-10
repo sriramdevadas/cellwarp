@@ -129,3 +129,39 @@ occur:
 
 In all cases, analyzed cell-type membership, every headline result, and all
 scientific conclusions are unaffected.
+
+## Counting words in the submitted texts
+
+There are three different word counts of the manuscript in circulation, and
+only one of them is asserted by anything. Post-Tier-1 values:
+
+| quantity | value | who computes it | gated? |
+|---|---|---|---|
+| `EXPECTED_JOINED_WORDS` | 13612 | `docs/submission/plosone/build_manuscript_docx.py` | **yes** — the builder aborts on mismatch |
+| `wc -w` on `manuscript_combined.txt` | 13775 | shell | no |
+| `wc -w` on `S1_Text.txt` / `S2_Text.txt` | 4947 / 975 | shell | no |
+
+`EXPECTED_JOINED_WORDS` is smaller because it counts the **158 content lines
+joined**, i.e. the manuscript body as the DOCX renders it: the section banners,
+the `====` rules and the blank structural lines that `wc` sees are not content
+and are not counted. It is not a "wrong" `wc`; it is a different object. Do not
+reconcile the two, and do not copy a `wc` number into the builder.
+
+`wc -w` is in principle both locale- and implementation-dependent: GNU
+coreutils `wc` splits on `iswspace()` in a UTF-8 locale and on `isspace()` over
+bytes under `LC_ALL=C`, which can disagree on a file carrying non-ASCII
+characters, and these texts carry plenty (82 en dashes, 42 rho, 59 minus
+signs). **On the reference machine that divergence does not appear.** Measured
+against these files, macOS BSD `/usr/bin/wc` returns 13775 identically under
+`LC_ALL=C`, `POSIX`, `en_US.UTF-8`, `UTF-8` and `en_US.ISO8859-1`, and Python's
+`str.split()` agrees. The only whitespace code points in the file are U+0020
+and U+000A, and there is no U+00A0, which is why the locales cannot disagree
+here. A C-versus-UTF-8 split was reported during the Tier-1 pass (13606 against
+13524 at the pre-edit HEAD); the 13606 reproduces exactly under every locale
+above and 13524 reproduces under none, so it is recorded here as unconfirmed
+rather than as a property of these files. GNU `wc` is not installed on the
+reference machine and was not tested.
+
+Practical consequence: if a submission form wants a word count, say which tool
+produced it. The values above are BSD `wc -w`. Only `EXPECTED_JOINED_WORDS` is
+a gate, and it is the only one that must not drift silently.

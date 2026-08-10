@@ -36,7 +36,7 @@ is deliberate and is **not** a changed number.
 | Andrews obs/null 0.797, p=0.116 (n=6) | 0.797 | `output/validation/andrews_replication/andrews_replication_results.json` (`obs_null_ratio`) | (S13 T23) |
 | MCA×HCA obs/null 1.003, p=0.542 (n=17) | 1.003 | `output/validation/t1a_replication/t1a_results.json` (`t1a_procrustes.obs_null_ratio`) | (S13 T24) |
 | Within-human HCA×TS **0.728, p=0.003** (n=6) | 0.7281 / 0.00300 | `output/validation/hca_centroid_comparison/hca_centroid_comparison.json` | — |
-| Macaque obs/null 0.810, raw p=0.0043; corrected p≈0.22 (NS) | 0.810 / 0.0043 / 0.2236 | `output/macaque_pipeline/reconstruction_qu12_results.json` (`permutation_test.obs_null_ratio_median`) | (S13 T12) |
+| Macaque obs/null 0.810, raw p=0.0043; corrected p=0.2365 (NS) | 0.810 / 0.0043 / 0.2365 | `output/macaque_pipeline/reconstruction_qu12_results.json` (`permutation_test.obs_null_ratio_median`) | (S13 T12) |
 | Bootstrap test–retest ρ **0.99** | 0.994 | `analysis/simulation_study/simulation_results.json` (T65) | — |
 | Cross-atlas ranking ρ **≈0.15** | Sun 0.146, PanSci 0.194 | `sun2023_expanded.json` and `pansci_replication.json`, both (`rigidity_ranking.rho`) | (S13 T25/T26) |
 | Within/cross inversion ρ (qualitative) | −0.410 | `analysis/cross_reference/master_ranking_table.csv` (`bootstrap_CI_width` vs `mean_rank_shift`, n = 20) | (S13 T59) |

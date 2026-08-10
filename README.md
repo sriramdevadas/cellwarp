@@ -144,8 +144,10 @@ pip install -e ".[dev]"
 pytest tests/ -v
 ```
 
-65 tests covering Procrustes alignment, permutation calibration, and
-end-to-end integration.
+195 tests covering Procrustes alignment, permutation calibration, end-to-end
+integration, manifest sync, and the submission packet. The count is larger than
+the number of test functions because `tests/test_table1_callouts.py`
+parametrizes two checks over all 64 numbered S13 Table rows.
 
 ## Citation
 
