@@ -136,15 +136,15 @@ EXPECTED_CONTENT_LINES = 158
 EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 94795
+EXPECTED_RAW_JOINED_CHARS = 95352
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 94819
-EXPECTED_JOINED_WORDS = 13766
+EXPECTED_JOINED_CHARS = 95376
+EXPECTED_JOINED_WORDS = 13853
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 288
+EXPECTED_ASCII_T = 289
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 19
@@ -168,7 +168,7 @@ SUPERSCRIPT = {
 }
 SUPERSCRIPT_EXPECTED = {
     "\u00b9": 1,
-    "\u00b2": 2,
+    "\u00b2": 1,
     "\u2074": 32,
     "\u2075": 2,
     "\u2076": 9,
@@ -187,15 +187,15 @@ LITERAL_EXPECTED = {
     "\u0107": 1,   # LATIN SMALL LETTER C WITH ACUTE
     "\u03a3": 1,   # GREEK CAPITAL LETTER SIGMA
     "\u03b1": 1,   # GREEK SMALL LETTER ALPHA
-    "\u03c1": 42,  # GREEK SMALL LETTER RHO
-    "\u2013": 82,  # EN DASH
+    "\u03c1": 41,  # GREEK SMALL LETTER RHO
+    "\u2013": 83,  # EN DASH
     "\u2014": 1,   # EM DASH
     "\u2016": 2,   # DOUBLE VERTICAL LINE
     "\u2032": 1,   # PRIME (was 3; two were the 3' v3 / 5' v2 sub-split, dropped)
     "\u2192": 8,   # RIGHTWARDS ARROW
     "\u2208": 4,   # ELEMENT OF
     "\u2212": 17,  # MINUS SIGN (59 in the output: 17 literal + 42 substituted)
-    "\u2248": 11,  # ALMOST EQUAL TO
+    "\u2248": 9,   # ALMOST EQUAL TO
     "\u2264": 6,   # LESS-THAN OR EQUAL TO
     "\u2265": 5,   # GREATER-THAN OR EQUAL TO
 }
@@ -231,7 +231,7 @@ NOT_A_GENUS = (
     "Geometric", "Global", "Hartigan", "Having", "Hochberg", "How", "Human",
     "In", "Intermediate", "It", "Italic", "Its", "Krzanowski", "Like",
     "Lower", "Mantel", "Mapping", "Marker", "Marmoset", "Materials",
-    "Metazoa", "Molecular", "Most", "Myr", "Negative", "Neither", "No",
+    "Metazoa", "Molecular", "Most", "Multiplying", "Myr", "Negative", "Neither", "No",
     "None", "Of", "Ontology", "Original", "Pearson", "Permutation",
     "Pipeline", "Plotting", "Position", "Precision", "Primary", "Primate",
     "Procrustes", "Progressive", "Protocol", "Python", "Random", "Rank",
