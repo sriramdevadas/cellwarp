@@ -136,15 +136,15 @@ EXPECTED_CONTENT_LINES = 158
 EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 95352
+EXPECTED_RAW_JOINED_CHARS = 95483
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 95376
-EXPECTED_JOINED_WORDS = 13853
+EXPECTED_JOINED_CHARS = 95507
+EXPECTED_JOINED_WORDS = 13881
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 289
+EXPECTED_ASCII_T = 290
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 19
@@ -187,7 +187,7 @@ MINUS = "\u2212"
 
 # Passed through unchanged, as literal characters in ordinary runs.
 LITERAL_EXPECTED = {
-    "\u00d7": 13,  # MULTIPLICATION SIGN
+    "\u00d7": 14,  # MULTIPLICATION SIGN
     "\u00e9": 1,   # LATIN SMALL LETTER E WITH ACUTE (Felix E, ChEMBL entry)
     "\u00f3": 1,   # LATIN SMALL LETTER O WITH ACUTE (Thorvaldsdottir H, MSigDB entry)
     "\u00f6": 1,   # LATIN SMALL LETTER O WITH DIAERESIS
@@ -195,7 +195,7 @@ LITERAL_EXPECTED = {
     "\u03a3": 1,   # GREEK CAPITAL LETTER SIGMA
     "\u03b1": 1,   # GREEK SMALL LETTER ALPHA
     "\u03c1": 41,  # GREEK SMALL LETTER RHO
-    "\u2013": 83,  # EN DASH
+    "\u2013": 84,  # EN DASH
     "\u2014": 1,   # EM DASH
     "\u2016": 2,   # DOUBLE VERTICAL LINE
     "\u2032": 1,   # PRIME (was 3; two were the 3' v3 / 5' v2 sub-split, dropped)

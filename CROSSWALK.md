@@ -568,7 +568,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | scipy verification max-Δ | 7.3 × 10⁻¹¹ | `scripts/verify_procrustes_vs_scipy.py` | (verification log) | n/a |  | computed |
 | within-species v2 cells | 11,640 | `scripts/test_35type_human_control.py` | `output/phase2/negative_control_v2/cell_availability.json` | (sum of selected cells) |  | mapped |
 | v2 within-species obs/null | 0.607 | same | `output/phase2/negative_control_v2/negctrl_v2_results.json` | (within-species comparison) |  | mapped |
-| v2 cross-species obs/null | 0.317 | same | same | (matched-scale 6-type comparison) |  | mapped |
+| v2 cross-species obs/null | 0.317 | same | `output/phase2/negative_control_v2/comparison_3way.csv` | row `Human vs Mouse`, `obs_to_null_ratio` (0.3165582196086514). NOT in `negctrl_v2_results.json`, which this row previously named: that file holds the within-species arm only (distance 24.0087 / null median 39.5763 = 0.607) and the string 0.317 does not occur in it. The same computation appears as `comparison_b` in `output/validation/hca_centroid_comparison/hca_centroid_comparison.json` and as the primary in `output/phase2/procrustes_results.json`, all three carrying distance 12.4273 |  | mapped |
 | v2 within-species p | 0.0088 | same | same | `permutation_test.p_value` |  | mapped |
 | Sun2023 lung-restricted obs/null | 0.490 | `scripts/18_sun2023_issue092_diagnosis.py` | `output/validation/sun2023_issue092_diagnosis/issue092_diagnosis.json` | `task_3_revised_procrustes.obs_null_ratio` | `18_sun2023_issue092_diagnosis.main` | mapped |
 | Sun2023 lung-restricted p | 0.0001 | same | same | `task_3_revised_procrustes.p_value` | `18_sun2023_issue092_diagnosis.main` | mapped |
