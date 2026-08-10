@@ -1,0 +1,74 @@
+{
+  "method": {
+    "transform": "Fisher z (artanh), back-transformed with tanh",
+    "se_formula": "1.06 / sqrt(n - 3)",
+    "se_rationale": "Bonett-Wright Spearman standard error. NOT the Pearson 1/sqrt(n-3) used by scripts/generate_phase2_figures.py, scripts/t3e_step2_compute.py and scripts/t3e_step3b_enhancer.py; see this script's module docstring before changing it.",
+    "reference": "Bonett DG, Wright TA (2000). Psychometrika 65:23-28",
+    "z_crit": 1.959963984540054,
+    "confidence": 0.95,
+    "target": 0.2
+  },
+  "pairs": {
+    "sun2023": {
+      "label": "Sun2023",
+      "source": "output/validation/sun2023_replication_expanded/sun2023_expanded.json",
+      "rho_key": "rigidity_ranking.rho",
+      "n_key": "rigidity_ranking.n_matched_types",
+      "rho": 0.1464285714285714,
+      "n": 15,
+      "se": 0.30599564267050167,
+      "ci_lower": -0.4237481074459434,
+      "ci_upper": 0.6334930372081776,
+      "ci_contains_zero": true,
+      "ci_contains_0_20": true
+    },
+    "pansci": {
+      "label": "PanSci",
+      "source": "output/validation/pansci_replication/pansci_replication.json",
+      "rho_key": "rigidity_ranking.rho",
+      "n_key": "rigidity_ranking.n_matched_types",
+      "rho": 0.19411764705882353,
+      "n": 16,
+      "se": 0.29399110399937145,
+      "ci_lower": -0.3623595612285678,
+      "ci_upper": 0.648568848494629,
+      "ci_contains_zero": true,
+      "ci_contains_0_20": true
+    },
+    "pan_census": {
+      "label": "pan-Census",
+      "source": "analysis/census_replication/replication_results.json",
+      "rho_key": "ranking_correlation.spearman_rho",
+      "n_key": "ranking_correlation.n_types",
+      "rho": -0.05251270468661773,
+      "n": 22,
+      "se": 0.24318067790279546,
+      "ci_lower": -0.4847589437467598,
+      "ci_upper": 0.4003488663573224,
+      "ci_contains_zero": true,
+      "ci_contains_0_20": true
+    },
+    "cellhint": {
+      "label": "CellHint (matched 15-type baseline)",
+      "source": "analysis/harmonized_replication/sensitivity_analysis.csv",
+      "rho_key": "level==0_unharmonized -> rho",
+      "n_key": "level==0_unharmonized -> n_types",
+      "rho": -0.13928571428571426,
+      "n": 15,
+      "se": 0.30599564267050167,
+      "ci_lower": -0.6291074132309533,
+      "ci_upper": 0.42971195957566094,
+      "ci_contains_zero": true,
+      "ci_contains_0_20": true
+    }
+  },
+  "summary": {
+    "n_pairs": 4,
+    "all_contain_zero": true,
+    "all_contain_0_20": true,
+    "n_range": [
+      15,
+      22
+    ]
+  }
+}

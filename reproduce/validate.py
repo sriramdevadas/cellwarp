@@ -1266,6 +1266,162 @@ CHECKS = [
                      "driver. Trivially true when the filter ran, and false when it did "
                      "not, which is exactly what makes it worth checking",
     },
+
+    # ── Cross-atlas rank-correlation confidence intervals (Results §4) ──
+    # Producer: analysis/ranking_replication/cross_atlas_ci.py. Bonett-Wright
+    # Fisher-z intervals, SE = 1.06/sqrt(n-3), on the four correlations Results §4
+    # reports. The claim being gated is that every interval spans both zero and
+    # 0.20, i.e. these samples do not separate "no cross-atlas ranking signal"
+    # from "a moderate one". Each pair carries four checks: the two booleans that
+    # ARE the claim, plus rho and n, so an upstream artifact cannot drift beneath
+    # an interval that still reads as correct.
+    #
+    # The booleans are stored as JSON booleans and load_value() coerces with
+    # float(), so true arrives as 1.0 and false as 0.0; expected 1 / tolerance 0
+    # therefore fails loudly the moment an interval stops spanning its target.
+    # This follows the S1 Text §10 precedent, where pre-registered conditions are
+    # likewise stored as booleans and gated numerically.
+    {
+        "name": "Cross-atlas CI (Sun2023): rho as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.sun2023.rho",
+        "expected": 0.1464,
+        "tolerance": 0.0001,
+        "paper_ref": "Results §4 and S1 Text §6 (+0.15 Sun2023); input to the interval below",
+    },
+    {
+        "name": "Cross-atlas CI (Sun2023): n as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.sun2023.n",
+        "expected": 15,
+        "tolerance": 0,
+        "paper_ref": "Results §4 (n = 15 to 22 across the four pairs); the SE is a "
+                     "function of n, so n is gated alongside rho",
+    },
+    {
+        "name": "Cross-atlas CI (Sun2023): interval contains zero",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.sun2023.ci_contains_zero",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the 95% interval spans zero (computed [-0.424, +0.633])",
+    },
+    {
+        "name": "Cross-atlas CI (Sun2023): interval contains 0.20",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.sun2023.ci_contains_0_20",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the same interval also spans a moderate correlation "
+                     "of 0.20, which is what makes the pair uninformative rather than negative",
+    },
+    {
+        "name": "Cross-atlas CI (PanSci): rho as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pansci.rho",
+        "expected": 0.1941,
+        "tolerance": 0.0001,
+        "paper_ref": "Results §4 and S1 Text §6 (+0.19 PanSci); input to the interval below",
+    },
+    {
+        "name": "Cross-atlas CI (PanSci): n as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pansci.n",
+        "expected": 16,
+        "tolerance": 0,
+        "paper_ref": "Results §4. PanSci's matched-type count is 16, not 15; it is the "
+                     "one pair whose n differs from the 15 the other two 15-type arms carry",
+    },
+    {
+        "name": "Cross-atlas CI (PanSci): interval contains zero",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pansci.ci_contains_zero",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the 95% interval spans zero (computed [-0.362, +0.649])",
+    },
+    {
+        "name": "Cross-atlas CI (PanSci): interval contains 0.20",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pansci.ci_contains_0_20",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the same interval also spans 0.20. This is the largest "
+                     "of the four correlations, so it is the pair most likely to lose the "
+                     "zero end if the estimate moved",
+    },
+    {
+        "name": "Cross-atlas CI (pan-Census): rho as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pan_census.rho",
+        "expected": -0.0525,
+        "tolerance": 0.0001,
+        "paper_ref": "Results §4 and S1 Text §6 (-0.05 pan-Census); input to the interval below",
+    },
+    {
+        "name": "Cross-atlas CI (pan-Census): n as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pan_census.n",
+        "expected": 22,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the upper end of the n = 15 to 22 range, so the "
+                     "narrowest of the four intervals",
+    },
+    {
+        "name": "Cross-atlas CI (pan-Census): interval contains zero",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pan_census.ci_contains_zero",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the 95% interval spans zero (computed [-0.485, +0.400])",
+    },
+    {
+        "name": "Cross-atlas CI (pan-Census): interval contains 0.20",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.pan_census.ci_contains_0_20",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the same interval also spans 0.20. This is the "
+                     "narrowest interval of the four, so it is the binding case for the "
+                     "sentence: if any pair fails to reach 0.20 it is this one",
+    },
+    {
+        "name": "Cross-atlas CI (CellHint): rho is the matched 15-type baseline, not the artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.cellhint.rho",
+        "expected": -0.1393,
+        "tolerance": 0.0001,
+        "paper_ref": "Results §4 and S1 Text §6 (-0.14 CellHint at matched 15-type "
+                     "baseline). Deliberately NOT -0.386: that is the pre-PCA-matching "
+                     "artifact S1 Text explains away, and it is what "
+                     "cellhint_replication.json carries as rigidity_ranking.rho. This "
+                     "check is what stops the wrong row being substituted",
+    },
+    {
+        "name": "Cross-atlas CI (CellHint): n as read from the source artifact",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.cellhint.n",
+        "expected": 15,
+        "tolerance": 0,
+        "paper_ref": "Results §4; S4 Table Level 0 (matched 15-type PCA baseline)",
+    },
+    {
+        "name": "Cross-atlas CI (CellHint): interval contains zero",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.cellhint.ci_contains_zero",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the 95% interval spans zero (computed [-0.629, +0.430])",
+    },
+    {
+        "name": "Cross-atlas CI (CellHint): interval contains 0.20",
+        "file": "analysis/ranking_replication/cross_atlas_ci_results.json",
+        "key": "pairs.cellhint.ci_contains_0_20",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results §4: the same interval also spans 0.20, despite the point "
+                     "estimate being negative",
+    },
 ]
 
 
