@@ -210,6 +210,7 @@ def main():
             "identity set; the per-type top-50 centroid-deviation test on the 6 validation "
             "types is reported as a pass-rate (5 of 6 under CellMarker, 6 of 6 under the "
             "held-out HPA reference; Figure S6, Methods), not as a single inventory p-value. ")
+        # COPY-EDIT: keyed on the 48-word _t3435_d22 sentence. Reword it and this block stops firing -- success reported, bytes unmoved, TABLE_1_LOCK_MD5 matching, all four gates green. Re-key here in the same commit, or use the D68/D69 pattern below, which has no prose sentinel.
         if _t3435_d22 in _fv:
             _fv = _fv.replace(_t3435_d22, _t3435, 1)
             ws.cell(footnote_row, COL["id"]).value = _fv
@@ -227,6 +228,7 @@ def main():
     # correct as it stands and is not edited.
     if footnote_row:
         _fv = ws.cell(footnote_row, COL["id"]).value
+        # COPY-EDIT: keyed on the prose 'carrying an em-dash in the Bonferroni'. Reword it and this block stops firing -- success reported, bytes unmoved, TABLE_1_LOCK_MD5 matching, all four gates green. Re-key here in the same commit, or use the D68/D69 pattern below, which has no prose sentinel.
         if "carrying an em-dash in the Bonferroni" not in _fv:
             _rule = (
                 " The nine excluded IDs are the rows carrying an em-dash in the "
