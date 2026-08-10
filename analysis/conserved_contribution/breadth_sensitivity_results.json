@@ -1,0 +1,128 @@
+{
+  "analysis": "detection-breadth sensitivity of C and the Fig 5C master-TF enrichment",
+  "detection_criterion": "A gene is detected in a cell type when its centroid value in that type is > 0. The centroids are non-negative log-normalised means, so an exact zero is zero counts in every cell of that type. breadth_min is the number of the 35 types in which the gene is detected in BOTH species. This criterion is supplied by this sensitivity analysis and is NOT the pipeline's: gate_lib.per_gene_corr filters only on np.std > 0 in each species, which admits a gene detected in three types; and biological_predictors.py:268's frac_expressing > 0.10 is a per-cell rate needing raw cell matrices that are not deposited. It is the most generous reading available, so every shortfall reported here is a lower bound.",
+  "criterion_is_the_pipelines": false,
+  "pipeline_criterion_notes": {
+    "gate_lib.per_gene_corr": "filters on np.std > 0 per species only; no breadth requirement",
+    "biological_predictors.py:268": "frac_expressing > 0.10, per-cell, needs raw matrices (not deposited)"
+  },
+  "n_genes_with_C": 15940,
+  "breadth": {
+    "human": {
+      "median": 35.0,
+      "mean": 32.868757841907154,
+      "q05": 18.0,
+      "q25": 35.0,
+      "q75": 35.0,
+      "n_at_35": 12522,
+      "n_le_3": 101,
+      "n_le_5": 204,
+      "n_le_10": 444
+    },
+    "mouse": {
+      "median": 35.0,
+      "mean": 30.132434127979923,
+      "q05": 10.0,
+      "q25": 29.0,
+      "q75": 35.0,
+      "n_at_35": 8717,
+      "n_le_3": 203,
+      "n_le_5": 380,
+      "n_le_10": 896
+    },
+    "min": {
+      "median": 35.0,
+      "mean": 29.77659974905897,
+      "q05": 8.0,
+      "q25": 28.0,
+      "q75": 35.0,
+      "n_at_35": 8435,
+      "n_le_3": 259,
+      "n_le_5": 487,
+      "n_le_10": 1052
+    }
+  },
+  "breadth_vs_C": {
+    "spearman_rho": 0.25011501400667685,
+    "p_value": 6.744062532309914e-226,
+    "n": 15940,
+    "direction_note": "positive: sparsely detected genes sit at NEGATIVE C, not in the high-C tail"
+  },
+  "figure_5A_terminal_bin": {
+    "n_bins": 60,
+    "source": "make_figure7.py:165 np.histogram(C, bins=60)",
+    "lower_edge": 0.9738335417259514,
+    "upper_edge": 0.9999500281753492,
+    "n_genes": 221,
+    "median_breadth_min": 26.0,
+    "frac_breadth_min_le_3": 0.01809954751131222,
+    "frac_breadth_min_le_5": 0.04524886877828054,
+    "all_genes_frac_breadth_min_le_3": 0.016248431618569637
+  },
+  "conserved_set": {
+    "q75_of_C": 0.5918600112339998,
+    "n_genes": 3985,
+    "breadth_min": {
+      "median": 35.0,
+      "mean": 31.59447929736512,
+      "q05": 17.0,
+      "q25": 31.0,
+      "q75": 35.0,
+      "n_at_35": 2203,
+      "n_le_3": 16,
+      "n_le_5": 34,
+      "n_le_10": 75
+    },
+    "frac_breadth_min_le_5": 0.008531994981179424,
+    "frac_breadth_min_le_15": 0.03814303638644918
+  },
+  "enrichment": {
+    "unfiltered": {
+      "label": "unfiltered",
+      "n_genes": 15940,
+      "n_tfs": 73,
+      "obs_median_C_percentile": 0.9377038895859473,
+      "n_draws": 100000,
+      "expression_matched": {
+        "null_median": 0.5398368883312421,
+        "null_mean": 0.5393550752823086,
+        "null_sd": 0.0535691671994933,
+        "exceedances": 0,
+        "p_empirical": 9.99990000099999e-06,
+        "z": 7.436158430840915
+      },
+      "joint_expr_tau_matched": {
+        "null_median": 0.7606649937264742,
+        "null_mean": 0.7580963500627353,
+        "null_sd": 0.05967936592827153,
+        "exceedances": 0,
+        "p_empirical": 9.99990000099999e-06,
+        "z": 3.009541685464316
+      }
+    },
+    "strictest": {
+      "label": "breadth_min >= 35",
+      "n_genes": 8435,
+      "n_tfs": 24,
+      "obs_median_C_percentile": 0.921339656194428,
+      "n_draws": 100000,
+      "expression_matched": {
+        "null_median": 0.5048606994665086,
+        "null_mean": 0.5013414238292827,
+        "null_sd": 0.09687675631858565,
+        "exceedances": 0,
+        "p_empirical": 9.99990000099999e-06,
+        "z": 4.335387024973805
+      },
+      "joint_expr_tau_matched": {
+        "null_median": 0.7148784825133373,
+        "null_mean": 0.7018836710136336,
+        "null_sd": 0.10494247476748761,
+        "exceedances": 27,
+        "p_empirical": 0.00027999720002799973,
+        "z": 2.0912026866816795
+      }
+    }
+  },
+  "strictest_filter_breadth_min": 35
+}

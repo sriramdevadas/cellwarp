@@ -1484,6 +1484,69 @@ CHECKS = [
         "paper_ref": "S1 Text §9 (100 random balanced splits, seed 42). Gated alongside "
                      "pct_positive because 100/100 is a ratio and both halves must hold",
     },
+
+    # ── Detection-breadth sensitivity of the master-TF enrichment ──
+    # Producer: analysis/conserved_contribution/breadth_sensitivity.py.
+    # C is a Pearson correlation across 35 centroids, and the pipeline imposes no
+    # detection-breadth requirement on the genes entering it: gate_lib.per_gene_corr
+    # filters on np.std > 0 per species alone, so a gene detected in three types and
+    # absent from thirty-two is admitted. The producer supplies a breadth criterion for
+    # sensitivity only (centroid > 0, the most generous reading) and re-runs the Fig 5C
+    # enrichment on genes detected in all 35 types in both species.
+    #
+    # These five gate the strictest filter, which is the row the manuscript will state.
+    # The producer additionally asserts, before computing any filtered row, that its
+    # unfiltered row reproduces gate_results.json check3a.median_Crank exactly and both
+    # deposited null medians within sampler tolerance -- without that the filtered
+    # numbers would be uninterpretable, because a difference could be the filter or
+    # could be a reimplementation of the statistic.
+    {
+        "name": "Breadth sensitivity: master-TF median C-percentile, all-35 filter",
+        "file": "analysis/conserved_contribution/breadth_sensitivity_results.json",
+        "key": "enrichment.strictest.obs_median_C_percentile",
+        "expected": 0.9213,
+        "tolerance": 0.0001,
+        "paper_ref": "Results §5 / Fig 5C sensitivity: the enrichment survives restricting "
+                     "to genes detected in all 35 types in both species (unfiltered 0.9377)",
+    },
+    {
+        "name": "Breadth sensitivity: expression-matched null median, all-35 filter",
+        "file": "analysis/conserved_contribution/breadth_sensitivity_results.json",
+        "key": "enrichment.strictest.expression_matched.null_median",
+        "expected": 0.5049,
+        "tolerance": 0.0005,
+        "paper_ref": "Results §5 / Fig 5C sensitivity (unfiltered null median 0.54). "
+                     "Tolerance is looser than the observed value's because this is a "
+                     "sampled null, not a deterministic statistic",
+    },
+    {
+        "name": "Breadth sensitivity: expr x Tau-matched null median, all-35 filter",
+        "file": "analysis/conserved_contribution/breadth_sensitivity_results.json",
+        "key": "enrichment.strictest.joint_expr_tau_matched.null_median",
+        "expected": 0.7149,
+        "tolerance": 0.0005,
+        "paper_ref": "Results §5 / Fig 5C sensitivity (unfiltered null median 0.76). The "
+                     "stricter of the two nulls, so the binding comparison",
+    },
+    {
+        "name": "Breadth sensitivity: genes retained by the all-35 filter",
+        "file": "analysis/conserved_contribution/breadth_sensitivity_results.json",
+        "key": "enrichment.strictest.n_genes",
+        "expected": 8435,
+        "tolerance": 0,
+        "paper_ref": "Results §5 / Fig 5C sensitivity: 8,435 of 15,940 genes, i.e. the "
+                     "filter discards 47 percent of the pool",
+    },
+    {
+        "name": "Breadth sensitivity: master TFs retained by the all-35 filter",
+        "file": "analysis/conserved_contribution/breadth_sensitivity_results.json",
+        "key": "enrichment.strictest.n_tfs",
+        "expected": 24,
+        "tolerance": 0,
+        "paper_ref": "Results §5 / Fig 5C sensitivity: 24 of the 73 master TFs survive. "
+                     "Gated because the enrichment holding on 24 TFs is a weaker claim "
+                     "than on 73, and the count is what makes that legible",
+    },
 ]
 
 
