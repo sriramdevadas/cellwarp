@@ -25,9 +25,20 @@ wrong output is not:
 
 Usage:  python build_manuscript_docx.py [--output PATH]
 
-Requires python-docx, declared in pyproject.toml's [reproduce] extra. The DOCX
-is a build artifact and is gitignored: a DOCX is a zip of XML carrying creation
-timestamps, so it cannot be pinned to a stable hash the way the source text is.
+Requires python-docx. As of 3f1d326 it is declared in the two extras the
+documented installs actually read -- pyproject.toml's [lock], which is
+`pip install -e ".[lock]"` at reproduce/README.md:35, and [dev], which is what
+Dockerfile:65 installs and therefore what the container gets -- as well as in
+requirements.txt, environment.yml and the [reproduce] extra. Before that it was
+declared in [reproduce] alone, which no documented install reads, so this script
+aborted at import in every environment the documentation tells you to build.
+
+Note that the four gates run under .venv and this script does not: see
+"Two interpreters" in reproduce/README.md.
+
+The DOCX is a build artifact and is gitignored: a DOCX is a zip of XML carrying
+creation timestamps, so it cannot be pinned to a stable hash the way the source
+text is. No gate reads it, so a broken build here leaves all four gates green.
 """
 
 import argparse
@@ -125,15 +136,15 @@ EXPECTED_CONTENT_LINES = 158
 EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 94225
+EXPECTED_RAW_JOINED_CHARS = 94795
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 94249
-EXPECTED_JOINED_WORDS = 13668
+EXPECTED_JOINED_CHARS = 94819
+EXPECTED_JOINED_WORDS = 13766
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 283
+EXPECTED_ASCII_T = 288
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 19
