@@ -1547,6 +1547,110 @@ CHECKS = [
                      "Gated because the enrichment holding on 24 TFs is a weaker claim "
                      "than on 73, and the count is what makes that legible",
     },
+
+    # ── Ontology restriction of the primate covariance replication ──
+    # Producer: analysis/bg/ontology_restriction.py in the basal-ganglia deposit;
+    # the results JSON is vendored here byte-identically, as the five
+    # layer2_results_*.json already are.
+    #
+    # Cross-species type correspondence in that atlas comes from a consensus taxonomy
+    # built by cross-species integration, so the matching BETWEEN types is not
+    # independent of an alignment step the way the centroids are. The producer restricts
+    # each pair to the types an independent Cell Ontology lookup corroborates and re-runs
+    # the permutation null inside the restricted subset. It asserts all 36 deposited
+    # means against np.diag() before computing any restricted value, and it neither edits
+    # layer2_analyze.py nor regenerates any layer2_results_*.json.
+    #
+    # Numbers gated here are the ones Methods and S1 Text state. All are counts, so the
+    # tolerance is 0 throughout: each is a statement about how many cells behaved a
+    # certain way, and "approximately 34 of 36" would mean nothing.
+    {
+        "name": "Ontology restriction: restricted S above its own null in every cell",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "summary.n_restricted_above_own_null",
+        "expected": 36,
+        "tolerance": 0,
+        "paper_ref": "Methods (primate replication) and S1 Text: all 36 cells -- 3 pairs x "
+                     "2 weightings x k in {1,3,5} x pre/post -- stay above a null built on "
+                     "the restricted subset. This is the claim the Methods sentence makes",
+    },
+    {
+        "name": "Ontology restriction: restricted margin wider than full-set margin",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "summary.n_restricted_margin_wider_than_full",
+        "expected": 34,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: 34 of 36. The two exceptions narrow by 0.003 and 0.004, so "
+                     "the count and not an average is what carries the claim",
+    },
+    {
+        "name": "Ontology restriction: k=1 direction, non-corroborated higher",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "summary.direction_counts_by_k.1.non_corroborated_higher",
+        "expected": 11,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: at k = 1 the non-corroborated stratum carries higher S in 11 "
+                     "of 12 pair-weighting-arm combinations",
+    },
+    {
+        "name": "Ontology restriction: k=5 direction, corroborated higher",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "summary.direction_counts_by_k.5.corroborated_higher",
+        "expected": 11,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: at k = 5 the corroborated stratum carries higher S in 11 of "
+                     "12. Gated alongside the k=1 count because the reversal between them "
+                     "is the finding, and one count alone does not show it",
+    },
+    {
+        "name": "Ontology restriction: Human-Macaque strict strata (corroborated)",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "strata.Human_Macaque.strict_corroborated",
+        "expected": 24,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: 24 of 55 under the strict reading",
+    },
+    {
+        "name": "Ontology restriction: Human-Macaque strict strata (not corroborated)",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "strata.Human_Macaque.strict_not",
+        "expected": 31,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: the complement, 31 of 55. Both halves are gated because the "
+                     "Methods sentence says the restriction discards more than half",
+    },
+    {
+        "name": "Ontology restriction: Human-Marmoset strict strata (corroborated)",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "strata.Human_Marmoset.strict_corroborated",
+        "expected": 20,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: 20 of 52 under the strict reading",
+    },
+    {
+        "name": "Ontology restriction: Human-Marmoset strict strata (not corroborated)",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "strata.Human_Marmoset.strict_not",
+        "expected": 32,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: the complement, 32 of 52",
+    },
+    {
+        "name": "Ontology restriction: Macaque-Marmoset strict strata (corroborated)",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "strata.Macaque_Marmoset.strict_corroborated",
+        "expected": 20,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: 20 of 52 under the strict reading",
+    },
+    {
+        "name": "Ontology restriction: Macaque-Marmoset strict strata (not corroborated)",
+        "file": "docs/submission/plosone/figures/bg_results/ontology_restriction_results.json",
+        "key": "strata.Macaque_Marmoset.strict_not",
+        "expected": 32,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: the complement, 32 of 52",
+    },
 ]
 
 
