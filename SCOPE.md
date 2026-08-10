@@ -212,6 +212,46 @@ are scoped out here rather than in the manuscript body.
 
 *Every statistic checked by `reproduce/validate.py` resolves either to a PAPER
 artifact above or to the vendored basal-ganglia inputs in
+## Support a reader cannot reproduce — three known instances
+
+**All three pass all four gates.** None is a wrong number; each is a place where the
+evidence behind a deposited artifact cannot be regenerated from this repository, so a
+green board does not mean a reader could have produced the thing it certifies. Recorded
+here because this is the file someone scoping a reproduction reads first. None is fixed
+in the commit that added this section.
+
+1. **`figS5_markernull.pdf` — a hand-copied hop that `--verify` cannot see.**
+   `analysis/sensitivity_analyses/markernull.py` writes its figure to
+   `docs/supplementary_materials/figure_S8_markernull.{pdf,png}`, the old stem and
+   directory, not to the deposited `figures/submission/supplementary/figS5_markernull.pdf`.
+   The copy between them is made by hand. `build_submission_packet.py --verify` checks
+   the deposited file against its packet **mirror** (`Figure_S5.pdf`) and never against
+   what the producer actually wrote, so a producer re-run that is not hand-copied
+   forward leaves the deposited S5 Fig stale with all four gates green.
+   `figure_S8_markernull` appears zero times in the packet script and zero times in the
+   packet test.
+
+2. **`block3_form_b.py` — the strongest circularity control is not re-runnable.**
+   It is the out-of-sample test of geometric circularity behind S1 Text's answer to the
+   selection objection: select genes on C in donor half A, evaluate the obs/null
+   geometry on half-B centroids. It reads
+   `analysis/conserved_contribution/donor_stability/agg_human_cap10000.npz`, which
+   `analysis/conserved_contribution/.gitignore:5` excludes. Its own docstring says
+   "NOT TRACKED". No `validate.py` check reads its output, nor those of the other three
+   out-of-sample controls (`block1_form_a.py`, `item1_retention.py`,
+   `block2_w3_tfcensus.py`).
+
+3. **Fig 5D draws a live recompute of a value it also has deposited.**
+   `analysis/conserved_contribution/make_figure7.py:135-141` computes the cell-sampling
+   ceiling from twenty splits of the same gitignored `agg_human_cap10000.npz`
+   (`ceil_med = float(np.median(ceil))`) and draws that, rather than reading the
+   deposited `donor_stability_results.json` key
+   `ceiling_cellsplit_spearman_median` (0.9433716176241689). The script prints both
+   side by side, so a divergence is visible at build time, but nothing asserts it and
+   the deposited key is not gated. S1 Text quotes "a 0.94 cell-sampling ceiling"; the
+   manuscript does not mention it. **This one is a figure change and belongs with the
+   figure session, not with a prose or gating pass.**
+
 `docs/submission/plosone/figures/bg_results/`, which sit outside the three trees
 classified here. BANKED, OTHER PROJECT, and EXPLORATORY items make no claim in the
 PLOS ONE manuscript; they are catalogued here so the reported set is legible as a

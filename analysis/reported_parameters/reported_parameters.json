@@ -1,0 +1,58 @@
+{
+  "analysis": "reported parameters and summary statistics not otherwise gateable",
+  "note": "no new results; every field is read or derived from a tracked file in this repository, and its source is recorded beside it",
+  "primate_replication": {
+    "source": "docs/submission/plosone/figures/bg_results/layer2_results_{pair}.json, per_type_n",
+    "threshold_declared_by_producer": 100,
+    "threshold_source": "analysis/bg/layer2_covariance.py:60-62 in the basal-ganglia deposit (another repository); this repository asserts its consequence rather than restating the literal",
+    "pairs": {
+      "Human_Macaque": {
+        "n_types": 55,
+        "min_cells_either_arm": 108,
+        "max_cells_either_arm": 145491,
+        "min_cells_type": "SN-VTR CALB1 Dopa",
+        "all_types_at_or_above_threshold": true
+      },
+      "Human_Marmoset": {
+        "n_types": 52,
+        "min_cells_either_arm": 108,
+        "max_cells_either_arm": 145491,
+        "min_cells_type": "SN-VTR CALB1 Dopa",
+        "all_types_at_or_above_threshold": true
+      },
+      "Macaque_Marmoset": {
+        "n_types": 52,
+        "min_cells_either_arm": 110,
+        "max_cells_either_arm": 83269,
+        "min_cells_type": "SN-VTR CALB1 Dopa",
+        "all_types_at_or_above_threshold": true
+      }
+    }
+  },
+  "mouse_lemur": {
+    "source": "analysis/mouse_lemur/01_run_pipeline.py module constants (parsed, not transcribed) and its tracked BioMart CSV",
+    "human_arm": "output/phase2/scaled_35types/centroids_human_35.csv",
+    "human_arm_note": "the primary 35-type Tabula Sapiens centroids, restricted to the matched types; the lemur arm is built from cells",
+    "ortholog_source": "analysis/mouse_lemur/biomart_mouse_lemur_human_orthologs.csv",
+    "n_ortholog_pairs": 16655,
+    "min_cells_per_type": 500,
+    "max_cells_per_type": 2000,
+    "n_permutations": 10000,
+    "random_seed": 42
+  },
+  "bootstrap_rank_stability": {
+    "source": "analysis/cross_reference/master_ranking_table.csv, bootstrap_CI_width and bootstrap_category",
+    "criterion_max_ci_width": 10,
+    "criterion_source": "S1 Text: 'All 35 types classified stable (95% CI width <= 10; median width 3, maximum 7)'",
+    "n_types": 35,
+    "n_stable": 35,
+    "ci_width_median": 3.0,
+    "ci_width_max": 7.0,
+    "ci_width_min": 0.0,
+    "categories": {
+      "STABLE_MIDDLE": 15,
+      "STABLE_FLEXIBLE": 12,
+      "STABLE_RIGID": 8
+    }
+  }
+}

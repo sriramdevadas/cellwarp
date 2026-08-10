@@ -1651,6 +1651,171 @@ CHECKS = [
         "tolerance": 0,
         "paper_ref": "S1 Text: the complement, 32 of 52",
     },
+
+    # ── Per-gene standardization: the four numbers the abstract's claim rests on ──
+    # Producer: analysis/sensitivity_analyses/genestd_standardization.py. Its JSON
+    # already carried all four; only the checks were missing. Scheme A is a z-score
+    # across the 70 centroids, Scheme B a z-score across cells per species
+    # (pp.scale-style) -- the S9 Table caption defines both, and the attribution
+    # matters because the abstract's "moves off housekeeping structure toward
+    # cell-identity markers" is a Scheme B claim, the 1-of-35 arm, not Scheme A's 0.
+    {
+        "name": "Per-gene standardization Scheme A: Layer-1 obs/null",
+        "file": "analysis/sensitivity_analyses/genestd_results.json",
+        "key": "layer1.A.obs_null",
+        "expected": 0.606,
+        "tolerance": 0.001,
+        "paper_ref": "S9 Table caption (obs/null 0.522 -> 0.606 [A]); Scheme A is the "
+                     "z-score across the 70 centroids",
+    },
+    {
+        "name": "Per-gene standardization Scheme B: Layer-1 obs/null",
+        "file": "analysis/sensitivity_analyses/genestd_results.json",
+        "key": "layer1.B.obs_null",
+        "expected": 0.487,
+        "tolerance": 0.001,
+        "paper_ref": "S9 Table caption (0.487 [B]); Scheme B is the per-species z-score "
+                     "across cells",
+    },
+    {
+        "name": "Per-gene standardization Scheme A: ribosomal-dominated CPC1 types",
+        "file": "analysis/sensitivity_analyses/genestd_results.json",
+        "key": "cpc1.A.n_ribosomal_dominated",
+        "expected": 0,
+        "tolerance": 0,
+        "paper_ref": "S9 Table caption (25/35 -> 0/35 [A]). Gated with the Scheme B count "
+                     "because the pair is the claim; either alone is uninterpretable",
+    },
+    {
+        "name": "Per-gene standardization Scheme B: ribosomal-dominated CPC1 types",
+        "file": "analysis/sensitivity_analyses/genestd_results.json",
+        "key": "cpc1.B.n_ribosomal_dominated",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "S9 Table caption (1/35 [B]). This is the arm the abstract's "
+                     "identity-marker claim rests on",
+    },
+
+    # ── Reported parameters that no artifact carried as a gateable scalar ──
+    # Producer: analysis/reported_parameters/reported_parameters.py. Nothing new is
+    # computed there: each field is read or reduced from a tracked file, because these
+    # values lived in a CSV column (validate.py's .csv branch is unreachable), a Python
+    # literal, or a per-type list that has to be reduced before it is a number.
+    {
+        "name": "Primate replication: minimum per-type cells, Human-Macaque",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "primate_replication.pairs.Human_Macaque.min_cells_either_arm",
+        "expected": 108,
+        "tolerance": 0,
+        "paper_ref": "Results §2 says '52 to 55 matched cell types, a few hundred to over "
+                     "100,000 cells each'. This is the actual floor, and the producer "
+                     "additionally asserts no type falls below the declared threshold of 100",
+    },
+    {
+        "name": "Primate replication: minimum per-type cells, Human-Marmoset",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "primate_replication.pairs.Human_Marmoset.min_cells_either_arm",
+        "expected": 108,
+        "tolerance": 0,
+        "paper_ref": "Results §2; same floor as Human-Macaque, the same cell type",
+    },
+    {
+        "name": "Primate replication: minimum per-type cells, Macaque-Marmoset",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "primate_replication.pairs.Macaque_Marmoset.min_cells_either_arm",
+        "expected": 110,
+        "tolerance": 0,
+        "paper_ref": "Results §2",
+    },
+    {
+        "name": "Primate replication: maximum per-type cells, Human-Macaque",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "primate_replication.pairs.Human_Macaque.max_cells_either_arm",
+        "expected": 145491,
+        "tolerance": 0,
+        "paper_ref": "Results §2, the 'over 100,000' end of the range",
+    },
+    {
+        "name": "Primate replication: maximum per-type cells, Macaque-Marmoset",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "primate_replication.pairs.Macaque_Marmoset.max_cells_either_arm",
+        "expected": 83269,
+        "tolerance": 0,
+        "paper_ref": "Results §2. This pair's maximum is BELOW 100,000, so the range "
+                     "sentence does not hold pair by pair",
+    },
+    {
+        "name": "Mouse-lemur: ortholog pairs from BioMart",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "mouse_lemur.n_ortholog_pairs",
+        "expected": 16655,
+        "tolerance": 0,
+        "paper_ref": "Methods (mouse-lemur extension), about to be expanded. 16,655 pairs "
+                     "map to the 13,796-gene space gated separately",
+    },
+    {
+        "name": "Mouse-lemur: per-type cell threshold",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "mouse_lemur.min_cells_per_type",
+        "expected": 500,
+        "tolerance": 0,
+        "paper_ref": "Methods (mouse-lemur extension). Read from the producer's module "
+                     "constant, not transcribed",
+    },
+    {
+        "name": "Mouse-lemur: per-type cell cap",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "mouse_lemur.max_cells_per_type",
+        "expected": 2000,
+        "tolerance": 0,
+        "paper_ref": "Methods (mouse-lemur extension); the same 2,000 cap the primary uses",
+    },
+    {
+        "name": "Mouse-lemur: retained PCA components",
+        "file": "analysis/mouse_lemur/procrustes_results.json",
+        "key": "pca.n_components",
+        "expected": 15,
+        "tolerance": 0,
+        "paper_ref": "Methods (mouse-lemur extension). Equal to the matched-type count, "
+                     "which is why it is gated: 15 centred points span at most 14 "
+                     "dimensions, so this is the saturated end of the design",
+    },
+    {
+        "name": "Mouse-lemur: shared ortholog gene space",
+        "file": "analysis/mouse_lemur/procrustes_results.json",
+        "key": "gene_space",
+        "expected": 13796,
+        "tolerance": 0,
+        "paper_ref": "Methods (mouse-lemur extension); the 16,655 BioMart pairs reduce to "
+                     "this many genes present in both matrices",
+    },
+    {
+        "name": "Bootstrap rank stability: types meeting the CI-width criterion",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "bootstrap_rank_stability.n_stable",
+        "expected": 35,
+        "tolerance": 0,
+        "paper_ref": "S1 Text and Fig 4A: 'All 35 types classified stable (95% CI width "
+                     "<= 10)'. The criterion is 10 of 35 ranks",
+    },
+    {
+        "name": "Bootstrap rank stability: maximum CI width",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "bootstrap_rank_stability.ci_width_max",
+        "expected": 7,
+        "tolerance": 0,
+        "paper_ref": "S1 Text: 'median width 3, maximum 7'. The maximum is the load-bearing "
+                     "one: it is what puts every type inside the criterion",
+    },
+    {
+        "name": "Bootstrap rank stability: median CI width",
+        "file": "analysis/reported_parameters/reported_parameters.json",
+        "key": "bootstrap_rank_stability.ci_width_median",
+        "expected": 3,
+        "tolerance": 0,
+        "paper_ref": "S1 Text ('median width 3') and Fig 4A caption ('median 95% confidence "
+                     "interval = 3 ranks')",
+    },
 ]
 
 
