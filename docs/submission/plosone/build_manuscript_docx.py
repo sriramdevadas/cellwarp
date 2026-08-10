@@ -157,6 +157,13 @@ EXPECTED_SI_CAPTIONS = 19
 # Escapes, not literals: U+207B and U+2212 are indistinguishable in source, and
 # confusing them is exactly the kind of silent defect this script exists to
 # prevent. The comment carries the Unicode name.
+#
+# U+207B is substituted onto a real U+2212 in the output, which is why the U+2212
+# literal check adds SUPERSCRIPT_EXPECTED[SUPER_MINUS] to LITERAL_EXPECTED[MINUS]
+# rather than comparing the literal count alone. SUPERSCRIPT_EXPECTED is verified
+# PER CODE POINT against the emitted runs, not as a total: a sum can be satisfied
+# by two errors that cancel, and when it fails it cannot say which of the seven
+# moved.
 SUPERSCRIPT = {
     "\u00b9": "1",         # SUPERSCRIPT ONE
     "\u00b2": "2",         # SUPERSCRIPT TWO
@@ -878,10 +885,33 @@ def verify(path, plan, lines, content):
     require(sorted(italic_runs) == expected_italics,
             "italic runs are %s, expected %s"
             % (sorted(italic_runs), expected_italics))
-    superscript_chars = sum(len(t) for t in superscript_runs)
-    require(superscript_chars == sum(SUPERSCRIPT_EXPECTED.values()),
-            "superscript runs carry %d characters, expected %d"
-            % (superscript_chars, sum(SUPERSCRIPT_EXPECTED.values())))
+    # Per source code point, the way LITERAL_EXPECTED is checked above, and not on
+    # the total. The sum-only form could not name the offending character -- it
+    # reported "carries 92, expected 93" and left you to find which of the seven had
+    # moved by measuring against the previous revision -- and, worse, two movements
+    # in opposite directions cancelled in the sum and passed silently.
+    #
+    # The runs hold SUBSTITUTED text, so each character is mapped back through the
+    # inverse of SUPERSCRIPT before counting: a superscript run reading U+2212 came
+    # from a source U+207B, and one reading "T" from a source U+1D40. The inverse is
+    # well defined because SUPERSCRIPT's seven values are distinct.
+    superscript_chars = sum(len(t) for t in superscript_runs)   # reported, not asserted
+    _from_output = {v: k for k, v in SUPERSCRIPT.items()}
+    superscript_seen = Counter()
+    for _t in superscript_runs:
+        for _ch in _t:
+            require(_ch in _from_output,
+                    "a superscript run carries %r (U+%04X), which no SUPERSCRIPT "
+                    "substitution produces" % (_ch, ord(_ch)))
+            superscript_seen[_from_output[_ch]] += 1
+    _unexpected = set(superscript_seen) - set(SUPERSCRIPT_EXPECTED)
+    require(not _unexpected,
+            "superscript runs carry unexpected source code points: %s"
+            % sorted("U+%04X" % ord(c) for c in _unexpected))
+    for char, count in SUPERSCRIPT_EXPECTED.items():
+        require(superscript_seen[char] == count,
+                "superscript U+%04X count is %d, expected %d"
+                % (ord(char), superscript_seen[char], count))
 
     return {
         "paragraphs": len(paragraphs),
