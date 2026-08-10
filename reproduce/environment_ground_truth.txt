@@ -1,6 +1,18 @@
 # CellWarp Environment Ground Truth
 # Recorded from the .venv that produced all paper results
 # Date: 2026-04-13
+#
+# EXCEPTION to "the .venv": docs/submission/plosone/build_manuscript_docx.py
+# does not run here. It imports python-docx, which is declared in the
+# [reproduce] extra of pyproject.toml ("python-docx>=1.1") but is not installed
+# in .venv -- the Dockerfile installs -e ".[dev]", which does not include it,
+# and the package is in neither requirements.txt nor environment.yml. The DOCX
+# build therefore runs under a different interpreter (on the reference machine,
+# the miniforge base python); all four gates run under .venv. Same shape as
+# pymupdf: declared but not installed. Nothing below is affected -- the versions
+# recorded here are the ones that produced the results -- but do not read this
+# file as saying every tracked script runs under this interpreter. See
+# "Two interpreters" in reproduce/README.md.
 
 ## Python
 Python 3.12.12

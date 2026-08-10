@@ -93,6 +93,41 @@ value, then prints a pass/fail summary. Each check carries a `paper_ref`
 naming where the value appears; some are retained tooling for analyses the
 current paper does not report.
 
+## Two interpreters: the gates and the DOCX build
+
+The four gates and the DOCX build do **not** run under the same interpreter,
+and the final submission sequence touches both.
+
+| what | interpreter | needs |
+|---|---|---|
+| Gate 1 `reproduce/validate.py` | `.venv` | core deps |
+| Gate 2 `pytest -q` | `.venv` | `[dev]` |
+| Gate 3 `scripts/build_submission_packet.py --verify` | `.venv` | core deps |
+| Gate 4 `md5sum -c reproduce/MANUSCRIPT_MD5` | no interpreter | — |
+| `docs/submission/plosone/build_manuscript_docx.py` | **not `.venv`** | `python-docx` |
+
+`build_manuscript_docx.py` imports `python-docx`, which is declared in the
+`[reproduce]` extra of `pyproject.toml` (`"python-docx>=1.1"`) but is **not**
+installed in `.venv`: the Dockerfile installs `-e ".[dev]"`, and `[dev]` does
+not include it. Nor is it in `requirements.txt` or `environment.yml`. Run the
+builder under an interpreter that has it; on the reference machine that is the
+miniforge base python, not the project env. The builder fails fast and legibly
+when it is missing:
+
+```
+ERROR: python-docx is required (pip install 'python-docx>=1.1'): No module named 'docx'
+```
+
+This is the same shape as `pymupdf` — declared but not installed — except that
+`pymupdf` at least appears in `requirements.txt` and `environment.yml` as well,
+and `python-docx` appears in neither. `pymupdf` is what blocks pointing G3 at
+`docs/submission/plosone/figures/build_submission_tiffs.py`.
+
+Why this is easy to miss: the DOCX is gitignored and no gate reads it, so a
+**broken DOCX build leaves all four gates green**. Green gates are not evidence
+the submission document builds. Run the builder explicitly and check its exit
+code before submitting.
+
 ## Figure-to-script mapping
 
 See `reproduce/figure_script_map.md` for a complete table showing which
@@ -147,21 +182,56 @@ the `====` rules and the blank structural lines that `wc` sees are not content
 and are not counted. It is not a "wrong" `wc`; it is a different object. Do not
 reconcile the two, and do not copy a `wc` number into the builder.
 
-`wc -w` is in principle both locale- and implementation-dependent: GNU
-coreutils `wc` splits on `iswspace()` in a UTF-8 locale and on `isspace()` over
-bytes under `LC_ALL=C`, which can disagree on a file carrying non-ASCII
-characters, and these texts carry plenty (82 en dashes, 42 rho, 59 minus
-signs). **On the reference machine that divergence does not appear.** Measured
-against these files, macOS BSD `/usr/bin/wc` returns 13775 identically under
-`LC_ALL=C`, `POSIX`, `en_US.UTF-8`, `UTF-8` and `en_US.ISO8859-1`, and Python's
-`str.split()` agrees. The only whitespace code points in the file are U+0020
-and U+000A, and there is no U+00A0, which is why the locales cannot disagree
-here. A C-versus-UTF-8 split was reported during the Tier-1 pass (13606 against
-13524 at the pre-edit HEAD); the 13606 reproduces exactly under every locale
-above and 13524 reproduces under none, so it is recorded here as unconfirmed
-rather than as a property of these files. GNU `wc` is not installed on the
-reference machine and was not tested.
+### `wc -w` is GNU-vs-BSD dependent, and the rule is exact
+
+**GNU `wc -w` under `LC_ALL=C` counts zero words for a token made entirely of
+non-ASCII characters.** In the byte locale those bytes are not printable, and
+GNU `wc` excludes non-printable characters when deciding what a word is, so a
+standalone `ρ` or `≈` contributes nothing. Under a UTF-8 locale the same bytes
+decode to one printable wide character and the token counts as one word. BSD
+`wc` does not apply the printability filter at all, which is why it returns the
+same number under every locale.
+
+The rule is exact, not approximate: the two counts differ by precisely the
+number of whitespace-delimited tokens composed **only** of non-ASCII
+characters. For the post-edit manuscript that is 77 tokens — the spaced
+operators, 32 `ρ`, 11 `≈`, 11 `×`, 8 `→`, 5 `≤`, 4 `∈`, 4 `≥`, 1 `α`, 1 `—`.
+
+| count | value | how |
+|---|---|---|
+| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **13775** | every token counts |
+| GNU `wc -w` under `LC_ALL=C` | **13698** | 13775 − 77 all-non-ASCII tokens |
+| `EXPECTED_JOINED_WORDS` | **13612** | the gate; see above |
+
+A token that *mixes* ASCII and non-ASCII — `human–mouse`, `50–2,000`, `ρ = 0.45`
+once the `=` is its own token — still contains printable ASCII and still counts
+as one under both. That is the whole reason en dashes are irrelevant here: all
+82 of them sit inside mixed tokens and none is ever a bare token.
+
+**The container runs a GNU userland.** A word count taken inside it with `LANG`
+unset gets the *lower* number, 13698, on a correct tree. That is not drift and
+not a corrupted file; it is this rule. Neither 13775 nor 13698 is
+`EXPECTED_JOINED_WORDS`, and neither is asserted by any gate.
+
+GNU `wc` is not installed on the macOS reference machine, so the 13698 above is
+the arithmetic prediction of the rule, and it matches the GNU measurement taken
+during the Tier-1 pass exactly.
+
+#### A coincidence, recorded so nobody chases it twice
+
+At the pre-edit HEAD the two manuscript counts were 13606 and 13524, a gap of
+**82** — and the manuscript contained exactly **82** en dashes. Two people
+independently chased the en dash as the cause. It is not. The gap was 82
+because the pre-edit manuscript happened to contain 82 all-non-ASCII tokens as
+well; the edits moved that to 77 while leaving the en dashes at 82, which
+separates the two numbers. The other two texts refute the en-dash reading
+outright, at that same HEAD:
+
+| file (at HEAD) | all-non-ASCII tokens = the gap | en dashes |
+|---|---|---|
+| `manuscript_combined.txt` | 82 | 82 ← the coincidence |
+| `S1_Text.txt` | 39 | 18 |
+| `S2_Text.txt` | 5 | 0 |
 
 Practical consequence: if a submission form wants a word count, say which tool
-produced it. The values above are BSD `wc -w`. Only `EXPECTED_JOINED_WORDS` is
-a gate, and it is the only one that must not drift silently.
+and which locale produced it.
