@@ -425,17 +425,27 @@ def main():
     # Confirmatory, so the old sentence also implied a status the sheet contradicts.
     # Stating the rule makes the nine derivable rather than merely listed.
     #
-    # SENTINEL. Keyed on "Membership rule:", which exists only in the text this
-    # block writes. Keying it on anything already present in the tracked footnote
-    # would make the block a silent no-op: it would report success, leave the
-    # workbook bytes untouched, and hold TABLE_1_LOCK_MD5 and all four gates green
-    # while the edit had not landed. That is not hypothetical -- see the D61 note at
-    # the T34/T35 block above, where exactly that nearly shipped. The replacements
-    # below also raise rather than skip if a target is missing, so a footnote that
-    # has drifted fails loudly instead of half-applying.
+    # D69 adds a third replacement here and, with it, removes this block's outer
+    # sentinel entirely. The D68 wrapper was `if "Membership rule:" not in _fv`,
+    # which the D68 text itself satisfies -- so the moment a later edit needed to
+    # touch this footnote again, the whole block skipped and wrote nothing. That is
+    # the third time a sentinel in this file has been keyed on a string someone then
+    # had reason to edit (D61 at the T34/T35 block, D68 at the "also report" guard,
+    # D69 here), so the pattern is retired rather than re-keyed.
+    #
+    # There is no non-prose key available: the target is a single prose cell with no
+    # version marker, no delimiter and no structure to key on. So idempotency now
+    # comes from the replacement targets themselves, which cannot drift out of step
+    # with the text they rewrite. Each triple is (target, replacement, applied-marker)
+    # and exactly one of three things is true on entry:
+    #   target present   -> apply it
+    #   marker present   -> already applied, leave alone
+    #   neither          -> the footnote has drifted; RAISE, never skip
+    # The markers are the shortest fragments of each replacement that no later
+    # replacement touches, and the post-condition below asserts all three survived.
     if footnote_row:
         _fv = ws.cell(footnote_row, COL["id"]).value
-        if "Membership rule:" not in _fv:
+        if True:
             _f1_old = (
                 "The 9 excluded IDs (T03, T04, T09, T10, T18, T62, T63, T64, T65) are "
                 "descriptive, aggregate, or diagnostic quantities that make no "
@@ -466,11 +476,45 @@ def main():
                 "in that column instead. T44, T47 and T48 report a raw p as a range or a "
                 "bound over several sub-tests rather than as a single value, but each is "
                 "corrected and capped like any other in-family row.")
-            for _old, _new in ((_f1_old, _f1_new), (_f2_old, _f2_new)):
-                if _old not in _fv:
+            # D69: T62's exclusion needed a second ground. The membership rule as D68
+            # wrote it says the nine excluded rows do not yield one p-value for one
+            # hypothesis, and T62 does: scripts/generate_phase3_figures.py computes
+            # spearman_p_magnitudes = 1.7486e-07 for the full-vs-10x-only ranking
+            # correlation and S2 Fig C draws it as "p = 1.75 x 10^-7". So the rule was
+            # contradicted by one of the paper's own figures. The ground that actually
+            # applies is that the robustness claim rests on the correlation's magnitude
+            # (rho = 0.754) and not on its distance from zero, so the printed p tests a
+            # hypothesis the paper does not advance. Note _f3_old is a substring of
+            # _f1_new, which is why F3 must follow F1 in this tuple and why F1's marker
+            # is checked rather than its full replacement text: F3 edits F1's output.
+            _f3_old = (
+                "T62, T63, T64 and T65 are descriptive or simulation-diagnostic "
+                "quantities that make no inferential claim.")
+            _f3_new = (
+                "T63, T64 and T65 are descriptive or simulation-diagnostic quantities "
+                "that make no inferential claim. T62 is excluded on a second ground: its "
+                "producer computes an asymptotic p for the full-versus-10x-only ranking "
+                "correlation and S2 Fig C prints it, but the robustness claim rests on "
+                "the magnitude of that correlation rather than on its difference from "
+                "zero, so the p tests a hypothesis this paper does not advance.")
+            _edits = (
+                (_f1_old, _f1_new, "Membership rule:"),
+                (_f2_old, _f2_new, "Four rows are exceptions"),
+                (_f3_old, _f3_new, "excluded on a second ground"),
+            )
+            for _old, _new, _marker in _edits:
+                if _old in _fv:
+                    _fv = _fv.replace(_old, _new, 1)
+                elif _marker not in _fv:
                     raise SystemExit(
-                        "D68: footnote target absent, refusing to half-apply: %r" % _old[:70])
-                _fv = _fv.replace(_old, _new, 1)
+                        "D68/D69: footnote has drifted -- neither the target nor its "
+                        "applied-marker is present, refusing to half-apply.\n"
+                        "  target: %r\n  marker: %r" % (_old[:70], _marker))
+            for _, _, _marker in _edits:
+                if _fv.count(_marker) != 1:
+                    raise SystemExit(
+                        "D68/D69: post-condition failed, marker %r occurs %d times "
+                        "(expected exactly 1)" % (_marker, _fv.count(_marker)))
             ws.cell(footnote_row, COL["id"]).value = _fv
 
     # ---- D61: the last inverted supplementary reference in the workbook ----
