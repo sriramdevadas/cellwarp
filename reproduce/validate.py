@@ -1422,6 +1422,68 @@ CHECKS = [
         "paper_ref": "Results §4: the same interval also spans 0.20, despite the point "
                      "estimate being negative",
     },
+
+    # ── Donor-split within-species control (S1 Text §9) ──
+    # Producer: scripts/42_donor_split_shared_pca.py, the shared-PCA variant.
+    # S1 Text §9 states these four numbers in submitted text and nothing read them
+    # until now.
+    #
+    # The artifact is donor_split_shared_pca_results.json and NOT
+    # analysis/conserved_contribution/donor_stability/donor_stability_results.json.
+    # Both are called "the donor split" and both say "100 splits", and they are
+    # different objects: §9 partitions the 24 Tabula Sapiens donors into halves and
+    # compares human-half-1 vs human-half-2 against human-half-1 vs mouse, while
+    # §12's donor_stability run partitions both species' donors for the per-gene
+    # conservation score C. donor_stability_results.json carries no delta at all --
+    # its donor-split key is cross_half_C_spearman_median. S1 Text §9 warns about
+    # exactly this collision in its own text.
+    #
+    # Script 41 is the superseded independent-PCA predecessor whose delta is the
+    # +0.158 sensitivity value §9 also quotes; 42 is the reported one.
+    {
+        "name": "Donor split (S1 Text §9): median delta, cross-species minus within-species",
+        "file": "analysis/donor_split/donor_split_shared_pca_results.json",
+        "key": "delta.median",
+        "expected": 0.1588,
+        "tolerance": 0.0001,
+        "paper_ref": "S1 Text §9 (median delta = +0.159); shared-PCA donor split, 100 splits, seed 42",
+    },
+    {
+        "name": "Donor split (S1 Text §9): delta 95% CI lower bound",
+        "file": "analysis/donor_split/donor_split_shared_pca_results.json",
+        "key": "delta.ci_95.0",
+        "expected": 0.1003,
+        "tolerance": 0.0001,
+        "paper_ref": "S1 Text §9 (95% CI +0.100 to +0.218). The lower bound is the "
+                     "load-bearing end: the hierarchy claim needs it above zero",
+    },
+    {
+        "name": "Donor split (S1 Text §9): delta 95% CI upper bound",
+        "file": "analysis/donor_split/donor_split_shared_pca_results.json",
+        "key": "delta.ci_95.1",
+        "expected": 0.2180,
+        "tolerance": 0.0001,
+        "paper_ref": "S1 Text §9 (95% CI +0.100 to +0.218)",
+    },
+    {
+        "name": "Donor split (S1 Text §9): cross-species exceeded within-species in every split",
+        "file": "analysis/donor_split/donor_split_shared_pca_results.json",
+        "key": "delta.pct_positive",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §9 (100/100 splits). §9 reads this as direction-robustness "
+                     "across non-independent resamples of one 24-donor atlas, not as "
+                     "independent replication",
+    },
+    {
+        "name": "Donor split (S1 Text §9): number of random balanced splits",
+        "file": "analysis/donor_split/donor_split_shared_pca_results.json",
+        "key": "n_splits",
+        "expected": 100,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §9 (100 random balanced splits, seed 42). Gated alongside "
+                     "pct_positive because 100/100 is a ratio and both halves must hold",
+    },
 ]
 
 
