@@ -402,10 +402,76 @@ def main():
         _sub = (" T44, T47 and T48 also report a raw p as a range or a bound over "
                 "several sub-tests rather than as a single value, but each is "
                 "corrected and capped like any other in-family row.")
-        if "T44, T47 and T48 also report" not in _fv:
+        # D68: this guard was keyed on "T44, T47 and T48 also report", and D68's F2
+        # rewrites that clause to drop the "also". Left as it was, the sentinel would
+        # stop matching after D68 ran, this block would fire on the NEXT run, and it
+        # would re-append the superseded sentence after the "given in that column
+        # instead." anchor that F2 keeps -- so the script would stop being a fixed
+        # point and the footnote would grow a duplicate. Keyed now on the substring
+        # both wordings share, which still fires on a footnote missing the clause.
+        if "T44, T47 and T48" not in _fv:
             _anchor = "given in that column instead."
             _fv = _fv.replace(_anchor, _anchor + _sub, 1)
         ws.cell(footnote_row, COL["id"]).value = _fv
+
+    # ---- D68: state the membership rule, and name its boundary cases ----
+    # The footnote said the nine excluded IDs "are descriptive, aggregate, or
+    # diagnostic quantities that make no inferential significance claim". That is
+    # true of four of them. T03, T04, T09, T10 and T18 are excluded for a different
+    # and more general reason: they report a pass rate over repeated sub-tests, not
+    # one p-value for one hypothesis. Verified against the sheet before writing --
+    # their Raw p cells read "100/100 sig", "35/35 < 1.0", "all p < 0.01 (100/100)"
+    # twice, and "20/24 sig". Six of the nine (T03, T04, T09, T10, T18, T62) are
+    # Confirmatory, so the old sentence also implied a status the sheet contradicts.
+    # Stating the rule makes the nine derivable rather than merely listed.
+    #
+    # SENTINEL. Keyed on "Membership rule:", which exists only in the text this
+    # block writes. Keying it on anything already present in the tracked footnote
+    # would make the block a silent no-op: it would report success, leave the
+    # workbook bytes untouched, and hold TABLE_1_LOCK_MD5 and all four gates green
+    # while the edit had not landed. That is not hypothetical -- see the D61 note at
+    # the T34/T35 block above, where exactly that nearly shipped. The replacements
+    # below also raise rather than skip if a target is missing, so a footnote that
+    # has drifted fails loudly instead of half-applying.
+    if footnote_row:
+        _fv = ws.cell(footnote_row, COL["id"]).value
+        if "Membership rule:" not in _fv:
+            _f1_old = (
+                "The 9 excluded IDs (T03, T04, T09, T10, T18, T62, T63, T64, T65) are "
+                "descriptive, aggregate, or diagnostic quantities that make no "
+                "inferential significance claim and are therefore not part of the "
+                "multiple-testing family.")
+            _f1_new = (
+                "Membership rule: a test joins the family when it yields a single "
+                "p-value for a single hypothesis. The 9 excluded IDs do not. T03, T04, "
+                "T09, T10 and T18 report a pass rate over repeated sub-tests (for "
+                "example 100 of 100 subsamples significant) rather than one p-value for "
+                "one hypothesis; their Raw p column gives that pass rate. T62, T63, T64 "
+                "and T65 are descriptive or simulation-diagnostic quantities that make "
+                "no inferential claim. Exclusion is a statement about the form of the "
+                "result, not about whether the row is informative: several excluded rows "
+                "are Confirmatory in the sense of the Status column.")
+            _f2_old = (
+                "T11 is inside the family of 55 but reports a resampling confidence "
+                "interval rather than a p-value, so it carries no corrected p; its "
+                "direction robustness is given in that column instead. T44, T47 and T48 "
+                "also report a raw p as a range or a bound over several sub-tests rather "
+                "than as a single value, but each is corrected and capped like any other "
+                "in-family row.")
+            _f2_new = (
+                "Four rows are exceptions to the membership rule in the other direction, "
+                "retained in the family by judgement and named here rather than left to "
+                "inference. T11 reports a resampling confidence interval rather than a "
+                "p-value, so it carries no corrected p; its direction robustness is given "
+                "in that column instead. T44, T47 and T48 report a raw p as a range or a "
+                "bound over several sub-tests rather than as a single value, but each is "
+                "corrected and capped like any other in-family row.")
+            for _old, _new in ((_f1_old, _f1_new), (_f2_old, _f2_new)):
+                if _old not in _fv:
+                    raise SystemExit(
+                        "D68: footnote target absent, refusing to half-apply: %r" % _old[:70])
+                _fv = _fv.replace(_old, _new, 1)
+            ws.cell(footnote_row, COL["id"]).value = _fv
 
     # ---- D61: the last inverted supplementary reference in the workbook ----
     # D56 normalised the 18 references in column K to the number-first order the
