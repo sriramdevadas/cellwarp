@@ -653,7 +653,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | pan-Census obs/null | 0.811 | same | same | `permutation_test.obs_null_ratio` |  | mapped |
 | pan-Census p | 0.0001 | same | same | `permutation_test.p_value` |  | mapped |
 
-### Software environment and reproducibility -- Methods / S12 Table (S1 Text §13)
+### Software environment and reproducibility -- Methods / S12 Table (S1 Text §14)
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
