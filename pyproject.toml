@@ -58,6 +58,10 @@ dev = [
     "pytest>=7.0",
     "pytest-cov",
     "pyyaml>=6.0",
+    # Not a test dependency. The Dockerfile installs -e ".[dev]" and nothing
+    # else, so this extra is what the container actually gets; without it
+    # docs/submission/plosone/build_manuscript_docx.py cannot run there.
+    "python-docx>=1.1",
 ]
 lock = [
     # Exact pins for manuscript reproducibility, taken from the freeze in requirements.txt.
@@ -86,6 +90,7 @@ lock = [
     "samap==1.0.14",
     "jupyter==1.1.1",
     "pymupdf==1.27.2.3",
+    "python-docx==1.2.0",
     "pyBigWig==0.3.25",
 ]
 
