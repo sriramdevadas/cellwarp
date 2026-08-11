@@ -212,13 +212,14 @@ are scoped out here rather than in the manuscript body.
 
 *Every statistic checked by `reproduce/validate.py` resolves either to a PAPER
 artifact above or to the vendored basal-ganglia inputs in
-## Support a reader cannot reproduce — three known instances
+## Support a reader cannot reproduce — four known instances
 
-**All three pass all four gates.** None is a wrong number; each is a place where the
-evidence behind a deposited artifact cannot be regenerated from this repository, so a
-green board does not mean a reader could have produced the thing it certifies. Recorded
-here because this is the file someone scoping a reproduction reads first. None is fixed
-in the commit that added this section.
+**All four pass all four gates.** None is a wrong number; each is a place where a green
+board does not mean a reader could have produced the thing it certifies. In the first
+three the evidence behind a deposited artifact cannot be regenerated from this
+repository; in the fourth a second producer would regenerate a deposited artifact
+differently and nothing compares the two. Recorded here because this is the file someone
+scoping a reproduction reads first. None is fixed in the commit that recorded it.
 
 1. **`figS5_markernull.pdf` — a hand-copied hop that `--verify` cannot see.**
    `analysis/sensitivity_analyses/markernull.py` writes its figure to
@@ -251,6 +252,23 @@ in the commit that added this section.
    the deposited key is not gated. S1 Text quotes "a 0.94 cell-sampling ceiling"; the
    manuscript does not mention it. **This one is a figure change and belongs with the
    figure session, not with a prose or gating pass.**
+
+4. **A second compositor reads the same panel PNGs, and nothing compares the two.**
+   The deposited main figures are assembled by
+   `docs/submission/plosone/figures/build_main_figures.py`, but
+   `scripts/57_build_main_composites.py` is a second compositor over the same inputs:
+   all six panels the deposited path reads from `figures/panels/` —
+   `fig1a_pipeline_schematic`, `fig1b_null_1M`, `fig1c_lineage_stratified`,
+   `fig3a_ellipsoid_heatmap`, `fig3b_pre_post` and `fig4d_replication_summary` — are
+   embedded by `57_build_main_composites.py` as well, into five composites carrying the
+   earlier seven-figure numbering (`figures/main/fig1_global_coherence`,
+   `fig2_two_layer`, `fig3_replication`, `fig5_rigidity_ranking`, `fig6_l1000_nulls`).
+   So a panel edit silently changes what the second compositor would produce; its five
+   tracked PDFs in `figures/main/` go stale with all four gates green; nothing compares
+   the two compositors' renderings of the same panel, and nothing records which of them
+   is current. Neither is invoked by `reproduce/run_all.sh`. Running the wrong one also
+   adds two untracked files, since `figure_style.save_figure` writes a PNG beside each
+   PDF and `fig2_two_layer.png` and `fig5_rigidity_ranking.png` are not tracked.
 
 `docs/submission/plosone/figures/bg_results/`, which sit outside the three trees
 classified here. BANKED, OTHER PROJECT, and EXPLORATORY items make no claim in the
