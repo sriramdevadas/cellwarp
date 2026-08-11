@@ -127,27 +127,27 @@ CAPTION_JOIN = " "
 HANDLER_COUNTS = {
     "title": 6,
     "h2": 15,
-    "caption": 24,
-    "legend": 24,
+    "caption": 25,
+    "legend": 25,
     "reference": 36,
     "body": 53,
 }
-EXPECTED_CONTENT_LINES = 158
-EXPECTED_CAPTION_BOUNDARIES = 24  # 5 figure + 19 supporting information
+EXPECTED_CONTENT_LINES = 160
+EXPECTED_CAPTION_BOUNDARIES = 25  # 5 figure + 20 supporting information
 # The 153 content lines joined with nothing between them: a property of the
 # source alone, so it does not move when CAPTION_JOIN does.
-EXPECTED_RAW_JOINED_CHARS = 97250
+EXPECTED_RAW_JOINED_CHARS = 98503
 # The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
-EXPECTED_JOINED_CHARS = 97274
-EXPECTED_JOINED_WORDS = 14156
+EXPECTED_JOINED_CHARS = 98528
+EXPECTED_JOINED_WORDS = 14340
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
 # content lines plus 5 substituted from U+1D40. Content lines only. The eight
 # emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
 # at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 296
+EXPECTED_ASCII_T = 299
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
-EXPECTED_SI_CAPTIONS = 19
+EXPECTED_SI_CAPTIONS = 20
 
 
 # --- Character-level formatting ----------------------------------------------
@@ -195,12 +195,12 @@ LITERAL_EXPECTED = {
     "\u03a3": 1,   # GREEK CAPITAL LETTER SIGMA
     "\u03b1": 1,   # GREEK SMALL LETTER ALPHA
     "\u03c1": 41,  # GREEK SMALL LETTER RHO
-    "\u2013": 85,  # EN DASH
+    "\u2013": 89,  # EN DASH
     "\u2014": 1,   # EM DASH
     "\u2016": 2,   # DOUBLE VERTICAL LINE
     "\u2032": 1,   # PRIME (was 3; two were the 3' v3 / 5' v2 sub-split, dropped)
     "\u2192": 8,   # RIGHTWARDS ARROW
-    "\u2208": 4,   # ELEMENT OF
+    "\u2208": 5,   # ELEMENT OF
     "\u2212": 17,  # MINUS SIGN (59 in the output: 17 literal + 42 substituted)
     "\u2248": 9,   # ALMOST EQUAL TO
     "\u2264": 6,   # LESS-THAN OR EQUAL TO
@@ -234,6 +234,7 @@ NOT_A_GENUS = (
     "Corresponding", "Count", "Data", "Dated", "Statistical",
     "Dimensionality", "Dots", "Dropping", "Each", "Ellipsoid", "Ensembl",
     "Ethics", "Euclidean", "Every", "Evolutionarily", "Excluding", "Expanded",
+    "Eighteen", "Values",
     "Extended", "For", "Four", "Full", "Gaussian", "Gene", "Genes",
     "Geometric", "Global", "Hartigan", "Having", "Hochberg", "How", "Human",
     "In", "Intermediate", "It", "Italic", "Its", "Krzanowski", "Like",

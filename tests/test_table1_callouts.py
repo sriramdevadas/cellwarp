@@ -111,7 +111,7 @@ def test_manuscript_captions_parse() -> None:
     figs = {n for n in names if n.startswith("Fig ")}
     sis = names - figs
     assert len(figs) == 5, f"expected 5 main-figure captions, parsed {len(figs)}: {sorted(figs)}"
-    assert len(sis) == 19, f"expected 19 supporting-information captions, parsed {len(sis)}"
+    assert len(sis) == 20, f"expected 20 supporting-information captions, parsed {len(sis)}"
 
 
 def test_table_1_has_rows() -> None:

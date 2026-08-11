@@ -12,10 +12,14 @@ so nothing in it re-stales when the main figures are renumbered.
 ## Supplementary items
 - 5 supplementary figures: S1-S5 Fig, deposited in `figures/submission/supplementary/`
   (`figS1`-`figS5`).
-- 12 supplementary tables: S1-S7 Table and S9-S13 Table (no S8). These 12 items
-  span 13 files, because S9 Table is provided as two CSVs
+- 13 supplementary tables: S1-S7 Table and S9-S14 Table (no S8). These 13 items
+  span 14 files, because S9 Table is provided as two CSVs
   (`table_S9_genestd_standardization.csv` + `table_S9_schemeB_CPC1_markers.csv`).
-  Item count 12, file count 13.
+  Item count 13, file count 14. S14 Table
+  (`table_S14_layer2_dimension.csv`) is the primate Layer-2 statistic against
+  retained dimension; unlike S13 it has an in-repo producer
+  (`analysis/layer2_dimension_table/build_layer2_dimension_table.py`) and, like
+  S13, no submission-packet materialization rule.
   S13 Table is the inventory of statistical tests and the multiple-comparison
   family (`table_S13_test_inventory.xlsx`). It moved here from
   `docs/submission/figures_for_review/`, the retired packet's output directory,
