@@ -134,10 +134,14 @@ HANDLER_COUNTS = {
 }
 EXPECTED_CONTENT_LINES = 160
 EXPECTED_CAPTION_BOUNDARIES = 25  # 5 figure + 20 supporting information
-# The 153 content lines joined with nothing between them: a property of the
-# source alone, so it does not move when CAPTION_JOIN does.
+# The EXPECTED_CONTENT_LINES source lines joined with nothing between them: a
+# property of the source alone, so it does not move when CAPTION_JOIN does.
+# Named, not restated: this comment said "the 153 content lines" against a
+# constant of 160, and the one below said 23 boundaries against 25 -- the same
+# drift as the U+2212 report line, and for the same reason.
 EXPECTED_RAW_JOINED_CHARS = 98600
-# The same join, plus CAPTION_JOIN at each of the 23 caption boundaries.
+# The same join, plus CAPTION_JOIN at each of the EXPECTED_CAPTION_BOUNDARIES
+# caption boundaries.
 EXPECTED_JOINED_CHARS = 98625
 EXPECTED_JOINED_WORDS = 14355
 # ASCII T in the extracted text of the 121 content paragraphs: 253 in the source

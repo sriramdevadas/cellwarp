@@ -95,8 +95,8 @@ current paper does not report.
 
 ## Two interpreters: the gates and the DOCX build
 
-The four gates and the DOCX build do **not** run under the same interpreter,
-and the final submission sequence touches both.
+The four gates and the DOCX build need not run under the same interpreter, and
+the final submission sequence touches both.
 
 | what | interpreter | needs |
 |---|---|---|
@@ -104,24 +104,34 @@ and the final submission sequence touches both.
 | Gate 2 `pytest -q` | `.venv` | `[dev]` |
 | Gate 3 `scripts/build_submission_packet.py --verify` | `.venv` | core deps |
 | Gate 4 `md5sum -c reproduce/MANUSCRIPT_MD5` | no interpreter | — |
-| `docs/submission/plosone/build_manuscript_docx.py` | **not `.venv`** | `python-docx` |
+| `docs/submission/plosone/build_manuscript_docx.py` | **whichever one can `import docx`** | `python-docx` |
 
-`build_manuscript_docx.py` imports `python-docx`, which is declared in the
-`[reproduce]` extra of `pyproject.toml` (`"python-docx>=1.1"`) but is **not**
-installed in `.venv`: the Dockerfile installs `-e ".[dev]"`, and `[dev]` does
-not include it. Nor is it in `requirements.txt` or `environment.yml`. Run the
-builder under an interpreter that has it; on the reference machine that is the
-miniforge base python, not the project env. The builder fails fast and legibly
-when it is missing:
+`build_manuscript_docx.py` imports `python-docx`. The rule is a condition, not a
+named interpreter: **check that `import docx` succeeds in the interpreter you
+are about to use**, and run the builder there. Stated that way it stays true
+however the environments on a particular machine drift. On the reference machine
+the miniforge base python satisfies it; a given `.venv` may or may not, according
+to when and from what it was built. The builder fails fast and legibly when it is
+missing:
 
 ```
 ERROR: python-docx is required (pip install 'python-docx>=1.1'): No module named 'docx'
 ```
 
-This is the same shape as `pymupdf` — declared but not installed — except that
-`pymupdf` at least appears in `requirements.txt` and `environment.yml` as well,
-and `python-docx` appears in neither. `pymupdf` is what blocks pointing G3 at
-`docs/submission/plosone/figures/build_submission_tiffs.py`.
+Where it is declared: commit `3f1d326` added `python-docx` to `pyproject.toml`'s
+`[dev]` and `[lock]` extras and to `requirements.txt` and `environment.yml`,
+precisely because no documented install read the `[reproduce]` extra it had been
+declared in alone. So every install path the documentation names now declares
+it. Text here previously said the opposite; it was left behind by that commit
+and is corrected rather than restated, since a claim about what some environment
+contains goes stale and the import condition above does not.
+
+Gate 3 stays pointed at `scripts/build_submission_packet.py --verify` rather
+than at `docs/submission/plosone/figures/build_submission_tiffs.py`. That was
+deferred on cost, not on whether `pymupdf` can be imported, so finding `pymupdf`
+present in a given interpreter does not reopen it. Noted separately because it
+is a real gap and not the reason: `[dev]`, the only extra the Dockerfile
+installs, declares `python-docx` but not `pymupdf`.
 
 Why this is easy to miss: the DOCX is gitignored and no gate reads it, so a
 **broken DOCX build leaves all four gates green**. Green gates are not evidence

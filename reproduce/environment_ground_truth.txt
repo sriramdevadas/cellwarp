@@ -3,16 +3,18 @@
 # Date: 2026-04-13
 #
 # EXCEPTION to "the .venv": docs/submission/plosone/build_manuscript_docx.py
-# does not run here. It imports python-docx, which is declared in the
-# [reproduce] extra of pyproject.toml ("python-docx>=1.1") but is not installed
-# in .venv -- the Dockerfile installs -e ".[dev]", which does not include it,
-# and the package is in neither requirements.txt nor environment.yml. The DOCX
-# build therefore runs under a different interpreter (on the reference machine,
-# the miniforge base python); all four gates run under .venv. Same shape as
-# pymupdf: declared but not installed. Nothing below is affected -- the versions
-# recorded here are the ones that produced the results -- but do not read this
-# file as saying every tracked script runs under this interpreter. See
-# "Two interpreters" in reproduce/README.md.
+# imports python-docx, and whether it runs under a given interpreter is a
+# condition to check rather than a fact to look up here: run it wherever
+# "import docx" succeeds. On the reference machine that was the miniforge base
+# python; all four gates run under .venv. This note used to assert that .venv
+# did not have the package and that no documented install declared it, which
+# 3f1d326 (python-docx added to pyproject [dev] and [lock], requirements.txt
+# and environment.yml) made false, and which an environment rebuilt at any time can
+# make false again -- so the assertion is dropped and the condition kept.
+# Nothing below is affected -- the versions recorded here are the ones that
+# produced the results -- but do not read this file as saying every tracked
+# script runs under this interpreter. See "Two interpreters" in
+# reproduce/README.md.
 
 ## Python
 Python 3.12.12
