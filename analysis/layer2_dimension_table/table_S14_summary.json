@@ -1,0 +1,51 @@
+{
+  "table": "docs/supplementary_materials/table_S14_layer2_dimension.csv",
+  "note": "read back from the written CSV; validate.py cannot read a .csv directly",
+  "n_rows": 18,
+  "columns": [
+    "pair",
+    "weighting",
+    "k",
+    "retained_dimension_p",
+    "chance_level_k_over_p",
+    "S_pre",
+    "null_mean_pre",
+    "margin_pre",
+    "p_pre",
+    "S_post",
+    "null_mean_post",
+    "margin_post",
+    "p_post"
+  ],
+  "retained_dimension": {
+    "Human-Macaque|W0_unscaled": 37,
+    "Human-Macaque|W2_schemeB": 48,
+    "Human-Marmoset|W0_unscaled": 40,
+    "Human-Marmoset|W2_schemeB": 49,
+    "Macaque-Marmoset|W0_unscaled": 39,
+    "Macaque-Marmoset|W2_schemeB": 47
+  },
+  "chance_level": {
+    "Human-Macaque|W0_unscaled|k1": 0.027,
+    "Human-Macaque|W0_unscaled|k3": 0.0811,
+    "Human-Macaque|W0_unscaled|k5": 0.1351,
+    "Human-Macaque|W2_schemeB|k1": 0.0208,
+    "Human-Macaque|W2_schemeB|k3": 0.0625,
+    "Human-Macaque|W2_schemeB|k5": 0.1042,
+    "Human-Marmoset|W0_unscaled|k1": 0.025,
+    "Human-Marmoset|W0_unscaled|k3": 0.075,
+    "Human-Marmoset|W0_unscaled|k5": 0.125,
+    "Human-Marmoset|W2_schemeB|k1": 0.0204,
+    "Human-Marmoset|W2_schemeB|k3": 0.0612,
+    "Human-Marmoset|W2_schemeB|k5": 0.102,
+    "Macaque-Marmoset|W0_unscaled|k1": 0.0256,
+    "Macaque-Marmoset|W0_unscaled|k3": 0.0769,
+    "Macaque-Marmoset|W0_unscaled|k5": 0.1282,
+    "Macaque-Marmoset|W2_schemeB|k1": 0.0213,
+    "Macaque-Marmoset|W2_schemeB|k3": 0.0638,
+    "Macaque-Marmoset|W2_schemeB|k5": 0.1064
+  },
+  "min_margin_pre": 0.04468713154640336,
+  "min_margin_post": 0.013654315206525047,
+  "n_rows_k1": 6
+}

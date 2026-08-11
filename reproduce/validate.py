@@ -1816,6 +1816,135 @@ CHECKS = [
         "paper_ref": "S1 Text ('median width 3') and Fig 4A caption ('median 95% confidence "
                      "interval = 3 ranks')",
     },
+
+    # ── S14 Table: Layer-2 statistic against retained dimension ──
+    # Producer: analysis/layer2_dimension_table/build_layer2_dimension_table.py, which
+    # reads the three vendored bg_results files and regenerates none of them. Every S
+    # and null in the table is the deposited value copied through, asserted against the
+    # source before the CSV is written.
+    #
+    # These gate the TABLE's own content, not its inputs: the summary JSON is built by
+    # reading the written CSV back off disk, because validate.py's .csv branch is
+    # unreachable (figure_script_map.md, Known gaps), so a check against the JSON is a
+    # check against the file a reader receives.
+    {
+        "name": "S14 Table: row count",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "n_rows",
+        "expected": 18,
+        "tolerance": 0,
+        "paper_ref": "S14 Table: 3 primate pairs x 2 weightings x k in {1,3,5}",
+    },
+    {
+        "name": "S14 Table: retained dimension, Human-Macaque W0",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "retained_dimension.Human-Macaque|W0_unscaled",
+        "expected": 37,
+        "tolerance": 0,
+        "paper_ref": "S14 Table and S1 Text §6: joint PCA at 95% cumulative variance on "
+                     "the 2n stacked centroids",
+    },
+    {
+        "name": "S14 Table: retained dimension, Human-Macaque W2",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "retained_dimension.Human-Macaque|W2_schemeB",
+        "expected": 48,
+        "tolerance": 0,
+        "paper_ref": "S14 Table. The z-scored basis retains more components than the "
+                     "unscaled one in every pair, which is why chance level differs by "
+                     "weighting at the same k",
+    },
+    {
+        "name": "S14 Table: retained dimension, Human-Marmoset W0",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "retained_dimension.Human-Marmoset|W0_unscaled",
+        "expected": 40,
+        "tolerance": 0,
+        "paper_ref": "S14 Table",
+    },
+    {
+        "name": "S14 Table: retained dimension, Human-Marmoset W2",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "retained_dimension.Human-Marmoset|W2_schemeB",
+        "expected": 49,
+        "tolerance": 0,
+        "paper_ref": "S14 Table",
+    },
+    {
+        "name": "S14 Table: retained dimension, Macaque-Marmoset W0",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "retained_dimension.Macaque-Marmoset|W0_unscaled",
+        "expected": 39,
+        "tolerance": 0,
+        "paper_ref": "S14 Table",
+    },
+    {
+        "name": "S14 Table: retained dimension, Macaque-Marmoset W2",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "retained_dimension.Macaque-Marmoset|W2_schemeB",
+        "expected": 47,
+        "tolerance": 0,
+        "paper_ref": "S14 Table",
+    },
+    {
+        "name": "S14 Table: chance level at k=1, Human-Macaque W0",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "chance_level.Human-Macaque|W0_unscaled|k1",
+        "expected": 0.0270,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table: k/p = 1/37. Gated at k = 1 because that is where the "
+                     "statistic has least margin and the chance level matters most",
+    },
+    {
+        "name": "S14 Table: chance level at k=1, Human-Macaque W2",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "chance_level.Human-Macaque|W2_schemeB|k1",
+        "expected": 0.0208,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table: k/p = 1/48",
+    },
+    {
+        "name": "S14 Table: chance level at k=1, Human-Marmoset W0",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "chance_level.Human-Marmoset|W0_unscaled|k1",
+        "expected": 0.0250,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table: k/p = 1/40",
+    },
+    {
+        "name": "S14 Table: chance level at k=1, Human-Marmoset W2",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "chance_level.Human-Marmoset|W2_schemeB|k1",
+        "expected": 0.0204,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table: k/p = 1/49",
+    },
+    {
+        "name": "S14 Table: chance level at k=1, Macaque-Marmoset W0",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "chance_level.Macaque-Marmoset|W0_unscaled|k1",
+        "expected": 0.0256,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table: k/p = 1/39",
+    },
+    {
+        "name": "S14 Table: chance level at k=1, Macaque-Marmoset W2",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "chance_level.Macaque-Marmoset|W2_schemeB|k1",
+        "expected": 0.0213,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table: k/p = 1/47",
+    },
+    {
+        "name": "S14 Table: smallest post-rotation margin in the table",
+        "file": "analysis/layer2_dimension_table/table_S14_summary.json",
+        "key": "min_margin_post",
+        "expected": 0.0137,
+        "tolerance": 0.0001,
+        "paper_ref": "S14 Table, Human-Marmoset W0 at k = 1. This is the reason the margin "
+                     "columns are in the table: the smallest cell is an order below the "
+                     "largest, and it is at k = 1",
+    },
 ]
 
 
