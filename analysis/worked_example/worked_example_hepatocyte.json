@@ -1,0 +1,111 @@
+{
+  "analysis": "worked example carried through all three layers by Results section 4",
+  "note": "no new result; every field is a cell of a tracked CSV or a count derived from this producer's declared replication table, with the source recorded beside it",
+  "cell_type": "hepatocyte",
+  "n_types": 35,
+  "layer1": {
+    "residual_magnitude": 6.058640371671017,
+    "divergence_rank": 32,
+    "rank_convention": "1 = most divergent of 35",
+    "source": "output/phase2/scaled_35types/residuals_ranked.csv"
+  },
+  "within_atlas": {
+    "ci_width_ranks": 2.0,
+    "ci_lower": 32.0,
+    "ci_upper": 34.0,
+    "category": "STABLE_RIGID",
+    "source": "analysis/bootstrap_rankings/bootstrap_summary.csv",
+    "source_note": "equal row for row to master_ranking_table.bootstrap_CI_width, asserted above"
+  },
+  "layer2": {
+    "k": 5,
+    "S_pre": 0.5238149691606344,
+    "S_post": 0.238256672325875,
+    "column_mean_S_pre": 0.4825871668313523,
+    "column_mean_S_post": 0.22954810044309817,
+    "source": "output/mechanistic/ellipsoid_alignment/35type_alignment_scores.csv",
+    "aggregate_source": "output/mechanistic/ellipsoid_alignment/summary_stats.json",
+    "aggregate_note": "the two column means reproduce 35type.mean_alignment.k=5.{pre,post} exactly; they are the two bars Fig 2B draws at k=5"
+  },
+  "cross_atlas": {
+    "mean_rank_shift": 9.833333333333334,
+    "sd_rank_shift": 4.792355023020171,
+    "shift_definition": "mean over replications of |primary_subset_rank - replication_rank|, the primary re-ranked within each replication's own matched subset (analysis/cross_reference/cross_reference_analysis.py:120)",
+    "per_replication_ranks": [
+      {
+        "column": "Sun2023_rank",
+        "comparison": "Sun2023",
+        "rank": 1,
+        "substitutes": "mouse",
+        "holds_fixed": "human",
+        "source": "output/validation/sun2023_replication_expanded/ranking_comparison.csv",
+        "source_column": "sun2023_residual",
+        "note": "Sun et al. 2023 young sedentary control mouse, 10x Chromium 3' v3, against the primary's Tabula Sapiens human arm (scripts/16_sun2023_replication.py)"
+      },
+      {
+        "column": "PanSci_rank",
+        "comparison": "PanSci",
+        "rank": 15,
+        "substitutes": "mouse",
+        "holds_fixed": "human",
+        "source": "output/validation/pansci_replication/ranking_comparison.csv",
+        "source_column": "pansci_residual",
+        "note": "PanSci 6-month wild-type mouse, EasySci combinatorial-indexing snRNA-seq and not 10x, against the primary's human arm (scripts/pansci_replication.py)"
+      },
+      {
+        "column": "CellHint_rank",
+        "comparison": "CellHint",
+        "rank": 1,
+        "substitutes": "human",
+        "holds_fixed": "mouse",
+        "source": "output/validation/cellhint_replication/ranking_comparison.csv",
+        "source_column": "cellhint_residual",
+        "note": "CellHint human meta-atlas, 9 tissues independent of Tabula Sapiens, against the primary's Tabula Muris mouse arm (scripts/33_cellhint_replication.py)"
+      },
+      {
+        "column": "CellHint_harmonized_rank",
+        "comparison": "CellHint",
+        "rank": 1,
+        "substitutes": "human",
+        "holds_fixed": "mouse",
+        "source": "analysis/harmonized_replication/harmonized_residuals_cellhint.csv",
+        "source_column": "residual_magnitude",
+        "note": "THE SAME CellHint ATLAS as the row above, after progressive harmonization (ontology matching, tissue restriction, cell-count capping) and re-ranked on the restricted type set (analysis/harmonized_replication/harmonized_replication.py). A second reading of one comparison, not a second comparison"
+      },
+      {
+        "column": "Pan_Census_rank",
+        "comparison": "Pan_Census",
+        "rank": 5,
+        "substitutes": "both",
+        "holds_fixed": null,
+        "source": "analysis/census_replication/ranking_comparison.csv",
+        "source_column": "replication_residual",
+        "note": "Both arms rebuilt from CELLxGENE Census collections that exclude Tabula Sapiens, Tabula Muris Senis, CellHint, PanSci and Sun2023 (analysis/census_replication/02_run_replication.py). The only column here that shares neither arm with the primary"
+      },
+      {
+        "column": "Macaque_rank",
+        "comparison": "Macaque",
+        "rank": 1,
+        "substitutes": "mouse",
+        "holds_fixed": "human",
+        "source": "output/macaque_pipeline/reconstruction_qu12_results.json",
+        "source_column": "per_type_residuals_ranked",
+        "note": "Human-macaque over 12 types (Qu 2022), on the primary's human centroids (analysis/macaque/reconstruction_rira13_report.md)"
+      }
+    ],
+    "ranks_by_column": {
+      "Sun2023_rank": 1,
+      "PanSci_rank": 15,
+      "CellHint_rank": 1,
+      "CellHint_harmonized_rank": 1,
+      "Pan_Census_rank": 5,
+      "Macaque_rank": 1
+    },
+    "n_replication_columns_present": 6,
+    "n_distinct_comparisons": 5,
+    "n_columns_ranking_first": 4,
+    "n_distinct_comparisons_ranking_first": 3,
+    "n_comparisons_sharing_no_arm_with_primary": 1,
+    "counting_note": "columns are not comparisons: CellHint_rank and CellHint_harmonized_rank are one source atlas at two harmonization levels. Every count here is derived from REPLICATION_COLUMNS in the producer, whose declared column set is asserted against the file"
+  }
+}

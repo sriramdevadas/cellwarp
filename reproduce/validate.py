@@ -1945,6 +1945,164 @@ CHECKS = [
                      "columns are in the table: the smallest cell is an order below the "
                      "largest, and it is at k = 1",
     },
+
+    # ── Worked example: the one type Results section 4 carries through ──
+    # Producer: analysis/worked_example/build_worked_example.py, which reads the four
+    # per-type CSVs, extracts one row, and emits the JSON these read. None of the four
+    # sources can be gated directly: they are CSVs, and load_value's .csv branch is
+    # unreachable (figure_script_map.md, Known gaps).
+    #
+    # The producer will not write at all unless four cross-file identities hold over all
+    # 35 types -- the same cell_type strings in all four files, rank == original_rank ==
+    # primary_rank, ci_width == bootstrap_CI_width, and the two S column means equal to
+    # the deposited summary_stats.json aggregate that is already gated above. So these
+    # checks stand on a join that has been proved, not assumed.
+    {
+        "name": "Worked example: matched type count",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "n_types",
+        "expected": 35,
+        "tolerance": 0,
+        "paper_ref": "Results section 4. The denominator of every rank below",
+    },
+    {
+        "name": "Worked example: Layer-1 divergence rank",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "layer1.divergence_rank",
+        "expected": 32,
+        "tolerance": 0,
+        "paper_ref": "Results section 4: hepatocyte is 32nd of 35 by Layer-1 residual, "
+                     "1 = most divergent, so it sits at the conserved end of the primary "
+                     "ranking. The whole example turns on this rank",
+    },
+    {
+        "name": "Worked example: Layer-1 residual magnitude",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "layer1.residual_magnitude",
+        "expected": 6.0586,
+        "tolerance": 0.001,
+        "paper_ref": "Results section 4; output/phase2/scaled_35types/residuals_ranked.csv",
+    },
+    {
+        "name": "Worked example: within-atlas 95% CI width on the rank",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "within_atlas.ci_width_ranks",
+        "expected": 2,
+        "tolerance": 0,
+        "paper_ref": "Results section 4 and Fig 4A. Two ranks against a median of 3 and a "
+                     "maximum of 7, so the within-atlas interval is tighter than typical",
+    },
+    {
+        "name": "Worked example: Layer-2 S at k=5, pre-rotation",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "layer2.S_pre",
+        "expected": 0.5238,
+        "tolerance": 0.0005,
+        "paper_ref": "Results section 4; Fig 2A's k=5 column, the row for this type",
+    },
+    {
+        "name": "Worked example: Layer-2 S at k=5, post-rotation",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "layer2.S_post",
+        "expected": 0.2383,
+        "tolerance": 0.0005,
+        "paper_ref": "Results section 4. The rotation compresses this type as it does the "
+                     "aggregate",
+    },
+    {
+        "name": "Worked example: 35-type mean S at k=5, pre-rotation",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "layer2.column_mean_S_pre",
+        "expected": 0.4826,
+        "tolerance": 0.0005,
+        "paper_ref": "Results section 2 (0.483) and Fig 2B. Gated here as well as from "
+                     "summary_stats.json because it is what the per-type value is read "
+                     "against, and the producer asserts the two agree",
+    },
+    {
+        "name": "Worked example: 35-type mean S at k=5, post-rotation",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "layer2.column_mean_S_post",
+        "expected": 0.2295,
+        "tolerance": 0.0005,
+        "paper_ref": "Results section 2 (0.230) and Fig 2B",
+    },
+    {
+        "name": "Worked example: replication columns present",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.n_replication_columns_present",
+        "expected": 6,
+        "tolerance": 0,
+        "paper_ref": "master_ranking_table.csv, n_replications_present. Six of the seven "
+                     "replication columns carry a rank for this type",
+    },
+    {
+        "name": "Worked example: distinct comparisons behind those columns",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.n_distinct_comparisons",
+        "expected": 5,
+        "tolerance": 0,
+        "paper_ref": "Results section 4. Six columns are five comparisons: CellHint_rank "
+                     "and CellHint_harmonized_rank are one source atlas at two "
+                     "harmonization levels. Gated so the text cannot say six",
+    },
+    {
+        "name": "Worked example: columns ranking it most divergent",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.n_columns_ranking_first",
+        "expected": 4,
+        "tolerance": 0,
+        "paper_ref": "Results section 4: Sun2023, CellHint, CellHint harmonized and "
+                     "Macaque each rank this type 1st, against 32nd of 35 in the primary. "
+                     "This is the disagreement the example is built on",
+    },
+    {
+        "name": "Worked example: distinct comparisons ranking it most divergent",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.n_distinct_comparisons_ranking_first",
+        "expected": 3,
+        "tolerance": 0,
+        "paper_ref": "Results section 4. The four columns above are three comparisons, "
+                     "for the same reason the six are five",
+    },
+    {
+        "name": "Worked example: comparisons sharing neither arm with the primary",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.n_comparisons_sharing_no_arm_with_primary",
+        "expected": 1,
+        "tolerance": 0,
+        "paper_ref": "Results section 4. Only pan-Census rebuilds both arms; the other "
+                     "four hold one arm of the primary fixed, which bounds how "
+                     "independent the disagreement can be",
+    },
+    {
+        "name": "Worked example: cross-atlas mean rank shift",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.mean_rank_shift",
+        "expected": 9.8333,
+        "tolerance": 0.001,
+        "paper_ref": "Fig 4B's y-axis for this type; mean |primary_subset_rank - "
+                     "replication_rank| over its six columns",
+    },
+    {
+        "name": "Worked example: the dissenting replication (PanSci)",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.ranks_by_column.PanSci_rank",
+        "expected": 15,
+        "tolerance": 0,
+        "paper_ref": "Results section 4. The one replication that does not move this type "
+                     "to the divergent end, and the reason the example is a boundary case "
+                     "rather than a clean reversal",
+    },
+    {
+        "name": "Worked example: the arm-independent replication (pan-Census)",
+        "file": "analysis/worked_example/worked_example_hepatocyte.json",
+        "key": "cross_atlas.ranks_by_column.Pan_Census_rank",
+        "expected": 5,
+        "tolerance": 0,
+        "paper_ref": "Results section 4. The only comparison sharing neither arm ranks it "
+                     "5th, not 1st",
+    },
 ]
 
 
