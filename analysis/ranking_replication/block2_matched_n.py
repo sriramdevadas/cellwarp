@@ -137,7 +137,14 @@ for label, path, sub, tkey in BARS:
           + ("" if len(inter) == len(tl) else f"   ({len(tl)-len(inter)} not in the primary)"))
     if len(inter) != len(tl):
         print(f"      not in primary: {sorted(set(tl)-set(CT35))}")
-    bars.append(dict(label=label, dep_obs_null=float(on), n_printed=int(npub),
+    # `path` is recorded so a consumer can join on the artifact each bar was read
+    # from rather than on `label`. The labels here and the ones the replication
+    # panel draws differ in three independent ways -- separator (space vs newline),
+    # multiplication sign (x vs U+00D7) and, for MCAxHCA, the text itself -- so a
+    # label join matches nothing, and a positional join happens to be correct only
+    # because the two lists are in the same order and nothing asserts that they are.
+    # The path is the one key both sides already hold identically.
+    bars.append(dict(label=label, path=path, dep_obs_null=float(on), n_printed=int(npub),
                      p=float(pv), types=tl, n_types=len(tl),
                      intersection=inter, n_inter=len(inter), n_matches_printed=bool(match)))
 
@@ -145,12 +152,17 @@ for label, path, sub, tkey in BARS:
 print("\n" + "=" * 84)
 print("MATCHED-n PRIMARY BASELINES (primary centroids restricted to each bar's intersection)")
 print("=" * 84)
-print(f"  {'bar':22s} {'n':>3s} {'k':>3s} {'obs':>10s} {'null_med':>10s} {'obs/null':>10s} {'p':>11s}")
+print(f"  {'bar':22s} {'n':>3s} {'k':>3s} {'obs':>10s} {'null_med':>10s} {'obs/null':>10s} {'p':>11s} "
+      f"{'deficit':>9s}")
 for b in bars:
     r = run(b["intersection"])
     b["matched_n_primary"] = r
+    # The signed distance from the bar to its own baseline, stored rather than left
+    # to each consumer to subtract: the grouping the Results sentence asserts is a
+    # statement about these six numbers, so they are the thing a gate should read.
+    b["deficit"] = float(b["dep_obs_null"] - r["obs_null"])
     print(f"  {b['label']:22s} {r['n']:3d} {r['k']:3d} {r['obs']:10.4f} {r['null_median']:10.4f} "
-          f"{r['obs_null']:10.6f} {r['p']:11.4e}")
+          f"{r['obs_null']:10.6f} {r['p']:11.4e} {b['deficit']:+9.4f}")
 R["bars"] = bars
 
 # ---------------------------------------------------------------- subset distributions

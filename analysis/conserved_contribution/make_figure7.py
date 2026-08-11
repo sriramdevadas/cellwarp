@@ -15,6 +15,12 @@ Sources (all verified, produced in-place against the deposit's tracked inputs):
   gene_conservation_core.csv, gate_results.json, robustness_results.json,
   donor_stability/donor_stability_results.json, and the gitignored Census
   aggregates in donor_stability/ for the donor-split recomputation.
+
+7D's cell-sampling ceiling is read from donor_stability_results.json rather than
+recomputed into the drawing, so the level the panel asserts is one a reader with
+the deposit holds. The 100-value donor-split histogram beside it is still a
+recompute from the gitignored agg_*_cap10000.npz, which is why 7D as a whole is
+not reproducible from tracked data alone.
 """
 from __future__ import annotations
 import json
@@ -85,7 +91,7 @@ rng = np.random.default_rng(123)
 null_j = np.array([np.median(C_rank[d]) for d in G.matched_draws(tf_pos, jbins, 1000, rng)])
 
 # ---------------------------------------------------------------------------
-# 7D: donor-split cross-half C, cell-sampling ceiling (light recompute from npz)
+# 7D: donor-split cross-half C (light recompute from npz), ceiling (deposited)
 # ---------------------------------------------------------------------------
 genes = list(np.load(DONOR / "agg_human_cap10000.npz", allow_pickle=True)["genes"])
 core = pd.read_csv(HERE / "gene_conservation_core.csv").set_index("gene_id").loc[genes].reset_index()
@@ -128,23 +134,56 @@ for s in range(100):
     cross.append(stats.spearmanr(CA[m], CB[m])[0])
 cross = np.array(cross)
 
-csh = np.load(DONOR / "agg_human_cs.npz"); csm = np.load(DONOR / "agg_mouse_cs.npz")
-def csc(cs, cnt, r):
-    Hh = cs[r].astype(float).copy(); c = cnt[r].astype(float)
-    Hh[c > 0] /= c[c > 0, None]; Hh[c == 0] = np.nan; return Hh
-ceil = []
-for r in range(20):
-    C1 = Cvec(csc(csh["csA"], csh["cntA"], r), csc(csm["csA"], csm["cntA"], r))
-    C2 = Cvec(csc(csh["csB"], csh["cntB"], r), csc(csm["csB"], csm["cntB"], r))
-    m = valid_d & ~np.isnan(C1) & ~np.isnan(C2)
-    ceil.append(stats.spearmanr(C1[m], C2[m])[0])
-ceil_med = float(np.median(ceil))
+# The ceiling line is READ from the deposited result, not recomputed into the
+# drawing. It is a reference level, not a summary of anything this panel plots,
+# and the two cell-split aggregates it was recomputed from (agg_human_cs.npz and
+# agg_mouse_cs.npz, 159 MB) are gitignored -- so a reader with the deposit could
+# not obtain the number the figure asserted. Reading it here removes those two
+# files from what the ceiling depends on; the histogram below still needs
+# agg_*_cap10000.npz, so this narrows Fig 5D's untracked inputs rather than
+# closing them.
+ceil_med = float(don["ceiling_cellsplit_spearman_median"])
+
+# The recompute is kept as a check on the deposited value and is skipped when the
+# aggregates are absent, so the panel builds from the deposit alone. Measured
+# margin on the machine this was written on: 0.0e+00, bit-identical. The
+# tolerance is set well above that and below the 0.005 that would move the two
+# decimals the label prints.
+CEILING_TOLERANCE = 1e-6
+CS_AGGREGATES = (DONOR / "agg_human_cs.npz", DONOR / "agg_mouse_cs.npz")
+if all(p.is_file() for p in CS_AGGREGATES):
+    csh = np.load(CS_AGGREGATES[0]); csm = np.load(CS_AGGREGATES[1])
+    def csc(cs, cnt, r):
+        Hh = cs[r].astype(float).copy(); c = cnt[r].astype(float)
+        Hh[c > 0] /= c[c > 0, None]; Hh[c == 0] = np.nan; return Hh
+    ceil = []
+    for r in range(20):
+        C1 = Cvec(csc(csh["csA"], csh["cntA"], r), csc(csm["csA"], csm["cntA"], r))
+        C2 = Cvec(csc(csh["csB"], csh["cntB"], r), csc(csm["csB"], csm["cntB"], r))
+        m = valid_d & ~np.isnan(C1) & ~np.isnan(C2)
+        ceil.append(stats.spearmanr(C1[m], C2[m])[0])
+    ceil_recomputed = float(np.median(ceil))
+    if abs(ceil_recomputed - ceil_med) > CEILING_TOLERANCE:
+        raise SystemExit(
+            f"ABORT: the cell-sampling ceiling recomputed from the aggregates "
+            f"({ceil_recomputed:.16f}) disagrees with the deposited value "
+            f"({ceil_med:.16f}) by {abs(ceil_recomputed - ceil_med):.3e}, above "
+            f"the {CEILING_TOLERANCE:.0e} tolerance. The figure is not drawn.")
+    print(f"ceiling: deposited={ceil_med:.16f} recomputed={ceil_recomputed:.16f} "
+          f"|diff|={abs(ceil_recomputed - ceil_med):.3e} -- agrees")
+else:
+    print(f"ceiling: deposited={ceil_med:.16f}; cell-split aggregates absent, "
+          f"recompute check skipped")
+
+# The cross-half median stays the median of the 100 values drawn above it: it
+# describes this histogram, so it has to be computed from it. The deposited value
+# (0.7954227089705543) sits 3.7e-08 away, which is summation order, not a
+# disagreement.
 cross_med = float(np.median(cross))
 null95 = don["null_shuffle_spearman_95"]
 frac_both = don["donor_split_cap10000"]["frac_halves_BOTH"]
 
-print(f"recomputed: cross-half median={cross_med:.3f} (json {don['donor_split_cap10000']['cross_half_C_spearman_median']:.3f}), "
-      f"ceiling={ceil_med:.3f} (json {don['ceiling_cellsplit_spearman_median']:.3f})")
+print(f"recomputed: cross-half median={cross_med:.3f} (json {don['donor_split_cap10000']['cross_half_C_spearman_median']:.3f})")
 print(f"7C: TF obs median={tf_obs_median:.3f}; null_e median={np.median(null_e):.3f}; null_j median={np.median(null_j):.3f}")
 
 # ===========================================================================
@@ -269,6 +308,16 @@ fig.text(0.5, -0.01,
 
 # ---------------------------------------------------------------------------
 stem = ROOT / "figures" / "main" / "fig7_conserved_contribution"
-fig.savefig(str(stem) + ".pdf", format="pdf", dpi=fs.DPI, bbox_inches="tight", pad_inches=0.05)
-fig.savefig(str(stem) + ".png", format="png", dpi=fs.DPI, bbox_inches="tight", pad_inches=0.05)
+# Suppress the embedded creation timestamp, as scripts/49_build_figS7_matched_scale.py
+# and build_fig2c_bg.py do. Without it this PDF differed from its predecessor in
+# exactly eight bytes, all inside /CreationDate, on a run whose drawing was
+# bit-identical -- and this file is a packet canonical (Group F ->
+# docs/submission/figures_for_review/Figure_2.pdf), so a timestamp-only rewrite
+# desynchronises Gate 3's mirror for no reason a reader could see.
+# pad_inches stays 0.05 here: figure_style.save_figure's 0.12 governs the panels
+# under figures/panels/, and this module does not go through that writer.
+fig.savefig(str(stem) + ".pdf", format="pdf", dpi=fs.DPI, bbox_inches="tight", pad_inches=0.05,
+            metadata={"CreationDate": None})
+fig.savefig(str(stem) + ".png", format="png", dpi=fs.DPI, bbox_inches="tight", pad_inches=0.05,
+            metadata={"CreationDate": None})
 print("saved", stem.with_suffix(".pdf").name, "+ .png (300 dpi)")

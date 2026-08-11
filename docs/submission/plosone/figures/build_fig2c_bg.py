@@ -73,13 +73,28 @@ leg = [Patch(fc=PRE, label="Pre-rotation S"),
        Patch(fc=POST, label="Post-rotation S (centroid-optimal)"),
        plt.Line2D([0],[0], marker="D", mfc="white", mec="#444", ms=4, ls="none", label="Permutation null (mean)")]
 axes[1].legend(handles=leg, fontsize=6.6, frameon=False, loc="upper right", handlelength=1.2)
-fig.text(0.5, 0.031, "All pairs, both weightings: post < pre at every k tested, each above its null (all p < 10$^{-4}$).",
+# The note now says what this panel plots. Both axes draw k = 5 and nothing else
+# (`load()` reads `["layer2"]["k5"]`), so "at every k tested" asserted a range the
+# reader cannot check here; S14 Table is where every k is tabulated, and it covers
+# k in {1, 3, 5} for all three pairs under both weightings. "All three primate
+# pairs" replaces "All pairs" because the three drawn here are the primate set,
+# not every pair the paper reports.
+fig.text(0.5, 0.031, "All three primate pairs, both weightings, at k = 5: post-rotation below pre-rotation, "
+                     "each above its null (all p < 10$^{-4}$). S14 Table gives every k.",
          ha="center", fontsize=6.6, color="#333")
 fig.subplots_adjust(left=0.085, right=0.985, top=0.90, bottom=0.24, wspace=0.08)
 
 out = pathlib.Path(__file__).resolve().parent   # repo-relative (script's own dir)
-fig.savefig(out/"Fig2C_bg_replication.pdf")
-fig.savefig(out/"Fig2C_bg_replication.png", dpi=300)
+# Suppress the embedded creation timestamp so re-running this script in one
+# environment reproduces its outputs byte-for-byte. Without it the PDF's
+# /CreationDate moved on every run and the file showed as modified with no
+# change to the drawing. Passed to the PNG writer too: matplotlib accepts the
+# key there and writes no tEXt chunk for a None value, so the two writers are
+# spelled the same way rather than one carrying an unexplained exception. This
+# matches build_main_figures.py's save(), the writer the five composites go
+# through; the TIFF below is written from a buffer and carries no timestamp.
+fig.savefig(out/"Fig2C_bg_replication.pdf", metadata={"CreationDate": None})
+fig.savefig(out/"Fig2C_bg_replication.png", dpi=300, metadata={"CreationDate": None})
 # PLOS-spec TIFF (RGB, no alpha, LZW). matplotlib emits RGBA; flatten to RGB.
 try:
     from PIL import Image
