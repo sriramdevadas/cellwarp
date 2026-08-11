@@ -91,8 +91,8 @@ SECTIONS = (
 # as exact a reference as the text itself, and it is the only way to name
 # Results heading 2 without retyping 104 characters.
 TITLE_LINES = (6, 8, 10, 11, 12, 14)
-RESULTS_HEADING_LINES = (47, 61, 77, 89, 101)
-METHODS_HEADING_LINES = (132, 138, 146, 154, 160, 168, 172, 182, 192, 196)
+RESULTS_HEADING_LINES = (47, 61, 77, 89, 103)
+METHODS_HEADING_LINES = (134, 140, 148, 156, 162, 170, 174, 184, 194, 198)
 
 # Belt and braces: the Methods sub-headings are short enough to state in full.
 METHODS_HEADINGS = (
@@ -130,25 +130,29 @@ HANDLER_COUNTS = {
     "caption": 25,
     "legend": 25,
     "reference": 36,
-    "body": 53,
+    "body": 54,
 }
-EXPECTED_CONTENT_LINES = 160
+EXPECTED_CONTENT_LINES = 161
 EXPECTED_CAPTION_BOUNDARIES = 25  # 5 figure + 20 supporting information
 # The EXPECTED_CONTENT_LINES source lines joined with nothing between them: a
 # property of the source alone, so it does not move when CAPTION_JOIN does.
 # Named, not restated: this comment said "the 153 content lines" against a
 # constant of 160, and the one below said 23 boundaries against 25 -- the same
 # drift as the U+2212 report line, and for the same reason.
-EXPECTED_RAW_JOINED_CHARS = 98600
+EXPECTED_RAW_JOINED_CHARS = 99831
 # The same join, plus CAPTION_JOIN at each of the EXPECTED_CAPTION_BOUNDARIES
 # caption boundaries.
-EXPECTED_JOINED_CHARS = 98625
-EXPECTED_JOINED_WORDS = 14355
-# ASCII T in the extracted text of the 121 content paragraphs: 253 in the source
-# content lines plus 5 substituted from U+1D40. Content lines only. The eight
-# emitted Heading 1 banners carry 4 more, and the TITLE banner's 2 never appear
-# at all, because TITLE is rendered as a title page rather than as a heading.
-EXPECTED_ASCII_T = 299
+EXPECTED_JOINED_CHARS = 99856
+EXPECTED_JOINED_WORDS = 14558
+# ASCII T in the extracted text of the content paragraphs. The source content
+# lines carry EXPECTED_ASCII_T minus SUPERSCRIPT_EXPECTED[U+1D40] of them, and
+# the remainder are substituted in from U+1D40, so this constant and that one
+# move together. Content lines only: the eight emitted Heading 1 banners carry 4
+# more, and the TITLE banner's 2 never appear at all, because TITLE is rendered
+# as a title page rather than as a heading. Named, not restated: this said
+# "253 ... plus 5" over "121 content paragraphs", against a constant of 299 and
+# a builder reporting 135 -- wrong by 41 and by 14, while its 4 and 2 were right.
+EXPECTED_ASCII_T = 302
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 20
@@ -239,19 +243,22 @@ NOT_A_GENUS = (
     "Dimensionality", "Dots", "Dropping", "Each", "Ellipsoid", "Ensembl",
     "Ethics", "Euclidean", "Every", "Evolutionarily", "Excluding", "Expanded",
     "Eighteen", "Values",
-    "Extended", "For", "Four", "Full", "Gaussian", "Gene", "Genes",
-    "Geometric", "Global", "Hartigan", "Having", "Hochberg", "How", "Human",
+    "Extended", "Five", "For", "Four", "Full", "Gaussian", "Gene", "Genes",
+    "Geometric", "Global", "Hartigan", "Having", "Hepatocytes", "Hochberg",
+    "How", "Human",
     "In", "Intermediate", "It", "Italic", "Its", "Krzanowski", "Like",
     "Lower", "Mantel", "Mapping", "Marker", "Marmoset", "Materials",
     "Metazoa", "Molecular", "Most", "Multiplying", "Myr", "Negative", "Neither", "No",
-    "None", "Of", "Ontology", "Original", "Pearson", "Permutation",
+    "None", "Of", "One", "Only", "Ontology", "Original", "Pearson",
+    "Permutation",
     "Pipeline", "Plotting", "Position", "Precision", "Primary", "Primate",
     "Procrustes", "Progressive", "Protocol", "Python", "Random", "Rank",
     "Rankings", "Replacing", "Replication", "Reporting", "Representing",
     "Restricting", "Results", "Robustness", "Same", "Sapiens", "Scatter",
     "Senis", "Short", "Significance", "Simulation", "Software", "Source",
     "Spearman", "Splitting", "Substantiates", "Synthetic", "Table", "Taken",
-    "Tau", "Ten", "Text", "That", "The", "This", "Three", "To", "Toward",
+    "Tau", "Ten", "Text", "That", "The", "Their", "This", "Three", "To",
+    "Toward",
     "Treating", "Two", "Under", "Variance", "Wasserstein", "We", "Were",
     "What", "Whether", "Within", "Zenodo",
 )
