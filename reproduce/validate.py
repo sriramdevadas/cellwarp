@@ -272,6 +272,20 @@ CHECKS = [
         "paper_ref": "Results section 5, Figure 5D",
     },
     {
+        "name": "Conserved-contribution: cell-sampling ceiling (the level Fig 5D draws)",
+        "file": "analysis/conserved_contribution/donor_stability/donor_stability_results.json",
+        "key": "ceiling_cellsplit_spearman_median",
+        "expected": 0.9434,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §12 ('a 0.94 cell-sampling ceiling') and Fig 5D's dashed "
+                     "reference line. make_figure7.py now READS this key rather than "
+                     "recomputing the level from the gitignored cell-split aggregates, "
+                     "so the number the panel draws is this one and a reader holding "
+                     "only the deposit can obtain it. The producer still recomputes it "
+                     "from those aggregates when they are present and aborts on "
+                     "disagreement above 1e-6; the measured margin is 0.0e+00",
+    },
+    {
         "name": "Conserved-contribution: cross-protocol C Spearman",
         "file": "analysis/conserved_contribution/donor_stability/donor_stability_results.json",
         "key": "cross_protocol.spearman_C10x_vs_CSS",
@@ -1944,6 +1958,160 @@ CHECKS = [
         "paper_ref": "S14 Table, Human-Marmoset W0 at k = 1. This is the reason the margin "
                      "columns are in the table: the smallest cell is an order below the "
                      "largest, and it is at k = 1",
+    },
+
+    # ── Matched-n baselines behind Fig 3's segments (S1 Text §6; Results §3) ──
+    # Producer: analysis/ranking_replication/block2_matched_n.py, 6,009 pipeline calls
+    # at 10,000 permutations each. It restricts the tracked primary centroids to each
+    # replication's own matched types and re-runs the published pipeline, because the
+    # null median moves with type count and a replication's obs/null is not comparable
+    # to the primary's 0.522 at 35.
+    #
+    # Twelve checks, two per replication, because S1 Text §6 makes TWO claims and the
+    # second is not derivable from gating the first. It states the six baselines, and
+    # it groups the six DEFICITS: "the three single-source replications sit 0.017 to
+    # 0.118 above their baselines; the pooled replication and the two non-replications
+    # sit 0.382 to 0.474 above theirs." Both endpoints of both ranges are a bar's
+    # deficit, so gating the baselines alone would leave the sentence free to drift
+    # from the panel drawing it.
+    #
+    # Addressed by list index, which is safe here without a separate identity anchor:
+    # the six baselines are pairwise separated by at least 0.00149 and the six deficits
+    # by at least 0.0102, both far above these tolerances, so any reordering of the
+    # producer's BARS moves every value past its own gate rather than quietly
+    # re-pointing it. bars.6 being the last index also means a dropped bar raises
+    # rather than shifting the rest up.
+    {
+        "name": "Matched-n: producer's faithfulness gate reproduces the headline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "gate.obs_null",
+        "expected": 0.5222043226858066,
+        "tolerance": 1e-9,
+        "paper_ref": "Results §1 (0.52). The producer aborts if this does not reproduce, "
+                     "so every baseline below is void without it; gated here so a reader "
+                     "sees the precondition rather than trusting the file's existence",
+    },
+    {
+        "name": "Matched-n: n=35 negative control (only one subset is possible)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "negative_control_passed",
+        "expected": 1.0,
+        "tolerance": 0,
+        "paper_ref": "S1 Text §6. At n = 35 the only draw is the full set, so the subset "
+                     "distribution must collapse to the published point. If it does not, "
+                     "the subsetting path is not the published pipeline and the whole "
+                     "block is void",
+    },
+    {
+        "name": "Matched-n baseline: Sun2023 (n = 15)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.1.matched_n_primary.obs_null",
+        "expected": 0.4359,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6 ('0.436 (Sun2023, n = 15)') and Fig 3's segment on the "
+                     "Sun2023 bar",
+    },
+    {
+        "name": "Matched-n deficit: Sun2023 above its baseline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.1.deficit",
+        "expected": 0.1176,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6: the upper endpoint of 'the three single-source "
+                     "replications sit 0.017 to 0.118 above their baselines'",
+    },
+    {
+        "name": "Matched-n baseline: PanSci (n = 16)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.2.matched_n_primary.obs_null",
+        "expected": 0.4445,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6 ('0.445 (PanSci, 16)') and Fig 3's segment on the "
+                     "PanSci bar",
+    },
+    {
+        "name": "Matched-n deficit: PanSci above its baseline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.2.deficit",
+        "expected": 0.1073,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6: interior to the single-source range 0.017 to 0.118",
+    },
+    {
+        "name": "Matched-n baseline: CellHint (n = 15)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.3.matched_n_primary.obs_null",
+        "expected": 0.4303,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6 ('0.430 (CellHint, 15)') and Fig 3's segment on the "
+                     "CellHint bar. Its bar clears this baseline by the least of the "
+                     "seven, which is why the segment has to be drawn rather than stated",
+    },
+    {
+        "name": "Matched-n deficit: CellHint above its baseline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.3.deficit",
+        "expected": 0.0172,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6: the lower endpoint of 'the three single-source "
+                     "replications sit 0.017 to 0.118 above their baselines'",
+    },
+    {
+        "name": "Matched-n baseline: pan-Census (n = 22)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.4.matched_n_primary.obs_null",
+        "expected": 0.4288,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6 ('0.429 (pan-Census, 22)') and Fig 3's segment on the "
+                     "pan-Census bar",
+    },
+    {
+        "name": "Matched-n deficit: pan-Census above its baseline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.4.deficit",
+        "expected": 0.3825,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6: the lower endpoint of 'the pooled replication and the "
+                     "two non-replications sit 0.382 to 0.474 above theirs'",
+    },
+    {
+        "name": "Matched-n baseline: Andrews (n = 6)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.5.matched_n_primary.obs_null",
+        "expected": 0.3233,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6 ('0.323 (Andrews, 6)') and Fig 3's segment on the "
+                     "Andrews bar. The lowest baseline of the six, at the smallest n, "
+                     "which is the gradient S1 Text §6 warns is n and not provenance",
+    },
+    {
+        "name": "Matched-n deficit: Andrews above its baseline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.5.deficit",
+        "expected": 0.4736,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6: the upper endpoint of 'the pooled replication and the "
+                     "two non-replications sit 0.382 to 0.474 above theirs'",
+    },
+    {
+        "name": "Matched-n baseline: MCA x HCA (n = 17)",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.6.matched_n_primary.obs_null",
+        "expected": 0.5425,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6 ('0.543 (MCA x HCA, 17)') and Fig 3's segment on the "
+                     "MCA x HCA bar. The only baseline above the primary's 0.522, which "
+                     "is S1 Text §6's sixth case: its matched types are LESS conserved "
+                     "than the ones it misses",
+    },
+    {
+        "name": "Matched-n deficit: MCA x HCA above its baseline",
+        "file": "analysis/ranking_replication/block2_matched_n_results.json",
+        "key": "bars.6.deficit",
+        "expected": 0.4605,
+        "tolerance": 0.0005,
+        "paper_ref": "S1 Text §6: interior to the range 0.382 to 0.474 for the pooled "
+                     "replication and the two non-replications",
     },
 
     # ── Worked example: the one type Results section 4 carries through ──

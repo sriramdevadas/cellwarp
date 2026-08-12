@@ -407,45 +407,103 @@ def fig4d_replication_summary():
 
     # Load all replication results from source JSONs (no hardcoding for
     # the primary set; failures pulled from their own JSONs).
-    with open(BASE / 'analysis/permutation_1M/results_1M.json') as f:
-        primary = json.load(f)
-    with open(BASE / 'output/validation/sun2023_replication_expanded/sun2023_expanded.json') as f:
-        sun2023 = json.load(f)
-    with open(BASE / 'output/validation/pansci_replication/pansci_replication.json') as f:
-        pansci = json.load(f)
-    with open(BASE / 'output/validation/cellhint_replication/cellhint_replication.json') as f:
-        cellhint = json.load(f)
-    with open(BASE / 'analysis/census_replication/replication_results.json') as f:
-        pancensus = json.load(f)
-    with open(BASE / 'output/validation/andrews_replication/andrews_replication_results.json') as f:
-        andrews = json.load(f)
-    with open(BASE / 'output/validation/t1a_replication/t1a_results.json') as f:
-        mca_hca = json.load(f)
+    #
+    # Each path is spelled ONCE. It is both the file this panel reads and the key
+    # it joins the matched-n baselines on below, so a second spelling could drift
+    # from the first and send a bar's baseline to the wrong arm without failing.
+    P_PRIMARY = 'analysis/permutation_1M/results_1M.json'
+    P_SUN2023 = 'output/validation/sun2023_replication_expanded/sun2023_expanded.json'
+    P_PANSCI = 'output/validation/pansci_replication/pansci_replication.json'
+    P_CELLHINT = 'output/validation/cellhint_replication/cellhint_replication.json'
+    P_PANCENSUS = 'analysis/census_replication/replication_results.json'
+    P_ANDREWS = 'output/validation/andrews_replication/andrews_replication_results.json'
+    P_MCA_HCA = 'output/validation/t1a_replication/t1a_results.json'
+
+    def _load(rel):
+        with open(BASE / rel) as f:
+            return json.load(f)
+
+    primary = _load(P_PRIMARY)
+    sun2023 = _load(P_SUN2023)
+    pansci = _load(P_PANSCI)
+    cellhint = _load(P_CELLHINT)
+    pancensus = _load(P_PANCENSUS)
+    andrews = _load(P_ANDREWS)
+    mca_hca = _load(P_MCA_HCA)
 
     # Extract obs/null, n, and p from each source
-    # (success, dataset_label, obs_null, n, p)
+    # (success, dataset_label, source path, obs_null, n, p)
     sources = [
-        (True,  'Primary\n(TS×TMS)', primary['obs_null_ratio'],
+        (True,  'Primary\n(TS×TMS)', P_PRIMARY,
+         primary['obs_null_ratio'],
          primary['n_cell_types'], primary['p_value']),
-        (True,  'Sun2023\n(10x v3)', sun2023['procrustes']['obs_null_ratio'],
+        (True,  'Sun2023\n(10x v3)', P_SUN2023,
+         sun2023['procrustes']['obs_null_ratio'],
          sun2023['procrustes']['n_types'], sun2023['procrustes']['p_value']),
-        (True,  'PanSci\n(EasySci)', pansci['procrustes']['obs_null_ratio'],
+        (True,  'PanSci\n(EasySci)', P_PANSCI,
+         pansci['procrustes']['obs_null_ratio'],
          pansci['procrustes']['n_types'], pansci['procrustes']['p_value']),
-        (True,  'CellHint\n(Human)', cellhint['procrustes']['obs_null_ratio'],
+        (True,  'CellHint\n(Human)', P_CELLHINT,
+         cellhint['procrustes']['obs_null_ratio'],
          cellhint['procrustes']['n_types'], cellhint['procrustes']['p_value']),
-        (True,  'pan-Census\n(pooled)', pancensus['permutation_test']['obs_null_ratio'],
+        (True,  'pan-Census\n(pooled)', P_PANCENSUS,
+         pancensus['permutation_test']['obs_null_ratio'],
          pancensus['n_cell_types'], pancensus['permutation_test']['p_value']),
-        (False, 'Andrews\n(liver)', andrews['obs_null_ratio'],
+        (False, 'Andrews\n(liver)', P_ANDREWS,
+         andrews['obs_null_ratio'],
          andrews['n_types'], andrews['p_value']),
-        (False, 'MCA × HCA\n(microwell)', mca_hca['t1a_procrustes']['obs_null_ratio'],
+        (False, 'MCA × HCA\n(microwell)', P_MCA_HCA,
+         mca_hca['t1a_procrustes']['obs_null_ratio'],
          mca_hca['t1a_procrustes']['n_types'], mca_hca['t1a_procrustes']['p_value']),
     ]
 
     success_flags = [s[0] for s in sources]
     datasets = [s[1] for s in sources]
-    obs_null = [s[2] for s in sources]
-    n_types = [s[3] for s in sources]
-    p_values = [s[4] for s in sources]
+    source_paths = [s[2] for s in sources]
+    obs_null = [s[3] for s in sources]
+    n_types = [s[4] for s in sources]
+    p_values = [s[5] for s in sources]
+
+    # ---- matched-n baselines, joined on the source path --------------------
+    #
+    # Each bar is read against the primary restricted to that bar's own matched
+    # types, because the null median moves with type count and a replication's
+    # obs/null is not comparable to the primary's 0.522 at 35. The baselines come
+    # from analysis/ranking_replication/block2_matched_n.py.
+    #
+    # The join is on the source JSON path, and it is the path because nothing else
+    # works. That producer's labels and this panel's differ three separate ways --
+    # separator (space vs newline), multiplication sign (x vs U+00D7) and, for
+    # MCAxHCA, the text itself -- so a label join matches nothing at all. The two
+    # lists happen to be in the same order, so a positional join would be correct
+    # today with nothing asserting it stays correct; the failure it would produce
+    # after a reorder is six bars silently carrying each other's baselines. The
+    # path is the one key both sides already hold identically, and every lookup
+    # below must resolve to exactly one entry or the panel refuses to draw.
+    with open(BASE / 'analysis/ranking_replication/block2_matched_n_results.json') as f:
+        matched = json.load(f)
+
+    by_path = {}
+    for bar in matched['bars']:
+        by_path.setdefault(bar['path'], []).append(bar)
+
+    baselines = []
+    for label, path in zip(datasets, source_paths):
+        hits = by_path.get(path, [])
+        if len(hits) != 1:
+            raise ValueError(
+                f"Fig 3 baseline join failed for {label.replace(chr(10), ' ')!r}: "
+                f"{path} resolved to {len(hits)} entries in "
+                f"block2_matched_n_results.json, expected exactly 1. "
+                f"Paths that artifact carries: {sorted(by_path)}")
+        baselines.append(hits[0])
+
+    # The seventh arm is the primary, and it has no baseline to draw: its matched
+    # type set is the whole primary set, so block2 hands it back its own value.
+    # Derived from the artifact's own faithfulness gate rather than by matching a
+    # label, so it stays right if the panel's bar order or wording changes.
+    full_n = matched['gate']['n']
+    draw_baseline = [b['n_inter'] != full_n for b in baselines]
     # Color palette: successes get distinct colors; failures rendered gray.
     success_colors = [C_BLUE, C_ORANGE, C_PURPLE, C_TEAL, C_GRAY]
     success_idx = 0
@@ -474,6 +532,27 @@ def fig4d_replication_summary():
                          hatch='///')
         bars.append(bar[0])
 
+    # Matched-n baseline on each replication bar: the primary's own obs/null when
+    # it is restricted to that bar's matched types, drawn as a segment across the
+    # bar rather than as a separate bar, so it reads as a level this bar is above
+    # and not as a seventh measurement. Same idiom fig3b_pre_post uses for its
+    # label-shuffle nulls, and for the same reason -- a reader who cannot see the
+    # level a bar is meant to clear reads the bar's height as the result.
+    #
+    # Six segments across seven bars. The primary is its own baseline, and drawing
+    # a segment 0.0001 from its own bar top would assert a comparison that is not
+    # one; that 0.0001 is the 1,000,000-permutation bar against this baseline's
+    # 10,000-permutation null median, not a gap. Fig 3's caption names it.
+    for bar, base, draw in zip(bars, baselines, draw_baseline):
+        if not draw:
+            continue
+        level = base['matched_n_primary']['obs_null']
+        half = bar.get_width() * 0.46
+        centre = bar.get_x() + bar.get_width() / 2
+        ax.plot([centre - half, centre + half], [level] * 2,
+                color=C_DARKGRAY, lw=1.1, solid_capstyle='butt', zorder=6,
+                label='Matched-n primary baseline' if bar is bars[1] else None)
+
     # Add n and p labels above each bar
     for bar, n, p in zip(bars, n_types, p_values):
         ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.01,
@@ -494,6 +573,14 @@ def fig4d_replication_summary():
     ax.axhline(1.0, color=C_LIGHTGRAY, linewidth=0.7, linestyle='--', zorder=1)
     ax.text(-0.5, 1.005, 'chance (obs/null = 1)',
             fontsize=5.0, color=C_GRAY, ha='left', va='bottom')
+
+    # Upper left, but well below the chance line: that line's annotation is drawn
+    # at data y = 1.005 starting left of the first bar, and an upper-left legend
+    # lands on top of it. The four left-hand bars and their n=/p= blocks top out
+    # near 0.62 and the tall bars are all at the right, so the band from about 0.7
+    # to 0.95 above the left half is the one clear region on this panel.
+    ax.legend(loc='upper left', bbox_to_anchor=(0.0, 0.82), fontsize=5.2,
+              frameon=False, handlelength=1.4, borderpad=0.0, handletextpad=0.5)
 
     clean_spine(ax)
     save_figure(fig, PANELS / 'fig4d_replication_summary')

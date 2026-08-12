@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
 """
-Matched-n primary baselines for every bar in the replication panel.
+Matched-n primary baselines for six of the replication panel's seven bars.
 
 Restricts the tracked primary centroids to each replication's own matched type set,
 runs the published pipeline unchanged, and reports the primary's obs/null at that n.
 Then draws a 1,000-subset distribution at each distinct n, so each bar carries an
 interval rather than being read against the primary's 35-type value.
+
+SIX baselines, not seven. The seventh arm IS the primary: its matched type set is
+all 35 types, so the loop below hands it back its own value and the baseline is the
+bar. It is computed anyway, because the bars are processed uniformly and because
+the identity is worth showing rather than asserting, but it is not a comparison and
+a consumer must not draw it as one. The +0.0001 that shows in its deficit column is
+not a gap: the bar is read from analysis/permutation_1M/results_1M.json, a
+1,000,000-permutation run giving 0.5222683641667457, while the baseline is this
+script's 10,000-permutation recompute giving 0.5222043226858066. The 6.4e-05 between
+them is null-median resolution, nothing else. Mouse lemur is not among these arms at
+all; it is Fig 1D and has no bar here.
 
 Produces the matched-baseline comparison reported in Results, "each replication is
 read against the primary restricted to that replication's own matched types", and
@@ -15,6 +26,16 @@ All inputs are tracked.
 
 Only the two path constants differ from the version that produced those values; the
 code is unchanged.
+
+Cost, and what the artifact records about it. Two seeds govern the run and both are
+written into the JSON before any compute: SEED, passed to every permutation_test
+call, and SUBSET_SEED, which re-seeds the subset RNG once per n so each n's draws
+are reproducible independently of the others. The JSON also records the n values
+swept, the draws at each, the total pipeline calls behind the file, the seconds each
+n took and the total wall time -- so the next reader deciding whether to re-run has
+the price in the file rather than in someone's notes. On the machine this was
+written for, 6,009 pipeline calls at about 1 s each: roughly 45 minutes, dominated
+by the subset sweep.
 """
 import contextlib
 import io
@@ -36,6 +57,7 @@ from cellwarp.procrustes import pca_reduce_centroids, procrustes_align, permutat
 NPERM, SEED, NSUB = 10_000, 42, 1000
 SUBSET_SEED = 42
 PUBLISHED = 0.5222043226858066
+T_START = time.time()          # for the wall time recorded in the artifact
 
 
 @contextlib.contextmanager
@@ -70,6 +92,17 @@ def run(types):
 
 R = {"nperm": NPERM, "seed": SEED, "n_subsets": NSUB, "subset_seed": SUBSET_SEED,
      "published_target": PUBLISHED, "n_genes": len(genes)}
+
+# What each seed governs, spelled out rather than left to the reader: "seed" alone
+# is ambiguous in a script that both permutes and samples. Written before any
+# compute, so an aborted run still says how it was seeded.
+R["seeds"] = {
+    "permutation": SEED,
+    "subset_draw": SUBSET_SEED,
+    "note": "permutation is passed to every permutation_test call; subset_draw "
+            "re-seeds the subset RNG once per n, so each n's draws reproduce "
+            "independently of the others and of the order the n values ran in",
+}
 
 # ---------------------------------------------------------------- faithfulness gate
 print("\n" + "=" * 84)
@@ -218,12 +251,52 @@ for b in bars:
     v = np.array(dists[n]["values"])
     dep = b["dep_obs_null"]
     pct = float((v <= dep).mean() * 100)
-    z = float((dep - v.mean()) / v.std(ddof=1)) if len(v) > 1 else float("nan")
-    b["placement"] = dict(percentile=pct, z=z, subset_median=dists[n]["median"],
+    # None, not float("nan"), when there is no distribution to place against. At
+    # n = 35 the only possible subset is the full set, so v holds one value and
+    # std(ddof=1) has no denominator. json.dumps writes a bare NaN for the float,
+    # which Python reads back but which RFC 8259 does not permit -- and this file
+    # is deposited, so it has to parse in something other than Python. null says
+    # undefined in every reader. n_draws travels with the placement so a consumer
+    # can see WHY it is null rather than inferring it, and so the primary's
+    # percentile, which is 100 against a single draw, is not read as extremity.
+    z = float((dep - v.mean()) / v.std(ddof=1)) if len(v) > 1 else None
+    b["placement"] = dict(percentile=pct, z=z, n_draws=int(dists[n]["n_draws"]),
+                          subset_median=dists[n]["median"],
                           subset_p5=dists[n]["p5"], subset_p95=dists[n]["p95"])
     print(f"  {b['label']:22s} {n:3d} {dep:10.6f} {b['matched_n_primary']['obs_null']:10.6f} "
           f"{dists[n]['median']:11.6f} [{dists[n]['p5']:8.5f},{dists[n]['p95']:8.5f}] "
-          f"{pct:7.1f} {z:+7.2f}")
+          f"{pct:7.1f} {'      --' if z is None else f'{z:+7.2f}'}")
+
+# ---------------------------------------------------------------- cost of the file
+# What it took to produce this artifact, recorded in the artifact. Someone deciding
+# whether to re-run needs the price here rather than in a dispatch note, and the
+# draw count is the price: every entry below is one full pipeline call (a joint PCA
+# at 95% variance, a superimposition, and NPERM permutations). The per-n seconds are
+# already in `distributions`; this block adds the totals and the sweep itself, so
+# the n values are stated rather than inferred from dictionary keys.
+n_bar_calls = len(bars)
+n_subset_calls = sum(dists[n]["n_draws"] for n in NS)
+R["cost"] = {
+    "ns_swept": [int(n) for n in NS],
+    "draws_per_n": {str(n): int(dists[n]["n_draws"]) for n in NS},
+    "subset_draws_total": int(n_subset_calls),
+    "pipeline_calls_total": int(1 + n_bar_calls + n_subset_calls),
+    "pipeline_calls_breakdown": {
+        "faithfulness_gate": 1, "matched_n_baselines": int(n_bar_calls),
+        "subset_sweep": int(n_subset_calls),
+    },
+    "permutations_per_call": NPERM,
+    "seconds_per_n": {str(n): dists[n]["sec"] for n in NS},
+    "wall_time_sec": round(time.time() - T_START, 1),
+}
+print("\n" + "=" * 84)
+print("COST")
+print("=" * 84)
+print(f"  n swept              {R['cost']['ns_swept']}")
+print(f"  subset draws         {R['cost']['subset_draws_total']}")
+print(f"  pipeline calls       {R['cost']['pipeline_calls_total']} "
+      f"(1 gate + {n_bar_calls} bars + {n_subset_calls} subsets), {NPERM} permutations each")
+print(f"  wall time            {R['cost']['wall_time_sec']:.1f} s")
 
 (OUT / "block2_matched_n_results.json").write_text(json.dumps(R, indent=2))
 print(f"\nwrote {OUT/'block2_matched_n_results.json'}")
