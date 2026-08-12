@@ -10,14 +10,19 @@ figures exist as PDF and PNG only.
 This rasterises the existing PDFs. It does not regenerate them: Fig 5D is not
 bit-reproducible from tracked data, so running the producers could change a
 deposited figure. The PDFs are the vector origin and at 300 dpi they land on
-the exact pixel dimensions tabulated in FIGURES, so nothing is resampled.
+the pixel dimensions tabulated in FIGURES, so nothing is resampled. Figs 1 to 4
+land there exactly; Fig 5's page height is 1643.798 px at 300 dpi and rounds to
+the tabulated 1644, which is the whole of what its aspect tolerance covers.
 
 The source-to-output mapping is an explicit table, never a directory glob, and
 every structural assumption is a require() that aborts the build. The written
 files are re-opened and checked against both the PDF they came from and the
 sibling PNG, which is an independently rasterised copy of the same figure: if
 alpha were dropped instead of composited, the mean RGB and the black-pixel
-fraction would diverge from the PNG and the build would stop.
+fraction would diverge from the PNG and the build would stop. That independence
+survives Fig 5 becoming a copy of make_figure7.py's native vector -- its sibling
+PNG is still matplotlib's own Agg rendering of the same figure, not a
+rasterisation of the PDF, so the two paths remain genuinely separate.
 
 Usage:  python build_submission_tiffs.py [--output-dir DIR]
 
@@ -37,18 +42,70 @@ except ImportError as exc:  # pragma: no cover - dependencies are declared
     sys.exit("ERROR: pymupdf, pillow and numpy are required: %s" % exc)
 
 
+# --- Aspect tolerances, per figure ---------------------------------------------
+#
+# The aspect check exists to catch a TIFF that is not the whole page. Four of the
+# five figures can satisfy it exactly and still do; Fig 5 cannot, and the reason is
+# arithmetic rather than anything wrong with the figure.
+#
+# ASPECT_EXACT is the original 1e-6 and applies to Figs 1 to 4. Those come from
+# build_main_figures.py, which calls savefig with an explicit figsize and NO
+# bbox_inches, so each page is a whole number of 300 dpi pixels in both axes
+# (7.4 x 4.16 in -> 2220 x 1248 px) and the rendered aspect reproduces the page
+# aspect to float precision.
+#
+# ASPECT_ROUNDED_PAGE applies to Fig 5 alone. Fig 5 is now the native vector PDF
+# from make_figure7.py, which uses bbox_inches="tight": the page is whatever the
+# trimmed drawing measures, 457.2 x 394.5117 pt, and 394.5117 pt is 1643.798 px at
+# 300 dpi. A TIFF has integer dimensions, so it must round to 1644, and the
+# rendered aspect then differs from the page aspect by 1.42e-04. No cropping is
+# involved and none could be hidden here: a real crop moves the aspect by percent,
+# three orders above this bound.
+#
+# The same tight bbox is why Fig 5's PNG is pinned at 1902 x 1641 while its TIFF is
+# 1905 x 1644. That is a SEPARATE consequence: matplotlib measures the tight bbox
+# with each backend's own renderer, so the PDF and Agg backends trim the canvas
+# differently, by a few pixels whose sign varies per axis. Both pins are exact.
+#
+# What this trade gives up, and what still holds. The aspect guard no longer
+# distinguishes a whole page from one cropped by less than about 0.02%, which is
+# not a failure any producer here can produce. Everything that catches a botched
+# render keeps its current strictness: the TIFF and PNG dimension pins are exact
+# equality, and MEAN_RGB_TOLERANCE and BLACK_FRACTION_TOLERANCE are unchanged at
+# 1.0 and 0.01. Those two are what catch the failure this script was written for --
+# alpha dropped instead of composited, which moves the mean by tens of levels and
+# the black fraction by tenths. Measured across Fig 5's 3 px size difference they
+# move by 0.11 and 0.0014, so they retain their full margin.
+#
+# To tighten this back to ASPECT_EXACT: drop bbox_inches="tight" from
+# make_figure7.py for an explicit figsize landing on whole pixels at 300 dpi, as
+# the other four already do. Deferred because make_figure7.py writes a deposited
+# figure that is also a packet canonical, and re-tuning its layout risks the
+# clipping regression figure_style.save_figure's pad comment records having already
+# happened once.
+ASPECT_EXACT = 1e-6
+ASPECT_ROUNDED_PAGE = 2e-4
+
+
 # --- Paths and the explicit figure table -------------------------------------
 
 HERE = Path(__file__).resolve().parent
 
-# (output name, source stem, expected width px, expected height px at 300 dpi).
+# (output name, source stem, TIFF width px, TIFF height px, sibling PNG width px,
+#  sibling PNG height px, aspect tolerance).
 # A citation of "Fig N" in the manuscript must resolve to the file "FigN.tif".
+#
+# The PNG dimensions are pinned SEPARATELY from the TIFF's rather than required to
+# equal them. For Figs 1 to 4 they are equal and the pin says so; for Fig 5 they are
+# not, and the reason is in the aspect-tolerance block above. Both are exact: the
+# guard's value is catching a wrong artifact paired with a figure, and a range would
+# give that up.
 FIGURES = (
-    ("Fig1.tif", "Fig1_configuration_conserved", 2220, 1248),
-    ("Fig2.tif", "Fig2_two_layers_bg", 2220, 1860),
-    ("Fig3.tif", "Fig3_configuration_robust", 2220, 900),
-    ("Fig4.tif", "Fig4_pertype_not_resolvable", 2220, 960),
-    ("Fig5.tif", "Fig5_conserved_identity_genes", 2220, 1560),
+    ("Fig1.tif", "Fig1_configuration_conserved", 2220, 1248, 2220, 1248, ASPECT_EXACT),
+    ("Fig2.tif", "Fig2_two_layers_bg", 2220, 1860, 2220, 1860, ASPECT_EXACT),
+    ("Fig3.tif", "Fig3_configuration_robust", 2220, 900, 2220, 900, ASPECT_EXACT),
+    ("Fig4.tif", "Fig4_pertype_not_resolvable", 2220, 960, 2220, 960, ASPECT_EXACT),
+    ("Fig5.tif", "Fig5_conserved_identity_genes", 1905, 1644, 1902, 1641, ASPECT_ROUNDED_PAGE),
 )
 
 # Fig2C_bg_replication.* is panel C of Figure 2, not a whole figure. It is left
@@ -74,7 +131,7 @@ NARROW_MARGIN_PX = 50
 # levels and the black fraction by tenths, both orders above these.
 MEAN_RGB_TOLERANCE = 1.0
 BLACK_FRACTION_TOLERANCE = 0.01
-ASPECT_TOLERANCE = 1e-6
+
 
 WHITE = (255, 255, 255, 255)
 
@@ -147,7 +204,7 @@ def statistics(image):
 
 # --- Verification of the file actually written --------------------------------
 
-def verify_tiff(path, width, height, source_aspect, reference):
+def verify_tiff(path, width, height, source_aspect, aspect_tolerance, reference):
     """Re-open the written TIFF and check it against PLOS's rules and the PNG."""
     require(path.is_file(), "TIFF was not written: %s" % path)
     size = path.stat().st_size
@@ -198,9 +255,11 @@ def verify_tiff(path, width, height, source_aspect, reference):
             "%s is %d bytes, over PLOS's %d limit" % (path.name, size, PLOS_MAX_BYTES))
 
     aspect = width / height
-    require(abs(aspect - source_aspect) < ASPECT_TOLERANCE,
-            "%s has aspect %.8f but its source page is %.8f, so it is not the whole "
-            "figure" % (path.name, aspect, source_aspect))
+    require(abs(aspect - source_aspect) < aspect_tolerance,
+            "%s has aspect %.8f but its source page is %.8f (difference %.2e, "
+            "tolerance %.0e), so it is not the whole figure"
+            % (path.name, aspect, source_aspect,
+               abs(aspect - source_aspect), aspect_tolerance))
 
     reference_mean, reference_black = statistics(reference)
     require(abs(mean - reference_mean) < MEAN_RGB_TOLERANCE,
@@ -237,17 +296,18 @@ def verify_tiff(path, width, height, source_aspect, reference):
 
 def build(output_dir):
     require(HERE.is_dir(), "figure directory missing: %s" % HERE)
-    for _, stem, _, _ in FIGURES:
+    for entry in FIGURES:
+        stem = entry[1]
         require((HERE / (stem + ".pdf")).is_file(),
                 "source PDF missing: %s" % (HERE / (stem + ".pdf")))
         require((HERE / (stem + ".png")).is_file(),
                 "source PNG missing: %s" % (HERE / (stem + ".png")))
-    names = [name for name, _, _, _ in FIGURES]
+    names = [entry[0] for entry in FIGURES]
     require(len(set(names)) == len(names), "duplicate output names: %s" % names)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     reports = []
-    for name, stem, width, height in FIGURES:
+    for name, stem, width, height, png_width, png_height, aspect_tolerance in FIGURES:
         rendered, box_width, box_height = render_pdf(HERE / (stem + ".pdf"))
         require(rendered.size == (width, height),
                 "%s rendered at %dx%d, expected %dx%d at %d dpi"
@@ -256,11 +316,14 @@ def build(output_dir):
         rendered.save(destination, format="TIFF", dpi=(DPI, DPI),
                       compression="tiff_lzw")
         reference = load_png_on_white(HERE / (stem + ".png"))
-        require(reference.size == rendered.size,
-                "%s PNG is %s but the PDF rendered %s"
-                % (stem, reference.size, rendered.size))
+        # Against its own pin, not against the TIFF's. They are equal for four of the
+        # five and cannot be for Fig 5; see the aspect-tolerance block. Exact either
+        # way, so a wrong PNG paired with a figure still fails here.
+        require(reference.size == (png_width, png_height),
+                "%s PNG is %s, expected %dx%d"
+                % (stem, reference.size, png_width, png_height))
         report = verify_tiff(destination, width, height,
-                             box_width / box_height, reference)
+                             box_width / box_height, aspect_tolerance, reference)
         report["source"] = stem
         reports.append(report)
     return reports

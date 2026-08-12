@@ -172,7 +172,7 @@ are scoped out here rather than in the manuscript body.
 | `expanded_negative_controls/` | PAPER | Within-species tissue-pair controls (Fig S2E) |
 | `within_species_matched/` | PAPER | Matched-scale human-vs-human control (S4 Fig) |
 | `census_replication/` | PAPER | Pan-Census replication (Fig S2F). Includes `item2_assay_composition.py`, which settles the assay composition of the primary human atlas that the deposited mouse-only protocol breakdown cannot; it requires the optional Census extra and the network |
-| `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4). `ranking_replication/` also holds `block2_matched_n.py`, which builds the matched-n primary baseline each replication is read against; `task2_residual_mechanism.py`, which tests whether the replicated types are the more conserved ones — the mechanism Results asserts but does not quantify; and `cross_atlas_ci.py`, which puts a Bonett–Wright Fisher-z interval on each of the four cross-atlas correlations, reading them from the four separate artifacts that hold them (no upstream producer holds all four). It uses `SE = 1.06/√(n−3)`, the Spearman constant, deliberately unlike the Pearson `1/√(n−3)` in `generate_phase2_figures.py`, `t3e_step2_compute.py` and `t3e_step3b_enhancer.py`; gated by `reproduce/validate.py`, not invoked by `run_all.sh` |
+| `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4). `ranking_replication/` also holds `block2_matched_n.py`, which builds the matched-n primary baseline each replication is read against — the six segments Fig 3 draws, and the six values S1 Text §6 states. **Its output `block2_matched_n_results.json` is now tracked**, having previously existed nowhere: the producer was deposited without it, so those six numbers had no machine-readable source and Fig 3 had nothing to join to. The panel joins on the source JSON path each bar was read from, not on the label (the two label sets differ in three separate ways), and raises unless every path resolves to exactly one entry. **Cost, measured: 6,009 pipeline calls at 10,000 permutations each, 4,136 s** — the sweep is seven n values, not thirteen, because every bar's `n_inter` except 35 already appears in the literal set `{6, 12, 15, 16, 17, 22, 35}` it is unioned with. The artifact records both seeds and what each governs, the n values swept, the draws at each, the call total and the wall time, so the price of a re-run is in the file. Twelve `validate.py` checks pin the six baselines and the six deficits, the second set because S1 Text §6's grouping sentence is a claim about the deficits that gating the baselines alone would not hold; `task2_residual_mechanism.py`, which tests whether the replicated types are the more conserved ones — the mechanism Results asserts but does not quantify; and `cross_atlas_ci.py`, which puts a Bonett–Wright Fisher-z interval on each of the four cross-atlas correlations, reading them from the four separate artifacts that hold them (no upstream producer holds all four). It uses `SE = 1.06/√(n−3)`, the Spearman constant, deliberately unlike the Pearson `1/√(n−3)` in `generate_phase2_figures.py`, `t3e_step2_compute.py` and `t3e_step3b_enhancer.py`; gated by `reproduce/validate.py`, not invoked by `run_all.sh` |
 | `biological_predictors/` | PAPER | Biological-predictor correlates (Table S1, §4) |
 | `sensitivity_analyses/` | PAPER | Ribosomal/housekeeping exclusion, per-gene standardization, marker-null (Tables S7/S9/S10, S5 Fig) |
 | `sensitivity/layer2_no_ribosomal/` | PAPER | Layer 2 under ribosomal-protein exclusion (S1 Text §4; Results §2; Methods), gated by `reproduce/validate.py` |
@@ -215,14 +215,25 @@ are scoped out here rather than in the manuscript body.
 
 *Every statistic checked by `reproduce/validate.py` resolves either to a PAPER
 artifact above or to the vendored basal-ganglia inputs in
-## Support a reader cannot reproduce — four known instances
+## Support a reader cannot reproduce — three known instances
 
-**All four pass all four gates.** None is a wrong number; each is a place where a green
+**All three pass all four gates.** None is a wrong number; each is a place where a green
 board does not mean a reader could have produced the thing it certifies. In the first
-three the evidence behind a deposited artifact cannot be regenerated from this
-repository; in the fourth a second producer would regenerate a deposited artifact
+two the evidence behind a deposited artifact cannot be regenerated from this
+repository; in the third a second producer would regenerate a deposited artifact
 differently and nothing compares the two. Recorded here because this is the file someone
 scoping a reproduction reads first. None is fixed in the commit that recorded it.
+
+**Was four.** The fourth was Fig 5D drawing a live recompute of a value it also had
+deposited, and it is closed: `make_figure7.py` now READS
+`donor_stability_results.json`'s `ceiling_cellsplit_spearman_median` (0.9433716176241689)
+for the level the panel draws, keeps the twenty-split recompute as a check that aborts
+above a 1e-6 disagreement, skips that check when the gitignored cell-split aggregates are
+absent so the panel builds from the deposit alone, and `reproduce/validate.py` now gates
+the key. Measured margin between recompute and deposit: 0.0e+00. The 100-value donor-split
+histogram beside it is still a recompute from gitignored `agg_*_cap10000.npz`, so 7D as a
+whole is not reproducible from tracked data — but that is instance 2's `.npz` problem, not
+a fourth one, and the figure no longer asserts a level a reader cannot obtain.
 
 1. **`figS5_markernull.pdf` — a hand-copied hop that `--verify` cannot see.**
    `analysis/sensitivity_analyses/markernull.py` writes its figure to
@@ -245,18 +256,7 @@ scoping a reproduction reads first. None is fixed in the commit that recorded it
    out-of-sample controls (`block1_form_a.py`, `item1_retention.py`,
    `block2_w3_tfcensus.py`).
 
-3. **Fig 5D draws a live recompute of a value it also has deposited.**
-   `analysis/conserved_contribution/make_figure7.py:135-141` computes the cell-sampling
-   ceiling from twenty splits of the same gitignored `agg_human_cap10000.npz`
-   (`ceil_med = float(np.median(ceil))`) and draws that, rather than reading the
-   deposited `donor_stability_results.json` key
-   `ceiling_cellsplit_spearman_median` (0.9433716176241689). The script prints both
-   side by side, so a divergence is visible at build time, but nothing asserts it and
-   the deposited key is not gated. S1 Text quotes "a 0.94 cell-sampling ceiling"; the
-   manuscript does not mention it. **This one is a figure change and belongs with the
-   figure session, not with a prose or gating pass.**
-
-4. **A second compositor reads the same panel PNGs, and nothing compares the two.**
+3. **A second compositor reads the same panel PNGs, and nothing compares the two.**
    The deposited main figures are assembled by
    `docs/submission/plosone/figures/build_main_figures.py`, but
    `scripts/57_build_main_composites.py` is a second compositor over the same inputs:

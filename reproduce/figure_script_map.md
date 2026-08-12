@@ -52,7 +52,17 @@ Single panel.
 
 | Panel | Content | Producing script | Depends on |
 |---|---|---|---|
-| (whole) | Replication obs/null bar chart | `scripts/generate_phase1_figures.py` (embedded `figures/panels/fig4d_replication_summary.png`) | all replication scripts: `scripts/16_sun2023_replication.py`, `scripts/pansci_replication.py`, `scripts/33_cellhint_replication.py`, `analysis/census_replication/`, plus the Andrews and MCA x HCA non-replications |
+| (whole) | Replication obs/null bar chart, with the matched-n primary baseline on each replication bar | `scripts/generate_phase1_figures.py::fig4d_replication_summary` (embedded `figures/panels/fig4d_replication_summary.png`) | all replication scripts: `scripts/16_sun2023_replication.py`, `scripts/pansci_replication.py`, `scripts/33_cellhint_replication.py`, `analysis/census_replication/`, plus the Andrews and MCA x HCA non-replications; and `analysis/ranking_replication/block2_matched_n_results.json` for the baselines |
+
+Six baselines across seven bars. The seventh is the primary, whose matched type set
+is all 35, so its baseline is its own bar; the panel identifies it from the
+artifact's faithfulness gate (`gate.n`) rather than by matching a label. The join to
+the baselines is on the source JSON path each bar was read from and raises unless
+every path resolves to exactly one entry — a label join matches nothing, because the
+producer's labels and the panel's differ in separator, multiplication sign, and, for
+MCA x HCA, the text itself. Producing the baselines costs 6,009 pipeline calls at
+10,000 permutations each, 4,136 s; the artifact records that, both seeds, and the
+seven n values swept.
 
 ### Fig 4 (per-type not resolvable) -> `Fig4_pertype_not_resolvable.{pdf,png}`
 
@@ -67,11 +77,19 @@ Built fresh; no embedded panels.
 ### Fig 5 (conserved identity genes) -> `Fig5_conserved_identity_genes.{pdf,png}`
 
 A four-panel figure produced whole by `make_figure7.py`; `build_main_figures.py`
-wraps its PNG.
+**copies** its PDF and PNG, so the deposited Fig 5 is byte-identical to
+`figures/main/fig7_conserved_contribution.{pdf,png}` and is a native vector. It used to
+re-embed the PNG into a fresh matplotlib page, which left the deposited PDF as line art
+rasterised at 300 dpi with a text layer of zero characters; it now carries 1,105
+characters and no embedded image. Because `make_figure7.py` trims with
+`bbox_inches="tight"`, this page is 457.2 x 394.5117 pt rather than the 7.4 x 5.2 in the
+wrap produced, so its `build_submission_tiffs.py` row is 1905 x 1644 (TIFF) and
+1902 x 1641 (sibling PNG) with its own aspect tolerance; the reasons are recorded at that
+table.
 
 | Panel | Content | Producing script | Depends on |
 |---|---|---|---|
-| 5A-5D | C distribution / Hartigan dip (A); C vs expression and specificity (B); master-TF enrichment vs matched backgrounds (C); donor-split reproducibility (D) | `analysis/conserved_contribution/make_figure7.py` -> `figures/main/fig7_conserved_contribution.{pdf,png}`; `build_main_figures.py` embeds the `.png` | `analysis/conserved_contribution/run_gate.py` (`gate_results.json`), `run_robustness.py` (`robustness_results.json`), `donor_stability/donor_stability_results.json`, `gene_conservation_core.csv`, `donor_stability/agg_*.npz` (see Known gaps) |
+| 5A-5D | C distribution / Hartigan dip (A); C vs expression and specificity (B); master-TF enrichment vs matched backgrounds (C); donor-split reproducibility (D) | `analysis/conserved_contribution/make_figure7.py` -> `figures/main/fig7_conserved_contribution.{pdf,png}`; `build_main_figures.py` copies both | `analysis/conserved_contribution/run_gate.py` (`gate_results.json`), `run_robustness.py` (`robustness_results.json`), `donor_stability/donor_stability_results.json`, `gene_conservation_core.csv`, `donor_stability/agg_*.npz` (see Known gaps) |
 
 ## Submission TIFFs
 
@@ -80,7 +98,11 @@ main-figure PDFs above to `Fig1.tif` through `Fig5.tif` in the same directory, a
 300 dpi, RGB, LZW, alpha composited on white. It reads only the `.pdf` and its
 sibling `.png` (the PNG is an independently rasterised copy, used to check the
 flatten) and regenerates nothing: an explicit table of expected pixel dimensions
-aborts the build if a figure has changed size. The `.tif` files are the artifacts
+aborts the build if a figure has changed size. That table pins the TIFF's and the
+sibling PNG's dimensions separately and exactly, because Fig 5's two differ
+(1905 x 1644 against 1902 x 1641) -- matplotlib measures a `bbox_inches="tight"` box
+with each backend's own renderer, so its PDF and Agg backends trim the canvas by a
+few pixels differently. The `.tif` files are the artifacts
 uploaded to PLOS, whose file names must match the in-text citations; the `.pdf`
 and `.png` remain the deposited figures.
 
@@ -192,10 +214,58 @@ tables and the DoRothEA regulon. A reader who rebuilds a figure and gets a diffe
 file should read `matplotlib.ft2font.__freetype_version__` before looking for a
 substantive cause.
 
-Timestamps are suppressed only where a producer has been changed to do it:
-`scripts/49_build_figS7_matched_scale.py` passes `metadata={"CreationDate": None}` to its
-PDF `savefig`, so repeated runs in one environment are byte-identical. The other figure
-producers still embed a creation timestamp and differ run to run for that reason alone.
+**The entry point is `.venv/bin/python`, for every figure producer in this file.** Not
+`conda run -n cellwarp python`, and not whichever interpreter is on `PATH`. Both
+environments satisfy every version pin, both import cleanly and both exit 0, so a
+wrong-interpreter build gives no signal at all: it re-rasterises every glyph in the
+figure and reports success. There is no failure to notice, only a diff nobody asked
+for. Measured here: `.venv` links FreeType **2.6.1**, the conda `cellwarp` env links
+**2.14.3**.
+
+**How to tell which you got, in one check.** Rebuild the panel, then pixel-diff it
+against the deposited file and look at how the differing pixels are *distributed*, not
+how many there are:
+
+```python
+import numpy as np, subprocess, io
+from PIL import Image
+p = "docs/submission/plosone/figures/Fig2C_bg_replication.png"
+old = Image.open(io.BytesIO(subprocess.run(
+    ["git", "show", "HEAD:" + p], capture_output=True).stdout)).convert("RGB")
+new = Image.open(p).convert("RGB")
+d = (np.abs(np.asarray(old, int) - np.asarray(new, int)).sum(2) > 0)
+rows = np.where(d.any(1))[0]
+print(d.sum(), "px;  rows", rows.min(), "..", rows.max(), "of", d.shape[0],
+      ";  contiguous bands:", 1 + (np.diff(rows) > 1).sum())
+```
+
+A **right-interpreter** build gives one contiguous band covering exactly what you
+edited. Changing Fig 2C's one-line sub-note under `.venv` gave 16,407 differing pixels
+(0.79%) in a single band, rows 876-904 of 930 -- the sub-note line, and every other
+pixel of the deposited figure identical. A **wrong-interpreter** build gives
+differences scattered over the whole panel and a band range spanning nearly the full
+height, because every text element moved: the conda-built S4 Fig differs in 2.02% of
+its pixels spread throughout. The count alone does not separate the two cases -- the
+distribution does.
+
+Timestamps are suppressed in every writer that produces a deposited figure. Each passes
+`metadata={"CreationDate": None}` to `savefig`, so repeated runs in one environment are
+byte-identical: `scripts/49_build_figS7_matched_scale.py` (PDF), `build_main_figures.py`'s
+`save()` (PDF), `docs/submission/plosone/figures/build_fig2c_bg.py` (PDF and PNG),
+`analysis/conserved_contribution/make_figure7.py` (PDF and PNG), and
+`src/cellwarp/figure_style.py`'s `save_figure` (PDF and PNG), which is the one that
+governs every panel under `figures/panels/`. Before that last one was fixed, a panel PDF
+moved on every run with nothing about the drawing changed. Like the pad above, changing it
+rewrote nothing on its own -- it changes what the next rebuild of a panel produces, and no
+gate rebuilds panels.
+
+The PNG writer emits no timestamp, but it does carry a `Software` tEXt chunk naming the
+matplotlib version, so a PNG can differ in those bytes alone. `figures/main/fig7_*.png`
+did exactly that on this rebuild: 0 differing pixels of 3,121,182, the same 357,708 bytes,
+and `Matplotlib version3.10.8` -> `3.10.9`. Note that `environment_ground_truth.txt` pins
+`matplotlib==3.10.8` while `.venv` now carries 3.10.9; the two render identically here, so
+the pin is stale rather than wrong, but a PNG whose only diff is that chunk is not a
+rendering change.
 
 Which interpreter built what: commit `d9a3183` rebuilt S4 Fig under the
 vendored-FreeType interpreter deliberately, not under the conda environment its gates
@@ -205,9 +275,8 @@ were run in, because the conda environment would have re-rendered the whole pane
 
 - **`reproduce/run_all.sh` rebuilds no deposited figure at all.** All eight producers that write one are absent from it: `docs/submission/plosone/figures/build_main_figures.py`, `build_fig2c_bg.py`, `analysis/conserved_contribution/make_figure7.py`, `scripts/build_submission_figures.py`, `scripts/56_add_figs2_panel_f.py`, `scripts/49_build_figS7_matched_scale.py`, `analysis/sensitivity_analyses/markernull.py` and `docs/submission/plosone/figures/build_submission_tiffs.py`. The one figure script the pipeline does invoke, `scripts/composite_figS3.py`, writes an intermediate rather than a deposited file. So the deposited figures — main and supplementary alike — are assembled outside the full-reproduction pipeline, and a reader who runs `run_all.sh` end to end regenerates none of them.
 - **In the panel producers the hazard is running the script, not the absence of something to call.** `scripts/generate_phase1_figures.py`, `generate_phase2_figures.py` and `generate_phase3_figures.py` each draw every panel inside its own top-level function behind an `if __name__ == '__main__'` guard, so importing one of them runs nothing and a single panel is one call: `from generate_phase3_figures import fig3a_ellipsoid_heatmap; fig3a_ellipsoid_heatmap()` rewrites `figures/panels/fig3a_ellipsoid_heatmap.{pdf,png}` and nothing else. Running that file instead executes the guard's eighteen calls and rewrites all 22 panels it writes, across Figs 1-4 and S2-S7, most of which had no reason to move. The producers with no entry point to call are `docs/submission/plosone/figures/build_main_figures.py` and `analysis/conserved_contribution/make_figure7.py`: both draw at module top level with no guard, so importing one *is* running it, and touching one panel there means extracting that panel's statements from the source or accepting everything else the module writes -- for `build_main_figures.py` that is all ten deposited main-figure files (five PDF plus five PNG), whichever panel changed. `build_fig2c_bg.py` and `scripts/build_submission_figures.py` have the same unguarded shape but each writes only the one display item it exists for, so running them whole *is* the rebuild.
-- Fig 5's assembly path (`build_main_figures.py`) embeds `figures/main/fig7_conserved_contribution.png`, i.e. it depends on an artifact under `figures/main/` (outside the `docs/submission/plosone/figures/` tree) that `make_figure7.py` writes.
+- Fig 5's assembly path (`build_main_figures.py`) copies `figures/main/fig7_conserved_contribution.{pdf,png}`, i.e. it depends on artifacts under `figures/main/` (outside the `docs/submission/plosone/figures/` tree) that `make_figure7.py` writes. The `.pdf` there is also a packet canonical (Group F -> `figures_for_review/Figure_2.pdf`), so a `make_figure7.py` re-run moves Fig 5 and Gate 3's mirror together and the mirror needs `build_submission_packet.py --rebuild`.
 - `build_main_figures.py` hard-codes Fig 1D's observed distance (the `obs` constant in its `axD` block) and the `obs/null 0.35 / p < 0.0001 / n = 15` label text and `~75 Mya` title, rather than reading them from `analysis/mouse_lemur/procrustes_results.json`. Every one of those six values has been checked against that JSON and they agree, so this is a maintainability gap and not a correctness one: the panel is not showing a wrong number, but an edit to the JSON would not reach the figure.
-- `Fig5_conserved_identity_genes.pdf` is a raster wrap of a PNG, even though `make_figure7.py` also emits a native vector `figures/main/fig7_conserved_contribution.pdf`.
 - Fig 5D is not bit-reproducible from tracked data alone: `make_figure7.py` reads gitignored Census aggregates (`analysis/conserved_contribution/donor_stability/agg_*.npz`) for the donor-split recompute.
 - The canonical `table_S7_layer1_housekeeping_exclusion.csv` has no scripted writer (the analysis script writes only the per-variant ranking CSVs in its own directory); `table_S12_software_environment.csv` is hand-authored, its authoritative source being `requirements.txt`.
 - **S2 Fig is a three-stage chain and the stages must run in order.**

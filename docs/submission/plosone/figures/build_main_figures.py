@@ -3,7 +3,7 @@
 Reuses existing high-res panels where they exist; builds Fig 1D (mouse-lemur null)
 and Fig 4A/B/C (forest, inversion, recovery ceiling) fresh from tracked data.
 Outputs PDF + PNG (300 dpi) per figure. Arial, RGB; review-artifact quality."""
-import pathlib, json, math
+import pathlib, json, math, shutil
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt, matplotlib.image as mpimg
@@ -158,7 +158,25 @@ fig.subplots_adjust(left=0.075,right=0.985,top=0.88,bottom=0.17)
 save(fig,"Fig4_pertype_not_resolvable")
 
 # ---------- FIG 5 : conserved identity genes ----------
-fig=plt.figure(figsize=(7.4,5.2))
-place(fig.add_subplot(1,1,1),M/"fig7_conserved_contribution.png")
-save(fig,"Fig5_conserved_identity_genes")
+# COPIED, not wrapped. make_figure7.py produces this figure whole and emits a native
+# vector PDF; the old block here read only its PNG and re-embedded that raster into a
+# fresh matplotlib page, so the deposited Fig 5 was line art rasterised at 300 dpi
+# with a text layer of zero characters. The native PDF carries all 88 of the labels
+# the panel draws, including the definition of C that sits outside the figure
+# rectangle at -10.4 pt, complete with its closing parenthesis.
+#
+# A copy, not a re-render: matplotlib cannot embed a PDF, so wrapping is the only
+# thing it could have done here. Both files move together and neither is regenerated,
+# so Fig 5 is exactly what make_figure7.py wrote.
+#
+# Consequence for build_submission_tiffs.py: this page is 457.2 x 394.5117 pt rather
+# than 7.4 x 5.2 in, because make_figure7.py trims with bbox_inches="tight". Its
+# FIGURES row moves to 1905 x 1644 for the TIFF and 1902 x 1641 for the PNG, and the
+# aspect tolerance for this row alone loosens; the reasons are recorded there.
+for _ext in ("pdf", "png"):
+    _src = M/f"fig7_conserved_contribution.{_ext}"
+    _dst = OUT/f"Fig5_conserved_identity_genes.{_ext}"
+    if not _src.is_file(): raise SystemExit(f"ABORT: Fig 5 source missing: {_src}")
+    shutil.copyfile(_src, _dst)
+print("wrote Fig5_conserved_identity_genes (vector copy of fig7_conserved_contribution)")
 print("done: 5 main figures")

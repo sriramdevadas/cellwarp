@@ -252,10 +252,20 @@ def save_figure(fig, path_stem, tight=True):
     # y-label lost its closing parenthesis exactly this way. A larger pad absorbs
     # the mismatch. Changing this rewrites nothing on its own; it changes what the
     # next rebuild of a panel produces, and no gate rebuilds panels.
+    # Suppress the embedded creation timestamp so repeated runs in one environment
+    # are byte-identical. This is the third and broadest of the three writers that
+    # had the defect -- build_main_figures.py's save() already did it, and
+    # build_fig2c_bg.py and make_figure7.py were fixed alongside this -- and it is
+    # the one that governs every panel, so a panel PDF used to move on every run
+    # with nothing about the drawing changed. Like the pad above, changing it
+    # rewrites nothing on its own: it changes what the next rebuild of a panel
+    # produces, and no gate rebuilds panels.
     fig.savefig(str(path) + '.pdf', format='pdf', dpi=DPI,
-                bbox_inches='tight', pad_inches=0.12)
+                bbox_inches='tight', pad_inches=0.12,
+                metadata={'CreationDate': None})
     fig.savefig(str(path) + '.png', format='png', dpi=DPI,
-                bbox_inches='tight', pad_inches=0.12)
+                bbox_inches='tight', pad_inches=0.12,
+                metadata={'CreationDate': None})
     plt.close(fig)
     print(f"  Saved: {path}.pdf and {path}.png")
 

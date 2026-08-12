@@ -33,9 +33,14 @@ call, and SUBSET_SEED, which re-seeds the subset RNG once per n so each n's draw
 are reproducible independently of the others. The JSON also records the n values
 swept, the draws at each, the total pipeline calls behind the file, the seconds each
 n took and the total wall time -- so the next reader deciding whether to re-run has
-the price in the file rather than in someone's notes. On the machine this was
-written for, 6,009 pipeline calls at about 1 s each: roughly 45 minutes, dominated
-by the subset sweep.
+the price in the file rather than in someone's notes.
+
+MEASURED: 6,009 pipeline calls, 4,136 s. The sweep is SEVEN n values, not thirteen:
+NS is sorted({6, 12, 15, 16, 17, 22, 35} | the bars' own n_inter), and every n_inter
+except 35 is already in that literal set, so the union adds nothing. 6,001 subset
+draws (1,000 per n, and 1 at n = 35 where only one subset exists) plus seven bars
+plus the gate. An earlier estimate of thirteen n values put this at 3.7 hours and
+informed a decision about whether to run it at all; it was three times high.
 """
 import contextlib
 import io
