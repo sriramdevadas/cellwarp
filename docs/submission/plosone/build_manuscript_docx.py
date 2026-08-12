@@ -139,11 +139,11 @@ EXPECTED_CAPTION_BOUNDARIES = 25  # 5 figure + 20 supporting information
 # Named, not restated: this comment said "the 153 content lines" against a
 # constant of 160, and the one below said 23 boundaries against 25 -- the same
 # drift as the U+2212 report line, and for the same reason.
-EXPECTED_RAW_JOINED_CHARS = 99831
+EXPECTED_RAW_JOINED_CHARS = 101525
 # The same join, plus CAPTION_JOIN at each of the EXPECTED_CAPTION_BOUNDARIES
 # caption boundaries.
-EXPECTED_JOINED_CHARS = 99856
-EXPECTED_JOINED_WORDS = 14558
+EXPECTED_JOINED_CHARS = 101550
+EXPECTED_JOINED_WORDS = 14843
 # ASCII T in the extracted text of the content paragraphs. The source content
 # lines carry EXPECTED_ASCII_T minus SUPERSCRIPT_EXPECTED[U+1D40] of them, and
 # the remainder are substituted in from U+1D40, so this constant and that one
@@ -152,7 +152,7 @@ EXPECTED_JOINED_WORDS = 14558
 # as a title page rather than as a heading. Named, not restated: this said
 # "253 ... plus 5" over "121 content paragraphs", against a constant of 299 and
 # a builder reporting 135 -- wrong by 41 and by 14, while its 4 and 2 were right.
-EXPECTED_ASCII_T = 302
+EXPECTED_ASCII_T = 305
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 20
@@ -184,10 +184,10 @@ SUPERSCRIPT = {
 SUPERSCRIPT_EXPECTED = {
     "\u00b9": 1,
     "\u00b2": 1,
-    "\u2074": 32,
+    "\u2074": 34,
     "\u2075": 2,
     "\u2076": 9,
-    "\u207b": 42,
+    "\u207b": 44,
     "\u1d40": 5,
 }
 SUPER_MINUS = "\u207b"
@@ -195,7 +195,7 @@ MINUS = "\u2212"
 
 # Passed through unchanged, as literal characters in ordinary runs.
 LITERAL_EXPECTED = {
-    "\u00d7": 14,  # MULTIPLICATION SIGN
+    "\u00d7": 15,  # MULTIPLICATION SIGN
     "\u00e9": 1,   # LATIN SMALL LETTER E WITH ACUTE (Felix E, ChEMBL entry)
     "\u00f3": 1,   # LATIN SMALL LETTER O WITH ACUTE (Thorvaldsdottir H, MSigDB entry)
     "\u00f6": 1,   # LATIN SMALL LETTER O WITH DIAERESIS
@@ -209,7 +209,7 @@ LITERAL_EXPECTED = {
     "\u2032": 1,   # PRIME (was 3; two were the 3' v3 / 5' v2 sub-split, dropped)
     "\u2192": 8,   # RIGHTWARDS ARROW
     "\u2208": 5,   # ELEMENT OF
-    "\u2212": 17,  # MINUS SIGN (59 in the output: 17 literal + 42 substituted)
+    "\u2212": 17,  # MINUS SIGN (61 in the output: 17 literal + 44 substituted)
     "\u2248": 9,   # ALMOST EQUAL TO
     "\u2264": 6,   # LESS-THAN OR EQUAL TO
     "\u2265": 5,   # GREATER-THAN OR EQUAL TO
@@ -233,6 +233,10 @@ NOT_A_BINOMIAL = ("Microcebus consortia", "Macaca species")
 # trip it; the fix is then a one-word addition here, and the error names the
 # word and the line.
 NOT_A_GENUS = (
+    # Added with the Fig 2A / Fig 3 / Fig 4C caption edits: "Read each",
+    # "Horizontal segments", "Six bars", "Against those", "Andrews and",
+    # "Methods reads". Andrews is a surname, the rest sentence-initial.
+    "Against", "Andrews", "Horizontal", "Methods", "Read", "Six",
     "Across", "After", "All", "An", "And", "At", "Atlas", "Automatic", "Base",
     "Because", "Benchmark", "Beyond", "Biological", "Bonferroni", "Bootstrap",
     "Both", "But", "Cell", "Cells", "Census", "Chromium", "Coherence",

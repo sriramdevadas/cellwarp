@@ -153,7 +153,13 @@ c.text(2000,ceiling+0.015,f"ceiling ρ ≈ {ceiling:.2f}",color=RED,ha="right",f
 c.set_xscale("log"); c.set_xticks([50,200,500,2000]); c.set_xticklabels([50,200,500,2000])
 c.set_ylim(0,0.75); c.set_xlabel("cells sampled per type",fontsize=7.5); c.set_ylabel("recovery ρ (true vs estimated)",fontsize=7.5)
 c.legend(fontsize=6.2,frameon=False,loc="upper left"); c.tick_params(labelsize=7,length=2.5)
-c.spines[["top","right"]].set_visible(False); c.set_title("Recovery saturates",fontsize=8); letter(c,"C")
+# "Recovery saturates" asserted an asymptote this panel cannot show. Every point
+# is a median of 100 replicates and no spread is drawn, because the deposited
+# results retain per-condition summaries rather than the replicate values -- so
+# the curve being flat rather than decaying is exactly what a reader cannot check
+# here. "Does not rise" is the claim the caption and Methods both make, and the
+# one the plotted medians support.
+c.spines[["top","right"]].set_visible(False); c.set_title("Recovery does not rise with sampling",fontsize=8); letter(c,"C")
 fig.subplots_adjust(left=0.075,right=0.985,top=0.88,bottom=0.17)
 save(fig,"Fig4_pertype_not_resolvable")
 
