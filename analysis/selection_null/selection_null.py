@@ -2,7 +2,7 @@
 """
 CellWarp Layer-1 — selection-aware null (correspondence-permutation, selection-propagated).
 
-Pre-registered design (advisor-authored, 2026-06-28). Bounds how much of the
+Author's pre-registered design, 2026-06-28. Bounds how much of the
 conserved-C quartile obs/null (published 0.384) is MANUFACTURED by selecting genes
 on the conservation score C versus EARNED by genuine cross-species cell-identity
 geometry.
@@ -30,7 +30,7 @@ label-shuffle family, fixed points allowed) instead of derangements; C is recomp
 genes reselected inside that loop. Same machinery.
 
 Outputs (in ./outputs/): per-draw CSV, the N x 35 sigma array (.npy), a summary JSON, and a
-markdown report. The pre-registered reading is SURFACED, not declared (advisor adjudicates).
+markdown report. The pre-registered reading is SURFACED, not declared.
 
 Run (from this dir, with the fresh clone's venv):
   ../cellwarp/.venv/bin/python selection_null.py --n 1000 --nperm 2000 --workers 8 --mode derangement
@@ -230,7 +230,7 @@ def main():
             "real_below_1st_percentile": bool(real_conserved < p01),
             "z_le_minus3": bool(z <= -3.0),
             "diagnostic_sigma_null_center_vs_full_space_0p522": mean - full_space,
-            "note": "Engineer surfaces; advisor adjudicates the margin. No verdict declared here.",
+            "note": "This run surfaces the margin; no verdict is declared here.",
         },
         "runtime_sec": round(time.time() - t0, 1),
     }
@@ -252,7 +252,7 @@ def main():
     print(f"  [diagnostic] sigma-null center vs full-space 0.522: {mean:.4f} vs {full_space:.4f} "
           f"(delta {mean-full_space:+.4f})")
     print(f"  runtime {summary['runtime_sec']}s -> outputs/ ({tag})")
-    print("  Advisor adjudicates the margin; this run surfaces, does not declare.")
+    print("  This run surfaces the margin; it does not declare a verdict.")
 
 
 if __name__ == "__main__":

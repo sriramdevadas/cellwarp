@@ -363,7 +363,7 @@ def main():
               f"after tissue matching.")
         print(f"  CONCLUSION: Annotation granularity does NOT explain the endothelial inversion.")
         print(f"  The residual inversion is likely biological or protocol-driven.")
-        print(f"  Flagging to advisor. ISSUE-092 status: UNRESOLVED.")
+        print(f"  Flagged, not patched. ISSUE-092 status: UNRESOLVED.")
         revised_verdict = None
         revised_rho = None
         revised_rho_p = None

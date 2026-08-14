@@ -448,7 +448,7 @@ computationally straightforward once peak files are obtained.
 
 ### 6.2 Go/No-Go Recommendation
 
-**UNDERPOWERED — advisor decision required before proceeding.**
+**UNDERPOWERED — decision required before proceeding.**
 
 The H3K27ac enhancer feasibility is structurally superior to the ATAC-seq feasibility
 (which was BLOCKED by range restriction), but falls in the same underpowered territory
@@ -509,7 +509,7 @@ as T3-C tissue-stratified rigidity (n=5, rho=0.600, p=0.285).
 embryonic flag). This requires |rho|>=0.738, still stringent but more accessible
 than |rho|>=0.829.
 
-### 6.4 Cell-type mapping decisions requiring advisor confirmation
+### 6.4 Cell-type mapping decisions requiring confirmation
 
 1. **Monocyte mapping:** Human CD14+ monocyte (ENCODE) mapped to Lara-Astiaso "Mono"
    (mouse bone marrow monocyte). CD14+ selects classical monocytes. Reasonable match.
@@ -587,7 +587,7 @@ The decision tree:
   the 8 nulls. The contrast (8 nulls + 1 enhancer trend) tells a coherent story even
   without individual significance.
 
-**Advisor decision required:** Proceed with n=6-8 knowing the underpowerment, or stop
+**Decision required:** Proceed with n=6-8 knowing the underpowerment, or stop
 the mechanistic pursuit at 8 nulls and write the paper as-is?
 
 ---

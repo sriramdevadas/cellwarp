@@ -1,7 +1,7 @@
 # 100-Type Ontology Design Report
 
 **Date:** 2026-03-16
-**Status:** Design exercise for advisor review. No expression data downloaded.
+**Status:** Design exercise, for review. No expression data downloaded.
 **Purpose:** Expand from 35 to 100 cell types with principled selection criteria.
 **Scope:** Paper 3 / resource paper foundation; informs macaque scout compatibility.
 
@@ -277,7 +277,7 @@ non-brain atlases — use as internal consistency check).
 
 ---
 
-## 8. Decision Points for Advisor
+## 8. Open Decision Points
 
 This document is for review. The following decisions are requested:
 

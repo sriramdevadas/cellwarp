@@ -44,7 +44,7 @@
     "real_below_1st_percentile": true,
     "z_le_minus3": true,
     "diagnostic_sigma_null_center_vs_full_space_0p522": 0.4613350200985562,
-    "note": "Engineer surfaces; advisor adjudicates the margin. No verdict declared here."
+    "note": "This run surfaces the margin; no verdict is declared here."
   },
-  "runtime_sec": 53.1
+  "runtime_sec": 57.6
 }

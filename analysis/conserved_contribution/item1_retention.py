@@ -73,7 +73,7 @@ print("(3) CASES WITH retention > 1  (out-of-sample beat in-sample -- noise, not
 print("=" * 104)
 gt1 = [c for c in cases if c["retention"] > 1]
 print(f"  count: {len(gt1)} / {n}   ({100*len(gt1)/n:.1f}%)")
-print(f"  (Dispatch 32 reported I < T in 30/40, so 10/40 exceeding 1 is the same fact)")
+print(f"  (an earlier run reported I < T in 30/40, so 10/40 exceeding 1 is the same fact)")
 for c in gt1:
     print(f"    split {c['split']:2d} {c['direction']}  retention {c['retention']:.4f}  "
           f"(F-T {c['adv_out']:+.4f} > F-I {c['adv_in']:+.4f})")

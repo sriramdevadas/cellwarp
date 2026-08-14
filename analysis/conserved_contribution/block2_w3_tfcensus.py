@@ -105,7 +105,7 @@ lam_sym = set(lam_tf["HGNC symbol"].dropna().astype(str))
 print(f"  Lambert v_1.01: {len(lam)} rows, Is TF?==Yes: {len(lam_tf)}, "
       f"unique Ensembl IDs: {len(lam_ens)}")
 
-# ARM A -- full TF census, mapped BY ENSEMBL ID (Dispatch 32 Block 4: feature_name
+# ARM A -- full TF census, mapped BY ENSEMBL ID (established earlier: feature_name
 # is non-unique; the centroid axis is Ensembl-keyed, so a symbol join is the one
 # avoidable error here)
 census_pos = np.array(sorted({gid_to_pos[g] for g in lam_ens if g in gid_to_pos}), int)

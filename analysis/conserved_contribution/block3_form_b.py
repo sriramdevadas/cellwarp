@@ -67,7 +67,7 @@ def extract(pyfile: Path, names: set[str], ns: dict) -> dict:
     missing = names - set(got)
     if missing:
         raise SystemExit(f"ABORT: {pyfile.name} does not define {sorted(missing)} -- "
-                         "the published code does not compose as this dispatch assumes.")
+                         "the published code does not compose as this check assumes.")
     return got
 
 

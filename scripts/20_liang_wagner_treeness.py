@@ -221,8 +221,8 @@ def step3_correlation(treeness_df, residuals_df):
     elif rho_rigidity < 0 and p_rigidity < 0.05:
         outcome = "ANTICORRELATED"
         interp = "Most surprising — rigid types have less tree structure"
-        paper_use = "Flag immediately for advisor; potentially most interesting"
-        print(f"    rho significantly negative -> ANTICORRELATED (flag for advisor)")
+        paper_use = "Flag immediately; potentially most interesting"
+        print(f"    rho significantly negative -> ANTICORRELATED (flagged)")
     else:
         outcome = "DISTINCT_PROPERTIES"
         interp = "Measuring distinct geometric properties — both real, different dimensions"

@@ -105,7 +105,7 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
   human–mouse) is correct and unchanged. **This is the single place the frozen
   prose was edited on a factual basis — surfaced here, not silently changed.**
 
-### C2. APPLIED (coordinator-confirmed): cells-per-type range in §2
+### C2. APPLIED (author-confirmed): cells-per-type range in §2
 - **Was:** "with **thousands to over 100,000** cells per type".
 - **Now:** "with **a few hundred to over 100,000** cells per type" (§2 Results;
   Methods already used this wording).
@@ -113,7 +113,7 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
   `STR Cholinergic GABA` 159; `Monocyte` 242) up to ~145,491 (`Oligo OPALIN`), in
   `layer2_results*.json` `per_type_n`. 13/55, 15/52, 13/52 types are < 500 cells.
 
-### C3. §1 mouse-lemur / mammalian-breadth framing tightened (coordinator-directed)
+### C3. §1 mouse-lemur / mammalian-breadth framing tightened (author-directed)
 - **Was:** the mouse-lemur pair "plac[ed] conserved cell-type configuration across
   the breadth of the mammalian tree." This mis-attributed mammalian breadth to a
   *within-primate* pair.

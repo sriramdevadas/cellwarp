@@ -348,7 +348,7 @@ def main():
     print(f"  Usable types (≥200 cells): {len(usable_types)}")
 
     if len(usable_types) < 10:
-        print("\n  *** STOP: Fewer than 10 usable types. Flagging to advisor. ***")
+        print("\n  *** STOP: Fewer than 10 usable types. Flagged, not patched. ***")
         with open(OUTPUT_DIR / "STOP_insufficient_types.txt", "w") as f:
             f.write(f"Only {len(usable_types)} types with ≥200 cells.\n")
             f.write(audit_df.to_string())

@@ -32,7 +32,7 @@ Pipeline
     1. Download CellHint cells from CELLxGENE Census (9 TS-independent tissues)
     2. Map cell types, QC, normalize, compute centroids, report inventory
 
-  Steps 3-4 (--run-procrustes, after advisor confirms):
+  Steps 3-4 (--run-procrustes, after the inventory is reviewed):
     3. Procrustes + permutation test (10,000) vs Tabula Mouse
     4. Rigidity ranking Spearman rho vs primary 35-type
 
@@ -663,7 +663,7 @@ def run_inventory():
 
     # Final summary
     print(f"\n{'=' * 70}")
-    print("INVENTORY COMPLETE — POST FOR ADVISOR REVIEW")
+    print("INVENTORY COMPLETE — OPEN FOR REVIEW")
     print("=" * 70)
     print(f"  Total cells (mapped):       {sum(type_full_counts.values()):,}")
     print(f"  Hepatocyte confirmed:       {'Y' if hep_count > 0 else 'N'} ({hep_count:,})")
@@ -672,7 +672,7 @@ def run_inventory():
     print(f"  TS donor overlap:           {'YES — INVESTIGATE' if ts_donor_overlaps else 'NONE'}")
     print(f"\n  Centroids: {OUTPUT_DIR / 'centroids_cellhint.csv'}")
     print(f"  Inventory: {OUTPUT_DIR / 'cellhint_inventory.json'}")
-    print(f"\n  After advisor confirmation:")
+    print(f"\n  After the inventory is reviewed:")
     print(f"  python scripts/33_cellhint_replication.py --run-procrustes")
 
 
@@ -809,7 +809,7 @@ def run_procrustes():
     scaling = result.scaling
     scaling_flag = ""
     if scaling < 0.8 or scaling > 1.8:
-        scaling_flag = " *** OUTSIDE 0.8-1.8 RANGE — FLAG FOR ADVISOR ***"
+        scaling_flag = " *** OUTSIDE 0.8-1.8 RANGE — FLAGGED ***"
 
     # --- Save results ---
     results = {

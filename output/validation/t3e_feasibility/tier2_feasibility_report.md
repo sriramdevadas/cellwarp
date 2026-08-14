@@ -192,7 +192,7 @@ files deposited** (peaks must be called from raw data or BigWig)
 | natural killer cell | 23 | 8.687 | Mature_NK-U (5 donors) | NK.27+11b+.Sp (2 reps) |
 | classical monocyte | 15 | 9.929 | Monocytes-U (3 donors) | Mo.6C+II-.Bl (3 reps) |
 
-### AMBIGUOUS PAIRS — Requiring Advisor Decision (n = 3 independent)
+### AMBIGUOUS PAIRS — Open Decisions (n = 3 independent)
 
 **1. CD4-positive, alpha-beta T cell (rank 14, residual 10.212)**
 - **Calderon:** 6 CD4+ subtypes available unstimulated: Naive_Teffs (4 donors),
@@ -202,7 +202,7 @@ files deposited** (peaks must be called from raw data or BigWig)
 - **Issue:** Our Tabula "CD4-positive, alpha-beta T cell" is a broad label including all
   activation states. Mapping options: (a) use Naive_Teffs ↔ T.4.Nve.Sp (both naive,
   cleanest biological match); (b) aggregate/average across Calderon subtypes.
-- **Recommendation for advisor:** Option (a) using naive-only is the cleanest. This
+- **Recommendation:** Option (a) using naive-only is the cleanest. This
   slightly misrepresents our Tabula type (which pools naive + memory + effector) but
   ensures comparable sorting between species.
 
@@ -211,7 +211,7 @@ files deposited** (peaks must be called from raw data or BigWig)
 - **ImmGen:** DC.4+.Sp (2 reps, = cDC2) and DC.8+.Sp (2 reps, = cDC1)
 - **Issue:** Calderon's "Myeloid_DCs" maps to cDC2. ImmGen has both cDC1 and cDC2. Our
   Tabula "myeloid dendritic cell" likely includes both subtypes.
-- **Recommendation for advisor:** Use DC.4+.Sp (cDC2) ↔ Myeloid_DCs-U (cDC2) for
+- **Recommendation:** Use DC.4+.Sp (cDC2) ↔ Myeloid_DCs-U (cDC2) for
   matched subtype. Or average DC.4+ and DC.8+ for the mouse side to better represent
   our broad "myeloid DC" label. Either way, the mapping is defensible.
 
@@ -222,7 +222,7 @@ files deposited** (peaks must be called from raw data or BigWig)
   are proliferating, recently differentiated, short-lived antibody-secreting cells.
   Plasma cells are long-lived, non-dividing, terminally differentiated. Chromatin
   accessibility profiles may differ substantially.
-- **Recommendation for advisor:** Exclude unless willing to accept the biological
+- **Recommendation:** Exclude unless willing to accept the biological
   mismatch caveat. Only 2 donors on the human side is also a data quality concern.
 
 ### Non-independent ambiguous entries (do not count as additional n)
@@ -355,7 +355,7 @@ require recomputing Procrustes with an expanded type set — a substantial reana
 | Metric | Value |
 |--------|-------|
 | Clean cross-species pairs | **4** (CD8+ T, B cell, NK cell, classical monocyte) |
-| Ambiguous pairs (advisor decision) | **3** (CD4+ T, myeloid DC, plasma cell) |
+| Ambiguous pairs (open decision) | **3** (CD4+ T, myeloid DC, plasma cell) |
 | Best-case n | **7** (if all ambiguous resolved) |
 | Realistic n | **5-6** (CD4+ T and myeloid DC resolvable; plasma cell questionable) |
 | |ρ| threshold at n=6 | 0.829 |
@@ -370,7 +370,7 @@ This is a weaker position than Step 1 projected. The two key downgrades are:
 1. Calderon does not have neutrophils (removing one assumed clean pair)
 2. Mapping ambiguity for CD4+ T and myeloid DC was not previously assessed
 
-**Advisor decisions needed:**
+**Open decisions:**
 1. Accept CD4+ T mapping (naive subset in both species)?
 2. Accept myeloid DC mapping (cDC2 in both species)?
 3. Accept or reject plasma cell (plasmablast ≠ plasma cell)?

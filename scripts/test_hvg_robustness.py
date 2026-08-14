@@ -23,7 +23,7 @@ the full-space ranking by Spearman ρ.
 
 Decision rule:
     All three p<0.05 and ranking ρ>0.7  →  signal robust to HVG filtering
-    Signal weakens / disappears          →  report to ADVISOR
+    Signal weakens / disappears          →  flagged, not patched
 """
 
 from __future__ import annotations
@@ -238,7 +238,7 @@ def main() -> None:
     else:
         decision = (
             "FAIL — Signal weakened or lost at one or more thresholds. "
-            "Report to ADVISOR."
+            "Flagged for review; not patched."
         )
 
     print(f"\n  DECISION: {decision}")

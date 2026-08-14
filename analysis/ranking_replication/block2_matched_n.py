@@ -274,7 +274,7 @@ for b in bars:
 
 # ---------------------------------------------------------------- cost of the file
 # What it took to produce this artifact, recorded in the artifact. Someone deciding
-# whether to re-run needs the price here rather than in a dispatch note, and the
+# whether to re-run needs the price here rather than in a side note, and the
 # draw count is the price: every entry below is one full pipeline call (a joint PCA
 # at 95% variance, a superimposition, and NPERM permutations). The per-n seconds are
 # already in `distributions`; this block adds the totals and the sweep itself, so

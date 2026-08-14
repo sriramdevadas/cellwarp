@@ -139,7 +139,7 @@ def main():
         print(f"\n  → Per-type scores ARE significantly correlated (ρ={primary['spearman_rho']:+.3f}).")
         print("    The 'geometrically distinct' language holds (different optimal rotations)")
         print("    but per-type scores show partial correlation.")
-        print("    DECISION RULE: Report back to ADVISOR — do not edit text.")
+        print("    DECISION RULE: flagged for review — do not edit text.")
 
     # --- Save per-type data for inspection ---
     sub_k3 = alignment_df[alignment_df.k == 3][["cell_type", "S_pre", "S_post"]].copy()

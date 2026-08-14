@@ -59,7 +59,6 @@ docs/submission/*.pre_renumber
 docs/submission/*.backup
 
 # Phase 3-cleanup additions (2026-04-30):
-docs/handoff/
 output_original/
 .pytest_cache/
 *.log

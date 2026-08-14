@@ -1086,7 +1086,7 @@ Follow-up required: expand sample size to confirm.
         summary += f"""**TREND RESULT — AMBIGUOUS**
 
 Enhancer conservation shows a directional trend (ρ={rho:.4f}) but is
-underpowered at n={n}. Cannot distinguish from noise. Requires advisor review.
+underpowered at n={n}. Cannot distinguish from noise. Requires review before use.
 """
 
     summary += f"""

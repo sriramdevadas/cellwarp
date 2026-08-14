@@ -247,7 +247,7 @@ def main():
     else:
         verdict = "is not"
         flag = ("L1000 FINDING WEAKENED — Language Ruling 3 must be revised, "
-                "notify advisor")
+                "flagged for review")
 
     characterization = (
         f"The L1000 ρ={observed_rho:.3f} {verdict} significantly above the "
