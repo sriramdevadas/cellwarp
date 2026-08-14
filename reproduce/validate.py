@@ -2378,7 +2378,12 @@ def run_checks():
         print("\nValidation FAILED. See above for details.")
         sys.exit(1)
     else:
-        print("\nAll checks passed. Reproduction successful.")
+        print("\nAll checks passed: every reported value matches the artifact it is")
+        print("read from. This is a consistency check between the manuscript and the")
+        print("artifacts in this repository, not evidence that the code regenerated")
+        print("them -- every file read above is tracked, so this passes on a fresh")
+        print("archive with no pipeline step run. Run reproduce/run_all.sh first to")
+        print("make it a reproduction test.")
         sys.exit(0)
 
 

@@ -5,7 +5,14 @@
 - ~6 GB disk space for core data (Tier 1, downloaded automatically)
 - additional disk space for the optional Tier-2 datasets: see
   [DATA_SOURCES.md](../DATA_SOURCES.md) for per-dataset sizes
-- Estimated runtime: ~4 hours total (~1 hour core + ~3 hours supplementary)
+- Estimated runtime: **budget a day, not an afternoon.** A measured cold run took
+  **~9 h 40 m**: Tier 1 31 min (6.1 GB download included), the rest of Tier 2 87 min,
+  out-of-pipeline producers ~70 min — and **`scripts/13_covid_procrustes.py` alone
+  6 h 29 m**. That one step issues a CZ CELLxGENE Census query per (cell type × tissue)
+  combination across 20 cell types with `CENSUS_QUERY_TIMEOUT = 600`; in the measured run
+  14 of those timeouts fired, which is over two hours of waiting on its own. It prints
+  nothing while a query is outstanding. **It has not hung.** Timings scale with Census
+  responsiveness, so treat them as an order of magnitude, not a promise.
 - Internet connection required for initial data download
 
 ## Fast path (no download, a few minutes)
@@ -44,7 +51,7 @@ git clone https://github.com/sriramdevadas/cellwarp.git
 cd cellwarp
 python3.12 -m venv .venv
 source .venv/bin/activate
-pip install -e ".[lock]"
+pip install -e ".[lock,dev]"   # [dev] is required: Gate 2 is pytest, which [lock] does not install
 
 # Run full reproduction (Tier 1 core + Tier 2 supplementary):
 bash reproduce/run_all.sh
@@ -92,6 +99,87 @@ output artifacts and checks each recorded statistic against its expected
 value, then prints a pass/fail summary. Each check carries a `paper_ref`
 naming where the value appears; some are retained tooling for analyses the
 current paper does not report.
+
+**What Gate 1 does and does not establish.** Every artifact it reads is a tracked file in
+this repository, so it returns a full pass on a freshly unpacked archive with no pipeline
+step run at all. It checks that the values reported in the manuscript match the artifacts
+deposited beside them — a consistency check, not evidence that the code regenerates those
+artifacts. To use it as a reproduction test, run the pipeline first and then re-run it, so
+the artifacts it reads are ones this machine produced.
+
+## After a full run: rebuild the packet before the gates mean anything
+
+`run_all.sh` rewrites tracked canonical artifacts. Six of them have byte-copies in the
+submission packet (`docs/submission/figures_for_review/` and one panel mirror), and nothing
+but `scripts/build_submission_packet.py --rebuild` writes those copies. So a **successful**
+reproduction leaves the canonical and its mirror out of sync, and both Gate 3 and the
+`tests/test_submission_packet_consistency.py` half of Gate 2 fail — because the run worked,
+not because it did not.
+
+```bash
+python scripts/build_submission_packet.py --rebuild   # after run_all.sh, before the gates
+```
+
+Expect exactly these six pairs to drift on a fresh run: `figS1_pipeline_validation.pdf`,
+`figS2_parameter_protocol_sensitivity.pdf`, `figS3_bootstrap_rankings.pdf`,
+`table_S1.xlsx`, `table_S2.xlsx`, and `covid_cross_analysis.png`. On the pristine archive
+all 30 pairs match, which is why the gates are green before you reproduce anything.
+
+## Analyses `run_all.sh` does not run
+
+The manuscript states that the conserved-contribution analyses in Results section 5 "are
+run outside the automated reproduction script and must be invoked directly". They are, in
+this order — each step reads the previous one's output:
+
+```bash
+python analysis/conserved_contribution/run_gate.py            # gate_results.json, gene_conservation_core.csv
+python analysis/conserved_contribution/run_robustness.py      # robustness_results.json
+python analysis/conserved_contribution/highN_tf_pvalues.py    # highN_tf_pvalues.json
+python analysis/conserved_contribution/breadth_sensitivity.py # breadth_sensitivity_results.json
+python analysis/conserved_contribution/make_table_s11.py      # S11 Table
+python analysis/conserved_contribution/make_figure7.py        # Fig 5
+```
+
+The last two need `donor_stability/agg_{human,mouse}_cap10000.npz`, which are gitignored
+and not redistributed, and they stop cleanly when the files are absent. `run_all.sh`
+rebuilds no deposited figure at all; `reproduce/figure_script_map.md` (Known gaps) lists
+the eight producers that write one and the order the S2 Fig chain requires.
+
+## Which manifest is authoritative
+
+**`pyproject.toml`'s `[lock]` extra is the instruction; `requirements.txt` is a record.**
+`[lock]` pins the 27 direct dependencies and lets pip resolve the rest. `requirements.txt`
+is a 196-package freeze taken from one machine on 2026-05-18, and installing `.[lock]`
+today resolves 59 of those packages to different versions and omits 6 — including
+`leidenalg`, which "Seed and determinism" below names as one of the two
+environment-sensitive steps. Reproduce from `.[lock]`; read `requirements.txt` to see what
+the authoring environment happened to contain, and do not `pip install -r` it expecting the
+two to agree.
+
+## Figure bytes record the matplotlib version
+
+Figure metadata records the matplotlib version. PNGs carry it in a `Software` chunk and
+PDFs in `/Producer`, so rebuilding a figure under a different matplotlib gives a file whose
+bytes differ while every pixel is identical.
+
+Fourteen deposited figures were built with matplotlib 3.10.9. The manifests pin 3.10.8, and
+the other 190 deposited PNGs were built with the pinned version. Rebuilding any of the
+fourteen under the pinned environment reproduces them pixel for pixel — zero differing
+pixels, maximum delta 0.0000 — and changes only that string. **For these files, compare
+pixels rather than md5.**
+
+The fourteen are: `Fig1_configuration_conserved.png` through
+`Fig5_conserved_identity_genes.png` and `Fig2C_bg_replication.png` under
+`docs/submission/plosone/figures/`; `figures/main/fig7_conserved_contribution.png`;
+`docs/supplementary_materials/figure_S8_markernull.png`;
+`figures/supplementary/negative_control_distributions.png`; and
+`fig1a_pipeline_schematic.png`, `fig1b_null_1M.png`, `fig1c_lineage_stratified.png`,
+`fig3b_pre_post.png` and `fig4d_replication_summary.png` under `figures/panels/`. Fig 5 is
+a byte copy of `fig7_conserved_contribution.png` and carries that file's chunk unchanged,
+which is why it alone matches a 3.10.9 rebuild.
+
+The five submission TIFFs are unaffected: the TIFF writer records no version string, and
+all five regenerate byte-identically under the pinned environment.
 
 ## Two interpreters: the gates and the DOCX build
 
@@ -143,10 +231,17 @@ code before submitting.
 See `reproduce/figure_script_map.md` for a complete table showing which
 script generates each figure and table in the paper.
 
-## SAMap validation (optional, requires PyTorch)
+## SAMap validation
 
-SAMap has heavy dependencies (including PyTorch) and is excluded from
-the default install. To enable the SAMap step:
+**`.[lock]` already installs SAMap, so the SAMap step runs by default.** `[lock]` pins
+`samap==1.0.14`, `import samap` succeeds, and `run_all.sh`'s probe therefore takes the
+SAMap branch: step S27 executes (~4 min in the measured run). Earlier text here said SAMap
+was excluded from the default install; that was true of `pip install -e .` (the fast-path
+base install) and never of `.[lock]`, which is what the Steps section prescribes.
+
+`torch` is **not** installed by `.[lock]`, despite `environment_ground_truth.txt` recording
+`torch==2.10.0`; `samap` imports and the step runs without it. To add SAMap to an
+environment built some other way:
 
 ```bash
 pip install cellwarp[samap]

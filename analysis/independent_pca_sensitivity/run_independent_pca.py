@@ -269,6 +269,7 @@ def main():
         joint_results = json.load(f)
     joint_distance = joint_results["procrustes"]["distance"]
     joint_null_median = joint_results["permutation_test"]["null_distribution_summary"]["median"]
+    joint_null_mean = joint_results["permutation_test"]["null_distribution_summary"]["mean"]
     joint_obs_null = joint_distance / joint_null_median
     joint_p = joint_results["permutation_test"]["p_value"]
     print(f"  Joint PCA: distance={joint_distance:.3f}, null_median={joint_null_median:.3f}")

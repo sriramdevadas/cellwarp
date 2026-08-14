@@ -15,7 +15,7 @@ for cand in ("Arial","Helvetica","DejaVu Sans"):
 plt.rcParams.update({"font.size":8,"axes.linewidth":0.6,"xtick.major.width":0.6,
                      "ytick.major.width":0.6,"savefig.dpi":300})
 BLUE,ORANGE,RED,GREY="#4a7fb5","#e08214","#c0392b","#555555"
-ROOT=pathlib.Path.home()/"cellwarp"; P=ROOT/"figures/panels"; M=ROOT/"figures/main"
+ROOT=pathlib.Path(__file__).resolve().parents[4]; P=ROOT/"figures/panels"; M=ROOT/"figures/main"
 OUT=ROOT/"docs/submission/plosone/figures"; OUT.mkdir(exist_ok=True)
 
 def place(ax,png,letter=None):

@@ -37,11 +37,14 @@ python3 -c "import cellwarp; print('cellwarp package: OK')"
 python3 -c "import scanpy, anndata, scipy, numpy; print('Dependencies: OK')"
 
 # Fail loudly if any hardcoded user paths remain in code
-if grep -rq "/Users/" --include="*.py" --include="*.R" "$REPO_ROOT/scripts" "$REPO_ROOT/src" \
-   "$REPO_ROOT/analysis" "$REPO_ROOT/reproduce" 2>/dev/null; then
-    echo "ERROR: Hardcoded /Users/ paths detected. These must be fixed."
-    grep -rn "/Users/" --include="*.py" --include="*.R" "$REPO_ROOT/scripts" "$REPO_ROOT/src" \
-       "$REPO_ROOT/analysis" "$REPO_ROOT/reproduce"
+# Matches a literal /Users/ and Path.home(); the latter resolves the repository
+# from $HOME, which silently writes outside the tree the deposit was unpacked in.
+# docs/ is scanned because a figure producer lives there.
+if grep -rqE "/Users/|Path\.home\(\)" --include="*.py" --include="*.R" "$REPO_ROOT/scripts" "$REPO_ROOT/src" \
+   "$REPO_ROOT/analysis" "$REPO_ROOT/reproduce" "$REPO_ROOT/docs" 2>/dev/null; then
+    echo "ERROR: Hardcoded user paths detected (/Users/ or Path.home()). These must be fixed."
+    grep -rnE "/Users/|Path\.home\(\)" --include="*.py" --include="*.R" "$REPO_ROOT/scripts" "$REPO_ROOT/src" \
+       "$REPO_ROOT/analysis" "$REPO_ROOT/reproduce" "$REPO_ROOT/docs"
     exit 1
 fi
 

@@ -24,6 +24,7 @@ from pathlib import Path
 
 import numpy as np
 
+HERE = Path(__file__).resolve().parent
 OUT = HERE
 d = json.load(open(OUT / "block3_form_b_results.json"))
 
