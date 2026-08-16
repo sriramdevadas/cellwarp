@@ -87,6 +87,7 @@ Source for v1, as built: commit 4fca942, the tip of origin/main, recorded in bot
 
 Steps:
 1. CODE archive: a zip of exactly `git ls-files` at the release commit. DATA archive: the selection above - all output/ minus the .gitkeep placeholders, all figures/, and the analysis/ data-type files minus the ortholog reference table. Record both counts at build time; the figures given above are version 1 only.
+   - `docs/submission/plosone/coverletter.txt` is left untracked deliberately, and building the CODE archive from `git ls-files` is what drops it: a cover letter is correspondence with the editor, not part of the public archived record. Do not `git add` it. The `.gitignore` rule written for this case, `cover_letter*.txt`, does not match that filename, so the file is untracked rather than ignored and a bare `git add -A` would stage it.
 2. Upload each set as a NEW VERSION of its existing record (CODE 20735612, DATA 20735640), so the concept DOIs 20735611 and 20735639 resolve to it.
 3. Enter metadata manually (CODE: from .zenodo.json; DATA: from this manifest) and set the CODE-to-DATA / DATA-to-CODE related-identifier cross-links.
 4. Publish both new versions at acceptance. Version 1 of each record stays published and is the deposit for the earlier submission.
