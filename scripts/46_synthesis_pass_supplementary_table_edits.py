@@ -117,8 +117,12 @@ def edit_table_s1(xlsx_path: Path):
     ws.cell(last2 + 2, 1).value = "Note (cell count)"
     ws.cell(last2 + 2, 5).value = (
         "The 'Log min cell count' row uses log-transformed values (ρ=−0.033). "
+        # "and Figure 6B" removed (D27): this manuscript has five figure captions
+        # (Fig 1-5) and zero occurrences of "Fig 6"/"Figure 6" in manuscript_combined.txt,
+        # S1_Text.txt or S2_Text.txt. The reference pointed into the seven-figure PLOS
+        # Computational Biology version, which is what Zenodo CODE v1 still carries.
         "An un-logged cell count correlation (ρ=0.052, p=0.768, n=35) is "
-        "reported separately in Table 1 (T36) and Figure 6B; the two tests "
+        "reported separately in Table 1 (T36); the two tests "
         "use different transformations of the same underlying variable."
     )
 
@@ -180,33 +184,35 @@ def edit_table_s2(xlsx_path: Path):
 # ------------------------------ Table S3 ---------------------------------
 
 def edit_table_s3(csv_path: Path):
-    rows = list(csv.reader(open(csv_path)))
-    header = rows[0]
-    data = rows[1:]
-    # Append blank row then legend rows
-    out = [header] + data + [
-        [""] * len(header),
-        ["# Legend"],
-        ["Confidence categorization: LOW = |rank diff| ≥ 9 AND tissue/ontology mismatch identified; "
-         "MODERATE = |rank diff| 5–7 with direct annotation mapping; "
-         "HIGH = |rank diff| ≤ 4 with direct annotation mapping. "
-         "Confidence reflects whether rank reversal is explained by annotation/tissue factors (LOW) "
-         "or reflects genuine centroid noise at 15-type granularity (MODERATE/HIGH)."],
-        ["CellHint Tissue Count: per-type tissue count values tabulated here for the 5 LOW-confidence "
-         "rows where tissue composition was specifically diagnosed as a reversal driver. "
-         "Remaining 10 MODERATE/HIGH rows have TC values available from CellHint metadata but not "
-         "separately tabulated; the Spearman ρ = −0.526 (p = 0.044, n = 15) used in main text and "
-         "Table 1 (T58) is computed over all 15 rows with tissue counts drawn from CellHint metadata "
-         "(data in analysis/harmonized_replication/)."],
-        ["Primary Rank (of 15) vs Primary Rank (matched 15-type Procrustes): the first column is the "
-         "35-type primary rank projected to the 15-type subset (rank ordering preserved); the second "
-         "column is a fresh 15-type Procrustes re-run. The Rank Difference column uses the second "
-         "(matched 15-type) rank, which is the apples-to-apples comparison for the CellHint "
-         "reversal analysis."],
-    ]
-    with open(csv_path, "w", newline="") as f:
-        csv.writer(f).writerows(out)
-    print(f"  S3 edited: {csv_path}")
+    """No longer edits S3. The legend this appended was wrong; corrected by removal.
+
+    It appended a five-line legend duplicating the manuscript's own S3 Table caption.
+    The caption already carries all three statements, correctly, so nothing is lost --
+    and each of the three departed from it, two of them falsifiably against the table's
+    own contents:
+
+      * "The Rank Difference column uses the second (matched 15-type) rank" -- FALSE.
+        The caption says the first column. Checked over all 15 rows:
+        Rank Difference == Primary(of 15) - CellHint holds for 12 (3 ties where the two
+        columns are equal); == Primary(matched 15) - CellHint holds for 0.
+        e.g. hepatocyte 13-1=+12 (matches) vs 14-1=13; neutrophil 3-13=-10 vs 9-13=-4.
+
+      * "tissue count values tabulated here for the 5 LOW-confidence rows ... Remaining
+        10 MODERATE/HIGH rows ... not separately tabulated" -- FALSE. All 15 rows carry a
+        CellHint Tissue Count, and the caption says so: "tissue counts for all 15 rows".
+
+      * "MODERATE = |rank diff| 5-7" -- the caption says 5-8. No row has |diff| = 8, so
+        the data does not discriminate, but 5-7 leaves 8 unclassifiable between MODERATE
+        and LOW (>= 9). The submitted caption is the authority.
+
+    It also cited "Table 1 (T58)"; the submitted texts name that workbook "S13 Table"
+    (6 occurrences) and never "Table 1" (0). T58 itself is correct: S13 Table gives
+    rho = -0.526, p = 0.044, n = 15, Figure/Table "S3 Table".
+
+    The deposited table_S3.csv never received this block and is correct as it stands.
+    Deliberately does not open or rewrite the file, so no future run can reintroduce it.
+    """
+    print(f"  S3: legend removed (see docstring); {csv_path.name} left as deposited")
 
 
 # ------------------------------ Table S4 ---------------------------------
