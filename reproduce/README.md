@@ -125,6 +125,43 @@ Expect exactly these six pairs to drift on a fresh run: `figS1_pipeline_validati
 `table_S1.xlsx`, `table_S2.xlsx`, and `covid_cross_analysis.png`. On the pristine archive
 all 30 pairs match, which is why the gates are green before you reproduce anything.
 
+### Why the two xlsx pairs drift: the writer's clock, not the content
+
+The two spreadsheet pairs drift for a different reason from the four figure pairs.
+`openpyxl` stamps wall-clock time into every workbook it writes — `dcterms:created` and
+`dcterms:modified` in `docProps/core.xml`, and an mtime on every zip entry — so
+regenerating one yields a new md5 **even when every cell is identical**. An md5 over such a
+file pins the moment it was written rather than its content, and no content fix removes the
+drift.
+
+That is a property of the writer, not of the format. `scripts/table1_formatting.py`
+normalises it: it writes `dcterms:modified = 2026-01-01T00:00:00Z` and a fixed date on
+every zip entry, and is byte-idempotent as a result — consecutive runs produce identical
+bytes. Compare a workbook from a writer that does this by md5; compare one from a writer
+that does not cell by cell.
+
+## The supplementary tables `run_all.sh` does not finish
+
+`run_all.sh` generates three supplementary tables — `[S28]` `table_S1.xlsx`, `[S29]`
+`table_S2.xlsx`, `[S30]` `Table_S6_CPC1_driver_genes.xlsx` — and finishes none of them.
+
+**A required hand step is missing from the pipeline.**
+`scripts/46_synthesis_pass_supplementary_table_edits.py` post-processes six deposited
+tables — `table_S1.xlsx`, `table_S2.xlsx`, `table_S3.csv`, `table_S4.csv`, `table_S5.csv`
+and `Table_S6_CPC1_driver_genes.xlsx` — plus `docs/submission/key_resources_table.md`. It
+is referenced nowhere in `run_all.sh`, and its own closing line asks for a packet refresh
+that `run_all.sh` also does not perform. So `[S28]` and `[S29]` write the create-stage
+output only, and a reader's `table_S1.xlsx` and `table_S2.xlsx` will differ from the
+deposited copies. `table_S3.csv`, `table_S4.csv` and `table_S5.csv` have no generator at
+all — `run_all.sh` never writes them, so those three remain as deposited.
+
+**`[S30]` cannot run from the deposit.** `scripts/generate_table_S6.py` opens
+`data/phase2_scaled/human_scaled.h5ad`. `.gitignore` excludes `data/` wholesale, no file
+under `data/phase2_scaled/` is tracked, and the archive does not carry it. Under
+`set -euo pipefail` (line 2) the run stops there, before `reproduce/validate.py` — so fetch
+the Tier-2 inputs first, or skip the stage. `Table_S6_CPC1_driver_genes.xlsx` is therefore
+**untested against the deposit**, which is not the same as passing.
+
 ## Analyses `run_all.sh` does not run
 
 The manuscript states that the conserved-contribution analyses in Results section 5 "are
