@@ -193,7 +193,7 @@ output/figures/integration_comparison_caption.txt
 .claude/
 
 # Editor cover letters: submission correspondence, kept local, never tracked or shipped
-cover_letter*.txt
+cover*letter*.txt
 
 # Suggested-reviewers list: editor correspondence and third-party names; kept local for the PLOS form, never tracked or shipped
 suggested_reviewers*.txt
