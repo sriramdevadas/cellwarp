@@ -231,6 +231,39 @@ python3 scripts/create_table_S1.py
 echo "[S29] Generate Table S2..."
 python3 scripts/create_table_S2.py
 
+# [S29b] table_S2.xlsx is finished by a post-processor, so [S29] alone does not
+# reproduce the deposited file. Only S2's post-processor runs here, deliberately.
+#
+# scripts/46_synthesis_pass_supplementary_table_edits.py also carries editors for
+# S1, S3, S4, S5, S6 and key_resources_table.md, and running its main() from this
+# pipeline is RULED OUT, not merely avoided:
+#   - edit_table_s1 would move table_S1.xlsx, which is under a standing
+#     do-not-regenerate ruling: it appends explanatory prose and changes the macaque
+#     three-species value from 0.81 to 0.811, neither of which is corroborated by any
+#     submitted text. Its cell-count note also cited "Figure 6B" until 184f5ff --
+#     this manuscript has five figure captions (Fig 1-5) and zero occurrences of
+#     "Fig 6"/"Figure 6" in manuscript_combined.txt, S1_Text.txt or S2_Text.txt, so
+#     the reference pointed into the superseded seven-figure version. If that removal
+#     is ever reverted, running main() here would inject it into every reproduction.
+#   - edit_table_s3 no longer edits anything (its legend was false; see that
+#     function's docstring), so calling it would be pointless here.
+# Do NOT "complete" this by calling the script whole. The restriction is the point.
+echo "[S29b] Finish Table S2 (post-processor)..."
+python3 -c "
+import importlib.util, pathlib
+p = pathlib.Path('scripts/46_synthesis_pass_supplementary_table_edits.py')
+spec = importlib.util.spec_from_file_location('s46', p)
+m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+m.edit_table_s2(m.CANON / 'table_S2.xlsx')
+"
+
+# The canonical just moved, and its submission-packet mirror is a frozen byte copy
+# that nothing else writes. Refresh it here so Gate 3 and the packet half of Gate 2
+# reflect this run. Later stages dirty further pairs; reproduce/README.md covers
+# re-running this after the full pipeline.
+echo "[S29c] Refresh submission-packet mirrors..."
+python3 scripts/build_submission_packet.py --rebuild
+
 echo "[S30] Generate Table S6 (CPC1 driver genes)..."
 python3 scripts/generate_table_S6.py
 

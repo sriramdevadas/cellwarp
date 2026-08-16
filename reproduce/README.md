@@ -120,14 +120,19 @@ not because it did not.
 python scripts/build_submission_packet.py --rebuild   # after run_all.sh, before the gates
 ```
 
-Expect exactly these six pairs to drift on a fresh run: `figS1_pipeline_validation.pdf`,
+Expect exactly these five pairs to drift on a fresh run: `figS1_pipeline_validation.pdf`,
 `figS2_parameter_protocol_sensitivity.pdf`, `figS3_bootstrap_rankings.pdf`,
-`table_S1.xlsx`, `table_S2.xlsx`, and `covid_cross_analysis.png`. On the pristine archive
-all 30 pairs match, which is why the gates are green before you reproduce anything.
+`table_S1.xlsx`, and `covid_cross_analysis.png`. On the pristine archive all 30 pairs
+match, which is why the gates are green before you reproduce anything.
 
-### Why the two xlsx pairs drift: the writer's clock, not the content
+`table_S2.xlsx` was the sixth until `scripts/create_table_S2.py` was given the fixed-epoch
+stamp described below; it now regenerates byte-for-byte and its pair no longer drifts.
+`[S29c]` also refreshes the mirrors mid-run, so the pairs listed above drift only if a
+later stage rewrites them.
 
-The two spreadsheet pairs drift for a different reason from the four figure pairs.
+### Why a spreadsheet pair drifts: the writer's clock, not the content
+
+`table_S1.xlsx` drifts for a different reason from the four figure pairs.
 `openpyxl` stamps wall-clock time into every workbook it writes — `dcterms:created` and
 `dcterms:modified` in `docProps/core.xml`, and an mtime on every zip entry — so
 regenerating one yields a new md5 **even when every cell is identical**. An md5 over such a
@@ -137,8 +142,10 @@ drift.
 That is a property of the writer, not of the format. `scripts/table1_formatting.py`
 normalises it: it writes `dcterms:modified = 2026-01-01T00:00:00Z` and a fixed date on
 every zip entry, and is byte-idempotent as a result — consecutive runs produce identical
-bytes. Compare a workbook from a writer that does this by md5; compare one from a writer
-that does not cell by cell.
+bytes. `scripts/create_table_S2.py` now does the same, via a
+`normalize_xlsx_timestamps()` that `edit_table_s2()` imports rather than reimplements, so
+whichever of the two writes last applies the stamp. Compare a workbook from a writer that
+does this by md5; compare one that does not, such as `table_S1.xlsx`, cell by cell.
 
 ## The supplementary tables `run_all.sh` does not finish
 

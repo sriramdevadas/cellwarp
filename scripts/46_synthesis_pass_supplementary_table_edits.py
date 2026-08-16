@@ -61,6 +61,21 @@ CANON = DOCS / "supplementary_materials"
 STAGE = DOCS / "submission/figures_for_review"
 
 
+def _create_table_S2():
+    """Import scripts/create_table_S2.py as a module (its name starts with a digit's
+    sibling, and this file's does, so neither is importable by plain name).
+
+    Used only for normalize_xlsx_timestamps, so the epoch stamp has one implementation
+    shared by the two writers of table_S2.xlsx rather than a copy in each.
+    """
+    import importlib.util
+    path = Path(__file__).resolve().parent / "create_table_S2.py"
+    spec = importlib.util.spec_from_file_location("create_table_S2", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
 # ------------------------------ Table S1 ---------------------------------
 
 def edit_table_s1(xlsx_path: Path):
@@ -155,9 +170,28 @@ def edit_table_s2(xlsx_path: Path):
             )
     # Append bootstrap metadata as three rows
     last = ws.max_row
+    # bootstrap_subsample_fraction = 0.5 REMOVED (D27) and replaced by a scheme field.
+    # S1 Text section 11 states two different bootstraps and Sheet 2 is the second:
+    #   line 86, global robustness  -- 100 iterations at 50% cell subsampling per type
+    #                                  per species;
+    #   line 88, ranking stability  -- 1,000 iterations resampling cells with replacement
+    #                                  within type, refitting PCA and Procrustes per
+    #                                  iteration.
+    # Sheet 2's CIs come from the second, whose producer resamples at FULL n per type:
+    # analysis/bootstrap_rankings/bootstrap_ranking_analysis.py:146 does
+    #   rng.choice(ct_idx, size=len(ct_idx), replace=True)
+    # and bootstrap_results.md records "With replacement, same n per type". The 0.5 was
+    # the global bootstrap's parameter, so the row conflated two analyses the paper
+    # separates. The field name is dropped along with the value -- "..._subsample_fraction"
+    # invites a number and Sheet 2 has no correct one.
     extra = [
         ("bootstrap_n_iterations", 1000, "Bootstrap iterations for per-type ranking CIs (Sheet 2)"),
-        ("bootstrap_subsample_fraction", 0.5, "Fraction of cells resampled per type per iteration"),
+        ("bootstrap_resampling_scheme",
+         "cells resampled with replacement within type (full n per type, no subsampling)",
+         "Resampling unit for the Sheet 2 ranking-stability bootstrap, per S1 Text "
+         "section 11: PCA and Procrustes are refit per iteration. Distinct from the "
+         "global robustness bootstrap, which uses 100 iterations at 50% cell "
+         "subsampling per type per species."),
         ("bootstrap_random_seed", 42, "Global seed for bootstrap resampling and permutation tests"),
     ]
     for i, (k, v, d) in enumerate(extra, start=1):
@@ -178,6 +212,11 @@ def edit_table_s2(xlsx_path: Path):
                     ws.cell(r, col).value = round(v, 2)
 
     wb.save(xlsx_path)
+    # This is the LAST writer of table_S2.xlsx, so it owns the epoch stamp. Without it
+    # openpyxl's wall-clock would land in the shipped bytes and the artifact would get a
+    # new md5 on every run regardless of content. Imported rather than reimplemented:
+    # rev6's Fig-3-baselines decision is that a second implementation diverges silently.
+    _create_table_S2().normalize_xlsx_timestamps(xlsx_path)
     print(f"  S2 edited: {xlsx_path}")
 
 
