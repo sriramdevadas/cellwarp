@@ -277,11 +277,11 @@ only one of them is asserted by anything. Post-Tier-1 values:
 
 | quantity | value | who computes it | gated? |
 |---|---|---|---|
-| `EXPECTED_JOINED_WORDS` | 13612 | `docs/submission/plosone/build_manuscript_docx.py` | **yes** — the builder aborts on mismatch |
-| `wc -w` on `manuscript_combined.txt` | 13775 | shell | no |
-| `wc -w` on `S1_Text.txt` / `S2_Text.txt` | 4947 / 975 | shell | no |
+| `EXPECTED_JOINED_WORDS` | 14952 | `docs/submission/plosone/build_manuscript_docx.py` | **yes** — the builder aborts on mismatch |
+| `wc -w` on `manuscript_combined.txt` | 15117 | shell | no |
+| `wc -w` on `S1_Text.txt` / `S2_Text.txt` | 5979 / 975 | shell | no |
 
-`EXPECTED_JOINED_WORDS` is smaller because it counts the **158 content lines
+`EXPECTED_JOINED_WORDS` is smaller because it counts the **161 content lines
 joined**, i.e. the manuscript body as the DOCX renders it: the section banners,
 the `====` rules and the blank structural lines that `wc` sees are not content
 and are not counted. It is not a "wrong" `wc`; it is a different object. Do not
@@ -300,25 +300,31 @@ same number under every locale.
 The rule is exact, not approximate: the two counts differ by precisely the
 number of whitespace-delimited tokens composed **only** of non-ASCII
 characters. For the post-edit manuscript that is 77 tokens — the spaced
-operators, 32 `ρ`, 11 `≈`, 11 `×`, 8 `→`, 5 `≤`, 4 `∈`, 4 `≥`, 1 `α`, 1 `—`.
+operators, 31 `ρ`, 13 `×`, 9 `≈`, 8 `→`, 5 `∈`, 5 `≤`, 4 `≥`, 1 `α`, 1 `—`.
 
 | count | value | how |
 |---|---|---|
-| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **13775** | every token counts |
-| GNU `wc -w` under `LC_ALL=C` | **13698** | 13775 − 77 all-non-ASCII tokens |
-| `EXPECTED_JOINED_WORDS` | **13612** | the gate; see above |
+| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **15117** | every token counts |
+| GNU `wc -w` under `LC_ALL=C` | **15040** | 15117 − 77 all-non-ASCII tokens |
+| `EXPECTED_JOINED_WORDS` | **14952** | the gate; see above |
 
 A token that *mixes* ASCII and non-ASCII — `human–mouse`, `50–2,000`, `ρ = 0.45`
 once the `=` is its own token — still contains printable ASCII and still counts
 as one under both. That is the whole reason en dashes are irrelevant here: all
-82 of them sit inside mixed tokens and none is ever a bare token.
+89 of them sit inside mixed tokens and none is ever a bare token.
 
 **The container runs a GNU userland.** A word count taken inside it with `LANG`
-unset gets the *lower* number, 13698, on a correct tree. That is not drift and
-not a corrupted file; it is this rule. Neither 13775 nor 13698 is
+unset gets the *lower* number, 15040, on a correct tree. That is not drift and
+not a corrupted file; it is this rule. Neither 15117 nor 15040 is
 `EXPECTED_JOINED_WORDS`, and neither is asserted by any gate.
 
-GNU `wc` is not installed on the macOS reference machine, so the 13698 above is
+Which of the two a GNU `wc` returns depends on how it was launched, not only
+on the locale variables: CPython coerces the legacy C locale and exports
+`LC_CTYPE=C.UTF-8` to child processes, so `wc -w` invoked from a shell with
+`LANG` unset returns 15040 while the same `wc -w` invoked through Python
+returns 15117. Anything run through the pipeline is Python-launched.
+
+GNU `wc` is not installed on the macOS reference machine, so the 15040 above is
 the arithmetic prediction of the rule, and it matches the GNU measurement taken
 during the Tier-1 pass exactly.
 
@@ -328,11 +334,11 @@ At the pre-edit HEAD the two manuscript counts were 13606 and 13524, a gap of
 **82** — and the manuscript contained exactly **82** en dashes. Two people
 independently chased the en dash as the cause. It is not. The gap was 82
 because the pre-edit manuscript happened to contain 82 all-non-ASCII tokens as
-well; the edits moved that to 77 while leaving the en dashes at 82, which
-separates the two numbers. The other two texts refute the en-dash reading
-outright, at that same HEAD:
+well; the edits moved that to 77 while leaving the en dashes at 82 as of that
+HEAD (they are 89 at `453c804`), which separates the two numbers. The other two
+texts refute the en-dash reading outright, at that same HEAD:
 
-| file (at HEAD) | all-non-ASCII tokens = the gap | en dashes |
+| file (at the pre-edit HEAD) | all-non-ASCII tokens = the gap | en dashes |
 |---|---|---|
 | `manuscript_combined.txt` | 82 | 82 ← the coincidence |
 | `S1_Text.txt` | 39 | 18 |
