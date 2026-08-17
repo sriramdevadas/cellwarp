@@ -213,6 +213,13 @@ environment-sensitive steps. Reproduce from `.[lock]`; read `requirements.txt` t
 the authoring environment happened to contain, and do not `pip install -r` it expecting the
 two to agree.
 
+## The `DECISION-NNN` identifiers
+
+Scripts, reports and `output/paper_audit/master_numbers.csv` cite identifiers of the
+form `DECISION-021`; they refer to a working decision log kept during the analysis
+that is not deposited. They record when a choice was made and point at nothing in
+this repository, and no step in the reproduction path reads them.
+
 ## Figure bytes record the matplotlib version
 
 Figure metadata records the matplotlib version. PNGs carry it in a `Software` chunk and

@@ -3,10 +3,10 @@
 Every headline/validated number in the manuscript, checked against the code for
 this re-assembly. The underlying analyses are unchanged: `reproduce/validate.py`
 stays green and the values below trace to tracked artifacts. This file
-records (A) the `[VERIFY]` values confirmed against code, (B) numbers newly added
-in this draft (the basal-ganglia three-pair replication, Fig 2), (C) numbers
-**corrected or flagged** where the frozen draft disagreed with the code, and (D)
-presentational renumbering. The `MANUSCRIPT_MD5` gate pins
+records (A) the values the draft flagged for checking, confirmed against code,
+(B) numbers newly added in this draft (the basal-ganglia three-pair replication,
+Fig 2), (C) numbers **corrected or flagged** where the frozen draft disagreed
+with the code, and (D) presentational renumbering. The `MANUSCRIPT_MD5` gate pins
 `docs/submission/plosone/manuscript_combined.txt` and both supporting-information texts,
 `S1_Text.txt` and `S2_Text.txt` (independent of this number check).
 
@@ -16,7 +16,7 @@ is deliberate and is **not** a changed number.
 
 ---
 
-## A. `[VERIFY]` values — confirmed against code (unchanged from submission)
+## A. Values the draft flagged for checking — confirmed against code (unchanged from submission)
 
 | Manuscript value | Code value | Source artifact | validate.py? |
 |---|---|---|---|
@@ -81,7 +81,7 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
 - **W0 unscaled → 0 canonical markers** (55/52/52 all "other"); **W2 standardized →
   markers surface** — supports "under per-gene standardization the axis resolves to
   cell-identity markers rather than to housekeeping structure". Main text states
-  this **without a fraction** (per CC-WRITE): the classifier is a conservative
+  this **without a fraction**: the classifier is a conservative
   keyword matcher and the 18/55 is a known undercount; the marmoset arms (7, 5) are
   lower still. Fraction stays out of the main text.
 - n types **52–55** ⇒ supports "52 to 55 matched cell types".
@@ -99,7 +99,7 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
   **primate**; the human–lemur divergence is ~74–75 Myr (TimeTree), i.e. *shallower*
   than human–mouse. Writing "90 Myr" for the mouse-lemur pair conflates it with the
   rodent split.
-- **The `[VERIFY]` note explicitly asked to confirm and make consistent** →
+- **The draft's note explicitly asked to confirm and make consistent** →
   **resolved to 75 Myr** in the assembled manuscript (`§1` mouse-lemur sentence).
   Human–mouse stays ~90 Myr; Discussion Block 3 "primate–rodent split" (~90 Myr,
   human–mouse) is correct and unchanged. **This is the single place the frozen
@@ -149,8 +149,7 @@ W2 = per-gene-standardized Scheme B). Every pre/post permutation p = 9.999e-05
   narrative order and figure callouts.
 - **Title/Abstract reframed** (measurement-vs-conservation framing). No numbers in
   the title; abstract numbers are the rounded A-values above.
-- **"CellWarp" now first appears in Methods** (removed from title/abstract/intro),
-  per CC-WRITE ground rule 4.
+- **"CellWarp" now first appears in Methods** (removed from title/abstract/intro).
 
 ---
 

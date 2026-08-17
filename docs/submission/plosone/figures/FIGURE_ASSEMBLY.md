@@ -23,7 +23,7 @@ panels promoted from SI or built fresh, as noted.
 - Width **6.68–19.05 cm** (789–2250 px @300dpi); height **≤ 22.23 cm** (≤ 2625 px).
 - **≤ 10 MB per file**; flattened; **LZW compression**; single page; no alpha; no embedded titles/captions.
 - Fonts **Arial, Times, or Symbol only, 8–12 pt**, legible at print size.
-- Known legibility fixes to apply (CC-WRITE §4): the LOOCV panel (old Fig 1E) and
+- Known legibility fixes to apply: the LOOCV panel (old Fig 1E) and
   the old Fig 6 axis/tick fonts were too small — rebuild any panel derived from them
   at ≥ 8 pt Arial before promoting/demoting. Avoid Unicode superscripts in Arial
   (missing glyphs); write "p ≤ 0.0001", not "p ≤ 10⁻⁴", inside figures.
