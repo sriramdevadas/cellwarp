@@ -2,7 +2,7 @@
 
 # Reproducibility Audit v2: Full Manuscript
 
-**Auditor role:** Independent computational reviewer assessing whether every quantitative claim can be reproduced from manuscript + code alone
+**Audit mode:** Self-audit against an external-reproducer standard: every quantitative claim re-derived from the manuscript and code alone, without recourse to working notes or undeposited intermediates. Not an independent review – the paper is single-author, and the audit was carried out by the author with AI assistance (see Use of generative AI in Methods).
 **Date:** 2026-04-06
 **Scope:** All quantitative claims in manuscript_combined.txt, full codebase review
 
@@ -330,7 +330,7 @@ The standalone copies include defensive numerical handling (`np.clip` on determi
 | m5 | No Makefile/Snakemake workflow for automated end-to-end reproduction | Manual execution required; error-prone but documented in README |
 | m6 | README states "10,000 permutations" for primary result; manuscript and actual analysis used 1,000,000 | Inconsistency in documentation |
 | m7 | CellMarker 2.0 archived by download date (2026-03-16) but database version not recorded | Minor – download date is sufficient for most practical purposes |
-| m8 | No OS/hardware specification in manuscript (runs on MacBook M-series per CLAUDE.md) | Computational results should be platform-independent; no GPU-dependent steps |
+| m8 | No OS/hardware specification in manuscript (runs on Apple Silicon / arm64 macOS; recorded in reproduce/environment_ground_truth.txt) | Computational results should be platform-independent; no GPU-dependent steps |
 | m9 | Pan-Census "22 types from 15 independent datasets" – individual study accessions not enumerated | Provenance incomplete but recoverable from Census metadata |
 | m10 | 0.05^4 arithmetic error in multiple comparison justification | Does not affect any reported result |
 
