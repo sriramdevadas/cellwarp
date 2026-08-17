@@ -37,12 +37,17 @@ No deposited centroid CSV, primary output, figure, table, or manuscript file is
 touched.
 
 Usage:
-    python analysis/sensitivity_analyses/pseudobulk_centroids.py [RAW_DIR]
+    python analysis/sensitivity_analyses/pseudobulk_centroids.py RAW_DIR
+    CELLWARP_PSEUDOBULK_RAW_DIR=<dir> python .../pseudobulk_centroids.py
 
-RAW_DIR defaults to ~/cellwarp_old/data/phase2_scaled (the *_raw_aligned.h5ad
-checkpoints from scripts/08_scaled_procrustes.py stage 1). Set
-CELLWARP_PSEUDOBULK_CACHE=<path.npz> to cache the gene-space accumulators
-between runs (the streaming pass reads ~2.4 GB).
+RAW_DIR is required and has no default. It is the directory holding the
+*_raw_aligned.h5ad checkpoints written by scripts/08_scaled_procrustes.py
+stage 1. Any default would resolve against the running user's home directory
+rather than the tree this deposit was unpacked in. Those checkpoints are not
+deposited (see DATA_SOURCES.md): regenerate them with 08_scaled_procrustes.py,
+or pass the directory holding your own. Set CELLWARP_PSEUDOBULK_CACHE=<path.npz>
+to cache the gene-space accumulators between runs (the streaming pass reads
+~2.4 GB).
 """
 from __future__ import annotations
 
@@ -70,9 +75,22 @@ import test_lineage_stratified_permutation as lin  # noqa: E402  (shipped strati
 
 SCALED = REPO / "output" / "phase2" / "scaled_35types"
 OUT = REPO / "analysis" / "sensitivity_analyses"
-RAW_DIR = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else Path(
-    "~/cellwarp_old/data/phase2_scaled"
-).expanduser()
+_raw_arg = sys.argv[1] if len(sys.argv) > 1 else os.environ.get(
+    "CELLWARP_PSEUDOBULK_RAW_DIR")
+if not _raw_arg:
+    sys.exit(
+        "ERROR: RAW_DIR is required and has no default.\n"
+        "  usage: python analysis/sensitivity_analyses/pseudobulk_centroids.py "
+        "RAW_DIR\n"
+        "  or set CELLWARP_PSEUDOBULK_RAW_DIR=<dir>\n"
+        "RAW_DIR holds the *_raw_aligned.h5ad checkpoints from "
+        "scripts/08_scaled_procrustes.py stage 1; they are not deposited "
+        "(see DATA_SOURCES.md)."
+    )
+# Deliberately no home-directory expansion here: the shell already resolves a
+# leading ~ in an argument before this process sees it, and resolving one here
+# would reintroduce a home-relative path. See the guard in reproduce/run_all.sh.
+RAW_DIR = Path(_raw_arg)
 CACHE = os.environ.get("CELLWARP_PSEUDOBULK_CACHE")
 
 SEED = 42
@@ -285,7 +303,10 @@ def main() -> None:
     payload = {
         "analysis": "pseudobulk_centroid_definition_sensitivity",
         "configuration": "Layer-1 primary, human-mouse, 35 cell types, 16,959 orthologs",
-        "raw_counts_dir": str(RAW_DIR),
+        # Provenance only, and deliberately the basename: an absolute path
+        # here would record the machine the analysis was run on and would
+        # resolve nowhere in an unpacked deposit.
+        "raw_counts_dir": RAW_DIR.name,
         "seed": SEED, "n_permutations": NPERM, "target_sum": TARGET_SUM,
         "baseline_deposited": BASELINE,
         "pass_criterion": {"obs_null_ratio_below": PASS_OBS_NULL_MAX,

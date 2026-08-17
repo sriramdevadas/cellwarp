@@ -36,15 +36,37 @@ echo ""
 python3 -c "import cellwarp; print('cellwarp package: OK')"
 python3 -c "import scanpy, anndata, scipy, numpy; print('Dependencies: OK')"
 
-# Fail loudly if any hardcoded user paths remain in code
-# Matches a literal /Users/ and Path.home(); the latter resolves the repository
-# from $HOME, which silently writes outside the tree the deposit was unpacked in.
-# docs/ is scanned because a figure producer lives there.
-if grep -rqE "/Users/|Path\.home\(\)" --include="*.py" --include="*.R" "$REPO_ROOT/scripts" "$REPO_ROOT/src" \
-   "$REPO_ROOT/analysis" "$REPO_ROOT/reproduce" "$REPO_ROOT/docs" 2>/dev/null; then
-    echo "ERROR: Hardcoded user paths detected (/Users/ or Path.home()). These must be fixed."
-    grep -rnE "/Users/|Path\.home\(\)" --include="*.py" --include="*.R" "$REPO_ROOT/scripts" "$REPO_ROOT/src" \
-       "$REPO_ROOT/analysis" "$REPO_ROOT/reproduce" "$REPO_ROOT/docs"
+# Fail loudly if any hardcoded user path remains, in code or in a deposited
+# artifact. Every alternative below resolves against the invoking user's home
+# directory, so a reader running from an unpacked deposit would silently read or
+# write outside the tree:
+#
+#   /Users/  /home/     a literal path from the machine the analysis was run on
+#   Path.home()         pathlib's home lookup
+#   expanduser          the same lookup spelled as a ~/ expansion (pathlib or os.path)
+#   expandvars  $HOME   the shell-variable spelling
+#   environ[HOME]       the same lookup read straight out of the environment
+#   "~/  or  '~/        a hardcoded tilde string literal (Python, JSON, R)
+#
+# There is deliberately no --include filter. Restricting the scan to *.py/*.R is
+# what allowed a deposited JSON to carry an absolute path unseen; artifacts record
+# provenance paths too and are in scope. -I skips binaries, __pycache__ is
+# regenerable, and this file is excluded because a guard necessarily contains
+# every pattern it forbids.
+#
+# The single-quote alternative is written '"'"' -- the standard shell idiom for a
+# literal ' inside a single-quoted string -- so the class reads ["']~/ to grep.
+# There is deliberately no backtick in that class: a Python, JSON or R string
+# literal is never backtick-quoted, so a backtick alternative would detect
+# documentation rather than code. Do not add one back.
+PATH_GUARD='/Users/|/home/[a-z]|Path\.home\(\)|expanduser|expandvars|\$HOME|\$\{HOME\}|environ\[.HOME.\]|environ\.get\(.HOME|["'"'"']~/'
+GUARD_ROOTS=("$REPO_ROOT/scripts" "$REPO_ROOT/src" "$REPO_ROOT/analysis" \
+             "$REPO_ROOT/reproduce" "$REPO_ROOT/docs")
+if grep -rqIE "$PATH_GUARD" --exclude=run_all.sh --exclude-dir=__pycache__ \
+     "${GUARD_ROOTS[@]}" 2>/dev/null; then
+    echo "ERROR: Hardcoded user paths detected. These must be fixed."
+    grep -rnIE "$PATH_GUARD" --exclude=run_all.sh --exclude-dir=__pycache__ \
+      "${GUARD_ROOTS[@]}"
     exit 1
 fi
 

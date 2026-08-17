@@ -1,7 +1,7 @@
 {
   "analysis": "pseudobulk_centroid_definition_sensitivity",
   "configuration": "Layer-1 primary, human-mouse, 35 cell types, 16,959 orthologs",
-  "raw_counts_dir": "/Users/raxraja/cellwarp_old/data/phase2_scaled",
+  "raw_counts_dir": "phase2_scaled",
   "seed": 42,
   "n_permutations": 10000,
   "target_sum": 10000.0,
