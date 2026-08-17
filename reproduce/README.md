@@ -120,15 +120,25 @@ not because it did not.
 python scripts/build_submission_packet.py --rebuild   # after run_all.sh, before the gates
 ```
 
-Expect exactly these five pairs to drift on a fresh run: `figS1_pipeline_validation.pdf`,
-`figS2_parameter_protocol_sensitivity.pdf`, `figS3_bootstrap_rankings.pdf`,
-`table_S1.xlsx`, and `covid_cross_analysis.png`. On the pristine archive all 30 pairs
-match, which is why the gates are green before you reproduce anything.
+On the pristine archive all 30 pairs match, which is why the gates are green before you
+reproduce anything.
 
-`table_S2.xlsx` was the sixth until `scripts/create_table_S2.py` was given the fixed-epoch
-stamp described below; it now regenerates byte-for-byte and its pair no longer drifts.
-`[S29c]` also refreshes the mirrors mid-run, so the pairs listed above drift only if a
-later stage rewrites them.
+Which pairs are out of sync at the end now depends on `[S29c]`, which rebuilds every mirror
+partway through the run. Only a canonical written by a stage **after** `[S29c]` can drift.
+Reading the stage order, those are `[S30]`'s `Table_S6_CPC1_driver_genes.xlsx`, and at
+`[S31]` `figS3_bootstrap_rankings.pdf` (`composite_figS3.py`) together with
+`covid_cross_analysis.png` and `cross_analysis_scaled.png` (`generate_phase3_figures.py`).
+`table_S1.xlsx` is written at `[S28]` and `table_S2.xlsx` at `[S29]`/`[S29b]`, both before
+the refresh. `[S32]` states that the deposited figures are not rebuilt by this pipeline at
+all, so `figS1_pipeline_validation.pdf` and `figS2_parameter_protocol_sensitivity.pdf` have
+no producer here.
+
+`table_S2.xlsx` would not drift in any case: `scripts/create_table_S2.py` was given the
+fixed-epoch stamp described below and now regenerates byte-for-byte.
+
+**That paragraph is a reading of the stage order, not a measurement.** The six-pair list this
+section used to give was measured on a real run, before `[S29c]` existed, and no run since has
+re-measured it. Run `--verify` after the pipeline and trust its output over either list.
 
 ### Why a spreadsheet pair drifts: the writer's clock, not the content
 
@@ -147,20 +157,23 @@ bytes. `scripts/create_table_S2.py` now does the same, via a
 whichever of the two writes last applies the stamp. Compare a workbook from a writer that
 does this by md5; compare one that does not, such as `table_S1.xlsx`, cell by cell.
 
-## The supplementary tables `run_all.sh` does not finish
+## The supplementary tables `run_all.sh` does not finish, and the one it now does
 
 `run_all.sh` generates three supplementary tables — `[S28]` `table_S1.xlsx`, `[S29]`
-`table_S2.xlsx`, `[S30]` `Table_S6_CPC1_driver_genes.xlsx` — and finishes none of them.
+`table_S2.xlsx`, `[S30]` `Table_S6_CPC1_driver_genes.xlsx` — and finishes only one of them.
 
-**A required hand step is missing from the pipeline.**
-`scripts/46_synthesis_pass_supplementary_table_edits.py` post-processes six deposited
-tables — `table_S1.xlsx`, `table_S2.xlsx`, `table_S3.csv`, `table_S4.csv`, `table_S5.csv`
-and `Table_S6_CPC1_driver_genes.xlsx` — plus `docs/submission/key_resources_table.md`. It
-is referenced nowhere in `run_all.sh`, and its own closing line asks for a packet refresh
-that `run_all.sh` also does not perform. So `[S28]` and `[S29]` write the create-stage
-output only, and a reader's `table_S1.xlsx` and `table_S2.xlsx` will differ from the
-deposited copies. `table_S3.csv`, `table_S4.csv` and `table_S5.csv` have no generator at
-all — `run_all.sh` never writes them, so those three remain as deposited.
+**A hand step is partly missing from the pipeline.**
+`scripts/46_synthesis_pass_supplementary_table_edits.py` carries post-processors for six
+deposited tables — `table_S1.xlsx`, `table_S2.xlsx`, `table_S3.csv`, `table_S4.csv`,
+`table_S5.csv` and `Table_S6_CPC1_driver_genes.xlsx` — plus
+`docs/submission/key_resources_table.md`. Five of the six make changes; the `table_S3.csv`
+editor is retained but deliberately inert. `run_all.sh` calls exactly one of them: `[S29b]`
+loads the module and calls `edit_table_s2()` alone, and `[S29c]` then performs the packet
+refresh the script's closing line asks for. The restriction is deliberate and the call site
+records why. So `[S29]` and `[S29b]` together finish `table_S2.xlsx`, but `[S28]` writes the
+create-stage output only, and a reader's `table_S1.xlsx` will differ from the deposited copy.
+`table_S3.csv`, `table_S4.csv` and `table_S5.csv` have no generator at all — `run_all.sh`
+never writes them, so those three remain as deposited.
 
 **`[S30]` cannot run from the deposit.** `scripts/generate_table_S6.py` opens
 `data/phase2_scaled/human_scaled.h5ad`. `.gitignore` excludes `data/` wholesale, no file
