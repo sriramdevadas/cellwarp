@@ -139,11 +139,11 @@ EXPECTED_CAPTION_BOUNDARIES = 25  # 5 figure + 20 supporting information
 # Named, not restated: this comment said "the 153 content lines" against a
 # constant of 160, and the one below said 23 boundaries against 25 -- the same
 # drift as the U+2212 report line, and for the same reason.
-EXPECTED_RAW_JOINED_CHARS = 102536
+EXPECTED_RAW_JOINED_CHARS = 102611
 # The same join, plus CAPTION_JOIN at each of the EXPECTED_CAPTION_BOUNDARIES
 # caption boundaries.
-EXPECTED_JOINED_CHARS = 102561
-EXPECTED_JOINED_WORDS = 15014
+EXPECTED_JOINED_CHARS = 102636
+EXPECTED_JOINED_WORDS = 15012
 # ASCII T in the extracted text of the content paragraphs. The source content
 # lines carry EXPECTED_ASCII_T minus SUPERSCRIPT_EXPECTED[U+1D40] of them, and
 # the remainder are substituted in from U+1D40, so this constant and that one
@@ -152,7 +152,7 @@ EXPECTED_JOINED_WORDS = 15014
 # as a title page rather than as a heading. Named, not restated: this said
 # "253 ... plus 5" over "121 content paragraphs", against a constant of 299 and
 # a builder reporting 135 -- wrong by 41 and by 14, while its 4 and 2 were right.
-EXPECTED_ASCII_T = 309
+EXPECTED_ASCII_T = 310
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 20
@@ -253,7 +253,7 @@ NOT_A_GENUS = (
     "In", "Intermediate", "It", "Italic", "Its", "Krzanowski", "Like",
     "Lower", "Mantel", "Mapping", "Marker", "Marmoset", "Materials",
     "Metazoa", "Molecular", "Most", "Multiplying", "Myr", "Negative", "Neither", "No",
-    "None", "Of", "One", "Only", "Ontology", "Original", "Pearson",
+    "None", "Of", "On", "One", "Only", "Ontology", "Original", "Pearson",
     "Permutation",
     "Pipeline", "Plotting", "Position", "Precision", "Primary", "Primate",
     "Procrustes", "Progressive", "Protocol", "Python", "Random", "Rank",
@@ -264,7 +264,7 @@ NOT_A_GENUS = (
     "Tau", "Ten", "Text", "That", "The", "Their", "This", "Three", "To",
     "Toward",
     "Treating", "Two", "Under", "Variance", "Wasserstein", "We", "Were",
-    "What", "Whether", "Within", "Zenodo",
+    "What", "Whether", "With", "Within", "Zenodo",
 )
 BINOMIAL_SHAPE = re.compile(r"\b[A-Z][a-z]+ [a-z]{3,}\b")
 
