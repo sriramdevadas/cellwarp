@@ -36,6 +36,22 @@ echo ""
 python3 -c "import cellwarp; print('cellwarp package: OK')"
 python3 -c "import scanpy, anndata, scipy, numpy; print('Dependencies: OK')"
 
+# Verify a bold panel-label face resolves. [S31] composites figS3 and needs one:
+# Arial Bold where macOS supplies it, MuPDF's built-in Helvetica-Bold everywhere
+# else. This tests that one of the two routes resolves rather than that the macOS
+# path exists, so it passes on Linux; testing for the path would fail every
+# non-macOS run for a font the fallback makes unnecessary. Checked here because
+# [S31] is the last stage of a multi-hour run: a missing face should stop this in
+# second one, not after the analysis has already been recomputed.
+python3 -c "
+import os, fitz
+arial = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
+if os.path.exists(arial):
+    fitz.Font(fontfile=arial); print('Panel-label font: Arial Bold')
+else:
+    fitz.Font(fontname='hebo'); print('Panel-label font: MuPDF built-in Helvetica-Bold')
+"
+
 # Fail loudly if any hardcoded user path remains, in code or in a deposited
 # artifact. Every alternative below resolves against the invoking user's home
 # directory, so a reader running from an unpacked deposit would silently read or

@@ -30,12 +30,26 @@ SUPP_DIR = str(Path(__file__).resolve().parent.parent / "figures/supplementary")
 OUT_DIR = str(Path(__file__).resolve().parent.parent / "figures/submission/supplementary")
 ARIAL_BOLD = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 
+# Same fallback as scripts/composite_figS3.py, deliberately duplicated rather than
+# shared: cellwarp.figure_style is imported by most of the figure producers, and
+# routing a portability patch through it would widen the blast radius for four
+# lines of gain. Arial Bold stays the first choice so a macOS rebuild is unchanged;
+# elsewhere MuPDF's built-in Helvetica-Bold keeps this script running to the end.
+# This matters beyond TASK A: the S3 subprocess call further down is only reached
+# if the labelling above survives, so without this the documented route to
+# rebuilding figS3 dies here rather than in composite_figS3.py.
+LABEL_FONT_FILE = ARIAL_BOLD if os.path.exists(ARIAL_BOLD) else None
+LABEL_FONT_DESC = ("Arial Bold" if LABEL_FONT_FILE else
+                   "MuPDF built-in Helvetica-Bold (Arial Bold not on this system)")
+print(f"Panel-label font: {LABEL_FONT_DESC}")
+
 os.makedirs(OUT_DIR, exist_ok=True)
 
 
 def add_label(page, text, x, y_baseline, size=9.0):
-    """Add a label in Arial Bold to a PDF page."""
-    font = fitz.Font(fontfile=ARIAL_BOLD)
+    """Add a bold label to a PDF page: Arial Bold if present, else Helvetica-Bold."""
+    font = (fitz.Font(fontfile=LABEL_FONT_FILE) if LABEL_FONT_FILE
+            else fitz.Font(fontname="hebo"))
     tw = fitz.TextWriter(page.rect)
     tw.append(fitz.Point(x, y_baseline), text, font=font, fontsize=size)
     tw.write_text(page)

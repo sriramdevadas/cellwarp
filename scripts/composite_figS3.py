@@ -330,9 +330,29 @@ def main():
     ARIAL_BOLD = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
     LABEL_SIZE = 9.0
 
+    # Panel labels are Arial Bold wherever macOS supplies it. The deposited figure
+    # was built that way and embeds Arial, so keeping this the first choice means a
+    # macOS rebuild is unchanged. Off macOS the path does not exist and there is no
+    # Arial to embed; fall back to the Helvetica-Bold that MuPDF carries internally,
+    # which needs no download and no extra dependency. That route is for a reader's
+    # run, not for producing the deposited artifact: the labels are bold and legible
+    # but the file will not match the deposit, because the embedded face differs.
+    # MuPDF reports the fallback as "NimbusSans-Bold", so the "Bold" test in the
+    # verification block below matches either way.
+    LABEL_FONT_FILE = ARIAL_BOLD if os.path.exists(ARIAL_BOLD) else None
+    LABEL_FONT_DESC = ("Arial Bold" if LABEL_FONT_FILE else
+                       "MuPDF built-in Helvetica-Bold (Arial Bold not on this system)")
+    print(f"  Panel-label font: {LABEL_FONT_DESC}")
+
+    def _label_font():
+        """Arial Bold when present, else MuPDF's built-in Helvetica-Bold."""
+        if LABEL_FONT_FILE:
+            return fitz.Font(fontfile=LABEL_FONT_FILE)
+        return fitz.Font(fontname="hebo")
+
     def add_label(page, text, x, y_baseline, size=LABEL_SIZE):
-        """Add Arial Bold panel label to a PDF page."""
-        font = fitz.Font(fontfile=ARIAL_BOLD)
+        """Add a bold panel label to a PDF page."""
+        font = _label_font()
         tw = fitz.TextWriter(page.rect)
         tw.append(fitz.Point(x, y_baseline), text, font=font, fontsize=size)
         tw.write_text(page)
