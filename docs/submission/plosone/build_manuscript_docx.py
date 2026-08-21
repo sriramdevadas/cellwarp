@@ -27,7 +27,9 @@ Usage:  python build_manuscript_docx.py [--output PATH]
 
 Requires python-docx. As of 3f1d326 it is declared in the two extras the
 documented installs actually read -- pyproject.toml's [lock], which is
-`pip install -e ".[lock]"` at reproduce/README.md:35, and [dev], which is what
+`pip install -e ".[lock]"` in reproduce/README.md's "Steps" section (cited by
+section, not line: this reference had already drifted to unrelated prose once),
+and [dev], which is what
 Dockerfile:65 installs and therefore what the container gets -- as well as in
 requirements.txt, environment.yml and the [reproduce] extra. Before that it was
 declared in [reproduce] alone, which no documented install reads, so this script

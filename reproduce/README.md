@@ -5,15 +5,33 @@
 - ~6 GB disk space for core data (Tier 1, downloaded automatically)
 - additional disk space for the optional Tier-2 datasets: see
   [DATA_SOURCES.md](../DATA_SOURCES.md) for per-dataset sizes
-- Estimated runtime: **budget a day, not an afternoon.** A measured cold run took
-  **~9 h 40 m**: Tier 1 31 min (6.1 GB download included), the rest of Tier 2 87 min,
-  out-of-pipeline producers ~70 min — and **`scripts/13_covid_procrustes.py` alone
-  6 h 29 m**. That one step issues a CZ CELLxGENE Census query per (cell type × tissue)
-  combination across 20 cell types with `CENSUS_QUERY_TIMEOUT = 600`; in the measured run
-  14 of those timeouts fired, which is over two hours of waiting on its own. It prints
-  nothing while a query is outstanding. **It has not hung.** Timings scale with Census
-  responsiveness, so treat them as an order of magnitude, not a promise.
+- **Memory.** Measured peaks, with the headroom you should leave above them:
+
+  | what you are running | peak resident | leave yourself |
+  |---|---|---|
+  | fast path | negligible | any machine |
+  | Tier 1 (`[1/8]`–`[8/8]`) | **58.9 GiB** | 64 GB minimum, 128 GB comfortable |
+  | full pipeline | **58.9 GiB** — the maximum is in Tier 1 | 64 GB minimum, 128 GB comfortable |
+
+  The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads **992,192 cells in
+  order to keep 140,000** — it subsamples after the download rather than during it. A 32 GB
+  instance was killed there by the OOM killer after five minutes, at 30.2 GiB anon-rss.
+
+  **Note that `[4/8]` is inside Tier 1**, so stopping after `TIER 1 COMPLETE` does not avoid
+  this: the Tier-1 peak is the whole run's peak. The often-quoted 26.9 GiB is `[1/8]`
+  (`01_download_data.py`) on its own, which matters only if you run the download step alone.
+
+  One run, one platform. These are peaks to have headroom above, not a threshold to sit
+  exactly on.
+- **Reproduced on:** an AWS `r6i.4xlarge` — 16 vCPU, 128 GiB — running Ubuntu 24.04.4 with
+  Python 3.12.3. Every measured figure in this file comes from that machine.
 - Internet connection required for initial data download
+- Runtime: see [Steps](#steps). Budget varies by more than 3x with network quality, so the
+  number is given there with both measurements rather than as a single headline.
+
+**The fast path needs none of the above.** No download, no compiler, no atlas data, and none
+of that memory — it reads deposited centroids and runs a permutation test in a few minutes on
+any machine.
 
 ## Fast path (no download, a few minutes)
 
@@ -44,7 +62,12 @@ analyses.
 
 ## Steps
 
-> Requires **Python 3.12** (`>=3.12,<3.13`); the stock `python3` on Ubuntu 22.04 / macOS is older and the install will fail against it. Get 3.12 first (Ubuntu: deadsnakes PPA; macOS: `brew install python@3.12`), or skip host Python entirely with the Docker image (main [README → Reproduce in Docker](../README.md#reproduce-in-docker)).
+> Requires **Python 3.12** (`>=3.12,<3.13`). On **Ubuntu 24.04 no PPA is needed** — it ships
+> Python 3.12.3, which satisfies the pin, and `apt-get install -y python3.12 python3.12-venv`
+> is enough. On **Ubuntu 22.04** the stock `python3` is 3.10 and the install will fail against
+> it, so get 3.12 first from the deadsnakes PPA. On **macOS** the stock `python3` is also
+> older: `brew install python@3.12`. Or skip host Python entirely with the Docker image
+> (main [README → Reproduce in Docker](../README.md#reproduce-in-docker)).
 
 ```bash
 git clone https://github.com/sriramdevadas/cellwarp.git
@@ -63,10 +86,40 @@ bash reproduce/run_all.sh
 ```
 
 > **Slim-image note:** the full `.[lock]` install (and `cellwarp[samap]`)
-> builds `hnswlib` (a SAMap dependency) from source; on a minimal image
-> without build tools, run `apt-get install -y build-essential` first, or
-> use the full `python:3.12` image. The fast-path base install above needs
-> none of this.
+> builds `hnswlib` (a SAMap dependency) from source, so it needs both a
+> compiler **and the CPython development headers**:
+> `apt-get install -y build-essential python3.12-dev`. `build-essential`
+> alone is not enough — without `python3.12-dev` there is no `Python.h`, and
+> the install ends `fatal error: Python.h: No such file or directory` /
+> `ERROR: Could not build wheels for hnswlib`, exit 1. This is invisible on
+> macOS, where the framework Python ships its own headers, so it bites only
+> on Linux and it bites at install time, before anything has run. The full
+> `python:3.12` image already has both. The fast-path base install above
+> needs none of this.
+
+### How long it takes
+
+Two measurements, because the difference between them is larger than the analysis:
+
+| | measured cold run | on AWS |
+|---|---|---|
+| whole pipeline | **~9 h 40 m** | **3 h 08 m 20 s** |
+| `scripts/13_covid_procrustes.py` | **6 h 29 m** | **33 min** |
+| slowest remaining step | — | `simulation_study.py`, 48 min |
+
+Both are real. The gap is not the analysis, it is the network. `13_covid_procrustes.py` issues
+a CZ CELLxGENE Census query per (cell type × tissue) combination across 20 cell types with
+`CENSUS_QUERY_TIMEOUT = 600`; in the 9 h 40 m run **14 of those timeouts fired**, over two
+hours of pure waiting. On a well-connected host they largely stop firing, the step drops to
+33 minutes, and it stops being the bottleneck at all — `simulation_study.py`, which is pure
+local compute, becomes the slowest step instead.
+
+So budget by where you are running: **most of a day from a home connection, an afternoon from
+a cloud instance.** Timings scale with Census responsiveness, so treat either as an order of
+magnitude, not a promise.
+
+**While `13_covid_procrustes.py` runs it prints nothing at all between queries. It has not
+hung. Do not kill it.**
 
 ## What each tier does
 
@@ -136,9 +189,29 @@ no producer here.
 `table_S2.xlsx` would not drift in any case: `scripts/create_table_S2.py` was given the
 fixed-epoch stamp described below and now regenerates byte-for-byte.
 
-**That paragraph is a reading of the stage order, not a measurement.** The six-pair list this
-section used to give was measured on a real run, before `[S29c]` existed, and no run since has
-re-measured it. Run `--verify` after the pipeline and trust its output over either list.
+**That paragraph is a reading of the stage order, not a measurement** — except for one entry,
+now measured. The six-pair list this section used to give was measured on a real run, before
+`[S29c]` existed, and no run since has re-measured the rest. Run `--verify` after the pipeline
+and trust its output over either list.
+
+**Measured: `figS3_bootstrap_rankings.pdf` does drift.** Running `--rebuild`, then
+`composite_figS3.py`, then `--verify` gives
+
+```
+VERIFY FAIL: 1 / 30 pairs
+  DRIFT: canonical=figures/submission/supplementary/figS3_bootstrap_rankings.pdf
+      != mirror=docs/submission/figures_for_review/Figure_S3.pdf
+```
+
+**and the drift is harmless.** Canonical and mirror are content-identical — both digest to
+`a11f70ff` once the PDF `/ID` trailer is normalised. `/ID` is a document identifier MuPDF
+regenerates on every `save()`, so two consecutive runs of the *unmodified* producer differ in
+those 60 bytes too. Nothing about the figure changed. One `--rebuild` re-syncs the pair.
+
+**The other three predicted entries remain unmeasured**: `Table_S6_CPC1_driver_genes.xlsx`,
+`covid_cross_analysis.png` and `cross_analysis_scaled.png` have not been run through this
+check. One confirmed entry does not validate four — treat those three as the stage-order
+reading they still are.
 
 ### Why a spreadsheet pair drifts: the writer's clock, not the content
 
@@ -245,6 +318,15 @@ which is why it alone matches a 3.10.9 rebuild.
 The five submission TIFFs are unaffected: the TIFF writer records no version string, and
 all five regenerate byte-identically under the pinned environment.
 
+**Panel labels are a second reason a rebuilt figure can differ, and it is platform-dependent.**
+`composite_figS3.py` and `build_submission_figures.py` label panels in Arial Bold where macOS
+supplies it — that is the face the deposited figures embed. Off macOS that font does not exist,
+so they fall back to the Helvetica-Bold built into MuPDF and print which face they used on
+stdout. So a `figS3_bootstrap_rankings.pdf` rebuilt on Linux will differ from the deposit in its
+embedded font, and is smaller for it; the labels are bold and correctly placed, but they are not
+Arial. That path exists so a reader's run completes, not to reproduce the deposited bytes — for
+those, rebuild on macOS.
+
 ## Two interpreters: the gates and the DOCX build
 
 The four gates and the DOCX build need not run under the same interpreter, and
@@ -341,9 +423,22 @@ only one of them is asserted by anything. Post-Tier-1 values:
 
 | quantity | value | who computes it | gated? |
 |---|---|---|---|
-| `EXPECTED_JOINED_WORDS` | 14952 | `docs/submission/plosone/build_manuscript_docx.py` | **yes** — the builder aborts on mismatch |
-| `wc -w` on `manuscript_combined.txt` | 15117 | shell | no |
+| `EXPECTED_JOINED_WORDS` | **15012** | `docs/submission/plosone/build_manuscript_docx.py` | **yes** — the builder aborts on mismatch |
+| `wc -w` on `manuscript_combined.txt` | **15177** | shell | no |
 | `wc -w` on `S1_Text.txt` / `S2_Text.txt` | 5979 / 975 | shell | no |
+
+**All four figures are measured at `manuscript_combined.txt` md5 `186e99ef`, and every one of
+them moves with every manuscript edit.** This section has now gone stale twice, so do not trust
+the numbers above against a tree whose manuscript md5 differs — re-derive instead. Two of the
+three are re-derivable without running anything:
+
+- `EXPECTED_JOINED_WORDS` is **read from the builder**, not from here. It is a constant near the
+  top of `docs/submission/plosone/build_manuscript_docx.py`, and the builder *aborts* if the
+  manuscript disagrees with it, so the builder is authoritative and self-checking in a way this
+  table can never be. Running the builder prints the live value.
+- The two `wc` figures follow from each other by the exact rule in the next subsection: the
+  `LC_ALL=C` count is the UTF-8 count minus the number of all-non-ASCII tokens. Count those and
+  you have both.
 
 `EXPECTED_JOINED_WORDS` is smaller because it counts the **161 content lines
 joined**, i.e. the manuscript body as the DOCX renders it: the section banners,
@@ -368,9 +463,9 @@ operators, 31 `ρ`, 13 `×`, 9 `≈`, 8 `→`, 5 `∈`, 5 `≤`, 4 `≥`, 1 `α`
 
 | count | value | how |
 |---|---|---|
-| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **15117** | every token counts |
-| GNU `wc -w` under `LC_ALL=C` | **15040** | 15117 − 77 all-non-ASCII tokens |
-| `EXPECTED_JOINED_WORDS` | **14952** | the gate; see above |
+| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **15177** | every token counts |
+| GNU `wc -w` under `LC_ALL=C` | **15100** | 15177 − 77 all-non-ASCII tokens |
+| `EXPECTED_JOINED_WORDS` | **15012** | the gate; see above |
 
 A token that *mixes* ASCII and non-ASCII — `human–mouse`, `50–2,000`, `ρ = 0.45`
 once the `=` is its own token — still contains printable ASCII and still counts
@@ -378,17 +473,17 @@ as one under both. That is the whole reason en dashes are irrelevant here: all
 89 of them sit inside mixed tokens and none is ever a bare token.
 
 **The container runs a GNU userland.** A word count taken inside it with `LANG`
-unset gets the *lower* number, 15040, on a correct tree. That is not drift and
-not a corrupted file; it is this rule. Neither 15117 nor 15040 is
+unset gets the *lower* number, 15100, on a correct tree. That is not drift and
+not a corrupted file; it is this rule. Neither 15177 nor 15100 is
 `EXPECTED_JOINED_WORDS`, and neither is asserted by any gate.
 
 Which of the two a GNU `wc` returns depends on how it was launched, not only
 on the locale variables: CPython coerces the legacy C locale and exports
 `LC_CTYPE=C.UTF-8` to child processes, so `wc -w` invoked from a shell with
-`LANG` unset returns 15040 while the same `wc -w` invoked through Python
-returns 15117. Anything run through the pipeline is Python-launched.
+`LANG` unset returns 15100 while the same `wc -w` invoked through Python
+returns 15177. Anything run through the pipeline is Python-launched.
 
-GNU `wc` is not installed on the macOS reference machine, so the 15040 above is
+GNU `wc` is not installed on the macOS reference machine, so the 15100 above is
 the arithmetic prediction of the rule, and it matches the GNU measurement taken
 during the Tier-1 pass exactly.
 
