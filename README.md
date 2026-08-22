@@ -10,13 +10,19 @@ git clone https://github.com/sriramdevadas/cellwarp.git && cd cellwarp
 
 **Verify the deposit in Docker** (no host Python needed): it builds Ubuntu 22.04 + Python 3.12 and runs the four reproduction gates plus the headline fast-path. See [Reproduce in Docker](#reproduce-in-docker).
 
-**Or install locally**, which requires Python 3.12 (the project pins `>=3.12,<3.13`; get it via the deadsnakes PPA on Ubuntu, or `brew install python@3.12` on macOS):
+**Or install locally**, which requires Python 3.12 (the project pins `>=3.12,<3.13`; Ubuntu 24.04 already ships 3.12, Ubuntu 22.04 needs the deadsnakes PPA, and macOS needs `brew install python@3.12` — [Setup](#setup-requires-python-312) has the per-distribution commands):
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate          # or call .venv/bin/python directly (the gates assume it)
 pip install -e ".[dev]"
 ```
+
+**Which install?** `.[dev]` is enough for the four reproduction gates, the test suite and the
+library snippet below; it is what the Docker image installs. Reproducing the paper end to end
+additionally needs `[lock]`, which pins the exact versions that produced the published numbers:
+`pip install -e ".[lock,dev]"`, as in [Setup](#setup-requires-python-312). `[lock]` on its own is
+not sufficient for the gates, because Gate 2 is `pytest` and `[lock]` does not install it.
 
 If `pip install` fails, you're on the wrong Python. The pin is two-sided, so newer interpreters are rejected as well as older ones: 3.11 and below give `No matching distribution found for numpy…`, and 3.13 and above give `Package 'cellwarp' requires a different Python`. Use 3.12; [Setup](#setup-requires-python-312) has the detail.
 
@@ -47,27 +53,44 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 git clone https://github.com/sriramdevadas/cellwarp.git
 cd cellwarp
 
-# Get Python 3.12 first if you don't have it:
-#   Ubuntu:  sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3.12 python3.12-venv
-#   macOS:   brew install python@3.12
+# Get Python 3.12 and the build prerequisites first:
+#   Ubuntu 24.04 (ships Python 3.12.3; no PPA needed):
+#     sudo apt-get update
+#     sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essential
+#   Ubuntu 22.04 (stock python3 is 3.10, which fails the pin; add deadsnakes first):
+#     sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update
+#     sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essential
+#   macOS (the framework Python ships its own headers; no -dev package to install):
+#     brew install python@3.12
 python3.12 -m venv .venv
 source .venv/bin/activate          # or invoke .venv/bin/python directly (the gates assume .venv/bin/python)
 
-# Recommended: [lock] pins the exact versions that produced the published results.
-pip install -e ".[lock]"
+# Recommended: [lock] pins the exact versions that produced the published results,
+# and [dev] is required alongside it because Gate 2 is pytest, which [lock] does not install.
+pip install -e ".[lock,dev]"
 # Alternatives (same venv):
-#   pip install -e ".[reproduce]"    # bounded version ranges; numbers may differ slightly
-#   pip install -r requirements.txt  # manuscript-anchored snapshot
-#   conda env create -f environment.yml && conda activate cellwarp   # mirrors [lock]; Python 3.12.12
+#   pip install -e ".[reproduce,dev]"  # bounded version ranges; numbers may differ slightly
+#   pip install -r requirements.txt    # manuscript-anchored snapshot
+#   conda env create -f environment.yml && conda activate cellwarp   # mirrors [lock] and includes pytest; Python 3.12.12
 
 bash reproduce/run_all.sh
 ```
+
+`build-essential` and `python3.12-dev` are needed because `[lock]` installs SAMap, whose dependency `hnswlib` is built from source: without the CPython headers the install ends `fatal error: Python.h: No such file or directory` / `ERROR: Could not build wheels for hnswlib`, exit 1, before anything has run. This bites on Linux only. Neither the fast path nor the `.[dev]` gate install needs them.
 
 If you see `No matching distribution found for numpy…`, you're on the wrong Python: that error means an interpreter older than 3.12; use 3.12.
 
 The pin is two-sided, so a **newer** Python fails too, with a different message: `Package 'cellwarp' requires a different Python`. Homebrew now installs 3.14 by default, so on a fresh machine you are likelier to hit the ceiling than the floor. Measured with `pip install --dry-run`: exit 0 on 3.12.13, exit 1 on 3.14.3. There is no 3.13+ fallback, so install 3.12 explicitly (`brew install python@3.12` on macOS, the deadsnakes PPA on Ubuntu) and create the venv with `python3.12` as shown above.
 
-**Requirements:** Python 3.12 (`>=3.12,<3.13`), ~6 GB disk (core), internet for initial data download.
+**Requirements:** Python 3.12 (`>=3.12,<3.13`), ~6 GB disk (core), internet for initial data download, and enough memory for the tier you are running:
+
+| what you are running | peak resident | leave yourself |
+|---|---|---|
+| fast path, or the Docker gate run | negligible | any machine |
+| Tier 1 (`[1/8]`–`[8/8]`) | **58.9 GiB** | 64 GB minimum, 128 GB comfortable |
+| full pipeline | **58.9 GiB** — the maximum is in Tier 1 | 64 GB minimum, 128 GB comfortable |
+
+The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it; a 32 GB instance was OOM-killed there at 30.2 GiB. Measured on one platform (AWS `r6i.4xlarge`, 128 GiB, Ubuntu 24.04.4): these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
 
 The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission text is pinned by `reproduce/MANUSCRIPT_MD5`: the manuscript (`docs/submission/plosone/manuscript_combined.txt`) and both supporting-information texts (`S1_Text.txt`, `S2_Text.txt`), verified with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4.
 
@@ -140,7 +163,7 @@ table mapping every figure and table in the paper to its generating script.
 ## Running Tests
 
 ```bash
-pip install -e ".[dev]"
+pip install -e ".[dev]"     # already present if you installed ".[lock,dev]" above
 pytest tests/ -v
 ```
 

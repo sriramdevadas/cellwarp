@@ -11,7 +11,7 @@ persisted output that contains the value.
 
 Three sections:
 
-1. **Methods → code** -- one entry per current Methods subsection (9 total),
+1. **Methods → code** -- one entry per current Methods subsection (10 total),
    with the primary generating script(s) and output.
 2. **Figures and tables → code** -- one entry per current main- and
    supplementary-figure panel and supplementary table, with generating script
@@ -22,8 +22,8 @@ Three sections:
    established.
 
 Coverage: every Methods subsection; every main- and supporting-figure panel and
-every supplementary table (the 5 main figures, 5 supporting figures and 11
-supplementary tables the manuscript lists, which is where those three figures
+every supplementary table (the 5 main figures, 5 supporting figures and 13
+supplementary tables the manuscript lists, which is where those three counts
 should be checked); and the numerical claims in the manuscript and Supporting
 Information.
 
@@ -38,12 +38,15 @@ against their persisted output files; most correspond to claim rows in Section
 current scope -- regression guards retained for the cut SAMap / CellMarker /
 L1000 analyses, plus a few with no Section-3 counterpart. Every
 remaining Section-3 value carries a Status recording how far it is established:
-mapped to its generating script and output file with the path resolved, computed
-arithmetically from other cited values, anchored to a source publication, or an
-unpersisted intermediate. None of these is independently value-re-verified here.
+mapped to its generating script and output file, from which the value is
+reproducible, computed arithmetically from other cited values, anchored to a
+source publication, or an unpersisted intermediate. None of these is
+independently value-re-verified here.
 
-All output files referenced in this CROSSWALK are present in the deposit
-repository at the paths shown.
+Every output file referenced in this CROSSWALK is present in the deposit repository
+at the path shown, with three declared exceptions, each named as absent on the row
+that cites it: the two basal-ganglia length files behind the Status = external rows,
+and `item2_assay_results.json`, whose producer is tracked but whose output is not.
 
 For automated regression-checking of the load-bearing statistics, run
 `python reproduce/validate.py` after a full pipeline execution.
@@ -63,6 +66,12 @@ For each Methods subsection of the current manuscript
 primary generating script(s) and the output where results are persisted. One row
 per current subsection.
 
+Subsections are named, not given line numbers. Line numbers were carried here
+until they had drifted by five lines for the first six subsections and fifteen
+for the last three, silently, because nothing reads them -- the same failure the
+row counts above were removed to avoid. A subsection name survives any prose
+commit that does not rename it.
+
 Controls the manuscript describes inside a Methods subsection (independent-PCA and
 Mantel artifact-ruling controls, bootstrap, leave-one-out cross-validation,
 per-gene-standardized CPC1) are folded into that subsection's script list. Content
@@ -73,17 +82,18 @@ biological predictors) is not given its own Methods row here; it is indexed in
 Section 3. The former SAMap, CellMarker, and L1000 analyses are cut from the
 current paper and are omitted.
 
-| Manuscript subsection (line) | Primary script(s) | Function entry-point(s) | Output |
+| Manuscript subsection | Primary script(s) | Function entry-point(s) | Output |
 |---|---|---|---|
-| Ethics statement (L129) | n/a (computational reanalysis of public data; no code) | n/a | n/a |
-| Data and cell-type matching (L135) | `scripts/02_qc_and_normalize.py` (Census fetch, QC, CP10K normalization, centroids); `scripts/08_cell_type_inventory.py` (35-type Cell-Ontology matching, S5 Table); Ensembl BioMart query (1:1 orthologs, archived CSV); `analysis/mouse_lemur/01_run_pipeline.py` (Tabula Microcebus data) | `02_qc_and_normalize.main`, `procrustes.compute_centroids`; `08_cell_type_inventory.main` | `output/phase2/scaled_35types/centroids_*.csv`; `data/phase1/orthologs_human_mouse.csv`; `output/phase2/cell_type_inventory.csv` |
-| The Procrustes framework (L143) | `src/cellwarp/procrustes.py` + `scripts/08_scaled_procrustes.py` (joint PCA, superimposition, per-type residuals); `scripts/permutation_1M.py`, `scripts/test_lineage_stratified_permutation.py` (permutation + lineage-stratified nulls); `scripts/07_bootstrap.py`, `scripts/08_loocv.py` (bootstrap, LOOCV robustness); `analysis/independent_pca_sensitivity/run_independent_pca.py`, `analysis/mantel_test/` (artifact-ruling controls, S1 Text §1) | `procrustes.procrustes_align`, `procrustes.pca_reduce_centroids`, `procrustes.permutation_test`, `08_scaled_procrustes.stage4_procrustes` | `output/phase2/scaled_35types/procrustes_results_35.json`; `analysis/permutation_1M/results_1M.json`; `output/validation/lineage_stratified/lineage_stratified_results.json`; `output/phase3/bootstrap/bootstrap_summary.json`, `output/validation/v2_loocv/v2_loocv_results.json`; `analysis/independent_pca_sensitivity/independent_pca_results.json`; `analysis/mantel_test/mantel_results.json` |
-| The two-layer decomposition (L151) | `scripts/t3b_ellipsoid_alignment.py` (Layer-2 Krzanowski S, CPC1 drivers) + `scripts/layer3_permutation_test.py` (eigenvalue-conservation null); `analysis/sensitivity_analyses/genestd_standardization.py` (per-gene-standardized CPC1, S1 Text §3) | `t3b.compute_covariance_eigen`, `t3b.compute_alignment_scores`, `t3b.perm_test_label_shuffle`, `t3b.eigenvalue_conservation` | `output/mechanistic/ellipsoid_alignment/summary_stats.json`, `permutation_results.json`; `output/layer3_permutation/layer3_permutation_results.json`; `analysis/sensitivity_analyses/genestd_results.json` |
-| Primate replication (basal ganglia) (L157) | `docs/submission/plosone/figures/build_fig2c_bg.py` reproduces the Fig 2C panel here from the vendored `docs/submission/plosone/figures/bg_results/`; the upstream two-layer statistics come from the self-contained basal-ganglia deposit declared in the manuscript's Data and code availability statement (L181), archived at Zenodo, its DOI not yet minted | n/a (vendored result JSONs; the upstream BG deposit -- length-residualization and low-N robustness -- is an external repository) | `docs/submission/plosone/figures/bg_results/layer2_results_{pair}.json`, `layer2_cpc1_drivers_{pair}_W2_schemeB.csv`; `docs/submission/plosone/figures/Fig2C_bg_replication.{tiff,pdf,png}` |
-| Simulation (L165) | `analysis/simulation_study/simulation_study.py` | `generate_centroids`, `calibrate`, `run_power_curve`, `run_ranking_recovery`, `run_null_calibration` | `analysis/simulation_study/simulation_results.json` |
-| Conserved-contribution and identity-gene analysis (L169) | `analysis/conserved_contribution/run_gate.py` (conservation score C, geometry attribution, master-TF enrichment gate); `run_robustness.py` (Hartigan dip, Tau); `highN_tf_pvalues.py` (matched-null empirical p-values); `make_table_s11.py` (Table S11); `make_figure7.py` (Fig 5) | `run_gate.main`, `gate_lib.build_gene_table`, `run_robustness.main` | `analysis/conserved_contribution/gate_results.json`, `robustness_results.json`, `highN_tf_pvalues.json`, `gene_conservation_core.csv`, `donor_stability/donor_stability_results.json` |
-| Data and code availability (L179) | n/a (deposit metadata + version-pinned manifest) | n/a | `pyproject.toml`, `requirements.txt`; `data/replication/pan_census_manifest.csv`, `data/replication/tabula_microcebus_metadata.csv`; `docs/supplementary_materials/table_S12_software_environment.csv` |
-| Use of generative AI (L183) | n/a (no code) | n/a | n/a |
+| Ethics statement | n/a (computational reanalysis of public data; no code) | n/a | n/a |
+| Data and cell-type matching | `scripts/02_qc_and_normalize.py` (Census fetch, QC, CP10K normalization, centroids); `scripts/08_cell_type_inventory.py` (35-type Cell-Ontology matching, S5 Table); Ensembl BioMart query (1:1 orthologs, archived CSV); `analysis/mouse_lemur/01_run_pipeline.py` (Tabula Microcebus data) | `02_qc_and_normalize.main`, `procrustes.compute_centroids`; `08_cell_type_inventory.main` | `output/phase2/scaled_35types/centroids_*.csv`; `data/phase1/orthologs_human_mouse.csv`; `output/phase2/cell_type_inventory.csv` |
+| The Procrustes framework | `src/cellwarp/procrustes.py` + `scripts/08_scaled_procrustes.py` (joint PCA, superimposition, per-type residuals); `scripts/permutation_1M.py`, `scripts/test_lineage_stratified_permutation.py` (permutation + lineage-stratified nulls); `scripts/07_bootstrap.py`, `scripts/08_loocv.py` (bootstrap, LOOCV robustness); `analysis/independent_pca_sensitivity/run_independent_pca.py`, `analysis/mantel_test/` (artifact-ruling controls, S1 Text §1) | `procrustes.procrustes_align`, `procrustes.pca_reduce_centroids`, `procrustes.permutation_test`, `08_scaled_procrustes.stage4_procrustes` | `output/phase2/scaled_35types/procrustes_results_35.json`; `analysis/permutation_1M/results_1M.json`; `output/validation/lineage_stratified/lineage_stratified_results.json`; `output/phase3/bootstrap/bootstrap_summary.json`, `output/validation/v2_loocv/v2_loocv_results.json`; `analysis/independent_pca_sensitivity/independent_pca_results.json`; `analysis/mantel_test/mantel_results.json` |
+| The two-layer decomposition | `scripts/t3b_ellipsoid_alignment.py` (Layer-2 Krzanowski S, CPC1 drivers) + `scripts/layer3_permutation_test.py` (eigenvalue-conservation null); `analysis/sensitivity_analyses/genestd_standardization.py` (per-gene-standardized CPC1, S1 Text §3) | `t3b.compute_covariance_eigen`, `t3b.compute_alignment_scores`, `t3b.perm_test_label_shuffle`, `t3b.eigenvalue_conservation` | `output/mechanistic/ellipsoid_alignment/summary_stats.json`, `permutation_results.json`; `output/layer3_permutation/layer3_permutation_results.json`; `analysis/sensitivity_analyses/genestd_results.json` |
+| Primate replication (basal ganglia) | `docs/submission/plosone/figures/build_fig2c_bg.py` reproduces the Fig 2C panel here from the vendored `docs/submission/plosone/figures/bg_results/`; the upstream two-layer statistics come from the self-contained basal-ganglia deposit declared in the manuscript's Data and code availability subsection, archived at Zenodo, its DOI not yet minted | n/a (vendored result JSONs; the upstream BG deposit -- length-residualization and low-N robustness -- is an external repository) | `docs/submission/plosone/figures/bg_results/layer2_results_{pair}.json`, `layer2_cpc1_drivers_{pair}_W2_schemeB.csv`; `docs/submission/plosone/figures/Fig2C_bg_replication.{tiff,pdf,png}` |
+| Simulation | `analysis/simulation_study/simulation_study.py` | `generate_centroids`, `calibrate`, `run_power_curve`, `run_ranking_recovery`, `run_null_calibration` | `analysis/simulation_study/simulation_results.json` |
+| Statistical analysis | `scripts/table1_formatting.py` (S13 Table integrity pass, applied in place to the tracked inventory); the family membership rule and per-test corrected p-values are carried by S13 Table itself, not recomputed by a pipeline step | `table1_formatting.main` | `docs/supplementary_materials/table_S13_test_inventory.xlsx`; `pyproject.toml` (Python, seed and library pins named in this subsection) |
+| Conserved-contribution and identity-gene analysis | `analysis/conserved_contribution/run_gate.py` (conservation score C, geometry attribution, master-TF enrichment gate); `run_robustness.py` (Hartigan dip, Tau); `highN_tf_pvalues.py` (matched-null empirical p-values); `make_table_s11.py` (S11 Table); `make_figure7.py` (Fig 5) | `run_gate.main`, `gate_lib.build_gene_table`, `run_robustness.main` | `analysis/conserved_contribution/gate_results.json`, `robustness_results.json`, `highN_tf_pvalues.json`, `gene_conservation_core.csv`, `donor_stability/donor_stability_results.json` |
+| Data and code availability | n/a (deposit metadata + version-pinned manifest) | n/a | `pyproject.toml`, `requirements.txt`; `data/replication/pan_census_manifest.csv`, `data/replication/tabula_microcebus_metadata.csv`; `docs/supplementary_materials/table_S12_software_environment.csv` |
+| Use of generative AI | n/a (no code) | n/a | n/a |
 
 ---
 
@@ -120,7 +130,7 @@ file" column names the backing data artifact, as elsewhere in this section.
 | Fig 3 (replication summary bar chart) | `scripts/generate_phase1_figures.py` (panel) | All replication scripts | All replication JSONs (Sun2023, PanSci, CellHint, Andrews, MCA × HCA, pan-Census) |
 | Fig 4A (within-atlas precision, bootstrap CI forest) | built fresh in `docs/submission/plosone/figures/build_main_figures.py` | `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py` | `analysis/bootstrap_rankings/bootstrap_summary.csv` |
 | Fig 4B (within-atlas precision vs cross-atlas rank shift, rho = -0.41) | built fresh in `docs/submission/plosone/figures/build_main_figures.py` | `analysis/cross_reference/cross_reference_analysis.py` | `analysis/cross_reference/master_ranking_table.csv` |
-| Fig 4C (simulation recovery ceiling, rho ~ 0.42) | built fresh in `docs/submission/plosone/figures/build_main_figures.py` | `analysis/simulation_study/simulation_study.py` | `analysis/simulation_study/simulation_results.json` |
+| Fig 4C (simulation recovery ceiling, rho ~ 0.45 at the calibrated signal) | built fresh in `docs/submission/plosone/figures/build_main_figures.py` | `analysis/simulation_study/simulation_study.py` (deposited grid); `analysis/simulation_study/sweep_spread.py` (calibrated curve) | `analysis/simulation_study/simulation_results.json` for the grid medians the panel plots, and `analysis/simulation_study/sweep_spread_results.json` for the calibrated ceiling line (median rho 0.4494 at calibrated signal 3.683). The grid does not evaluate at the calibrated signal -- it brackets it at rho ~ 0.42 (signal 3.0) and ~ 0.43 (signal 5.0), both of which understate the ceiling; Methods says so explicitly |
 | Fig 5A (per-gene conservation C distribution; Hartigan dip) | `analysis/conserved_contribution/make_figure7.py` | `analysis/conserved_contribution/run_gate.py`, `make_table_s11.py` | `analysis/conserved_contribution/gate_results.json`, `gene_conservation_core.csv` |
 | Fig 5B (C vs expression and Tau specificity) | `analysis/conserved_contribution/make_figure7.py` | `analysis/conserved_contribution/run_gate.py`, `run_robustness.py` | `analysis/conserved_contribution/gate_results.json`, `robustness_results.json` |
 | Fig 5C (master-TF conservation enrichment vs matched backgrounds) | `analysis/conserved_contribution/make_figure7.py` | `analysis/conserved_contribution/run_gate.py`, `highN_tf_pvalues.py` | `analysis/conserved_contribution/gate_results.json`, `highN_tf_pvalues.json` |
@@ -139,29 +149,32 @@ Deposited in `figures/submission/supplementary/`.
 | S2 Fig E (expanded negatives) | `scripts/build_submission_figures.py` | `analysis/expanded_negative_controls/expanded_negative_controls.py` | `analysis/within_species_matched/matched_control_results.json` |
 | S2 Fig F (replication inventory) | `scripts/56_add_figs2_panel_f.py` | All replication outputs | All replication JSONs (Sun2023, PanSci, CellHint, Andrews, MCA × HCA, pan-Census, HCA × Tabula) |
 | S3 Fig A-B (bootstrap rankings) | `scripts/composite_figS3.py` (invoked by `build_submission_figures.py`) | `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py` | `analysis/bootstrap_rankings/bootstrap_summary.csv`, `bootstrap_rankings_raw.csv` |
-| S4 Fig (matched-scale 6-type negative control) | `scripts/49_build_figS7_matched_scale.py` (producer retains the old `figS7` stem) | `scripts/test_35type_human_control.py` | `output/phase2/negative_control_v2/negctrl_v2_results.json` |
-| S5 Fig (marker-similarity-stratified null) | `analysis/sensitivity_analyses/markernull.py` (producer writes `figure_S8_markernull.{pdf,png}` to `docs/supplementary_materials/`, not the deposited `figS5_markernull.pdf`; see Known gaps) | (primary centroids; species-averaged gene-space) | `analysis/sensitivity_analyses/markernull_results.json` |
+| S4 Fig (matched-scale 6-type negative control) | `scripts/49_build_figS7_matched_scale.py` (producer retains the old `figS7` stem) | `scripts/09_negative_control_v2.py` | `output/phase2/negative_control_v2/negctrl_v2_results.json` |
+| S5 Fig A-B (marker-similarity-stratified null: obs/null against cluster granularity K; per-type residual against marker-distinctness) | `analysis/sensitivity_analyses/markernull.py` (producer writes `figure_S8_markernull.{pdf,png}` to `docs/supplementary_materials/`, not the deposited `figS5_markernull.pdf`; see Known gaps) | (primary centroids; species-averaged gene-space) | `analysis/sensitivity_analyses/markernull_results.json` |
 
 ### Supplementary tables
 
 The current paper has no S8 Table (the former ortholog-retention table was cut).
-For S1-S5 the deposited canonical file is written or edited in place by the
+For S1-S5 Table the deposited canonical file is written or edited in place by the
 materializer `scripts/46_synthesis_pass_supplementary_table_edits.py`; both the
-content producer and the canonical file are listed.
+content producer and the canonical file are listed. Item names follow the
+manuscript's PLOS style, "S1 Table", throughout.
 
 | Display Item | Generating Script(s) | Depends On | Output file |
 |---|---|---|---|
-| Table S1 (biological predictors + cross-atlas + three-species) | `analysis/biological_predictors/biological_predictors.py`, `analysis/ranking_replication/ranking_replication_analysis.py`; canonical via `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s1`) | `scripts/create_table_S1.py` | `analysis/biological_predictors/univariate_correlations.csv`, `analysis/cross_reference/master_ranking_table.csv` → `docs/supplementary_materials/table_S1.xlsx` |
-| Table S2 (simulation + bootstrap CIs) | `analysis/simulation_study/simulation_study.py`, `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py`; canonical via `46_synthesis…` (`edit_table_s2`) | `scripts/create_table_S2.py` | `analysis/simulation_study/simulation_results.json`, `analysis/bootstrap_rankings/bootstrap_summary.csv` → `docs/supplementary_materials/table_S2.xlsx` |
-| Table S3 (CellHint rank reversal) | `analysis/cellhint_investigation/investigate_rank_reversal.py`; canonical via `46_synthesis…` (`edit_table_s3`) | `scripts/33_cellhint_replication.py` | `analysis/cellhint_investigation/` (rank-reversal artifacts) → `docs/supplementary_materials/table_S3.csv` |
-| Table S4 (CellHint harmonization) | `analysis/harmonized_replication/harmonized_replication.py`; canonical via `46_synthesis…` (`edit_table_s4`) | `scripts/33_cellhint_replication.py` | `analysis/harmonized_replication/sensitivity_analysis.csv`, `correlation_results.json` → `docs/supplementary_materials/table_S4.csv` |
-| Table S5 (35-type matching) | `scripts/08_cell_type_inventory.py`; canonical via `46_synthesis…` (`edit_table_s5`) | `scripts/02_qc_and_normalize.py` | `output/phase2/cell_type_inventory.csv` → `docs/supplementary_materials/table_S5.csv` |
-| Table S6 (CPC1 driver genes) | `scripts/generate_table_S6.py` | `scripts/t3b_ellipsoid_alignment.py` | `output/mechanistic/ellipsoid_alignment/cpc_gene_table.csv`, `cpc_genes.json` → `docs/supplementary_materials/Table_S6_CPC1_driver_genes.xlsx` |
-| Table S7 (Layer-1 ribosomal/housekeeping exclusion) | `analysis/sensitivity_analyses/layer1_exclusion.py` | `scripts/08_scaled_procrustes.py` | `analysis/sensitivity_analyses/layer1_exclusion_results.json` + per-variant `layer1_exclusion_ranking_*.csv`; canonical `docs/supplementary_materials/table_S7_layer1_housekeeping_exclusion.csv` has NO scripted writer (see Known gaps) |
-| Table S9 (per-gene standardization: Layer-1 + CPC1 Scheme A/B) | `analysis/sensitivity_analyses/genestd_standardization.py` | `scripts/08_scaled_procrustes.py`, `scripts/t3b_ellipsoid_alignment.py` | `analysis/sensitivity_analyses/genestd_results.json` → `docs/supplementary_materials/table_S9_genestd_standardization.csv`, `table_S9_schemeB_CPC1_markers.csv` |
-| Table S10 (marker-similarity-stratified null) | `analysis/sensitivity_analyses/markernull.py` | (primary centroids; species-averaged gene-space) | `analysis/sensitivity_analyses/markernull_results.json` → `docs/supplementary_materials/table_S10_markernull.csv` |
-| Table S11 (per-gene cross-species conservation score C) | `analysis/conserved_contribution/make_table_s11.py` | `analysis/conserved_contribution/run_gate.py` | `analysis/conserved_contribution/gene_conservation_core.csv` → `docs/supplementary_materials/table_S11_gene_conservation.csv` |
-| Table S12 (software environment) | NO IN-REPO PRODUCER; hand-authored, source `requirements.txt` (see Known gaps) | (none) | `docs/supplementary_materials/table_S12_software_environment.csv` |
+| S1 Table (biological predictors + cross-atlas + three-species) | `analysis/biological_predictors/biological_predictors.py`, `analysis/ranking_replication/ranking_replication_analysis.py`; canonical via `scripts/46_synthesis_pass_supplementary_table_edits.py` (`edit_table_s1`) | `scripts/create_table_S1.py` | `analysis/biological_predictors/univariate_correlations.csv`, `analysis/cross_reference/master_ranking_table.csv` → `docs/supplementary_materials/table_S1.xlsx` |
+| S2 Table (simulation + bootstrap CIs) | `analysis/simulation_study/simulation_study.py`, `analysis/bootstrap_rankings/bootstrap_ranking_analysis.py`; canonical via `46_synthesis…` (`edit_table_s2`) | `scripts/create_table_S2.py` | `analysis/simulation_study/simulation_results.json`, `analysis/bootstrap_rankings/bootstrap_summary.csv` → `docs/supplementary_materials/table_S2.xlsx` |
+| S3 Table (CellHint rank reversal) | `analysis/cellhint_investigation/investigate_rank_reversal.py`; canonical via `46_synthesis…` (`edit_table_s3`) | `scripts/33_cellhint_replication.py` | `analysis/cellhint_investigation/` (rank-reversal artifacts) → `docs/supplementary_materials/table_S3.csv` |
+| S4 Table (CellHint harmonization) | `analysis/harmonized_replication/harmonized_replication.py`; canonical via `46_synthesis…` (`edit_table_s4`) | `scripts/33_cellhint_replication.py` | `analysis/harmonized_replication/sensitivity_analysis.csv`, `correlation_results.json` → `docs/supplementary_materials/table_S4.csv` |
+| S5 Table (35-type matching) | `scripts/08_cell_type_inventory.py`; canonical via `46_synthesis…` (`edit_table_s5`) | `scripts/02_qc_and_normalize.py` | `output/phase2/cell_type_inventory.csv` → `docs/supplementary_materials/table_S5.csv` |
+| S6 Table (CPC1 driver genes) | `scripts/generate_table_S6.py` | `scripts/t3b_ellipsoid_alignment.py` | `output/mechanistic/ellipsoid_alignment/cpc_gene_table.csv`, `cpc_genes.json` → `docs/supplementary_materials/Table_S6_CPC1_driver_genes.xlsx` |
+| S7 Table (Layer-1 ribosomal/housekeeping exclusion) | `analysis/sensitivity_analyses/layer1_exclusion.py` | `scripts/08_scaled_procrustes.py` | `analysis/sensitivity_analyses/layer1_exclusion_results.json` + per-variant `layer1_exclusion_ranking_*.csv`; canonical `docs/supplementary_materials/table_S7_layer1_housekeeping_exclusion.csv` has NO scripted writer (see Known gaps) |
+| S9 Table (per-gene standardization: Layer-1 + CPC1 Scheme A/B) | `analysis/sensitivity_analyses/genestd_standardization.py` | `scripts/08_scaled_procrustes.py`, `scripts/t3b_ellipsoid_alignment.py` | `analysis/sensitivity_analyses/genestd_results.json` → `docs/supplementary_materials/table_S9_genestd_standardization.csv`, `table_S9_schemeB_CPC1_markers.csv` |
+| S10 Table (marker-similarity-stratified null) | `analysis/sensitivity_analyses/markernull.py` | (primary centroids; species-averaged gene-space) | `analysis/sensitivity_analyses/markernull_results.json` → `docs/supplementary_materials/table_S10_markernull.csv` |
+| S11 Table (per-gene cross-species conservation score C) | `analysis/conserved_contribution/make_table_s11.py` | `analysis/conserved_contribution/run_gate.py` | `analysis/conserved_contribution/gene_conservation_core.csv` → `docs/supplementary_materials/table_S11_gene_conservation.csv` |
+| S12 Table (software environment) | NO IN-REPO PRODUCER; hand-authored, source `requirements.txt` (see Known gaps) | (none) | `docs/supplementary_materials/table_S12_software_environment.csv` |
+| S13 Table (inventory of statistical tests and the multiple-comparison family) | `scripts/table1_formatting.py` (integrity pass applied in place; the historical from-scratch builders are not tracked -- see Known gaps) | (none; the inventory is the tracked artifact) | `docs/supplementary_materials/table_S13_test_inventory.xlsx` |
+| S14 Table (Layer-2 subspace similarity against retained dimension, primate pairs) | `analysis/layer2_dimension_table/build_layer2_dimension_table.py` | `docs/submission/plosone/figures/bg_results/layer2_results_{pair}.json` | `analysis/layer2_dimension_table/table_S14_summary.json` → `docs/supplementary_materials/table_S14_layer2_dimension.csv` |
 
 ### Known gaps
 
@@ -178,9 +191,9 @@ true than two that promise to agree.
 
 ## 3. Numerical claims → code
 
-The numerical values behind the reportable claims in the manuscript and Supporting
-Information, each mapped to its generating script and persisted output, and grouped
-by the location it now occupies in the
+The numerical values behind the reportable claims in the manuscript and both Supporting
+Information texts, S1 Text and S2 Text, each mapped to its generating script and persisted
+output, and grouped by the location it now occupies in the
 current five-figure paper. Subsection headers name that current location; `####`
 sub-headers mark rows that spill to a different location than their block's primary
 destination. Old-to-new figure/section renumbering history is in
@@ -192,6 +205,8 @@ Status legend:
 - **computed** -- derived arithmetically from other rows or cited values; not separately persisted.
 - **anchor** -- anchored to a source publication, not produced by this pipeline.
 - **intermediate** -- an intermediate count in data acquisition, not persisted as a single artifact.
+- **external** -- value lives in the self-contained basal-ganglia deposit, archived separately and
+  not part of this repository; not checkable from the files here.
 
 ### Global cross-species coherence and its controls -- Results: configuration conserved (Fig 1); controls in Methods and S1 Text §1/§7/§9/§11
 
@@ -205,7 +220,7 @@ Status legend:
 | PCA components | 33 | `scripts/08_scaled_procrustes.py` | `analysis/permutation_1M/results_1M.json` | `n_pca_components` |  | mapped |
 | PCA variance retained | 95.2% | `scripts/08_scaled_procrustes.py` | `output/validation/pca_sensitivity/pca_sensitivity_results.json` | `ref.variance_explained` |  | mapped |
 | primary obs/null | 0.522 | `scripts/08_scaled_procrustes.py` | `output/phase2/scaled_35types/procrustes_results_35.json` | computed: distance / null_median |  | validate.py (Global coherence obs/null (35 types)) |
-| range of central 95% null | 0.507–0.544 | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `null_distribution_summary.percentile_2_5/97_5` (computed ratio) |  | mapped |
+| range of central 95% null | 0.507–0.545 | `scripts/permutation_1M.py` | `analysis/permutation_1M/null_distribution_1M.npy` (with `observed_procrustes_distance` from `results_1M.json`) | observed distance / the 97.5th and 2.5th percentiles of the null array = 0.5066 and 0.5446. `results_1M.json`'s `null_distribution_summary` carries the 0.01/0.1/1/5/95/99/99.9 percentiles only, so this range is not readable from it |  | mapped |
 | primary p-value | < 10⁻⁶ | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `p_value` |  | validate.py (Global coherence p-value (1M primary)) |
 | permutations | 1,000,000 | `scripts/permutation_1M.py` | `analysis/permutation_1M/results_1M.json` | `n_permutations` |  | mapped |
 | lineage-strat obs/null | 0.668 | `scripts/test_lineage_stratified_permutation.py` | `output/validation/lineage_stratified/lineage_stratified_results.json` | `stratified_null.obs_null_ratio` |  | mapped |
@@ -280,7 +295,7 @@ Status legend:
 | delta median | +0.159 | same | same | `delta.median` |  | mapped |
 | delta 95% CI | +0.100–+0.218 | same | same | `delta.ci_95` |  | mapped |
 | positive splits | 100/100 | same | same | `delta.pct_positive` |  | mapped |
-| indep-PCA delta | +0.158 | `analysis/donor_split/...` | `analysis/donor_split/donor_split_results.json` | `delta.median` |  | mapped |
+| indep-PCA delta | +0.157 | `analysis/donor_split/...` | `analysis/donor_split/donor_split_results.json` | `delta.median` (0.15739; `delta.mean` is 0.16021) |  | mapped |
 
 ### Conserved identity genes: per-gene conservation score C and master-TF enrichment -- Results §5 (Fig 5); extended in S1 Text §12
 
@@ -343,7 +358,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | Layer 2 S at k=5 | 0.483 | `scripts/t3b_ellipsoid_alignment.py` | `output/mechanistic/ellipsoid_alignment/summary_stats.json` | `35type.mean_alignment.k=5.pre` |  | mapped |
 | Layer 2 null mean | 0.375 | same | `output/mechanistic/ellipsoid_alignment/permutation_results.json` | `35type.label_shuffle_pre.k=5.null_mean` |  | mapped |
 | Layer 2 p (k=5) | 0.0001 | same | same | `35type.label_shuffle_pre.k=5.p_value` |  | mapped |
-| Layer 2 permutations | 10,000 | same | same | (configured) |  | mapped |
+| Layer 2 permutations | 10,000 | same | same | configured in `scripts/t3b_ellipsoid_alignment.py`; the count is not written to the results JSON |  | mapped |
 | post-rotation S | 0.230 | same | `output/mechanistic/ellipsoid_alignment/summary_stats.json` | `35type.mean_alignment.k=5.post` |  | mapped |
 | post-rotation null mean | 0.180 | same | `output/mechanistic/ellipsoid_alignment/permutation_results.json` | `35type.label_shuffle_post.k=5.null_mean` |  | mapped |
 | post-rotation p | 0.0001 | same | same | `35type.label_shuffle_post.k=5.p_value` |  | mapped |
@@ -359,6 +374,32 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | Layer 2 PanSci post-rotation S (k=5) | 0.402 | same | same | `layer2_post_rotation.k5.S` |  | mapped |
 | Layer 2 PanSci post-rotation null mean | 0.360 | same | same | `layer2_post_rotation.k5.null_mean` |  | mapped |
 | Layer 2 PanSci p (pre & post, k=5) | < 10⁻⁴ | same | same | `layer2_pre_rotation.k5.p`, `layer2_post_rotation.k5.p` |  | mapped |
+
+#### Cross-protocol length bias: why the whole-cell vs single-nucleus pair is uninformative for Layer 2 (S2 Text)
+
+S2 Text substantiates one sentence of Results §2. Its numerical claims are indexed here; the
+PanSci Layer-2 statistics it quotes are the rows immediately above and are not repeated. Four
+of its values are in the separately archived basal-ganglia deposit rather than in this
+repository, and carry Status = external.
+
+| Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
+|---|---|---|---|---|---|---|
+| primary human cells entering the centroids | 62,708 | `analysis/sensitivity_analyses/pseudobulk_centroids.py` | `analysis/sensitivity_analyses/pseudobulk_centroids_results.md` | "Cells: 62,708 human / 59,745 mouse, 0 zero-library cells" |  | mapped |
+| primary mouse cells entering the centroids | 59,745 | `scripts/14_smartseq2_sensitivity.py` | `output/phase2/sensitivity/smartseq2/sensitivity_results.json` | `mouse_cells.total` |  | mapped |
+| mouse protocol split (10x / Smart-seq2) | 67.0% / 33.0% | same | same | `mouse_cells.10x_only` = 40,019 and `mouse_cells.smartseq2` = 19,726 of 59,745; `mouse_cells.smartseq2_fraction` = 0.33017 |  | mapped |
+| human protocol split (10x / Smart-seq2 or -seq3) | 93.0% / 7.0% | `analysis/census_replication/item2_assay_composition.py` | n/a — the script's `item2_assay_results.json` is deliberately not tracked (it needs the optional `cellxgene-census` extra and reaches the network); the deposited `protocol_breakdown.csv` is mouse-only, which is why the script exists |  |  | intermediate |
+| PanSci obs-to-null ratio, pre- then post-rotation | 1.31 → 1.12 | `scripts/t3b_ellipsoid_alignment_pansci.py` | `output/twolayer_pansci_replication/pansci_layer2_summary.json` | computed: `layer2_pre_rotation.k5.S` / `.null_mean` = 1.3132, and `layer2_post_rotation.k5.S` / `.null_mean` = 1.1159 |  | computed |
+| PanSci types ribosomal-dominated on rank-1 CPC1 | 0 of 16 | same | same | `cpc1_classification.ribosomal_dominated_count` = 0; the denominator is `per_type_correlation.n` = 16 |  | mapped |
+| nuclear rank-1 CPC1 drivers (the seven S2 Text names as examples) | ARHGAP15, DOCK2, MBNL1, DPYD, KCNIP4, CALCRL, SPTBN1 | same | `output/twolayer_pansci_replication/cpc1_drivers_pansci.csv` | `rank1_driver_symbol`; all seven occur, among 12 distinct symbols across the 16 types, so the list is illustrative rather than exhaustive, as "for example" states |  | mapped |
+| B cell CPC1 variance fraction, whole-cell vs PanSci | 0.083 vs 0.372 (≈4.5×) | same | same | `cpc1_var_frac_TS` = 0.0829 and `cpc1_var_frac_PanSci` = 0.3718 on the `B cell` row; ratio 4.485 |  | mapped |
+| within-species CPC1 variance asymmetry, whole-cell analysis | up to ≈8× | `scripts/generate_table_S6.py` | `docs/supplementary_materials/Table_S6_CPC1_driver_genes.xlsx` | sheet `CPC1_summary`, max of `human_CPC1_var_explained` / `mouse_CPC1_var_explained` over the 35 types = 8.71× (fibroblast, 7.94 vs 69.17) |  | mapped |
+| PanSci rank-1 driver median genomic span vs ribosomal-protein genes | 334,401 bp vs 11,898 bp (≈28×) | (basal-ganglia deposit) | `gene_lengths.csv` in that deposit; not tracked here | n/a |  | external |
+| the same comparison on canonical transcript length | 4,392 bp vs 994 bp (≈4.4×) | (basal-ganglia deposit) | same | n/a |  | external |
+| primate CPC1 loading vs gene length, pooled Spearman ρ | ≈0.34 (transcript), ≈0.44 (genomic span) | (basal-ganglia deposit) | `layer2_length_regression*.json` in that deposit; not tracked here | n/a |  | external |
+| the same correlation under per-gene standardization | ≈0.24 | (basal-ganglia deposit) | same | n/a |  | external |
+
+The 44-fold length disparity from an earlier internal analysis is not indexed: S2 Text itself
+records that it does not reproduce from the tracked table and that no argument depends on it.
 
 #### CPC1 drivers under per-gene standardization (→ S1 Text §3)
 
@@ -450,19 +491,19 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | divergence ranking ρ | 0.147 | same | `output/macaque_pipeline/m1_close_table1_summary.json` | `spearman_ranking_correlation.rho` |  | mapped |
 | divergence ranking p | 0.649 | same | same | `spearman_ranking_correlation.p_value` |  | mapped |
 
-#### Mouse-lemur ranking (→ Methods: mouse-lemur parameters / Results §1)
+#### Mouse-lemur ranking (→ Methods: Data and cell-type matching, which carries the mouse-lemur parameters / Results §1)
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
 | mouse lemur ρ vs primary | 0.157 | `analysis/mouse_lemur/01_run_pipeline.py` | `analysis/mouse_lemur/ranking_correlation.json` | `vs_primary.rho` |  | mapped |
-| mouse lemur p | 0.576 | same | same | `vs_primary.p_value` |  | mapped |
+| mouse lemur p | 0.576 | same | same | `vs_primary.p` |  | mapped |
 
 #### Hepatocyte rank/SSR reversal (S1 Text §7)
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
-| hepatocyte rank HM | 12/12 | same | `output/macaque_pipeline/m1_close_table1_summary.json` | `hepatocyte_rank_reversal.hm12_rank` |  | mapped |
-| hepatocyte SSR HM | 2.0% | same | `output/macaque_pipeline/human_mouse_12type_control.json` | `hepatocyte_pct_ssr` |  | mapped |
+| hepatocyte rank HM | 12/12 | same | `output/macaque_pipeline/m1_close_table1_summary.json` | `hepatocyte_rank_reversal.human_mouse_12type` ("12/12 (most rigid, %SSR=2.0%)") |  | mapped |
+| hepatocyte SSR HM | 2.0% | same | `output/macaque_pipeline/m1_close_table1_summary.json` | `hepatocyte_rank_reversal.human_mouse_12type`; the underlying 2.0295 is `control_16959.per_type_residuals_ranked[11].pct_ssr` in `human_mouse_12type_control.json`, reachable only once hepatocyte is known to be rank 11 |  | mapped |
 | hepatocyte rank macaque | 1/12 | same | `output/macaque_pipeline/m1_close_table1_summary.json` | `human_macaque_12type.hepatocyte_rank_of_n` |  | mapped |
 | hepatocyte SSR macaque | 47.3% | same | same | `human_macaque_12type.hepatocyte_pct_ssr` |  | mapped |
 
@@ -477,7 +518,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | progenitor ρ | 0.43 | same | same | "Is progenitor" row |  | mapped |
 | progenitor p | 0.01 | same | same | same |  | mapped |
 | elastic net LOO R² | −0.064 | same | `analysis/biological_predictors/multivariate_model_results.json` | `loo_cv.elastic_net_r2` |  | mapped |
-| random forest LOO R² | −0.044 | same | same | `loo_cv.random_forest_r2` |  | mapped |
+| random forest LOO R² | −0.046 | same | same | `loo_cv.random_forest_r2` (−0.04583) |  | mapped |
 
 ### Per-type divergence precise within-atlas, not resolvable across -- Results §4 (Fig 4); simulation in Methods; bootstrap in S3 Fig
 
@@ -488,10 +529,11 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 |---|---|---|---|---|---|---|
 | sim type counts | n=15,25,35 | `analysis/simulation_study/simulation_study.py` | `analysis/simulation_study/simulation_results.json` | `power_curve` |  | mapped |
 | sim detection power | 100% | same | same | `power_curve` (calibrated row) |  | mapped |
-| sim FPR at α=0.05 | 4.8% | same | same | `null_calibration.fpr_005` |  | mapped |
-| ranking ceiling | ρ ≈ 0.42 | same | same | `ranking_recovery` |  | mapped |
+| sim FPR at α=0.05 | 4.8% | same | same | `null_calibration.rejection_rate_05` |  | mapped |
+| ranking ceiling (at the calibrated signal; the value Fig 4C plots) | ρ ≈ 0.45 | `analysis/simulation_study/sweep_spread.py` | `analysis/simulation_study/sweep_spread_results.json` | `sweep` entry at the deposited spread, `recovery` median_rho = 0.4494 at calibrated signal 3.683 |  | mapped |
+| ranking ceiling (deposited grid, which does not evaluate at the calibrated signal) | ρ ≈ 0.42 at signal 3.0, ≈ 0.43 at signal 5.0 | `analysis/simulation_study/simulation_study.py` | `analysis/simulation_study/simulation_results.json` | `ranking_recovery` at 200 cells/type; Methods states both bracket and understate the calibrated ceiling |  | mapped |
 | test-retest ρ | 0.994 | same | same | `stability` |  | mapped |
-| cross-atlas ranking ρ | ≈ 0.15 | (descriptive across replications) | n/a | n/a |  | computed |
+| cross-atlas ranking ρ across the four independent atlas pairs | +0.15, +0.19, −0.05, −0.14; mean +0.04, median +0.05 | (descriptive; the four are Sun2023, PanSci and pan-Census in the per-replication ranking block above, plus CellHint at the matched 15 types, −0.139, in the CellHint-diagnostics block below. The −0.39 in the per-replication block is `cellhint_replication.json` `rigidity_ranking.rho`, a different quantity that the manuscript does not print) | n/a | n/a |  | computed |
 
 #### Bootstrap ranking stability (→ Results §4 / S3 Fig A)
 
@@ -520,7 +562,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 |---|---|---|---|---|---|---|
 | tests run | 10 | (this section: per-test table below) | (see per-test mechanistic-null table below) | n/a |  | computed |
 | n=35 (most tests) | 35 | various mechanistic-null scripts | various | various |  | computed |
-| power at ρ≈0.30 | 37% | `analysis/simulation_study/simulation_study.py` | `analysis/simulation_study/simulation_results.json` | `power_curve` |  | mapped |
+| power at ρ≈0.30 | ~37% | n/a — analytic approximation, not a deposited computation | n/a | Stated in `docs/submission/plosone/manuscript_combined.txt:91` and `S1_Text.txt:62`, both hedged ("roughly", "~"), as the power of a Spearman correlation at n = 35, α = 0.05 two-sided. No artifact holds it. `simulation_results.json`'s `power_curve` is **not** this quantity: it is the detection rate of the global coherence permutation test against signal strength, and at the signal where recovery reaches ρ ≈ 0.30 it reads 1.0 |  | computed |
 | TF complexity ρ | −0.229 | `scripts/13_tf_complexity.py` | `output/phase2/mechanistic/tf_complexity/tf_complexity_vs_residual.csv` | aggregated |  | mapped |
 | PPI best ρ | 0.291 | `scripts/19_ppi_centrality.py` | `output/mechanistic/ppi_centrality/ppi_centrality_results.json` | `correlation_results[*].spearman_rho` (max) |  | mapped |
 | enhancer ρ | −0.429 | `scripts/t3e_step3b_enhancer.py` | `output/validation/t3e_enhancer/t3e_step3b_summary.md` | "Spearman ρ" |  | mapped |
@@ -553,7 +595,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | 10x-only ranking ρ | 0.754 | `scripts/14_smartseq2_sensitivity.py` | `output/phase2/sensitivity/smartseq2/sensitivity_results.json` | `rigidity_comparison.spearman_rho_ranks` | `14_smartseq2_sensitivity.main` | mapped |
 | progenitor full p | 0.0099 | (biological_predictors progenitor sub-analysis) | (multiple sources) | n/a |  | computed |
 | progenitor 10x-only p | 0.119 | same | same | n/a |  | computed |
-| mouse SS2 fraction ρ | −0.042 | `scripts/14_smartseq2_sensitivity.py` | `output/phase2/sensitivity/smartseq2/sensitivity_results.json` | `rigidity_comparison.ss2_fraction_vs_rank_change_rho` | `14_smartseq2_sensitivity.main` | mapped |
+| mouse SS2 fraction ρ (S2 Fig panel C: SS2 fraction against per-type divergence rank) | −0.042 | `scripts/14_smartseq2_sensitivity.py` | `output/phase2/sensitivity/smartseq2/protocol_breakdown.csv` joined to `rigidity_comparison.csv` on `cell_type` | Spearman(`fraction_smartseq2`, `rank`) = −0.0417, p = 0.8118, n = 35. Not persisted as a scalar. Do **not** read `sensitivity_results.json` `rigidity_comparison.ss2_fraction_vs_rank_change_rho` for this: that key is +0.137 (p = 0.4325), the different S2 Fig panel D statistic, SS2 fraction against absolute rank change | `14_smartseq2_sensitivity.main` | mapped |
 | total 1:1 orthologs | 17,187 | (BioMart query) | `data/phase1/orthologs_human_mouse.csv` | shape[0] |  | mapped |
 | operating gene space | 16,959 | `scripts/02_qc_and_normalize.py` | `output/phase2/scaled_35types/centroids_human_35.csv` | shape[1] |  | mapped |
 | gene-set sensitivity range | 0.496–0.511 | `scripts/test_hvg_robustness.py` | `output/validation/hvg_robustness/hvg_robustness.json` | `hvg_results.{2000,3000,5000}.obs_null_ratio` (median denominator) |  | mapped |
@@ -563,10 +605,10 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
-| per-type cell cap | 2,000 | `src/cellwarp/procrustes.py` | (configured constant) | `MAX_CELLS_PER_TYPE` |  | mapped |
+| per-type cell cap | 2,000 | `src/cellwarp/data_loader.py` | (configured constant) | `MAX_CELLS_PER_TYPE` at `src/cellwarp/data_loader.py:65`. Note `src/cellwarp/cancer_loader.py:48` defines a same-named constant at 3,000 for the cancer loader, which is not this pipeline |  | mapped |
 | min cell count per type | 516 (myeloid leukocyte mouse) | data acquisition | n/a | n/a |  | intermediate |
 | scipy verification max-Δ | 7.3 × 10⁻¹¹ | `scripts/verify_procrustes_vs_scipy.py` | (verification log) | n/a |  | computed |
-| within-species v2 cells | 11,640 | `scripts/test_35type_human_control.py` | `output/phase2/negative_control_v2/cell_availability.json` | (sum of selected cells) |  | mapped |
+| within-species v2 cells (second human arm, after the 2,000-per-type cap) | 11,640 | `scripts/09_negative_control_v2.py` | `output/phase2/negative_control_v2/source_datasets.json` | Σ over the six types of min(per-type count in the **selected** source datasets, `MAX_CELLS_PER_TYPE` = 2,000): five types cap at 2,000 and macrophage is under it at 1,640. `cell_availability.json` is the candidate pool the set-cover chooses from, not the chosen datasets, and sums to 12,000 |  | mapped |
 | v2 within-species obs/null | 0.607 | same | `output/phase2/negative_control_v2/negctrl_v2_results.json` | (within-species comparison) |  | mapped |
 | v2 cross-species obs/null | 0.317 | same | `output/phase2/negative_control_v2/comparison_3way.csv` | row `Human vs Mouse`, `obs_to_null_ratio` (0.3165582196086514). NOT in `negctrl_v2_results.json`, which this row previously named: that file holds the within-species arm only (distance 24.0087 / null median 39.5763 = 0.607) and the string 0.317 does not occur in it. The same computation appears as `comparison_b` in `output/validation/hca_centroid_comparison/hca_centroid_comparison.json` and as the primary in `output/phase2/procrustes_results.json`, all three carrying distance 12.4273 |  | mapped |
 | v2 within-species p | 0.0088 | same | same | `permutation_test.p_value` |  | mapped |
@@ -626,14 +668,14 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 |---|---|---|---|---|---|---|
 | replication permutations | 10,000 | (replication scripts) | replication JSONs | `permutation_test.n_permutations` |  | mapped |
 | hepatocyte SSR macaque (full) | 47.3% | `analysis/macaque/reconstruct_macaque_pipeline.py` | `output/macaque_pipeline/m1_close_table1_summary.json` | `human_macaque_12type.hepatocyte_pct_ssr` |  | mapped |
-| hepatocyte SSR HM (full) | 2.0% | same | `output/macaque_pipeline/human_mouse_12type_control.json` | `hepatocyte_pct_ssr` |  | mapped |
+| hepatocyte SSR HM (full) | 2.0% | same | `output/macaque_pipeline/m1_close_table1_summary.json` | `hepatocyte_rank_reversal.human_mouse_12type` (see the S1 Text §7 block above) |  | mapped |
 
 ### Mouse-lemur pipeline parameters -- Methods (result → Results §1, Fig 1D)
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
 | lemur passing types | 15 | `analysis/mouse_lemur/01_run_pipeline.py` | `analysis/mouse_lemur/procrustes_results.json` | `n_types` |  | mapped |
-| lemur cell range | 546–2,000 | same | `analysis/mouse_lemur/lemur_cell_type_counts.csv` | per-type counts |  | mapped |
+| lemur cell range (cells realized per centroid, post-QC and post-cap) | 546–2,000 | same | `analysis/mouse_lemur/centroid_cell_counts.csv` | `lemur_cells` column: min 546 (mesenchymal stem cell), max 2,000, ten of fifteen types at the cap. This is not raw availability: `lemur_cell_type_counts.csv` holds raw atlas totals, against which the ≥500 inclusion gate is applied and the fifteen passing types run 802–58,814 |  | mapped |
 | lemur 1:1 ortholog count | 13,796 | same | `analysis/mouse_lemur/procrustes_results.json` | `gene_space` |  | mapped |
 | lemur PCA components | 15 | same | same | `pca.n_components` |  | mapped |
 | lemur cumulative variance | 95.5% | same | same | `pca.cumulative_variance` |  | mapped |
@@ -641,7 +683,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | lemur permutations | 10,000 | same | same | `permutation_test.n_permutations` |  | mapped |
 | lemur ranking ρ | 0.157 | same | `analysis/mouse_lemur/ranking_correlation.json` | `vs_primary.rho` |  | mapped |
 
-### Pan-Census replication parameters -- Methods (result → Results §3)
+### Pan-Census replication parameters -- Methods names the 15-dataset manifest; the composition detail is S1 Text §6 (result → Results §3)
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
@@ -657,7 +699,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 
 | Claim (excerpt) | Value | Script | Output file | Output key | Function entry-point | Status |
 |---|---|---|---|---|---|---|
-| Python | 3.12.12 | n/a | `pyproject.toml` | `requires-python` |  | mapped |
+| Python | 3.12.12 | n/a | `.python-version`; `environment.yml` | the exact interpreter is pinned in `.python-version:1` and `environment.yml:16`. `pyproject.toml`'s `requires-python` states the accepted range, `>=3.12,<3.13`, not the version used |  | mapped |
 | RANDOM_SEED | 42 | (entry-point convention) | various | per-script `RANDOM_SEED` |  | mapped |
 | numpy | 2.4.3 | n/a | `pyproject.toml` | `[lock]` |  | mapped |
 | scipy | 1.17.1 | n/a | same | same |  | mapped |
@@ -672,7 +714,7 @@ already gated from `gate_results.json`, above), and the z that condition 2 bound
 | Tabula Microcebus collection_id | a137437b-… | n/a | `data/replication/tabula_microcebus_metadata.csv` | `collection_id` |  | mapped |
 | Tabula Microcebus dataset_id | a392ab34-… | n/a | same | `dataset_id` |  | mapped |
 | Tabula Microcebus download date | 2026-04-05 | n/a | same | `download_date` |  | mapped |
-| BioMart release | 115 | n/a | `data/phase1/orthologs_human_mouse.csv` (header) | accession date in DOI |  | mapped |
+| BioMart release | 115 | n/a | n/a | recorded in `DATA_SOURCES.md` ("Ortholog tables") and in the Methods, not in the CSV: `data/phase1/orthologs_human_mouse.csv` carries no release in its header |  | mapped |
 
 ### Sensitivity-analysis rows -- Layer-1 exclusion (S7 Table / S1 Text §4) and donor-split delta (S1 Text §9)
 

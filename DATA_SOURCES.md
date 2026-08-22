@@ -27,7 +27,10 @@ Access: CZ CELLxGENE Discover
   collection a137437b-d284-4a27-b1e9-36958a8f92c1
   dataset a392ab34-9016-4f48-b45d-5b3a9cfa39fe
 Download date: 2026-04-05 (CELLxGENE Discover does not version-pin)
-Assay filter: 10x 3' v2 only (95% of atlas; manuscript MC:389)
+Assay filter: 10x 3' v2 only (95% of atlas). The filter itself is stated in the
+  manuscript's Methods, under "Data and cell-type matching"; the 95% share is not a
+  manuscript number and comes from analysis/mouse_lemur/feasibility_check.md. The
+  tracked metadata anchor records the filter in its analysis_assay_filter column.
 Required path: data/mouse_lemur/tabula_microcebus_LCA_complete.h5ad (244,081 cells; gitignored, downloaded at first run)
 Tracked metadata anchor: data/replication/tabula_microcebus_metadata.csv
 Cross-consistency test: tests/test_tabula_microcebus_metadata.py (8 assertions linking CSV ↔ manuscript ↔ feasibility doc)
@@ -50,7 +53,7 @@ Sentinel: scripts/t3e_step2_compute.py reads BASE/data/ucsc/{filename}
 ## data/macaque/ (13GB)
 Source: Qu et al. 2022 (Macaca fascicularis), single-source: GEO GSE196792
   https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE196792
-The published human-macaque comparison (Figure 5; 12 cell types matched to Tabula Sapiens)
+The published human-macaque comparison (S1 Text section 7; 12 cell types matched to Tabula Sapiens)
 uses Qu et al. as the sole macaque source; macaque cells are processed from raw 10x UMI
 counts, and cell-type assignments come from the author-provided finalcluster metadata in
 Qu's Zenodo deposition (10.5281/zenodo.5881495).
@@ -75,7 +78,8 @@ Three BioMart-derived ortholog tables underpin the cross-species analyses; all t
 - Source: Ensembl BioMart release 115, accessed 2026-03-12
 - Query: `hsapiens_gene_ensembl` dataset, `mmusculus_homolog_*` cross-reference attributes
 - Filter: `orthology_type == "ortholog_one2one"` applied at query time
-- 17,187 rows (the post-1:1-filter table cited in manuscript MC:229)
+- 17,187 rows (the post-1:1-filter table). This is the CSV's own row count; the current
+  manuscript does not print it. CROSSWALK.md carries it as "total 1:1 orthologs"
 - Downstream atlas-intersection filtering yields the 16,959-gene working space
 
 **Human-macaque orthologs**: `data/macaque/biomart_macaque_human_orthologs.csv`
@@ -83,7 +87,7 @@ Three BioMart-derived ortholog tables underpin the cross-species analyses; all t
 - Query: `mfascicularis_gene_ensembl` dataset, `hsapiens_homolog_*` cross-reference attributes (primary key is M. fascicularis Ensembl gene ID)
 - 40,305 rows (raw BioMart return, unfiltered)
 - Producer script: `scripts/fetch_macaque_orthologs.py` (reproduces the query against current BioMart; archived CSV is canonical)
-- Downstream 1:1 filtering and human-name mapping by `scripts/nhp_ortholog_assessment.py` yields the 13,927-gene operating space cited in manuscript MC:273
+- Downstream 1:1 filtering and human-name mapping by `scripts/nhp_ortholog_assessment.py` yields the 13,927-gene operating space reported in S1 Text section 7 (macaque extension)
 
 **Human-mouse lemur 1:1 orthologs**: `analysis/mouse_lemur/biomart_mouse_lemur_human_orthologs.csv`
 - Source: Ensembl BioMart, live `pybiomart` query against ensembl.org; release NOT pinned in code or commit; queried on or about commit date 2026-04-05 (Ensembl 116 was expected April 2026, so the served release - 115 or early 116 - is not determinable from records)
@@ -92,7 +96,11 @@ Three BioMart-derived ortholog tables underpin the cross-species analyses; all t
 - 16,655 rows (1:1 orthologs; cached columns: human_ensembl_id, human_gene_name, lemur_ensembl_id - schema differs from the other two tables)
 - Producer script: `analysis/mouse_lemur/00_feasibility_check.py` (`check_orthologs()`, live BioMart query with CSV cache); consumed by `analysis/mouse_lemur/01_run_pipeline.py`. Archived CSV is canonical.
 
-The human-mouse and human-macaque access dates correspond to manuscript MC:228 and MC:273 respectively; the human-mouse lemur table records no access date (commit-dated 2026-04-05). Re-querying BioMart at a different release may return materially different ortholog assignments; archived CSVs are the canonical source for reproduction.
+Of the two access dates, only the human-mouse one is printed in the paper: 2026-03-12,
+in the Methods under "Data and cell-type matching". The human-macaque date, 2026-03-15,
+appears in neither the manuscript nor S1 Text; it is recorded here and in the
+scripts/fetch_macaque_orthologs.py docstring. The human-mouse lemur table records no
+access date at all (commit-dated 2026-04-05). Re-querying BioMart at a different release may return materially different ortholog assignments; archived CSVs are the canonical source for reproduction.
 
 ## data/h3k27ac/ (601MB)
 Source: H3K27ac ChIP-seq for 6 immune cell types (T3-E null #9 sensitivity test).
@@ -140,12 +148,14 @@ Required files (place at data/dilirank/<filename>):
   - lincs_l2_delta.gctx   — LINCS L1000 Phase I Level 2 GEX, delta plate
     Both .gctx from GEO GSE92742 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92742),
     978-landmark-gene Level 2 files.
-Used by: scripts/24_dilirank_analysis.py (Paper 1 / Supplementary Text S1 DILI validation)
+Used by: scripts/24_dilirank_analysis.py. This test is preregistered but not reported in
+the paper: S1 Text section 8 states that it is catalogued in SCOPE.md rather than reported,
+and SCOPE.md carries it as executed and null under its own gate.
 Note: This dataset is not exercised by reproduce/run_all.sh; analysis is
 optional and the pipeline skips gracefully if files are absent.
 
 ## CellMarker (retained derived subset: data/validation/cellmarker/cellmarker_human_filtered.csv)
-The repository retains only a small derived subset, cellmarker_human_filtered.csv (columns: gene_symbol, cell_type). It contains the experimentally-validated human marker entries (flow cytometry, immunohistochemistry, in-situ hybridization) drawn from CellMarker 2.0; see Materials and Methods for the exact filtering criteria.
+The repository retains only a small derived subset, cellmarker_human_filtered.csv (columns: gene_symbol, cell_type). It contains the experimentally-validated human marker entries (flow cytometry, immunohistochemistry, in-situ hybridization) drawn from CellMarker 2.0; those three evidence classes are the filter. The current manuscript and S1 Text do not name CellMarker, so this paragraph, not the Methods, is the record of the criteria. The consumer is analysis/conserved_contribution/gate_lib.py (CELLMARKER_H).
 
 This subset is an input to the conserved-contribution gate reported in Results section 5 (Fig 5), where it supplies the marker reference set for the enrichment test. It is additionally read by retained validation tooling for analyses the current paper does not report; SCOPE.md records that boundary.
 

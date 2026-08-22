@@ -13,8 +13,8 @@ Reproducibility:
   refresh against a newer Ensembl release.
 
 Downstream filtering: scripts/nhp_ortholog_assessment.py filters this raw
-return to the 13,927-gene 1:1 macaque-human ortholog operating space cited in
-manuscript MC:273.
+return to the 13,927-gene 1:1 macaque-human ortholog operating space reported
+in S1 Text section 7 (macaque extension).
 """
 
 from pathlib import Path
