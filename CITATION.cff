@@ -27,14 +27,12 @@ keywords:
   - "single-cell RNA-seq"
   - "covariance conservation"
   - "cell type homology"
-preferred-citation:
-  type: article
-  title: "Geometric Morphometrics Reveals Two-Layer Transcriptomic Coherence Across Species"
-  authors:
-    - family-names: "Devadas"
-      given-names: "Sriram"
-      email: "sriram@sriramdevadas.com"
-      affiliation: "Independent Researcher, Acton, MA, USA"
-      orcid: "https://orcid.org/0009-0002-9180-1390"
-  year: 2026
-  notes: "Manuscript in preparation."
+# No preferred-citation block until the article exists.
+# It carried a title no paper has ever been submitted under, and the note
+# "Manuscript in preparation" while the manuscript was under submission.
+# preferred-citation redirects citation tooling away from the entry above, so a
+# placeholder here makes tools emit a citation to a paper that cannot be resolved.
+# With it absent, tooling cites the software record above, which is real: the two
+# Zenodo DOIs under `identifiers` resolve today. Add a full article citation --
+# journal, year, volume, pages, DOI -- at acceptance, which is also what
+# README.md's Citation section says will happen.

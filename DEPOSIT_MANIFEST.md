@@ -23,7 +23,18 @@ Contents:
 Metadata (manual entry; reference .zenodo.json for full content):
 - Creators: Sriram Devadas; ORCID 0009-0002-9180-1390; affiliation Independent Researcher, Acton, MA, USA.
 - Affiliation is "Independent Researcher" everywhere. This work was conducted independently, without institutional funding, resources or involvement, and that affiliation should be used in every deposit and metadata record.
-- Title / description: as in .zenodo.json (confirm .zenodo.json is current at freeze).
+- Title (FINAL): "CellWarp: analysis code for the cross-species transcriptomic-geometry study"
+- Description: the `description` field of `.zenodo.json`. Take the description from there and
+  nothing else - in particular **do not take the title from `.zenodo.json`**, whose `title`
+  field is `"CellWarp"`, the software name, not a deposit title. That is the instruction this
+  line used to carry, and following it literally would title v2 `CellWarp`, with nothing in the
+  repository to compare the published title against.
+- Why the title changes between versions: v1 carries the superseded PLOS Computational Biology
+  paper title, which appears nowhere in this repository - it was typed at the upload form. The
+  FINAL title above contains no paper title at all, so it cannot go stale again if the
+  manuscript title moves in review, and it reuses the phrasing already used in the DATA record's
+  description below. The link to the article is a related identifier set at acceptance, when
+  there is an article DOI to point at; it does not belong in the title.
 
 ## DATA record
 
@@ -81,13 +92,24 @@ Corroborating:
   retired from the repository. Retrievable via `git show`. Its Tabula Microcebus deposit
   anchors are carried by DATA_SOURCES.md, which is the primary source above.)
 
-## Snapshot procedure (at acceptance)
+## Snapshot procedure (at submission)
 
 Source for v1, as built: commit 4fca942, the tip of origin/main, recorded in both archive filenames; `git ls-tree -r 4fca942` is 1,100 files. Source for v2: the submission tree at the commit tagged for release. Derive the v2 counts at build time rather than copying the v1 figures recorded above.
 
 Steps:
 1. CODE archive: a zip of exactly `git ls-files` at the release commit. DATA archive: the selection above - all output/ minus the .gitkeep placeholders, all figures/, and the analysis/ data-type files minus the ortholog reference table. Record both counts at build time; the figures given above are version 1 only.
-   - `docs/submission/plosone/coverletter.txt` is left untracked deliberately, and building the CODE archive from `git ls-files` is what drops it: a cover letter is correspondence with the editor, not part of the public archived record. Do not `git add` it. The `.gitignore` rule written for this case, `cover_letter*.txt`, does not match that filename, so the file is untracked rather than ignored and a bare `git add -A` would stage it.
+   - `docs/submission/plosone/coverletter.txt` stays out of the CODE archive: a cover letter is
+     correspondence with the editor, not part of the public archived record. Building the archive
+     from `git ls-files` drops it, and it is also ignored - `.gitignore:196` is `cover*letter*.txt`,
+     which does match that filename (`git check-ignore -v` names that rule), so the file never
+     appears in `git status` and a bare `git add -A` will not stage it. Do not `git add -f` it.
 2. Upload each set as a NEW VERSION of its existing record (CODE 20735612, DATA 20735640), so the concept DOIs 20735611 and 20735639 resolve to it.
 3. Enter metadata manually (CODE: from .zenodo.json; DATA: from this manifest) and set the CODE-to-DATA / DATA-to-CODE related-identifier cross-links.
-4. Publish both new versions at acceptance. Version 1 of each record stays published and is the deposit for the earlier submission.
+4. Publish both new versions **at submission, not at acceptance**. This reverses the earlier
+   instruction, and the reason is that v1 does not describe this paper. Measured at the
+   submission tree: 113 of Gate 1's 232 checks read artifacts that do not exist at 4fca942
+   (15 distinct files); v1's own `reproduce/validate.py` defines 30 checks against this paper's
+   232; and `docs/submission/plosone/` is 39 tracked files here and 0 at 4fca942. A reviewer
+   following the concept DOI during review would land on an archive that cannot substantiate
+   the submitted text. Version 1 of each record stays published and remains the deposit for the
+   earlier PLOS Computational Biology submission.

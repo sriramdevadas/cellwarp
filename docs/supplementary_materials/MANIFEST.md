@@ -45,8 +45,17 @@ Information travels as the separate PLOS-named items listed above, and
 ## Legacy artifacts (tracked, not current SI items)
 - `table_S8_marker_ortholog_retention.csv`: the S8 Table was cut from the current
   paper.
-- `figure_S8_markernull.pdf` / `.png`: duplicate of the deposited `figS5_markernull`
-  under its old "S8" name.
+- `figure_S8_markernull.pdf` / `.png`: what the producer writes, under the old "S8" stem
+  and in this directory. It is the source of the deposited S5 Fig, not a copy of it, and
+  there is no deposited `.png` for S5 Fig at all.
 
-Both remain tracked because they are pinned by
-`scripts/build_submission_packet.py` and the packet consistency test.
+They are tracked for different reasons, and only one of them is enforced.
+`table_S8_marker_ortholog_retention.csv` is pinned: it appears once in
+`scripts/build_submission_packet.py` and once in
+`tests/test_submission_packet_consistency.py`, which still carry the old 7-figure packet.
+`figure_S8_markernull` is pinned by neither -- it occurs zero times in both files. It is
+the hand-copied source of the deposited `figures/submission/supplementary/figS5_markernull.pdf`,
+and that hop is enforced by nothing: a producer re-run that is not copied forward leaves the
+deposited S5 Fig stale with all four gates green. 144,507 bytes are tracked on the pair
+(24,130 PDF + 120,377 PNG). See `reproduce/figure_script_map.md` under "Known gaps" and
+SCOPE.md, which both state this.
