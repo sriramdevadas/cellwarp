@@ -50,9 +50,41 @@ Nothing is known to be wrong with either; nothing has been checked.
 - Runtime: see [Steps](#steps). Budget varies by more than 3x with network quality, so the
   number is given there with both measurements rather than as a single headline.
 
-**The fast path needs none of the above.** No download, no compiler, no atlas data, and none
-of that memory -- it reads deposited centroids and runs a permutation test in a few minutes on
-any machine.
+**The fast path needs none of the resources above.** No download, no compiler, no atlas
+data, and none of that memory -- it reads deposited centroids and runs a permutation test in
+a few minutes on any machine.
+
+## Install prerequisites first
+
+Both paths below open with `python3.12 -m venv .venv`. On a stock Linux host it fails at
+once, because `python3.12-venv` is a separate package. That is the first runnable command in
+this document and the first thing that goes wrong, so do this section before the Fast path
+rather than after it.
+
+**Ubuntu 24.04** ships Python 3.12.3, which satisfies the pin, so no PPA is needed:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essential
+```
+
+**Ubuntu 22.04** stocks Python 3.10, which fails the pin. Add the deadsnakes PPA first, then
+run the same install line:
+
+```bash
+sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update
+sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essential
+```
+
+**macOS needs none of those packages.** `brew install python@3.12` is the whole of it: the
+framework Python ships its own headers, and the Xcode command line tools supply the compiler.
+Nothing below asks a macOS reader for `build-essential` or a `-dev` package.
+
+Of the four Linux packages the Fast path needs only `python3.12` and `python3.12-venv`; the
+full pipeline needs all four, because `.[lock]` builds `hnswlib` from source. They are on one
+line because the other two cost a minute to install and skipping them costs the two failures
+described under [Steps](#steps). To avoid host Python altogether, the Docker route is the one
+named at the top of this file.
 
 ## Fast path (no download, a few minutes)
 
@@ -60,7 +92,7 @@ For a turnkey check that the headline result reproduces with **no atlas
 download**, run the deposited-centroids demo:
 
 ```bash
-# from a fresh clone -- complete, self-contained sequence:
+# from a fresh clone, once the prerequisites above are in -- the whole sequence:
 python3.12 -m venv .venv && source .venv/bin/activate # 1. create + activate env (Python 3.12 required)
 pip install -e .                                     # 2. install cellwarp (base, no compiler)
 python reproduce/fast_path.py                        # 3. run (a few minutes, no network)
@@ -83,12 +115,10 @@ analyses.
 
 ## Steps
 
-> Requires **Python 3.12** (`>=3.12,<3.13`). On **Ubuntu 24.04 no PPA is needed** -- it ships
-> Python 3.12.3, which satisfies the pin, and `apt-get install -y python3.12 python3.12-venv`
-> is enough. On **Ubuntu 22.04** the stock `python3` is 3.10 and the install will fail against
-> it, so get 3.12 first from the deadsnakes PPA. On **macOS** the stock `python3` is also
-> older: `brew install python@3.12`. Or skip host Python entirely with the Docker image
-> (main [README → Reproduce in Docker](../README.md#reproduce-in-docker)).
+> Requires **Python 3.12** (`>=3.12,<3.13`) and, on Linux, all four packages from
+> [Install prerequisites first](#install-prerequisites-first) above. Skip that section and
+> the `pip install` line below is where it fails; the note after the block gives both error
+> messages it can fail with.
 
 ```bash
 git clone https://github.com/sriramdevadas/cellwarp.git
@@ -106,17 +136,24 @@ bash reproduce/run_all.sh
 # of reproduce/run_all.sh.
 ```
 
-> **Slim-image note:** the full `.[lock]` install (and `cellwarp[samap]`)
-> builds `hnswlib` (a SAMap dependency) from source, so it needs both a
-> compiler **and the CPython development headers**:
-> `apt-get install -y build-essential python3.12-dev`. `build-essential`
-> alone is not enough -- without `python3.12-dev` there is no `Python.h`, and
-> the install ends `fatal error: Python.h: No such file or directory` /
-> `ERROR: Could not build wheels for hnswlib`, exit 1. This is invisible on
-> macOS, where the framework Python ships its own headers, so it bites only
-> on Linux and it bites at install time, before anything has run. The full
-> `python:3.12` image already has both. The fast-path base install above
-> needs none of this.
+> **Build tools on Linux, on any host that lacks them.** Not a slim-image edge case: a stock
+> Ubuntu Server image has neither a compiler nor `python3.12-dev`, and that is the ordinary
+> case. The full `.[lock]` install (and `cellwarp[samap]`) builds `hnswlib`, a SAMap
+> dependency, from source, so it needs a compiler **and** the CPython development headers. It
+> fails differently according to which is missing, and both messages are given here so that
+> searching this file for the one you got finds it.
+>
+> - **No compiler at all**, which ends with
+>   `RuntimeError: Unsupported compiler -- at least C++11 support is needed!`
+>   **That message is misleading.** It reads as though a compiler was found and judged too
+>   old; there is none. Install `build-essential`, and do not go looking for a newer `g++`.
+> - **A compiler but no headers**, which ends with
+>   `fatal error: Python.h: No such file or directory` and then
+>   `ERROR: Could not build wheels for hnswlib`, exit 1. Install `python3.12-dev`.
+>
+> Both are invisible on macOS, where the framework Python ships its own headers, so this bites
+> only on Linux, and it bites at install time before anything has run. The full `python:3.12`
+> image already has both. The fast-path base install needs neither.
 
 ### How long it takes
 
