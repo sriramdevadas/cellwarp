@@ -1,4 +1,4 @@
-# SCOPE — what is in the paper, and what is not
+# SCOPE -- what is in the paper, and what is not
 
 This repository holds more analysis than the PLOS ONE manuscript reports. That is
 by design: the paper is a principled subset of a longer research program, and
@@ -11,16 +11,16 @@ grounds, not selectively suppressed.
 
 ## Categories
 
-- **PAPER** — produces a display item, a reported statistic, or is required
+- **PAPER** -- produces a display item, a reported statistic, or is required
   pipeline / build / validation tooling for the PLOS ONE manuscript.
-- **BANKED** — a completed, pre-specified analysis held in reserve. Not reported
+- **BANKED** -- a completed, pre-specified analysis held in reserve. Not reported
   in this paper, but executed and deployable if a reviewer raises the
   corresponding point.
-- **OTHER PROJECT** — belongs to a distinct research line with its own separate
+- **OTHER PROJECT** -- belongs to a distinct research line with its own separate
   (future) write-up: cancer geometry, the disease/activation axis, the
   treeness–rigidity line, the aging axis, the evolutionary-ratio (dN/dS) line,
   developmental constraint, and the 100-type ontology expansion.
-- **EXPLORATORY** — scouting, feasibility, and diagnostic scripts that informed
+- **EXPLORATORY** -- scouting, feasibility, and diagnostic scripts that informed
   the paper's design but produce no reported number and make no standalone claim.
 
 ---
@@ -35,7 +35,7 @@ is on the record rather than inferred.
 |---|---|---|---|---|
 | `docs/submission/figures_for_review/Supplementary_Preregistration.md` | — | **Yes** | PAPER | The deposited pre-specification of record, mirrored into the review-packet directory from `docs/preregistration_conserved_contribution_2026-06-05.md` by `scripts/build_submission_packet.py`. |
 | `docs/preregistration_conserved_contribution_2026-06-05.md` | 2026-06-05 | **Yes** | PAPER | Pre-specifies the conserved-contribution / master-TF analysis (Fig 5, Results §2, §5). |
-| `docs/preregistration_aging_axis_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Aging-axis project (within-mouse aging as a directional centroid shift). **Not executed** — no output or script on disk. See "Aging/DILI check" below. |
+| `docs/preregistration_aging_axis_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Aging-axis project (within-mouse aging as a directional centroid shift). **Not executed** -- no output or script on disk. See "Aging/DILI check" below. |
 | `docs/preregistration_dilirank_hepatocyte_2026-03-16.md` | 2026-03-16 | **No** | BANKED | Hepatocyte-rigidity → drug-induced-liver-injury landmark test. **Executed** (`output/dilirank/`), returned a marginal/null result that did not survive the pre-specified covariate-falsification gate; correctly not reported as a positive finding. See below. |
 | `docs/preregistration_treeness_anticorrelation_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Treeness–rigidity mediation (neighborhood density). Treeness line; panels cut from this paper. |
 | `docs/preregistration_treeness_h2_concentration_2026-03-16.md` | 2026-03-16 | **No** | OTHER PROJECT | Treeness–rigidity mediation (gene-program concentration). Post-hoc exploratory; treeness line. |
@@ -43,7 +43,7 @@ is on the record rather than inferred.
 The manuscript's disclosure sentence (Methods, Statistical analysis)
 is written to reflect this: no analysis was registered with an *external* public
 registry (e.g. OSF), but dated internal pre-specifications were deposited with the
-code, and some of them cover analyses reported elsewhere — pointing here.
+code, and some of them cover analyses reported elsewhere -- pointing here.
 
 ### Aging / DILI check (resolves the §4 gate)
 
@@ -52,7 +52,7 @@ overlap the ten mechanistic-null tests reported for the per-type divergence
 ranking (Results §4; the ten nulls are reported in S1 Text §8), and does the aging plan test
 age-as-a-confound-on-the-cross-species-residual?
 
-**Answer — no eleventh null is needed:**
+**Answer -- no eleventh null is needed:**
 
 - **No overlap.** The ten mechanistic nulls each correlate a biological covariate
   against the human–mouse per-type Procrustes residual (housekeeping ratio, TF
@@ -65,7 +65,7 @@ age-as-a-confound-on-the-cross-species-residual?
   mouse somatic cells show a directional centroid shift with age (a *within-mouse*
   aging axis), and (b, exploratory) whether that aging displacement vector
   *aligns in direction* with the cross-species transform ("does a cell age in the
-  direction it evolved"). Neither is the confound the manuscript names — whether
+  direction it evolved"). Neither is the confound the manuscript names -- whether
   *age-composition differences between the human (adult) and mouse (aged) atlases
   reorder the per-type cross-species residual*. That compositional confound is
   disclosed in the manuscript as acknowledged-but-untested (Methods, atlas
@@ -76,11 +76,11 @@ age-as-a-confound-on-the-cross-species-residual?
 - **DILI was executed and is null under its own gate.** Test 1 (Mann-Whitney)
   p ≈ 0.054 (both arms, not significant at α = 0.05); Test 2 (Fisher upper-tail)
   p ≈ 0.076 full / 0.020 CYP450-excluded; Test 3 (dip) not significant; Test 4
-  (covariate-falsification partial correlation) p ≈ 0.087 / 0.102 — **fails** the
+  (covariate-falsification partial correlation) p ≈ 0.087 / 0.102 -- **fails** the
   pre-specified requirement that the partial correlation remain significant,
   triggering the plan's Hard Abort 3. Per its own reporting commitment it is a
   banked negative/marginal result, not reported as a finding. (Its Step-1
-  sensitivity gate — L1000-landmark preservation of the ranking, ρ = 0.852 — is
+  sensitivity gate -- L1000-landmark preservation of the ranking, ρ = 0.852 -- is
   checked by `reproduce/validate.py` and so is retained as validation tooling,
   but its result is not reported anywhere in the manuscript body or SI; the
   toxicity claim is not reported either.)
@@ -92,7 +92,7 @@ are scoped out here rather than in the manuscript body.
 
 ## `scripts/` classification
 
-### PAPER — pipeline, analysis, figures, tables, validation, build
+### PAPER -- pipeline, analysis, figures, tables, validation, build
 
 | Script | Role |
 |---|---|
@@ -102,8 +102,8 @@ are scoped out here rather than in the manuscript body.
 | `permutation_1M.py` | 1M-permutation headline null (Fig 1B) |
 | `permutation_1M_independent_pca.py` | Independent-PCA 1M null (Fig S1A) |
 | `test_lineage_stratified_permutation.py` | Lineage-stratified null (Fig 1C) |
-| `07_bootstrap.py` | Configuration bootstrap stability (Methods; S1 Text §11, text-only — no figure) |
-| `08_loocv.py` | Leave-one-out CV (Methods; S1 Text §11, text-only — no figure) |
+| `07_bootstrap.py` | Configuration bootstrap stability (Methods; S1 Text §11, text-only -- no figure) |
+| `08_loocv.py` | Leave-one-out CV (Methods; S1 Text §11, text-only -- no figure) |
 | `09_mantel_test.py` | Mantel pairwise-distance conservation |
 | `09_negative_control_v2.py`, `test_35type_human_control.py`, `49_build_figS7_matched_scale.py`, `polish_figS7.py` | Human-vs-human negative controls / matched-scale (S4 Fig, Fig 3-family) |
 | `16_sun2023_replication.py`, `pansci_replication.py`, `pansci_metadata_gate.py`, `33_cellhint_replication.py`, `14_t1a_replication.py`, `13_replication_inventory.py` | Direct replications (Fig 3A–C, replication inventory) |
@@ -119,12 +119,12 @@ are scoped out here rather than in the manuscript body.
 | `35_l1000_random_baseline.py` | L1000 landmark-preservation; validation tooling gated by `reproduce/validate.py`, not reported in the manuscript |
 | `confound_cellcount_rigidity.py` | Cell-count confound (Fig 4-family / old Fig 6B) |
 | `34_samap_35types.py`, `03_samap_validation.py` | SAMap-vs-residual check: `34_samap_35types` is validation tooling gated by `reproduce/validate.py` (its figure, old Fig S5, is cut from the current paper; result not reported); `03_samap_validation` is its superseded 6-type predecessor |
-| `cellmarker_35type_rerun.py`, `cellmarker_background_validated.py`, `hpa_35type_validation.py`, `52_overlay_figS6_pvalues.py`, `54_rebuild_figS6_matplotlib.py` | `cellmarker_35type_rerun` is validation tooling gated by `reproduce/validate.py` (its figure, old Fig S6, is cut from the current paper; result not reported); the rest — CellMarker background variant, HPA identity check, and the cut-Fig-S6 rebuild scripts — are not gated and not reported |
+| `cellmarker_35type_rerun.py`, `cellmarker_background_validated.py`, `hpa_35type_validation.py`, `52_overlay_figS6_pvalues.py`, `54_rebuild_figS6_matplotlib.py` | `cellmarker_35type_rerun` is validation tooling gated by `reproduce/validate.py` (its figure, old Fig S6, is cut from the current paper; result not reported); the rest -- CellMarker background variant, HPA identity check, and the cut-Fig-S6 rebuild scripts -- are not gated and not reported |
 | `fetch_macaque_orthologs.py`, `nhp_ortholog_assessment.py`, `47_rerun_macaque_permutations_save_null.py`, `48_build_fig6_K12.py` | Macaque extension (S1 Text §7) |
 | `41_donor_split_analysis.py`, `42_donor_split_shared_pca.py`, `43_generate_fig2e_donor_split.py` | Donor-split within-species control (Fig 3-family) |
 | `08_cell_type_inventory.py` | 35-type matching inventory (Table S5) |
 | `create_table_S1.py`, `create_table_S2.py`, `46_synthesis_pass_supplementary_table_edits.py`, `task_a_fix_s2_labels.py` | Table S1 / S2 build and supplementary-table edits |
-| `table1_formatting.py` | **COPY-EDIT WARNING: the S13 footnote prose in this file is load-bearing and cannot be reworded on its own.** Two migration guards key on footnote sentences — line 213 on a 48-word sentence, line 230 on `carrying an em-dash in the Bonferroni` — so rewording either in the workbook, or in the literal here, silently stops that block from firing: the script reports success, the workbook bytes do not move, `TABLE_1_LOCK_MD5` still matches and all four gates stay green while the edit has not landed. This has now happened or been caught three times (D61, D68, D69). Any copy-edit touching cell A66 must re-key the affected guard in the same commit and re-derive the lock. The D68/D69 block no longer uses a prose sentinel and is safe to reword; lines 213 and 230 are not. Edits S13 Table (`docs/supplementary_materials/table_S13_test_inventory.xlsx`) in place and idempotently. Not a builder: S13 has no from-scratch producer in the tree, so this pass is what makes the tracked artifact reproducible from tracked code. Its lock is `TABLE_1_LOCK_MD5`, named for the table's former number |
+| `table1_formatting.py` | **COPY-EDIT WARNING: the S13 footnote prose in this file is load-bearing and cannot be reworded on its own.** Two migration guards key on footnote sentences -- line 213 on a 48-word sentence, line 230 on `carrying an em-dash in the Bonferroni` -- so rewording either in the workbook, or in the literal here, silently stops that block from firing: the script reports success, the workbook bytes do not move, `TABLE_1_LOCK_MD5` still matches and all four gates stay green while the edit has not landed. This has now happened or been caught three times (D61, D68, D69). Any copy-edit touching cell A66 must re-key the affected guard in the same commit and re-derive the lock. The D68/D69 block no longer uses a prose sentinel and is safe to reword; lines 213 and 230 are not. Edits S13 Table (`docs/supplementary_materials/table_S13_test_inventory.xlsx`) in place and idempotently. Not a builder: S13 has no from-scratch producer in the tree, so this pass is what makes the tracked artifact reproducible from tracked code. Its lock is `TABLE_1_LOCK_MD5`, named for the table's former number |
 | `test_hvg_robustness.py` | HVG-only robustness check |
 | `generate_phase1_figures.py`, `generate_phase2_figures.py`, `generate_phase3_figures.py`, `composite_figS3.py`, `57_build_main_composites.py`, `build_submission_figures.py` | Figure generation / composition |
 | `v1_procrustes_validation.py`, `v2_loocv_validation.py`, `v3_cellmarker_validation.py`, `verify_procrustes_vs_scipy.py` | Independent re-implementations used as reproduce cross-checks |
@@ -149,7 +149,7 @@ are scoped out here rather than in the manuscript body.
 | `23_sensitivity_gate_l1000.py`, `24_dilirank_analysis.py` | DILI landmark preregistration (Step 1 gate + Steps 2–5). The Step-1 fractal-geometry ρ is checked by `reproduce/validate.py` but not reported in the manuscript; the toxicity claim is banked (null under its own gate). |
 | `v7_tost_equivalence.py` | TOST equivalence for the SAMap-vs-residual correlation; deployable if a reviewer asks whether the null correlation is a true null. |
 
-### EXPLORATORY — scouting, feasibility, diagnostics (no reported number)
+### EXPLORATORY -- scouting, feasibility, diagnostics (no reported number)
 
 | Script | Note |
 |---|---|
@@ -162,9 +162,9 @@ are scoped out here rather than in the manuscript body.
 
 | Directory | Category | Role |
 |---|---|---|
-| `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 5, §2, §5, Table S11). **The pipeline imposes no detection-breadth criterion on the genes entering C:** `gate_lib.per_gene_corr` filters on `np.std > 0` per species alone, so a gene detected in three of the 35 centroids and absent from thirty-two is admitted, and `biological_predictors.py:268`'s `frac_expressing > 0.10` is a per-cell rate needing raw matrices that are not deposited. `breadth_sensitivity.py` supplies a criterion (centroid > 0, the most generous reading) **for sensitivity analysis only — it is not the pipeline's and does not filter any deposited result**; it re-runs the Fig 5C enrichment on genes detected in all 35 types in both species, asserting its unfiltered row against `check3a.median_Crank` before computing any filtered row. Gated by `reproduce/validate.py`, not in `run_all.sh`. Includes four out-of-sample controls behind S1 Text's answer to the selection-circularity objection: `block1_form_a.py` (C retention across donor halves), `block3_form_b.py` (the same split tested on the geometry rather than on C), `item1_retention.py` (the paired retention ratio formed per case), and `block2_w3_tfcensus.py` (master-TF enrichment repeated against a full TF census). `block3_form_b.py` and `block2_w3_tfcensus.py` each read one input that is not deposited; their headers say which |
+| `conserved_contribution/` | PAPER | Master-TF / conserved-contribution (Fig 5, §2, §5, Table S11). **The pipeline imposes no detection-breadth criterion on the genes entering C:** `gate_lib.per_gene_corr` filters on `np.std > 0` per species alone, so a gene detected in three of the 35 centroids and absent from thirty-two is admitted, and `biological_predictors.py:268`'s `frac_expressing > 0.10` is a per-cell rate needing raw matrices that are not deposited. `breadth_sensitivity.py` supplies a criterion (centroid > 0, the most generous reading) **for sensitivity analysis only -- it is not the pipeline's and does not filter any deposited result**; it re-runs the Fig 5C enrichment on genes detected in all 35 types in both species, asserting its unfiltered row against `check3a.median_Crank` before computing any filtered row. Gated by `reproduce/validate.py`, not in `run_all.sh`. Includes four out-of-sample controls behind S1 Text's answer to the selection-circularity objection: `block1_form_a.py` (C retention across donor halves), `block3_form_b.py` (the same split tested on the geometry rather than on C), `item1_retention.py` (the paired retention ratio formed per case), and `block2_w3_tfcensus.py` (master-TF enrichment repeated against a full TF census). `block3_form_b.py` and `block2_w3_tfcensus.py` each read one input that is not deposited; their headers say which |
 | `independent_pca_sensitivity/` | PAPER | Independent-PCA sensitivity (Fig S1A–B) |
-| `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2). Includes `sweep_spread.py`, which evaluates rank recovery at the calibrated signal — absent from the deposited `RECOVERY_SIGNALS` grid — and sweeps the planted spread with re-calibration at each point; gated by `reproduce/validate.py`. Also includes `paired_signal.py` and `paired_spread.py`, which report the same recovery per replicate rather than pooled, so the signal and spread points are paired across the same drawn configurations |
+| `simulation_study/` | PAPER | Plant-and-recover simulation (Fig 4-family, §"simulation", Table S2). Includes `sweep_spread.py`, which evaluates rank recovery at the calibrated signal -- absent from the deposited `RECOVERY_SIGNALS` grid -- and sweeps the planted spread with re-calibration at each point; gated by `reproduce/validate.py`. Also includes `paired_signal.py` and `paired_spread.py`, which report the same recovery per replicate rather than pooled, so the signal and spread points are paired across the same drawn configurations |
 | `bootstrap_rankings/` | PAPER | Bootstrap ranking CIs (Fig S3, Table S2) |
 | `permutation_1M/` | PAPER | 1M headline null (Fig 1B) |
 | `mantel_test/` | PAPER | Mantel test |
@@ -172,7 +172,7 @@ are scoped out here rather than in the manuscript body.
 | `expanded_negative_controls/` | PAPER | Within-species tissue-pair controls (Fig S2E) |
 | `within_species_matched/` | PAPER | Matched-scale human-vs-human control (S4 Fig) |
 | `census_replication/` | PAPER | Pan-Census replication (Fig S2F). Includes `item2_assay_composition.py`, which settles the assay composition of the primary human atlas that the deposited mouse-only protocol breakdown cannot; it requires the optional Census extra and the network |
-| `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4). `ranking_replication/` also holds `block2_matched_n.py`, which builds the matched-n primary baseline each replication is read against — the six segments Fig 3 draws, and the six values S1 Text §6 states. **Its output `block2_matched_n_results.json` is now tracked**, having previously existed nowhere: the producer was deposited without it, so those six numbers had no machine-readable source and Fig 3 had nothing to join to. The panel joins on the source JSON path each bar was read from, not on the label (the two label sets differ in three separate ways), and raises unless every path resolves to exactly one entry. **Cost, measured: 6,009 pipeline calls at 10,000 permutations each, 4,136 s** — the sweep is seven n values, not thirteen, because every bar's `n_inter` except 35 already appears in the literal set `{6, 12, 15, 16, 17, 22, 35}` it is unioned with. The artifact records both seeds and what each governs, the n values swept, the draws at each, the call total and the wall time, so the price of a re-run is in the file. Twelve `validate.py` checks pin the six baselines and the six deficits, the second set because S1 Text §6's grouping sentence is a claim about the deficits that gating the baselines alone would not hold; `task2_residual_mechanism.py`, which tests whether the replicated types are the more conserved ones — the mechanism Results asserts but does not quantify; and `cross_atlas_ci.py`, which puts a Bonett–Wright Fisher-z interval on each of the four cross-atlas correlations, reading them from the four separate artifacts that hold them (no upstream producer holds all four). It uses `SE = 1.06/√(n−3)`, the Spearman constant, deliberately unlike the Pearson `1/√(n−3)` in `generate_phase2_figures.py`, `t3e_step2_compute.py` and `t3e_step3b_enhancer.py`; gated by `reproduce/validate.py`, not invoked by `run_all.sh` |
+| `cellhint_investigation/`, `harmonized_replication/`, `ranking_replication/` | PAPER | Cross-atlas ranking / harmonization (Tables S1, S3, S4; Fig S4). `ranking_replication/` also holds `block2_matched_n.py`, which builds the matched-n primary baseline each replication is read against -- the six segments Fig 3 draws, and the six values S1 Text §6 states. **Its output `block2_matched_n_results.json` is now tracked**, having previously existed nowhere: the producer was deposited without it, so those six numbers had no machine-readable source and Fig 3 had nothing to join to. The panel joins on the source JSON path each bar was read from, not on the label (the two label sets differ in three separate ways), and raises unless every path resolves to exactly one entry. **Cost, measured: 6,009 pipeline calls at 10,000 permutations each, 4,136 s** -- the sweep is seven n values, not thirteen, because every bar's `n_inter` except 35 already appears in the literal set `{6, 12, 15, 16, 17, 22, 35}` it is unioned with. The artifact records both seeds and what each governs, the n values swept, the draws at each, the call total and the wall time, so the price of a re-run is in the file. Twelve `validate.py` checks pin the six baselines and the six deficits, the second set because S1 Text §6's grouping sentence is a claim about the deficits that gating the baselines alone would not hold; `task2_residual_mechanism.py`, which tests whether the replicated types are the more conserved ones -- the mechanism Results asserts but does not quantify; and `cross_atlas_ci.py`, which puts a Bonett–Wright Fisher-z interval on each of the four cross-atlas correlations, reading them from the four separate artifacts that hold them (no upstream producer holds all four). It uses `SE = 1.06/√(n−3)`, the Spearman constant, deliberately unlike the Pearson `1/√(n−3)` in `generate_phase2_figures.py`, `t3e_step2_compute.py` and `t3e_step3b_enhancer.py`; gated by `reproduce/validate.py`, not invoked by `run_all.sh` |
 | `biological_predictors/` | PAPER | Biological-predictor correlates (Table S1, §4) |
 | `sensitivity_analyses/` | PAPER | Ribosomal/housekeeping exclusion, per-gene standardization, marker-null (Tables S7/S9/S10, S5 Fig) |
 | `sensitivity/layer2_no_ribosomal/` | PAPER | Layer 2 under ribosomal-protein exclusion (S1 Text §4; Results §2; Methods), gated by `reproduce/validate.py` |
@@ -186,7 +186,7 @@ are scoped out here rather than in the manuscript body.
 | `evolutionary_ratio/` | OTHER PROJECT | Evolutionary-ratio (dN/dS) line |
 | `macaque_atlas_research/`, `third_species/` | EXPLORATORY | Macaque / third-species atlas surveys and feasibility reports |
 | `cross_reference/` | PAPER | Builds `master_ranking_table.csv`, the source behind Fig 4B (CI-width vs cross-atlas rank-shift, ρ = −0.41) and Table S1 |
-| `reported_parameters/` | PAPER | Parameters and summary statistics the submitted texts state but `reproduce/validate.py` could not otherwise read: values living in a CSV column (its `.csv` branch is unreachable), in a Python literal inside a producer, or in a per-type list that must be reduced before it is a number. No new result — every field is read or reduced from a tracked file with its source recorded beside it. Gated by `reproduce/validate.py`, not in `run_all.sh` |
+| `reported_parameters/` | PAPER | Parameters and summary statistics the submitted texts state but `reproduce/validate.py` could not otherwise read: values living in a CSV column (its `.csv` branch is unreachable), in a Python literal inside a producer, or in a per-type list that must be reduced before it is a number. No new result -- every field is read or reduced from a tracked file with its source recorded beside it. Gated by `reproduce/validate.py`, not in `run_all.sh` |
 | `layer2_dimension_table/` | PAPER | Builds S14 Table (`docs/supplementary_materials/table_S14_layer2_dimension.csv`) and the summary JSON that gates it: the primate Layer-2 statistic against retained joint-PCA dimension, per pair, weighting and k, with the chance level k/p and the observed-minus-null margin. Reads the vendored `docs/submission/plosone/figures/bg_results/` files and regenerates none of them; every S and null is asserted against the source before the table is written, and the summary is built by reading the written CSV back off disk so the gate checks the file a reader receives. Gated by `reproduce/validate.py`, not in `run_all.sh` |
 | `worked_example/` | PAPER | The one cell type Results §4 carries through all three layers (hepatocyte): its Layer-1 residual and rank, within-atlas CI width, Layer-2 S at k = 5 either side of the rotation, and its rank in each cross-atlas replication, extracted from the four per-type CSVs into a JSON because none of the four can be gated directly. Declares which replication columns are variants of one comparison and which arm of the primary each holds fixed, deriving every count from that table; asserts four cross-file identities over all 35 types (shared `cell_type` set, `rank == original_rank == primary_rank`, `ci_width == bootstrap_CI_width`, and the two S column means against the deposited `summary_stats.json` aggregate) and writes nothing if any fails. Gated by `reproduce/validate.py`, not in `run_all.sh` |
 
@@ -215,7 +215,7 @@ are scoped out here rather than in the manuscript body.
 
 *Every statistic checked by `reproduce/validate.py` resolves either to a PAPER
 artifact above or to the vendored basal-ganglia inputs in
-## Support a reader cannot reproduce — three known instances
+## Support a reader cannot reproduce -- three known instances
 
 **All three pass all four gates.** None is a wrong number; each is a place where a green
 board does not mean a reader could have produced the thing it certifies. In the first
@@ -232,10 +232,10 @@ above a 1e-6 disagreement, skips that check when the gitignored cell-split aggre
 absent so the panel builds from the deposit alone, and `reproduce/validate.py` now gates
 the key. Measured margin between recompute and deposit: 0.0e+00. The 100-value donor-split
 histogram beside it is still a recompute from gitignored `agg_*_cap10000.npz`, so 7D as a
-whole is not reproducible from tracked data — but that is instance 2's `.npz` problem, not
+whole is not reproducible from tracked data -- but that is instance 2's `.npz` problem, not
 a fourth one, and the figure no longer asserts a level a reader cannot obtain.
 
-1. **`figS5_markernull.pdf` — a hand-copied hop that `--verify` cannot see.**
+1. **`figS5_markernull.pdf` -- a hand-copied hop that `--verify` cannot see.**
    `analysis/sensitivity_analyses/markernull.py` writes its figure to
    `docs/supplementary_materials/figure_S8_markernull.{pdf,png}`, the old stem and
    directory, not to the deposited `figures/submission/supplementary/figS5_markernull.pdf`.
@@ -246,7 +246,7 @@ a fourth one, and the figure no longer asserts a level a reader cannot obtain.
    `figure_S8_markernull` appears zero times in the packet script and zero times in the
    packet test.
 
-2. **`block3_form_b.py` — the strongest circularity control is not re-runnable.**
+2. **`block3_form_b.py` -- the strongest circularity control is not re-runnable.**
    It is the out-of-sample test of geometric circularity behind S1 Text's answer to the
    selection objection: select genes on C in donor half A, evaluate the obs/null
    geometry on half-B centroids. It reads
@@ -260,9 +260,9 @@ a fourth one, and the figure no longer asserts a level a reader cannot obtain.
    The deposited main figures are assembled by
    `docs/submission/plosone/figures/build_main_figures.py`, but
    `scripts/57_build_main_composites.py` is a second compositor over the same inputs:
-   all six panels the deposited path reads from `figures/panels/` —
+   all six panels the deposited path reads from `figures/panels/` --
    `fig1a_pipeline_schematic`, `fig1b_null_1M`, `fig1c_lineage_stratified`,
-   `fig3a_ellipsoid_heatmap`, `fig3b_pre_post` and `fig4d_replication_summary` — are
+   `fig3a_ellipsoid_heatmap`, `fig3b_pre_post` and `fig4d_replication_summary` -- are
    embedded by `57_build_main_composites.py` as well, into five composites carrying the
    earlier seven-figure numbering (`figures/main/fig1_global_coherence`,
    `fig2_two_layer`, `fig3_replication`, `fig5_rigidity_ranking`, `fig6_l1000_nulls`).

@@ -10,7 +10,7 @@ git clone https://github.com/sriramdevadas/cellwarp.git && cd cellwarp
 
 **Verify the deposit in Docker** (no host Python needed): it builds Ubuntu 22.04 + Python 3.12 and runs the four reproduction gates plus the headline fast-path. See [Reproduce in Docker](#reproduce-in-docker).
 
-**Or install locally**, which requires Python 3.12 (the project pins `>=3.12,<3.13`; Ubuntu 24.04 already ships 3.12, Ubuntu 22.04 needs the deadsnakes PPA, and macOS needs `brew install python@3.12` — [Setup](#setup-requires-python-312) has the per-distribution commands):
+**Or install locally**, which requires Python 3.12 (the project pins `>=3.12,<3.13`; Ubuntu 24.04 already ships 3.12, Ubuntu 22.04 needs the deadsnakes PPA, and macOS needs `brew install python@3.12` -- [Setup](#setup-requires-python-312) has the per-distribution commands):
 
 ```bash
 python3.12 -m venv .venv
@@ -87,14 +87,18 @@ The pin is two-sided, so a **newer** Python fails too, with a different message:
 | what you are running | peak resident | leave yourself |
 |---|---|---|
 | fast path, or the Docker gate run | negligible | any machine |
-| Tier 1 (`[1/8]`–`[8/8]`) | **58.9 GiB** | 64 GB minimum, 128 GB comfortable |
-| full pipeline | **58.9 GiB** — the maximum is in Tier 1 | 64 GB minimum, 128 GB comfortable |
+| Tier 1 (`[1/8]`–`[8/8]`) | **51–59 GiB** | 128 GiB recommended |
+| full pipeline | **51–59 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
 
-The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it; a 32 GB instance was OOM-killed there at 30.2 GiB. Measured on one platform (AWS `r6i.4xlarge`, 128 GiB, Ubuntu 24.04.4): these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
+The range is two measurements, not an estimate: 58.9 GiB and 51.4 GiB, same instance type and same commit, a 13% spread. **64 GB has never been tested and is not recommended** -- a 58.9 GiB peak would leave about five for the operating system, and a third run could land above 58.9. The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it; a 32 GB instance was OOM-killed there at 30.2 GiB anon-rss. Measured on AWS `r6i.4xlarge` (128 GiB) under Ubuntu 24.04.4: these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
+
+**Tested on.** Fast path: macOS 15 on Apple silicon, and Ubuntu 24.04 on x86-64. Full pipeline: Ubuntu 24.04 on x86-64 only, twice, end to end with four green gates. The full pipeline on macOS is untested. Windows is untested throughout, natively and in Docker alike. Nothing is known to be wrong with either; nothing has been checked.
 
 The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission text is pinned by `reproduce/MANUSCRIPT_MD5`: the manuscript (`docs/submission/plosone/manuscript_combined.txt`) and both supporting-information texts (`S1_Text.txt`, `S2_Text.txt`), verified with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4.
 
 ## Reproduce in Docker
+
+**Docker or native is a choice of scope, not of platform.** Both run on any host: the image needs only Docker, the native path only Python 3.12. Docker covers the four gates and the fast path with no large download; native covers the full pipeline. All four combinations are valid, so choose by what you want to check rather than by where you are running it.
 
 A host-Python-independent **verification** path: it runs the four reproduction gates and the no-download fast-path; it does **not** run the full analysis pipeline (see Scope). The image is Ubuntu 22.04 + Python 3.12, and the gates run at build time, so a green build itself certifies that step:
 

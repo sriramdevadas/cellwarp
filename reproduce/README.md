@@ -1,5 +1,18 @@
 # Reproducing the CellWarp Paper
 
+**Docker or native is a choice of scope, not of platform.** Both run on any host: the image
+needs only Docker, the native path only Python 3.12. Docker covers the four reproduction gates
+and the fast path, with no large download; the native path covers the full pipeline, which is
+the only route that runs every analysis and the CELLxGENE Census download. All four
+combinations are valid, so choose by what you want to check rather than by where you are
+running it. The image is described in
+[README → Reproduce in Docker](../README.md#reproduce-in-docker).
+
+**Tested on.** Fast path: macOS 15 on Apple silicon, and Ubuntu 24.04 on x86-64. Full
+pipeline: Ubuntu 24.04 on x86-64 only, twice, end to end with four green gates. The full
+pipeline on macOS is untested. Windows is untested throughout, natively and in Docker alike.
+Nothing is known to be wrong with either; nothing has been checked.
+
 ## Requirements
 - Python 3.12 (the project pins `>=3.12,<3.13`)
 - ~6 GB disk space for core data (Tier 1, downloaded automatically)
@@ -10,27 +23,35 @@
   | what you are running | peak resident | leave yourself |
   |---|---|---|
   | fast path | negligible | any machine |
-  | Tier 1 (`[1/8]`–`[8/8]`) | **58.9 GiB** | 64 GB minimum, 128 GB comfortable |
-  | full pipeline | **58.9 GiB** — the maximum is in Tier 1 | 64 GB minimum, 128 GB comfortable |
+  | Tier 1 (`[1/8]`–`[8/8]`) | **51–59 GiB** | 128 GiB recommended |
+  | full pipeline | **51–59 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
+
+  **The range is two measurements, not an estimate.** 58.9 GiB on the first full run and
+  51.4 GiB on the second, same instance type and same commit: a 13% spread on identical work.
+  Treat 51–59 GiB as the measurement and 128 GiB as the recommendation, because a third run
+  could land above 58.9.
+
+  **64 GB has never been tested here, and is not recommended.** A 58.9 GiB peak on a 64 GB
+  machine leaves about five for the operating system and everything else running on it, which
+  is not headroom.
 
   The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads **992,192 cells in
-  order to keep 140,000** — it subsamples after the download rather than during it. A 32 GB
+  order to keep 140,000**: it subsamples after the download rather than during it. A 32 GB
   instance was killed there by the OOM killer after five minutes, at 30.2 GiB anon-rss.
 
   **Note that `[4/8]` is inside Tier 1**, so stopping after `TIER 1 COMPLETE` does not avoid
   this: the Tier-1 peak is the whole run's peak. The often-quoted 26.9 GiB is `[1/8]`
   (`01_download_data.py`) on its own, which matters only if you run the download step alone.
 
-  One run, one platform. These are peaks to have headroom above, not a threshold to sit
-  exactly on.
-- **Reproduced on:** an AWS `r6i.4xlarge` — 16 vCPU, 128 GiB — running Ubuntu 24.04.4 with
+  These are peaks to have headroom above, not a threshold to sit exactly on.
+- **Reproduced on:** an AWS `r6i.4xlarge` (16 vCPU, 128 GiB) running Ubuntu 24.04.4 with
   Python 3.12.3. Every measured figure in this file comes from that machine.
 - Internet connection required for initial data download
 - Runtime: see [Steps](#steps). Budget varies by more than 3x with network quality, so the
   number is given there with both measurements rather than as a single headline.
 
 **The fast path needs none of the above.** No download, no compiler, no atlas data, and none
-of that memory — it reads deposited centroids and runs a permutation test in a few minutes on
+of that memory -- it reads deposited centroids and runs a permutation test in a few minutes on
 any machine.
 
 ## Fast path (no download, a few minutes)
@@ -62,7 +83,7 @@ analyses.
 
 ## Steps
 
-> Requires **Python 3.12** (`>=3.12,<3.13`). On **Ubuntu 24.04 no PPA is needed** — it ships
+> Requires **Python 3.12** (`>=3.12,<3.13`). On **Ubuntu 24.04 no PPA is needed** -- it ships
 > Python 3.12.3, which satisfies the pin, and `apt-get install -y python3.12 python3.12-venv`
 > is enough. On **Ubuntu 22.04** the stock `python3` is 3.10 and the install will fail against
 > it, so get 3.12 first from the deadsnakes PPA. On **macOS** the stock `python3` is also
@@ -89,7 +110,7 @@ bash reproduce/run_all.sh
 > builds `hnswlib` (a SAMap dependency) from source, so it needs both a
 > compiler **and the CPython development headers**:
 > `apt-get install -y build-essential python3.12-dev`. `build-essential`
-> alone is not enough — without `python3.12-dev` there is no `Python.h`, and
+> alone is not enough -- without `python3.12-dev` there is no `Python.h`, and
 > the install ends `fatal error: Python.h: No such file or directory` /
 > `ERROR: Could not build wheels for hnswlib`, exit 1. This is invisible on
 > macOS, where the framework Python ships its own headers, so it bites only
@@ -111,7 +132,7 @@ Both are real. The gap is not the analysis, it is the network. `13_covid_procrus
 a CZ CELLxGENE Census query per (cell type × tissue) combination across 20 cell types with
 `CENSUS_QUERY_TIMEOUT = 600`; in the 9 h 40 m run **14 of those timeouts fired**, over two
 hours of pure waiting. On a well-connected host they largely stop firing, the step drops to
-33 minutes, and it stops being the bottleneck at all — `simulation_study.py`, which is pure
+33 minutes, and it stops being the bottleneck at all -- `simulation_study.py`, which is pure
 local compute, becomes the slowest step instead.
 
 So budget by where you are running: **most of a day from a home connection, an afternoon from
@@ -156,7 +177,7 @@ current paper does not report.
 **What Gate 1 does and does not establish.** Every artifact it reads is a tracked file in
 this repository, so it returns a full pass on a freshly unpacked archive with no pipeline
 step run at all. It checks that the values reported in the manuscript match the artifacts
-deposited beside them — a consistency check, not evidence that the code regenerates those
+deposited beside them -- a consistency check, not evidence that the code regenerates those
 artifacts. To use it as a reproduction test, run the pipeline first and then re-run it, so
 the artifacts it reads are ones this machine produced.
 
@@ -166,7 +187,7 @@ the artifacts it reads are ones this machine produced.
 submission packet (`docs/submission/figures_for_review/` and one panel mirror), and nothing
 but `scripts/build_submission_packet.py --rebuild` writes those copies. So a **successful**
 reproduction leaves the canonical and its mirror out of sync, and both Gate 3 and the
-`tests/test_submission_packet_consistency.py` half of Gate 2 fail — because the run worked,
+`tests/test_submission_packet_consistency.py` half of Gate 2 fail -- because the run worked,
 not because it did not.
 
 ```bash
@@ -189,7 +210,7 @@ no producer here.
 `table_S2.xlsx` would not drift in any case: `scripts/create_table_S2.py` was given the
 fixed-epoch stamp described below and now regenerates byte-for-byte.
 
-**That paragraph is a reading of the stage order, not a measurement** — except for one entry,
+**That paragraph is a reading of the stage order, not a measurement** -- except for one entry,
 now measured. The six-pair list this section used to give was measured on a real run, before
 `[S29c]` existed, and no run since has re-measured the rest. Run `--verify` after the pipeline
 and trust its output over either list.
@@ -203,28 +224,28 @@ VERIFY FAIL: 1 / 30 pairs
       != mirror=docs/submission/figures_for_review/Figure_S3.pdf
 ```
 
-**and the drift is harmless.** Canonical and mirror are content-identical — both digest to
+**and the drift is harmless.** Canonical and mirror are content-identical -- both digest to
 `a11f70ff` once the PDF `/ID` trailer is normalised. `/ID` is a document identifier MuPDF
 regenerates on every `save()`, so two consecutive runs of the *unmodified* producer differ in
 those 60 bytes too. Nothing about the figure changed. One `--rebuild` re-syncs the pair.
 
 **The other three predicted entries remain unmeasured**: `Table_S6_CPC1_driver_genes.xlsx`,
 `covid_cross_analysis.png` and `cross_analysis_scaled.png` have not been run through this
-check. One confirmed entry does not validate four — treat those three as the stage-order
+check. One confirmed entry does not validate four -- treat those three as the stage-order
 reading they still are.
 
 ### Why a spreadsheet pair drifts: the writer's clock, not the content
 
 `table_S1.xlsx` drifts for a different reason from the four figure pairs.
-`openpyxl` stamps wall-clock time into every workbook it writes — `dcterms:created` and
-`dcterms:modified` in `docProps/core.xml`, and an mtime on every zip entry — so
+`openpyxl` stamps wall-clock time into every workbook it writes -- `dcterms:created` and
+`dcterms:modified` in `docProps/core.xml`, and an mtime on every zip entry -- so
 regenerating one yields a new md5 **even when every cell is identical**. An md5 over such a
 file pins the moment it was written rather than its content, and no content fix removes the
 drift.
 
 That is a property of the writer, not of the format. `scripts/table1_formatting.py`
 normalises it: it writes `dcterms:modified = 2026-01-01T00:00:00Z` and a fixed date on
-every zip entry, and is byte-idempotent as a result — consecutive runs produce identical
+every zip entry, and is byte-idempotent as a result -- consecutive runs produce identical
 bytes. `scripts/create_table_S2.py` now does the same, via a
 `normalize_xlsx_timestamps()` that `edit_table_s2()` imports rather than reimplements, so
 whichever of the two writes last applies the stamp. Compare a workbook from a writer that
@@ -232,26 +253,26 @@ does this by md5; compare one that does not, such as `table_S1.xlsx`, cell by ce
 
 ## The supplementary tables `run_all.sh` does not finish, and the one it now does
 
-`run_all.sh` generates three supplementary tables — `[S28]` `table_S1.xlsx`, `[S29]`
-`table_S2.xlsx`, `[S30]` `Table_S6_CPC1_driver_genes.xlsx` — and finishes only one of them.
+`run_all.sh` generates three supplementary tables -- `[S28]` `table_S1.xlsx`, `[S29]`
+`table_S2.xlsx`, `[S30]` `Table_S6_CPC1_driver_genes.xlsx` -- and finishes only one of them.
 
 **A hand step is partly missing from the pipeline.**
 `scripts/46_synthesis_pass_supplementary_table_edits.py` carries post-processors for six
-deposited tables — `table_S1.xlsx`, `table_S2.xlsx`, `table_S3.csv`, `table_S4.csv`,
-`table_S5.csv` and `Table_S6_CPC1_driver_genes.xlsx` — plus
+deposited tables -- `table_S1.xlsx`, `table_S2.xlsx`, `table_S3.csv`, `table_S4.csv`,
+`table_S5.csv` and `Table_S6_CPC1_driver_genes.xlsx` -- plus
 `docs/submission/key_resources_table.md`. Five of the six make changes; the `table_S3.csv`
 editor is retained but deliberately inert. `run_all.sh` calls exactly one of them: `[S29b]`
 loads the module and calls `edit_table_s2()` alone, and `[S29c]` then performs the packet
 refresh the script's closing line asks for. The restriction is deliberate and the call site
 records why. So `[S29]` and `[S29b]` together finish `table_S2.xlsx`, but `[S28]` writes the
 create-stage output only, and a reader's `table_S1.xlsx` will differ from the deposited copy.
-`table_S3.csv`, `table_S4.csv` and `table_S5.csv` have no generator at all — `run_all.sh`
+`table_S3.csv`, `table_S4.csv` and `table_S5.csv` have no generator at all -- `run_all.sh`
 never writes them, so those three remain as deposited.
 
 **`[S30]` cannot run from the deposit.** `scripts/generate_table_S6.py` opens
 `data/phase2_scaled/human_scaled.h5ad`. `.gitignore` excludes `data/` wholesale, no file
 under `data/phase2_scaled/` is tracked, and the archive does not carry it. Under
-`set -euo pipefail` (line 2) the run stops there, before `reproduce/validate.py` — so fetch
+`set -euo pipefail` (line 2) the run stops there, before `reproduce/validate.py` -- so fetch
 the Tier-2 inputs first, or skip the stage. `Table_S6_CPC1_driver_genes.xlsx` is therefore
 **untested against the deposit**, which is not the same as passing.
 
@@ -259,7 +280,7 @@ the Tier-2 inputs first, or skip the stage. `Table_S6_CPC1_driver_genes.xlsx` is
 
 The manuscript states that the conserved-contribution analyses in Results section 5 "are
 run outside the automated reproduction script and must be invoked directly". They are, in
-this order — each step reads the previous one's output:
+this order -- each step reads the previous one's output:
 
 ```bash
 python analysis/conserved_contribution/run_gate.py            # gate_results.json, gene_conservation_core.csv
@@ -280,7 +301,7 @@ the eight producers that write one and the order the S2 Fig chain requires.
 **`pyproject.toml`'s `[lock]` extra is the instruction; `requirements.txt` is a record.**
 `[lock]` pins the 27 direct dependencies and lets pip resolve the rest. `requirements.txt`
 is a 196-package freeze taken from one machine on 2026-05-18, and installing `.[lock]`
-today resolves 59 of those packages to different versions and omits 6 — including
+today resolves 59 of those packages to different versions and omits 6 -- including
 `leidenalg`, which "Seed and determinism" below names as one of the two
 environment-sensitive steps. Reproduce from `.[lock]`; read `requirements.txt` to see what
 the authoring environment happened to contain, and do not `pip install -r` it expecting the
@@ -293,17 +314,45 @@ form `DECISION-021`; they refer to a working decision log kept during the analys
 that is not deposited. They record when a choice was made and point at nothing in
 this repository, and no step in the reproduction path reads them.
 
-## Figure bytes record the matplotlib version
+## Rebuilding a deposited figure: which matplotlib, and the five that never match
 
-Figure metadata records the matplotlib version. PNGs carry it in a `Software` chunk and
-PDFs in `/Producer`, so rebuilding a figure under a different matplotlib gives a file whose
-bytes differ while every pixel is identical.
+Figure metadata records the matplotlib version: PNGs carry it in a `Software` chunk, PDFs in
+`/Producer`. That much is only metadata. The **rendering** is version-dependent too, so
+rebuilding under a different matplotlib moves pixels as well as bytes, and the two have to be
+told apart by measurement rather than assumed.
 
-Fourteen deposited figures were built with matplotlib 3.10.9. The manifests pin 3.10.8, and
-the other 190 deposited PNGs were built with the pinned version. Rebuilding any of the
-fourteen under the pinned environment reproduces them pixel for pixel — zero differing
-pixels, maximum delta 0.0000 — and changes only that string. **For these files, compare
-pixels rather than md5.**
+Fourteen deposited figures were built with matplotlib 3.10.9; the manifests pin 3.10.8, and
+the other 190 deposited PNGs were built with the pinned version. All fourteen have now been
+rebuilt and compared pixel by pixel, in both environments, and the result is not what this
+section previously claimed.
+
+**Rebuild them under 3.10.9, not under the 3.10.8 pin.** Nine of the fourteen come back with
+zero differing pixels under 3.10.9, the version they were built with. Under the pinned 3.10.8
+only two do, and the rest move by up to the full 8-bit range, which is text laid out
+differently rather than a metadata string. **For these files, compare pixels rather than md5,
+and rebuild under the version that produced them.**
+
+**Five never match, under either version:**
+
+| file | deposited | rebuilt | why |
+|---|---|---|---|
+| `fig1b_null_1M.png` | 986 × 735 | 1012 × 761 | DejaVu Sans, no Arial |
+| `fig1c_lineage_stratified.png` | 986 × 732 | 996 × 760 | DejaVu Sans, no Arial |
+| `fig3b_pre_post.png` | 986 × 632 | 1012 × 661 | DejaVu Sans, no Arial |
+| `fig1a_pipeline_schematic.png` | 1664 × 418 | 1664 × 420 | text-extent drift |
+| `fig4d_replication_summary.png` | 2063 × 759 | 2064 × 761 | text-extent drift |
+
+The first three are a **font-resolution** failure and not a version effect.
+`figure_style.apply_style()` requests `font.sans-serif: [Arial, Helvetica, DejaVu Sans]`, and
+these three were drawn where the first choice did not resolve, so they embed DejaVu Sans and
+no Arial while every other deposited panel embeds ArialMT. Both interpreters here now find
+Arial, 436 faces each, so a rebuild substitutes it back, and because `save_figure` writes with
+`bbox_inches='tight'` the narrower metrics move the page rather than only the glyphs. The last
+two do embed Arial and still land one to two pixels off under either version, which is a
+text-extent difference against the machine that drew them rather than a substitution.
+
+A pixel comparison cannot pass at a different raster size, so for those five no comparison
+passes at all: they are deposited as built, and nothing here reproduces them.
 
 The fourteen are: `Fig1_configuration_conserved.png` through
 `Fig5_conserved_identity_genes.png` and `Fig2C_bg_replication.png` under
@@ -313,18 +362,18 @@ The fourteen are: `Fig1_configuration_conserved.png` through
 `fig1a_pipeline_schematic.png`, `fig1b_null_1M.png`, `fig1c_lineage_stratified.png`,
 `fig3b_pre_post.png` and `fig4d_replication_summary.png` under `figures/panels/`. Fig 5 is
 a byte copy of `fig7_conserved_contribution.png` and carries that file's chunk unchanged,
-which is why it alone matches a 3.10.9 rebuild.
+so it matches whenever its source does.
 
 The five submission TIFFs are unaffected: the TIFF writer records no version string, and
 all five regenerate byte-identically under the pinned environment.
 
-**Panel labels are a second reason a rebuilt figure can differ, and it is platform-dependent.**
+**Panel labels are a separate platform-dependent difference, in a different set of files.**
 `composite_figS3.py` and `build_submission_figures.py` label panels in Arial Bold where macOS
-supplies it — that is the face the deposited figures embed. Off macOS that font does not exist,
+supplies it -- that is the face the deposited figures embed. Off macOS that font does not exist,
 so they fall back to the Helvetica-Bold built into MuPDF and print which face they used on
 stdout. So a `figS3_bootstrap_rankings.pdf` rebuilt on Linux will differ from the deposit in its
 embedded font, and is smaller for it; the labels are bold and correctly placed, but they are not
-Arial. That path exists so a reader's run completes, not to reproduce the deposited bytes — for
+Arial. That path exists so a reader's run completes, not to reproduce the deposited bytes -- for
 those, rebuild on macOS.
 
 ## Two interpreters: the gates and the DOCX build
@@ -423,13 +472,13 @@ only one of them is asserted by anything. Post-Tier-1 values:
 
 | quantity | value | who computes it | gated? |
 |---|---|---|---|
-| `EXPECTED_JOINED_WORDS` | **15012** | `docs/submission/plosone/build_manuscript_docx.py` | **yes** — the builder aborts on mismatch |
+| `EXPECTED_JOINED_WORDS` | **15012** | `docs/submission/plosone/build_manuscript_docx.py` | **yes** -- the builder aborts on mismatch |
 | `wc -w` on `manuscript_combined.txt` | **15177** | shell | no |
 | `wc -w` on `S1_Text.txt` / `S2_Text.txt` | 5979 / 975 | shell | no |
 
 **All four figures are measured at `manuscript_combined.txt` md5 `186e99ef`, and every one of
 them moves with every manuscript edit.** This section has now gone stale twice, so do not trust
-the numbers above against a tree whose manuscript md5 differs — re-derive instead. Two of the
+the numbers above against a tree whose manuscript md5 differs -- re-derive instead. Two of the
 three are re-derivable without running anything:
 
 - `EXPECTED_JOINED_WORDS` is **read from the builder**, not from here. It is a constant near the
@@ -458,7 +507,7 @@ same number under every locale.
 
 The rule is exact, not approximate: the two counts differ by precisely the
 number of whitespace-delimited tokens composed **only** of non-ASCII
-characters. For the post-edit manuscript that is 77 tokens — the spaced
+characters. For the post-edit manuscript that is 77 tokens -- the spaced
 operators, 31 `ρ`, 13 `×`, 9 `≈`, 8 `→`, 5 `∈`, 5 `≤`, 4 `≥`, 1 `α`, 1 `—`.
 
 | count | value | how |
@@ -467,8 +516,8 @@ operators, 31 `ρ`, 13 `×`, 9 `≈`, 8 `→`, 5 `∈`, 5 `≤`, 4 `≥`, 1 `α`
 | GNU `wc -w` under `LC_ALL=C` | **15100** | 15177 − 77 all-non-ASCII tokens |
 | `EXPECTED_JOINED_WORDS` | **15012** | the gate; see above |
 
-A token that *mixes* ASCII and non-ASCII — `human–mouse`, `50–2,000`, `ρ = 0.45`
-once the `=` is its own token — still contains printable ASCII and still counts
+A token that *mixes* ASCII and non-ASCII -- `human–mouse`, `50–2,000`, `ρ = 0.45`
+once the `=` is its own token -- still contains printable ASCII and still counts
 as one under both. That is the whole reason en dashes are irrelevant here: all
 89 of them sit inside mixed tokens and none is ever a bare token.
 
@@ -490,7 +539,7 @@ during the Tier-1 pass exactly.
 #### A coincidence, recorded so nobody chases it twice
 
 At the pre-edit HEAD the two manuscript counts were 13606 and 13524, a gap of
-**82** — and the manuscript contained exactly **82** en dashes. Two people
+**82** -- and the manuscript contained exactly **82** en dashes. Two people
 independently chased the en dash as the cause. It is not. The gap was 82
 because the pre-edit manuscript happened to contain 82 all-non-ASCII tokens as
 well; the edits moved that to 77 while leaving the en dashes at 82 as of that
