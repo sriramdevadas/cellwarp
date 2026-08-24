@@ -141,11 +141,11 @@ EXPECTED_CAPTION_BOUNDARIES = 25  # 5 figure + 20 supporting information
 # Named, not restated: this comment said "the 153 content lines" against a
 # constant of 160, and the one below said 23 boundaries against 25 -- the same
 # drift as the U+2212 report line, and for the same reason.
-EXPECTED_RAW_JOINED_CHARS = 102611
+EXPECTED_RAW_JOINED_CHARS = 102619
 # The same join, plus CAPTION_JOIN at each of the EXPECTED_CAPTION_BOUNDARIES
 # caption boundaries.
-EXPECTED_JOINED_CHARS = 102636
-EXPECTED_JOINED_WORDS = 15012
+EXPECTED_JOINED_CHARS = 102644
+EXPECTED_JOINED_WORDS = 15009
 # ASCII T in the extracted text of the content paragraphs. The source content
 # lines carry EXPECTED_ASCII_T minus SUPERSCRIPT_EXPECTED[U+1D40] of them, and
 # the remainder are substituted in from U+1D40, so this constant and that one
@@ -154,7 +154,7 @@ EXPECTED_JOINED_WORDS = 15012
 # as a title page rather than as a heading. Named, not restated: this said
 # "253 ... plus 5" over "121 content paragraphs", against a constant of 299 and
 # a builder reporting 135 -- wrong by 41 and by 14, while its 4 and 2 were right.
-EXPECTED_ASCII_T = 310
+EXPECTED_ASCII_T = 309
 EXPECTED_REFERENCES = 36
 EXPECTED_FIG_CAPTIONS = 5
 EXPECTED_SI_CAPTIONS = 20
@@ -206,7 +206,7 @@ LITERAL_EXPECTED = {
     "\u03b1": 1,   # GREEK SMALL LETTER ALPHA
     "\u03c1": 41,  # GREEK SMALL LETTER RHO
     "\u2013": 89,  # EN DASH
-    "\u2014": 1,   # EM DASH
+    "\u2014": 0,   # EM DASH
     "\u2016": 2,   # DOUBLE VERTICAL LINE
     "\u2032": 1,   # PRIME (was 3; two were the 3' v3 / 5' v2 sub-split, dropped)
     "\u2192": 8,   # RIGHTWARDS ARROW
