@@ -55,7 +55,7 @@ Contents (Class-O original analysis outputs), as built (761 files):
 - output/ : all 496 tracked files. The 5 empty .gitkeep placeholders are dropped from the deposit; ~424 further files under output/ are gitignored scratch/large artifacts and are intentionally excluded.
 - figures/ : all 165 tracked files (main and supplementary figure PDFs and PNGs).
 - analysis/ : the 105 data-type result files (.csv/.json/.npy/.png/.tsv/.npz), EXCLUDING analysis/mouse_lemur/biomart_mouse_lemur_human_orthologs.csv (a BioMart reference table, which travels with the CODE record). analysis/ code (.py/.R/.md) is not in the DATA record.
-- EXCLUDED from DATA: everything under data/ (input reference tables and the 2 Class-D centroid files in data/centroids/), and all .py/.R/.md/.gitkeep files.
+- EXCLUDED from DATA: everything under data/ (input reference tables and the 2 Class-D centroid files in data/centroids/); the .gitkeep placeholders wherever they occur; and, under analysis/ only, the code files (.py/.R/.md) that the data-type filter in the previous bullet already drops. This last exclusion is scoped to analysis/ and does NOT reach output/. An earlier version of this line claimed .md was dropped everywhere, which contradicted both the bullet above it and step 1 of the snapshot procedure, and is settled against the published v1 archive rather than by preference: cellwarp-data-4fca942.zip contains 20 output/*.md files, its output/ entry count is 491 = 496 tracked minus 5 .gitkeep, and 491 + 165 + 105 = 761, the archive's own total. 'All output/ minus the .gitkeep placeholders' is therefore the operative rule.
 
 ## Dropped classes + regeneration map
 

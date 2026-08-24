@@ -187,3 +187,26 @@ or conclusions, which are the author's own. All relevant sources are cited,
 and the author takes full responsibility for the accuracy, validity, and
 integrity of all code, analyses, results, and text. Claude is not, and cannot
 be, an author of this work.
+
+================================================================
+SECTION 7 — ETHICS STATEMENT
+================================================================
+
+Ethics statement
+
+(This statement appears as a dedicated subsection of the Materials and
+Methods in the manuscript, at manuscript_combined.txt:136 under the heading
+at :134, and the same text was entered verbatim into the Editorial Manager
+ethics field at submission. It is reproduced below on a single unwrapped
+line, deliberately: that makes it byte-comparable against the manuscript
+line it came from, which is the only way this file can be shown to still
+agree with the submitted text. Do not re-wrap it.)
+
+This study is a computational reanalysis of previously published, publicly available single-cell and single-nucleus RNA-sequencing datasets; no new human or animal data were generated. All datasets were obtained in de-identified form from public repositories, where they were deposited by the original studies under their own institutional ethical and animal-care approvals. Because only existing, publicly available, de-identified data were analyzed, no additional ethics approval was required.
+
+(The Editorial Manager human-participants question was answered "This study
+did not involve human participants, data, specimens or tissue". No PLOS
+Human Participants Research Checklist was required or attached. The datasets
+analysed are listed in Section 1; the human-derived ones are Tabula Sapiens,
+the Human and Mammalian Brain Atlas basal-ganglia atlas, CellHint, Andrews
+et al., and the pooled pan-Census human comparison set.)
