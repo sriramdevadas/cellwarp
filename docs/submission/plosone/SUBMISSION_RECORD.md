@@ -123,6 +123,23 @@ source text it was built from, `manuscript_combined.txt` at md5
 (`cover*letter*.txt`) and is deliberately absent from both Zenodo archives; it is listed here because
 it was submitted, not because it is archived.
 
+## The basal-ganglia record's `References` relation — checked, correct, closed
+
+`10.5281/zenodo.22073208`'s DataCite metadata carries `References -> 10.5281/zenodo.20735612`, which
+is CODE **v1's version DOI**, not the concept DOI `20735611` the manuscript cites. That looks like a
+mismatch and is not one.
+
+The basal-ganglia deposit pins CellWarp to v1 deliberately. Its `requirements.txt` reads
+`cellwarp @ git+https://github.com/sriramdevadas/cellwarp.git@pcompbiol-submission-2026-06`, and its
+own comment states the pin is "the exact commit that produced the paper's results (tag
+`pcompbiol-submission-2026-06` == commit `4fca942` == the Zenodo code deposit
+`10.5281/zenodo.20735612`)". The tag peels to `4fca942`, and `4fca942` is what CODE v1 was built
+from.
+
+So a frozen replication points at the exact version it ran against, which is what it should do. The
+relation is correct and must not be "corrected" to the concept DOI: the concept DOI resolves to v2,
+which is **not** what the basal-ganglia results were produced with. No change to the Zenodo record.
+
 ## Ethics statement as entered
 
 The Editorial Manager ethics field was filled with the manuscript's own ethics statement verbatim,
