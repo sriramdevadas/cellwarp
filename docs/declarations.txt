@@ -24,8 +24,8 @@ Deposits:
   https://doi.org/10.5281/zenodo.20735639.
 - Self-contained basal-ganglia primate-replication deposit, an independent
   reproduction of the Fig 2 two-layer decomposition from the source h5ad with
-  the CellWarp method pinned as a versioned dependency: Zenodo, DOI
-  [BG_DEPOSIT_DOI - pending mint].
+  the CellWarp method pinned as a versioned dependency: Zenodo,
+  https://doi.org/10.5281/zenodo.22073208.
 
 CELLxGENE Census version pinning:
 Census-derived data are fetched at Census release "2025-11-08", pinned
