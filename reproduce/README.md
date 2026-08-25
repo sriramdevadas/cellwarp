@@ -139,7 +139,13 @@ python scripts/build_submission_packet.py --rebuild
 # Or run just the core pipeline (Tier 1 only):
 # Stop run_all.sh after "TIER 1 COMPLETE" with Ctrl+C, or run the eight
 # Tier-1 steps individually -- they are the [1/8]..[8/8] steps at the top
-# of reproduce/run_all.sh.
+# of reproduce/run_all.sh. This direction is safe.
+#
+# The UNSAFE direction is the other one: do not run Tier-2 stages without
+# having run Tier 1 first. [S30] opens data/phase2_scaled/human_scaled.h5ad,
+# which [4/8] creates and the deposit does not carry, and under
+# `set -euo pipefail` the run stops there -- before validate.py. See
+# "[S30] cannot run from the deposit" below.
 ```
 
 > **Build tools on Linux, on any host that lacks them.** Not a slim-image edge case: a stock

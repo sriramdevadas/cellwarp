@@ -63,6 +63,13 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 >
 > Wall-clock for the whole pipeline has been measured at **3 h 08 m** and **9 h 40 m** on the same
 > instance type, the spread being network quality against CELLxGENE Census.
+>
+> **If you only need the gates, you do not need any of this.**
+> [Reproduce in Docker](#reproduce-in-docker) runs all four reproduction gates and the headline
+> fast-path in minutes, on any machine, with no large download and no memory requirement worth
+> naming. Read that section's **Scope** paragraph before deciding: Docker verifies the gates and the
+> fast path, **not** the pipeline that regenerates the numbers. If that is what you came to check,
+> the block below is the one you want.
 
 ```bash
 git clone https://github.com/sriramdevadas/cellwarp.git
@@ -105,7 +112,17 @@ which is why the gates are green *before* you reproduce anything.
 [reproduce/README.md](reproduce/README.md#after-a-full-run-rebuild-the-packet-before-the-gates-mean-anything)
 gives the full stage-by-stage account of which pairs drift and why.
 
-`build-essential` and `python3.12-dev` are needed because `[lock]` installs SAMap, whose dependency `hnswlib` is built from source: without the CPython headers the install ends `fatal error: Python.h: No such file or directory` / `ERROR: Could not build wheels for hnswlib`, exit 1, before anything has run. This bites on Linux only. Neither the fast path nor the `.[dev]` gate install needs them.
+`build-essential` and `python3.12-dev` are needed because `[lock]` installs SAMap, whose dependency `hnswlib` is built from source. This bites on Linux only. Neither the fast path nor the `.[dev]` gate install needs them. It fails two different ways and the message tells you which package is missing:
+
+- **No compiler at all** (`build-essential` missing):
+  `RuntimeError: Unsupported compiler -- at least C++11 support is needed!`
+  This reads as though a compiler was found and judged inadequate. There is none. Install
+  `build-essential`; do not go looking for a newer `g++`.
+- **Compiler present, headers missing** (`python3.12-dev` missing):
+  `fatal error: Python.h: No such file or directory`, then
+  `ERROR: Could not build wheels for hnswlib`, exit 1.
+
+Either way it fails at `pip install`, before anything has run.
 
 If you see `No matching distribution found for numpy…`, you're on the wrong Python: that error means an interpreter older than 3.12; use 3.12.
 
