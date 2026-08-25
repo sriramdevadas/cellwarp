@@ -49,6 +49,21 @@ This is the full reproduction (every analysis plus the CELLxGENE Census atlas do
 
 This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04 (3.10) and macOS (system Python) is too old, and a current Homebrew default (3.14) is too new; the install **will fail** against either. Get 3.12 first if needed, then create the venv with 3.12 and install, kept as one contiguous block so the `pip install` line never runs against the wrong interpreter:
 
+> **Read this before you run the block below.** It ends with `bash reproduce/run_all.sh`, which
+> is a multi-hour job with a large memory footprint, and both of the things that stop it are
+> described *after* the block rather than before it:
+>
+> - **Memory: the peak is 51–59 GiB**, in `[4/8]`, and it is inside Tier 1, so stopping after
+>   `TIER 1 COMPLETE` does not avoid it. **128 GiB is the recommendation and 64 GB is not**; a
+>   32 GB instance is OOM-killed after about five minutes. Full measurements under
+>   [Requirements](#requirements) below.
+> - **Build tools on Linux:** the `pip install -e ".[lock,dev]"` line builds `hnswlib` from
+>   source and fails without a compiler and the CPython headers. The commented `apt-get` lines
+>   in the block install them; do not skip them.
+>
+> Wall-clock for the whole pipeline has been measured at **3 h 08 m** and **9 h 40 m** on the same
+> instance type, the spread being network quality against CELLxGENE Census.
+
 ```bash
 git clone https://github.com/sriramdevadas/cellwarp.git
 cd cellwarp
@@ -74,7 +89,21 @@ pip install -e ".[lock,dev]"
 #   conda env create -f environment.yml && conda activate cellwarp   # mirrors [lock] and includes pytest; Python 3.12.12
 
 bash reproduce/run_all.sh
+
+# A successful run leaves Gate 3 red until you refresh the packet mirrors.
+# This is required, not optional -- see the note directly below the block.
+python scripts/build_submission_packet.py --rebuild
 ```
+
+**After a successful run, Gate 3 and part of Gate 2 fail until you rebuild the packet.** This is
+not a failed reproduction: `run_all.sh` rewrites tracked canonical artifacts, and their byte-copies
+under `docs/submission/figures_for_review/` are written only by
+`scripts/build_submission_packet.py --rebuild`. Until you run it, the canonical and its mirror are
+out of sync and `--verify` reports the drift — most visibly
+`figS3_bootstrap_rankings.pdf` against `Figure_S3.pdf`. On the pristine archive all 30 pairs match,
+which is why the gates are green *before* you reproduce anything.
+[reproduce/README.md](reproduce/README.md#after-a-full-run-rebuild-the-packet-before-the-gates-mean-anything)
+gives the full stage-by-stage account of which pairs drift and why.
 
 `build-essential` and `python3.12-dev` are needed because `[lock]` installs SAMap, whose dependency `hnswlib` is built from source: without the CPython headers the install ends `fatal error: Python.h: No such file or directory` / `ERROR: Could not build wheels for hnswlib`, exit 1, before anything has run. This bites on Linux only. Neither the fast path nor the `.[dev]` gate install needs them.
 

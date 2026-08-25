@@ -130,6 +130,12 @@ pip install -e ".[lock,dev]"   # [dev] is required: Gate 2 is pytest, which [loc
 # Run full reproduction (Tier 1 core + Tier 2 supplementary):
 bash reproduce/run_all.sh
 
+# REQUIRED after a successful run, before the gates mean anything:
+# run_all.sh rewrites canonicals whose packet mirrors only this rebuilds.
+# Skip it and Gate 3 fails because the run WORKED. See "After a full run"
+# below for which pairs drift and why.
+python scripts/build_submission_packet.py --rebuild
+
 # Or run just the core pipeline (Tier 1 only):
 # Stop run_all.sh after "TIER 1 COMPLETE" with Ctrl+C, or run the eight
 # Tier-1 steps individually -- they are the [1/8]..[8/8] steps at the top
