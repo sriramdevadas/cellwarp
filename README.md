@@ -55,8 +55,8 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 >
 > - **Memory: the peak is 51–59 GiB**, in `[4/8]`, and it is inside Tier 1, so stopping after
 >   `TIER 1 COMPLETE` does not avoid it. **128 GiB is the recommendation and 64 GB is not**; a
->   32 GB instance is OOM-killed after about five minutes. Full measurements under
->   [Requirements](#requirements) below.
+>   32 GB instance is OOM-killed after about five minutes. The full measurements, with the
+>   instance they were taken on, are in the **Requirements** block further down this section.
 > - **Build tools on Linux:** the `pip install -e ".[lock,dev]"` line builds `hnswlib` from
 >   source and fails without a compiler and the CPython headers. The commented `apt-get` lines
 >   in the block install them; do not skip them.
