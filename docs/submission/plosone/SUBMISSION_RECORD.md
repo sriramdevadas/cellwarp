@@ -8,15 +8,18 @@ Source commit: `5e77414`. `git ls-files` at that commit: 1094 (this file is adde
 
 ## Identifiers
 
-- **Editorial Manager submission id: `PONE-S-26-56365`.**
-- **This is not the manuscript number.** The compiled PDF's page-1 cover sheet prints
-  `Manuscript Number:` with an empty value and is titled `--Manuscript Draft--`. The assigned
-  manuscript number arrives later and must be added here when it does.
-- **Provenance caution.** The string `PONE-S-26-56365` does not appear anywhere inside the compiled
-  PDF -- not in page text, not in link annotations, and not in the raw file bytes (`PONE` and
-  `56365` are both absent). Its only local evidence is the downloaded filename
-  `PONE-S-26-56365.pdf`. Recorded as an identifier supplied by Editorial Manager, not as one
-  verifiable from the artifact.
+- **Manuscript number: `PONE-D-26-42571`**, assigned by PLOS ONE when the submission returned from
+  technical check on 2026-08-25. This is the number to quote in all correspondence.
+- **Original submission id: `PONE-S-26-56365`**, the identifier the 24 August submission carried
+  before a manuscript number existed. Superseded, kept because the 24 August compiled PDF and the
+  first technical-check correspondence are filed under it.
+- **Provenance caution, and it applies to both.** Neither identifier is verifiable from the artifact
+  it names. `PONE-S-26-56365` appears nowhere inside the 24 August compiled PDF -- not in page text,
+  not in link annotations, not in the raw file bytes, where `PONE` and `56365` are both absent -- and
+  its only local evidence was the downloaded filename. `PONE-D-26-42571` arrived in correspondence
+  and has exactly the same status: Editorial-Manager-supplied, recorded on their authority, not
+  derived from anything here. The 24 August cover sheet printed `Manuscript Number:` empty and was
+  titled `--Manuscript Draft--`, which is what a pre-assignment submission looks like.
 
 ## The compiled PDF
 
@@ -80,7 +83,13 @@ originals reach a reviewer through the per-figure download links above, not thro
 
 ## What was uploaded
 
-28 files, assembled at `5e77414`. md5s are of the copies actually sent.
+**This table is the 24 August submission, 28 files assembled at `5e77414`.** The 25 August
+resubmission changed three of its rows and is recorded in the resubmission section below: the
+manuscript DOCX was rebuilt (72,741 B, from the abstract edit at `4b2d14b`), `coverletter.txt` was
+replaced by `coverletter.docx`, and the completed Human Participants Research Checklist was added,
+taking the File Inventory from 28 items to 29. Every other row below is still current.
+
+md5s are of the copies actually sent.
 
 | # | file | bytes | md5 |
 |---|---|---|---|
@@ -113,15 +122,115 @@ originals reach a reviewer through the per-figure download links above, not thro
 | 27 | `S2_Text.txt` | 6,703 | `ad93400db8743c0d2b2214af7dd9f135` |
 | 28 | `coverletter.txt` | 3,347 | `b495455ea5d8253f2cbd88261693bb15` |
 
-**The manuscript DOCX md5 is not a pin.** A DOCX embeds a creation timestamp, so
-`build_manuscript_docx.py` is content-reproducible but never byte-reproducible: rebuilding from the
-same pinned text yields the same 72,805 bytes and a different md5. The value that *is* stable is the
-source text it was built from, `manuscript_combined.txt` at md5
-`35b9b55c552e32afd2d9dcff445074fa`, pinned in `reproduce/MANUSCRIPT_MD5`.
+**The manuscript DOCX md5 is not a pin.** `build_manuscript_docx.py` is content-reproducible but
+never byte-reproducible: rebuilding from the same pinned text yields the same byte count and a
+different md5. The value that *is* stable is the source text it was built from,
+`manuscript_combined.txt`, pinned in `reproduce/MANUSCRIPT_MD5`.
+
+**The mechanism, corrected.** This section previously said a DOCX "embeds a creation timestamp".
+That named the wrong cause. `dcterms:created` and `dcterms:modified` are **fixed** at
+`2013-12-23T23:15:00Z` in both DOCX files produced here -- a constant inherited from python-docx's
+shipped `default.docx`, not a wall clock. What actually varies is the **ZIP member timestamps** in
+the local file headers, stamped at save. The conclusion was right and the stated reason was not.
+
+**How that was found, because the method transfers.** Two consecutive builds returned the same md5
+and the file was nearly recorded as byte-reproducible on that evidence. A third build, after a
+deliberate two-second pause, differed. **A reproducibility test that runs faster than the resolution
+of the clock it is testing will confirm itself.** Any such test here needs a pause longer than one
+second between builds, or it is measuring nothing.
 
 `coverletter.txt` is correspondence with the editor. It is ignored by `.gitignore:196`
 (`cover*letter*.txt`) and is deliberately absent from both Zenodo archives; it is listed here because
 it was submitted, not because it is archived.
+
+## The resubmission — technical check, 2026-08-25
+
+There have been **two submission events**, and everything above describes the first unless it says
+otherwise.
+
+**24 August 2026.** Submitted as `PONE-S-26-56365`. Compiled PDF 92 pages, 28 items, md5
+`173564d321a57140960559d337d61d7c`, 5,238,533 bytes. That artifact is now superseded.
+
+**25 August 2026.** Passed PLOS ONE's in-house technical check with **two administrative queries and
+no scientific ones**, both satisfied on resubmission. Manuscript number `PONE-D-26-42571` assigned.
+
+### What technical check raised, and what was done
+
+1. **Cover letter format.** *"We notice that your Cover Letter in File Inventory are in Note pad.
+   Please upload Cover Letter in File Inventory in word format."* Converted to `coverletter.docx`,
+   one `.txt` line to one `.docx` paragraph, with the round trip asserted in the converter so the
+   text is provably unchanged: 504 words, 21 paragraphs, `extracted == source`. The `.txt` remains
+   the source of record; only the uploaded `.txt` was removed from the File Inventory.
+2. **Human Participants Research Checklist.** Requested, and **completed rather than declined**. An
+   earlier reading held that completing it would require asserting things untrue of this study; that
+   was wrong, and it was wrong because the form had not been read. The form is conditional
+   throughout, and every item has a designed exempt pathway: item 1 answered N/A with the
+   manuscript's ethics statement pasted into its explanation box, items 2 and 3 answered N/A because
+   their conditions -- prospective recruitment, and retrospective study of medical records or
+   archived samples -- are untrue of a reanalysis of published atlases. Uploaded as file type
+   `Other`.
+
+### The abstract was edited in the same window
+
+Not requested by PLOS. The window existed because of the two items above, and the abstract carried a
+defect worth the cost of using it: the PLOS Computational Biology desk rejection had objected that
+the paper did not define cell type geometry **or its relevance to the broader field**, and while the
+construct was defined at word 2, the practice claim the paper contradicts appeared in the cover
+letter and the introduction and **not in the abstract** -- the one document an Academic Editor reads.
+The thesis also sat at word 229 of 300 against the cover letter's 11%. Seven of twelve sentences were
+rewritten; five are byte-identical; 300 words to 280; no result, number or claim changed. Commit
+`4b2d14b`.
+
+### The rebuilt compiled PDF
+
+```
+pages        93            (was 92; +1 for the checklist placeholder)
+bytes        5,350,072
+inventory    29 items      Cover Letter + Manuscript + 5 Figures + 21 SI + 1 Other
+```
+
+**Its md5 is not a stable identifier and must not be recorded as one.** Three downloads of the same
+document taken on 2026-08-25 gave **5,350,072 bytes every time and two different md5s**:
+`1358b39d9a8c88ef7761db5cb27e9b76` for a build stamped `D:20260825120731`, and
+`766196b3dd07e3d3a6d467af01a4ebf1` for one stamped `D:20260825124135`, downloaded twice. Page text is
+**identical across all three**. Editorial Manager recompiles the PDF and stamps the build time into
+it, so its md5 identifies a download rather than the document. **Byte count and page count are the
+stable identifiers.**
+
+### Verified on the rebuilt build
+
+Two independent checks agreed on every value:
+
+- abstract form field **280 words** by `str.split()`, word-identical to the manuscript's abstract
+- abstract superscripts are true `U+207B` + `U+2076` / `U+2074`, ArialUnicodeMS, rendered raised and
+  reduced -- body runs 8.0 pt against 12.0 pt, raised 4.51-4.61 pt
+- figures on pp. 67-71, `Fig1.tif` … `Fig5.tif` ascending, Fig 2 the full A/B/C composite
+- DOIs: `20735611` pp. 4, 7, 46 · `20735639` pp. 5, 7, 46 · `22073208` pp. 5, 47
+- `mint|minted|minting|pending`: zero, whole-word and as substrings
+- `_S8`: zero occurrences anywhere in the file
+
+**Superscript runs: 51 total carrying 96 characters**, of which **44 are minus-led**. Both figures
+circulated and both are right; they count different things. Decomposed from the DOCX rather than
+from either report: `−4` x33, `−6` x8, `−5` x2, `−14` x1 = 44 minus-led, plus `ᵀ` x5, the Frobenius
+`²` x1, and the Fig 5 caption's `⁶` x1 = 51.
+
+### What technical check did NOT query
+
+Absence of a query is evidence, and nobody will reconstruct it later. All of the following passed
+**unchanged and unremarked**:
+
+- **the Data Availability statement**, including its volunteered disclosure that three classes of
+  intermediate input are not reconstructible from the deposit -- the rolling-path UCSC/DoRothEA
+  sources, the ChEMBL and DrugBank derived tables with no recorded release, and the deposited
+  artifacts with no producing script
+- **the `.txt` Supporting Information files**, `S1_Text.txt` and `S2_Text.txt`, uploaded as plain
+  text rather than converted -- the DOC/DOCX/RTF rule reaches the manuscript, not SI
+- **all five figures**, at 300 ppi RGB LZW, including the sub-8-pt text recorded as
+  `AFTER_ACCEPTANCE.md` item 10
+- **the ethics statement's content**, queried only as a missing checklist and never as to what it said
+- **the references**
+
+The cover letter's *format* was queried and its *text* was not.
 
 ## The basal-ganglia record's `References` relation — checked, correct, closed
 
@@ -142,9 +251,32 @@ which is **not** what the basal-ganglia results were produced with. No change to
 
 ## Ethics statement as entered
 
-The Editorial Manager ethics field was filled with the manuscript's own ethics statement verbatim,
-the text at `manuscript_combined.txt:136` under the Methods heading at `:134`. It is reproduced in
-`docs/declarations.txt` Section 7 so that the repository and the submission form carry the same
-bytes. The form answer to the human-participants question was "This study did not involve human
-participants, data, specimens or tissue"; no PLOS Human Participants Research Checklist was required
-or attached.
+The Editorial Manager ethics field is built on the manuscript's own ethics statement, the text at
+`manuscript_combined.txt:136` under the Methods heading at `:134`.
+
+**They are not the same bytes, and an earlier version of this section said they were.** Measured:
+
+```
+manuscript_combined.txt:136              495 bytes   65 words   3 sentences
+docs/declarations.txt line 205           495 bytes   byte-identical to the manuscript
+checklist explanation box                495 bytes   byte-identical to the manuscript
+Editorial Manager ethics field           626 bytes   83 words   4 sentences
+```
+
+**Three places hold 495 and one holds 626.** The difference is purely additive:
+`EM.startswith(manuscript)` is True, the three shared sentences are byte-identical at 184, 189 and
+120 characters, and the remainder is one appended sentence of 131 characters including its leading
+space -- "No human participants were recruited, no specimens or tissue were collected, and no
+identifiable private information was accessed." That sentence **appears nowhere in this repository**,
+searched on six distinct phrases from it.
+
+So it is a scope difference rather than a substantive one, but the claim of identical bytes was
+false as written. The Editorial Manager ethics screen instructs in bold that all information entered
+there be included in the Methods section, and as submitted that instruction is not satisfied for the
+fourth sentence. `AFTER_ACCEPTANCE.md` item 13 carries the full analysis and both resolution costs.
+**Neither resolution is adopted here**; it is the coordinator's decision and carries no deadline.
+
+The form answer to the human-participants question was "This study did not involve human
+participants, data, specimens or tissue". At the 24 August submission no Human Participants Research
+Checklist was attached; one was completed and uploaded at the 25 August resubmission -- see the
+resubmission section below.
