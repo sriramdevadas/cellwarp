@@ -19,7 +19,11 @@ pip install -e ".[dev]"
 ```
 
 **Which install?** `.[dev]` is enough for the four reproduction gates, the test suite and the
-library snippet below; it is what the Docker image installs. Reproducing the paper end to end
+library snippet below; it is what the Docker image installs. **Measured, not assumed** — in a clean
+Python 3.12 environment carrying nothing but `pip install -e ".[dev]"`: Gate 1 232/232, Gate 2 195
+passed, Gate 3 30/30 pairs, Gate 4 3 of 3. That sentence was false until 2026-08-25, when the first
+`docker build` ever executed failed on a missing `openpyxl`; the fix was to add it to `[dev]`, where
+a test dependency belongs, rather than to the image. Reproducing the paper end to end
 additionally needs `[lock]`, which pins the exact versions that produced the published numbers:
 `pip install -e ".[lock,dev]"`, as in [Setup](#setup-requires-python-312). `[lock]` on its own is
 not sufficient for the gates, because Gate 2 is `pytest` and `[lock]` does not install it.
@@ -154,6 +158,12 @@ cd cellwarp
 docker build -t cellwarp .        # installs Python 3.12 + deps, runs the 4 gates in-build
 docker run  --rm cellwarp         # re-runs the 4 gates + the no-download fast-path
 ```
+
+**What it costs, measured 2026-08-25.** A cold `docker build --no-cache` took **2 m 07 s** and the
+image is **3.69 GB**; `docker run` took **5 m 28 s**, of which the 1,000,000-permutation fast path is
+**5 m 22 s**. Both were measured on **arm64 macOS under emulation**, which is the slow case: the fast
+path takes **1 m 49 s** natively on the same machine, so an amd64 reviewer should expect materially
+less than these figures rather than more. The 3.69 GB is on top of a ~101 MB clone.
 
 The image targets `linux/amd64` (deadsnakes ships Python 3.12 for Ubuntu 22.04 on amd64 only, so the platform is pinned for a reproducible build). On x86-64 hosts it builds natively; on Apple Silicon / ARM it builds under emulation automatically (no extra flags); `docker build`/`docker run` work exactly as written. The gates are arch-robust (md5 and packet checks are arch-independent; numeric checks carry tolerance).
 

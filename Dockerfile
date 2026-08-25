@@ -6,6 +6,21 @@
 # pass -- they check recorded values and file integrity, not fresh computation.
 # `docker run` additionally recomputes the headline from the deposited centroids.
 #
+# THE CONDITIONAL ABOVE WAS SOUND AND ITS ANTECEDENT WAS UNSATISFIED UNTIL
+# 2026-08-25. That was the first time this image had ever been built, on any
+# machine: there was no CI and no record of a build. It FAILED -- `openpyxl` was
+# absent from the [dev] extra, so pytest could not collect
+# tests/test_table1_callouts.py and Gate 2 died at 65 of 195 tests collected,
+# taking Gates 3 and 4 with it through the && chain. Fixed by adding openpyxl to
+# [dev]. First green build: 2026-08-25, macOS 15.5 on arm64, linux/amd64 under
+# emulation, Docker 28.3.2 -- Gate 1 232/232, Gate 2 195 passed, Gate 3 30/30
+# pairs, Gate 4 3 of 3, and `docker run` reproducing obs/null 0.5223 against a
+# published 0.522.
+#
+# Do not read the certification claim as self-executing. It is worth exactly as
+# much as the last build someone actually ran, which is why .github/workflows
+# now runs the same four gates on every push against a clean `.[dev]` install.
+#
 #   docker build -t cellwarp .          # build + in-build gate certification
 #   docker run  --rm cellwarp           # re-run the four gates + no-download fast-path
 #
@@ -65,6 +80,7 @@ RUN .venv/bin/pip install --upgrade pip \
     && .venv/bin/pip install -e ".[dev]"
 
 # Certify reproduction at build time: a green build == all four gates pass.
+# First satisfied 2026-08-25; see the note at the top of this file.
 RUN echo "### GATE 1: validate.py ###"      && .venv/bin/python reproduce/validate.py \
     && echo "### GATE 2: pytest -q ###"       && .venv/bin/python -m pytest -q \
     && echo "### GATE 3: packet --verify ###" && .venv/bin/python scripts/build_submission_packet.py --verify \

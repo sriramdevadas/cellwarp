@@ -62,6 +62,14 @@ dev = [
     # else, so this extra is what the container actually gets; without it
     # docs/submission/plosone/build_manuscript_docx.py cannot run there.
     "python-docx>=1.1",
+    # Same reason as python-docx above, found the hard way at dispatch 78: the
+    # first time `docker build` was ever executed it failed here. This is a real
+    # test dependency -- tests/test_table1_callouts.py imports openpyxl at module
+    # level, so without it pytest cannot COLLECT that module and Gate 2 dies at
+    # 65 of 195 tests collected. Floored rather than pinned, matching this
+    # extra's other four entries and [reproduce]'s convention; the exact version
+    # that produced the published numbers is [lock]'s openpyxl==3.1.5.
+    "openpyxl>=3.1",
 ]
 lock = [
     # Exact pins for manuscript reproducibility, taken from the freeze in requirements.txt.

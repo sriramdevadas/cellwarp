@@ -1,0 +1,63 @@
+# CellWarp -- clean-room verification of the DOCUMENTED install.
+#
+# SCOPE, stated here because a green badge that implies more than it checks is
+# the same defect as a Dockerfile certifying a build that never ran.
+#
+# THIS WORKFLOW PROVES: that `pip install -e ".[dev]"` -- exactly what README.md
+# tells a reader to run -- produces an environment in which all four reproduction
+# gates pass on a clean machine.
+#
+# IT DOES NOT PROVE THE SCIENCE. The gates check recorded values against tracked
+# artifacts and file integrity; they do not regenerate anything. The full
+# reproduction runs reproduce/run_all.sh, needs the CELLxGENE Census download and
+# a peak of 51-59 GiB, and is not run here or anywhere automatically. A green
+# check on this workflow means the deposit installs and its gates hold. It means
+# nothing about whether the pipeline reproduces the paper's numbers.
+#
+# WHY IT EXISTS. At dispatch 78 the Docker build was executed for the first time
+# and failed: `openpyxl` was missing from the [dev] extra, so pytest could not
+# collect tests/test_table1_callouts.py and Gate 2 died at 65 of 195 tests. The
+# defect had survived because nothing had ever installed [dev] in a clean
+# environment -- there was no CI, and every developer machine already carried
+# openpyxl from [lock] or [reproduce].
+#
+# THE ONE RULE FOR EDITING THIS FILE: install `.[dev]` and nothing else. Adding
+# [lock], [reproduce], or an explicit package list would stop this testing the
+# path a reader is told to follow, and turn it into another confirmation that
+# cannot fail -- which is the exact failure it was written to catch.
+
+name: gates
+
+on:
+  push:
+    branches: [main, plosone]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  gates:
+    name: four gates on a clean install of .[dev]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'      # pyproject pins >=3.12,<3.13
+
+      - name: Install the documented way -- .[dev] and nothing else
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Gate 1 -- reproduce/validate.py
+        run: python reproduce/validate.py
+
+      - name: Gate 2 -- pytest
+        run: python -m pytest -q
+
+      - name: Gate 3 -- submission packet --verify
+        run: python scripts/build_submission_packet.py --verify
+
+      - name: Gate 4 -- manuscript md5 pin
+        run: md5sum -c reproduce/MANUSCRIPT_MD5
