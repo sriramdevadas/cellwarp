@@ -46,18 +46,31 @@ jobs:
           python-version: '3.12'      # pyproject pins >=3.12,<3.13
 
       - name: Install the documented way -- .[dev] and nothing else
+        id: install
         run: |
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
 
+      # Each gate runs whatever the gates before it did, so a run always reports
+      # four results rather than one failure and three silences. Separate steps
+      # alone do NOT give this: a failed step skips every step after it by
+      # default, which is the same defect as `&&` chaining wearing different
+      # clothes. The guard is on the INSTALL step, not on the gates, so a broken
+      # install still short-circuits -- four gates failing on a missing
+      # interpreter is noise, not information. The job still fails if any gate
+      # fails, because a failed step fails the job whether or not later steps ran.
       - name: Gate 1 -- reproduce/validate.py
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: python reproduce/validate.py
 
       - name: Gate 2 -- pytest
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: python -m pytest -q
 
       - name: Gate 3 -- submission packet --verify
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: python scripts/build_submission_packet.py --verify
 
       - name: Gate 4 -- manuscript md5 pin
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: md5sum -c reproduce/MANUSCRIPT_MD5

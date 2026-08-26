@@ -1,0 +1,121 @@
+# Executes the README's OWN install instructions on a clean machine.
+#
+# Scope, and it is narrow on purpose. This proves that the documented local
+# install works from nothing: the prerequisites, their verification lines, the
+# venv and `pip install -e ".[dev]"`, exactly as README.md writes them, followed
+# by the four gates to show the install produced a working environment. It proves
+# NOTHING about the pipeline -- `reproduce/run_all.sh` is a multi-hour job with a
+# 64 GiB memory peak and is not run here or anywhere in CI.
+#
+# Why this exists. Between dispatches 76 and 82 the README's setup block did not
+# run at all on a stock Ubuntu image -- `python3.12 -m venv` failed because
+# `python3.12-venv` is a separate package and the apt lines that install it were
+# comments. CI read that file on every push for five dispatches and never noticed,
+# because nothing executed it. Both times it was caught, it was caught by a person
+# deciding to try it in a container.
+#
+# Two design choices that are the whole point:
+#
+#   1. The commands are PARSED OUT OF README.md at run time, never transcribed
+#      here. A copy would test the copy, and would become another check that
+#      cannot fail. If the README's blocks change, this runs the new ones.
+#
+#   2. It runs in a bare `ubuntu:24.04` container, not on the GitHub runner. The
+#      runner already has Python, compilers and headers, which is precisely the
+#      blind spot that hid the defect: a warm machine cannot see a missing
+#      prerequisite.
+#
+# PLATFORM COVERAGE -- do not read a green tick as more than it is. README.md
+# carries four prerequisite blocks: Ubuntu 24.04, Ubuntu 22.04, macOS and
+# RHEL-family. **Only the Ubuntu 24.04 block is executed here.** Ubuntu 22.04
+# needs the deadsnakes PPA, and macOS and RHEL cannot be run on this infra at
+# all. The macOS block is exercised by hand on the maintainer's machine; the
+# RHEL block is marked untested in README.md and remains untested.
+
+name: readme install
+
+on:
+  push:
+    paths:
+      - 'README.md'
+      - 'pyproject.toml'
+      - '.github/workflows/readme-install.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  readme-install:
+    name: the README's own blocks, on a bare ubuntu:24.04
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Execute README.md's prerequisite, verification and install blocks
+        run: |
+          cat > /tmp/parse_readme.py <<'PARSER'
+          # Reads the fenced bash blocks out of the committed README.md.
+          # Section 1 "Install prerequisites first": first block = Ubuntu 24.04
+          # prerequisites, last block = the two verification lines.
+          # Section 2 "Install locally": first block = venv + activate + pip.
+          import re, sys
+          s = open('README.md', encoding='utf-8').read()
+          try:
+              pre = s.split('### Install prerequisites first', 1)[1].split('### Install locally', 1)[0]
+              loc = s.split('### Install locally', 1)[1].split('###', 1)[0]
+          except IndexError:
+              sys.exit('README.md no longer has the expected install headings; '
+                       'this workflow parses them and must be updated with them.')
+          pb = re.findall(r'```bash\n(.*?)```', pre, re.S)
+          lb = re.findall(r'```bash\n(.*?)```', loc, re.S)
+          if len(pb) < 2 or not lb:
+              sys.exit('expected >=2 bash blocks under "Install prerequisites first" '
+                       'and >=1 under "Install locally"; found %d and %d' % (len(pb), len(lb)))
+          print('set -e')
+          print('echo "--- prerequisites (Ubuntu 24.04 block), verbatim from README.md ---"')
+          print(pb[0].rstrip())
+          print('echo "--- verification lines, verbatim from README.md ---"')
+          print(pb[-1].rstrip())
+          print('echo "--- install block, verbatim from README.md ---"')
+          print(lb[0].rstrip())
+          PARSER
+
+          cat > /tmp/run_in_container.sh <<'RUNNER'
+          set -e
+          # Bootstrap only: a bare container runs as root with no sudo, and has no
+          # git. A reviewer's machine has both. This is restoring a normal
+          # environment, not installing anything the README asks for.
+          apt-get update -qq >/dev/null
+          apt-get install -y -qq sudo python3 >/dev/null
+          cp -r /repo /work && cd /work && rm -rf .venv
+
+          echo "::group::commands parsed out of README.md"
+          python3 /tmp/parse_readme.py | tee /tmp/steps.sh
+          echo "::endgroup::"
+
+          echo "::group::executing them"
+          bash /tmp/steps.sh
+          echo "::endgroup::"
+
+          # Both verification lines must have printed OK. If a prerequisite is
+          # missing the line prints nothing, which is the failure this catches.
+          bash /tmp/steps.sh 2>/dev/null | grep -q "OK: venv works" \
+            || { echo "::error::README's own verification line 'OK: venv works' did not print"; exit 1; }
+
+          echo "--- four gates, UNCHAINED, on what the README's blocks built ---"
+          .venv/bin/python reproduce/validate.py; G1=$?
+          .venv/bin/python -m pytest -q;          G2=$?
+          .venv/bin/python scripts/build_submission_packet.py --verify; G3=$?
+          md5sum -c reproduce/MANUSCRIPT_MD5;     G4=$?
+          echo "gate exit codes: 1=$G1 2=$G2 3=$G3 4=$G4"
+          [ "$G1" -eq 0 ] || echo "::error::Gate 1 failed on the README-built environment"
+          [ "$G2" -eq 0 ] || echo "::error::Gate 2 failed on the README-built environment"
+          [ "$G3" -eq 0 ] || echo "::error::Gate 3 failed on the README-built environment"
+          [ "$G4" -eq 0 ] || echo "::error::Gate 4 failed on the README-built environment"
+          [ "$G1" -eq 0 ] && [ "$G2" -eq 0 ] && [ "$G3" -eq 0 ] && [ "$G4" -eq 0 ]
+          RUNNER
+
+          docker run --rm \
+            -v "$PWD":/repo:ro \
+            -v /tmp/parse_readme.py:/tmp/parse_readme.py:ro \
+            -v /tmp/run_in_container.sh:/tmp/run_in_container.sh:ro \
+            ubuntu:24.04 bash /tmp/run_in_container.sh
