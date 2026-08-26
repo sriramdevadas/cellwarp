@@ -10,7 +10,7 @@ Cross-species geometric morphometrics in transcriptomic space, inspired by D'Arc
 > reader-path fixes land there first and reach a snapshot only at the next deposit.
 >
 > Two things that bite only on the archive route. **Versions 1 and 2 of the zip have no wrapper
-> directory**, so all 1,094 files land wherever you unpack them — unpack those into an empty
+> directory**, so all 1,094 files land wherever you unpack them: unpack those into an empty
 > directory rather than into `~/Downloads`; version 3 onward carries a wrapper and does not have
 > this problem. And extracting needs `unzip`, which a minimal Linux image (including stock
 > `ubuntu:24.04`) does not ship: `sudo apt-get install -y unzip` first, or use
@@ -26,7 +26,7 @@ git clone https://github.com/sriramdevadas/cellwarp.git && cd cellwarp
 
 ### Install prerequisites first
 
-Every local path in this file — the gates, the fast path and the full reproduction — opens with
+Every local path in this file (the gates, the fast path and the full reproduction) opens with
 `python3.12 -m venv .venv`. **On a stock Linux image that command fails**, because `python3.12-venv`
 is a package separate from the interpreter. Install prerequisites before either block below, not
 after one has failed.
@@ -62,7 +62,7 @@ its own headers, and the Xcode command line tools supply the compiler. One line 
 brew install python@3.12
 ```
 
-**RHEL-family (Fedora, Rocky, AlmaLinux) — untested here.** No run of this project has been made on
+**RHEL-family (Fedora, Rocky, AlmaLinux): untested here.** No run of this project has been made on
 these distributions; the equivalent packages are named below, but unlike the Ubuntu and macOS lines
 they have not been executed:
 
@@ -84,7 +84,7 @@ The first line is required for every path; the second only for the full reproduc
 > **If you already ran `python3.12 -m venv .venv` and it failed**, delete the directory before
 > retrying: `rm -rf .venv`. A failed `venv` leaves `.venv/bin/python` behind while `pip` and
 > `activate` are absent, so retrying over it fails a second and less obvious way. The error message
-> says the same thing — "recreate your virtual environment" — and this is what it means.
+> says the same thing: "recreate your virtual environment". That is what it means.
 
 ### Install locally
 
@@ -97,7 +97,7 @@ pip install -e ".[dev]"
 ```
 
 **Which install?** `.[dev]` is enough for the four reproduction gates, the test suite and the
-library snippet below; it is what the Docker image installs. **Measured, not assumed** — in a clean
+library snippet below; it is what the Docker image installs. **Measured, not assumed**: in a clean
 Python 3.12 environment carrying nothing but `pip install -e ".[dev]"`: Gate 1 232/232, Gate 2 195
 passed, Gate 3 30/30 pairs, Gate 4 3 of 3. That sentence was false until 2026-08-25, when the first
 `docker build` ever executed failed on a missing `openpyxl`; the fix was to add it to `[dev]`, where
@@ -110,8 +110,8 @@ not sufficient for the gates, because Gate 2 is `pytest` and `[lock]` does not i
 floors, so it resolves to whatever is current: a clean container on 2026-08-26 installed
 **matplotlib 3.11.1** and **numpy 2.4.6**, where `[lock]` pins **3.10.8** and **2.4.3**. All four
 gates passed anyway, which is the reassuring half and the reason `.[dev]` is enough for them. But it
-means the gates demonstrate that **this archive is internally consistent** — that every number in the
-manuscript matches the artifact it is read from — and not that those numbers were regenerated under
+means the gates demonstrate that **this archive is internally consistent** (that every number in the
+manuscript matches the artifact it is read from) and not that those numbers were regenerated under
 the stack that produced them. Only `[lock]`, with `bash reproduce/run_all.sh`, does that.
 
 If `pip install` fails, you're on the wrong Python. The pin is two-sided, so newer interpreters are rejected as well as older ones: 3.11 and below give `No matching distribution found for numpy…`, and 3.13 and above give `Package 'cellwarp' requires a different Python`. Use 3.12; [Setup](#setup-requires-python-312) has the detail.
@@ -146,7 +146,7 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 > - **Memory: the peak is 63.95 GiB**, in `[4/8]`, and it is inside Tier 1, so stopping after
 >   `TIER 1 COMPLETE` does not avoid it. Provision against the **system-wide** figure, not the
 >   per-process one: when `[4/8]` peaked the machine was using **65.14 GiB**. **128 GiB is the
->   recommendation and 64 GB is not** — that is measured, not cautioned: a 64 GiB machine would
+>   recommendation and 64 GB is not.** That is measured rather than cautioned: a 64 GiB machine would
 >   have been OOM-killed on the third full run. A 32 GB instance is OOM-killed after about five
 >   minutes. The full measurements, with the instance they were taken on, are in the
 >   **Requirements** block further down this section.
@@ -226,9 +226,9 @@ The pin is two-sided, so a **newer** Python fails too, with a different message:
 | Tier 1 (`[1/8]`–`[8/8]`) | **63.95 GiB** (**65.14 GiB** system-wide) | 128 GiB recommended |
 | full pipeline | **63.95 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
 
-**Three measurements, not an estimate: 51.4, 58.9 and 63.95 GiB** — same instance type, same commit, a 24% spread, the largest being the most recent (2026-08-26). Provision against the **system-wide** figure rather than the per-process one: at the moment `[4/8]` peaked at 63.95 GiB the machine was using **65.14 GiB**. **64 GB is not enough, and that is now measured rather than cautioned** — a 64 GiB machine would have been OOM-killed on the third run, not merely left tight; a 32 GB instance was OOM-killed at 30.2 GiB anon-rss. The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it. One other stage exceeds 40 GiB — `[S11]`, `scripts/33_cellhint_replication.py`, at **41.18 GiB** — but that one is in **Tier 2**, so stopping at `TIER 1 COMPLETE` does avoid it. Measured on AWS `r6i.4xlarge` (128 GiB) under Ubuntu 24.04.4: these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
+**Three measurements, not an estimate: 51.4, 58.9 and 63.95 GiB**, same instance type, same commit, a 24% spread, the largest being the most recent (2026-08-26). Provision against the **system-wide** figure rather than the per-process one: at the moment `[4/8]` peaked at 63.95 GiB the machine was using **65.14 GiB**. **64 GB is not enough, and that is now measured rather than cautioned**: a 64 GiB machine would have been OOM-killed on the third run, not merely left tight; a 32 GB instance was OOM-killed at 30.2 GiB anon-rss. The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it. One other stage exceeds 40 GiB (`[S11]`, `scripts/33_cellhint_replication.py`, at **41.18 GiB**), but that one is in **Tier 2**, so stopping at `TIER 1 COMPLETE` does avoid it. Measured on AWS `r6i.4xlarge` (128 GiB) under Ubuntu 24.04.4: these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
 
-**Tested on.** Fast path: macOS 15 on Apple silicon, and Ubuntu 24.04 on x86-64. Full pipeline: Ubuntu 24.04 on x86-64 only, three times, end to end with four green gates — most recently 2026-08-26 on AWS `r6i.4xlarge`, AMI `ami-052355af2a014bd2c` (`ubuntu-noble-24.04-amd64-server-20260714`, booting as Ubuntu 24.04.4), 3 h 09 m 10 s, exit 0. The full pipeline on macOS is untested. Windows is untested throughout, natively and in Docker alike. Nothing is known to be wrong with either; nothing has been checked.
+**Tested on.** Fast path: macOS 15 on Apple silicon, and Ubuntu 24.04 on x86-64. Full pipeline: Ubuntu 24.04 on x86-64 only, three times, end to end with four green gates, most recently 2026-08-26 on AWS `r6i.4xlarge`, AMI `ami-052355af2a014bd2c` (`ubuntu-noble-24.04-amd64-server-20260714`, booting as Ubuntu 24.04.4), 3 h 09 m 10 s, exit 0. The full pipeline on macOS is untested. Windows is untested throughout, natively and in Docker alike. Nothing is known to be wrong with either; nothing has been checked.
 
 The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission text is pinned by `reproduce/MANUSCRIPT_MD5`: the manuscript (`docs/submission/plosone/manuscript_combined.txt`) and both supporting-information texts (`S1_Text.txt`, `S2_Text.txt`), verified with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4.
 
@@ -334,7 +334,7 @@ figure, and numerical claim to its generating code and output file.
 
 **AI use disclosure:** Generative AI tools (Claude, Anthropic) were used to assist with code development, literature search, and manuscript drafting. All AI-generated content was reviewed, verified, and revised by the author. The author takes full responsibility for the accuracy and integrity of the work. See `docs/declarations.txt` for the full disclosure statement and `docs/REPRODUCIBILITY_AUDIT_v2.md` for a reproducibility audit of an earlier state of this repository (historical snapshot, 2026-04-06; the current reproduction path is the four gates described above).
 
-**Tracked files under `data/` and `output/`:** This repository tracks several files inside `data/` and `output/` directories despite those paths appearing in `.gitignore`. These tracked files (centroid CSVs, null distribution arrays, intermediate analysis results, etc.) are reproducibility anchors that travel with the deposit. Verify the tracked set with `git ls-files data/ output/`. If you need to delete and re-add one of these files, use `git add -f` to override the gitignore pattern. **Both commands are repository-only**: a Zenodo archive is not a git repository, so neither runs there. From an archive the equivalent check is that the files are simply present — `find data output -type f | wc -l` counts what the snapshot carries, and every file it lists is by construction one the deposit intended to include, because the archive is built from `git ls-files` at the release commit. There is nothing to reconcile against, and nothing to re-add.
+**Tracked files under `data/` and `output/`:** This repository tracks several files inside `data/` and `output/` directories despite those paths appearing in `.gitignore`. These tracked files (centroid CSVs, null distribution arrays, intermediate analysis results, etc.) are reproducibility anchors that travel with the deposit. Verify the tracked set with `git ls-files data/ output/`. If you need to delete and re-add one of these files, use `git add -f` to override the gitignore pattern. **Both commands are repository-only**: a Zenodo archive is not a git repository, so neither runs there. From an archive the equivalent check is that the files are simply present: `find data output -type f | wc -l` counts what the snapshot carries, and every file it lists is by construction one the deposit intended to include, because the archive is built from `git ls-files` at the release commit. There is nothing to reconcile against, and nothing to re-add.
 
 ## License
 

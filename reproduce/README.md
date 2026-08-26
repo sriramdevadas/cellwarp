@@ -27,7 +27,7 @@ Nothing is known to be wrong with either; nothing has been checked.
   | full pipeline | **63.95 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
 
   **Three measurements, not an estimate.** 58.9 GiB on the first full run, 51.4 GiB on the
-  second and **63.95 GiB on the third** (2026-08-26) — same instance type, same commit: a 24%
+  second and **63.95 GiB on the third** (2026-08-26), same instance type, same commit: a 24%
   spread on identical work. The spread is the useful fact, not an average of it; the peak is
   not reproducible to the digit and each new run has widened the range rather than settled it.
 
@@ -97,7 +97,7 @@ sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essentia
 framework Python ships its own headers, and the Xcode command line tools supply the compiler.
 Nothing below asks a macOS reader for `build-essential` or a `-dev` package.
 
-**RHEL-family (Fedora, Rocky, AlmaLinux) — untested here.** No run of this project has been
+**RHEL-family (Fedora, Rocky, AlmaLinux): untested here.** No run of this project has been
 made on these distributions. The equivalent packages are named below, but unlike the Ubuntu
 and macOS lines above they have not been executed:
 
@@ -115,7 +115,7 @@ gcc --version >/dev/null 2>&1 && python3.12-config --includes >/dev/null 2>&1 &&
 ```
 
 The first line is required for every path here; the second only for the full pipeline. **If you
-already ran `python3.12 -m venv .venv` and it failed, `rm -rf .venv` before retrying** — the
+already ran `python3.12 -m venv .venv` and it failed, `rm -rf .venv` before retrying**: the
 failed attempt leaves `.venv/bin/python` behind while `pip` and `activate` are absent, so
 retrying over it fails a second and less obvious way.
 
@@ -340,7 +340,7 @@ runs.**
 
 **This is not drift and no gate reports it, but a reviewer will see it.** The shared figure style
 (`src/cellwarp/figure_style.py:38`) sets `FONT_FAMILY = 'Arial'`. A stock Ubuntu image has no Arial,
-so matplotlib falls back — the 2026-08-26 full run emitted **481** lines of
+so matplotlib falls back: the 2026-08-26 full run emitted **481** lines of
 
 ```
 findfont: Font family 'Arial' not found.
@@ -352,7 +352,7 @@ deposited figures were produced where Arial resolved. Nothing is wrong with the 
 typeface differs.
 
 Why no gate catches it, and why that is correct rather than an oversight: `[S32]` does not rebuild
-the deposited figures at all, and the one regenerated canonical that Gate 3 checks — `figS3` — is
+the deposited figures at all, and the one regenerated canonical that Gate 3 checks (`figS3`) is
 composited by **MuPDF**, not matplotlib. That is also why `run_all.sh`'s preflight legitimately
 passes on Linux: it tests a MuPDF panel-label face, which does resolve.
 
