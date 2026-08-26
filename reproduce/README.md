@@ -97,6 +97,28 @@ sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essentia
 framework Python ships its own headers, and the Xcode command line tools supply the compiler.
 Nothing below asks a macOS reader for `build-essential` or a `-dev` package.
 
+**RHEL-family (Fedora, Rocky, AlmaLinux) — untested here.** No run of this project has been
+made on these distributions. The equivalent packages are named below, but unlike the Ubuntu
+and macOS lines above they have not been executed:
+
+```bash
+sudo dnf install -y python3.12 python3.12-devel gcc gcc-c++
+```
+
+**Verify before continuing.** Both lines are platform-independent and must print `OK`; a line
+that prints nothing is the prerequisite you are missing, and it is cheaper to see that here
+than at the `venv` step:
+
+```bash
+python3.12 -m venv /tmp/cw-check && rm -rf /tmp/cw-check && echo "OK: venv works"
+gcc --version >/dev/null 2>&1 && python3.12-config --includes >/dev/null 2>&1 && echo "OK: compiler and headers"
+```
+
+The first line is required for every path here; the second only for the full pipeline. **If you
+already ran `python3.12 -m venv .venv` and it failed, `rm -rf .venv` before retrying** — the
+failed attempt leaves `.venv/bin/python` behind while `pip` and `activate` are absent, so
+retrying over it fails a second and less obvious way.
+
 Of the four Linux packages the Fast path needs only `python3.12` and `python3.12-venv`; the
 full pipeline needs all four, because `.[lock]` builds `hnswlib` from source. They are on one
 line because the other two cost a minute to install and skipping them costs the two failures
@@ -302,6 +324,37 @@ and `cross_analysis_scaled.png` were all in sync. The stage-order reading over-p
 three: it identified every canonical written after `[S29c]`, but writing after `[S29c]` is
 necessary rather than sufficient for drift. **Exactly one pair of thirty drifts, and the same
 one has drifted on each of the three full runs.**
+
+### Regenerated figures use a different typeface on Linux
+
+**This is not drift and no gate reports it, but a reviewer will see it.** The shared figure style
+(`src/cellwarp/figure_style.py:38`) sets `FONT_FAMILY = 'Arial'`. A stock Ubuntu image has no Arial,
+so matplotlib falls back — the 2026-08-26 full run emitted **481** lines of
+
+```
+findfont: Font family 'Arial' not found.
+findfont: Font family ['Arial'] not found. Falling back to DejaVu Sans.
+```
+
+**Every matplotlib figure regenerated on such a host is therefore set in DejaVu Sans**, while the
+deposited figures were produced where Arial resolved. Nothing is wrong with the numbers; the
+typeface differs.
+
+Why no gate catches it, and why that is correct rather than an oversight: `[S32]` does not rebuild
+the deposited figures at all, and the one regenerated canonical that Gate 3 checks — `figS3` — is
+composited by **MuPDF**, not matplotlib. That is also why `run_all.sh`'s preflight legitimately
+passes on Linux: it tests a MuPDF panel-label face, which does resolve.
+
+**Do not confuse this with the `figS3` drift above.** That drift is 60 bytes of PDF `/ID` trailer
+around *identical* content. This is a visibly different letterform on every axis label and legend in
+every matplotlib panel you regenerate. If you need figures that match the published ones, render on
+a host where Arial resolves; check it positively with
+
+```bash
+python -c "from matplotlib import font_manager as fm; print(fm.findfont('Arial', fallback_to_default=False))"
+```
+
+which raises rather than silently returning DejaVu.
 
 ### Why a spreadsheet pair drifts: the writer's clock, not the content
 

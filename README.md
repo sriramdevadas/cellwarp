@@ -10,7 +10,71 @@ git clone https://github.com/sriramdevadas/cellwarp.git && cd cellwarp
 
 **Verify the deposit in Docker** (no host Python needed): it builds Ubuntu 22.04 + Python 3.12 and runs the four reproduction gates plus the headline fast-path. See [Reproduce in Docker](#reproduce-in-docker).
 
-**Or install locally**, which requires Python 3.12 (the project pins `>=3.12,<3.13`; Ubuntu 24.04 already ships 3.12, Ubuntu 22.04 needs the deadsnakes PPA, and macOS needs `brew install python@3.12` -- [Setup](#setup-requires-python-312) has the per-distribution commands):
+### Install prerequisites first
+
+Every local path in this file — the gates, the fast path and the full reproduction — opens with
+`python3.12 -m venv .venv`. **On a stock Linux image that command fails**, because `python3.12-venv`
+is a package separate from the interpreter. Install prerequisites before either block below, not
+after one has failed.
+
+Two package sets, and which one you need depends on where you are heading:
+
+- **Gates, fast path, library** (the `.[dev]` block just below): `python3.12` and `python3.12-venv`.
+  Nothing is compiled, so no compiler and no headers.
+- **Full reproduction** ([Setup](#setup-requires-python-312), the `.[lock,dev]` block): the same two
+  **plus** `python3.12-dev` and a compiler, because `[lock]` installs SAMap and its dependency
+  `hnswlib` is built from source.
+
+**Ubuntu 24.04** ships Python 3.12.3, which satisfies the pin, so no PPA is needed:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y python3.12 python3.12-venv        # gates, fast path, library
+sudo apt-get install -y python3.12-dev build-essential    # additionally, for the full reproduction
+```
+
+**Ubuntu 22.04** stocks Python 3.10, which fails the pin. Add the deadsnakes PPA first:
+
+```bash
+sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update
+sudo apt-get install -y python3.12 python3.12-venv        # gates, fast path, library
+sudo apt-get install -y python3.12-dev build-essential    # additionally, for the full reproduction
+```
+
+**macOS** needs neither a `-dev` package nor `build-essential`: the framework Python ships `venv` and
+its own headers, and the Xcode command line tools supply the compiler. One line covers both paths:
+
+```bash
+brew install python@3.12
+```
+
+**RHEL-family (Fedora, Rocky, AlmaLinux) — untested here.** No run of this project has been made on
+these distributions; the equivalent packages are named below, but unlike the Ubuntu and macOS lines
+they have not been executed:
+
+```bash
+sudo dnf install -y python3.12 python3.12-devel gcc gcc-c++
+```
+
+**Verify before continuing.** Both lines are platform-independent and must print `OK`; a line that
+prints nothing is the prerequisite you are missing, and it is far cheaper to see it here than at the
+`venv` step:
+
+```bash
+python3.12 -m venv /tmp/cw-check && rm -rf /tmp/cw-check && echo "OK: venv works"
+gcc --version >/dev/null 2>&1 && python3.12-config --includes >/dev/null 2>&1 && echo "OK: compiler and headers"
+```
+
+The first line is required for every path; the second only for the full reproduction.
+
+> **If you already ran `python3.12 -m venv .venv` and it failed**, delete the directory before
+> retrying: `rm -rf .venv`. A failed `venv` leaves `.venv/bin/python` behind while `pip` and
+> `activate` are absent, so retrying over it fails a second and less obvious way. The error message
+> says the same thing — "recreate your virtual environment" — and this is what it means.
+
+### Install locally
+
+With the prerequisites above in place (and their verification printing `OK`):
 
 ```bash
 python3.12 -m venv .venv
@@ -51,7 +115,7 @@ This is the full reproduction (every analysis plus the CELLxGENE Census atlas do
 
 ### Setup (requires Python 3.12)
 
-This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04 (3.10) and macOS (system Python) is too old, and a current Homebrew default (3.14) is too new; the install **will fail** against either. Get 3.12 first if needed, then create the venv with 3.12 and install, kept as one contiguous block so the `pip install` line never runs against the wrong interpreter:
+This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04 (3.10) and macOS (system Python) is too old, and a current Homebrew default (3.14) is too new; the install **will fail** against either. **Do [Install prerequisites first](#install-prerequisites-first) before the block below.** Those commands are not repeated here, and on a stock image the block's first command fails without them. From `python3.12 -m venv` onward the block is kept contiguous, so the `pip install` line never runs against the wrong interpreter:
 
 > **Read this before you run the block below.** It ends with `bash reproduce/run_all.sh`, which
 > is a multi-hour job with a large memory footprint, and both of the things that stop it are
@@ -65,8 +129,8 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 >   minutes. The full measurements, with the instance they were taken on, are in the
 >   **Requirements** block further down this section.
 > - **Build tools on Linux:** the `pip install -e ".[lock,dev]"` line builds `hnswlib` from
->   source and fails without a compiler and the CPython headers. The commented `apt-get` lines
->   in the block install them; do not skip them.
+>   source and fails without a compiler and the CPython headers.
+>   [Install prerequisites first](#install-prerequisites-first) installs them; do not skip it.
 >
 > Wall-clock for the whole pipeline has been measured at **3 h 09 m** and **9 h 40 m** on the same
 > instance type. **Plan by where you are running, because that spread is one stage.**
@@ -86,15 +150,8 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 git clone https://github.com/sriramdevadas/cellwarp.git
 cd cellwarp
 
-# Get Python 3.12 and the build prerequisites first:
-#   Ubuntu 24.04 (ships Python 3.12.3; no PPA needed):
-#     sudo apt-get update
-#     sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essential
-#   Ubuntu 22.04 (stock python3 is 3.10, which fails the pin; add deadsnakes first):
-#     sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update
-#     sudo apt-get install -y python3.12 python3.12-venv python3.12-dev build-essential
-#   macOS (the framework Python ships its own headers; no -dev package to install):
-#     brew install python@3.12
+# Prerequisites are NOT in this block: do "Install prerequisites first" above, and run its
+# two verification lines, before pasting this. The next command fails on a stock image without them.
 python3.12 -m venv .venv
 source .venv/bin/activate          # or invoke .venv/bin/python directly (the gates assume .venv/bin/python)
 
