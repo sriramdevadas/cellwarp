@@ -106,6 +106,14 @@ additionally needs `[lock]`, which pins the exact versions that produced the pub
 `pip install -e ".[lock,dev]"`, as in [Setup](#setup-requires-python-312). `[lock]` on its own is
 not sufficient for the gates, because Gate 2 is `pytest` and `[lock]` does not install it.
 
+**What passing the gates on `.[dev]` does and does not show.** `.[dev]` pins nothing beyond the core
+floors, so it resolves to whatever is current: a clean container on 2026-08-26 installed
+**matplotlib 3.11.1** and **numpy 2.4.6**, where `[lock]` pins **3.10.8** and **2.4.3**. All four
+gates passed anyway, which is the reassuring half and the reason `.[dev]` is enough for them. But it
+means the gates demonstrate that **this archive is internally consistent** — that every number in the
+manuscript matches the artifact it is read from — and not that those numbers were regenerated under
+the stack that produced them. Only `[lock]`, with `bash reproduce/run_all.sh`, does that.
+
 If `pip install` fails, you're on the wrong Python. The pin is two-sided, so newer interpreters are rejected as well as older ones: 3.11 and below give `No matching distribution found for numpy…`, and 3.13 and above give `Package 'cellwarp' requires a different Python`. Use 3.12; [Setup](#setup-requires-python-312) has the detail.
 
 Once installed, use the library on the deposited centroids:

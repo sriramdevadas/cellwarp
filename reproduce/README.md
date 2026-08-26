@@ -120,6 +120,12 @@ failed attempt leaves `.venv/bin/python` behind while `pip` and `activate` are a
 retrying over it fails a second and less obvious way.
 
 Of the four Linux packages the Fast path needs only `python3.12` and `python3.12-venv`; the
+
+**A note on what the Fast path's `.[dev]` install proves.** It pins nothing beyond the core floors,
+so it resolves to current releases -- a clean container on 2026-08-26 got matplotlib 3.11.1 and
+numpy 2.4.6 against `[lock]`'s 3.10.8 and 2.4.3, and all four gates passed regardless. The gates
+therefore establish that the deposit is **internally consistent**, not that the published numbers
+were regenerated under the pinned stack. The full pipeline with `[lock]` is what does that.
 full pipeline needs all four, because `.[lock]` builds `hnswlib` from source. They are on one
 line because the other two cost a minute to install and skipping them costs the two failures
 described under [Steps](#steps). To avoid host Python altogether, the Docker route is the one
