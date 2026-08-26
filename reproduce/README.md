@@ -636,13 +636,15 @@ only one of them is asserted by anything. Post-Tier-1 values:
 
 | quantity | value | who computes it | gated? |
 |---|---|---|---|
-| `EXPECTED_JOINED_WORDS` | **15012** | `docs/submission/plosone/build_manuscript_docx.py` | **yes** -- the builder aborts on mismatch |
-| `wc -w` on `manuscript_combined.txt` | **15177** | shell | no |
+| `EXPECTED_JOINED_WORDS` | **14989** | `docs/submission/plosone/build_manuscript_docx.py` | **yes** -- the builder aborts on mismatch |
+| `wc -w` on `manuscript_combined.txt` | **15154** | shell | no |
 | `wc -w` on `S1_Text.txt` / `S2_Text.txt` | 5979 / 975 | shell | no |
 
-**All four figures are measured at `manuscript_combined.txt` md5 `186e99ef`, and every one of
-them moves with every manuscript edit.** This section has now gone stale twice, so do not trust
-the numbers above against a tree whose manuscript md5 differs -- re-derive instead. Two of the
+**All four figures are measured at `manuscript_combined.txt` md5 `a225aff3`, and every one of
+them moves with every manuscript edit.** This section has now gone stale three times -- most
+recently found on 2026-08-26, pinned to the superseded md5 `186e99ef` -- so do not trust the
+numbers above against a tree whose manuscript md5 differs; re-derive instead. The two supporting
+texts have not moved: `S1_Text.txt` and `S2_Text.txt` are still 5979 and 975. Two of the
 three are re-derivable without running anything:
 
 - `EXPECTED_JOINED_WORDS` is **read from the builder**, not from here. It is a constant near the
@@ -671,14 +673,31 @@ same number under every locale.
 
 The rule is exact, not approximate: the two counts differ by precisely the
 number of whitespace-delimited tokens composed **only** of non-ASCII
-characters. For the post-edit manuscript that is 77 tokens -- the spaced
-operators, 31 `ρ`, 13 `×`, 9 `≈`, 8 `→`, 5 `∈`, 5 `≤`, 4 `≥`, 1 `α`, 1 `—`.
+characters. At manuscript md5 `a225aff3` that is 76 tokens: the spaced
+operators, 31 `ρ`, 13 `×`, 9 `≈`, 8 `→`, 5 `∈`, 5 `≤`, 4 `≥`, 1 `α`.
+
+**Measured, not gated -- these moved in the same drift recorded above.**
+Until 2026-08-26 this paragraph read 77 tokens and listed `1` em dash, and the
+table below read 15177 / 15100 / 15012. The manuscript has **no em dash at
+all** -- `build_manuscript_docx.py`'s `LITERAL_EXPECTED` carries
+`"\u2014": 0` and asserts it -- so the em dash entry was wrong, and it was
+already wrong at `5e77414`, the commit CODE v2 was built from. It did not go
+stale with the abstract edit; the abstract edit only moved the totals, by 20
+tokens. Nothing checks any of these figures, which is why the drift was
+invisible: re-derive them rather than trusting them, with
+
+```bash
+python3 -c "
+s = open('docs/submission/plosone/manuscript_combined.txt', encoding='utf-8').read()
+t = s.split(); n = [x for x in t if all(ord(c) > 127 for c in x)]
+print(len(t), len(n), len(t) - len(n))"
+```
 
 | count | value | how |
 |---|---|---|
-| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **15177** | every token counts |
-| GNU `wc -w` under `LC_ALL=C` | **15100** | 15177 − 77 all-non-ASCII tokens |
-| `EXPECTED_JOINED_WORDS` | **15012** | the gate; see above |
+| BSD `wc -w`, any locale; GNU under UTF-8; Python `str.split()` | **15154** | every token counts |
+| GNU `wc -w` under `LC_ALL=C` | **15078** | 15154 − 76 all-non-ASCII tokens |
+| `EXPECTED_JOINED_WORDS` | **14989** | the gate; the constant in the builder, not a `wc` figure |
 
 A token that *mixes* ASCII and non-ASCII -- `human–mouse`, `50–2,000`, `ρ = 0.45`
 once the `=` is its own token -- still contains printable ASCII and still counts
@@ -686,17 +705,17 @@ as one under both. That is the whole reason en dashes are irrelevant here: all
 89 of them sit inside mixed tokens and none is ever a bare token.
 
 **The container runs a GNU userland.** A word count taken inside it with `LANG`
-unset gets the *lower* number, 15100, on a correct tree. That is not drift and
-not a corrupted file; it is this rule. Neither 15177 nor 15100 is
+unset gets the *lower* number, 15078, on a correct tree. That is not drift and
+not a corrupted file; it is this rule. Neither 15154 nor 15078 is
 `EXPECTED_JOINED_WORDS`, and neither is asserted by any gate.
 
 Which of the two a GNU `wc` returns depends on how it was launched, not only
 on the locale variables: CPython coerces the legacy C locale and exports
 `LC_CTYPE=C.UTF-8` to child processes, so `wc -w` invoked from a shell with
-`LANG` unset returns 15100 while the same `wc -w` invoked through Python
-returns 15177. Anything run through the pipeline is Python-launched.
+`LANG` unset returns 15078 while the same `wc -w` invoked through Python
+returns 15154. Anything run through the pipeline is Python-launched.
 
-GNU `wc` is not installed on the macOS reference machine, so the 15100 above is
+GNU `wc` is not installed on the macOS reference machine, so the 15078 above is
 the arithmetic prediction of the rule, and it matches the GNU measurement taken
 during the Tier-1 pass exactly.
 
