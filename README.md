@@ -2,6 +2,20 @@
 
 Cross-species geometric morphometrics in transcriptomic space, inspired by D'Arcy Thompson's *On Growth and Form*.
 
+> **Reading this from a Zenodo archive?** That archive is a **frozen snapshot** of one commit, not
+> the living project. The current version is at
+> **<https://github.com/sriramdevadas/cellwarp>**, and the Zenodo record's own concept DOI
+> [10.5281/zenodo.20735611](https://doi.org/10.5281/zenodo.20735611) always resolves to the newest
+> deposited version. If anything below does not work, check the repository before working around it:
+> reader-path fixes land there first and reach a snapshot only at the next deposit.
+>
+> Two things that bite only on the archive route. **Versions 1 and 2 of the zip have no wrapper
+> directory**, so all 1,094 files land wherever you unpack them — unpack those into an empty
+> directory rather than into `~/Downloads`; version 3 onward carries a wrapper and does not have
+> this problem. And extracting needs `unzip`, which a minimal Linux image (including stock
+> `ubuntu:24.04`) does not ship: `sudo apt-get install -y unzip` first, or use
+> `python3 -m zipfile -e <file>.zip .`, which needs nothing beyond the Python you already have.
+
 ## Quick Start
 
 ```bash
@@ -312,7 +326,7 @@ figure, and numerical claim to its generating code and output file.
 
 **AI use disclosure:** Generative AI tools (Claude, Anthropic) were used to assist with code development, literature search, and manuscript drafting. All AI-generated content was reviewed, verified, and revised by the author. The author takes full responsibility for the accuracy and integrity of the work. See `docs/declarations.txt` for the full disclosure statement and `docs/REPRODUCIBILITY_AUDIT_v2.md` for a reproducibility audit of an earlier state of this repository (historical snapshot, 2026-04-06; the current reproduction path is the four gates described above).
 
-**Tracked files under `data/` and `output/`:** This repository tracks several files inside `data/` and `output/` directories despite those paths appearing in `.gitignore`. These tracked files (centroid CSVs, null distribution arrays, intermediate analysis results, etc.) are reproducibility anchors that travel with the deposit. Verify the tracked set with `git ls-files data/ output/`. If you need to delete and re-add one of these files, use `git add -f` to override the gitignore pattern.
+**Tracked files under `data/` and `output/`:** This repository tracks several files inside `data/` and `output/` directories despite those paths appearing in `.gitignore`. These tracked files (centroid CSVs, null distribution arrays, intermediate analysis results, etc.) are reproducibility anchors that travel with the deposit. Verify the tracked set with `git ls-files data/ output/`. If you need to delete and re-add one of these files, use `git add -f` to override the gitignore pattern. **Both commands are repository-only**: a Zenodo archive is not a git repository, so neither runs there. From an archive the equivalent check is that the files are simply present — `find data output -type f | wc -l` counts what the snapshot carries, and every file it lists is by construction one the deposit intended to include, because the archive is built from `git ls-files` at the release commit. There is nothing to reconcile against, and nothing to re-add.
 
 ## License
 
