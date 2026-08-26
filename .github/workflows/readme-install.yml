@@ -34,11 +34,19 @@
 
 name: readme install
 
+# PATH FILTER -- a deliberate trade, and a hole with the same shape as the one this closes.
+# On push this fires only when one of the files below changes. It does NOT fire on a change to,
+# say, a script the install imports, so a push that breaks the install path some other way can go
+# unchecked. `pull_request` carries no path filter, so anything merged through a PR is always
+# covered; direct pushes are covered only for these paths. See the report for what is not covered.
 on:
   push:
     paths:
       - 'README.md'
+      - 'reproduce/README.md'
       - 'pyproject.toml'
+      - 'scripts/run-gates.sh'
+      - 'scripts/check_doc_links.py'
       - '.github/workflows/readme-install.yml'
   pull_request:
   workflow_dispatch:
@@ -101,17 +109,12 @@ jobs:
           bash /tmp/steps.sh 2>/dev/null | grep -q "OK: venv works" \
             || { echo "::error::README's own verification line 'OK: venv works' did not print"; exit 1; }
 
-          echo "--- four gates, UNCHAINED, on what the README's blocks built ---"
-          .venv/bin/python reproduce/validate.py; G1=$?
-          .venv/bin/python -m pytest -q;          G2=$?
-          .venv/bin/python scripts/build_submission_packet.py --verify; G3=$?
-          md5sum -c reproduce/MANUSCRIPT_MD5;     G4=$?
-          echo "gate exit codes: 1=$G1 2=$G2 3=$G3 4=$G4"
-          [ "$G1" -eq 0 ] || echo "::error::Gate 1 failed on the README-built environment"
-          [ "$G2" -eq 0 ] || echo "::error::Gate 2 failed on the README-built environment"
-          [ "$G3" -eq 0 ] || echo "::error::Gate 3 failed on the README-built environment"
-          [ "$G4" -eq 0 ] || echo "::error::Gate 4 failed on the README-built environment"
-          [ "$G1" -eq 0 ] && [ "$G2" -eq 0 ] && [ "$G3" -eq 0 ] && [ "$G4" -eq 0 ]
+          # The four gates come from scripts/run-gates.sh, the single definition shared with
+          # gates.yml and the Dockerfile. `all` mode reports every gate and exits non-zero if
+          # any failed, so a gate failing here names itself rather than hiding the others.
+          echo "--- four gates on what the README's own blocks built ---"
+          sh scripts/run-gates.sh all \
+            || { echo "::error::the four gates failed on the environment the README's blocks built"; exit 1; }
           RUNNER
 
           docker run --rm \
@@ -119,3 +122,10 @@ jobs:
             -v /tmp/parse_readme.py:/tmp/parse_readme.py:ro \
             -v /tmp/run_in_container.sh:/tmp/run_in_container.sh:ro \
             ubuntu:24.04 bash /tmp/run_in_container.sh
+
+      # Documentation check, kept here rather than in a fourth workflow: it is the same class of
+      # thing this file exists for, and it costs under a second. It runs whatever the install
+      # result, because a dead link is worth reporting even when the install is broken.
+      - name: Internal markdown links resolve
+        if: ${{ !cancelled() }}
+        run: python3 scripts/check_doc_links.py

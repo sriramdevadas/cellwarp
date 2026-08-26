@@ -79,53 +79,27 @@ COPY . /cellwarp
 RUN .venv/bin/pip install --upgrade pip \
     && .venv/bin/pip install -e ".[dev]"
 
-# The four gates, UNCHAINED. Each one runs and reports whatever the gates before
-# it did, and the runner exits non-zero if any of them failed. This file used
-# `&&` chaining until 2026-08-26, which made the first failure hide every gate
-# after it: at dispatch 79 one missing test dependency presented as three gates
-# that never ran, and at dispatch 83 a reviewer running the published archive
-# would have seen Gate 2 fail with Gates 3 and 4 silent. Both properties matter
-# and they pull against each other -- every gate must report, AND a failing build
-# must still fail -- so the exit codes are collected and the result is decided at
-# the end. A failing gate prints a line beginning `!!! GATE`, so it is findable
-# by eye or by grep in a long build log rather than buried among green ones.
+# The four gates, UNCHAINED, defined once in scripts/run-gates.sh and called from here, from
+# .github/workflows/gates.yml and from .github/workflows/readme-install.yml. Until 2026-08-26 the
+# four commands were written out in all three places; consolidating them means a change moves once.
 #
-# Written once here and used by both the build-time certification and the default
-# `docker run` target, so the two cannot drift apart. Same shape as the four
-# separate steps in .github/workflows/gates.yml.
-RUN printf '%s\n' \
-  '#!/bin/sh' \
-  'cd /cellwarp || exit 1' \
-  'echo "### GATE 1: validate.py ###";      .venv/bin/python reproduce/validate.py;                       G1=$?' \
-  'echo "### GATE 2: pytest -q ###";        .venv/bin/python -m pytest -q;                                G2=$?' \
-  'echo "### GATE 3: packet --verify ###";  .venv/bin/python scripts/build_submission_packet.py --verify; G3=$?' \
-  'echo "### GATE 4: manuscript md5 ###";   md5sum -c reproduce/MANUSCRIPT_MD5;                           G4=$?' \
-  'echo "### GATE SUMMARY (exit code per gate) ###"' \
-  'echo "###   gate 1  validate.py        : $G1"' \
-  'echo "###   gate 2  pytest -q          : $G2"' \
-  'echo "###   gate 3  packet --verify    : $G3"' \
-  'echo "###   gate 4  manuscript md5 pin : $G4"' \
-  '[ "$G1" -eq 0 ] || echo "!!! GATE 1 FAILED (exit $G1) !!!"' \
-  '[ "$G2" -eq 0 ] || echo "!!! GATE 2 FAILED (exit $G2) !!!"' \
-  '[ "$G3" -eq 0 ] || echo "!!! GATE 3 FAILED (exit $G3) !!!"' \
-  '[ "$G4" -eq 0 ] || echo "!!! GATE 4 FAILED (exit $G4) !!!"' \
-  'if [ "$G1" -eq 0 ] && [ "$G2" -eq 0 ] && [ "$G3" -eq 0 ] && [ "$G4" -eq 0 ]; then' \
-  '  echo "### RESULT: all four gates ran and passed ###"; exit 0' \
-  'else' \
-  '  echo "### RESULT: BUILD FAILS -- see the !!! GATE lines above ###"; exit 1' \
-  'fi' \
-  > /usr/local/bin/cellwarp-gates && chmod +x /usr/local/bin/cellwarp-gates
+# `all` mode is what the certification needs: every gate runs and reports whatever the ones before
+# it did, a `!!! GATE n FAILED` marker is printed for each failure so it is greppable in a long
+# build log, and the script exits non-zero at the end if any failed. This file used `&&` chaining
+# until 2026-08-26, which made the first failure hide every gate after it -- at dispatch 79 one
+# missing test dependency presented as three gates that never ran. Note that simply dropping the
+# `&&` would have been worse: a shell takes the last command's status, so a failing gate 1 with a
+# passing gate 4 would produce a GREEN build.
 
-# Certify reproduction at build time. A green build now means all four gates RAN
-# and all four PASSED -- not merely that nothing aborted early, which is all the
-# chained form could certify. First satisfied 2026-08-25; see the note at the top
-# of this file.
-RUN cellwarp-gates
+# Certify reproduction at build time. A green build means all four gates RAN and all four PASSED --
+# not merely that nothing aborted early, which is all the chained form could certify.
+# First satisfied 2026-08-25; see the note at the top of this file.
+RUN sh scripts/run-gates.sh all
 
 # Default `docker run` target: the same four gates, then the no-download
 # fast-path (obs/null ~ 0.522 from deposited centroids, ~2 min, no network).
-# The fast path is chained deliberately: all four gates have already reported by
-# the time the runner returns, and there is no reason to spend two minutes on the
-# fast path when a gate has just failed.
-CMD cellwarp-gates \
+# The fast path is chained deliberately: all four gates have already run and
+# reported by the time the script returns, and there is no reason to spend two
+# minutes on the fast path when a gate has just failed.
+CMD sh scripts/run-gates.sh all \
     && echo "### fast-path (no download) ###" && .venv/bin/python reproduce/fast_path.py

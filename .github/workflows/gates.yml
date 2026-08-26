@@ -61,16 +61,16 @@ jobs:
       # fails, because a failed step fails the job whether or not later steps ran.
       - name: Gate 1 -- reproduce/validate.py
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
-        run: python reproduce/validate.py
+        run: sh scripts/run-gates.sh 1
 
       - name: Gate 2 -- pytest
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
-        run: python -m pytest -q
+        run: sh scripts/run-gates.sh 2
 
       - name: Gate 3 -- submission packet --verify
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
-        run: python scripts/build_submission_packet.py --verify
+        run: sh scripts/run-gates.sh 3
 
       - name: Gate 4 -- manuscript md5 pin
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
-        run: md5sum -c reproduce/MANUSCRIPT_MD5
+        run: sh scripts/run-gates.sh 4
