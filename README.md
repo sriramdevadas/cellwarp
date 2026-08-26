@@ -57,16 +57,23 @@ This project pins **Python `>=3.12,<3.13`**. The stock `python3` on Ubuntu 22.04
 > is a multi-hour job with a large memory footprint, and both of the things that stop it are
 > described *after* the block rather than before it:
 >
-> - **Memory: the peak is 51–59 GiB**, in `[4/8]`, and it is inside Tier 1, so stopping after
->   `TIER 1 COMPLETE` does not avoid it. **128 GiB is the recommendation and 64 GB is not**; a
->   32 GB instance is OOM-killed after about five minutes. The full measurements, with the
->   instance they were taken on, are in the **Requirements** block further down this section.
+> - **Memory: the peak is 63.95 GiB**, in `[4/8]`, and it is inside Tier 1, so stopping after
+>   `TIER 1 COMPLETE` does not avoid it. Provision against the **system-wide** figure, not the
+>   per-process one: when `[4/8]` peaked the machine was using **65.14 GiB**. **128 GiB is the
+>   recommendation and 64 GB is not** — that is measured, not cautioned: a 64 GiB machine would
+>   have been OOM-killed on the third full run. A 32 GB instance is OOM-killed after about five
+>   minutes. The full measurements, with the instance they were taken on, are in the
+>   **Requirements** block further down this section.
 > - **Build tools on Linux:** the `pip install -e ".[lock,dev]"` line builds `hnswlib` from
 >   source and fails without a compiler and the CPython headers. The commented `apt-get` lines
 >   in the block install them; do not skip them.
 >
-> Wall-clock for the whole pipeline has been measured at **3 h 08 m** and **9 h 40 m** on the same
-> instance type, the spread being network quality against CELLxGENE Census.
+> Wall-clock for the whole pipeline has been measured at **3 h 09 m** and **9 h 40 m** on the same
+> instance type. **Plan by where you are running, because that spread is one stage.**
+> `[S23]` (`13_covid_procrustes.py`) issues a CELLxGENE Census query per cell-type × tissue with a
+> 600 s timeout: **33 minutes from a cloud instance with no timeout firing, 6 h 29 m from a home
+> connection with 14 of them firing.** Everything else is local compute and barely moves. An
+> afternoon on a well-connected host; most of a day otherwise.
 >
 > **If you only need the gates, you do not need any of this.**
 > [Reproduce in Docker](#reproduce-in-docker) runs all four reproduction gates and the headline
@@ -110,8 +117,8 @@ python scripts/build_submission_packet.py --rebuild
 not a failed reproduction: `run_all.sh` rewrites tracked canonical artifacts, and their byte-copies
 under `docs/submission/figures_for_review/` are written only by
 `scripts/build_submission_packet.py --rebuild`. Until you run it, the canonical and its mirror are
-out of sync and `--verify` reports the drift — most visibly
-`figS3_bootstrap_rankings.pdf` against `Figure_S3.pdf`. On the pristine archive all 30 pairs match,
+out of sync and `--verify` reports the drift. It is **one pair of thirty**, the same one on each
+of the three full runs: `figS3_bootstrap_rankings.pdf` against `Figure_S3.pdf`. On the pristine archive all 30 pairs match,
 which is why the gates are green *before* you reproduce anything.
 [reproduce/README.md](reproduce/README.md#after-a-full-run-rebuild-the-packet-before-the-gates-mean-anything)
 gives the full stage-by-stage account of which pairs drift and why.
@@ -137,12 +144,12 @@ The pin is two-sided, so a **newer** Python fails too, with a different message:
 | what you are running | peak resident | leave yourself |
 |---|---|---|
 | fast path, or the Docker gate run | negligible | any machine |
-| Tier 1 (`[1/8]`–`[8/8]`) | **51–59 GiB** | 128 GiB recommended |
-| full pipeline | **51–59 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
+| Tier 1 (`[1/8]`–`[8/8]`) | **63.95 GiB** (**65.14 GiB** system-wide) | 128 GiB recommended |
+| full pipeline | **63.95 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
 
-The range is two measurements, not an estimate: 58.9 GiB and 51.4 GiB, same instance type and same commit, a 13% spread. **64 GB has never been tested and is not recommended** -- a 58.9 GiB peak would leave about five for the operating system, and a third run could land above 58.9. The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it; a 32 GB instance was OOM-killed there at 30.2 GiB anon-rss. Measured on AWS `r6i.4xlarge` (128 GiB) under Ubuntu 24.04.4: these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
+**Three measurements, not an estimate: 51.4, 58.9 and 63.95 GiB** — same instance type, same commit, a 24% spread, the largest being the most recent (2026-08-26). Provision against the **system-wide** figure rather than the per-process one: at the moment `[4/8]` peaked at 63.95 GiB the machine was using **65.14 GiB**. **64 GB is not enough, and that is now measured rather than cautioned** — a 64 GiB machine would have been OOM-killed on the third run, not merely left tight; a 32 GB instance was OOM-killed at 30.2 GiB anon-rss. The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads 992,192 cells in order to keep 140,000. Because that step is **inside Tier 1**, stopping after `TIER 1 COMPLETE` does not avoid it. One other stage exceeds 40 GiB — `[S11]`, `scripts/33_cellhint_replication.py`, at **41.18 GiB** — but that one is in **Tier 2**, so stopping at `TIER 1 COMPLETE` does avoid it. Measured on AWS `r6i.4xlarge` (128 GiB) under Ubuntu 24.04.4: these are peaks to have headroom above, not thresholds to sit on. See [reproduce/README.md](reproduce/README.md) for the full measurement note.
 
-**Tested on.** Fast path: macOS 15 on Apple silicon, and Ubuntu 24.04 on x86-64. Full pipeline: Ubuntu 24.04 on x86-64 only, twice, end to end with four green gates. The full pipeline on macOS is untested. Windows is untested throughout, natively and in Docker alike. Nothing is known to be wrong with either; nothing has been checked.
+**Tested on.** Fast path: macOS 15 on Apple silicon, and Ubuntu 24.04 on x86-64. Full pipeline: Ubuntu 24.04 on x86-64 only, three times, end to end with four green gates — most recently 2026-08-26 on AWS `r6i.4xlarge`, AMI `ami-052355af2a014bd2c` (`ubuntu-noble-24.04-amd64-server-20260714`, booting as Ubuntu 24.04.4), 3 h 09 m 10 s, exit 0. The full pipeline on macOS is untested. Windows is untested throughout, natively and in Docker alike. Nothing is known to be wrong with either; nothing has been checked.
 
 The pipeline downloads human/mouse atlas data from CELLxGENE Census, runs QC, executes the 35-type Procrustes analysis with permutation testing, and validates all supplementary analyses. After completion, `reproduce/validate.py` checks key statistics against the manuscript values, and the frozen submission text is pinned by `reproduce/MANUSCRIPT_MD5`: the manuscript (`docs/submission/plosone/manuscript_combined.txt`) and both supporting-information texts (`S1_Text.txt`, `S2_Text.txt`), verified with `md5sum -c reproduce/MANUSCRIPT_MD5`, Gate 4.
 

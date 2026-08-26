@@ -23,25 +23,42 @@ Nothing is known to be wrong with either; nothing has been checked.
   | what you are running | peak resident | leave yourself |
   |---|---|---|
   | fast path | negligible | any machine |
-  | Tier 1 (`[1/8]`–`[8/8]`) | **51–59 GiB** | 128 GiB recommended |
-  | full pipeline | **51–59 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
+  | Tier 1 (`[1/8]`–`[8/8]`) | **63.95 GiB** (**65.14 GiB** system-wide) | 128 GiB recommended |
+  | full pipeline | **63.95 GiB**, the maximum is in Tier 1 | 128 GiB recommended |
 
-  **The range is two measurements, not an estimate.** 58.9 GiB on the first full run and
-  51.4 GiB on the second, same instance type and same commit: a 13% spread on identical work.
-  Treat 51–59 GiB as the measurement and 128 GiB as the recommendation, because a third run
-  could land above 58.9.
+  **Three measurements, not an estimate.** 58.9 GiB on the first full run, 51.4 GiB on the
+  second and **63.95 GiB on the third** (2026-08-26) — same instance type, same commit: a 24%
+  spread on identical work. The spread is the useful fact, not an average of it; the peak is
+  not reproducible to the digit and each new run has widened the range rather than settled it.
 
-  **64 GB has never been tested here, and is not recommended.** A 58.9 GiB peak on a 64 GB
-  machine leaves about five for the operating system and everything else running on it, which
-  is not headroom.
+  **Provision against the system-wide figure, not the per-process one.** 63.95 GiB is what
+  `08_scaled_procrustes.py` peaked at; **65.14 GiB** is what the machine was using at that
+  moment, and that is the number to size against. Both are from the same instant of the same
+  run:
+
+  ```
+  21:43:46  pid=8795  VmHWM=63.95 GiB  VmRSS=58.62 GiB  system-used=64.97 GiB
+  peak system-used, whole run: 65.14 GiB
+  ```
+
+  **64 GB is not enough, and that is now measured rather than cautioned.** At 65.14 GiB
+  system-wide, a 64 GiB machine is OOM-killed on this workload, not merely left without
+  headroom. Earlier revisions of this file said a third run "could land above 58.9". It did.
 
   The peak is `[4/8]`, `scripts/08_scaled_procrustes.py`, which downloads **992,192 cells in
   order to keep 140,000**: it subsamples after the download rather than during it. A 32 GB
   instance was killed there by the OOM killer after five minutes, at 30.2 GiB anon-rss.
 
   **Note that `[4/8]` is inside Tier 1**, so stopping after `TIER 1 COMPLETE` does not avoid
-  this: the Tier-1 peak is the whole run's peak. The often-quoted 26.9 GiB is `[1/8]`
-  (`01_download_data.py`) on its own, which matters only if you run the download step alone.
+  this: the Tier-1 peak is the whole run's peak. `[1/8]` (`01_download_data.py`) on its own
+  peaked at 26.9 GiB on an earlier run and **29.12 GiB** on the third, which matters only if
+  you run the download step alone.
+
+  **One other stage exceeds 40 GiB, and it is in Tier 2.** `[S11]`,
+  `scripts/33_cellhint_replication.py`, peaked at **41.18 GiB**. Unlike `[4/8]`, stopping at
+  `TIER 1 COMPLETE` *does* avoid this one. Nothing else in either tier came within 25 GiB of
+  the `[4/8]` peak; the next highest are `[1/8]` at 29.12 GiB and `[7/8]`
+  (`07_bootstrap.py`) at 19.95 GiB.
 
   These are peaks to have headroom above, not a threshold to sit exactly on.
 - **Reproduced on:** an AWS `r6i.4xlarge` (16 vCPU, 128 GiB) running Ubuntu 24.04.4 with
@@ -278,10 +295,13 @@ VERIFY FAIL: 1 / 30 pairs
 regenerates on every `save()`, so two consecutive runs of the *unmodified* producer differ in
 those 60 bytes too. Nothing about the figure changed. One `--rebuild` re-syncs the pair.
 
-**The other three predicted entries remain unmeasured**: `Table_S6_CPC1_driver_genes.xlsx`,
-`covid_cross_analysis.png` and `cross_analysis_scaled.png` have not been run through this
-check. One confirmed entry does not validate four -- treat those three as the stage-order
-reading they still are.
+**The other three predicted entries are now measured, and none of them drifts.** A full run on
+2026-08-26 ended with `--verify` reporting `1 / 30`, the single failing pair being
+`figS3_bootstrap_rankings.pdf`. `Table_S6_CPC1_driver_genes.xlsx`, `covid_cross_analysis.png`
+and `cross_analysis_scaled.png` were all in sync. The stage-order reading over-predicted by
+three: it identified every canonical written after `[S29c]`, but writing after `[S29c]` is
+necessary rather than sufficient for drift. **Exactly one pair of thirty drifts, and the same
+one has drifted on each of the three full runs.**
 
 ### Why a spreadsheet pair drifts: the writer's clock, not the content
 
