@@ -322,8 +322,13 @@ those 60 bytes too. Nothing about the figure changed. One `--rebuild` re-syncs t
 `figS3_bootstrap_rankings.pdf`. `Table_S6_CPC1_driver_genes.xlsx`, `covid_cross_analysis.png`
 and `cross_analysis_scaled.png` were all in sync. The stage-order reading over-predicted by
 three: it identified every canonical written after `[S29c]`, but writing after `[S29c]` is
-necessary rather than sufficient for drift. **Exactly one pair of thirty drifts, and the same
-one has drifted on each of the three full runs.**
+necessary rather than sufficient for drift. For `Table_S6_CPC1_driver_genes.xlsx` the reason is
+concrete rather than probabilistic, and is given under [The supplementary tables `run_all.sh`
+does not finish](#the-supplementary-tables-run_allsh-does-not-finish-and-the-one-it-now-does)
+below: `[S30]` writes `output/supplementary/`, not the packet canonical under
+`docs/supplementary_materials/`, so that pair cannot drift whatever the stage order says.
+**Exactly one pair of thirty drifts, and the same one has drifted on each of the three full
+runs.**
 
 ### Regenerated figures use a different typeface on Linux
 
@@ -391,12 +396,43 @@ create-stage output only, and a reader's `table_S1.xlsx` will differ from the de
 `table_S3.csv`, `table_S4.csv` and `table_S5.csv` have no generator at all -- `run_all.sh`
 never writes them, so those three remain as deposited.
 
-**`[S30]` cannot run from the deposit.** `scripts/generate_table_S6.py` opens
-`data/phase2_scaled/human_scaled.h5ad`. `.gitignore` excludes `data/` wholesale, no file
-under `data/phase2_scaled/` is tracked, and the archive does not carry it. Under
-`set -euo pipefail` (line 2) the run stops there, before `reproduce/validate.py` -- so fetch
-the Tier-2 inputs first, or skip the stage. `Table_S6_CPC1_driver_genes.xlsx` is therefore
-**untested against the deposit**, which is not the same as passing.
+**`[S30]` cannot be run standalone from a bare clone, but it does run inside the pipeline --
+and its output is not the deposited table.**
+
+`scripts/generate_table_S6.py` opens `data/phase2_scaled/human_scaled.h5ad`. That file is not
+tracked: `.gitignore` excludes `data/` wholesale, nothing under `data/phase2_scaled/` is in
+`git ls-files`, and the archive does not carry it. So invoking `[S30]` on its own, against a
+fresh clone, fails.
+
+**Earlier revisions of this file drew a stronger conclusion from that and said the full run
+"stops there, before `reproduce/validate.py`". It does not.** `[4/8]`
+`scripts/08_scaled_procrustes.py` sets `DATA_DIR = Path("./data/phase2_scaled")` (line 105) and
+writes `human_scaled.h5ad` into it about forty minutes earlier, so by the time `[S30]` is
+reached the input exists. Measured on 2026-08-26: `[S30]` completed in **19 s** at 3.09 GiB
+peak, and the run continued through `[S31]`, `[S32]` and `reproduce/validate.py` to 232/232.
+The gitignore reasoning was right; the conclusion drawn from it was not.
+
+`Table_S6_CPC1_driver_genes.xlsx` is still **untested against the deposit**, for a simpler
+reason than the stage aborting: **`[S30]` writes a different file.**
+
+```
+[S30] writes       output/supplementary/Table_S6_CPC1_driver_genes.xlsx          54,297 bytes
+packet canonical   docs/supplementary_materials/Table_S6_CPC1_driver_genes.xlsx  59,428 bytes
+```
+
+`scripts/build_submission_packet.py:100` points at the second. Two same-named files 5,131 bytes
+apart, and the pipeline never touches the one the packet checks. That is also why this pair
+cannot drift -- a stronger statement than the stage-order reading above, which establishes only
+that writing after `[S29c]` is necessary rather than sufficient.
+
+**This paragraph has now been wrong three times, in three different directions.** Dispatch 77
+corrected the direction of the failing case. Dispatch 82 falsified the stopping claim, with a run
+that did not stop. And the drift explanation was under-specified: "necessary rather than
+sufficient" is true, but it does not say that the canonical is never written at all. Each
+correction was better than the one before it and each was still wrong, and the failure mode was
+identical every time -- a conclusion inferred from reading the code rather than observed from
+running it. It is recorded here so the next reader treats the paragraph as something with a
+history rather than something that was always right.
 
 ## Analyses `run_all.sh` does not run
 

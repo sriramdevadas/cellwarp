@@ -480,7 +480,7 @@ def build_feature_table():
     feat["lineage"] = feat.index.map(LINEAGE_MAP)
 
     print(f"\n  Final feature table: {feat.shape[0]} cell types × {feat.shape[1]} columns")
-    print(f"  Features with missing values:")
+    print(f"  Features with missing values: {int(feat.isna().any().sum())}")
     for col in feat.columns:
         n_miss = feat[col].isna().sum()
         if n_miss > 0:
